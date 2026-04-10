@@ -1,62 +1,239 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>The Sirens - I T L</title>
-        <style>
-            body {
-                font-family: Comic Sans MS;
-            }
-            body{
-                color:rgb(255, 255, 255);
-            }
-            h1 {
-                font-size: 62px;
-            }
-            h2 {
-                font-size: 40px;
-            }
-            h3 {
-                font-size: 28px;
-            }
-            img{
-                width : 601px;
-            }
-        </style>
-    </head>
-    <body bgcolor="black">
-        <hr style="border: 5px solid rgb(0, 0, 0);">
-<hr><h3><p style="text-align: right;"><a href="index.html" class="home-btn"> - Home</a><a href="earth.html" class="btn"> - Earth</a><a href="animals.html" class="btn"> - Animals</a><a href="space.html" class="btn"> - Space</a><a href="mysteries.html" class="btn"> - Mysteries</a><a href="history.html" class="btn"> - History</a></p></h3><hr>
-        <h1><u><i><b>The Sirens</b></i></u></h1><center><img src="images/the Sirens.jpg"></center>
-    <hr><h2>Who were the Sirens?</h2>
-        <h3>In Greek mythology, Sirens were sea nymphs who lived on rocky islands (most famously near the coast of Italy).
-            <li>•	Early Myths: They were originally depicted as creatures with the body of a bird and the head of a woman.</li>
-            <li>•	Later Evolution: Over time, their image changed in art and literature to resemble mermaids (women with fish tails), though in classical Greek myth, they remained bird-like.</li>
-        </h3>
-    <hr><h2>The Deadly Song</h2>
-        <h3>The Sirens’ most dangerous power was their voice. They sang songs so beautiful and haunting that any sailor who heard them would lose his mind.
-            <li>•	The Trap: Sailors would become so entranced that they would forget their homes and families.</li>
-            <li>•	The Outcome: They would steer their ships toward the Sirens’ rocky shores, causing the ships to crash and the sailors to drown or be eaten by the Sirens.</li>
-        </h3>
-    <hr><h2>Famous Encounters</h2>
-        <h3>There are two major legends in Greek literature where heroes managed to survive the Sirens:
-<li>A. The Odyssey (Odysseus)</li>
-To pass the Sirens safely, the hero Odysseus followed the advice of the sorceress Circe:
-    <li>•	He ordered his crew to plug their ears with beeswax so they couldn't hear anything.</li>
-    <li>•	Odysseus wanted to hear the song himself, so he had his men tie him tightly to the mast of the ship.</li>
-    <li>•	When he heard the music, he begged to be released, but his crew followed orders and tied him tighter until they were out of range.</li>
-<li>B. Jason and the Argonauts</li>
-During their quest for the Golden Fleece, Jason’s crew was saved by the legendary musician Orpheus:
-    <li>•	As the Sirens began to sing, Orpheus played his lyre (a musical instrument) so loudly and beautifully that his music drowned out the Sirens' voices.</li>
-    <li>•	The crew focused on Orpheus's music and sailed past the danger safely.</li>
-        </h3>
-    <hr><h2>Origin and Fate</h2>
-        <h3>
-            <li>•	Origin: They were often said to be the daughters of the river god Achelous and a Muse (like Melpomene or Terpsichore).</li>
-            <li>•	Their Death: Legend says that if a mortal ever heard their song and survived, the Sirens were destined to die. After Odysseus passed them, it is said they threw themselves into the sea and turned into rocks.</li>
-        </h3>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Sirens - I T L</title>
+    <style>
+        /* මූලික සැකසුම් */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #040d14; /* ඉතා තද මුහුදු නිල් පැහැයක් */
+            color: #d1e8e8;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-image: radial-gradient(circle at top, #0a1f2d 0%, #040d14 100%);
+        }
 
-        <hr style="border-top: 3px dotted rgb(255, 255, 255);">
-        <h2>If you found this information helpful, please use the link below to visit our YouTube channel. Subscribe and support us to help us continue creating more content like this.<a href="https://www.youtube.com/@snapknowledge-w3r">
-            <i><mark>- Infinity Thinkers Laboratory</mark></i></a></p></h2>        
-    </body>
+        /* Navigation Bar */
+        nav {
+            background-color: rgba(5, 15, 25, 0.9);
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 2px solid #005f6b;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(8px);
+        }
+
+        nav a {
+            color: #00ced1; /* Dark Turquoise */
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px #00ced1;
+        }
+
+        /* ප්‍රධාන මාතෘකාව */
+        h1 {
+            font-size: clamp(35px, 8vw, 65px);
+            text-align: center;
+            color: #fff;
+            margin-top: 40px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            text-shadow: 0 0 20px rgba(0, 206, 209, 0.4);
+            font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+        }
+
+        /* පින්තූරය */
+        .img-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .siren-img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 0 40px rgba(0, 95, 107, 0.5);
+            border: 1px solid #005f6b;
+        }
+
+        /* අන්තර්ගතය */
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(0, 95, 107, 0.05);
+            padding: 35px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(0, 206, 209, 0.1);
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        h2 {
+            color: #00ced1;
+            font-size: 30px;
+            margin-bottom: 20px;
+            font-family: 'Palatino', serif;
+            border-left: 5px solid #00ced1;
+            padding-left: 15px;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: normal;
+            color: #b0cccc;
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        li::before {
+            content: "⚓"; /* මුහුදට ගැලපෙන අයිකනයක් */
+            position: absolute;
+            left: 0;
+            color: #00ced1;
+            font-size: 16px;
+        }
+
+        .sub-item {
+            padding-left: 40px;
+            font-style: italic;
+            color: #88aaaa;
+        }
+
+        /* YouTube Promo */
+        .promo-box {
+            text-align: center;
+            background: linear-gradient(145deg, #002b30, #040d14);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #005f6b;
+            margin-top: 50px;
+        }
+
+        .promo-link {
+            color: #ff4545;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 22px;
+            display: inline-block;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+
+        .promo-link mark {
+            background-color: #ff4545;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 5px;
+        }
+
+        .promo-link:hover {
+            transform: scale(1.05);
+            text-shadow: 0 0 15px #ff4545;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #005f6b, transparent);
+            margin: 40px 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div class="container">
+        <h1>The Sirens</h1>
+
+        <div class="img-container">
+            <img class="siren-img" src="images/the Sirens.jpg" alt="Mythical Sirens">
+        </div>
+
+        <section>
+            <h2>Who were the Sirens?</h2>
+            <h3>In Greek mythology, Sirens were sea nymphs who lived on rocky islands.</h3>
+            <ul>
+                <li><strong>Early Myths:</strong> They were originally depicted as creatures with the body of a bird and the head of a woman.</li>
+                <li><strong>Later Evolution:</strong> Over time, their image changed to resemble mermaids, though in classical myth, they remained bird-like.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>The Deadly Song</h2>
+            <h3>The Sirens’ most dangerous power was their voice, singing songs so haunting that any sailor would lose his mind.</h3>
+            <ul>
+                <li><strong>The Trap:</strong> Sailors would become so entranced that they would forget their homes and families.</li>
+                <li><strong>The Outcome:</strong> They would steer ships toward rocky shores, causing them to crash and drown.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Famous Encounters</h2>
+            <h3>Two major legends where heroes managed to survive:</h3>
+            
+            <ul>
+                <li><strong>A. The Odyssey (Odysseus)</strong></li>
+                <li class="sub-item">His crew plugged their ears with beeswax.</li>
+                <li class="sub-item">Odysseus was tied tightly to the mast to hear the song safely.</li>
+                
+                <li><strong>B. Jason and the Argonauts</strong></li>
+                <li class="sub-item">Orpheus played his lyre so beautifully it drowned out the Sirens' voices.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Origin and Fate</h2>
+            <ul>
+                <li><strong>Origin:</strong> Often said to be the daughters of the river god Achelous and a Muse.</li>
+                <li><strong>Their Death:</strong> Legend says if a mortal ever heard their song and survived, the Sirens were destined to die. After Odysseus, they threw themselves into the sea and turned into rocks.</li>
+            </ul>
+        </section>
+
+        <div class="promo-box">
+            <h3>If you found this information helpful, please support our journey on YouTube!</h3>
+            <a href="https://www.youtube.com/@snapknowledge-w3r" class="promo-link">
+                <mark>- Infinity Thinkers Laboratory</mark>
+            </a>
+        </div>
+
+        <hr>
+    </div>
+
+</body>
 </html>
