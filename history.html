@@ -1,56 +1,184 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>History - I T L</title>
-        <style>
-            body {
-                font-family: Comic Sans MS;
-            }
-            body{
-                color:rgb(255, 255, 255);
-            }
-            h1 {
-                font-size: 62px;
-            }
-            h2 {
-                font-size: 40px;
-            }
-            h3 {
-                font-size: 28px;
-            }
-            img.history{
-                width : 1000px;
-            }
-            h1 {
-                text-shadow: 2px 2px 5px rgb(255, 255, 255);
-            }
-        </style>
-    </head>
-    <body bgcolor="black">
-        <hr style="border: 5px solid rgb(0, 0, 0);">
-<hr><h3><p style="text-align: right;"><a href="index.html" class="home-btn"> - Home</a><a href="earth.html" class="btn"> - Earth</a><a href="animals.html" class="btn"> - Animals</a><a href="space.html" class="btn"> - Space</a><a href="mysteries.html" class="btn"> - Mysteries</a><a href="history.html" class="btn"> - History</a></p></h3><hr>
-        <h1><u>History – The Story of Our Past</u></h1>
-        <center><img class="history" src="images/history.jpeg"></center>
-        <h3><p>You have arrived here to explore the fascinating story of human history. From ancient civilizations and great empires to remarkable events that shaped the modern world, history reveals how societies, cultures, and ideas have evolved over time.
-Here you will discover intriguing facts about historical events, influential figures, and the civilizations that left their mark on the world.
-Through the articles and information below, you can travel through time, learn from the past, and gain a deeper understanding of how our world became what it is today.
-We hope the knowledge you find here will broaden your perspective, deepen your curiosity, and inspire you to explore the remarkable journey of human history.
-</p></h3>
-        <hr><h2>
-            <p>What are the details you are expecting?</p>
-            <ul>
-                <li><a href=""><i>item</i></a></li>
-                <li><a href=""><i>item</i></a></li>
-                <li><a href=""><i>item</i></a></li>
-                <li><a href=""><i>item</i></a></li>
-                <li><a href=""><i>item</i></a></li>
-            </ul>
-        </h2>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History - I T L</title>
+    <style>
+        /* මූලික සැකසුම් */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0b0b0b;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
 
+        /* Navigation Bar එක */
+        nav {
+            background-color: #1a1a1a;
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 2px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
+        nav a {
+            color: #ffcc00; /* ඉතිහාසය සඳහා රන් පැහැති වර්ණයක් */
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.3s;
+        }
 
+        nav a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px #ffcc00;
+        }
 
-        <hr style="border-top: 3px dotted rgb(255, 255, 255);">
-       
-    </body>
+        /* ප්‍රධාන මාතෘකාව */
+        h1 {
+            font-size: clamp(35px, 6vw, 60px);
+            text-align: center;
+            color: #fff;
+            text-transform: uppercase;
+            margin-top: 40px;
+            text-decoration: underline;
+            text-shadow: 0 0 15px rgba(255, 204, 0, 0.3);
+        }
+
+        /* පින්තූරය */
+        .img-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .history-img {
+            max-width: 90%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 0 40px rgba(255, 204, 0, 0.2);
+            border: 1px solid #333;
+        }
+
+        /* අන්තර්ගතය */
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .main-text {
+            font-size: 20px;
+            color: #ccc;
+            text-align: justify;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid #ffcc00; /* පැත්තෙන් කැපී පෙනෙන රේඛාවක් */
+        }
+
+        h2 {
+            color: #ffcc00;
+            font-size: 32px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        /* Topics ලැයිස්තුව */
+        .topic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .topic-grid li {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #333;
+            transition: 0.3s;
+        }
+
+        .topic-grid li:hover {
+            background: #ffcc00;
+            transform: translateY(-5px);
+        }
+
+        .topic-grid a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-style: italic;
+            display: block;
+        }
+
+        .topic-grid li:hover a {
+            color: #000;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, transparent, #444, transparent);
+            margin: 40px 0;
+        }
+
+        .dotted-hr {
+            border-top: 3px dotted #555;
+            margin-bottom: 50px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div class="container">
+        <h1>History – The Story of Our Past</h1>
+
+        <div class="img-container">
+            <img class="history-img" src="images/history.jpeg" alt="History Journey">
+        </div>
+
+        <div class="main-text">
+            You have arrived here to explore the fascinating story of human history. From ancient civilizations and great empires to remarkable events that shaped the modern world, history reveals how societies, cultures, and ideas have evolved over time.
+            <br><br>
+            Here you will discover intriguing facts about historical events, influential figures, and the civilizations that left their mark on the world. Through the articles and information below, you can travel through time, learn from the past, and gain a deeper understanding of how our world became what it is today.
+            <br><br>
+            We hope the knowledge you find here will broaden your perspective, deepen your curiosity, and inspire you to explore the remarkable journey of human history.
+        </div>
+
+        <hr>
+
+        <h2>What are the details you are expecting?</h2>
+        
+        <ul class="topic-grid">
+            <li><a href="#">Ancient Civilizations</a></li>
+            <li><a href="#">World Wars</a></li>
+            <li><a href="#">Famous Leaders</a></li>
+            <li><a href="#">Inventions of the Past</a></li>
+            <li><a href="#">Lost Cities</a></li>
+        </ul>
+
+        <div class="dotted-hr"></div>
+    </div>
+
+</body>
 </html>
