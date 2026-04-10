@@ -1,91 +1,227 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Meteor - I T L</title>
-        <style>
-            body {
-                font-family: Comic Sans MS;
-            }
-            body{
-                color:rgb(255, 255, 255);
-            }
-            h1 {
-                font-size: 62px;
-            }
-            h2 {
-                font-size: 40px;
-            }
-            h3 {
-                font-size: 28px;
-            }
-            img.mete1{
-                width : 601px;
-            }
-            img.me{
-                width : 601px;
-            }
-            img.mete2{
-                width : 601px;
-            }
-            img.met{
-                width : 601px;
-            }
-            img.sm{
-                width : 601px;
-            }
-            img.im{
-                width : 601px;
-            }
-            img.si{
-                width : 601px;
-            }
-            img.ms{
-                width : 601px;
-            }
-        </style>
-    </head>
-    <body bgcolor="black">
-        <hr style="border: 5px solid rgb(0, 0, 0);">
-<hr><h3><p style="text-align: right;"><a href="index.html" class="home-btn"> - Home</a><a href="earth.html" class="btn"> - Earth</a><a href="animals.html" class="btn"> - Animals</a><a href="space.html" class="btn"> - Space</a><a href="mysteries.html" class="btn"> - Mysteries</a><a href="history.html" class="btn"> - History</a></p></h3><hr>
-        <h1><u><i><b>Meteor</b></i></u></h1><center><img class="mete1" src="images/meteor.jpg"></center>
-    <hr><h2>1. What is a Meteor?</h2>
-        <h3>A meteor is a small rocky or metallic body from space that enters Earth's atmosphere. As it travels at high speeds, friction with the air causes it to heat up and glow, creating a streak of light across the sky. These are commonly referred to as "shooting stars" or "falling stars."</h3>
-    <hr><h2>2. The Three Stages</h2>
-        <h3>Scientists use three different terms depending on where the object is located:
-            <ul>
-                <li>Meteoroid: Small chunks of rock or debris still traveling through outer space.</li><center><img class="me" src="images/Meteoroid.jpg"></center>
-                <li>Meteor: The streak of light seen when a meteoroid enters the atmosphere and starts burning up.</li><center><img class="mete2" src="images/Meteor2..jpg"></center>
-                <li>Meteorite: Any part of the object that survives the atmospheric burn and actually lands on Earth's surface.</li><center><img class="met" src="images/Meteorites.jpg"></center>
-            </ul>
-        </h3>
-    <hr><h2>3. Types of Meteorites</h2> 
-        <h3>Based on their composition, they are generally classified into three categories:
-            <ol>
-                <li>Stony Meteorites: The most common type, made primarily of silicate minerals.</li><center><img class="sm" src="images/Stony Meteorites.jpg"></center>
-                <li>Iron Meteorites: Composed mostly of iron and nickel; these are very heavy and dense.</li><center><img class="im" src="images/Iron Meteorites.jpg"></center>
-                <li>Stony-Iron Meteorites: A rare mixture containing both metallic iron and rocky material.</li><center><img class="si" src="images/Stony-Iron Meteorites.jpg"></center>
-            </ol>
-        </h3>
-    <hr><h2>4. Meteor Showers</h2><center><img class="ms" src="images/Meteor Showers space.jpg"></center>
-        <h3>A meteor shower occurs when Earth passes through a trail of debris left behind by a comet. When these numerous particles enter the atmosphere at once, it creates a spectacular display of many meteors appearing from the same point in the sky.</h3>
-        <h3>Examples: The Perseids (visible in August) and the Geminids (visible in December) are two of the most famous annual meteor showers.</h3>
-    <hr><h2>5. Why are they Important?</h2>
-        <h3>
-            <ul>
-                <li>Origin of the Solar System: Meteors act as "space fossils," helping scientists understand how the solar system formed billions of years ago.</li>
-                <li>Origin of Life: Some meteorites contain organic compounds like amino acids, leading to theories that the building blocks of life may have been delivered to Earth from space.</li>
-            </ul>
-        </h3>
-    <hr><h2>6. Quick Facts Summary</h2>
-        <h3><table border="2">
-            <tr><th>Feature</th><th>Description</th></tr>
-            <tr><td>Speed</td><td>11 to 72 kilometers per second (km/s)</td></tr>
-            <tr><td>Altitude</td><td>Most burn up at heights of 75 to 100 kilometers</td></tr>
-            <tr><td>Size</td><td>Ranges from a grain of sand to large boulders</td></tr>
-        </table>
-        </h3>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meteor - I T L</title>
+    <style>
+        /* මූලික සැකසුම් */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #030305;
+            color: #e2e8f0;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-image: radial-gradient(circle at top, #1a1005 0%, #030305 100%);
+        }
 
-        <hr style="border-top: 3px dotted rgb(255, 255, 255);">
-        
-    </body>
+        /* Navigation Bar */
+        nav {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 1px solid #443322;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        nav a {
+            color: #d4af37;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 17px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff9d00;
+            text-shadow: 0 0 10px #ff9d00;
+        }
+
+        /* මාතෘකාව */
+        h1 {
+            font-size: clamp(40px, 8vw, 75px);
+            text-align: center;
+            margin-top: 50px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            background: linear-gradient(to bottom, #fff, #ffae00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+
+        /* පින්තූර සැකසුම */
+        .img-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .meteor-img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 0 40px rgba(255, 165, 0, 0.2);
+            border: 1px solid #332211;
+            transition: 0.4s;
+        }
+
+        .meteor-img:hover {
+            box-shadow: 0 0 50px rgba(255, 165, 0, 0.4);
+        }
+
+        /* අන්තර්ගතය */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(20, 15, 10, 0.5);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255, 165, 0, 0.1);
+        }
+
+        h2 {
+            color: #ffae00;
+            font-size: 32px;
+            margin-bottom: 20px;
+            border-left: 5px solid #ffae00;
+            padding-left: 20px;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: normal;
+            color: #cbd5e1;
+            margin: 0;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+            margin-top: 20px;
+        }
+
+        li {
+            margin-bottom: 15px;
+        }
+
+        strong {
+            color: #fff;
+        }
+
+        /* වගුව (Table) සැකසුම */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        th, td {
+            border: 1px solid #443322;
+            padding: 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #ffae00;
+            color: #000;
+        }
+
+        .dotted-hr {
+            border-top: 3px dotted #443322;
+            margin-top: 80px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div class="container">
+        <h1>Meteor</h1>
+
+        <div class="img-container">
+            <img class="meteor-img" src="images/meteor.jpg" alt="Glowing Meteor">
+        </div>
+
+        <section>
+            <h2>1. What is a Meteor? (උල්කාපාතයක් යනු කුමක්ද?)</h2>
+            <h3>අභ්‍යවකාශයේ සිට පෘථිවි වායුගෝලයට ඇතුළු වන කුඩා පාෂාණ හෝ ලෝහමය වස්තූන් උල්කාපාත ලෙස හැඳින්වේ. අධික වේගයෙන් ගමන් කිරීමේදී වාතය සමඟ ඇති වන ඝර්ෂණය නිසා මේවා දැවී දීප්තිමත් ආලෝක ධාරාවක් ඇති කරයි. මේවා සාමාන්‍ය ව්‍යවහාරයේදී <strong>"කඩා වැටෙන තරු" (Shooting Stars)</strong> ලෙසද හඳුන්වයි.</h3>
+        </section>
+
+        <section>
+            <h2>2. The Three Stages</h2>
+            <ul>
+                <li><strong>Meteoroid:</strong> අභ්‍යවකාශයේ ගමන් කරන කුඩා පාෂාණ කැබලි.
+                    <div class="img-container"><img class="meteor-img" src="images/Meteoroid.jpg"></div>
+                </li>
+                <li><strong>Meteor:</strong> වායුගෝලයට ඇතුළු වී දැවෙන විට පෙනෙන ආලෝක ධාරාව.
+                    <div class="img-container"><img class="meteor-img" src="images/Meteor2..jpg"></div>
+                </li>
+                <li><strong>Meteorite:</strong> වායුගෝලයේදී සම්පූර්ණයෙන් දැවී නොගොස් පෘථිවියට පතිත වන කොටස්.
+                    <div class="img-container"><img class="meteor-img" src="images/Meteorites.jpg"></div>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>3. Types of Meteorites</h2>
+            <ol>
+                <li><strong>Stony Meteorites:</strong> සිලිකේට් ඛනිජ වලින් සැදුම්ලත් වඩාත් බහුල වර්ගයයි.</li>
+                <li><strong>Iron Meteorites:</strong> ප්‍රධාන වශයෙන් යකඩ සහ නිකල් වලින් සමන්විත ඉතා බර වර්ගයකි.</li>
+                <li><strong>Stony-Iron Meteorites:</strong> ලෝහ සහ පාෂාණ යන දෙවර්ගයේම මිශ්‍රණයක් සහිත දුර්ලභ වර්ගයකි.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>4. Meteor Showers (උල්කාපාත වර්ෂා)</h2>
+            <div class="img-container">
+                <img class="meteor-img" src="images/Meteor Showers space.jpg">
+            </div>
+            <h3>පෘථිවිය වල්ගා තරුවක් විසින් ඉතිරි කර ගිය දූවිලි හා පාෂාණ කොටස් අතරින් ගමන් කරන විට උල්කාපාත වර්ෂා ඇති වේ. මෙහිදී අහසේ එකම ස්ථානයක සිට උල්කාපාත රාශියක් කඩා වැටෙනු දැකගත හැකිය. (උදා: Perseids සහ Geminids වර්ෂා).</h3>
+        </section>
+
+        <section>
+            <h2>5. Quick Facts Summary</h2>
+            <table>
+                <tr>
+                    <th>Feature</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Speed (වේගය)</td>
+                    <td>තත්පරයට කිලෝමීටර් 11 සිට 72 දක්වා</td>
+                </tr>
+                <tr>
+                    <td>Altitude (උස)</td>
+                    <td>කිලෝමීටර් 75-100 අතරදී දැවී යයි</td>
+                </tr>
+                <tr>
+                    <td>Size (ප්‍රමාණය)</td>
+                    <td>වැලි කැටයක සිට විශාල පර්වත දක්වා</td>
+                </tr>
+            </table>
+        </section>
+
+        <div class="dotted-hr"></div>
+    </div>
+
+</body>
 </html>
