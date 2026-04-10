@@ -1,86 +1,243 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Black hole - I T L</title>
-        <style>
-            body {
-                font-family: Comic Sans MS;
-            }
-            body{
-                color:rgb(255, 255, 255);
-            }
-            h1 {
-                font-size: 62px;
-            }
-            h2 {
-                font-size: 40px;
-            }
-            h3 {
-                font-size: 28px;
-            }
-            img.blackhole{
-                width : 700px;
-            }
-            img.sn{
-                width : 601px;
-            }
-            img.cc{
-                width : 601px;
-            }
-            img.first{
-                width : 601px;
-            }
-        </style>
-    </head>
-    <body bgcolor="black">
-        <hr style="border: 5px solid rgb(0, 0, 0);">
-<hr><h3><p style="text-align: right;"><a href="index.html" class="home-btn"> - Home</a><a href="earth.html" class="btn"> - Earth</a><a href="animals.html" class="btn"> - Animals</a><a href="space.html" class="btn"> - Space</a><a href="mysteries.html" class="btn"> - Mysteries</a><a href="history.html" class="btn"> - History</a></p></h3><hr>
-        <h1><u><i><b>Black Hole</b></i></u></h1><center><img class="blackhole" src="images/black hole.jpg"></center>
-        <ol><h2><li>What is a Black Hole?</li></h2>
-        <h3>A black hole is a region in space where the pull of gravity is so incredibly strong that nothing—not even light—can escape from it. Because no light can get out, black holes are invisible to the naked eye; they can only be detected using specialized space telescopes.</h3>
-        <hr><h2><li>How are Black Holes Created?</li></h2>
-        <h3>Black holes typically form when a massive star reaches the end of its life cycle and collapses under its own weight.
-            <ul>
-                <center><img class="sn" src="images/supernova explosion.jpg"></center>
-                <li>Supernova Explosion: When a star much larger than our Sun runs out of fuel, it collapses inward and then explodes in a massive event called a supernova.</li>
-                <center><img class="cc" src="images/the core collapse.jpg"></center>
-                <li>The Core Collapse: The remaining core shrinks into a tiny, dense point. If the core's mass is large enough, it collapses completely into a singularity.</li>
-            </ul>
-        </h3>
-        <hr><h2><li>The Main Parts of a Black Hole</li></h2>
-        <h3>To understand a black hole, we look at its three primary components:
-            <ul>
-                <li>Singularity: The very center of the black hole where all its mass is crushed into a point of zero volume. Here, the density and gravity become infinite.</li>
-                <li>Event Horizon: This is the "point of no return." Once anything (including light) crosses this boundary, the gravitational pull is too strong to ever escape.</li>
-                <li>Accretion Disk: A swirling disk of gas, dust, and matter orbiting the black hole at high speeds. This matter heats up and emits intense light and X-rays before being swallowed.</li>
-            </ul>
-        </h3>
-        <hr><h2><li>Types of Black Holes</li></h2>
-        <h3>Astronomers generally classify black holes into four categories based on their size:
-            <ul>
-                <li>Stellar Black Holes: Formed by the collapse of individual massive stars (5 to 20 times the mass of our Sun).</li>
-                <li>Supermassive Black Holes: Millions or billions of times more massive than the Sun. These are found at the centers of almost all large galaxies. (Example: Sagittarius A* at the center of our Milky Way).</li>
-                <li>Intermediate Black Holes: These are mid-sized black holes, thought to be formed when smaller black holes merge.</li>
-                <li>Primordial Black Holes: Theoretical tiny black holes that may have formed in the first moments after the Big Bang.</li>
-            </ul>
-        </h3>
-        <hr><h2><li>Impact on Time and Space</li></h2>
-        <h3>According to Albert Einstein’s Theory of General Relativity, black holes significantly warp the fabric of space and time.
-            <ul>
-                <li>Time Dilation: Due to the extreme gravity, time actually slows down near a black hole.</li>
-                <li>The Paradox: If you were to spend an hour near a black hole's edge, years or even decades might have passed for someone back on Earth.</li>
-            </ul>
-        </h3>
-        <hr><h2><li>Interesting Facts</li></h2>
-        <h3>
-            <ul>
-                <li>Spaghettification: If an object falls into a black hole, the difference in gravity between its top and bottom is so vast that the object is stretched out like a long, thin noodle—hence the term "spaghettification."</li>
-                <center><img class="first" src="images/black hole fp.png"></center>
-                <li>The First Photo: In 2019, the Event Horizon Telescope captured the first-ever actual image of a black hole located in the M87 galaxy, 55 million light-years away from Earth.</li>
-            </ul>
-        </h3></ol>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Hole - I T L</title>
+    <style>
+        /* මූලික සැකසුම් */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #010103; /* ඉතා තද අභ්‍යවකාශ කළු පැහැය */
+            color: #ececec;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-image: radial-gradient(circle at center, #0a0a1a 0%, #010103 100%);
+        }
 
-        <hr style="border-top: 3px dotted rgb(255, 255, 255);">
-             
-    </body>
+        /* Navigation Bar */
+        nav {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 1px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        nav a {
+            color: #94a3b8;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 17px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #f59e0b; /* කළු කුහරයක ආලෝකය වැනි තැඹිලි පැහැයක් */
+            text-shadow: 0 0 10px #f59e0b;
+        }
+
+        /* මාතෘකාව */
+        h1 {
+            font-size: clamp(35px, 8vw, 65px);
+            text-align: center;
+            color: #fff;
+            margin-top: 50px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #fff, #f59e0b, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* පින්තූර සැකසුම */
+        .img-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .main-img {
+            max-width: 85%;
+            height: auto;
+            border-radius: 50%; /* කළු කුහරයක හැඩයට ගැලපෙන ලෙස */
+            box-shadow: 0 0 60px rgba(245, 158, 11, 0.3);
+            border: 2px solid #1e1e1e;
+        }
+
+        .info-img {
+            max-width: 70%;
+            height: auto;
+            border-radius: 12px;
+            margin: 20px 0;
+            border: 1px solid #333;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+        }
+
+        /* අන්තර්ගතය */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 40px;
+            border-radius: 25px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+        }
+
+        h2 {
+            color: #f59e0b; /* Accretion disk color */
+            font-size: 32px;
+            margin-bottom: 20px;
+            font-weight: 300;
+            display: flex;
+            align-items: center;
+        }
+
+        h2 span {
+            font-size: 40px;
+            margin-right: 15px;
+            color: #7c3aed; /* Singularity color */
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: normal;
+            color: #cbd5e1;
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        li::before {
+            content: "●";
+            position: absolute;
+            left: 0;
+            color: #7c3aed;
+            filter: blur(1px);
+        }
+
+        strong {
+            color: #fff;
+            border-bottom: 1px solid #f59e0b;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #333, transparent);
+            margin: 50px 0;
+        }
+
+        .dotted-hr {
+            border-top: 2px dotted #333;
+            margin-top: 80px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div class="container">
+        <h1>Black Hole</h1>
+
+        <div class="img-container">
+            <img class="main-img" src="images/black hole.jpg" alt="The Void">
+        </div>
+
+        <section>
+            <h2><span>01.</span> What is a Black Hole?</h2>
+            <h3>A black hole is a region in space where the pull of gravity is so incredibly strong that nothing—not even light—can escape from it. Because no light can get out, black holes are invisible to the naked eye; they can only be detected using specialized space telescopes.</h3>
+        </section>
+
+        <section>
+            <h2><span>02.</span> How are Black Holes Created?</h2>
+            <h3>Black holes typically form when a massive star reaches the end of its life cycle and collapses under its own weight.</h3>
+            <div class="img-container">
+                <img class="info-img" src="images/supernova explosion.jpg" alt="Supernova">
+            </div>
+            <ul>
+                <li><strong>Supernova Explosion:</strong> When a star much larger than our Sun runs out of fuel, it collapses inward and then explodes in a massive event called a supernova.</li>
+            </ul>
+            <div class="img-container">
+                <img class="info-img" src="images/the core collapse.jpg" alt="Core Collapse">
+            </div>
+            <ul>
+                <li><strong>The Core Collapse:</strong> The remaining core shrinks into a tiny, dense point. If the core's mass is large enough, it collapses completely into a singularity.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2><span>03.</span> The Main Parts of a Black Hole</h2>
+            <ul>
+                <li><strong>Singularity:</strong> The very center of the black hole where all its mass is crushed into a point of zero volume. Here, gravity become infinite.</li>
+                <li><strong>Event Horizon:</strong> This is the "point of no return." Once anything crosses this boundary, the gravitational pull is too strong to escape.</li>
+                <li><strong>Accretion Disk:</strong> A swirling disk of gas and dust orbiting the black hole at high speeds, heating up and emitting intense light.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2><span>04.</span> Types of Black Holes</h2>
+            <ul>
+                <li><strong>Stellar Black Holes:</strong> Formed by the collapse of individual massive stars.</li>
+                <li><strong>Supermassive Black Holes:</strong> Millions or billions of times more massive than the Sun, found at the centers of large galaxies.</li>
+                <li><strong>Intermediate Black Holes:</strong> Mid-sized black holes formed when smaller ones merge.</li>
+                <li><strong>Primordial Black Holes:</strong> Theoretical tiny black holes that may have formed after the Big Bang.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2><span>05.</span> Impact on Time and Space</h2>
+            <h3>According to Albert Einstein’s Theory of General Relativity, black holes significantly warp the fabric of space and time.</h3>
+            <ul>
+                <li><strong>Time Dilation:</strong> Due to extreme gravity, time actually slows down near a black hole.</li>
+                <li><strong>The Paradox:</strong> Spending an hour near a black hole could mean years have passed back on Earth.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2><span>06.</span> Interesting Facts</h2>
+            <ul>
+                <li><strong>Spaghettification:</strong> Objects falling in are stretched out like long, thin noodles due to the vast difference in gravity.</li>
+            </ul>
+            <div class="img-container">
+                <img class="info-img" src="images/black hole fp.png" alt="M87 Black Hole First Photo">
+            </div>
+            <ul>
+                <li><strong>The First Photo:</strong> In 2019, the Event Horizon Telescope captured the first image of a black hole in the M87 galaxy.</li>
+            </ul>
+        </section>
+
+        <div class="dotted-hr"></div>
+    </div>
+
+</body>
 </html>
