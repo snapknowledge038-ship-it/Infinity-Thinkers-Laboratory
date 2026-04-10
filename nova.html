@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="si">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nova - I T L</title>
     <style>
-        /* මූලික සැකසුම් */
+        /* Base Settings */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #020205;
@@ -43,7 +43,7 @@
             text-shadow: 0 0 10px #3b82f6;
         }
 
-        /* මාතෘකාව */
+        /* Title */
         h1 {
             font-size: clamp(40px, 10vw, 85px);
             text-align: center;
@@ -56,7 +56,7 @@
             font-weight: 900;
         }
 
-        /* පින්තූර සැකසුම */
+        /* Image Styling */
         .img-container {
             display: flex;
             justify-content: center;
@@ -79,7 +79,7 @@
             box-shadow: 0 0 50px rgba(96, 165, 248, 0.4);
         }
 
-        /* අන්තර්ගතය */
+        /* Content Sections */
         .container {
             max-width: 1000px;
             margin: 0 auto;
@@ -122,7 +122,7 @@
             color: #ffffff;
         }
 
-        /* වගුව සැකසුම */
+        /* Table Design */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -146,6 +146,7 @@
         .footer-hr {
             border-top: 3px dotted #1e3a8a;
             margin-top: 80px;
+            margin-bottom: 50px;
         }
 
     </style>
@@ -170,22 +171,22 @@
         </div>
 
         <section>
-            <h2>What is a Nova? (නෝවා යනු කුමක්ද?)</h2>
-            <h3>"නෝවා" යනු තාරකා පද්ධතියක දීප්තිය ක්ෂණිකව සහ තාවකාලිකව ඉහළ යාමකි. ලතින් භාෂාවෙන් <strong>"Nova Stella"</strong> යන්නෙහි තේරුම "නව තරුව" යන්නයි. අතීතයේ මිනිසුන් මෙය අලුත් තරුවක් ඉපදීමක් ලෙස වරදවා වටහා ගත්තද, ඇත්ත වශයෙන්ම මෙය පවතින තරුවක මතුපිට සිදුවන දැවැන්ත න්‍යෂ්ටික පිපිරීමකි.</h3>
+            <h2>What is a Nova?</h2>
+            <h3>A "Nova" is a sudden and temporary increase in the brightness of a star system. In Latin, <strong>"Nova Stella"</strong> means "New Star." While ancient observers often mistook this for the birth of a new star, it is actually a massive nuclear explosion occurring on the surface of an existing star.</h3>
         </section>
 
         <section>
-            <h2>How it Occurs (පිපිරීම සිදුවන ආකාරය)</h2>
+            <h2>How it Occurs</h2>
             <div class="img-container">
                 <img class="nova-img" src="images/White Dwarf.jpg" alt="White Dwarf">
                 <img class="nova-img" src="images/red gient.jpg" alt="Red Giant">
             </div>
-            <h3>මෙය සාමාන්‍යයෙන් තරු දෙකක් පවතින පද්ධතිවල සිදුවේ:
+            <h3>This typically happens in binary star systems (systems with two stars):
                 <ul>
-                    <li>එක් තරුවක් <strong>White Dwarf</strong> (සුදු මිටි තරුවක්) විය යුතුය.</li>
-                    <li>අනෙක් තරුව සාමාන්‍ය තරුවක් හෝ <strong>Red Giant</strong> (රතු යෝධ තරුවක්) වේ.</li>
+                    <li>One star must be a <strong>White Dwarf</strong> (a dense, collapsed star).</li>
+                    <li>The other is usually a normal star or a <strong>Red Giant</strong>.</li>
                 </ul>
-                සුදු මිටි තරුවේ අධික ගුරුත්වාකර්ෂණය මගින් අනෙක් තරුවේ ඇති හයිඩ්‍රජන් වායුව තමා වෙත ඇද ගනී. මෙම වායුව මතුපිට එක් රැස් වී උෂ්ණත්වය ඉහළ ගිය විට, දැවැන්ත න්‍යෂ්ටික පිපිරීමක් ඇති වේ.
+                The extreme gravity of the White Dwarf pulls hydrogen gas from its companion star. As this gas accumulates on the surface and the temperature rises, it triggers a massive nuclear explosion.
             </h3>
         </section>
 
@@ -198,19 +199,19 @@
                     <th>Supernova</th>
                 </tr>
                 <tr>
-                    <td>ස්වභාවය</td>
-                    <td>තරුව මතුපිට සිදුවන පිපිරීමකි.</td>
-                    <td>සම්පූර්ණ තරුවම විනාශ වන පිපිරීමකි.</td>
+                    <td><strong>Nature</strong></td>
+                    <td>An explosion on the star's surface.</td>
+                    <td>A cataclysmic explosion that destroys the entire star.</td>
                 </tr>
                 <tr>
-                    <td>ප්‍රතිඵලය</td>
-                    <td>තරුව ඉතිරි වේ (නැවත පිපිරිය හැක).</td>
-                    <td>Black Hole හෝ Neutron Star එකක් ඉතිරි වේ.</td>
+                    <td><strong>Outcome</strong></td>
+                    <td>The star survives (can explode again).</td>
+                    <td>Leaves behind a Black Hole or a Neutron Star.</td>
                 </tr>
                 <tr>
-                    <td>දීප්තිය</td>
-                    <td>ඉතා දීප්තිමත්ය.</td>
-                    <td>සම්පූර්ණ මන්දාකිනියකට වඩා දීප්තිමත් විය හැක.</td>
+                    <td><strong>Brightness</strong></td>
+                    <td>Very bright.</td>
+                    <td>Can outshine an entire galaxy.</td>
                 </tr>
             </table>
         </section>
@@ -218,9 +219,9 @@
         <section>
             <h2>Key Characteristics</h2>
             <ul>
-                <li><strong>Brightness:</strong> තරුවක සාමාන්‍ය දීප්තිය මෙන් දහස් ගුණයක් ඉහළ යා හැක.</li>
-                <li><strong>Duration:</strong> මෙම දීප්තිය දින කිහිපයක් හෝ සති කිහිපයක් පැවතිය හැක.</li>
-                <li><strong>Recurrence:</strong> තරුව විනාශ නොවන නිසා, වසර ගණනාවකට පසු නැවතත් නෝවා පිපිරීමක් සිදුවිය හැක.</li>
+                <li><strong>Brightness:</strong> The star's luminosity can increase by thousands of times its normal state.</li>
+                <li><strong>Duration:</strong> The peak brightness can last for several days or weeks before fading.</li>
+                <li><strong>Recurrence:</strong> Since the star is not destroyed, a nova explosion can happen again after many years.</li>
             </ul>
         </section>
 
