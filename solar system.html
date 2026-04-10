@@ -1,98 +1,281 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Solar System - I T L</title>
-        <style>
-            body {
-                font-family: Comic Sans MS;
-            }
-            body{
-                color:rgb(255, 255, 255);
-            }
-            h1 {
-                font-size: 62px;
-            }
-            h2 {
-                font-size: 40px;
-            }
-            h3 {
-                font-size: 28px;
-            }
-            img{
-                width : 601px;
-            }
-        </style>
-    </head>
-    <body bgcolor="black">
-        <hr style="border: 5px solid rgb(0, 0, 0);">
-<hr><h3><p style="text-align: right;"><a href="index.html" class="home-btn"> - Home</a><a href="earth.html" class="btn"> - Earth</a><a href="animals.html" class="btn"> - Animals</a><a href="space.html" class="btn"> - Space</a><a href="mysteries.html" class="btn"> - Mysteries</a><a href="history.html" class="btn"> - History</a></p></h3><hr>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System - I T L</title>
+    <style>
+        /* මූලික සැකසුම් */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #05050a;
+            color: #e2e8f0;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-image: radial-gradient(circle at center, #0a0a20 0%, #05050a 100%);
+        }
 
-        <h1><u><i><b>Solar System</b></i></u></h1><center><img src="images/Solar System.jpg"></center>
-    <hr><h2>What is the Solar System?</h2>
-        <h3>The Solar System is a gravity-bound system consisting of the Sun and the objects that orbit it. This includes 8 major planets, several dwarf planets, moons, asteroids, and comets. The planets are generally divided into two categories:
-            <li>1.	Inner (Terrestrial) Planets: Small, rocky worlds.</li>
-            <li>2.	Outer (Jovian) Planets: Massive worlds made of gas and ice.</li>
-        </h3>
-    <hr><h2>The Inner Planets (Terrestrial Planets)</h2>
-        <h3>These planets are closest to the Sun and are characterized by solid, rocky surfaces.
-            <li>•	Mercury: The smallest planet and the closest to the Sun. It has almost no atmosphere to trap heat, leading to extreme temperature swings.</li><center><img src="images/Mercury.jpg"></center>
-            <li>•	Venus: Often called Earth's "sister planet" due to its similar size. It is the hottest planet in our solar system because of a thick, toxic atmosphere that traps heat.</li><center><img src="images/Venus.jpg"></center>
-            <li>•	Earth: Our home and the only planet known to harbor life. It is the only planet with liquid water on its surface.</li><center><img src="images/Earth.jpg"></center>
-            <li>•	Mars: Known as the "Red Planet" because of iron oxide (rust) on its surface. It features the largest volcano in the solar system, Olympus Mons.</li><center><img src="images/Mars.jpg"></center>
-        </h3>
-    <hr><h2>The Outer Planets (Gas & Ice Giants)</h2>    
-        <h3>These planets are located beyond the asteroid belt. They are massive and lack a solid surface.
-            <li>•	Jupiter: The largest planet in the solar system. It is famous for its Great Red Spot, a giant storm that has been raging for centuries.</li><center><img src="images/Jupiter.png"></center>
-            <li>•	Saturn: Best known for its spectacular and complex ring system made of ice and dust. It is the second-largest planet.</li><center><img src="images/Saturn.jpg"></center>
-            <li>•	Uranus: Classified as an "Ice Giant." It has a unique tilt, rotating on its side, and appears blue-green due to methane gas.</li><center><img src="images/Uranus.jpg"></center>
-            <li>•	Neptune: The farthest planet from the Sun. It is a dark, cold, and incredibly windy world with supersonic winds.</li><center><img src="images/Neptune.jpg"></center>
-        </h3>
-    <hr><h2>Quick Reference Table</h2>    
-        <center><h3>
-            <table border="1">
+        /* Navigation Bar */
+        nav {
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 2px solid #1e40af;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        nav a {
+            color: #93c5fd;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 17px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px #3b82f6;
+        }
+
+        /* මාතෘකාව */
+        h1 {
+            font-size: clamp(40px, 8vw, 80px);
+            text-align: center;
+            margin-top: 50px;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #fbbf24, #f59e0b, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+
+        /* පින්තූර සැකසුම */
+        .img-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .planet-img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 0 40px rgba(59, 130, 246, 0.2);
+            border: 1px solid #1e40af;
+            transition: 0.4s;
+        }
+
+        .planet-img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 50px rgba(59, 130, 246, 0.4);
+        }
+
+        /* අන්තර්ගතය */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(15, 23, 42, 0.7);
+            padding: 40px;
+            border-radius: 30px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+        }
+
+        h2 {
+            color: #fbbf24;
+            font-size: 32px;
+            margin-bottom: 25px;
+            border-left: 6px solid #1e40af;
+            padding-left: 20px;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: normal;
+            color: #cbd5e1;
+            margin: 0;
+        }
+
+        .planet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .planet-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .planet-card img {
+            width: 100%;
+            border-radius: 15px;
+            margin-bottom: 15px;
+        }
+
+        strong {
+            color: #ffffff;
+            display: block;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        /* වගුව සැකසුම */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #1e40af;
+        }
+
+        th {
+            background-color: #1e40af;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        .footer-hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #1e40af, transparent);
+            margin: 80px 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div class="container">
+        <h1>Solar System</h1>
+
+        <div class="img-container">
+            <img class="planet-img" src="images/Solar System.jpg" alt="Our Solar System">
+        </div>
+
+        <section>
+            <h2>What is the Solar System? (සෞරග්‍රහ මණ්ඩලය යනු කුමක්ද?)</h2>
+            <h3>සෞරග්‍රහ මණ්ඩලය යනු සූර්යයා සහ එය වටා ගුරුත්වාකර්ෂණයෙන් බැඳී කක්ෂගත වී ඇති වස්තූන් සමූහයයි. මෙයට ප්‍රධාන ග්‍රහලෝක 8 ක්, වාමන ග්‍රහලෝක, චන්ද්‍රයන්, ග්‍රහක සහ වල්ගාතරු ඇතුළත් වේ.</h3>
+        </section>
+
+        <section>
+            <h2>Inner Planets (අභ්‍යන්තර ග්‍රහලෝක)</h2>
+            <div class="planet-grid">
+                <div class="planet-card">
+                    <img src="images/Mercury.jpg" alt="Mercury">
+                    <strong>Mercury (බුධ)</strong>
+                    හිරුට සමීපතම සහ කුඩාම ග්‍රහලෝකයයි.
+                </div>
+                <div class="planet-card">
+                    <img src="images/Venus.jpg" alt="Venus">
+                    <strong>Venus (සිකුරු)</strong>
+                    සෞරග්‍රහ මණ්ඩලයේ උණුසුම්ම ග්‍රහලෝකයයි.
+                </div>
+                <div class="planet-card">
+                    <img src="images/Earth.jpg" alt="Earth">
+                    <strong>Earth (පෘථිවිය)</strong>
+                    ජීවය පවතින බවට තහවුරු වූ එකම ග්‍රහලෝකයයි.
+                </div>
+                <div class="planet-card">
+                    <img src="images/Mars.jpg" alt="Mars">
+                    <strong>Mars (අඟහරු)</strong>
+                    පෘෂ්ඨයේ ඇති යකඩ ඔක්සයිඩ් නිසා රතු පැහැයෙන් දිස්වේ.
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Outer Planets (බාහිර ග්‍රහලෝක)</h2>
+            <div class="planet-grid">
+                <div class="planet-card">
+                    <img src="images/Jupiter.png" alt="Jupiter">
+                    <strong>Jupiter (බ්‍රහස්පති)</strong>
+                    සෞරග්‍රහ මණ්ඩලයේ විශාලම ග්‍රහලෝකයයි.
+                </div>
+                <div class="planet-card">
+                    <img src="images/Saturn.jpg" alt="Saturn">
+                    <strong>Saturn (සෙනසුරු)</strong>
+                    අලංකාර වළලු පද්ධතියකට හිමිකම් කියයි.
+                </div>
+                <div class="planet-card">
+                    <img src="images/Uranus.jpg" alt="Uranus">
+                    <strong>Uranus (යුරේනස්)</strong>
+                    අක්ෂය වටා ඇලව භ්‍රමණය වන ගෑස් දැවැන්තයෙකි.
+                </div>
+                <div class="planet-card">
+                    <img src="images/Neptune.jpg" alt="Neptune">
+                    <strong>Neptune (නෙප්චූන්)</strong>
+                    සූර්යයාගේ සිට ඈතින්ම පිහිටි අධික ශීතල ග්‍රහලෝකයයි.
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Quick Comparison Table</h2>
+            <table>
                 <tr>
                     <th>Planet</th>
                     <th>Key Characteristic</th>
                 </tr>
                 <tr>
                     <td>Mercury</td>
-                    <td>Smallest and closest to the Sun</td>
-                </tr>
-                <tr>
-                    <td>Venus</td>
-                    <td>Hottest and brightest planet</td>
+                    <td>Smallest & Closest to Sun</td>
                 </tr>
                 <tr>
                     <td>Earth</td>
-                    <td>Only planet with confirmed life</td>
-                </tr>
-                <tr>
-                    <td>Mars</td>
-                    <td>The Red Planet</td>
+                    <td>Liquid Water & Life</td>
                 </tr>
                 <tr>
                     <td>Jupiter</td>
-                    <td>The largest planet</td>
+                    <td>Gas Giant (Largest)</td>
                 </tr>
                 <tr>
                     <td>Saturn</td>
-                    <td>Most extensive ring system</td>
-                </tr>
-                <tr>
-                    <td>Uranus</td>
-                    <td>Rotates on its side (Ice Giant)</td>
-                </tr>
-                <tr>
-                    <td>Neptune</td>
-                    <td>Farthest from the Sun</td>
+                    <td>Spectacular Rings</td>
                 </tr>
             </table>
-        </h3></center>
-    <hr><h2>Dwarf Planets</h2>   
-            <center><img src="images/Pluto.jpg"></center>
-        <h3>In the past, Pluto was considered the ninth planet. However, in 2006, it was reclassified as a Dwarf Planet. Other notable dwarf planets include Eris, Ceres, Haumea, and Makemake.</h3>
+        </section>
 
-        <hr style="border-top: 3px dotted rgb(255, 255, 255);">
-        
-    </body>
+        <section>
+            <h2>Dwarf Planets (වාමන ග්‍රහලෝක)</h2>
+            <div class="img-container">
+                <img class="planet-img" src="images/Pluto.jpg" alt="Pluto">
+            </div>
+            <h3>පෙරදී ප්ලූටෝ 9 වන ග්‍රහලෝකය ලෙස සැලකූ නමුත් 2006 වසරේ සිට එය 'වාමන ග්‍රහලෝකයක්' ලෙස වර්ගීකරණය කරන ලදී. ඊරිස් (Eris) සහ සීරිස් (Ceres) මෙවැනි තවත් වාමන ග්‍රහලෝක කිහිපයකි.</h3>
+        </section>
+
+        <div class="footer-hr"></div>
+    </div>
+
+</body>
 </html>
