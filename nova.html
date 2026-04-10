@@ -1,96 +1,231 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Nova - I T L</title>
-        <style>
-            body {
-                font-family: Comic Sans MS;
-            }
-            body{
-                color:rgb(255, 255, 255);
-            }
-            h1 {
-                font-size: 62px;
-            }
-            h2 {
-                font-size: 40px;
-            }
-            h3 {
-                font-size: 28px;
-            }
-            img.nova{
-                width : 601px;
-            }
-            img.sp{
-                width : 601px;
-            }
-            img.wd{
-                width : 601px;
-            }
-            img.rg{
-                width : 601px;
-            }
-        </style>
-    </head>
-    <body bgcolor="black">
-        <hr style="border: 5px solid rgb(0, 0, 0);">
-<hr><h3><p style="text-align: right;"><a href="index.html" class="home-btn"> - Home</a><a href="earth.html" class="btn"> - Earth</a><a href="animals.html" class="btn"> - Animals</a><a href="space.html" class="btn"> - Space</a><a href="mysteries.html" class="btn"> - Mysteries</a><a href="history.html" class="btn"> - History</a></p></h3><hr>
-        <h1><u><i><b>Nova</b></i></u></h1><center><img class="nova" src="images/nova.jpg"><img class="sp" src="images/supernova explosion.jpg"></center>
-        <h3>A "Nova" is a sudden and temporary increase in the brightness of a star system. In Latin, Nova Stella translates to "New Star." In ancient times, when people observed such explosions in the sky, they mistakenly thought a brand-new star had been born, which is how it got its name. However, it is actually a massive nuclear explosion occurring on the surface of an existing star.</h3>
-                    <hr>
-                    <center><img class="wd" src="images/White Dwarf.jpg"><img class="rg" src="images/red gient.jpg"></center>
-        <h3>
-            <ul>
-                <li>One star must be a White Dwarf (the dense core remaining from a dead star).</li>
-                <li>The other star is usually a normal star or a Red Giant.</li>
-            </ul>The intense gravity of the White Dwarf pulls hydrogen gas from its companion star. This gas accumulates on the surface of the White Dwarf and becomes extremely hot. Once the temperature and pressure reach a critical point, a rapid Nuclear Fusion process ignites on the surface, resulting in a massive explosion.
-        </h3>
-        <hr>
-        <h3>
-            <ul>
-                <li>Brightness: The star’s brightness can increase by thousands of times its normal state.</li>
-                <li>Duration: This peak brightness can last for several days or weeks before gradually fading away.</li>
-                <li>Recurrence: Unlike a Supernova, the star is not completely destroyed during a Nova. Therefore, the same star can undergo another Nova explosion years later (known as Recurrent Novae).</li>
-            </ul>
-        </h3>
-        <hr>
-        <h3><table border="1">
-            <tr>
-                <th><b>Feature</b></th>
-                <th><b>Nova</b></th>
-                <th><b>Supernova</b></th>
-            </tr>
-    
-            <tr>
-                <td>Nature</td>
-                <td>An explosion on the surface of the star.</td>
-                <td>The entire star explodes and is destroyed.</td>
-            </tr>
-    
-            <tr>
-                <td>Outcome</td>
-                <td>The star survives.</td>
-                <td>The star is destroyed or leaves behind a Black Hole/Neutron Star.</td>
-            </tr>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova - I T L</title>
+    <style>
+        /* මූලික සැකසුම් */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #020205;
+            color: #e2e8f0;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-image: radial-gradient(circle at center, #0a1128 0%, #020205 100%);
+        }
 
-            <tr>
-                <td>Brightness</td>
-                <td>Very bright, but not as much as a Supernova.</td>
-                <td>Can be brighter than an entire galaxy.</td>
-            </tr>
-        </table>
-        </h3>
-        <hr>
-        <h3>
-            <ol>
-                <li>Classical Novae: Extremely bright explosions that have been observed only once in a specific system.</li>
-                <li>Recurrent Novae: Stars that explode repeatedly, typically every 10 to 100 years.</li>
-                <li>Dwarf Novae: Smaller outbursts caused by instabilities in the "Accretion Disk" (the disk of gas surrounding the White Dwarf).</li>
-            </ol>
-        </h3>
-        <hr>
-        <h3>Nova explosions contribute significantly to the distribution of chemical elements in the universe (such as Lithium). Furthermore, scientists study these events to measure cosmic distances and to better understand the evolution of stars.</h3>
-        <hr style="border-top: 3px dotted rgb(255, 255, 255);">
-        
-    </body>
+        /* Navigation Bar */
+        nav {
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 2px solid #1e3a8a;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        nav a {
+            color: #60a5fa;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 17px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px #3b82f6;
+        }
+
+        /* මාතෘකාව */
+        h1 {
+            font-size: clamp(40px, 10vw, 85px);
+            text-align: center;
+            margin-top: 50px;
+            letter-spacing: 15px;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #ffffff, #60a5fa, #1e3a8a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+
+        /* පින්තූර සැකසුම */
+        .img-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+
+        .nova-img {
+            max-width: 45%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(96, 165, 248, 0.2);
+            border: 1px solid #1e3a8a;
+            transition: 0.4s;
+        }
+
+        .nova-img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 50px rgba(96, 165, 248, 0.4);
+        }
+
+        /* අන්තර්ගතය */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(15, 23, 42, 0.6);
+            padding: 40px;
+            border-radius: 25px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+        }
+
+        h2 {
+            color: #60a5fa;
+            font-size: 32px;
+            margin-bottom: 25px;
+            border-left: 5px solid #60a5fa;
+            padding-left: 20px;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: normal;
+            color: #cbd5e1;
+            margin: 0;
+        }
+
+        ul, ol {
+            padding-left: 25px;
+            margin-top: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+        }
+
+        strong {
+            color: #ffffff;
+        }
+
+        /* වගුව සැකසුම */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #1e3a8a;
+        }
+
+        th {
+            background-color: #1e3a8a;
+            color: #ffffff;
+        }
+
+        .footer-hr {
+            border-top: 3px dotted #1e3a8a;
+            margin-top: 80px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div class="container">
+        <h1>Nova</h1>
+
+        <div class="img-container">
+            <img class="nova-img" src="images/nova.jpg" alt="Nova Explosion">
+            <img class="nova-img" src="images/supernova explosion.jpg" alt="Supernova">
+        </div>
+
+        <section>
+            <h2>What is a Nova? (නෝවා යනු කුමක්ද?)</h2>
+            <h3>"නෝවා" යනු තාරකා පද්ධතියක දීප්තිය ක්ෂණිකව සහ තාවකාලිකව ඉහළ යාමකි. ලතින් භාෂාවෙන් <strong>"Nova Stella"</strong> යන්නෙහි තේරුම "නව තරුව" යන්නයි. අතීතයේ මිනිසුන් මෙය අලුත් තරුවක් ඉපදීමක් ලෙස වරදවා වටහා ගත්තද, ඇත්ත වශයෙන්ම මෙය පවතින තරුවක මතුපිට සිදුවන දැවැන්ත න්‍යෂ්ටික පිපිරීමකි.</h3>
+        </section>
+
+        <section>
+            <h2>How it Occurs (පිපිරීම සිදුවන ආකාරය)</h2>
+            <div class="img-container">
+                <img class="nova-img" src="images/White Dwarf.jpg" alt="White Dwarf">
+                <img class="nova-img" src="images/red gient.jpg" alt="Red Giant">
+            </div>
+            <h3>මෙය සාමාන්‍යයෙන් තරු දෙකක් පවතින පද්ධතිවල සිදුවේ:
+                <ul>
+                    <li>එක් තරුවක් <strong>White Dwarf</strong> (සුදු මිටි තරුවක්) විය යුතුය.</li>
+                    <li>අනෙක් තරුව සාමාන්‍ය තරුවක් හෝ <strong>Red Giant</strong> (රතු යෝධ තරුවක්) වේ.</li>
+                </ul>
+                සුදු මිටි තරුවේ අධික ගුරුත්වාකර්ෂණය මගින් අනෙක් තරුවේ ඇති හයිඩ්‍රජන් වායුව තමා වෙත ඇද ගනී. මෙම වායුව මතුපිට එක් රැස් වී උෂ්ණත්වය ඉහළ ගිය විට, දැවැන්ත න්‍යෂ්ටික පිපිරීමක් ඇති වේ.
+            </h3>
+        </section>
+
+        <section>
+            <h2>Comparison: Nova vs Supernova</h2>
+            <table>
+                <tr>
+                    <th>Feature</th>
+                    <th>Nova</th>
+                    <th>Supernova</th>
+                </tr>
+                <tr>
+                    <td>ස්වභාවය</td>
+                    <td>තරුව මතුපිට සිදුවන පිපිරීමකි.</td>
+                    <td>සම්පූර්ණ තරුවම විනාශ වන පිපිරීමකි.</td>
+                </tr>
+                <tr>
+                    <td>ප්‍රතිඵලය</td>
+                    <td>තරුව ඉතිරි වේ (නැවත පිපිරිය හැක).</td>
+                    <td>Black Hole හෝ Neutron Star එකක් ඉතිරි වේ.</td>
+                </tr>
+                <tr>
+                    <td>දීප්තිය</td>
+                    <td>ඉතා දීප්තිමත්ය.</td>
+                    <td>සම්පූර්ණ මන්දාකිනියකට වඩා දීප්තිමත් විය හැක.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>Key Characteristics</h2>
+            <ul>
+                <li><strong>Brightness:</strong> තරුවක සාමාන්‍ය දීප්තිය මෙන් දහස් ගුණයක් ඉහළ යා හැක.</li>
+                <li><strong>Duration:</strong> මෙම දීප්තිය දින කිහිපයක් හෝ සති කිහිපයක් පැවතිය හැක.</li>
+                <li><strong>Recurrence:</strong> තරුව විනාශ නොවන නිසා, වසර ගණනාවකට පසු නැවතත් නෝවා පිපිරීමක් සිදුවිය හැක.</li>
+            </ul>
+        </section>
+
+        <div class="footer-hr"></div>
+    </div>
+
+</body>
 </html>
