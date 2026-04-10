@@ -1,53 +1,196 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Medusa - I T L</title>
-        <style>
-            body {
-                font-family: Comic Sans MS;
-            }
-            body{
-                color:rgb(255, 255, 255);
-            }
-            h1 {
-                font-size: 62px;
-            }
-            h2 {
-                font-size: 40px;
-            }
-            h3 {
-                font-size: 28px;
-            }
-            img{
-                width : 601px;
-            }
-        </style>
-    </head>
-    <body bgcolor="black">
-        <hr style="border: 5px solid rgb(0, 0, 0);">
-<hr><h3><p style="text-align: right;"><a href="index.html" class="home-btn"> - Home</a><a href="earth.html" class="btn"> - Earth</a><a href="animals.html" class="btn"> - Animals</a><a href="space.html" class="btn"> - Space</a><a href="mysteries.html" class="btn"> - Mysteries</a><a href="history.html" class="btn"> - History</a></p></h3><hr>
-        <h1><u><i><b>Medusa</b></i></u></h1><center><img src="images/medusa.jpg"></center>
-    <hr><h2>Introduction</h2>
-        <h3>While often depicted as a terrifying monster in popular culture, the story of Medusa according to the Roman poet Ovid is one of profound tragedy. In this version, she was not born a monster but was a beautiful mortal woman who became a victim of divine cruelty and social injustice.</h3>
-    <hr><h2>The Priestess of Athena</h2>
-        <h3>In her youth, Medusa was a maiden of extraordinary beauty, renowned especially for her long, flowing hair. She served as a devoted priestess in the Temple of Athena, the goddess of wisdom and war. Because of her role, she was required to remain a virgin and uphold the purity of the temple.</h3>
-    <hr><h2>The Tragedy at the Temple</h2>
-        <h3>Medusa’s beauty caught the eye of Poseidon, the god of the sea. Despite her devotion to the temple, Poseidon pursued her. When Medusa fled to Athena’s temple for sanctuary, Poseidon cornered her and raped her within the sacred walls.</h3>
-    <hr><h2>Athena’s Curse (Victim Blaming)</h2>
-        <h3>Instead of punishing Poseidon for his crime, the goddess Athena was enraged that her temple had been "defiled." She directed her anger at the victim, Medusa. To punish her, Athena transformed Medusa into a hideous creature:
-            <li>•	Serpent Hair: Her beautiful hair was turned into a nest of venomous snakes.</li>
-            <li>•	The Stony Stare: Athena cursed her eyes so that anyone who looked directly at Medusa would instantly be turned into stone.</li>
-            This curse ensured that Medusa would live in total isolation, as she could never look at another living being without destroying them.
-        </h3>
-    <hr><h2>Death and the Hero Perseus</h2>
-        <h3>Medusa’s life of suffering ended at the hands of the hero Perseus. Sent on a quest to bring back her head, Perseus was aided by Athena and other gods. Using a polished shield to see only her reflection (avoiding her direct gaze), he beheaded Medusa while she was sleeping. Even in death, her severed head retained the power to turn onlookers to stone.</h3>
-    <hr><h2>Modern Symbolism and Interpretation</h2>
-        <h3>In recent years, the perspective on Medusa has shifted significantly:
-            <li>•	A Symbol of Resilience: Many survivors of trauma see Medusa not as a monster, but as a symbol of the strength required to survive injustice.</li>
-            <li>•	Victim Blaming: Her story is frequently cited as an early example of "victim blaming," where the survivor of an assault is punished while the perpetrator goes free.</li>
-            <li>•	Protection: In ancient Greece, the image of her face (the Gorgoneion) was actually used as an amulet to ward off evil, suggesting that even in her monstrous form, she was a protector.</li>
-        </h3>
-        <hr style="border-top: 3px dotted rgb(255, 255, 255);">
-        
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medusa - I T L</title>
+    <style>
+        /* මූලික සැකසුම් */
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #0a0a0a;
+            color: #d1d5db;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-image: radial-gradient(circle at center, #1a1c1a 0%, #0a0a0a 100%);
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 2px solid #2d372d;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        nav a {
+            color: #94a3b8;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 17px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: #4ade80; /* පණ ඇති කොළ පැහැයක් */
+            text-shadow: 0 0 10px #22c55e;
+        }
+
+        /* ප්‍රධාන මාතෘකාව */
+        h1 {
+            font-size: clamp(40px, 9vw, 80px);
+            text-align: center;
+            margin-top: 50px;
+            letter-spacing: 12px;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #4b5563, #22c55e, #166534);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+
+        /* පින්තූර සැකසුම */
+        .img-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .medusa-img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 0 50px rgba(34, 197, 94, 0.1);
+            border: 1px solid #1f2937;
+            transition: 0.5s;
+        }
+
+        .medusa-img:hover {
+            filter: sepia(50%) hue-rotate(80deg); /* ගල් ගැසෙන ස්වභාවයක් පෙන්වීමට */
+        }
+
+        /* අන්තර්ගතය */
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(20, 20, 20, 0.6);
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 35px;
+            border-right: 4px solid #166534;
+            backdrop-filter: blur(5px);
+        }
+
+        h2 {
+            color: #4ade80;
+            font-size: 32px;
+            margin-bottom: 20px;
+            font-family: 'Times New Roman', serif;
+            text-transform: italic;
+        }
+
+        h3 {
+            font-size: 21px;
+            font-weight: normal;
+            color: #cbd5e1;
+            margin: 0;
+            text-align: justify;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            font-size: 20px;
+        }
+
+        li::before {
+            content: "🐍"; /* සර්පයෙකුගේ අයිකනයක් */
+            position: absolute;
+            left: 0;
+            font-size: 18px;
+        }
+
+        strong {
+            color: #fff;
+            border-bottom: 1px dashed #166534;
+        }
+
+        .footer-hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #166534, transparent);
+            margin: 60px 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div class="container">
+        <h1>Medusa</h1>
+
+        <div class="img-container">
+            <img class="medusa-img" src="images/medusa.jpg" alt="Medusa Legend">
+        </div>
+
+        <section>
+            <h2>Introduction</h2>
+            <h3>බොහෝ දෙනා මෙඩූසාව බිහිසුණු රාක්ෂයෙකු ලෙස හැඳින්වුවද, ඕවිඩ් (Ovid) වැනි කවීන්ගේ විස්තරයන්ට අනුව ඇයගේ කතාව ඉතාමත් <strong>ඛේදජනක (Tragedy)</strong> එකකි. ඇය උපතින් රාක්ෂයෙකු නොව, දේව කෲරත්වයට සහ සමාජ අසාධාරණයට ගොදුරු වූ රූමත් කාන්තාවකි.</h3>
+        </section>
+
+        <section>
+            <h2>The Priestess of Athena</h2>
+            <h3>ඇය තරුණ වියේදී අතිශය රූමත් තරුණියක් වූ අතර ඇතීනා (Athena) දෙවඟනගේ දේවස්ථානයේ පූජකවරියක ලෙස සේවය කළාය. එහි නීතියට අනුව ඇය පිරිසිදුව සහ කන්‍යාවක ලෙස ජීවත් විය යුතුව තිබුණි.</h3>
+        </section>
+
+        <section>
+            <h2>The Tragedy at the Temple</h2>
+            <h3>ඇයගේ රූපශ්‍රීය දුටු මුහුදට අධිපති පොසයිඩන් (Poseidon) දෙවියා ඇයව ලුහුබැඳ ඇතීනාගේ දේවස්ථානය තුළදීම ඇයට බලහත්කාරකම් කළේය. මෙය ඇයගේ වරදක් නොවූවත් සිදු වූයේ අනපේක්ෂිත දෙයකි.</h3>
+        </section>
+
+        <section>
+            <h2>Athena’s Curse</h2>
+            <h3>පොසයිඩන්ට දඬුවම් කරනවා වෙනුවට ඇතීනා සිය කෝපය මෙඩූසා වෙත යොමු කළාය. ඇය මෙඩූසාව බිහිසුණු රාක්ෂයෙකු බවට පත් කළාය:
+                <ul>
+                    <li><strong>Serpent Hair:</strong> ඇයගේ රූමත් කෙස් කළඹ විෂ සහිත සර්පයන් බවට පත් කළාය.</li>
+                    <li><strong>The Stony Stare:</strong> මෙඩූසාගේ දෑස් දෙස කෙලින්ම බලන ඕනෑම ජීවියෙකු එසැනින් ගල් බවට පත් වන ලෙස ශාප කළාය.</li>
+                </ul>
+            </h3>
+        </section>
+
+        <section>
+            <h2>Death & Modern Symbolism</h2>
+            <h3>අවසානයේ පර්සියස් (Perseus) නම් වීරයා අතින් මෙඩූසා මරණයට පත් විය. වර්තමානයේ බොහෝ දෙනා මෙඩූසාව සලකන්නේ අසාධාරණයට එරෙහිව නැගී සිටින <strong>ස්ථීරසාර බවේ (Resilience) සංකේතයක්</strong> ලෙසයි. අතීත ග්‍රීසියේ ඇයගේ රුව නපුරෙන් ආරක්ෂා වීමට සුරතක් (Amulet) ලෙසද භාවිතා කර ඇත.</h3>
+        </section>
+
+        <div class="footer-hr"></div>
+    </div>
+
+</body>
 </html>
