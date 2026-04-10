@@ -1,56 +1,183 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Earth - I T L</title>
-        <style>
-            body {
-                font-family: Comic Sans MS;
-            }
-            body{
-                color:rgb(255, 255, 255);
-            }
-            h1 {
-                font-size: 62px;
-            }
-            h2 {
-                font-size: 40px;
-            }
-            h3 {
-                font-size: 28px;
-            }
-            img.earth{
-                width : 1000px;
-            }
-            h1 {
-                text-shadow: 2px 2px 5px rgb(255, 255, 255);
-            }
-        </style>
-    </head>
-    <body bgcolor="black">
-        <hr style="border: 5px solid rgb(0, 0, 0);">
-<hr><h3><p style="text-align: right;"><a href="index.html" class="home-btn"> - Home</a><a href="earth.html" class="btn"> - Earth</a><a href="animals.html" class="btn"> - Animals</a><a href="space.html" class="btn"> - Space</a><a href="mysteries.html" class="btn"> - Mysteries</a><a href="history.html" class="btn"> - History</a></p></h3><hr>
-        <h1><u>Earth – Our Planet</u></h1>
-        <center><img class="earth" src="images/earth.jpeg"></center>
-        <h3><p>You have arrived here to explore our planet, Earth, in greater depth. With vast oceans, towering mountains, powerful volcanoes, dense forests, and countless natural phenomena, Earth is an extraordinary and complex world.
-Here you will discover fascinating information about the planet’s natural systems, geological features, and the powerful forces that shape the world we live in.
-Through the articles and information below, you can learn more about our remarkable planet and deepen your understanding of the place we call home.
-We hope that what you find here will broaden your knowledge, inspire curiosity, and encourage you to explore and appreciate the incredible planet we live on.
-</p></h3>
-        <hr><h2>
-            <p>What are the details you are expecting?</p>
-            <ul>
-                <li><a href="aokigahara.html"><i>Aokigahara Forest</i></a></li>
-                <li><a href=""><i>item</i></a></li>
-                <li><a href=""><i>item</i></a></li>
-                <li><a href=""><i>item</i></a></li>
-                <li><a href=""><i>item</i></a></li>
-            </ul>
-        </h2>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earth - I T L</title>
+    <style>
+        /* මූලික සැකසුම් */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0b0b0b;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
 
+        /* Navigation Bar එක */
+        nav {
+            background-color: #1a1a1a;
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 2px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
+        nav a {
+            color: #00d4ff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.3s;
+        }
 
+        nav a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px #00d4ff;
+        }
 
-        <hr style="border-top: 3px dotted rgb(255, 255, 255);">
-       
-    </body>
+        /* මාතෘකාව */
+        h1 {
+            font-size: clamp(35px, 6vw, 60px);
+            text-align: center;
+            color: #fff;
+            text-transform: uppercase;
+            margin-top: 40px;
+            text-decoration: underline;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Earth පින්තූරය */
+        .img-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .earth-img {
+            max-width: 90%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 0 40px rgba(0, 119, 255, 0.4); /* පෘථිවියට ගැලපෙන නිල් ආලෝකයක් */
+            border: 1px solid #222;
+        }
+
+        /* අන්තර්ගතය */
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .main-text {
+            font-size: 20px;
+            color: #ccc;
+            text-align: justify;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #222;
+        }
+
+        h2 {
+            color: #00d4ff;
+            font-size: 32px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        /* Discover List එක */
+        .topic-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .topic-list li {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: 0.3s;
+            border: 1px solid #333;
+        }
+
+        .topic-list li:hover {
+            background: #00d4ff;
+            transform: scale(1.05);
+        }
+
+        .topic-list a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .topic-list li:hover a {
+            color: #000;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, transparent, #444, transparent);
+            margin: 40px 0;
+        }
+
+        .dotted-hr {
+            border-top: 3px dotted #555;
+            margin-bottom: 50px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div class="container">
+        <h1>Earth – Our Planet</h1>
+
+        <div class="img-container">
+            <img class="earth-img" src="images/earth.jpeg" alt="Our Beautiful Planet Earth">
+        </div>
+
+        <div class="main-text">
+            You have arrived here to explore our planet, Earth, in greater depth. With vast oceans, towering mountains, powerful volcanoes, dense forests, and countless natural phenomena, Earth is an extraordinary and complex world. 
+            <br><br>
+            Here you will discover fascinating information about the planet’s natural systems, geological features, and the powerful forces that shape the world we live in. Through the articles and information below, you can learn more about our remarkable planet and deepen your understanding of the place we call home.
+            <br><br>
+            We hope that what you find here will broaden your knowledge, inspire curiosity, and encourage you to explore and appreciate the incredible planet we live on.
+        </div>
+
+        <hr>
+
+        <h2>What are the details you are expecting?</h2>
+        
+        <ul class="topic-list">
+            <li><a href="aokigahara.html">Aokigahara Forest</a></li>
+            <li><a href="#">Ocean Mysteries</a></li>
+            <li><a href="#">Volcanoes</a></li>
+            <li><a href="#">The Atmosphere</a></li>
+            <li><a href="#">Climate Change</a></li>
+        </ul>
+
+        <div class="dotted-hr"></div>
+    </div>
+
+</body>
 </html>
