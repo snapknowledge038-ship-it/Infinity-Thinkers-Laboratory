@@ -1,62 +1,208 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Jack the Ripper - I T L</title>
-        <style>
-            body {
-                font-family: Comic Sans MS;
-            }
-            body{
-                color:rgb(255, 255, 255);
-            }
-            h1 {
-                font-size: 62px;
-            }
-            h2 {
-                font-size: 40px;
-            }
-            h3 {
-                font-size: 28px;
-            }
-            img{
-                width : 831px;
-            }
-        </style>
-    </head>
-    <body bgcolor="black">
-        <hr style="border: 5px solid rgb(0, 0, 0);">
-<hr><h3><p style="text-align: right;"><a href="index.html" class="home-btn"> - Home</a><a href="earth.html" class="btn"> - Earth</a><a href="animals.html" class="btn"> - Animals</a><a href="space.html" class="btn"> - Space</a><a href="mysteries.html" class="btn"> - Mysteries</a><a href="history.html" class="btn"> - History</a></p></h3><hr>
-        <h1><u><i><b>Jack the Ripper</b></i></u></h1><center><img src="images/jack the rip.jpg"></center>
-    <hr><h2>Identity and Origin</h2>
-        <h3>"Jack the Ripper" is a pseudonym (fake name) given to an unidentified killer who terrorized the Whitechapel district in the East End of London in 1888. The name originated from the "Dear Boss" letter sent to the Central News Agency, claiming to be the murderer.</h3>
-    <hr><h2>The "Canonical Five" Victims</h2>
-        <h3>While many murders occurred in London at the time, historians generally agree on five victims killed by the same hand between August and November 1888:
-            <li>•	Mary Ann Nichols</li>
-            <li>•	Annie Chapman</li>
-            <li>•	Elizabeth Stride</li>
-            <li>•	Catherine Eddowes</li>
-            <li>•	Mary Jane Kelly</li>
-        </h3>
-    <hr><h2>The Modus Operandi (Method)</h2>
-        <h3>The killer's methods were uniquely brutal, which is why he gained such notoriety:
-            <li>•	Surgical Precision: The victims' throats were cut, followed by extensive abdominal mutilations.</li>
-            <li>•	Organ Removal: In several cases, internal organs (such as the kidney or uterus) were removed with great skill.</li>
-            <li>•	Expertise: This led investigators to believe the killer had medical training, was a surgeon, or perhaps a butcher.</li>
-        </h3>
-    <hr><h2>Famous Letters from the Killer</h2>
-        <h3>During the investigation, the police received hundreds of letters. The most famous ones include:
-            <li>•	"Dear Boss" Letter: Where the name "Jack the Ripper" was first used.</li>
-            <li>•	"Saucy Jacky" Postcard: Sent shortly after two murders occurred on the same night.</li>
-            <li>•	"From Hell" Letter: Sent to George Lusk of the Whitechapel Vigilance Committee. This letter arrived with a small box containing half a human kidney, preserved in wine.</li>
-        </h3>
-    <hr><h2>Why was he never caught?</h2>
-        <h3>
-            <li>•	Lack of Technology: Forensic science was in its infancy. There was no DNA profiling, no fingerprinting, and no security cameras.</li>
-            <li>•	Environment: Whitechapel was a maze of dark, foggy alleys and overcrowded slums, making it easy for a killer to vanish.</li>
-            <li>•	The "Double Event": On one night, he killed two women in different locations, causing mass confusion for the police.</li>
-        </h3>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jack the Ripper - I T L</title>
+    <style>
+        /* මූලික සැකසුම් */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0a0a0a;
+            color: #d1d1d1;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
 
-        <hr style="border-top: 3px dotted rgb(255, 255, 255);">
-        
-    </body>
+        /* Navigation Bar */
+        nav {
+            background-color: #1a0000; /* තද රතු/කළු මිශ්‍ර වර්ණයක් */
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 2px solid #800000;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #ff4d4d;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px #ff0000;
+        }
+
+        /* මාතෘකාව */
+        h1 {
+            font-size: clamp(35px, 7vw, 65px);
+            text-align: center;
+            color: #ff0000; /* ලේ රතු පැහැය */
+            margin-top: 40px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
+            font-family: 'Georgia', serif;
+        }
+
+        /* පින්තූරය */
+        .img-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .ripper-img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 5px;
+            filter: grayscale(100%) contrast(120%);
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.2);
+            border: 1px solid #444;
+        }
+
+        /* අන්තර්ගතය */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: linear-gradient(145deg, #151515, #0a0a0a);
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border-left: 4px solid #800000;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+        }
+
+        h2 {
+            color: #ff4d4d;
+            font-size: 28px;
+            margin-bottom: 15px;
+            font-family: 'Georgia', serif;
+            border-bottom: 1px solid #333;
+            display: block;
+            padding-bottom: 5px;
+        }
+
+        h3 {
+            font-size: 19px;
+            font-weight: normal;
+            color: #ccc;
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        li::before {
+            content: "†"; /* මරණය සංකේතවත් කරන ලකුණක් */
+            position: absolute;
+            left: 0;
+            color: #800000;
+            font-weight: bold;
+        }
+
+        strong {
+            color: #fff;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #555, transparent);
+            margin: 40px 0;
+        }
+
+        .dotted-hr {
+            border-top: 3px dotted #440000;
+            margin: 60px 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div class="container">
+        <h1>Jack the Ripper</h1>
+
+        <div class="img-container">
+            <img class="ripper-img" src="images/jack the rip.jpg" alt="Victorian London Mystery">
+        </div>
+
+        <section>
+            <h2>Identity and Origin</h2>
+            <h3>"Jack the Ripper" is a pseudonym given to an unidentified killer who terrorized the Whitechapel district in the East End of London in 1888. The name originated from the <strong>"Dear Boss"</strong> letter sent to the Central News Agency, claiming to be the murderer.</h3>
+        </section>
+
+        <section>
+            <h2>The "Canonical Five" Victims</h2>
+            <h3>Historians generally agree on five victims killed by the same hand between August and November 1888:</h3>
+            <ul>
+                <li>Mary Ann Nichols</li>
+                <li>Annie Chapman</li>
+                <li>Elizabeth Stride</li>
+                <li>Catherine Eddowes</li>
+                <li>Mary Jane Kelly</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>The Modus Operandi (Method)</h2>
+            <h3>The killer's methods were uniquely brutal, gaining him global notoriety:</h3>
+            <ul>
+                <li><strong>Surgical Precision:</strong> The victims' throats were cut, followed by extensive abdominal mutilations.</li>
+                <li><strong>Organ Removal:</strong> In several cases, internal organs were removed with professional skill.</li>
+                <li><strong>Expertise:</strong> This led investigators to believe the killer had medical training, was a surgeon, or a butcher.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Famous Letters from the Killer</h2>
+            <ul>
+                <li><strong>"Dear Boss" Letter:</strong> Where the name "Jack the Ripper" was first used.</li>
+                <li><strong>"Saucy Jacky" Postcard:</strong> Sent shortly after the "Double Event" murders.</li>
+                <li><strong>"From Hell" Letter:</strong> Sent with a small box containing half a human kidney preserved in wine.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Why was he never caught?</h2>
+            <ul>
+                <li><strong>Lack of Technology:</strong> There was no DNA profiling, no fingerprinting, and no security cameras in 1888.</li>
+                <li><strong>Environment:</strong> Whitechapel was a maze of dark, foggy alleys and overcrowded slums.</li>
+                <li><strong>The Confusion:</strong> Mass panic and a lack of organized forensic science made the investigation nearly impossible.</li>
+            </ul>
+        </section>
+
+        <div class="dotted-hr"></div>
+    </div>
+
+</body>
 </html>
