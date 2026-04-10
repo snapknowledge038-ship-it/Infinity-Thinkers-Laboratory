@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="si">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moon - I T L</title>
     <style>
-        /* මූලික සැකසුම් */
+        /* Base Settings */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #05070a;
@@ -43,7 +43,7 @@
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
 
-        /* මාතෘකාව */
+        /* Title Styling */
         h1 {
             font-size: clamp(40px, 9vw, 80px);
             text-align: center;
@@ -56,7 +56,7 @@
             font-weight: 900;
         }
 
-        /* පින්තූර සැකසුම */
+        /* Image Containers */
         .img-container {
             text-align: center;
             margin: 30px 0;
@@ -65,7 +65,7 @@
         .moon-img {
             max-width: 80%;
             height: auto;
-            border-radius: 50%; /* සඳෙහි හැඩය අනුව රවුම් කිරීම */
+            border-radius: 50%; /* Rounded for the Moon's shape */
             box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
             border: 1px solid #374151;
             transition: 0.5s ease;
@@ -79,7 +79,7 @@
             border: 1px solid #1f2937;
         }
 
-        /* අන්තර්ගතය */
+        /* Content Sections */
         .container {
             max-width: 1000px;
             margin: 0 auto;
@@ -152,27 +152,27 @@
         </div>
 
         <section>
-            <h2>What is the Moon? (චන්ද්‍රයා යනු කුමක්ද?)</h2>
-            <h3>චන්ද්‍රයා යනු පෘථිවියේ ඇති එකම ස්වභාවික චන්ද්‍රිකාවයි. එය සෞරග්‍රහ මණ්ඩලයේ පස්වන විශාලතම ස්වභාවික චන්ද්‍රිකාව වන අතර පෘථිවියේ සිට කිලෝමීටර් 384,400 ක් පමණ ඈතින් පිහිටා ඇත.</h3>
+            <h2>What is the Moon?</h2>
+            <h3>The Moon is Earth's only natural satellite. It is the fifth largest natural satellite in the solar system and is located approximately 384,400 kilometers away from Earth.</h3>
         </section>
 
         <section>
             <h2>Physical Characteristics</h2>
             <ul>
-                <li><strong>Atmosphere:</strong> චන්ද්‍රයාට සැලකිය යුතු වායුගෝලයක් නොමැත. මේ හේතුවෙන් ශබ්දය ගමන් කිරීමට මාධ්‍යයක් නොමැති බැවින් සඳ මතදී ශබ්දය ඇසෙන්නේ නැත.</li>
-                <li><strong>Temperature:</strong> දිවා කාලයේදී උෂ්ණත්වය 127°C දක්වා ඉහළ යන අතර, රාත්‍රියේදී -173°C දක්වා අතිශයින් ශීතල වේ.</li>
-                <li><strong>Gravity:</strong> මෙහි ගුරුත්වාකර්ෂණය පෘථිවිය මෙන් 1/6 කි. (උදා: පෘථිවියේ බර 60kg නම්, සඳ මතදී එය 10kg ලෙස දැනේ).</li>
+                <li><strong>Atmosphere:</strong> The Moon has no significant atmosphere. Because of this, there is no medium for sound to travel, making the Moon completely silent.</li>
+                <li><strong>Temperature:</strong> Temperatures can rise to 127°C during the day and drop to an extremely cold -173°C at night.</li>
+                <li><strong>Gravity:</strong> The Moon's gravity is about 1/6th of Earth's. (e.g., If you weigh 60kg on Earth, you would feel like you weigh only 10kg on the Moon).</li>
             </ul>
         </section>
 
         <section>
             <h2>Motion and Appearance</h2>
             <ul>
-                <li><strong>Synchronous Rotation:</strong> සඳ තමා වටා කැරකීමට සහ පෘථිවිය වටා යාමට එකම කාලයක් (දින 27.3) ගනී. මේ නිසා අපට සැමවිටම පෙනෙන්නේ සඳෙහි එකම පැත්තකි.
-                    <div class="img-container"><img class="section-img" src="images/Synchronous Rotation.jpg"></div>
+                <li><strong>Synchronous Rotation:</strong> The Moon takes the same amount of time to rotate on its axis as it does to orbit Earth (27.3 days). This is why we always see only one side of the Moon.
+                    <div class="img-container"><img class="section-img" src="images/Synchronous Rotation.jpg" alt="Synchronous Rotation"></div>
                 </li>
-                <li><strong>Lunar Phases:</strong> සූර්යාලෝකය සඳ මත පතිත වන ආකාරය අනුව අමාවක සිට පසළොස්වක දක්වා චන්ද්‍ර කලාවන් වෙනස් වේ.
-                    <div class="img-container"><img class="section-img" src="images/Lunar Phases.jpg"></div>
+                <li><strong>Lunar Phases:</strong> As the Moon orbits Earth, the amount of sunlight reflecting off its surface changes, creating phases from New Moon to Full Moon.
+                    <div class="img-container"><img class="section-img" src="images/Lunar Phases.jpg" alt="Lunar Phases"></div>
                 </li>
             </ul>
         </section>
@@ -180,26 +180,26 @@
         <section>
             <h2>Surface Features</h2>
             <ol>
-                <li><strong>Lunar Highlands:</strong> ආවාට වලින් පිරි, ලා පැහැති කඳුකර ප්‍රදේශ.</li>
-                <div class="img-container"><img class="section-img" src="images/Lunar Highlands.jpg"></div>
-                <li><strong>Maria:</strong> පැරණි ගිනිකඳු පිපිරීම් වලින් සෑදුණු අඳුරු, තැන්න සහිත ප්‍රදේශ.</li>
-                <div class="img-container"><img class="section-img" src="images/maria.jpg"></div>
+                <li><strong>Lunar Highlands:</strong> Light-colored, mountainous regions covered with numerous craters.</li>
+                <div class="img-container"><img class="section-img" src="images/Lunar Highlands.jpg" alt="Lunar Highlands"></div>
+                <li><strong>Maria:</strong> Dark, flat plains formed by ancient volcanic eruptions.</li>
+                <div class="img-container"><img class="section-img" src="images/maria.jpg" alt="Lunar Maria"></div>
             </ol>
         </section>
 
         <section>
             <h2>Importance of the Moon</h2>
             <ul>
-                <li><strong>Tides:</strong> චන්ද්‍රයාගේ ගුරුත්වාකර්ෂණ බලය නිසා සාගරයේ වාරම් (මුහුදු රළ මට්ටම ඉහළ යාම සහ පහළ බැසීම) ඇති වේ.</li>
-                <li><strong>Earth's Tilt:</strong> පෘථිවියේ අංශක 23.5 ක ඇලවීම ස්ථාවරව තබා ගැනීමට සඳ උදව් වේ. අපට කාලගුණික සෘතු ලැබෙන්නේ මේ නිසාය.</li>
+                <li><strong>Tides:</strong> The Moon's gravitational pull causes the rise and fall of ocean sea levels, known as tides.</li>
+                <li><strong>Earth's Tilt:</strong> The Moon helps stabilize Earth's 23.5-degree axial tilt. This stability is what gives us our predictable seasons and climate.</li>
             </ul>
         </section>
 
         <section>
             <h2>Lunar Exploration</h2>
             <ul>
-                <li><strong>Apollo 11 (1969):</strong> නීල් ආම්ස්ට්‍රෝං සහ බස් ඕල්ඩ්‍රින් සඳ මත පා තැබූ පළමු මිනිසුන් බවට පත් විය.</li>
-                <li><strong>Modern Day:</strong> වර්තමානයේ ඇමරිකාව (Artemis), ඉන්දියාව (Chandrayaan) සහ චීනය වැනි රටවල් සඳෙහි දක්ෂිණ ධ්‍රැවයේ ජලය සෙවීම සඳහා මෙහෙයුම් දියත් කරයි.</li>
+                <li><strong>Apollo 11 (1969):</strong> Neil Armstrong and Buzz Aldrin became the first humans to step foot on the Moon.</li>
+                <li><strong>Modern Day:</strong> Currently, countries like the USA (Artemis), India (Chandrayaan), and China are launching missions to search for water at the Moon's South Pole.</li>
             </ul>
         </section>
 
