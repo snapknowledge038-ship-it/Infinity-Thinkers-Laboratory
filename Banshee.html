@@ -1,56 +1,190 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Banshee - I T L</title>
-        <style>
-            body {
-                font-family: Comic Sans MS;
-            }
-            body{
-                color:rgb(255, 255, 255);
-            }
-            h1 {
-                font-size: 62px;
-            }
-            h2 {
-                font-size: 40px;
-            }
-            h3 {
-                font-size: 28px;
-            }
-            img{
-                width : 801px;
-            }
-        </style>
-    </head>
-    <body bgcolor="black">
-        <hr style="border: 5px solid rgb(0, 0, 0);">
-<hr><h3><p style="text-align: right;"><a href="index.html" class="home-btn"> - Home</a><a href="earth.html" class="btn"> - Earth</a><a href="animals.html" class="btn"> - Animals</a><a href="space.html" class="btn"> - Space</a><a href="mysteries.html" class="btn"> - Mysteries</a><a href="history.html" class="btn"> - History</a></p></h3><hr>
-        <h1><u><i><b>Banshee</b></i></u></h1><center><img src="images/Banshee.jpg"></center>
-    <hr><h2>Origin and Etymology</h2>
-        <h3>The word "Banshee" comes from the Irish Gaelic "Bean Sídhe", which literally translates to "Woman of the Fairy Mound" or "Fairy Woman." In Irish mythology, she is a spirit attached to specific ancient family lineages.</h3>
-    <hr><h2>Appearance</h2>
-        <h3>According to legends, a Banshee can appear in three different forms:
-            <li>•	The Young Woman: A beautiful lady with long, flowing silver or red hair.</li>
-            <li>•	The Stately Matron: A middle-aged woman with a more serious or grieving expression.</li>
-            <li>•	The Old Hag: A terrifying, withered old woman with sunken eyes and grey hair (this is the most common depiction in modern horror).</li>
-        She is often described wearing a grey hooded cloak or a white burial shroud. Her eyes are usually permanent red from centuries of continuous weeping.
-        </h3>
-    <hr><h2>The Omen of Death (The Keen)</h2>
-        <h3>The most famous characteristic of the Banshee is her piercing scream or wail, known as the "Keen" (caoine).
-            <li>•	The Warning: She does not kill people. Instead, her wail is a warning that a member of the household is about to die.</li>
-            <li>•	The Sound: Descriptions of the sound vary—some say it is a low, pleasant singing; others describe it as a terrifying screech that can shatter glass.</li>
-            <li>•	Timing: The scream is usually heard at night, shortly before a death occurs.</li>
-        </h3>
-    <hr><h2>The "Five Great Families"</h2>
-        <h3>Ancient tradition suggests that Banshees only followed the five great Milesian families of Ireland: the O'Gradys, O'Neills, O'Briens, O'Connors, and Kavanaghs. However, over time, it was believed she followed any family whose name began with "O" or "Mac".</h3>
-    <hr><h2>Folklore and Superstitions</h2>
-        <h3>
-            <li>•	The Silver Comb: Legend says that if you find a silver comb on the ground in Ireland, you must never pick it up. It is believed to belong to a Banshee, and she will hunt down anyone who takes it.</li>
-            <li>•	The Washerwoman: In some parts of Ireland and Scotland, she is seen as the "Bean-Nighe" (the washer), a spirit found near lonely streams washing the blood-stained clothes of those about to die.</li>
-        </h3>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banshee - I T L</title>
+    <style>
+        /* මූලික සැකසුම් */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #050505;
+            color: #d1d1d1;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
 
-        <hr style="border-top: 3px dotted rgb(255, 255, 255);">
-        
-    </body>
+        /* Navigation Bar */
+        nav {
+            background-color: #111;
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 2px solid #444;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #aaa;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 8px #fff;
+        }
+
+        /* මාතෘකාව */
+        h1 {
+            font-size: clamp(40px, 8vw, 70px);
+            text-align: center;
+            color: #f0f0f0;
+            margin-top: 40px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+
+        /* පින්තූරය */
+        .img-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .banshee-img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 10px;
+            filter: grayscale(100%) sepia(20%); /* පරණ පෙනුමක් ලබා දීමට */
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+            border: 1px solid #333;
+        }
+
+        /* අන්තර්ගතය */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border-left: 3px solid #666;
+        }
+
+        h2 {
+            color: #ffffff;
+            font-size: 32px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #333;
+            display: inline-block;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: normal;
+            color: #bbb;
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            border-left: 2px solid #444;
+        }
+
+        strong {
+            color: #fff;
+        }
+
+        /* පේළි අලංකරණය */
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #444, transparent);
+            margin: 40px 0;
+        }
+
+        .dotted-hr {
+            border-top: 3px dotted #333;
+            margin: 60px 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div class="container">
+        <h1>Banshee</h1>
+
+        <div class="img-container">
+            <img class="banshee-img" src="images/Banshee.jpg" alt="The Banshee Spirit">
+        </div>
+
+        <section>
+            <h2>Origin and Etymology</h2>
+            <h3>The word "Banshee" comes from the Irish Gaelic <strong>"Bean Sídhe"</strong>, which literally translates to "Woman of the Fairy Mound" or "Fairy Woman." In Irish mythology, she is a spirit attached to specific ancient family lineages.</h3>
+        </section>
+
+        <section>
+            <h2>Appearance</h2>
+            <h3>According to legends, a Banshee can appear in three different forms:</h3>
+            <ul>
+                <li><strong>The Young Woman:</strong> A beautiful lady with long, flowing silver or red hair.</li>
+                <li><strong>The Stately Matron:</strong> A middle-aged woman with a more serious or grieving expression.</li>
+                <li><strong>The Old Hag:</strong> A terrifying, withered old woman with sunken eyes and grey hair.</li>
+            </ul>
+            <h3>She is often described wearing a grey hooded cloak or a white burial shroud. Her eyes are usually permanent red from centuries of continuous weeping.</h3>
+        </section>
+
+        <section>
+            <h2>The Omen of Death (The Keen)</h2>
+            <h3>The most famous characteristic of the Banshee is her piercing scream or wail, known as the <strong>"Keen" (caoine)</strong>.</h3>
+            <ul>
+                <li><strong>The Warning:</strong> She does not kill people. Instead, her wail is a warning that a member of the household is about to die.</li>
+                <li><strong>The Sound:</strong> Descriptions vary—from pleasant singing to a terrifying screech that can shatter glass.</li>
+                <li><strong>Timing:</strong> The scream is usually heard at night, shortly before a death occurs.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>The "Five Great Families"</h2>
+            <h3>Ancient tradition suggests that Banshees only followed the five great Milesian families of Ireland: the O'Gradys, O'Neills, O'Briens, O'Connors, and Kavanaghs. Over time, it was believed she followed any family whose name began with "O" or "Mac".</h3>
+        </section>
+
+        <section>
+            <h2>Folklore and Superstitions</h2>
+            <ul>
+                <li><strong>The Silver Comb:</strong> Legend says that if you find a silver comb on the ground, never pick it up. It belongs to a Banshee, and she will hunt down anyone who takes it.</li>
+                <li><strong>The Washerwoman:</strong> In some regions, she is seen as the "Bean-Nighe," a spirit found near lonely streams washing the blood-stained clothes of those about to die.</li>
+            </ul>
+        </section>
+
+        <div class="dotted-hr"></div>
+    </div>
+
+</body>
 </html>
