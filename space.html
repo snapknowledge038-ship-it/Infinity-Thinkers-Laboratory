@@ -1,62 +1,208 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Space - I T L</title>
-        <style>
-            body {
-                font-family: Comic Sans MS;
-            }
-            body{
-                color:rgb(255, 255, 255);
-            }
-            h1 {
-                font-size: 62px;
-            }
-            h2 {
-                font-size: 40px;
-            }
-            h3 {
-                font-size: 28px;
-            }
-            img.space{
-                width : 1000px;
-            }
-            h1 {
-                text-shadow: 2px 2px 5px rgb(255, 255, 255);
-            }
-        </style>
-    </head>
-    <body bgcolor="black">
-        <hr style="border: 5px solid rgb(0, 0, 0);">
-<hr><h3><p style="text-align: right;"><a href="index.html" class="home-btn"> - Home</a><a href="earth.html" class="btn"> - Earth</a><a href="animals.html" class="btn"> - Animals</a><a href="space.html" class="btn"> - Space</a><a href="mysteries.html" class="btn"> - Mysteries</a><a href="history.html" class="btn"> - History</a></p></h3><hr>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space - I T L</title>
+    <style>
+        /* මූලික සැකසුම් */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #02040a; /* ඉතා තද අභ්‍යවකාශ නිල් පැහැයක් */
+            color: #e0e6ed;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-image: radial-gradient(circle at center, #0a1128 0%, #02040a 100%);
+        }
 
-        <h1><u>Space – The Universe Beyond Our World</u></h1>
-        <center><img class="space" src="images/space.jpeg"></center>
-        <h3><p>You have arrived here to explore the vast and fascinating universe beyond our planet. From distant galaxies and mysterious black holes to planets, stars, and cosmic phenomena, space is filled with wonders that continue to amaze scientists and explorers.
-Here you will discover intriguing information about the universe, space exploration, and the incredible discoveries that help us understand our place in the cosmos.
-Through the articles and information below, you can journey beyond Earth and learn more about the mysteries and beauty of the universe.
-We hope the knowledge you find here will expand your curiosity, deepen your understanding of space, and inspire you to keep exploring the endless universe.
-</p></h3>
-        <hr><h2>
-            <p>What are the details you are expecting?</p>
-            <ul>
-                <li><a href="black hole.html"><i>Black Hole</i></a></li>
-                <li><a href="nova.html"><i>Nova</i></a></li>
-                <li><a href="star.html"><i>Stars</i></a></li>
-                <li><a href="galaxies.html"><i>Galaxies</i></a></li>
-                <li><a href="meteor.html"><i>Meteor</i></a></li>
-                <li><a href="comet.html"><i>Comet</i></a></li>
-                <li><a href="moon.html"><i>Moon</i></a></li>
-                <li><a href="solar system.html"><i>Solar System</i></a></li>
-                <li><a href="quasar.html"><i>Quasar</i></a></li>
-            </ul>
-        </h2>
+        /* Navigation Bar */
+        nav {
+            background-color: rgba(10, 17, 40, 0.9);
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 1px solid #1e3a8a;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
 
+        nav a {
+            color: #38bdf8; /* දීප්තිමත් නිල් පැහැයක් */
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 17px;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
+        nav a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 15px #38bdf8;
+        }
 
+        /* ප්‍රධාන මාතෘකාව */
+        h1 {
+            font-size: clamp(35px, 7vw, 65px);
+            text-align: center;
+            color: #fff;
+            margin-top: 50px;
+            text-decoration: none;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            background: linear-gradient(to bottom, #fff, #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.3));
+        }
 
+        /* Space පින්තූරය */
+        .img-container {
+            text-align: center;
+            margin: 40px 0;
+        }
 
-        <hr style="border-top: 3px dotted rgb(255, 255, 255);">
-   
+        .space-img {
+            max-width: 90%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 0 60px rgba(56, 189, 248, 0.2);
+            border: 1px solid #1e3a8a;
+        }
+
+        /* අන්තර්ගතය */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .space-description {
+            font-size: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 24px;
+            text-align: justify;
+            border: 1px solid rgba(56, 189, 248, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .space-description::before {
+            content: "“";
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 100px;
+            color: rgba(56, 189, 248, 0.1);
+        }
+
+        h2 {
+            color: #38bdf8;
+            font-size: 32px;
+            margin-top: 60px;
+            text-align: center;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        /* ලැයිස්තුව (Cosmic Grid) */
+        .cosmic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+            margin-top: 40px;
+        }
+
+        .cosmic-grid li {
+            background: rgba(10, 17, 40, 0.6);
+            border: 1px solid #1e3a8a;
+            border-radius: 12px;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .cosmic-grid li:hover {
+            background: #38bdf8;
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 10px 20px rgba(56, 189, 248, 0.3);
+        }
+
+        .cosmic-grid a {
+            color: #fff;
+            text-decoration: none;
+            padding: 20px;
+            display: block;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .cosmic-grid li:hover a {
+            color: #02040a;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #1e3a8a, transparent);
+            margin: 60px 0;
+        }
+
+        .dotted-hr {
+            border-top: 2px dotted rgba(56, 189, 248, 0.2);
+            margin-bottom: 80px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div class="container">
+        <h1>Space – The Universe Beyond</h1>
+
+        <div class="img-container">
+            <img class="space-img" src="images/space.jpeg" alt="Infinity Space">
+        </div>
+
+        <div class="space-description">
+            You have arrived here to explore the vast and fascinating universe beyond our planet. From distant galaxies and mysterious black holes to planets, stars, and cosmic phenomena, space is filled with wonders that continue to amaze scientists and explorers.
+            <br><br>
+            Here you will discover intriguing information about the universe, space exploration, and the incredible discoveries that help us understand our place in the cosmos. Through the articles and information below, you can journey beyond Earth and learn more about the mysteries and beauty of the universe.
+            <br><br>
+            We hope the knowledge you find here will expand your curiosity, deepen your understanding of space, and inspire you to keep exploring the endless universe.
+        </div>
+
+        <hr>
+
+        <h2>What are the details you are expecting?</h2>
+        
+        <ul class="cosmic-grid">
+            <li><a href="black hole.html">Black Hole</a></li>
+            <li><a href="nova.html">Nova</a></li>
+            <li><a href="star.html">Stars</a></li>
+            <li><a href="galaxies.html">Galaxies</a></li>
+            <li><a href="meteor.html">Meteor</a></li>
+            <li><a href="comet.html">Comet</a></li>
+            <li><a href="moon.html">Moon</a></li>
+            <li><a href="solar system.html">Solar System</a></li>
+            <li><a href="quasar.html">Quasar</a></li>
+        </ul>
+
+        <div class="dotted-hr"></div>
+    </div>
+
 </body>
 </html>
