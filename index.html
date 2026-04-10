@@ -1,61 +1,186 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-V05GCCY7JN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity Thinkers Laboratory</title>
+    <meta name="google-site-verification" content="__nEQL7HWiw1ky-17ipjUgGpnSADJpnbtMdCrMXTugw" />
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V05GCCY7JN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-V05GCCY7JN');
+    </script>
 
-  gtag('config', 'G-V05GCCY7JN');
-</script>
-        <title>Infinity Thinkers Laboratory</title>
-        <meta name="google-site-verification" content="__nEQL7HWiw1ky-17ipjUgGpnSADJpnbtMdCrMXTugw" />
-        <style>
-            body {
-                font-family: Comic Sans MS;
-            }
-            body{
-                color:rgb(255, 255, 255);
-            }
-            h1 {
-                font-size: 75px;
-            }
-            h2 {
-                font-size: 40px;
-            }
-            h3 {
-                font-size: 28px;
-            }
-            img.all{
-                width : 1000px;
-            }
-            h1 {
-                text-shadow: 2px 2px 5px rgb(255, 255, 255);
-            }
-        </style>
-    </head>
-    <body bgcolor="black">
-        <hr style="border: 5px solid rgb(0, 0, 0);">
-<hr><h3><p style="text-align: right;"><a href="index.html" class="home-btn"> - Home</a><a href="earth.html" class="btn"> - Earth</a><a href="animals.html" class="btn"> - Animals</a><a href="space.html" class="btn"> - Space</a><a href="mysteries.html" class="btn"> - Mysteries</a><a href="history.html" class="btn"> - History</a></p></h3><hr>
-        <center><u><h1><p>Infinity Thinkers Laboratory</p></h1></u></center>
-        <center><img class="all" src="images/all.jpeg"></center>
-        <center><h2><p>For Infinity Thinkers...</p></h2></center>
-        <h3><p class="big">ITL is a platform created for curious minds who love exploring new knowledge every day. We bring fascinating facts about 🦖 dinosaurs, 🔮 mythology, 🔬 science discoveries, 🌍 nature, space, technology, and amazing things around the world.
-Our content is presented in a simple, clear, and engaging way — making learning fun and easy for everyone. 🚀📚
-If you love discovery, mystery, and mind-blowing facts, then ITL is the perfect place for you. Subscribe and join us on this journey of knowledge!</p></h3>
+    <style>
+        /* මූලික සැකසුම් */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0b0b0b; /* තද කළු පැහැය */
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar එක */
+        nav {
+            background-color: #1a1a1a;
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 2px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #00d4ff; /* ලස්සන නිල් පැහැයක් */
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px #00d4ff;
+        }
+
+        /* ප්‍රධාන මාතෘකාව */
+        h1 {
+            font-size: clamp(40px, 8vw, 70px); /* Screen එකට අනුව ප්‍රමාණය වෙනස් වේ */
+            text-align: center;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-top: 40px;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+        }
+
+        /* පින්තූරය */
+        .hero-img-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .all-img {
+            max-width: 90%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid #333;
+        }
+
+        /* අන්තර්ගතය */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #00d4ff;
+            font-size: 32px;
+            margin-top: 40px;
+        }
+
+        .description {
+            font-size: 20px;
+            color: #bbb;
+            text-align: justify;
+            background: #161616;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid #00d4ff;
+        }
+
+        /* ලැයිස්තුව (Discover List) */
+        .discover-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .discover-list li {
+            background: #222;
+            padding: 10px 25px;
+            border-radius: 50px;
+            transition: 0.3s;
+            border: 1px solid #444;
+        }
+
+        .discover-list li:hover {
+            background: #00d4ff;
+            transform: translateY(-5px);
+        }
+
+        .discover-list a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .discover-list li:hover a {
+            color: #000;
+        }
+
+        /* ඉරි (HR) සැකසුම් */
+        hr {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, transparent, #333, transparent);
+            margin: 50px 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <h1>Infinity Thinkers Laboratory</h1>
+
+    <div class="hero-img-container">
+        <img class="all-img" src="images/all.jpeg" alt="Infinity Thinkers Banner">
+    </div>
+
+    <div class="container">
+        <h2>For Infinity Thinkers...</h2>
+        <div class="description">
+            ITL is a platform created for curious minds who love exploring new knowledge every day. We bring fascinating facts about 🦖 dinosaurs, 🔮 mythology, 🔬 science discoveries, 🌍 nature, space, technology, and amazing things around the world.
+            <br><br>
+            Our content is presented in a simple, clear, and engaging way — making learning fun and easy for everyone. 🚀📚
+            If you love discovery, mystery, and mind-blowing facts, then ITL is the perfect place for you. Subscribe and join us on this journey of knowledge!
+        </div>
+
+        <hr>
+
+        <h2>You can Discover about</h2>
+        <ul class="discover-list">
+            <li><a href="earth.html">Earth</a></li>
+            <li><a href="animals.html">Animals</a></li>
+            <li><a href="space.html">Space</a></li>
+            <li><a href="mysteries.html">Mysteries</a></li>
+            <li><a href="history.html">History</a></li>
+        </ul>
         
-        
-         <hr><h2><p>You can Discover about,</p></h2>
-         <h2><ul>
-            <li><a href="earth.html"><i>Earth</i></a></li>
-            <li><a href="animals.html"><i>Animals</i></a></li>
-            <li><a href="space.html"><i>space</i></a></li>
-            <li><a href="mysteries.html"><i>Mysteries</i></a></li>
-            <li><a href="history.html"><i>History</i></a></li>
-         </ul></h2>
-         <hr style="border-top: 3px dotted rgb(255, 255, 255);">
-         
-    </body>
+        <hr>
+    </div>
+
+</body>
 </html>
