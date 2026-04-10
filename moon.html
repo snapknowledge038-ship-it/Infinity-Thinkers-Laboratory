@@ -1,75 +1,210 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Moon - I T L</title>
-        <style>
-            body {
-                font-family: Comic Sans MS;
-            }
-            body{
-                color:rgb(255, 255, 255);
-            }
-            h1 {
-                font-size: 62px;
-            }
-            h2 {
-                font-size: 40px;
-            }
-            h3 {
-                font-size: 28px;
-            }
-            img{
-                width : 601px;
-            }
-        </style>
-    </head>
-    <body bgcolor="black">
-        <hr style="border: 5px solid rgb(0, 0, 0);">
-<hr><h3><p style="text-align: right;"><a href="index.html" class="home-btn"> - Home</a><a href="earth.html" class="btn"> - Earth</a><a href="animals.html" class="btn"> - Animals</a><a href="space.html" class="btn"> - Space</a><a href="mysteries.html" class="btn"> - Mysteries</a><a href="history.html" class="btn"> - History</a></p></h3><hr>
-        <h1><u><i><b>Moon</b></i></u></h1><center><img src="images/moon.jpg"></center>
-    <hr><h2>What is the Moon? </h2> 
-        <h3>The Moon is Earth's only natural satellite. It is the fifth-largest natural satellite in the Solar System. It is located approximately 384,400 kilometers away from Earth.</h3>
-    <hr><h2>Physical Characteristics</h2> 
-        <h3>The environment on the Moon is vastly different from Earth:
-            <ul>
-                <li>Atmosphere: The Moon has no significant atmosphere. Because of this, sound cannot travel (there is no medium for sound waves).</li>
-                <li>Temperature: During the day, it heats up to 127°C, while at night, it becomes extremely cold, dropping to -173°C.</li>
-                <li>Gravity: Its gravity is only about 1/6th of Earth's. (For example, if you weigh 60 kg on Earth, you would feel like you weigh only 10 kg on the Moon).</li>
-            </ul>
-        </h3>
-    <hr><h2>Motion and Appearance</h2> 
-        <h3>The Moon rotates on its axis while also orbiting the Earth.
-            <ul>
-                <li>Synchronous Rotation: The Moon takes the same amount of time to rotate once on its axis as it does to orbit the Earth (about 27.3 days). This is why we always see the same side of the Moon from Earth.</li>
-                <center><img src="images/Synchronous Rotation.jpg"></center>
-                <li>Lunar Phases: Depending on how sunlight hits the Moon, the portion visible to us changes. This happens in a cycle from New Moon to Full Moon.</li>
-                <center><img src="images/Lunar Phases.jpg"></center>
-            </ul>
-        </h3>
-    <hr><h2>Surface Features</h2>   
-        <h3>The Moon's surface consists mainly of two types of terrain:
-            <ol>
-                <li>Lunar Highlands: Light-colored, mountainous regions filled with craters.</li><center><img src="images/Lunar Highlands.jpg"></center>
-                <li>Maria: Dark, flat plains formed by ancient volcanic eruptions (lava flows).</li><center><img src="images/maria.jpg"></center>
-                <li>Craters: These were formed by meteorite impacts over billions of years.</li><center><img src="images/Craters.jpg"></center>
-            </ol>
-        </h3>
-    <hr><h2>Importance of the Moon</h2>
-        <h3>The Moon is vital for life on Earth:
-            <ul>
-                <li>Tides: The Moon's gravitational pull causes the rise and fall of ocean tides.</li><center><img src="images/Tides.jpg"></center>
-                <li>Earth's Tilt: The Moon helps stabilize Earth's 23.5-degree axial tilt. This stability is the primary reason we have predictable seasons.</li><center><img src="images/Earth's Tilt.jpg"></center>
-            </ul>
-        </h3>
-    <hr><h2>Lunar Exploration</h2>
-        <h3>The Moon is the most explored celestial body by humans.
-            <ul>
-                <li>Apollo 11 (1969): Neil Armstrong and Buzz Aldrin became the first humans to set foot on the Moon.</li><center><img src="images/Apollo 11 (1969).jpg"></center>
-                <li>Modern Day: Currently, countries like the USA (Artemis), India (Chandrayaan), and China are launching major missions to search for water, especially at the Moon's South Pole.</li>
-            </ul>
-        </h3>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moon - I T L</title>
+    <style>
+        /* මූලික සැකසුම් */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #05070a;
+            color: #d1d5db;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-image: radial-gradient(circle at center, #111827 0%, #05070a 100%);
+        }
 
-        <hr style="border-top: 3px dotted rgb(255, 255, 255);">
-        
-    </body>
+        /* Navigation Bar */
+        nav {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 1px solid #1f2937;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        nav a {
+            color: #94a3b8;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 17px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: #f8fafc;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        /* මාතෘකාව */
+        h1 {
+            font-size: clamp(40px, 9vw, 80px);
+            text-align: center;
+            margin-top: 50px;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            background: linear-gradient(to bottom, #ffffff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+
+        /* පින්තූර සැකසුම */
+        .img-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .moon-img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 50%; /* සඳෙහි හැඩය අනුව රවුම් කිරීම */
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+            border: 1px solid #374151;
+            transition: 0.5s ease;
+        }
+
+        .section-img {
+            max-width: 70%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 20px;
+            border: 1px solid #1f2937;
+        }
+
+        /* අන්තර්ගතය */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(17, 24, 39, 0.4);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+        }
+
+        h2 {
+            color: #cbd5e1;
+            font-size: 32px;
+            margin-bottom: 25px;
+            border-bottom: 1px solid #1f2937;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: normal;
+            color: #9ca3af;
+            margin: 0;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+            margin-top: 20px;
+        }
+
+        li {
+            margin-bottom: 15px;
+        }
+
+        strong {
+            color: #f8fafc;
+        }
+
+        .footer-hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #1f2937, transparent);
+            margin: 60px 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div class="container">
+        <h1>The Moon</h1>
+
+        <div class="img-container">
+            <img class="moon-img" src="images/moon.jpg" alt="Full Moon">
+        </div>
+
+        <section>
+            <h2>What is the Moon? (චන්ද්‍රයා යනු කුමක්ද?)</h2>
+            <h3>චන්ද්‍රයා යනු පෘථිවියේ ඇති එකම ස්වභාවික චන්ද්‍රිකාවයි. එය සෞරග්‍රහ මණ්ඩලයේ පස්වන විශාලතම ස්වභාවික චන්ද්‍රිකාව වන අතර පෘථිවියේ සිට කිලෝමීටර් 384,400 ක් පමණ ඈතින් පිහිටා ඇත.</h3>
+        </section>
+
+        <section>
+            <h2>Physical Characteristics</h2>
+            <ul>
+                <li><strong>Atmosphere:</strong> චන්ද්‍රයාට සැලකිය යුතු වායුගෝලයක් නොමැත. මේ හේතුවෙන් ශබ්දය ගමන් කිරීමට මාධ්‍යයක් නොමැති බැවින් සඳ මතදී ශබ්දය ඇසෙන්නේ නැත.</li>
+                <li><strong>Temperature:</strong> දිවා කාලයේදී උෂ්ණත්වය 127°C දක්වා ඉහළ යන අතර, රාත්‍රියේදී -173°C දක්වා අතිශයින් ශීතල වේ.</li>
+                <li><strong>Gravity:</strong> මෙහි ගුරුත්වාකර්ෂණය පෘථිවිය මෙන් 1/6 කි. (උදා: පෘථිවියේ බර 60kg නම්, සඳ මතදී එය 10kg ලෙස දැනේ).</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Motion and Appearance</h2>
+            <ul>
+                <li><strong>Synchronous Rotation:</strong> සඳ තමා වටා කැරකීමට සහ පෘථිවිය වටා යාමට එකම කාලයක් (දින 27.3) ගනී. මේ නිසා අපට සැමවිටම පෙනෙන්නේ සඳෙහි එකම පැත්තකි.
+                    <div class="img-container"><img class="section-img" src="images/Synchronous Rotation.jpg"></div>
+                </li>
+                <li><strong>Lunar Phases:</strong> සූර්යාලෝකය සඳ මත පතිත වන ආකාරය අනුව අමාවක සිට පසළොස්වක දක්වා චන්ද්‍ර කලාවන් වෙනස් වේ.
+                    <div class="img-container"><img class="section-img" src="images/Lunar Phases.jpg"></div>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Surface Features</h2>
+            <ol>
+                <li><strong>Lunar Highlands:</strong> ආවාට වලින් පිරි, ලා පැහැති කඳුකර ප්‍රදේශ.</li>
+                <div class="img-container"><img class="section-img" src="images/Lunar Highlands.jpg"></div>
+                <li><strong>Maria:</strong> පැරණි ගිනිකඳු පිපිරීම් වලින් සෑදුණු අඳුරු, තැන්න සහිත ප්‍රදේශ.</li>
+                <div class="img-container"><img class="section-img" src="images/maria.jpg"></div>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Importance of the Moon</h2>
+            <ul>
+                <li><strong>Tides:</strong> චන්ද්‍රයාගේ ගුරුත්වාකර්ෂණ බලය නිසා සාගරයේ වාරම් (මුහුදු රළ මට්ටම ඉහළ යාම සහ පහළ බැසීම) ඇති වේ.</li>
+                <li><strong>Earth's Tilt:</strong> පෘථිවියේ අංශක 23.5 ක ඇලවීම ස්ථාවරව තබා ගැනීමට සඳ උදව් වේ. අපට කාලගුණික සෘතු ලැබෙන්නේ මේ නිසාය.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Lunar Exploration</h2>
+            <ul>
+                <li><strong>Apollo 11 (1969):</strong> නීල් ආම්ස්ට්‍රෝං සහ බස් ඕල්ඩ්‍රින් සඳ මත පා තැබූ පළමු මිනිසුන් බවට පත් විය.</li>
+                <li><strong>Modern Day:</strong> වර්තමානයේ ඇමරිකාව (Artemis), ඉන්දියාව (Chandrayaan) සහ චීනය වැනි රටවල් සඳෙහි දක්ෂිණ ධ්‍රැවයේ ජලය සෙවීම සඳහා මෙහෙයුම් දියත් කරයි.</li>
+            </ul>
+        </section>
+
+        <div class="footer-hr"></div>
+    </div>
+
+</body>
 </html>
