@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="si">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meteor - I T L</title>
     <style>
-        /* මූලික සැකසුම් */
+        /* Base Settings */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #030305;
@@ -42,7 +42,7 @@
             text-shadow: 0 0 10px #ff9d00;
         }
 
-        /* මාතෘකාව */
+        /* Title Styling */
         h1 {
             font-size: clamp(40px, 8vw, 75px);
             text-align: center;
@@ -55,7 +55,7 @@
             font-weight: 900;
         }
 
-        /* පින්තූර සැකසුම */
+        /* Image Styling */
         .img-container {
             text-align: center;
             margin: 30px 0;
@@ -74,7 +74,7 @@
             box-shadow: 0 0 50px rgba(255, 165, 0, 0.4);
         }
 
-        /* අන්තර්ගතය */
+        /* Content Sections */
         .container {
             max-width: 1000px;
             margin: 0 auto;
@@ -117,7 +117,7 @@
             color: #fff;
         }
 
-        /* වගුව (Table) සැකසුම */
+        /* Table Design */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -139,6 +139,7 @@
         .dotted-hr {
             border-top: 3px dotted #443322;
             margin-top: 80px;
+            margin-bottom: 50px;
         }
 
     </style>
@@ -162,21 +163,21 @@
         </div>
 
         <section>
-            <h2>1. What is a Meteor? (උල්කාපාතයක් යනු කුමක්ද?)</h2>
-            <h3>අභ්‍යවකාශයේ සිට පෘථිවි වායුගෝලයට ඇතුළු වන කුඩා පාෂාණ හෝ ලෝහමය වස්තූන් උල්කාපාත ලෙස හැඳින්වේ. අධික වේගයෙන් ගමන් කිරීමේදී වාතය සමඟ ඇති වන ඝර්ෂණය නිසා මේවා දැවී දීප්තිමත් ආලෝක ධාරාවක් ඇති කරයි. මේවා සාමාන්‍ය ව්‍යවහාරයේදී <strong>"කඩා වැටෙන තරු" (Shooting Stars)</strong> ලෙසද හඳුන්වයි.</h3>
+            <h2>1. What is a Meteor?</h2>
+            <h3>Small rocky or metallic objects that enter the Earth's atmosphere from space are called meteors. Due to the friction caused by traveling at high speeds through the air, they burn up and create a bright streak of light. These are commonly known as <strong>"Shooting Stars."</strong></h3>
         </section>
 
         <section>
             <h2>2. The Three Stages</h2>
             <ul>
-                <li><strong>Meteoroid:</strong> අභ්‍යවකාශයේ ගමන් කරන කුඩා පාෂාණ කැබලි.
-                    <div class="img-container"><img class="meteor-img" src="images/Meteoroid.jpg"></div>
+                <li><strong>Meteoroid:</strong> Small fragments of rock or debris traveling through space.
+                    <div class="img-container"><img class="meteor-img" src="images/Meteoroid.jpg" alt="Meteoroid"></div>
                 </li>
-                <li><strong>Meteor:</strong> වායුගෝලයට ඇතුළු වී දැවෙන විට පෙනෙන ආලෝක ධාරාව.
-                    <div class="img-container"><img class="meteor-img" src="images/Meteor2..jpg"></div>
+                <li><strong>Meteor:</strong> The streak of light seen when a meteoroid enters the atmosphere and burns up.
+                    <div class="img-container"><img class="meteor-img" src="images/Meteor2..jpg" alt="Meteor"></div>
                 </li>
-                <li><strong>Meteorite:</strong> වායුගෝලයේදී සම්පූර්ණයෙන් දැවී නොගොස් පෘථිවියට පතිත වන කොටස්.
-                    <div class="img-container"><img class="meteor-img" src="images/Meteorites.jpg"></div>
+                <li><strong>Meteorite:</strong> Fragments that do not burn up completely in the atmosphere and land on Earth's surface.
+                    <div class="img-container"><img class="meteor-img" src="images/Meteorites.jpg" alt="Meteorite"></div>
                 </li>
             </ul>
         </section>
@@ -184,18 +185,18 @@
         <section>
             <h2>3. Types of Meteorites</h2>
             <ol>
-                <li><strong>Stony Meteorites:</strong> සිලිකේට් ඛනිජ වලින් සැදුම්ලත් වඩාත් බහුල වර්ගයයි.</li>
-                <li><strong>Iron Meteorites:</strong> ප්‍රධාන වශයෙන් යකඩ සහ නිකල් වලින් සමන්විත ඉතා බර වර්ගයකි.</li>
-                <li><strong>Stony-Iron Meteorites:</strong> ලෝහ සහ පාෂාණ යන දෙවර්ගයේම මිශ්‍රණයක් සහිත දුර්ලභ වර්ගයකි.</li>
+                <li><strong>Stony Meteorites:</strong> The most common type, composed primarily of silicate minerals.</li>
+                <li><strong>Iron Meteorites:</strong> A very heavy type consisting mainly of iron and nickel.</li>
+                <li><strong>Stony-Iron Meteorites:</strong> A rare variety containing a mixture of both metallic and rocky material.</li>
             </ol>
         </section>
 
         <section>
-            <h2>4. Meteor Showers (උල්කාපාත වර්ෂා)</h2>
+            <h2>4. Meteor Showers</h2>
             <div class="img-container">
-                <img class="meteor-img" src="images/Meteor Showers space.jpg">
+                <img class="meteor-img" src="images/Meteor Showers space.jpg" alt="Meteor Shower">
             </div>
-            <h3>පෘථිවිය වල්ගා තරුවක් විසින් ඉතිරි කර ගිය දූවිලි හා පාෂාණ කොටස් අතරින් ගමන් කරන විට උල්කාපාත වර්ෂා ඇති වේ. මෙහිදී අහසේ එකම ස්ථානයක සිට උල්කාපාත රාශියක් කඩා වැටෙනු දැකගත හැකිය. (උදා: Perseids සහ Geminids වර්ෂා).</h3>
+            <h3>Meteor showers occur when Earth passes through a trail of dust and debris left behind by a comet. During this time, many meteors can be seen falling from the same point in the sky (e.g., Perseids and Geminids showers).</h3>
         </section>
 
         <section>
@@ -206,16 +207,16 @@
                     <th>Description</th>
                 </tr>
                 <tr>
-                    <td>Speed (වේගය)</td>
-                    <td>තත්පරයට කිලෝමීටර් 11 සිට 72 දක්වා</td>
+                    <td>Speed</td>
+                    <td>Range from 11 to 72 kilometers per second</td>
                 </tr>
                 <tr>
-                    <td>Altitude (උස)</td>
-                    <td>කිලෝමීටර් 75-100 අතරදී දැවී යයි</td>
+                    <td>Altitude</td>
+                    <td>Usually burn up at heights of 75-100 kilometers</td>
                 </tr>
                 <tr>
-                    <td>Size (ප්‍රමාණය)</td>
-                    <td>වැලි කැටයක සිට විශාල පර්වත දක්වා</td>
+                    <td>Size</td>
+                    <td>Range from tiny grains of sand to massive boulders</td>
                 </tr>
             </table>
         </section>
