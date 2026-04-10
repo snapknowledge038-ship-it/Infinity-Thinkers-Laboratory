@@ -1,37 +1,180 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Grim Reaper - I T L</title>
-        <style>
-            body {
-                font-family: Comic Sans MS;
-            }
-            body{
-                color:rgb(255, 255, 255);
-            }
-            h1 {
-                font-size: 62px;
-            }
-            h2 {
-                font-size: 40px;
-            }
-            h3 {
-                font-size: 28px;
-            }
-        </style>
-    </head>
-    <body bgcolor="black">
-        <hr style="border: 5px solid rgb(0, 0, 0);">
-<hr><h3><p style="text-align: right;"><a href="index.html" class="home-btn"> - Home</a><a href="earth.html" class="btn"> - Earth</a><a href="animals.html" class="btn"> - Animals</a><a href="space.html" class="btn"> - Space</a><a href="mysteries.html" class="btn"> - Mysteries</a><a href="history.html" class="btn"> - History</a></p></h3><hr>
-        <h1><u><i><b>Grim Reaper</b></i></u></h1><center><img class="grim reaper" src="images/grim reaper.jpg"></center>
-        <h3>The Grim Reaper is a fictional figure that represents death. This character is mainly associated with Western culture and is believed to appear at the moment a person’s life ends, in order to collect or guide the soul. The Grim Reaper is not a real being but a symbolic creation used by humans to express ideas and fears related to death.</h3>
-        <hr><h3>The Grim Reaper is commonly portrayed wearing a long black hooded cloak, with a skeletal face symbolizing lifelessness. He is usually shown carrying a scythe, which represents the cutting or ending of life, similar to harvesting crops. This dark and mysterious appearance emphasizes the fear and uncertainty surrounding death.</h3>
-        <hr><h3>The concept of the Grim Reaper developed during the Middle Ages in Europe. This period was marked by widespread wars, diseases, and deadly epidemics such as the Black Death, which caused a large number of deaths. As death became a constant presence in everyday life, people began to imagine it as a visible and frightening figure. Over time, this idea was expressed through art, literature, and folklore, eventually forming the image of the Grim Reaper.</h3>
-        <hr><h3>The Grim Reaper holds an important place in Western culture as a symbol of mortality and the inevitability of death. He appears frequently in stories, novels, movies, cartoons, and video games. In some representations, the Grim Reaper is shown as a terrifying character, while in others he appears calm and neutral, simply carrying out his role. These different portrayals reflect human attitudes toward death.</h3>
-        <hr><h3>Further information about the Grim Reaper can be obtained through various sources. Books on mythology, folklore, and medieval history provide detailed explanations of the origin and development of this character. Reliable websites, online encyclopedias, and digital libraries also contain well-researched information. Additionally, medieval paintings, documentaries, and films offer insight into how the Grim Reaper has been portrayed over time. Studying art history and cultural studies helps in understanding the symbolic meaning of the Grim Reaper within society.</h3>
-        <hr><h3>In conclusion, the Grim Reaper is a fictional and symbolic representation of death created by human imagination. This figure serves as a powerful reminder of the temporary nature of life and the certainty of death. Through the Grim Reaper, societies have expressed fear, respect, and curiosity about the unknown aspects of death.</h3>
-        
-        <hr style="border-top: 3px dotted rgb(255, 255, 255);">
-             
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grim Reaper - I T L</title>
+    <style>
+        /* මූලික සැකසුම් */
+        body {
+            font-family: 'Constantia', 'Georgia', serif;
+            background-color: #080808;
+            color: #b0b0b0;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+            background-image: linear-gradient(to bottom, #111 0%, #080808 100%);
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 1px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #666;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 17px;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover {
+            color: #fff;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+        }
+
+        /* මාතෘකාව */
+        h1 {
+            font-size: clamp(40px, 8vw, 70px);
+            text-align: center;
+            color: #f0f0f0;
+            margin-top: 50px;
+            letter-spacing: 12px;
+            text-transform: uppercase;
+            font-weight: 300;
+            opacity: 0.8;
+        }
+
+        /* පින්තූර සැකසුම */
+        .img-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .reaper-img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 5px;
+            filter: grayscale(80%) contrast(120%);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+            border: 1px solid #222;
+            transition: 0.6s;
+        }
+
+        .reaper-img:hover {
+            filter: grayscale(20%);
+            transform: scale(1.01);
+        }
+
+        /* අන්තර්ගතය */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(20, 20, 20, 0.5);
+            padding: 40px;
+            border-radius: 4px;
+            margin-bottom: 30px;
+            border-left: 3px solid #333;
+            transition: 0.3s;
+        }
+
+        section:hover {
+            border-left-color: #666;
+            background: rgba(30, 30, 30, 0.5);
+        }
+
+        h2 {
+            color: #fff;
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        h3 {
+            font-size: 22px;
+            font-weight: normal;
+            color: #999;
+            margin: 0;
+            text-align: justify;
+        }
+
+        strong {
+            color: #fff;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #333, transparent);
+            margin: 50px 0;
+        }
+
+        .footer-hr {
+            border-top: 2px dotted #222;
+            margin: 80px 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div class="container">
+        <h1>Grim Reaper</h1>
+
+        <div class="img-container">
+            <img class="reaper-img" src="images/grim reaper.jpg" alt="The Grim Reaper">
+        </div>
+
+        <section>
+            <h3><strong>Grim Reaper</strong> යනු මරණය නිරූපණය කිරීම සඳහා නිර්මාණය කරන ලද සංකේතාත්මක චරිතයකි. බටහිර සංස්කෘතිය තුළ බහුලව දක්නට ලැබෙන මෙම චරිතය, පුද්ගලයෙකුගේ ජීවිතය අවසන් වන මොහොතේදී එම ආත්මය රැගෙන යාමට හෝ මඟ පෙන්වීමට පැමිණෙන බව විශ්වාස කෙරේ.</h3>
+        </section>
+
+        <section>
+            <h2>Visual Representation</h2>
+            <h3>දිගු කළු පැහැති හිස්වැසුමක් සහිත ලෝගුවක් (Hooded Cloak) පැළඳ සිටින ඇටසැකිලි මුහුණක් සහිත රුවකින් ඔහුව නිරූපණය කෙරේ. අතෙහි ඇති <strong>දැකැත්ත (Scythe)</strong> මගින් අස්වනු නෙළන්නාක් මෙන් ජීවිතය නෙළා ගැනීම සංකේතවත් කරයි.</h3>
+        </section>
+
+        <section>
+            <h2>Origins & History</h2>
+            <h3>මෙම සංකල්පය යුරෝපයේ මධ්‍යතන යුගයේදී (Middle Ages) ආරම්භ විය. එම කාලයේ පැතිරී ගිය <strong>Black Death</strong> වැනි මාරාන්තික වසංගත සහ යුද්ධ නිසා මරණය පිළිබඳ නිරන්තර බියක් මිනිසුන් තුළ පැවතිණි. ඒ හේතුවෙන් මරණය දෘශ්‍යමාන චරිතයක් ලෙස මිනිසුන් මවා ගැනීමට පටන් ගත්හ.</h3>
+        </section>
+
+        <section>
+            <h2>Cultural Impact</h2>
+            <h3>වර්තමානයේදී චිත්‍රපට, වීඩියෝ ක්‍රීඩා සහ සාහිත්‍යය තුළ මොහු නිතර දක්නට ලැබේ. සමහර අවස්ථාවලදී භයානක චරිතයක් ලෙසත්, තවත් විටෙක මධ්‍යස්ථ ලෙස තම රාජකාරිය ඉටුකරන චරිතයක් ලෙසත් මොහුව නිරූපණය කෙරේ.</h3>
+        </section>
+
+        <section>
+            <h2>Final Thoughts</h2>
+            <h3>සාරාංශයක් ලෙස, Grim Reaper යනු ජීවිතයේ තාවකාලික බව සහ මරණයේ ස්ථිර බව සිහිපත් කරන ප්‍රබල මිනිස් නිර්මාණයකි. මෙය මරණය පිළිබඳව පවතින කුතුහලය සහ ගෞරවය ප්‍රකාශ කරන එක් ක්‍රමයකි.</h3>
+        </section>
+
+        <div class="footer-hr"></div>
+    </div>
+
+</body>
 </html>
