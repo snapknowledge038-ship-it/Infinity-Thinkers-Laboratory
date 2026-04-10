@@ -1,85 +1,230 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Quasar - I T L</title>
-        <style>
-            body {
-                font-family: Comic Sans MS;
-            }
-            body{
-                color:rgb(255, 255, 255);
-            }
-            h1 {
-                font-size: 62px;
-            }
-            h2 {
-                font-size: 40px;
-            }
-            h3 {
-                font-size: 28px;
-            }
-            img{
-                width : 601px;
-            }
-        </style>
-    </head>
-    <body bgcolor="black">
-        <hr style="border: 5px solid rgb(0, 0, 0);">
-<hr><h3><p style="text-align: right;"><a href="index.html" class="home-btn"> - Home</a><a href="earth.html" class="btn"> - Earth</a><a href="animals.html" class="btn"> - Animals</a><a href="space.html" class="btn"> - Space</a><a href="mysteries.html" class="btn"> - Mysteries</a><a href="history.html" class="btn"> - History</a></p></h3><hr>
-        <h1><u><i><b>Quasar</b></i></u></h1><center><img src="images/Quasar.jpg"></center>
-    <hr><h2>What is a Quasar?</h2>
-        <h3>
-            <p>A quasar is an Active Galactic Nucleus (AGN). It is not a star, but a supermassive black hole at the center of a young galaxy that is "feeding" on massive amounts of surrounding gas and dust.</p>
-            <p>As this material falls toward the black hole, it settles into an accretion disk. The extreme gravity and friction heat this material to millions of degrees, causing it to emit incredible amounts of electromagnetic radiation (light, X-rays, and radio waves).</p>
-        </h3>
-    <hr><h2>Key Components of a Quasar</h2>
-        <h3>
-            <li>•	Supermassive Black Hole: The central engine, often millions or billions of times more massive than our Sun.</li>
-            <li>•	Accretion Disk: A swirling disk of gas and dust spiraling into the black hole. This is the source of the quasar's intense light.</li>
-            <li>•	Relativistic Jets: Powerful beams of particles blasted out from the poles of the black hole at nearly the speed of light.</li>
-            <li>•	Host Galaxy: The galaxy surrounding the quasar, though it is usually outshined by the quasar's brilliance.</li>
-        </h3>
-    <hr><h2>Power and Scale</h2>
-        <h3>To understand how powerful a quasar is, consider these facts:
-            <li>•	Brightness: A single quasar can be 100 to 1,000 times brighter than the entire Milky Way galaxy (which contains 200–400 billion stars).</li>
-            <li>•	Size: Despite their brightness, the central engine of a quasar is relatively small—roughly the size of our solar system.</li>
-            <li>•	Distance: Most quasars are found billions of light-years away. Because light takes time to travel, when we look at a quasar, we are actually looking back in time at the early universe.</li>
-        </h3>
-    <hr><h2>Why don't we see Quasars nearby?</h2>
-        <h3>Quasars are a phase in galactic evolution. They were most common about 10 billion years ago.
-            <li>•	In the early universe, galaxies were crowded and had plenty of "fuel" (gas and dust) to feed their central black holes.</li>
-            <li>•	As galaxies aged, the fuel was used up or blown away.</li>
-            <li>•	The Milky Way likely had a quasar phase in its distant past, but our central black hole (Sagittarius A*) is now "quiet" because it isn't consuming enough material to shine like a quasar.</li>
-        </h3>
-    <hr><h2>Summary Table</h2>    
-        <h3><table border="1">
-            <tr>
-                <th>Feature</th>
-                <th>Description</th>
-            </tr>
-            <tr>
-                <td>Source of Power</td>
-                <td>Supermassive Black Hole feeding on gas/dust</td>
-            </tr>
-            <tr>
-                <td>Location</td>
-                <td>Centers of distant, young galaxies</td>
-            </tr>
-            <tr>
-                <td>Luminosity</td>
-                <td>Can outshine hundreds of galaxies combined</td>
-            </tr>
-            <tr>
-                <td>Discovery</td>
-                <td>First identified in the 1960s via radio telescopes</td>
-            </tr>
-            <tr>
-                <td>Significance</td>
-                <td>Helps scientists study the early history of the universe</td>
-            </tr>
-        </table></h3>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quasar - I T L</title>
+    <style>
+        /* මූලික සැකසුම් */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #030008;
+            color: #e2e8f0;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-image: radial-gradient(circle at center, #110022 0%, #030008 100%);
+        }
 
-        <hr style="border-top: 3px dotted rgb(255, 255, 255);">
-       
-    </body>
+        /* Navigation Bar */
+        nav {
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 2px solid #4c1d95;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        nav a {
+            color: #a78bfa;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 17px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px #8b5cf6;
+        }
+
+        /* මාතෘකාව */
+        h1 {
+            font-size: clamp(40px, 10vw, 85px);
+            text-align: center;
+            margin-top: 50px;
+            letter-spacing: 12px;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #ffffff, #a78bfa, #4c1d95);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+
+        /* පින්තූර සැකසුම */
+        .img-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .quasar-img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 0 40px rgba(139, 92, 246, 0.2);
+            border: 1px solid #2e1065;
+            transition: 0.5s ease;
+        }
+
+        .quasar-img:hover {
+            box-shadow: 0 0 60px rgba(139, 92, 246, 0.4);
+            transform: scale(1.01);
+        }
+
+        /* අන්තර්ගතය */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(20, 10, 30, 0.6);
+            padding: 40px;
+            border-radius: 30px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(139, 92, 246, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        h2 {
+            color: #a78bfa;
+            font-size: 34px;
+            margin-bottom: 25px;
+            border-left: 5px solid #8b5cf6;
+            padding-left: 20px;
+        }
+
+        h3 {
+            font-size: 21px;
+            font-weight: normal;
+            color: #cbd5e1;
+            margin: 0;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-top: 20px;
+        }
+
+        li {
+            margin-bottom: 15px;
+        }
+
+        strong {
+            color: #ffffff;
+        }
+
+        /* වගුව සැකසුම */
+        .table-container {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 18px;
+            text-align: left;
+            border: 1px solid #2e1065;
+        }
+
+        th {
+            background-color: #2e1065;
+            color: #a78bfa;
+            text-transform: uppercase;
+        }
+
+        .footer-hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #4c1d95, transparent);
+            margin: 80px 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div class="container">
+        <h1>Quasar</h1>
+
+        <div class="img-container">
+            <img class="quasar-img" src="images/Quasar.jpg" alt="Active Galactic Nucleus">
+        </div>
+
+        <section>
+            <h2>What is a Quasar? (ක්වේසාර් යනු කුමක්ද?)</h2>
+            <h3>ක්වේසාර් යනු සක්‍රීය මන්දාකිණි න්‍යෂ්ටියකි (AGN). මෙය තරුවක් නොවන අතර, තරුණ මන්දාකිණියක් මධ්‍යයේ ඇති <strong>අති දැවැන්ත කළු කුහරයක් (Supermassive Black Hole)</strong> වටා පවතින දූවිලි හා වායූන් ගිලගනිමින් නිකුත් කරන අතිප්‍රබල ආලෝක ධාරාවකි. කළු කුහරය වෙත මෙම ද්‍රව්‍ය ඇදී යාමේදී ඇති වන ඝර්ෂණය නිසා ඒවා අධික ලෙස රත් වී මුළු මන්දාකිණියකටම වඩා වැඩි දීප්තියක් නිකුත් කරයි.</h3>
+        </section>
+
+        <section>
+            <h2>Key Components (ප්‍රධාන කොටස්)</h2>
+            <ul>
+                <li><strong>Supermassive Black Hole:</strong> ක්වේසාර් එකක බලශක්ති මධ්‍යස්ථානය මෙයයි. මෙය සූර්යයා මෙන් මිලියන ගුණයක ස්කන්ධයකින් යුක්ත වේ.</li>
+                <li><strong>Accretion Disk:</strong> කළු කුහරය වටා කැරකෙන රත්වූ වායු හා දූවිලි තැටියයි. මෙයින් අතිවිශාල ආලෝකයක් නිකුත් වේ.</li>
+                <li><strong>Relativistic Jets:</strong> කළු කුහරයේ ධ්‍රැව හරහා ආලෝකයේ වේගයට ආසන්න වේගයකින් පිටතට විහිදෙන ප්‍රබල අංශු ධාරාවන්ය.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Power and Scale (බලය සහ ප්‍රමාණය)</h2>
+            <ul>
+                <li><strong>Brightness:</strong> එක් ක්වේසාර් එකක දීප්තිය අපේ ක්ෂීරපථය (Milky Way) මෙන් 1,000 ගුණයක් පමණ විය හැක.</li>
+                <li><strong>Distance:</strong> බොහෝ ක්වේසාර් පවතින්නේ ආලෝක වර්ෂ බිලියන ගණනක් ඈතිනි. එමනිසා අප ක්වේසාර් එකක් දෙස බලන විට පෙනෙන්නේ විශ්වයේ මුල් කාලයේ සිදු වූ දෙයකි.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Summary Table</h2>
+            <div class="table-container">
+                <table>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td>බලශක්ති ප්‍රභවය</td>
+                        <td>වායු ගිලගන්නා අති දැවැන්ත කළු කුහර</td>
+                    </tr>
+                    <tr>
+                        <td>ස්ථානය</td>
+                        <td>ඈතින් පිහිටි තරුණ මන්දාකිණිවල මධ්‍යය</td>
+                    </tr>
+                    <tr>
+                        <td>දීප්තිය</td>
+                        <td>මන්දාකිණි සිය ගණනකට වඩා වැඩිය</td>
+                    </tr>
+                    <tr>
+                        <td>වැදගත්කම</td>
+                        <td>විශ්වයේ මුල් ඉතිහාසය හැදෑරීමට උපකාරී වේ</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <div class="footer-hr"></div>
+    </div>
+
+</body>
 </html>
