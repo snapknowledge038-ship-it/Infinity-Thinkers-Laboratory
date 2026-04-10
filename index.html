@@ -18,28 +18,37 @@
         /* මූලික සැකසුම් */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0b0b0b; /* තද කළු පැහැය */
+            background-color: #0b0b0b;
             color: #e0e0e0;
             margin: 0;
             padding: 0;
             line-height: 1.6;
         }
 
-        /* Navigation Bar එක */
+        /* නවීකරණය කළ Navigation Bar එක */
         nav {
             background-color: #1a1a1a;
-            padding: 15px 0;
-            text-align: center;
+            padding: 15px 30px;
+            display: flex;
+            align-items: center;
             border-bottom: 2px solid #333;
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
+        /* මැද ඇති ටැබ් සඳහා කන්ටේනරය */
+        .nav-links {
+            display: flex;
+            gap: 15px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
         nav a {
-            color: #00d4ff; /* ලස්සන නිල් පැහැයක් */
+            color: #00d4ff;
             text-decoration: none;
-            margin: 0 15px;
             font-weight: bold;
             font-size: 18px;
             transition: 0.3s;
@@ -50,9 +59,27 @@
             text-shadow: 0 0 10px #00d4ff;
         }
 
+        /* About බොත්තම පමණක් දකුණු කෙළවරට */
+        .about-btn {
+            margin-left: auto; /* මෙය බොත්තම දකුණටම තල්ලු කරයි */
+            border: 2px solid #00d4ff;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 16px !important;
+            transition: 0.4s ease-in-out;
+            text-transform: uppercase;
+        }
+
+        .about-btn:hover {
+            background-color: #00d4ff;
+            color: #000 !important;
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+            text-shadow: none !important;
+        }
+
         /* ප්‍රධාන මාතෘකාව */
         h1 {
-            font-size: clamp(40px, 8vw, 70px); /* Screen එකට අනුව ප්‍රමාණය වෙනස් වේ */
+            font-size: clamp(40px, 8vw, 70px);
             text-align: center;
             color: #fff;
             text-transform: uppercase;
@@ -99,7 +126,7 @@
             border-left: 5px solid #00d4ff;
         }
 
-        /* ලැයිස්තුව (Discover List) */
+        /* Discover List */
         .discover-list {
             list-style: none;
             padding: 0;
@@ -132,7 +159,6 @@
             color: #000;
         }
 
-        /* ඉරි (HR) සැකසුම් */
         hr {
             border: 0;
             height: 1px;
@@ -140,17 +166,38 @@
             margin: 50px 0;
         }
 
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                padding: 10px;
+            }
+            .nav-links {
+                position: static;
+                transform: none;
+                margin: 10px 0;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .about-btn {
+                margin: 5px auto;
+            }
+        }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="index.html">Home</a>
-        <a href="earth.html">Earth</a>
-        <a href="animals.html">Animals</a>
-        <a href="space.html">Space</a>
-        <a href="mysteries.html">Mysteries</a>
-        <a href="history.html">History</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="earth.html">Earth</a>
+            <a href="animals.html">Animals</a>
+            <a href="space.html">Space</a>
+            <a href="mysteries.html">Mysteries</a>
+            <a href="history.html">History</a>
+        </div>
+
+        <a href="aaaextradatapage.html" class="about-btn">About</a>
     </nav>
 
     <h1>Infinity Thinkers Laboratory</h1>
@@ -165,6 +212,7 @@
             ITL is a platform created for curious minds who love exploring new knowledge every day. We bring fascinating facts about 🦖 dinosaurs, 🔮 mythology, 🔬 science discoveries, 🌍 nature, space, technology, and amazing things around the world.
             <br><br>
             Our content is presented in a simple, clear, and engaging way — making learning fun and easy for everyone. 🚀📚
+            <br><br>
             If you love discovery, mystery, and mind-blowing facts, then ITL is the perfect place for you. Subscribe and join us on this journey of knowledge!
         </div>
 
