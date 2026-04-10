@@ -1,76 +1,218 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Comet - I T L</title>
-        <style>
-            body {
-                font-family: Comic Sans MS;
-            }
-            body{
-                color:rgb(255, 255, 255);
-            }
-            h1 {
-                font-size: 62px;
-            }
-            h2 {
-                font-size: 40px;
-            }
-            h3 {
-                font-size: 28px;
-            }
-            img.com{
-                width : 601px;
-            }
-            img.p{
-                width : 601px;
-            }
-            img.kb{
-                width : 601px;
-            }
-            img.oc{
-                width : 601px;
-            }
-            img.t{
-                width : 601px;
-            }
-            img.s{
-                width : 601px;
-            }
-        </style>
-    </head>
-    <body bgcolor="black">
-        <hr style="border: 5px solid rgb(0, 0, 0);">
-<hr><h3><p style="text-align: right;"><a href="index.html" class="home-btn"> - Home</a><a href="earth.html" class="btn"> - Earth</a><a href="animals.html" class="btn"> - Animals</a><a href="space.html" class="btn"> - Space</a><a href="mysteries.html" class="btn"> - Mysteries</a><a href="history.html" class="btn"> - History</a></p></h3><hr>
-        <h1><u><i><b>Comet</b></i></u></h1><center><img class="com" src="images/Comets.jpg"></center>
-    <hr><h2>1. What is a Comet?</h2>
-        <h3>A comet is a celestial body composed of ice, dust, and small rocky particles. They travel in highly elliptical (long oval) orbits around the Sun. Because they originate from the cold outer reaches of the solar system, they are often nicknamed "dirty snowballs."</h3>
-    <hr><h2>2. Main Parts of a Comet</h2><center><img class="p" src="images/comet parts.jpg"></center>
-        <h3>As a comet approaches the Sun, its structure becomes clearly visible:
-            <ul>
-            <li>Nucleus: The core of the comet. It is a solid structure made of frozen gases and dust.</li>
-            <li>Coma: The cloud of gas and dust that forms around the nucleus as the ice begins to vaporize due to the Sun's heat.</li>
-            <li>Tail: Solar winds push the gas and dust away from the Sun, creating a glowing tail that can stretch for millions of kilometers.</li>
-        </ul></h3>
-    <hr><h2>3. Where Do Comets Come From?</h2>
-        <h3>Scientists believe comets originate from two primary regions:
-            <ol>
-            <li>Kuiper Belt: A region of icy objects located just beyond the orbit of Neptune.</li><center><img class="kb" src="images/Kuiper Belt.jpeg"></center>
-            <li>Oort Cloud: A giant spherical shell surrounding the entire solar system, containing billions of icy bodies at its very edge.</li><center><img class="oc" src="images/Oort Cloud.jpg"></center>
-        </ol></h3>
-    <hr><h2>4. Famous Comets</h2>
-        <h3>
-            <ul>
-                <li>Halley’s Comet: The most famous comet, which becomes visible from Earth every 75–76 years. (It is predicted to appear next in the year 2061).</li>
-                <li>Hale-Bopp: One of the brightest comets ever observed, which was clearly visible to the naked eye in 1997.</li>
-            </ul>
-        </h3>
-    <hr><h2>Fascinating Facts</h2>
-        <h3>
-            <ul><li>Tail Direction: Regardless of which way the comet is moving, its tail always points away from the Sun because of the solar wind.</li></li><center><img class="t" src="images/Tail Direction.jpg"></center>
-            <li>Meteor Showers: When Earth passes through the trail of dust left behind by a comet, we experience "meteor showers."</li></ul></li><center><img class="s" src="images/Meteor Showers.jpg"></center>
-        </h3>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comet - I T L</title>
+    <style>
+        /* මූලික සැකසුම් */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #02050a; /* තද නිල්/කළු අභ්‍යවකාශ වර්ණය */
+            color: #e2e8f0;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-image: radial-gradient(circle at top right, #0a192f 0%, #02050a 100%);
+        }
 
-        <hr style="border-top: 3px dotted rgb(255, 255, 255);">
-        
-    </body>
+        /* Navigation Bar */
+        nav {
+            background-color: rgba(2, 5, 10, 0.8);
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 1px solid #1e293b;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(12px);
+        }
+
+        nav a {
+            color: #94a3b8;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 17px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #38bdf8; /* වල්ගාතරු නිල් පැහැය */
+            text-shadow: 0 0 10px #38bdf8;
+        }
+
+        /* මාතෘකාව */
+        h1 {
+            font-size: clamp(35px, 8vw, 65px);
+            text-align: center;
+            color: #fff;
+            margin-top: 50px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            background: linear-gradient(to bottom, #fff, #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+
+        /* පින්තූර සැකසුම */
+        .img-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .comet-img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 0 50px rgba(56, 189, 248, 0.2);
+            border: 1px solid #0f172a;
+            transition: 0.5s;
+        }
+
+        .comet-img:hover {
+            transform: scale(1.01);
+            box-shadow: 0 0 60px rgba(56, 189, 248, 0.4);
+        }
+
+        /* අන්තර්ගතය */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(15, 23, 42, 0.4);
+            padding: 40px;
+            border-radius: 24px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(56, 189, 248, 0.1);
+        }
+
+        h2 {
+            color: #38bdf8;
+            font-size: 32px;
+            margin-bottom: 20px;
+            border-left: 4px solid #38bdf8;
+            padding-left: 20px;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: normal;
+            color: #cbd5e1;
+            margin: 0;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+            margin-top: 20px;
+        }
+
+        li {
+            margin-bottom: 15px;
+        }
+
+        strong {
+            color: #fff;
+            text-shadow: 0 0 5px rgba(56, 189, 248, 0.5);
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #1e293b, transparent);
+            margin: 50px 0;
+        }
+
+        .dotted-hr {
+            border-top: 2px dotted #1e293b;
+            margin-top: 80px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div class="container">
+        <h1>Comet</h1>
+
+        <div class="img-container">
+            <img class="comet-img" src="images/Comets.jpg" alt="A glowing comet in space">
+        </div>
+
+        <section>
+            <h2>1. What is a Comet?</h2>
+            <h3>A comet is a celestial body composed of <strong>ice, dust, and small rocky particles</strong>. They travel in highly elliptical orbits around the Sun. Because they originate from the cold outer reaches of the solar system, they are often nicknamed <strong>"dirty snowballs."</strong></h3>
+        </section>
+
+        <section>
+            <h2>2. Main Parts of a Comet</h2>
+            <div class="img-container">
+                <img class="comet-img" src="images/comet parts.jpg" alt="Diagram of a comet's parts">
+            </div>
+            <ul>
+                <li><strong>Nucleus:</strong> The solid core made of frozen gases and dust.</li>
+                <li><strong>Coma:</strong> The glowing cloud of gas and dust that forms as the ice vaporizes near the Sun.</li>
+                <li><strong>Tail:</strong> Solar winds push gas and dust away from the Sun, creating a tail that can stretch for millions of kilometers.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>3. Where Do Comets Come From?</h2>
+            <ol>
+                <li>
+                    <strong>Kuiper Belt:</strong> A region of icy objects located just beyond Neptune.
+                    <div class="img-container">
+                        <img class="comet-img" src="images/Kuiper Belt.jpeg" alt="The Kuiper Belt">
+                    </div>
+                </li>
+                <li>
+                    <strong>Oort Cloud:</strong> A giant spherical shell at the very edge of our solar system.
+                    <div class="img-container">
+                        <img class="comet-img" src="images/Oort Cloud.jpg" alt="The Oort Cloud">
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>4. Famous Comets</h2>
+            <ul>
+                <li><strong>Halley’s Comet:</strong> Visible from Earth every 75–76 years. It is predicted to appear next in <strong>2061</strong>.</li>
+                <li><strong>Hale-Bopp:</strong> One of the brightest comets ever, visible to the naked eye in 1997.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Fascinating Facts</h2>
+            <div class="img-container">
+                <img class="comet-img" src="images/Tail Direction.jpg" alt="Direction of a comet's tail">
+            </div>
+            <ul>
+                <li><strong>Tail Direction:</strong> A comet's tail <strong>always points away from the Sun</strong>, regardless of its travel direction, due to solar wind.</li>
+            </ul>
+            <div class="img-container">
+                <img class="comet-img" src="images/Meteor Showers.jpg" alt="Meteor shower caused by comet dust">
+            </div>
+            <ul>
+                <li><strong>Meteor Showers:</strong> When Earth passes through the dust trail left by a comet, we see a meteor shower.</li>
+            </ul>
+        </section>
+
+        <div class="dotted-hr"></div>
+    </div>
+
+</body>
 </html>
