@@ -1,58 +1,198 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Dracula - I T L</title>
-        <style>
-            body {
-                font-family: Comic Sans MS;
-            }
-            body{
-                color:rgb(255, 255, 255);
-            }
-            h1 {
-                font-size: 62px;
-            }
-            h2 {
-                font-size: 40px;
-            }
-            h3 {
-                font-size: 28px;
-            }
-            img.Dracula{
-                width : 463.2px;
-            }
-            img.bram{
-                width : 601px;
-            }
-        </style>
-    </head>
-    <body bgcolor="black">
-        <hr style="border: 5px solid rgb(0, 0, 0);">
-<hr><h3><p style="text-align: right;"><a href="index.html" class="home-btn"> - Home</a><a href="earth.html" class="btn"> - Earth</a><a href="animals.html" class="btn"> - Animals</a><a href="space.html" class="btn"> - Space</a><a href="mysteries.html" class="btn"> - Mysteries</a><a href="history.html" class="btn"> - History</a></p></h3><hr>
-        <h1><u><i><b>Dracula</b></i></u></h1><center><img class="Dracula" src="images/dracula.jpg"><img class="bram" src="images/bram stoker.jpg"></center>
-        <h3>Published in 1897, Bram Stoker’s Dracula stands as the definitive masterpiece of Victorian Gothic fiction. Unlike traditional narratives, Stoker employs an epistolary structure—a complex montage of diary entries, telegrams, ship's logs, and newspaper clippings. This technique functions as a "found footage" device, grounding the supernatural horror in a sense of harrowing realism and objective documentation, which heightens the suspense for the reader.</h3>
-        <hr><h3>The character of Count Dracula is famously linked to the 15th-century Prince of Wallachia, Vlad III, also known as Vlad Tepes (the Impaler). While Stoker’s portrayal is largely a work of fiction, he drew significant inspiration from the brutal reputation of the historical "Dracula" (meaning "Son of the Dragon"). This historical anchoring transforms the Count from a mere ghost into an ancient, aristocratic predator with a lineage rooted in Eastern European bloodletting.</h3>
-        <hr><h3>The plot follows the harrowing journey of Jonathan Harker to the Carpathian Mountains, where he discovers the Count’s true nature. As Dracula migrates to London—the heart of the British Empire—to seek "new blood," he represents an invasive force from the East. The narrative culminates in a desperate crusade led by the polymath Professor Abraham Van Helsing, representing a clash between ancient superstition and modern Victorian rationality.</h3>
-        <hr><h3>Dracula is depicted as an un-dead entity with near-omnipotent capabilities and crippling limitations:
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dracula - I T L</title>
+    <style>
+        /* මූලික සැකසුම් */
+        body {
+            font-family: 'Garamond', 'Georgia', serif; /* පැරණි පොත් වල විලාසිතාව */
+            background-color: #050000;
+            color: #d1d1d1;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-image: linear-gradient(180deg, #0a0000 0%, #050000 100%);
+        }
 
-<ul><li>Preternatural Abilities: He possesses the power of therianthropy (transforming into wolves or bats), command over the elements (fog and storms), and superhuman physical strength.</li>
+        /* Navigation Bar */
+        nav {
+            background-color: #1a0000;
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 2px solid #660000;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-<li>Arcane Weaknesses: His existence is governed by rigid occult laws. He is repelled by apotropaics such as garlic and crucifixes, and he loses his shapeshifting abilities during daylight</li>
+        nav a {
+            color: #999;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
 
-<li>Metaphysical Destruction: Termination of his existence requires a specific ritual: a wooden stake through the heart, followed by decapitation to ensure the soul's release.</li></ul></h3>
-       <hr><h3>Beyond the horror, Dracula serves as a profound social commentary. Academics often interpret the Count through various lenses:
+        nav a:hover {
+            color: #ff0000;
+            text-shadow: 0 0 10px #ff0000;
+        }
 
-<ul><li>Xenophobia: He represents the Victorian fear of "Reverse Colonialism"—the idea of a primitive outsider infiltrating and "infecting" civilized London.</li>
+        /* මාතෘකාව */
+        h1 {
+            font-size: clamp(40px, 9vw, 80px);
+            text-align: center;
+            color: #880000;
+            margin-top: 40px;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            font-family: 'Old English Text MT', serif; /* තිබේ නම් පමණක් */
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 1);
+        }
 
-<li>Scientific Progress: The use of phonographs, blood transfusions, and typewriters in the novel highlights the tension between medieval folklore and modern science.</li>
+        /* පින්තූර සැකසුම */
+        .img-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+        }
 
-<li>Sublimated Desires: The act of blood-drinking is frequently analyzed as a metaphor for repressed Victorian sexuality and the fear of blood-borne contamination.</li></ul></h3>
-        <hr><h3>The impact of Dracula on global culture is immeasurable. Stoker effectively codified the modern vampire mythos.
+        .img-container img {
+            max-width: 45%;
+            height: auto;
+            border: 2px solid #330000;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            filter: sepia(30%) contrast(110%);
+        }
 
-<ul><li>Cinematic Evolution: From the expressionist Nosferatu (1922) to the aristocratic portrayal by Bela Lugosi (1931), the Count has been reimagined in hundreds of films.</li>
+        /* අන්තර්ගතය */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-<li>Literary Progenitor: The novel paved the way for the "Vampire Romances" of the 21st century, shifting the monster from a repulsive cadaver to a tragic, sophisticated anti-hero.</li></ul></h3>
-        <hr style="border-top: 3px dotted rgb(255, 255, 255);">
-        
-    </body>
+        section {
+            background: rgba(20, 0, 0, 0.6);
+            padding: 35px;
+            border-radius: 5px;
+            margin-bottom: 35px;
+            border: 1px solid #330000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        h2 {
+            color: #aa0000;
+            font-size: 32px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #440000;
+            display: inline-block;
+        }
+
+        h3 {
+            font-size: 21px;
+            font-weight: normal;
+            color: #bbb;
+            margin: 0;
+            text-align: justify;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        li::before {
+            content: "🧛"; /* වැම්පයර් අයිකනයක් */
+            position: absolute;
+            left: 0;
+            font-size: 14px;
+        }
+
+        strong {
+            color: #ff0000;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #660000, transparent);
+            margin: 40px 0;
+        }
+
+        .footer-hr {
+            border-top: 3px dotted #330000;
+            margin: 60px 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div class="container">
+        <h1>Dracula</h1>
+
+        <div class="img-container">
+            <img src="images/dracula.jpg" alt="Count Dracula">
+            <img src="images/bram stoker.jpg" alt="Bram Stoker">
+        </div>
+
+        <section>
+            <h3>Published in 1897, Bram Stoker’s <strong>Dracula</strong> stands as the definitive masterpiece of Victorian Gothic fiction. Stoker employs an epistolary structure—a montage of diary entries, telegrams, and newspaper clippings to heighten suspense.</h3>
+        </section>
+
+        <section>
+            <h2>Historical Inspiration</h2>
+            <h3>The Count is famously linked to <strong>Vlad III (The Impaler)</strong>, the 15th-century Prince of Wallachia. Stoker transformed this historical figure into an ancient, aristocratic predator with a lineage rooted in Eastern European bloodletting.</h3>
+        </section>
+
+        <section>
+            <h2>The Plot</h2>
+            <h3>Following Jonathan Harker’s journey to the Carpathian Mountains, the narrative reveals Dracula’s move to London—the heart of the British Empire. This represents a clash between ancient superstition and modern Victorian rationality.</h3>
+        </section>
+
+        <section>
+            <h2>Abilities and Weaknesses</h2>
+            <ul>
+                <li><strong>Preternatural Abilities:</strong> He can transform into wolves or bats, command fog and storms, and possesses superhuman strength.</li>
+                <li><strong>Arcane Weaknesses:</strong> Repelled by garlic and crucifixes, he loses his shapeshifting powers during the daylight.</li>
+                <li><strong>Destruction:</strong> Termination requires a wooden stake through the heart, followed by decapitation.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Social Commentary</h2>
+            <ul>
+                <li><strong>Xenophobia:</strong> Represents the fear of an outsider infiltrating and "infecting" London.</li>
+                <li><strong>Scientific Progress:</strong> Highlights the tension between medieval folklore and modern science (blood transfusions, phonographs).</li>
+                <li><strong>Repressed Desires:</strong> Often analyzed as a metaphor for repressed Victorian sexuality.</li>
+            </ul>
+        </section>
+
+        <div class="footer-hr"></div>
+    </div>
+
+</body>
 </html>
