@@ -1,56 +1,176 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Animals - I T L</title>
-        <style>
-            body {
-                font-family: Comic Sans MS;
-            }
-            body{
-                color:rgb(255, 255, 255);
-            }
-            h1 {
-                font-size: 62px;
-            }
-            h2 {
-                font-size: 40px;
-            }
-            h3 {
-                font-size: 28px;
-            }
-            img.animals{
-                width : 1000px;
-            }
-            h1 {
-                text-shadow: 2px 2px 5px rgb(255, 255, 255);
-            }
-        </style>
-    </head>
-    <body bgcolor="black">
-        <hr style="border: 5px solid rgb(0, 0, 0);">
-<hr><h3><p style="text-align: right;"><a href="index.html" class="home-btn"> - Home</a><a href="earth.html" class="btn"> - Earth</a><a href="animals.html" class="btn"> - Animals</a><a href="space.html" class="btn"> - Space</a><a href="mysteries.html" class="btn"> - Mysteries</a><a href="history.html" class="btn"> - History</a></p></h3><hr>
-        <h1><u>Animals – The Fascinating World of Wildlife</u></h1>
-        <center><img class="animals" src="images/animals.jpeg"></center>
-        <h3><p>You have arrived here to explore the incredible world of animals. From the smallest creatures on Earth to the largest giants of the oceans, the animal kingdom is filled with diversity, beauty, and extraordinary adaptations.
-Here you will discover fascinating facts about wildlife, unique species, and the remarkable ways animals survive and interact with their environments.
-Through the articles and information below, you can learn more about the wonders of the animal world and deepen your understanding of the life that shares our planet.
-We hope these discoveries will expand your knowledge, spark your curiosity, and inspire you to appreciate the amazing diversity of animals on Earth.
-</p></h3>
-<hr>
-        <h2>
-            <p>What are the details you are expecting?</p>
-            <ul>
-                <li><a href=""><i>item</i></a></li>
-                <li><a href=""><i>item</i></a></li>
-                <li><a href=""><i>item</i></a></li>
-                <li><a href=""><i>item</i></a></li>
-                <li><a href=""><i>item</i></a></li>
-            </ul>
-        </h2>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animals - I T L</title>
+    <style>
+        /* මූලික සැකසුම් */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #050a05; /* තද කොළ පැහැති පසුබිමක් */
+            color: #e0f0e0;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
 
+        /* Navigation Bar */
+        nav {
+            background-color: #0d1a0d;
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 2px solid #2d5a27;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
+        nav a {
+            color: #4ade80; /* ලස්සන ලා කොළ පැහැයක් */
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.3s;
+        }
 
-        <hr style="border-top: 3px dotted rgb(255, 255, 255);">
+        nav a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px #4ade80;
+        }
 
-    </body>
+        /* මාතෘකාව */
+        h1 {
+            font-size: clamp(30px, 6vw, 55px);
+            text-align: center;
+            color: #fff;
+            text-transform: uppercase;
+            margin-top: 40px;
+            text-decoration: underline;
+            text-shadow: 0 0 15px rgba(74, 222, 128, 0.3);
+        }
+
+        /* පින්තූරය */
+        .img-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .animals-img {
+            max-width: 90%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+            border: 2px solid #1a3317;
+        }
+
+        /* අන්තර්ගතය */
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .wildlife-text {
+            font-size: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 30px;
+            border-radius: 15px;
+            border-right: 5px solid #4ade80; /* පැත්තෙන් කැපී පෙනෙන රේඛාවක් */
+            text-align: justify;
+        }
+
+        h2 {
+            color: #4ade80;
+            font-size: 32px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        /* ලිපි ලැයිස්තුව (Nature Grid) */
+        .animal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+            margin-top: 30px;
+        }
+
+        .animal-grid li {
+            background: #0d1a0d;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #1a3317;
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .animal-grid li:hover {
+            background: #2d5a27;
+            transform: translateY(-10px);
+            border-color: #4ade80;
+        }
+
+        .animal-grid a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #2d5a27, transparent);
+            margin: 50px 0;
+        }
+
+        .dotted-hr {
+            border-top: 3px dotted #1a3317;
+            margin-bottom: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div class="container">
+        <h1>Animals – The World of Wildlife</h1>
+
+        <div class="img-container">
+            <img class="animals-img" src="images/animals.jpeg" alt="Amazing Wildlife">
+        </div>
+
+        <div class="wildlife-text">
+            You have arrived here to explore the incredible world of animals. From the smallest creatures on Earth to the largest giants of the oceans, the animal kingdom is filled with diversity, beauty, and extraordinary adaptations. 
+            <br><br>
+            Here you will discover fascinating facts about wildlife, unique species, and the remarkable ways animals survive and interact with their environments. Through the articles and information below, you can learn more about the wonders of the animal world and deepen your understanding of the life that shares our planet.
+        </div>
+
+        <hr>
+
+        <h2>What are the details you are expecting?</h2>
+        
+        <ul class="animal-grid">
+            <li><a href="#">The Big Cats</a></li>
+            <li><a href="#">Ocean Giants</a></li>
+            <li><a href="#">Rare Insects</a></li>
+            <li><a href="#">Extinct Species</a></li>
+            <li><a href="#">Smartest Animals</a></li>
+        </ul>
+
+        <div class="dotted-hr"></div>
+    </div>
+
+</body>
 </html>
