@@ -1,56 +1,208 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Mysteries - I T L</title>
-        <style>
-            body {
-                font-family: Comic Sans MS;
-            }
-            body{
-                color:rgb(255, 255, 255);
-            }
-            h1 {
-                font-size: 62px;
-            }
-            h2 {
-                font-size: 40px;
-            }
-            h3 {
-                font-size: 28px;
-            }
-            img.mysteries{
-                width : 1000px;
-            }
-            h1 {
-                text-shadow: 2px 2px 5px rgb(255, 255, 255);
-            }
-        </style>
-    </head>
-    <body bgcolor="black">
-        <hr style="border: 5px solid rgb(0, 0, 0);">
-<hr><h3><p style="text-align: right;"><a href="index.html" class="home-btn"> - Home</a><a href="earth.html" class="btn"> - Earth</a><a href="animals.html" class="btn"> - Animals</a><a href="space.html" class="btn"> - Space</a><a href="mysteries.html" class="btn"> - Mysteries</a><a href="history.html" class="btn"> - History</a></p></h3><hr>
-        <h1><u>Mysteries – Exploring the Unknown</u></h1>
-        <center><img class="mysteries" src="images/mysteries.jpeg"></center>
-        <h3><p>You have arrived here to explore the mysteries of the world—phenomena that have not yet been fully explained. From strange events in history and unexplored places to questions that even scientists have not completely answered, you will encounter them all here. Through the articles and information below, you can dive deeper into this fascinating world of mysteries and expand your understanding of the unknown. We hope that what you discover here will inspire you to think about new ideas, broaden your knowledge of the world, and encourage your curiosity to keep exploring. If you found this information helpful, please use the link below to visit our YouTube channel. Subscribe and support us to help us continue creating more content like this.</p></h3>
-        <hr><h2>
-            <p>What are the details you are expecting?</p>
-            <ul>
-                <li><a href="grim reaper.html"><i>Grim Reaper</i></a></li>
-                <li><a href="excalibur.html"><i>Excalibur</i></a></li>
-                <li><a href="dracula.html"><i>Dracula</i></a></li>
-                <li><a href="phoenix.html"><i>Phoenix</i></a></li>
-                <li><a href="medusa.html"><i>Medusa</i></a></li>
-                <li><a href="Banshee.html"><i>Banshee</i></a></li>
-                <li><a href="Jack the Ripper.html"><i>Jack the Ripper </i></a></li>
-                <li><a href="The Sirens.html"><i>The Sirens</i></a></li>
-            </ul>
-        </h2>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mysteries - I T L</title>
+    <style>
+        /* මූලික සැකසුම් */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #080808; /* ඉතා තද කළු පැහැයක් */
+            color: #d1d1d1;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
 
+        /* Navigation Bar */
+        nav {
+            background-color: #121212;
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 2px solid #4b0082; /* දම් පැහැති රේඛාවක් */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
+        nav a {
+            color: #a066ff; /* ලා දම් පැහැයක් */
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.3s;
+        }
 
+        nav a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px #a066ff;
+        }
 
+        /* මාතෘකාව */
+        h1 {
+            font-size: clamp(30px, 6vw, 55px);
+            text-align: center;
+            color: #fff;
+            text-transform: uppercase;
+            margin-top: 40px;
+            letter-spacing: 3px;
+            text-shadow: 0 0 20px rgba(160, 102, 255, 0.4);
+        }
 
-        <hr style="border-top: 3px dotted rgb(255, 255, 255);">
-       
-    </body>
+        /* අභිරහස් පින්තූරය */
+        .img-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .mysteries-img {
+            max-width: 85%;
+            height: auto;
+            border-radius: 10px;
+            filter: grayscale(30%) contrast(110%);
+            box-shadow: 0 0 50px rgba(75, 0, 130, 0.3);
+            border: 1px solid #333;
+        }
+
+        /* ප්‍රධාන විස්තරය */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .mystery-box {
+            font-size: 19px;
+            background: linear-gradient(145deg, #121212, #1a1a1a);
+            padding: 35px;
+            border-radius: 20px;
+            text-align: justify;
+            border: 1px solid #2a2a2a;
+            box-shadow: inset 0 0 20px rgba(160, 102, 255, 0.05);
+        }
+
+        h2 {
+            color: #a066ff;
+            font-size: 30px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        /* අභිරහස් ලැයිස්තුව (Grid) */
+        .mystery-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 0;
+            list-style: none;
+            margin-top: 30px;
+        }
+
+        .mystery-list li {
+            background: #161616;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #333;
+            transition: 0.4s ease;
+        }
+
+        .mystery-list li:hover {
+            background: #4b0082;
+            border-color: #a066ff;
+            transform: translateY(-8px);
+        }
+
+        .mystery-list a {
+            color: #eee;
+            text-decoration: none;
+            font-weight: 500;
+            display: block;
+        }
+
+        .mystery-list li:hover a {
+            color: #fff;
+        }
+
+        /* YouTube Button */
+        .youtube-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ff0000;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .youtube-btn:hover {
+            background-color: #cc0000;
+            transform: scale(1.05);
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #4b0082, transparent);
+            margin: 50px 0;
+        }
+
+        .dotted-hr {
+            border-top: 3px dotted #444;
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div class="container">
+        <h1>Mysteries – Exploring the Unknown</h1>
+
+        <div class="img-container">
+            <img class="mysteries-img" src="images/mysteries.jpeg" alt="World Mysteries">
+        </div>
+
+        <div class="mystery-box">
+            You have arrived here to explore the mysteries of the world—phenomena that have not yet been fully explained. From strange events in history and unexplored places to questions that even scientists have not completely answered, you will encounter them all here. 
+            <br><br>
+            Through the articles and information below, you can dive deeper into this fascinating world of mysteries and expand your understanding of the unknown. We hope that what you discover here will inspire you to think about new ideas, broaden your knowledge of the world, and encourage your curiosity to keep exploring.
+            <br><br>
+            <center>
+                <p>If you found this information helpful, support our journey:</p>
+                <a href="YOUR_YOUTUBE_LINK_HERE" class="youtube-btn">Subscribe on YouTube</a>
+            </center>
+        </div>
+
+        <hr>
+
+        <h2>What are the details you are expecting?</h2>
+        
+        <ul class="mystery-list">
+            <li><a href="grim reaper.html">Grim Reaper</a></li>
+            <li><a href="excalibur.html">Excalibur</a></li>
+            <li><a href="dracula.html">Dracula</a></li>
+            <li><a href="phoenix.html">Phoenix</a></li>
+            <li><a href="medusa.html">Medusa</a></li>
+            <li><a href="Banshee.html">Banshee</a></li>
+            <li><a href="Jack the Ripper.html">Jack the Ripper</a></li>
+            <li><a href="The Sirens.html">The Sirens</a></li>
+        </ul>
+
+        <div class="dotted-hr"></div>
+    </div>
+
+</body>
 </html>
