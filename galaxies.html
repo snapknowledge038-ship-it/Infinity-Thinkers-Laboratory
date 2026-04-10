@@ -1,94 +1,242 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Galaxies - I T L</title>
-        <style>
-            body {
-                font-family: Comic Sans MS;
-            }
-            body{
-                color:rgb(255, 255, 255);
-            }
-            h1 {
-                font-size: 62px;
-            }
-            h2 {
-                font-size: 40px;
-            }
-            h3 {
-                font-size: 28px;
-            }
-            img.galaxies{
-                width : 1000px;
-            }
-            img.bh{
-                width : 601px;
-            }
-            img.sg{
-                width : 601px;
-            }
-            img.eg{
-                width : 601px;
-            }
-            img.ig{
-                width : 601px;
-            }
-            img.mw{
-                width : 601px;
-            }
-            img.ag{
-                width : 601px;
-            }
-            img.mc{
-                width : 601px;
-            }
-            img.gc{
-                width : 601px;
-            }
-        </style>
-    </head>
-    <body bgcolor="black">
-        <hr style="border: 5px solid rgb(0, 0, 0);">
-<hr><h3><p style="text-align: right;"><a href="index.html" class="home-btn"> - Home</a><a href="earth.html" class="btn"> - Earth</a><a href="animals.html" class="btn"> - Animals</a><a href="space.html" class="btn"> - Space</a><a href="mysteries.html" class="btn"> - Mysteries</a><a href="history.html" class="btn"> - History</a></p></h3><hr>
-        <h1><u><i><b>Galaxies</b></i></u></h1><center><img class="galaxies" src="images/Galaxy.jpg"></center>
-    <hr><h2>What is a Galaxy?</h2>
-        <h3>A galaxy is a massive collection of billions of stars, gas clouds, interstellar dust, and Dark Matter. These components are held together by gravity and are considered the largest structures in the universe. Almost every large galaxy is believed to have a Supermassive Black Hole at its center.</h3>
-        <center><img class="bh" src="images/black hole.jpg"></center>
-    <hr><h2>Main Types of Galaxies</h2>
-        <h3>Galaxies are primarily classified into three types based on their shape:
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galaxies - I T L</title>
+    <style>
+        /* මූලික සැකසුම් */
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #020205;
+            color: #e2e8f0;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            /* පසුබිමට තරු පිරි අහසක ස්වභාවයක් ලබා දීම */
+            background-image: 
+                radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+                radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+                radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+                radial-gradient(circle at center, #0a0a20 0%, #020205 100%);
+            background-size: 550px 550px, 350px 350px, 250px 250px, 100% 100%;
+            background-attachment: fixed;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: rgba(0, 0, 0, 0.85);
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 1px solid #2d2d50;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        nav a {
+            color: #a78bfa; /* Light Purple */
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 17px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: #f472b6; /* Pink glow */
+            text-shadow: 0 0 10px #f472b6;
+        }
+
+        /* ප්‍රධාන මාතෘකාව */
+        h1 {
+            font-size: clamp(40px, 9vw, 80px);
+            text-align: center;
+            margin-top: 50px;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #8b5cf6, #ec4899, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+
+        /* පින්තූර සැකසුම */
+        .img-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .galaxy-img {
+            max-width: 85%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 0 40px rgba(139, 92, 246, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: 0.5s ease;
+        }
+
+        .galaxy-img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 60px rgba(236, 72, 153, 0.3);
+        }
+
+        /* අන්තර්ගතය */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(15, 15, 35, 0.6);
+            padding: 40px;
+            border-radius: 30px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(139, 92, 246, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        h2 {
+            color: #f472b6;
+            font-size: 32px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::before {
+            content: "✦";
+            margin-right: 15px;
+            color: #8b5cf6;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: normal;
+            color: #cbd5e1;
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        li::before {
+            content: "🛰️";
+            position: absolute;
+            left: 0;
+            font-size: 16px;
+        }
+
+        strong {
+            color: #fff;
+            text-decoration: underline rgba(139, 92, 246, 0.5);
+        }
+
+        .fact-box {
+            text-align: center;
+            background: linear-gradient(45deg, #4c1d95, #831843);
+            padding: 30px;
+            border-radius: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #4c1d95, transparent);
+            margin: 50px 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div class="container">
+        <h1>Galaxies</h1>
+
+        <div class="img-container">
+            <img class="galaxy-img" src="images/Galaxy.jpg" alt="Deep Space Galaxy">
+        </div>
+
+        <section>
+            <h2>What is a Galaxy?</h2>
+            <h3>මන්දාකිණියක් (Galaxy) යනු තරු බිලියන ගණනක්, වායු වලාකුළු, අන්තරීක්ෂ දූවිලි සහ <strong>අඳුරු පදාර්ථ (Dark Matter)</strong> ගුරුත්වාකර්ෂණයෙන් බැඳී පවතින දැවැන්ත පද්ධතියකි. සෑම මන්දාකිණියකම මධ්‍යයේ දැවැන්ත කළු කුහරයක් (Supermassive Black Hole) පවතින බව විද්‍යාඥයන් විශ්වාස කරයි.</h3>
+            <div class="img-container">
+                <img class="galaxy-img" style="max-width: 60%;" src="images/black hole.jpg" alt="Center Black Hole">
+            </div>
+        </section>
+
+        <section>
+            <h2>Main Types of Galaxies</h2>
             <ul>
-                <li>Spiral Galaxies: Shaped like a flat disk with a central bulge and spiral arms extending outward (e.g., The Milky Way).</li>
-                <center><img class="sg" src="images/Spiral Galaxies.jpg"></center>
-                <li>Elliptical Galaxies: Shaped like an egg or a sphere; these galaxies typically have very little new star formation.</li>
-                <center><img class="eg" src="images/Elliptical Galaxies.jpeg"></center>
-                <li>Irregular Galaxies: Galaxies that do not have a distinct or regular shape.</li>
-                <center><img class="ig" src="images/irregular Galaxies.jpg"></center>
+                <li>
+                    <strong>Spiral Galaxies:</strong> මධ්‍යම බල්බයක් සහ ඉවතට විහිදුණු සර්පිලාකාර බාහු සහිත තැටියක හැඩය ගනී (උදා: ක්ෂීරපථය).
+                    <div class="img-container"><img class="galaxy-img" src="images/Spiral Galaxies.jpg" alt="Spiral"></div>
+                </li>
+                <li>
+                    <strong>Elliptical Galaxies:</strong> බිත්තරයක හෝ ගෝලයක හැඩය ගන්නා අතර මේවායේ නව තරු බිහිවීම ඉතා අඩුය.
+                    <div class="img-container"><img class="galaxy-img" src="images/Elliptical Galaxies.jpeg" alt="Elliptical"></div>
+                </li>
+                <li>
+                    <strong>Irregular Galaxies:</strong> නිශ්චිත හැඩයක් නොමැති මන්දාකිණි වේ.
+                    <div class="img-container"><img class="galaxy-img" src="images/irregular Galaxies.jpg" alt="Irregular"></div>
+                </li>
             </ul>
-        </h3>
-    <hr><h2>Our Home: The Milky Way</h2> 
-    <center><img class="mw" src="images/The Milky Way.jpg"></center>
-        <h3>Our solar system is located within a galaxy called the Milky Way.
+        </section>
+
+        <section>
+            <h2>Our Home: The Milky Way</h2>
+            <div class="img-container">
+                <img class="galaxy-img" src="images/The Milky Way.jpg" alt="Milky Way">
+            </div>
             <ul>
-                <li>Shape: It is a barred spiral galaxy.</li>
-                <li>Size: It has a diameter of approximately 100,000 light-years.</li>
-                <li>Star Count: It is estimated to contain between 100 to 400 billion stars.</li>
-                <li>The Center: At the heart of the Milky Way lies a massive black hole known as Sagittarius A*.</li>
+                <li><strong>Shape:</strong> එය සර්පිලාකාර (Barred Spiral) මන්දාකිණියකි.</li>
+                <li><strong>Size:</strong> මෙහි විෂ්කම්භය ආලෝක වර්ෂ 100,000 ක් පමණ වේ.</li>
+                <li><strong>Star Count:</strong> තරු බිලියන 100 සිට 400 දක්වා පවතින බව ඇස්තමේන්තු කර ඇත.</li>
+                <li><strong>The Center:</strong> මධ්‍යයේ <strong>Sagittarius A*</strong> නමින් හැඳින්වෙන දැවැන්ත කළු කුහරය පිහිටා ඇත.</li>
             </ul>
-        </h3>
-    <hr><h2>Our Closest Neighbors</h2>
-        <h3>
+        </section>
+
+        <section>
+            <h2>Our Neighbors & Collisions</h2>
             <ul>
-                <li>Andromeda Galaxy: The closest major galaxy to the Milky Way, located about 2.5 million light-years away.</li>
-                <center><img class="ag" src="images/Andromeda Galaxy.jpg"></center>
-                <li>Magellanic Clouds: Two smaller dwarf galaxies that orbit the Milky Way.</li>
-                <center><img class="mc" src="images/Magellanic Clouds.jpg"></center>
+                <li><strong>Andromeda Galaxy:</strong> අපට ආසන්නතම විශාල මන්දාකිණියයි (ආලෝක වර්ෂ මිලියන 2.5 ක් ඈතින්).</li>
+                <div class="img-container"><img class="galaxy-img" src="images/Andromeda Galaxy.jpg" alt="Andromeda"></div>
+                <li><strong>Galactic Collision:</strong> තවත් වසර බිලියන 4.5 කින් ක්ෂීරපථය සහ ඇන්ඩ්‍රොමීඩා එකිනෙක ගැටී <strong>"Milkomeda"</strong> නමින් අලුත් මන්දාකිණියක් සෑදෙනු ඇත.</li>
+                <div class="img-container"><img class="galaxy-img" src="images/Galactic Collisions.jpg" alt="Collision"></div>
             </ul>
-        </h3>
-    <hr><h2>Galactic Collisions</h2><center><img class="gc" src="images/Galactic Collisions.jpg"></center>
-        <h3>Galaxies are not stationary; they move and can collide or merge with one another. Scientists predict that in about 4.5 billion years, the Milky Way and the Andromeda galaxy will collide to form a new giant galaxy, often referred to as "Milkomeda."</h3>
-    <hr><h2>Interesting Fact</h2>
-        <h3>Modern astronomers believe there are approximately 2 trillion galaxies in the observable universe!</h3>
-        <hr style="border-top: 3px dotted rgb(255, 255, 255);">
-          
-    </body>
+        </section>
+
+        <div class="fact-box">
+            Did you know? There are approximately 2 trillion galaxies in the observable universe!
+        </div>
+
+        <hr>
+    </div>
+
+</body>
 </html>
