@@ -16,42 +16,59 @@
             background-image: radial-gradient(circle at center, #1a1a1a 0%, #050505 100%);
         }
 
-        /* Navigation Bar */
+        /* Navigation Bar (Updated to match Home Page) */
         nav {
-            background-color: #000;
-            padding: 15px 0;
-            text-align: center;
-            border-bottom: 2px solid #d4af37;
+            background-color: #1a1a1a;
+            padding: 15px 30px;
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid #333;
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
+        .nav-links {
+            display: flex;
+            gap: 15px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
         nav a {
-            color: #d4af37;
+            color: #00d4ff;
             text-decoration: none;
-            margin: 0 15px;
             font-weight: bold;
             font-size: 18px;
             transition: 0.3s;
-            text-transform: uppercase;
         }
 
         nav a:hover {
             color: #ffffff;
-            text-shadow: 0 0 10px #d4af37;
+            text-shadow: 0 0 10px #00d4ff;
+        }
+
+        .about-btn {
+            margin-left: auto;
+            border: 2px solid #00d4ff;
+            padding: 6px 18px;
+            border-radius: 30px;
+            background-color: #00d4ff;
+            color: #000 !important;
+            text-transform: uppercase;
         }
 
         /* Main Title */
         h1 {
             font-size: clamp(35px, 8vw, 70px);
             text-align: center;
-            color: #d4af37;
+            color: #00d4ff;
             margin-top: 50px;
             letter-spacing: 5px;
             text-transform: uppercase;
             font-family: 'Georgia', serif;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
         }
 
         /* Container */
@@ -67,7 +84,7 @@
             padding: 40px;
             border-radius: 20px;
             margin-bottom: 30px;
-            border: 1px solid rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.1);
             text-align: center;
         }
 
@@ -75,14 +92,14 @@
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            border: 3px solid #d4af37;
+            border: 3px solid #00d4ff;
             margin-bottom: 20px;
             object-fit: cover;
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
         }
 
         h2 {
-            color: #d4af37;
+            color: #00d4ff;
             font-size: 28px;
             font-family: 'Georgia', serif;
             margin-bottom: 15px;
@@ -91,33 +108,55 @@
         p {
             font-size: 19px;
             color: #cccccc;
-            text-align: justify;
+            text-align: center;
         }
 
         .highlight {
-            color: #d4af37;
+            color: #00d4ff;
             font-weight: bold;
+        }
+
+        /* Support/Share Box */
+        .share-box {
+            background: linear-gradient(145deg, #0a111a, #001f3f);
+            border: 2px solid #00d4ff;
+            padding: 30px;
+            margin-top: 50px;
+        }
+
+        .share-box h2 {
+            color: #ffffff;
+            text-shadow: 0 0 10px #00d4ff;
         }
 
         /* Footer Line */
         .footer-hr {
             border: 0;
             height: 1px;
-            background: linear-gradient(to right, transparent, #d4af37, transparent);
+            background: linear-gradient(to right, transparent, #00d4ff, transparent);
             margin: 60px 0;
         }
 
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav { flex-direction: column; padding: 10px; }
+            .nav-links { position: static; transform: none; margin: 10px 0; flex-wrap: wrap; justify-content: center; }
+            .about-btn { margin: 5px auto; }
+        }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="index.html">Home</a>
-        <a href="earth.html">Earth</a>
-        <a href="animals.html">Animals</a>
-        <a href="space.html">Space</a>
-        <a href="mysteries.html">Mysteries</a>
-        <a href="history.html">History</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="earth.html">Earth</a>
+            <a href="animals.html">Animals</a>
+            <a href="space.html">Space</a>
+            <a href="mysteries.html">Mysteries</a>
+            <a href="history.html">History</a>
+        </div>
+        <a href="about.html" class="about-btn">About</a>
     </nav>
 
     <div class="container">
@@ -138,10 +177,12 @@
             </p>
         </section>
 
-        <section>
-            <h2>Join Our Journey</h2>
+        <section class="share-box">
+            <h2>Support Our Community 🚀</h2>
             <p>
-                This platform is constantly evolving, adding new topics and deeper insights into the planet we call <span class="highlight">Earth</span> and the <span class="highlight">Animals</span> that inhabit it. Thank you for being a part of our community and helping us keep the flame of curiosity alive.
+                As we continue to build this journey of knowledge, your support means the world to us. Helping us reach more curious minds is the greatest gift you can give.
+                <br><br>
+                <span class="highlight">Please share this platform with your friends and family.</span> Together, let's keep the flame of curiosity alive!
             </p>
         </section>
 
