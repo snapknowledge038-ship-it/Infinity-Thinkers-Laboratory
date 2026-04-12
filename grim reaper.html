@@ -175,6 +175,41 @@
 
         <div class="footer-hr"></div>
     </div>
+<div id="feedback-widget">
+  <span>Was this helpful?</span>
+  <button onclick="hideFeedback('Yes')"> 👍</button>
+  <button onclick="hideFeedback('No')"> 👎</button>
+</div>
 
+<style>
+#feedback-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #000000;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 1000;
+}
+#feedback-widget button {
+  border: none;
+  background: #000000;
+  padding: 5px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+#feedback-widget button:hover { background: #ddd; }
+</style>
+
+<script>
+function hideFeedback(type) {
+  alert("Thank you for your feedback!");
+  document.getElementById('feedback-widget').style.display = 'none';
+}
+</script>
 </body>
 </html>
