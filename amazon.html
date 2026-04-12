@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Amazon Rainforest - I T L</title>
+    <style>
+        /* මූලික සැකසුම් */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #040804; /* ඉතා තද වනාන්තර කොළ පැහැයක් */
+            color: #d1e0d1;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-image: linear-gradient(180deg, #040804 0%, #0a140a 100%);
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: rgba(10, 20, 10, 0.9);
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 2px solid #1a331a;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        nav a {
+            color: #4ade80;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px #4ade80;
+        }
+
+        /* ප්‍රධාන මාතෘකාව */
+        h1 {
+            font-size: clamp(35px, 7vw, 60px);
+            text-align: center;
+            color: #fff;
+            margin-top: 40px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-shadow: 0 0 20px rgba(74, 222, 128, 0.2);
+        }
+
+        /* පින්තූර සැකසුම */
+        .img-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .img-grid img {
+            max-width: 45%;
+            height: auto;
+            border-radius: 10px;
+            border: 1px solid #1a331a;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            transition: 0.4s;
+        }
+
+        .img-grid img:hover {
+            transform: scale(1.02);
+            border-color: #4ade80;
+        }
+
+        /* අන්තර්ගතය */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 35px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            border-left: 5px solid #2d5a27;
+        }
+
+        h2 {
+            color: #4ade80;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: normal;
+            color: #c0ccc0;
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        li::before {
+            content: "🌲"; /* වනාන්තරයට ගැලපෙන අයිකනයක් */
+            position: absolute;
+            left: 0;
+            font-size: 14px;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #2d5a27, transparent);
+            margin: 40px 0;
+        }
+
+        .dotted-hr {
+            border-top: 3px dotted #1a331a;
+            margin: 60px 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div class="container">
+        <h1>The Amazon Rainforest</h1>
+
+        <div class="img-grid">
+            <img src="images/amazon.jpg" alt="Mount Fuji">
+            <img src="images/Amazon1.jpg" alt="Aokigahara Deep Forest">
+        </div>
+
+        <section>
+            <h3>The Amazon Rainforest is the world’s largest and most important ecosystem. Located in South America, it is often called the <strong>"lungs of the planet"</strong> due to its immense biodiversity.</h3>
+        </section>
+
+        <section>
+            <h2>Geographic Location and Size</h2>
+            <h3>The Amazon spans primarily across Brazil, but it also extends into Peru, Colombia, Venezuela, Ecuador, Bolivia, Guyana, Suriname, and French Guiana. Covering an area of approximately 5.5 million square kilometers, it accounts for more than half of the world's remaining rainforests.</h3>
+        </section>
+
+        <section>
+            <h2>The Amazon River and Ecosystem</h2>
+            <h3>The Amazon River, the second-longest river in the world, flows through this rainforest. The river and its tributaries play a vital role in maintaining the humidity of the forest and providing water to thousands of aquatic and terrestrial species that live there.</h3>
+        </section>
+
+        <section>
+            <h2>Unparalleled Biodiversity</h2>  
+            <h3>The diversity of life within this forest is incredibly high:</h3>
+            <ul>
+                <li><strong>Plant Species:</strong> There are over 390 billion individual trees and millions of plant species.</li>
+                <li><strong>Animal Species:</strong> The forest is home to colorful birds, jaguars, anacondas, various monkey species, and millions of types of insects.</li>
+                <li><strong>Medicinal Value:</strong> Many of the world’s medicines are derived from plants found in this forest, and there are countless other plant species still waiting to be discovered that could hold cures for various diseases.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Impact on Global Climate</h2>
+            <h3>The Amazon plays a crucial role in regulating global temperatures. It absorbs vast amounts of carbon dioxide from the atmosphere, helping to combat global warming. Therefore, the destruction of this forest directly threatens the climate balance of the entire planet.</h3>
+        </section>
+
+        <section>
+            <h2>Current Challenges</h2>
+            <h3>The Amazon is currently facing severe environmental threats due to deforestation, land clearance for cattle ranching, illegal logging, and gold mining. Stopping this destruction is essential for the survival of future generations.</h3>
+        </section>
+
+
+        <div class="dotted-hr"></div>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
