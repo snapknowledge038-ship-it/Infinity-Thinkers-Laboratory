@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geological Time Scale - I T L</title>
+    <style>
+        /* Base Settings */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #05070a;
+            color: #d1d5db;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-image: radial-gradient(circle at center, #111827 0%, #05070a 100%);
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #1a1a1a;
+            padding: 15px 30 (px);
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        nav a {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px #00d4ff;
+        }
+
+        .about-btn {
+            margin-left: auto;
+            border: 2px solid #00d4ff;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 16px;
+            transition: 0.4s;
+            text-transform: uppercase;
+        }
+
+        /* Header */
+        h1 {
+            font-size: clamp(35px, 7vw, 60px);
+            text-align: center;
+            margin-top: 50px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #fff;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+        }
+
+        .intro-text {
+            max-width: 900px;
+            margin: 20px auto;
+            text-align: center;
+            font-size: 19px;
+            color: #94a3b8;
+            padding: 0 20px;
+        }
+
+        /* Container & Sections */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(17, 24, 39, 0.5);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        h2 {
+            color: #00d4ff;
+            font-size: 30px;
+            margin-bottom: 15px;
+            border-left: 5px solid #00d4ff;
+            padding-left: 15px;
+        }
+
+        /* Images */
+        .img-container {
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .era-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            border: 1px solid #1f2937;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        p {
+            font-size: 18px;
+            text-align: justify;
+        }
+
+        .footer-hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #333, transparent);
+            margin: 60px 0;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { position: static; transform: none; flex-wrap: wrap; justify-content: center; }
+            nav { flex-direction: column; }
+            .about-btn { margin-top: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="earth.html">Earth</a>
+            <a href="animals.html">Animals</a>
+            <a href="space.html">Space</a>
+            <a href="mysteries.html">Mysteries</a>
+            <a href="history.html">History</a>
+        </div>
+        <a href="about.html" class="about-btn">About</a>
+    </nav>
+
+    <div class="container">
+        <h1>Geological Time Scale</h1>
+        <p class="intro-text">
+            The history of the Earth is divided into major time spans called Eras. From its formation billions of years ago to the present day, Earth's evolution is categorized into four primary Eras:
+        </p>
+
+        <section>
+            <h2>1. Precambrian Era</h2>
+            <div class="img-container">
+                <img src="images/1.jpg" alt="Precambrian Era" class="era-img">
+            </div>
+            <p>
+                This era marks the very beginning of Earth's history. It is divided into three eons: Hadean, Archean, and Proterozoic. Lasting billions of years, it covers the period from Earth's fiery formation to the stabilization of the atmosphere and the emergence of the first single-celled organisms in the oceans. This is the longest time span, laying the foundation for all life on Earth.
+            </p>
+        </section>
+
+        <section>
+            <h2>2. Paleozoic Era</h2>
+            <div class="img-container">
+                <img src="images/2.jpg" alt="Paleozoic Era" class="era-img">
+            </div>
+            <p>
+                Consisting of six periods, this era saw an explosion of biodiversity. During the Cambrian period, marine life evolved rapidly. The Ordovician and Silurian periods saw the rise of the first vertebrates and land plants. The Devonian is known as the "Age of Fish," while the Carboniferous period gave rise to vast forests. The era ended with the Permian mass extinction, which wiped out nearly 90% of Earth's species.
+            </p>
+        </section>
+
+        <section>
+            <h2>3. Mesozoic Era</h2>
+            <div class="img-container">
+                <img src="images/3.jpg" alt="Mesozoic Era" class="era-img">
+            </div>
+            <p>
+                Famously known as the "Age of Dinosaurs," this era is divided into three periods. In the Triassic, the first dinosaurs and small mammals appeared. By the Jurassic period, dinosaurs became the dominant creatures on Earth. The Cretaceous period introduced flowering plants but ended with a massive asteroid impact that caused the extinction of dinosaurs and many other life forms.
+            </p>
+        </section>
+
+        <section>
+            <h2>4. Cenozoic Era</h2>
+            <div class="img-container">
+                <img src="images/4.jpg" alt="Cenozoic Era" class="era-img">
+            </div>
+            <p>
+                This is the modern era in which we currently live. During the Paleogene and Neogene periods, mammals and birds evolved and diversified rapidly. The most significant part is the Quaternary period, which began 2.6 million years ago. This period saw the Ice Ages and, most importantly, the evolution of modern humans and the dawn of civilization.
+            </p>
+        </section>
+
+        <div class="footer-hr"></div>
+    </div>
+
+</body>
+</html>
