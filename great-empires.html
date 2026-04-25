@@ -25,7 +25,7 @@
             line-height: 1.6;
         }
 
-        /* Navigation */
+        /* Navigation - Updated with your specific tabs */
         nav {
             background: rgba(0, 0, 0, 0.95);
             padding: 20px 0;
@@ -96,6 +96,7 @@
             overflow: hidden;
             transition: 0.4s;
             position: relative;
+            padding-bottom: 20px;
         }
 
         .empire-card:hover {
@@ -130,35 +131,27 @@
         }
 
         .card-content p {
-            font-size: 16px;
-            margin-bottom: 20px;
+            font-size: 15px;
+            margin-bottom: 10px;
         }
 
-        /* Specific Accents for different Empires */
+        .highlight {
+            color: var(--neon-gold);
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        /* Specific Accents */
         .roman { border-top: 5px solid var(--neon-red); }
         .egypt { border-top: 5px solid var(--neon-gold); }
         .mongol { border-top: 5px solid #ff4500; }
         .aztec { border-top: 5px solid var(--neon-green); }
         .british { border-top: 5px solid var(--neon-blue); }
+        .ottoman { border-top: 5px solid #9933ff; }
 
-        .btn-read {
-            display: inline-block;
-            padding: 10px 20px;
-            border: 1px solid var(--neon-gold);
-            color: var(--neon-gold);
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: 0.3s;
-            text-transform: uppercase;
-        }
-
-        .btn-read:hover {
-            background: var(--neon-gold);
-            color: #000;
-        }
-
-        /* Footer Decoration */
         .divider {
             height: 2px;
             background: linear-gradient(90deg, transparent, var(--neon-gold), transparent);
@@ -170,9 +163,11 @@
 
     <nav>
         <a href="index.html">Home</a>
-        <a href="history.html">History</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
         <a href="space.html">Space</a>
         <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
     </nav>
 
     <header>
@@ -188,8 +183,8 @@
                 <img src="images/roman.jpg" alt="Roman Empire" class="card-img">
                 <div class="card-content">
                     <h2>The Roman Empire</h2>
-                    <p>The foundation of Western civilization. From advanced engineering and law to an unbeatable military, Rome ruled the Mediterranean for centuries.</p>
-                    <a href="roman.html" class="btn-read">Enter Empire</a>
+                    <p>Dominating the Mediterranean for over 500 years, Rome gifted the world advanced law, republic governance, and massive architectural feats like the Colosseum.</p>
+                    <span class="highlight">Peak: 117 AD • Motto: SPQR</span>
                 </div>
             </div>
 
@@ -197,8 +192,8 @@
                 <img src="images/egypt.jpg" alt="Ancient Egypt" class="card-img">
                 <div class="card-content">
                     <h2>Ancient Egypt</h2>
-                    <p>A land of Pharaohs, Pyramids, and mystery. Dominating the Nile for 3,000 years, they mastered architecture, writing, and religion.</p>
-                    <a href="cleopatra.html" class="btn-read">Enter Empire</a>
+                    <p>Rising along the Nile, Egypt's legacy lives through the Pyramids and hieroglyphics. They mastered mathematics and medicine long before the modern era.</p>
+                    <span class="highlight">Peak: New Kingdom Era • Ruler: Pharaohs</span>
                 </div>
             </div>
 
@@ -206,8 +201,8 @@
                 <img src="images/mongol.jpg" alt="Mongol Empire" class="card-img">
                 <div class="card-content">
                     <h2>The Mongol Empire</h2>
-                    <p>The largest contiguous land empire in history. Led by Genghis Khan, their cavalry redefined warfare and connected East to West.</p>
-                    <a href="genghis.html" class="btn-read">Enter Empire</a>
+                    <p>The largest contiguous land empire in history. Led by Genghis Khan, they utilized superior horse-archery to unite the East and West via the Silk Road.</p>
+                    <span class="highlight">Area: 24 Million KM² • Leader: Khan</span>
                 </div>
             </div>
 
@@ -215,8 +210,8 @@
                 <img src="images/aztec.jpg" alt="Aztec Empire" class="card-img">
                 <div class="card-content">
                     <h2>The Aztec Empire</h2>
-                    <p>The masters of Mesoamerica. Known for their magnificent island city of Tenochtitlan, complex calendars, and powerful warrior culture.</p>
-                    <a href="aztec.html" class="btn-read">Enter Empire</a>
+                    <p>A Mesoamerican powerhouse known for Tenochtitlan, an island city. They built complex irrigation systems and massive temples for their gods.</p>
+                    <span class="highlight">Region: Central Mexico • Era: 1300–1521</span>
                 </div>
             </div>
 
@@ -224,17 +219,17 @@
                 <img src="images/british.jpg" alt="British Empire" class="card-img">
                 <div class="card-content">
                     <h2>The British Empire</h2>
-                    <p>The empire on which the sun never set. At its height, it controlled a quarter of the world's land, shaping modern trade and language.</p>
-                    <a href="elizabeth.html" class="btn-read">Enter Empire</a>
+                    <p>Spanning every continent, it became the largest empire in human history. It drove the Industrial Revolution and spread the English language globally.</p>
+                    <span class="highlight">Status: Global Naval Power • Peak: 1920</span>
                 </div>
             </div>
 
-            <div class="empire-card">
+            <div class="empire-card ottoman">
                 <img src="images/ottoman.jpg" alt="Ottoman Empire" class="card-img">
                 <div class="card-content">
                     <h2>The Ottoman Empire</h2>
-                    <p>The bridge between East and West. Ruling from Istanbul, this caliphate was a center of art, science, and military power for 600 years.</p>
-                    <a href="ottoman.html" class="btn-read">Enter Empire</a>
+                    <p>The bridge between Europe and Asia for 600 years. Centered in Istanbul, they were masters of art, science, and multi-cultural governance.</p>
+                    <span class="highlight">Capital: Istanbul • Duration: 600+ Years</span>
                 </div>
             </div>
 
@@ -243,8 +238,5 @@
         <div class="divider"></div>
     </div>
 
-    <script>
-        console.log("History Hub Loaded - ITL System Active");
-    </script>
 </body>
 </html>
