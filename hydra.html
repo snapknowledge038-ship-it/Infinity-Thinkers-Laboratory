@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Hydra - I T L</title>
+    <style>
+        /* Hydra Neon Theme Settings */
+        :root {
+            --neon-green: #39ff14;
+            --neon-blue: #00d4ff;
+            --bg-dark: #020502;
+            --text-gray: #c0c0c0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-gray);
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: rgba(5, 15, 5, 0.95);
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--neon-green);
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--neon-green);
+            text-shadow: 0 0 10px var(--neon-green);
+        }
+
+        /* Title */
+        h1 {
+            font-size: clamp(45px, 10vw, 80px);
+            text-align: center;
+            color: #fff;
+            margin-top: 50px;
+            letter-spacing: 12px;
+            text-transform: uppercase;
+            text-shadow: 0 0 15px var(--neon-green), 0 0 30px var(--neon-green);
+        }
+
+        /* Image Container */
+        .img-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .hydra-img {
+            max-width: 85%;
+            height: auto;
+            border-radius: 20px;
+            border: 2px solid var(--neon-blue);
+            box-shadow: 0 0 25px rgba(0, 212, 255, 0.3);
+            transition: 0.5s;
+        }
+
+        .hydra-img:hover {
+            box-shadow: 0 0 50px rgba(57, 255, 20, 0.5);
+            transform: scale(1.03);
+        }
+
+        /* Content Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(57, 255, 20, 0.02);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 35px;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            position: relative;
+        }
+
+        section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--neon-green), var(--neon-blue));
+        }
+
+        h2 {
+            color: var(--neon-green);
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 5px rgba(57, 255, 20, 0.4);
+        }
+
+        h3 {
+            font-size: 19px;
+            font-weight: normal;
+            color: #eee;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        li {
+            margin-bottom: 18px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        li::before {
+            content: "🐍";
+            position: absolute;
+            left: 0;
+            font-size: 16px;
+        }
+
+        strong {
+            color: var(--neon-blue);
+        }
+
+        .dotted-hr {
+            border-top: 2px dashed var(--neon-green);
+            margin: 60px 0;
+            opacity: 0.2;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div class="container">
+        <h1>THE HYDRA</h1>
+
+        <div class="img-container">
+            <img class="hydra-img" src="images/hydra.jpg" alt="Lernean Hydra Illustration">
+        </div>
+
+        <section>
+            <h2>The Serpent of Lerna</h2>
+            <h3>In Greek mythology, the <strong>Lernaean Hydra</strong> was a terrifying multi-headed water serpent that guarded the entrance to the Underworld. It was known for its regenerative powers and deadly venom.</h3>
+        </section>
+
+        <section>
+            <h2>Legendary Abilities</h2>
+            <ul>
+                <li><strong>Head Regeneration:</strong> For every one head that was cut off, two more would grow back in its place.</li>
+                <li><strong>Toxic Breath:</strong> Its breath was so poisonous that it could kill a man instantly, and even its tracks were lethal.</li>
+                <li><strong>Immortal Head:</strong> Among its many heads, one was said to be completely immortal, making the beast nearly impossible to kill.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>The Second Labor of Hercules</h2>
+            <h3>The hero Hercules was tasked with slaying the beast. He eventually succeeded by using <strong>fire</strong> to cauterize the stumps of the necks after cutting off each head, preventing them from growing back.</h3>
+        </section>
+
+        <div class="dotted-hr"></div>
+    </div>
+
+    <div id="feedback-widget">
+        <span>Helpful?</span>
+        <button onclick="hideFeedback('Yes')">YES</button>
+        <button onclick="hideFeedback('No')">NO</button>
+    </div>
+
+    <style>
+        #feedback-widget {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #050a05;
+            border: 1px solid var(--neon-green);
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.4);
+            padding: 12px 18px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 1000;
+            color: #fff;
+        }
+        #feedback-widget button {
+            border: 1px solid var(--neon-blue);
+            background: transparent;
+            color: var(--neon-blue);
+            padding: 4px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        #feedback-widget button:hover { 
+            background: var(--neon-blue);
+            color: #000;
+            box-shadow: 0 0 10px var(--neon-blue);
+        }
+    </style>
+
+    <script>
+        function hideFeedback(type) {
+            alert("Thank you! The Hydra section is now part of the Laboratory.");
+            document.getElementById('feedback-widget').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
