@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World War II: Global Conflict - I T L</title>
+    <style>
+        /* WWII Industrial Neon Theme */
+        :root {
+            --neon-crimson: #ff003c;
+            --neon-gold: #ffaa00;
+            --steel-blue: #2c3e50;
+            --bg-black: #080808;
+            --text-silver: #dcdcdc;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-black);
+            color: var(--text-silver);
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-image: radial-gradient(circle at 50% 50%, #1a0005 0%, #080808 100%);
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 2px solid var(--neon-crimson);
+            box-shadow: 0 0 25px rgba(255, 0, 60, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--neon-crimson);
+            text-shadow: 0 0 10px var(--neon-crimson);
+        }
+
+        /* Header */
+        header {
+            padding: 100px 20px 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: clamp(40px, 12vw, 90px);
+            margin: 0;
+            color: #fff;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            text-shadow: 0 0 20px var(--neon-crimson);
+        }
+
+        .subtitle {
+            font-size: 22px;
+            color: var(--neon-gold);
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            margin-top: 15px;
+        }
+
+        /* Main Image */
+        .img-container {
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .wwii-hero-img {
+            max-width: 90%;
+            border: 2px solid var(--neon-crimson);
+            border-radius: 4px;
+            box-shadow: 0 0 40px rgba(255, 0, 60, 0.2);
+            transition: 0.5s;
+        }
+
+        .wwii-hero-img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 60px rgba(255, 0, 60, 0.5);
+        }
+
+        /* Content Sections */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px 100px;
+        }
+
+        section {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 50px;
+            border-radius: 12px;
+            margin-bottom: 60px;
+            border-right: 4px solid var(--neon-crimson);
+            border-left: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+        }
+
+        h2 {
+            font-size: 34px;
+            color: var(--neon-gold);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(255, 170, 0, 0.3);
+            display: inline-block;
+        }
+
+        /* Statistics Bar */
+        .war-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .stat-box {
+            background: #111;
+            padding: 25px;
+            border: 1px solid var(--neon-crimson);
+            border-radius: 8px;
+        }
+
+        .stat-box h3 { color: var(--neon-crimson); font-size: 30px; margin: 0; }
+        .stat-box p { font-size: 14px; text-transform: uppercase; margin: 10px 0 0; }
+
+        /* Columns for Alliances */
+        .alliances {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .alliance-card {
+            flex: 1;
+            min-width: 300px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 8px;
+            border-top: 3px solid var(--neon-gold);
+        }
+
+        ul { list-style: none; padding: 0; }
+        li { padding: 10px 0 10px 30px; position: relative; }
+        li::before {
+            content: "➤";
+            position: absolute;
+            left: 0;
+            color: var(--neon-crimson);
+        }
+
+        strong { color: #fff; }
+
+        .timeline-item {
+            border-left: 2px solid var(--neon-gold);
+            padding-left: 20px;
+            margin-bottom: 30px;
+        }
+
+        .timeline-item span { color: var(--neon-gold); font-weight: bold; }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <header>
+        <h1>WORLD WAR II</h1>
+        <div class="subtitle">1939 — 1945 • Total Global Warfare</div>
+    </header>
+
+    <div class="container">
+
+        <div class="img-container">
+            <img class="wwii-hero-img" src="images/ww2.jpg" alt="WWII Military Operations">
+        </div>
+
+        <section>
+            <h2>The Conflict That Changed Everything</h2>
+            <p>World War II was the deadliest and most widespread war in history, involving more than 100 million people from over 30 countries. It was a "Total War," where nations threw their entire economic, industrial, and scientific capabilities into the war effort, blurring the lines between civilian and military resources.</p>
+        </section>
+
+        <div class="war-stats">
+            <div class="stat-box"><h3>6 Years</h3><p>Total Duration</p></div>
+            <div class="stat-box"><h3>75M+</h3><p>Estimated Deaths</p></div>
+            <div class="stat-box"><h3>1945</h3><p>Nuclear Age Begins</p></div>
+        </div>
+
+        <section>
+            <h2>The Major Alliances</h2>
+            <div class="alliances">
+                <div class="alliance-card">
+                    <h3>The Allies</h3>
+                    <p>Fighting to stop the expansion of tyranny.</p>
+                    <ul>
+                        <li><strong>United Kingdom:</strong> Led by Winston Churchill.</li>
+                        <li><strong>Soviet Union (USSR):</strong> Led by Joseph Stalin.</li>
+                        <li><strong>United States:</strong> Led by FDR and later Truman.</li>
+                        <li><strong>China & France:</strong> Major resistance forces.</li>
+                    </ul>
+                </div>
+                <div class="alliance-card">
+                    <h3>The Axis Powers</h3>
+                    <p>Seeking to establish a new world order.</p>
+                    <ul>
+                        <li><strong>Nazi Germany:</strong> Led by Adolf Hitler.</li>
+                        <li><strong>Imperial Japan:</strong> Led by Emperor Hirohito.</li>
+                        <li><strong>Fascist Italy:</strong> Led by Benito Mussolini.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Turning Points</h2>
+            <div class="timeline-item">
+                <span>1941 - Pearl Harbor:</span> Japan attacks the US naval base in Hawaii, bringing the United States into the war.
+            </div>
+            <div class="timeline-item">
+                <span>1942 - Battle of Stalingrad:</span> The turning point on the Eastern Front; the Soviet Union begins pushing the Germans back.
+            </div>
+            <div class="timeline-item">
+                <span>1944 - D-Day:</span> The largest seaborne invasion in history as Allied forces land on the beaches of Normandy, France.
+            </div>
+            <div class="timeline-item">
+                <span>1945 - Hiroshima & Nagasaki:</span> The US drops atomic bombs on Japan, leading to their unconditional surrender.
+            </div>
+        </section>
+
+        <section>
+            <h2>Technological & Human Impact</h2>
+            <p>WWII saw incredible leaps in technology, including <strong>Jet Engines</strong>, <strong>Radar</strong>, and the <strong>Atomic Bomb</strong>. However, it also witnessed the darkest moments of humanity, most notably the <strong>Holocaust</strong>—the systematic genocide of six million Jews by the Nazi regime.</p>
+            <ul>
+                <li><strong>The Blitz:</strong> Heavy aerial bombing of cities like London.</li>
+                <li><strong>The Pacific Front:</strong> Brutal island-hopping campaigns across the ocean.</li>
+                <li><strong>Resistance Movements:</strong> Underground fighters across Europe and Asia.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>A New World Order</h2>
+            <p>The war ended with the fall of Berlin and the surrender of Japan in August 1945. The aftermath saw the creation of the <strong>United Nations</strong> to prevent future conflicts and the beginning of the <strong>Cold War</strong> between the two remaining superpowers: the USA and the USSR.</p>
+        </section>
+
+    </div>
+
+    <div id="feedback-widget">
+        <span>Knowledge Documented?</span>
+        <button onclick="closeWidget()">CONFIRM</button>
+    </div>
+
+    <style>
+        #feedback-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #000;
+            border: 1px solid var(--neon-crimson);
+            padding: 15px 25px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 2000;
+        }
+        #feedback-widget button {
+            background: var(--neon-crimson);
+            border: none;
+            color: #fff;
+            padding: 8px 15px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        #feedback-widget button:hover { opacity: 0.8; }
+    </style>
+
+    <script>
+        function closeWidget() {
+            alert("The WWII records have been filed in the Infinity Thinkers Laboratory.");
+            document.getElementById('feedback-widget').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
