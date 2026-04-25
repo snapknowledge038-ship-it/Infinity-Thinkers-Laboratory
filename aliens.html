@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aliens - I T L</title>
+    <style>
+        /* Neon Theme Settings */
+        :root {
+            --neon-cyan: #00f2ff;
+            --neon-purple: #bc13fe;
+            --bg-dark: #020205;
+            --text-gray: #b0b0b0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-gray);
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: rgba(10, 10, 15, 0.95);
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--neon-cyan);
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--neon-cyan);
+            text-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan);
+        }
+
+        /* Title */
+        h1 {
+            font-size: clamp(45px, 10vw, 80px);
+            text-align: center;
+            color: #fff;
+            margin-top: 50px;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            /* Neon Glow Effect */
+            text-shadow: 0 0 10px var(--neon-purple), 0 0 20px var(--neon-purple), 0 0 40px var(--neon-purple);
+        }
+
+        /* Image Container */
+        .img-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .alien-img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 15px;
+            border: 2px solid var(--neon-cyan);
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
+            transition: 0.5s;
+        }
+
+        .alien-img:hover {
+            box-shadow: 0 0 40px rgba(0, 242, 255, 0.6);
+            transform: scale(1.02);
+        }
+
+        /* Content Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(188, 19, 254, 0.03);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 35px;
+            border: 1px solid rgba(0, 242, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--neon-cyan), var(--neon-purple));
+        }
+
+        h2 {
+            color: var(--neon-cyan);
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 5px rgba(0, 242, 255, 0.5);
+        }
+
+        h3 {
+            font-size: 19px;
+            font-weight: normal;
+            color: #e0e0e0;
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        li {
+            margin-bottom: 18px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--neon-purple);
+            font-size: 20px;
+            text-shadow: 0 0 8px var(--neon-purple);
+        }
+
+        strong {
+            color: var(--neon-cyan);
+        }
+
+        .dotted-hr {
+            border-top: 2px dashed var(--neon-purple);
+            margin: 60px 0;
+            opacity: 0.3;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div class="container">
+        <h1>ALIENS</h1>
+
+        <div class="img-container">
+            <img class="alien-img" src="images/Aliens.jpg" alt="Extraterrestrial Life Illustration">
+        </div>
+
+        <section>
+            <h2>Beyond Our World</h2>
+            <h3>Are we truly alone? The term <strong>"Extraterrestrial Life"</strong> encompasses everything from microbial life on distant moons to highly advanced star-faring civilizations.</h3>
+        </section>
+
+        <section>
+            <h2>The Grey Visitors</h2>
+            <ul>
+                <li><strong>Observation:</strong> Often described as 4-foot tall beings with translucent <strong>grey skin</strong> and large, liquid-black eyes.</li>
+                <li><strong>Technology:</strong> Witnesses claim they possess craft that defy gravity and can vanish in seconds.</li>
+                <li><strong>Abduction Lore:</strong> Thousands claim to have been taken aboard their ships for mysterious biological research.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>The Fermi Paradox</h2>
+            <h3>If the universe is infinite, where is everybody?</h3>
+            <ul>
+                <li><strong>The Great Filter:</strong> Civilizations might destroy themselves before they can reach us.</li>
+                <li><strong>Cosmic Silence:</strong> We might be looking for radio signals while they use something far more advanced.</li>
+                <li><strong>Dark Forest Theory:</strong> Intelligent life stays hidden to avoid being destroyed by predators.</li>
+            </ul>
+        </section>
+
+        <div class="dotted-hr"></div>
+    </div>
+
+    <div id="feedback-widget">
+        <span>Was this helpful?</span>
+        <button onclick="hideFeedback('Yes')">YES</button>
+        <button onclick="hideFeedback('No')">NO</button>
+    </div>
+
+    <style>
+        #feedback-widget {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #0a0a0f;
+            border: 1px solid var(--neon-cyan);
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
+            padding: 15px 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 1000;
+            color: #fff;
+            font-weight: bold;
+        }
+        #feedback-widget button {
+            border: 1px solid var(--neon-purple);
+            background: transparent;
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        #feedback-widget button:hover { 
+            background: var(--neon-purple);
+            box-shadow: 0 0 10px var(--neon-purple);
+        }
+    </style>
+
+    <script>
+        function hideFeedback(type) {
+            alert("Thank you! Your feedback helps the Laboratory.");
+            document.getElementById('feedback-widget').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
