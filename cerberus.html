@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerberus - I T L</title>
+    <style>
+        /* Cerberus Hellfire Neon Theme */
+        :root {
+            --neon-red: #ff003c;
+            --neon-orange: #ff8a00;
+            --bg-dark: #050101;
+            --text-gray: #cccccc;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-gray);
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: rgba(15, 5, 5, 0.95);
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 2px solid var(--neon-red);
+            box-shadow: 0 0 20px rgba(255, 0, 60, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--neon-orange);
+            text-shadow: 0 0 10px var(--neon-orange);
+        }
+
+        /* Title */
+        h1 {
+            font-size: clamp(40px, 10vw, 75px);
+            text-align: center;
+            color: #fff;
+            margin-top: 50px;
+            letter-spacing: 15px;
+            text-transform: uppercase;
+            text-shadow: 0 0 15px var(--neon-red), 0 0 30px var(--neon-red);
+        }
+
+        /* Image Container */
+        .img-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .cerberus-img {
+            max-width: 85%;
+            height: auto;
+            border-radius: 20px;
+            border: 2px solid var(--neon-orange);
+            box-shadow: 0 0 25px rgba(255, 138, 0, 0.3);
+            transition: 0.5s;
+        }
+
+        .cerberus-img:hover {
+            box-shadow: 0 0 50px rgba(255, 0, 60, 0.5);
+            transform: scale(1.03) rotate(1deg);
+        }
+
+        /* Content Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(255, 0, 60, 0.03);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 35px;
+            border-right: 3px solid var(--neon-red);
+            border-left: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+        }
+
+        h2 {
+            color: var(--neon-orange);
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 5px rgba(255, 138, 0, 0.4);
+        }
+
+        h3 {
+            font-size: 19px;
+            font-weight: normal;
+            color: #eee;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        li {
+            margin-bottom: 18px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        li::before {
+            content: "🔥";
+            position: absolute;
+            left: 0;
+            font-size: 16px;
+        }
+
+        strong {
+            color: var(--neon-red);
+        }
+
+        .dotted-hr {
+            border-top: 2px dashed var(--neon-red);
+            margin: 60px 0;
+            opacity: 0.2;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div class="container">
+        <h1>CERBERUS</h1>
+
+        <div class="img-container">
+            <img class="cerberus-img" src="images/cerberus.jpg" alt="Cerberus - Guardian of the Underworld">
+        </div>
+
+        <section>
+            <h2>The Hound of Hades</h2>
+            <h3><strong>Cerberus</strong> is the monstrous multi-headed dog that guards the gates of the Underworld, preventing the dead from leaving and the living from entering without permission.</h3>
+        </section>
+
+        <section>
+            <h2>Physical Description</h2>
+            <ul>
+                <li><strong>Three Heads:</strong> Most legends describe him with three heads, representing the past, present, and future.</li>
+                <li><strong>Serpent's Tail:</strong> Instead of a normal tail, Cerberus often had a snake for a tail or snakes sprouting from his body.</li>
+                <li><strong>Deadly Saliva:</strong> It is said that where his saliva fell to the ground, poisonous plants like aconite would grow.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>The Final Labor</h2>
+            <h3>Slaying or capturing Cerberus was the <strong>12th and final labor</strong> of Hercules. Hercules had to wrestle the beast using only his bare hands to prove his strength to King Eurystheus.</h3>
+        </section>
+
+        <div class="dotted-hr"></div>
+    </div>
+
+    <div id="feedback-widget">
+        <span>Helpful?</span>
+        <button onclick="hideFeedback('Yes')">YES</button>
+        <button onclick="hideFeedback('No')">NO</button>
+    </div>
+
+    <style>
+        #feedback-widget {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #110505;
+            border: 1px solid var(--neon-red);
+            box-shadow: 0 0 15px rgba(255, 0, 60, 0.4);
+            padding: 12px 18px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 1000;
+            color: #fff;
+        }
+        #feedback-widget button {
+            border: 1px solid var(--neon-orange);
+            background: transparent;
+            color: var(--neon-orange);
+            padding: 4px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        #feedback-widget button:hover { 
+            background: var(--neon-red);
+            color: #fff;
+            border-color: var(--neon-red);
+            box-shadow: 0 0 10px var(--neon-red);
+        }
+    </style>
+
+    <script>
+        function hideFeedback(type) {
+            alert("The Guardian of Hades has been added to your collection!");
+            document.getElementById('feedback-widget').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
