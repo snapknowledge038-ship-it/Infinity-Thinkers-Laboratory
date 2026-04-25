@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Kraken - I T L</title>
+    <style>
+        /* Kraken Deep Sea Neon Theme */
+        :root {
+            --neon-aqua: #00ffff;
+            --neon-blue: #0077ff;
+            --bg-dark: #010a14;
+            --text-gray: #a5b4c0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-gray);
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-image: radial-gradient(circle at center, #021a2b 0%, #010a14 100%);
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: rgba(1, 15, 25, 0.95);
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 2px solid var(--neon-aqua);
+            box-shadow: 0 5px 20px rgba(0, 255, 255, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--neon-aqua);
+            text-shadow: 0 0 10px var(--neon-aqua);
+        }
+
+        /* Title */
+        h1 {
+            font-size: clamp(40px, 10vw, 75px);
+            text-align: center;
+            color: #fff;
+            margin-top: 50px;
+            letter-spacing: 15px;
+            text-transform: uppercase;
+            text-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-blue);
+        }
+
+        /* Image Container */
+        .img-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .kraken-img {
+            max-width: 85%;
+            height: auto;
+            border-radius: 20px;
+            border: 2px solid var(--neon-aqua);
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+            transition: 0.5s;
+        }
+
+        .kraken-img:hover {
+            box-shadow: 0 0 50px rgba(0, 119, 255, 0.4);
+            transform: translateY(-5px);
+        }
+
+        /* Content Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(0, 255, 255, 0.02);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 35px;
+            border-left: 4px solid var(--neon-blue);
+            backdrop-filter: blur(5px);
+        }
+
+        h2 {
+            color: var(--neon-aqua);
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        h3 {
+            font-size: 19px;
+            font-weight: normal;
+            color: #e6f7ff;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        li {
+            margin-bottom: 18px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        li::before {
+            content: "⚓";
+            position: absolute;
+            left: 0;
+            font-size: 18px;
+            color: var(--neon-aqua);
+        }
+
+        strong {
+            color: #fff;
+            text-shadow: 0 0 5px var(--neon-blue);
+        }
+
+        .dotted-hr {
+            border-top: 2px dashed var(--neon-blue);
+            margin: 60px 0;
+            opacity: 0.3;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div class="container">
+        <h1>THE KRAKEN</h1>
+
+        <div class="img-container">
+            <img class="kraken-img" src="images/kraken.jpg" alt="The Legendary Kraken">
+        </div>
+
+        <section>
+            <h2>Terror of the Deep</h2>
+            <h3>The <strong>Kraken</strong> is a legendary sea monster of enormous size said to appear off the coasts of Norway. It is often described as a giant squid-like creature capable of dragging entire ships down to the ocean floor.</h3>
+        </section>
+
+        <section>
+            <h2>Legendary Traits</h2>
+            <ul>
+                <li><strong>Massive Size:</strong> Sailors often mistook the Kraken's body for a series of small islands or sandbanks.</li>
+                <li><strong>The Whirlpool:</strong> It was believed that when the Kraken submerged, it created a massive whirlpool that sucked in any nearby vessels.</li>
+                <li><strong>Crushing Tentacles:</strong> Its tentacles were said to be as tall as a ship's main mast and strong enough to crush solid wood.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Real World Connection</h2>
+            <h3>While once considered a myth, modern science suggests that Kraken legends were likely based on sightings of the <strong>Giant Squid (Architeuthis)</strong>, which can grow up to 40-50 feet long.</h3>
+        </section>
+
+        <div class="dotted-hr"></div>
+    </div>
+
+    <div id="feedback-widget">
+        <span>Helpful?</span>
+        <button onclick="hideFeedback('Yes')">YES</button>
+        <button onclick="hideFeedback('No')">NO</button>
+    </div>
+
+    <style>
+        #feedback-widget {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #010a14;
+            border: 1px solid var(--neon-aqua);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+            padding: 12px 18px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 1000;
+            color: #fff;
+        }
+        #feedback-widget button {
+            border: 1px solid var(--neon-blue);
+            background: transparent;
+            color: var(--neon-aqua);
+            padding: 4px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        #feedback-widget button:hover { 
+            background: var(--neon-blue);
+            color: #fff;
+            box-shadow: 0 0 10px var(--neon-blue);
+        }
+    </style>
+
+    <script>
+        function hideFeedback(type) {
+            alert("The Kraken has been sighted! Feedback received.");
+            document.getElementById('feedback-widget').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
