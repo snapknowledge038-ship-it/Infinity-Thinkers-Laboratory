@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleopatra - I T L</title>
+    <style>
+        /* Ancient Egyptian Neon Gold Theme Settings */
+        :root {
+            --neon-gold: #ffcc00;
+            --neon-turquoise: #00f2ff;
+            --bg-dark: #0a0800;
+            --text-gray: #d1d1d1;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-gray);
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-image: linear-gradient(180deg, #0a0800 0%, #1a1500 100%);
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: rgba(20, 15, 0, 0.95);
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 2px solid var(--neon-gold);
+            box-shadow: 0 0 20px rgba(255, 204, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--neon-gold);
+            text-shadow: 0 0 10px var(--neon-gold);
+        }
+
+        /* Title */
+        h1 {
+            font-size: clamp(35px, 8vw, 70px);
+            text-align: center;
+            color: #fff;
+            margin-top: 50px;
+            letter-spacing: 12px;
+            text-transform: uppercase;
+            text-shadow: 0 0 15px var(--neon-gold), 0 0 30px var(--neon-gold);
+        }
+
+        /* Image Container */
+        .img-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .cleopatra-img {
+            max-width: 85%;
+            height: auto;
+            border-radius: 15px;
+            border: 2px solid var(--neon-gold);
+            box-shadow: 0 0 25px rgba(255, 204, 0, 0.15);
+            transition: 0.5s;
+        }
+
+        .cleopatra-img:hover {
+            box-shadow: 0 0 45px rgba(0, 242, 255, 0.4);
+            border-color: var(--neon-turquoise);
+            transform: scale(1.02);
+        }
+
+        /* Content Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(255, 204, 0, 0.03);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 35px;
+            border-left: 4px solid var(--neon-gold);
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        h2 {
+            color: var(--neon-turquoise);
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 5px rgba(0, 242, 255, 0.5);
+        }
+
+        h3 {
+            font-size: 19px;
+            font-weight: normal;
+            color: #f0f0f0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        li {
+            margin-bottom: 18px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        li::before {
+            content: "🔱";
+            position: absolute;
+            left: 0;
+            font-size: 18px;
+            color: var(--neon-gold);
+        }
+
+        strong {
+            color: var(--neon-gold);
+        }
+
+        .dotted-hr {
+            border-top: 2px dashed var(--neon-gold);
+            margin: 60px 0;
+            opacity: 0.3;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div class="container">
+        <h1>CLEOPATRA VII</h1>
+
+        <div class="img-container">
+            <img class="cleopatra-img" src="images/cleopatra.jpg" alt="Cleopatra VII Portrait">
+        </div>
+
+        <section>
+            <h2>The Last Pharaoh</h2>
+            <h3><strong>Cleopatra VII Philopator</strong> was the last active ruler of the Ptolemaic Kingdom of Egypt. She was not just a queen of beauty, but a brilliant diplomat, naval commander, and polyglot who spoke over nine languages.</h3>
+        </section>
+
+        <section>
+            <h2>Political Strategy</h2>
+            <ul>
+                <li><strong>Alliance with Caesar:</strong> She formed a powerful political and personal relationship with Julius Caesar to secure her throne.</li>
+                <li><strong>The Roman Connection:</strong> After Caesar's death, she aligned with Mark Antony, challenging the rising power of Octavian (Augustus).</li>
+                <li><strong>Economic Prosperity:</strong> Under her reign, Egypt remained the wealthiest nation in the Mediterranean world.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>The End of an Era</h2>
+            <h3>Following her defeat at the <strong>Battle of Actium</strong>, Cleopatra chose to end her life in 30 BC. Legend says she died from the bite of an <strong>asp (Egyptian cobra)</strong>, marking the end of the Pharaohs and the beginning of Egypt as a Roman province.</h3>
+        </section>
+
+        <div class="dotted-hr"></div>
+    </div>
+
+    <div id="feedback-widget">
+        <span>Helpful?</span>
+        <button onclick="hideFeedback('Yes')">YES</button>
+        <button onclick="hideFeedback('No')">NO</button>
+    </div>
+
+    <style>
+        #feedback-widget {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #141000;
+            border: 1px solid var(--neon-gold);
+            box-shadow: 0 0 15px rgba(255, 204, 0, 0.4);
+            padding: 12px 18px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 1000;
+            color: #fff;
+        }
+        #feedback-widget button {
+            border: 1px solid var(--neon-turquoise);
+            background: transparent;
+            color: var(--neon-turquoise);
+            padding: 4px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        #feedback-widget button:hover { 
+            background: var(--neon-gold);
+            color: #000;
+            border-color: var(--neon-gold);
+            box-shadow: 0 0 10px var(--neon-gold);
+        }
+    </style>
+
+    <script>
+        function hideFeedback(type) {
+            alert("The Golden Queen's history is now in the Laboratory.");
+            document.getElementById('feedback-widget').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
