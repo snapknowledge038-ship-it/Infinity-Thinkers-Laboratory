@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adolf Hitler - I T L</title>
+    <style>
+        /* Dark History Crimson Theme */
+        :root {
+            --neon-red: #ff0000;
+            --steel-gray: #71797e;
+            --bg-dark: #0a0a0a;
+            --text-light: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #000;
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 2px solid var(--neon-red);
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #888;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 16px;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--neon-red);
+            text-shadow: 0 0 8px var(--neon-red);
+        }
+
+        /* Title */
+        h1 {
+            font-size: clamp(35px, 8vw, 70px);
+            text-align: center;
+            color: #fff;
+            margin-top: 50px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            text-shadow: 0 0 15px var(--neon-red);
+        }
+
+        /* Image Container */
+        .img-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .hitler-img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 10px;
+            border: 1px solid var(--neon-red);
+            filter: grayscale(100%);
+            box-shadow: 0 0 25px rgba(255, 0, 0, 0.1);
+            transition: 0.5s;
+        }
+
+        .hitler-img:hover {
+            filter: grayscale(0%);
+            box-shadow: 0 0 40px rgba(255, 0, 0, 0.3);
+        }
+
+        /* Content Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(255, 0, 0, 0.02);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 35px;
+            border-left: 4px solid var(--neon-red);
+        }
+
+        h2 {
+            color: var(--neon-red);
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        h3 {
+            font-size: 19px;
+            font-weight: normal;
+            color: #ccc;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        li {
+            margin-bottom: 18px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        li::before {
+            content: "◆";
+            position: absolute;
+            left: 0;
+            color: var(--neon-red);
+            font-size: 18px;
+        }
+
+        strong {
+            color: #fff;
+        }
+
+        .dotted-hr {
+            border-top: 2px dashed #333;
+            margin: 60px 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div class="container">
+        <h1>ADOLF HITLER</h1>
+
+        <div class="img-container">
+            <img class="hitler-img" src="images/hitler.jpg" alt="Adolf Hitler Portrait">
+        </div>
+
+        <section>
+            <h2>Rise to Power</h2>
+            <h3>Born in Austria in 1889, <strong>Adolf Hitler</strong> rose to become the leader of the Nazi Party (NSDAP) and the dictator of Germany from 1933 to 1945. He exploited economic unrest and nationalism to gain absolute control.</h3>
+        </section>
+
+        <section>
+            <h2>World War II</h2>
+            <ul>
+                <li><strong>Invasion of Poland:</strong> His invasion of Poland in 1939 triggered the start of World War II, the deadliest conflict in human history.</li>
+                <li><strong>Totalitarian Rule:</strong> He transformed Germany into a one-party state, suppressing all opposition and controlling every aspect of life.</li>
+                <li><strong>Military Strategy:</strong> While initially successful in capturing much of Europe, his strategic errors led to Germany's ultimate defeat.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>The Holocaust</h2>
+            <h3>Hitler's regime was responsible for the <strong>Holocaust</strong>, the systematic, state-sponsored persecution and murder of approximately six million Jews and millions of others by the Nazi regime and its collaborators.</h3>
+        </section>
+
+        <div class="dotted-hr"></div>
+    </div>
+
+    <div id="feedback-widget">
+        <span>Helpful?</span>
+        <button onclick="hideFeedback('Yes')">YES</button>
+        <button onclick="hideFeedback('No')">NO</button>
+    </div>
+
+    <style>
+        #feedback-widget {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #000;
+            border: 1px solid var(--neon-red);
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+            padding: 12px 18px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 1000;
+            color: #fff;
+        }
+        #feedback-widget button {
+            border: 1px solid #444;
+            background: transparent;
+            color: #fff;
+            padding: 4px 12px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        #feedback-widget button:hover { 
+            background: var(--neon-red);
+            border-color: var(--neon-red);
+        }
+    </style>
+
+    <script>
+        function hideFeedback(type) {
+            alert("Historical record updated. Feedback received.");
+            document.getElementById('feedback-widget').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
