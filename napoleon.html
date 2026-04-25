@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Napoleon Bonaparte - I T L</title>
+    <style>
+        /* French Empire Neon Theme Settings */
+        :root {
+            --neon-blue: #0072ff;
+            --neon-white: #ffffff;
+            --bg-dark: #05050a;
+            --text-gray: #c0c0c8;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-gray);
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: rgba(5, 5, 20, 0.95);
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 2px solid var(--neon-blue);
+            box-shadow: 0 0 20px rgba(0, 114, 255, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--neon-blue);
+            text-shadow: 0 0 10px var(--neon-blue);
+        }
+
+        /* Title */
+        h1 {
+            font-size: clamp(35px, 8vw, 70px);
+            text-align: center;
+            color: #fff;
+            margin-top: 50px;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            text-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-blue);
+        }
+
+        /* Image Container */
+        .img-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .napoleon-img {
+            max-width: 85%;
+            height: auto;
+            border-radius: 15px;
+            border: 2px solid var(--neon-white);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+            transition: 0.5s;
+        }
+
+        .napoleon-img:hover {
+            box-shadow: 0 0 45px rgba(0, 114, 255, 0.4);
+            border-color: var(--neon-blue);
+            transform: scale(1.02);
+        }
+
+        /* Content Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(0, 114, 255, 0.03);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 35px;
+            border-right: 4px solid var(--neon-blue);
+            border-left: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        h2 {
+            color: #fff;
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 8px var(--neon-blue);
+        }
+
+        h3 {
+            font-size: 19px;
+            font-weight: normal;
+            color: #f0f0f0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        li {
+            margin-bottom: 18px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        li::before {
+            content: "🦅";
+            position: absolute;
+            left: 0;
+            font-size: 18px;
+        }
+
+        strong {
+            color: var(--neon-blue);
+            text-shadow: 0 0 2px #000;
+        }
+
+        .dotted-hr {
+            border-top: 2px dashed var(--neon-blue);
+            margin: 60px 0;
+            opacity: 0.3;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div class="container">
+        <h1>NAPOLEON BONAPARTE</h1>
+
+        <div class="img-container">
+            <img class="napoleon-img" src="images/napoleon.jpg" alt="Napoleon Bonaparte Portrait">
+        </div>
+
+        <section>
+            <h2>The Emperor of the French</h2>
+            <h3>Born in Corsica in 1769, <strong>Napoleon Bonaparte</strong> rose to prominence during the French Revolution. He crowned himself Emperor in 1804 and dominated European affairs for over a decade.</h3>
+        </section>
+
+        <section>
+            <h2>Military Brilliance</h2>
+            <ul>
+                <li><strong>The Napoleonic Wars:</strong> He led a series of successful campaigns against various coalitions of European nations, showcasing unmatched tactical genius.</li>
+                <li><strong>The Napoleonic Code:</strong> He established a legal system that heavily influenced the civil law of many countries worldwide.</li>
+                <li><strong>Master of Artillery:</strong> His revolutionary use of mobile artillery was a key factor in his many battlefield victories.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>The Final Defeat</h2>
+            <h3>After a disastrous invasion of Russia, Napoleon's power began to fade. His final defeat came at the <strong>Battle of Waterloo</strong> in 1815, after which he was exiled to the remote island of <strong>Saint Helena</strong>.</h3>
+        </section>
+
+        <div class="dotted-hr"></div>
+    </div>
+
+    <div id="feedback-widget">
+        <span>Helpful?</span>
+        <button onclick="hideFeedback('Yes')">YES</button>
+        <button onclick="hideFeedback('No')">NO</button>
+    </div>
+
+    <style>
+        #feedback-widget {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #05050a;
+            border: 1px solid var(--neon-blue);
+            box-shadow: 0 0 15px rgba(0, 114, 255, 0.4);
+            padding: 12px 18px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 1000;
+            color: #fff;
+        }
+        #feedback-widget button {
+            border: 1px solid var(--neon-white);
+            background: transparent;
+            color: var(--neon-white);
+            padding: 4px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        #feedback-widget button:hover { 
+            background: var(--neon-blue);
+            color: #fff;
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 10px var(--neon-blue);
+        }
+    </style>
+
+    <script>
+        function hideFeedback(type) {
+            alert("The legacy of the Emperor has been noted!");
+            document.getElementById('feedback-widget').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
