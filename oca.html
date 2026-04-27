@@ -3,21 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Cosmic Address | Upgrade</title>
+    <title>Our Cosmic Address | ITL</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #05070a; /* Deeper midnight background */
+            background-color: #05070a; 
             color: #e0e0e0;
             line-height: 1.6;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+        }
+
+        /* Navigation Bar Styles */
+        nav {
+            background-color: #0a111a;
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 2px solid #1e3a5f;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #3a6ea5;
         }
 
         .container {
-            max-width: 1000px; /* Wider container for images */
-            margin: auto;
-            background: #0a0e14; /* Dark gray card style */
+            max-width: 1000px;
+            margin: 40px auto;
+            background: #0a0e14;
             padding: 40px;
             border-radius: 15px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.7);
@@ -45,19 +69,24 @@
             border-radius: 10px;
             background: #11161d;
             border: 1px solid #1e3a5f;
-            overflow: hidden; /* Clearfix */
             display: flex;
             align-items: center;
             gap: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: scale(1.01);
+            background: #161c24;
         }
 
         .section img {
-            width: 150px; /* Fixed width for standardizing images */
-            height: 150px;
+            width: 180px;
+            height: 180px;
             object-fit: cover;
             border-radius: 10px;
             border: 2px solid #3a6ea5;
-            flex-shrink: 0; /* Prevents image from shrinking */
+            flex-shrink: 0;
         }
 
         .section-text {
@@ -83,7 +112,6 @@
             padding: 25px;
             border-radius: 10px;
             margin-top: 50px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
         }
 
         .hierarchy-list {
@@ -101,16 +129,37 @@
             font-weight: bold;
             margin: 0 10px;
         }
+
+        /* Mobile responsiveness */
+        @media (max-width: 600px) {
+            .section {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
     </style>
 </head>
 <body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="earth.html">Earth</a>
+    <a href="animals.html">Animals</a>
+    <a href="space.html">Space</a>
+    <a href="mysteries.html">Mysteries</a>
+    <a href="history.html">History</a>
+</nav>
 
 <div class="container">
     <h1>Our Cosmic Address</h1>
     <p class="intro">A visual journey from our home planet to the infinite reaches of the Multiverse.</p>
 
     <div class="section">
-        <img src="https://lh3.googleusercontent.com/d/1GZp_2oH3wF5C4vA7-U-3X8kR1X3wY-M1" alt="Earth: The Blue Marble">
+        <img src="images/earth.jpg" alt="Earth">
         <div class="section-text">
             <h3>1. Earth (The Planet)</h3>
             <p>Our home and the only place in the known universe where life exists.</p>
@@ -120,7 +169,7 @@
     </div>
 
     <div class="section">
-        <img src="https://lh3.googleusercontent.com/d/1wZp_2oH3wF5C4vA7-U-3X8kR1X3wY-M1" alt="Solar System Model">
+        <img src="images/solar-system.jpg" alt="Solar System">
         <div class="section-text">
             <h3>2. Solar System</h3>
             <p>A star-centered system bound by gravity, including 8 planets and various celestial bodies.</p>
@@ -130,7 +179,7 @@
     </div>
 
     <div class="section">
-        <img src="https://lh3.googleusercontent.com/d/1xZp_2oH3wF5C4vA7-U-3X8kR1X3wY-M1" alt="Milky Way Galaxy View">
+        <img src="images/milky-way.jpg" alt="Milky Way">
         <div class="section-text">
             <h3>3. Milky Way (The Galaxy)</h3>
             <p>A barred spiral galaxy containing 100 to 400 billion stars.</p>
@@ -140,7 +189,7 @@
     </div>
 
     <div class="section">
-        <img src="https://lh3.googleusercontent.com/d/1yZp_2oH3wF5C4vA7-U-3X8kR1X3wY-M1" alt="Laniakea Map Visualization">
+        <img src="images/laniakea.jpg" alt="Laniakea">
         <div class="section-text">
             <h3>4. Laniakea (Supercluster)</h3>
             <p>A massive structural web of roughly 100,000 galaxies.</p>
@@ -150,7 +199,7 @@
     </div>
 
     <div class="section">
-        <img src="https://lh3.googleusercontent.com/d/1zZp_2oH3wF5C4vA7-U-3X8kR1X3wY-M1" alt="Cosmic Web Visualization">
+        <img src="images/cosmic-web.jpg" alt="Cosmic Web">
         <div class="section-text">
             <h3>5. The Cosmic Web</h3>
             <p>The largest structure in the universe, made of filaments of dark matter and gas.</p>
@@ -160,7 +209,7 @@
     </div>
 
     <div class="section">
-        <img src="https://lh3.googleusercontent.com/d/1WZp_2oH3wF5C4vA7-U-3X8kR1X3wY-M1" alt="Observable Universe Spherical Model">
+        <img src="images/observable-universe.jpg" alt="Universe">
         <div class="section-text">
             <h3>6. The Universe</h3>
             <p>The totality of space, time, matter, and energy.</p>
@@ -170,7 +219,7 @@
     </div>
 
     <div class="section">
-        <img src="https://lh3.googleusercontent.com/d/1VZp_2oH3wF5C4vA7-U-3X8kR1X3wY-M1" alt="Multiverse Concept Illustration">
+        <img src="images/multiverse-theory.jpg" alt="Multiverse">
         <div class="section-text">
             <h3>7. The Multiverse</h3>
             <p>A theoretical concept of infinite universes with different physical laws.</p>
