@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Megalodon: The Ocean Giant - I T L</title>
+    <style>
+        /* Megalodon Deep Sea Neon Theme */
+        :root {
+            --neon-cyan: #00f2ff;
+            --deep-blue: #004e92;
+            --electric-blue: #0072ff;
+            --bg-black: #02050a;
+            --card-bg: #0a111a;
+            --text-gray: #a0b0c0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-black);
+            color: var(--text-gray);
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-image: linear-gradient(180deg, #02050a 0%, #001a33 100%);
+        }
+
+        /* Navigation - Your Standard Tabs */
+        nav {
+            background: rgba(0, 5, 15, 0.95);
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 2px solid var(--neon-cyan);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--neon-cyan);
+            text-shadow: 0 0 10px var(--neon-cyan);
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 120px 20px;
+            background: radial-gradient(circle at center, #002b5c 0%, #02050a 100%);
+        }
+
+        h1 {
+            font-size: clamp(40px, 10vw, 90px);
+            color: #fff;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 15px;
+            text-shadow: 0 0 30px var(--neon-cyan);
+        }
+
+        .tagline {
+            color: var(--neon-cyan);
+            font-size: 18px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            margin-top: 15px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        /* Main Feature Section */
+        .feature-box {
+            background: var(--card-bg);
+            border: 1px solid rgba(0, 242, 255, 0.2);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-box::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0;
+            width: 4px; height: 100%;
+            background: var(--neon-cyan);
+            box-shadow: 0 0 15px var(--neon-cyan);
+        }
+
+        h2 {
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            border-bottom: 1px solid #1a2a3a;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Comparison Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #1a2a3a;
+        }
+
+        .stat-card h3 {
+            color: var(--neon-cyan);
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .stat-card p {
+            margin: 5px 0 0;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Content Image Styling */
+        .content-img {
+            width: 100%;
+            border-radius: 15px;
+            margin: 30px 0;
+            border: 1px solid #1a2a3a;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .comparison-img {
+            max-width: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Facts List */
+        ul { list-style: none; padding: 0; }
+        li {
+            padding: 15px 0 15px 40px;
+            position: relative;
+            border-bottom: 1px solid #1a2a3a;
+        }
+        li::before {
+            content: "🦈";
+            position: absolute;
+            left: 0;
+            font-size: 20px;
+        }
+
+        .highlight {
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+            margin: 60px 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <header>
+        <h1>MEGALODON</h1>
+        <div class="tagline">The Largest Shark to Ever Exist</div>
+    </header>
+
+    <div class="container">
+
+        <div class="feature-box">
+            <h2>The King of the Abyss</h2>
+            <p>Approximately 23 to 3.6 million years ago, the oceans were ruled by a titan. The <strong>Otodus megalodon</strong> was not just a big shark; it was a massive predator that made the modern Great White shark look like a minnow. Its name literally means "Big Tooth," a fitting title for a creature with teeth the size of a human hand.</p>
+            
+            <img src="images/megalodon_main.jpg" alt="Megalodon swimming" class="content-img">
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>15 - 18 Meters</h3>
+                <p>Estimated Length</p>
+            </div>
+            <div class="stat-card">
+                <h3>50 - 70 Tons</h3>
+                <p>Body Mass</p>
+            </div>
+            <div class="stat-card">
+                <h3>108,000 Newtons</h3>
+                <p>Bite Force</p>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <section>
+            <h2>Unbelievable Facts</h2>
+            <ul>
+                <li><span class="highlight">Whale Hunters:</span> Megalodons primarily fed on small to medium-sized whales. Their bite was strong enough to crush a whale's skull or vertebrae.</li>
+                <li><span class="highlight">Giant Teeth:</span> A single Megalodon tooth could measure over 7 inches (18 cm) in length. They had roughly 276 teeth arranged in five rows.</li>
+                <li><span class="highlight">Global Presence:</span> Fossils have been found on every continent except Antarctica, suggesting they lived in warm coastal waters all around the globe.</li>
+                <li><span class="highlight">The Extinction:</span> They went extinct around 3.6 million years ago, likely due to global cooling and the disappearance of their primary prey (small whales).</li>
+            </ul>
+        </section>
+
+        <section style="margin-top: 50px;">
+            <h2>Size Comparison</h2>
+            <p>To understand the scale of this monster, imagine a creature as long as a large school bus or two city buses parked end-to-end. Below is how it compares to a human and a modern shark.</p>
+            <img src="images/megalodon_size.jpg" alt="Megalodon size comparison" class="content-img comparison-img">
+        </section>
+
+        <div class="divider"></div>
+
+    </div>
+
+</body>
+</html>
