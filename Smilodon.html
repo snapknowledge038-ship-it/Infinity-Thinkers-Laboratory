@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smilodon: The Sabre-Toothed King - I T L</title>
+    <style>
+        /* Smilodon Ice Age Neon Theme */
+        :root {
+            --neon-gold: #ffcc00;
+            --ice-blue: #00d4ff;
+            --bg-black: #050505;
+            --card-bg: #111111;
+            --text-gray: #b0b0b0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-black);
+            color: var(--text-gray);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(0, 0, 0, 0.95);
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 2px solid var(--neon-gold);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 100px 20px;
+            background: radial-gradient(circle at center, #1a1500 0%, #050505 100%);
+        }
+
+        h1 {
+            font-size: clamp(40px, 10vw, 80px);
+            color: #fff;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 15px;
+            text-shadow: 0 0 20px var(--neon-gold);
+        }
+
+        .tagline {
+            color: var(--neon-gold);
+            font-size: 18px;
+            letter-spacing: 5px;
+            margin-top: 10px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        .content-box {
+            background: var(--card-bg);
+            border: 1px solid #222;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: var(--ice-blue);
+            text-transform: uppercase;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: #000;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid var(--neon-gold);
+            text-align: center;
+        }
+
+        .stat-card h3 { color: var(--neon-gold); margin: 0; font-size: 24px; }
+
+        .dino-img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #333;
+        }
+
+        .highlight { color: #fff; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <header>
+        <h1>SMILODON</h1>
+        <div class="tagline">The Ultimate Ice Age Predator</div>
+    </header>
+
+    <div class="container">
+        <div class="content-box">
+            <img src="images/smilodon.jpg" alt="Smilodon Tiger" class="dino-img">
+            <h2>The Sabre-Toothed Cat</h2>
+            <p>The <strong>Smilodon</strong> is one of the most famous prehistoric mammals. Often called the "Sabre-toothed Tiger," it was not actually a tiger but a distant cousin. Living during the Pleistocene epoch, it was built for power rather than speed, capable of taking down massive prey like bison and small mammoths.</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card"><h3>28 cm</h3><p>Canine Teeth</p></div>
+            <div class="stat-card"><h3>400 kg</h3><p>Body Weight</p></div>
+            <div class="stat-card"><h3>10,000 BC</h3><p>Extinction</p></div>
+        </div>
+
+        <div class="content-box">
+            <h2>Fearful Facts</h2>
+            <ul>
+                <li><span class="highlight">Deadly Teeth:</span> Their iconic 11-inch long canine teeth were fragile. They only used them to deliver a finishing bite to the throat after pinning down prey.</li>
+                <li><span class="highlight">Social Hunters:</span> Evidence suggests Smilodon lived and hunted in packs, much like modern lions.</li>
+                <li><span class="highlight">Sturdy Build:</span> They had extremely muscular front legs to wrestle large animals to the ground.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
