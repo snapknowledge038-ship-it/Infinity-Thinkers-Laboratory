@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinosaur Kingdom - I T L</title>
+    <style>
+        /* Dinosaur Neon Jungle Theme */
+        :root {
+            --neon-green: #39ff14;
+            --lava-orange: #ff4500;
+            --earth-brown: #4b3621;
+            --bg-black: #050505;
+            --card-bg: #121212;
+            --text-gray: #d1d1d1;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-black);
+            color: var(--text-gray);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-image: radial-gradient(circle at top, #0a1a05 0%, #050505 100%);
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(0, 0, 0, 0.95);
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 2px solid var(--neon-green);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--neon-green);
+            text-shadow: 0 0 10px var(--neon-green);
+        }
+
+        /* Hero Header */
+        header {
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        h1 {
+            font-size: clamp(40px, 10vw, 80px);
+            color: #fff;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 12px;
+            text-shadow: 0 0 20px var(--neon-green);
+        }
+
+        .tagline {
+            color: var(--lava-orange);
+            font-size: 18px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+
+        /* General Intro */
+        .intro-section {
+            max-width: 1000px;
+            margin: 0 auto 60px;
+            padding: 40px;
+            background: rgba(57, 255, 20, 0.03);
+            border-left: 4px solid var(--neon-green);
+            border-radius: 10px;
+        }
+
+        /* Dinosaur Grid */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .dino-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        /* Dino Cards */
+        .dino-card {
+            background: var(--card-bg);
+            border: 1px solid #222;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: 0.4s;
+        }
+
+        .dino-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--neon-green);
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.15);
+        }
+
+        .dino-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 2px solid var(--neon-green);
+        }
+
+        .dino-content {
+            padding: 30px;
+        }
+
+        .dino-content h2 {
+            color: var(--neon-green);
+            margin: 0 0 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .dino-stats {
+            background: #1a1a1a;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 14px;
+            border-left: 3px solid var(--lava-orange);
+        }
+
+        .dino-stats span {
+            color: var(--lava-orange);
+            font-weight: bold;
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--neon-green), transparent);
+            margin: 80px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <header>
+        <h1>DINOSAURIA</h1>
+        <div class="tagline">The Era of Giant Reptiles</div>
+    </header>
+
+    <div class="container">
+        
+        <section class="intro-section">
+            <h2>The Age of Giants</h2>
+            <p>Dinosaurs ruled the Earth for over 160 million years, from the Triassic period until their sudden extinction at the end of the Cretaceous. They were an incredibly diverse group, ranging from the size of a chicken to massive long-necked titans as heavy as space rockets.</p>
+        </section>
+
+        <div class="dino-grid">
+
+            <div class="dino-card">
+                <img src="images/trex.jpg" alt="Tyrannosaurus Rex" class="dino-img">
+                <div class="dino-content">
+                    <h2>Tyrannosaurus Rex</h2>
+                    <p>The "King of the Tyrant Lizards." With one of the strongest bite forces of any land animal, the T-Rex was a apex predator of North America.</p>
+                    <div class="dino-stats">
+                        <span>Diet:</span> Carnivore (Meat-eater)<br>
+                        <span>Length:</span> 12 - 13 Meters<br>
+                        <span>Era:</span> Late Cretaceous
+                    </div>
+                </div>
+            </div>
+
+            <div class="dino-card">
+                <img src="images/triceratops.jpg" alt="Triceratops" class="dino-img">
+                <div class="dino-content">
+                    <h2>Triceratops</h2>
+                    <p>Known for its three horns and massive bony frill. This armored herbivore was likely a formidable opponent even for the T-Rex.</p>
+                    <div class="dino-stats">
+                        <span>Diet:</span> Herbivore (Plant-eater)<br>
+                        <span>Weight:</span> 6,000 - 12,000 kg<br>
+                        <span>Feature:</span> Defensive Horns
+                    </div>
+                </div>
+            </div>
+
+            <div class="dino-card">
+                <img src="images/brachio.jpg" alt="Brachiosaurus" class="dino-img">
+                <div class="dino-content">
+                    <h2>Brachiosaurus</h2>
+                    <p>A gentle giant with an incredibly long neck, allowing it to reach the highest leaves in Jurassic forests. It walked on all fours like a giraffe.</p>
+                    <div class="dino-stats">
+                        <span>Diet:</span> Herbivore<br>
+                        <span>Height:</span> 12 - 16 Meters<br>
+                        <span>Era:</span> Late Jurassic
+                    </div>
+                </div>
+            </div>
+
+            <div class="dino-card">
+                <div class="img-placeholder" style="height: 250px; background: #222; display: flex; align-items: center; justify-content: center;">
+                    <img src="images/velociraptor.jpg" alt="Velociraptor" class="dino-img">
+                </div>
+                <div class="dino-content">
+                    <h2>Velociraptor</h2>
+                    <p>Small but deadly. Unlike movies, these were feathered hunters, roughly the size of a turkey, known for their sharp sickle-shaped toe claws.</p>
+                    <div class="dino-stats">
+                        <span>Diet:</span> Carnivore<br>
+                        <span>Speed:</span> Up to 40 mph<br>
+                        <span>Feature:</span> High Intelligence
+                    </div>
+                </div>
+            </div>
+
+            <div class="dino-card">
+                <img src="images/spino.jpg" alt="Spinosaurus" class="dino-img">
+                <div class="dino-content">
+                    <h2>Spinosaurus</h2>
+                    <p>The largest of all carnivorous dinosaurs, even bigger than T-Rex. It had a massive sail on its back and lived both on land and in water.</p>
+                    <div class="dino-stats">
+                        <span>Diet:</span> Carnivore (Piscivore)<br>
+                        <span>Environment:</span> River Systems<br>
+                        <span>Era:</span> Cretaceous
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="divider"></div>
+    </div>
+
+</body>
+</html>
