@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description" content="Discover mind-blowing and fun amazing facts about the world, science, and nature with ITL. Expand your knowledge with our curated list of wonders.">
+
+    <meta name="keywords" content="Fun Facts, Amazing Facts, Interesting Trivia, Science Facts, ITL Facts, Mind Blowing Discoveries">
+
+    <meta property="og:title" content="Fun Amazing Facts | ITL">
+    <meta property="og:description" content="Explore a collection of the most incredible and fun facts from around the universe.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Amazing Facts - I T L</title>
+    <style>
+        /* මූලික සැකසුම් */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #050a15; /* තද නිල් පැහැති පසුබිමක් (අලුත් තේමාවකට) */
+            color: #e0e8f0;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #0a1128;
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 2px solid #1e3a8a;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #60a5fa; /* ලා නිල් පැහැයක් */
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px #60a5fa;
+        }
+
+        /* මාතෘකාව */
+        h1 {
+            font-size: clamp(30px, 6vw, 55px);
+            text-align: center;
+            color: #fff;
+            text-transform: uppercase;
+            margin-top: 40px;
+            text-decoration: underline;
+            text-shadow: 0 0 15px rgba(96, 165, 250, 0.3);
+        }
+
+        /* පින්තූරය */
+        .img-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .facts-img {
+            max-width: 90%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+            border: 2px solid #1e3a8a;
+        }
+
+        /* අන්තර්ගතය */
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .facts-intro-text {
+            font-size: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 30px;
+            border-radius: 15px;
+            border-right: 5px solid #60a5fa; 
+            text-align: justify;
+        }
+
+        h2 {
+            color: #60a5fa;
+            font-size: 32px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        /* ලිපි ලැයිස්තුව (Facts Grid) */
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+            margin-top: 30px;
+        }
+
+        .facts-grid li {
+            background: #0a1128;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #1e3a8a;
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .facts-grid li:hover {
+            background: #1e3a8a;
+            transform: translateY(-10px);
+            border-color: #60a5fa;
+        }
+
+        .facts-grid a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #1e3a8a, transparent);
+            margin: 50px 0;
+        }
+
+        .dotted-hr {
+            border-top: 3px dotted #1e3a8a;
+            margin-bottom: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div class="container">
+        <h1>Fun Amazing Facts</h1>
+
+        <div class="img-container">
+            <img class="facts-img" src="images/fun_facts_thumbnail.jpeg" alt="Fun Amazing Facts">
+        </div>
+
+        <div class="facts-intro-text">
+            Welcome to the ultimate hub of curiosity! Our world is full of strange, beautiful, and mind-blowing secrets that often go unnoticed. From the depth of the oceans to the far reaches of outer space, "Fun Amazing Facts" brings you the most incredible information to spark your imagination.
+            <br><br>
+            Did you know that some facts are so strange they sound like fiction? Here, we verify and present the most interesting trivia to keep you informed and entertained. Dive into our collections below and discover something new today!
+        </div>
+
+        <hr>
+
+        <h2>Explore Fact Categories</h2>
+        
+        <ul class="facts-grid">
+            <li><a href="space-facts.html">Space Wonders</a></li>
+            <li><a href="animal-facts.html">Animal Secrets</a></li>
+            <li><a href="human-body-facts.html">Human Body</a></li>
+            <li><a href="nature-facts.html">Nature Facts</a></li>
+            <li><a href="tech-facts.html">Technology</a></li>
+        </ul>
+
+        <div class="dotted-hr"></div>
+    </div>
+
+</body>
+</html>
