@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Woolly Mammoth: Ice Age Giant - I T L</title>
+    <style>
+        /* Mammoth Ice/Frost Theme */
+        :root {
+            --ice-white: #f0f8ff;
+            --frost-blue: #a5d6f1;
+            --neon-blue: #00f2ff;
+            --bg-black: #050505;
+            --card-bg: #10151d;
+            --text-gray: #c0c0c0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-black);
+            color: var(--text-gray);
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-image: linear-gradient(180deg, #050505 0%, #001f3f 100%);
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(0, 0, 0, 0.95);
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 2px solid var(--neon-blue);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--neon-blue);
+            text-shadow: 0 0 10px var(--neon-blue);
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        h1 {
+            font-size: clamp(40px, 10vw, 80px);
+            color: #fff;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 12px;
+            text-shadow: 0 0 20px var(--neon-blue);
+        }
+
+        .tagline {
+            color: var(--frost-blue);
+            font-size: 18px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        /* Feature Box */
+        .feature-box {
+            background: var(--card-bg);
+            border: 1px solid rgba(0, 242, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .feature-box::after {
+            content: "";
+            position: absolute;
+            top: -2px; left: -2px; right: -2px; bottom: -2px;
+            border-radius: 22px;
+            background: linear-gradient(45deg, transparent, var(--neon-blue), transparent);
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        h2 {
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #1a2a3a;
+            display: inline-block;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            border-top: 3px solid var(--neon-blue);
+        }
+
+        .stat-card h3 {
+            color: var(--neon-blue);
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .content-img {
+            width: 100%;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .highlight {
+            color: var(--neon-blue);
+            font-weight: bold;
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
+            margin: 60px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <header>
+        <h1>WOOLLY MAMMOTH</h1>
+        <div class="tagline">The Great Titan of the Ice Age</div>
+    </header>
+
+    <div class="container">
+
+        <section class="feature-box">
+            <h2>The Frozen Giant</h2>
+            <img src="images/mammoth.jpg" alt="Woolly Mammoth in snow" class="content-img">
+            <p>The <strong>Woolly Mammoth</strong> is the ultimate symbol of the Ice Age. Covered in thick, shaggy fur and possessing massive curved tusks, these cousins of modern elephants roamed the freezing steppes of the Northern Hemisphere for hundreds of thousands of years.</p>
+        </section>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>4 Meters</h3>
+                <p>Maximum Height</p>
+            </div>
+            <div class="stat-card">
+                <h3>6 Tons</h3>
+                <p>Average Weight</p>
+            </div>
+            <div class="stat-card">
+                <h3>4,000 Years</h3>
+                <p>Ago Extinct</p>
+            </div>
+        </div>
+
+        <section>
+            <h2>Survival Adaptations</h2>
+            <p>To survive in temperatures as low as -50°C, the Mammoth had several unique features:</p>
+            <ul>
+                <li><span class="highlight">Three Layers of Fur:</span> A coarse outer layer and a soft, woolly undercoat for insulation.</li>
+                <li><span class="highlight">Curved Tusks:</span> Used to sweep snow away from the ground to find hidden grass and plants.</li>
+                <li><span class="highlight">Small Ears:</span> Unlike modern African elephants, Mammoths had small ears to prevent heat loss and frostbite.</li>
+            </ul>
+        </section>
+
+        <div class="divider"></div>
+
+    </div>
+
+</body>
+</html>
