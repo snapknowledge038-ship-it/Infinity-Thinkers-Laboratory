@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Web - I T L</title>
+    <style>
+        /* Base Settings */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #02040a;
+            color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-image: radial-gradient(circle at 50% 50%, #110022 0%, #02040a 100%);
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: rgba(0, 0, 0, 0.85);
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 2px solid #3a506b;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(8px);
+        }
+
+        nav a {
+            color: #5bc0be;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 8px #6fffe9;
+        }
+
+        /* Title Styling */
+        h1 {
+            font-size: clamp(40px, 8vw, 80px);
+            text-align: center;
+            margin-top: 40px;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            background: linear-gradient(to bottom, #ffffff, #a29bfe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+
+        /* Image Containers */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .main-img {
+            width: 100%;
+            max-width: 900px;
+            height: auto;
+            border-radius: 20px;
+            display: block;
+            margin: 30px auto;
+            box-shadow: 0 0 30px rgba(162, 155, 254, 0.2);
+        }
+
+        .star-img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 15px;
+            margin: 20px auto;
+            display: block;
+            border: 1px solid #3a506b;
+        }
+
+        /* Section Content */
+        section {
+            background: rgba(20, 10, 40, 0.5);
+            padding: 35px;
+            border-radius: 25px;
+            margin-bottom: 35px;
+            border: 1px solid rgba(162, 155, 254, 0.1);
+        }
+
+        h2 {
+            color: #a29bfe;
+            font-size: 30px;
+            margin-bottom: 20px;
+            border-left: 5px solid #5bc0be;
+            padding-left: 15px;
+        }
+
+        h3 {
+            font-size: 19px;
+            font-weight: normal;
+            color: #cbd5e1;
+        }
+
+        /* Table Styling */
+        .table-wrap {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #3a506b;
+        }
+
+        th {
+            background-color: #1c2541;
+            color: #6fffe9;
+        }
+
+        .footer-hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #a29bfe, transparent);
+            margin: 60px 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div class="container">
+        <h1>Cosmic Web</h1>
+        <img class="main-img" src="images/cosmic_web_large.png" alt="Visualization of the Cosmic Web">
+
+        <section>
+            <h2>What is the Cosmic Web?</h2>
+            <h3>The <strong>Cosmic Web</strong> is the largest known structure in the universe. It is a vast, interconnected network of filaments made of dark matter and gas, where galaxies are born and cluster together. It defines the "skeleton" of the entire cosmos.</h3>
+        </section>
+
+        <section>
+            <h2>The Three Main Components</h2>
+            <ul>
+                <li><strong>Filaments:</strong> Massive, thread-like structures that span millions of light-years. These are the "highways" of the universe where most galaxies reside.</li>
+                <img class="star-img" src="images/filaments.jpg" alt="Galaxy Filaments">
+                
+                <li><strong>Nodes:</strong> The intersection points where multiple filaments meet. These nodes house massive galaxy clusters and superclusters like Laniakea.</li>
+                
+                <li><strong>Voids:</strong> Enormous, nearly empty spaces between filaments. They make up the vast majority of the universe's volume but contain very little matter.</li>
+                <img class="star-img" src="images/voids.jpg" alt="Cosmic Voids">
+            </ul>
+        </section>
+
+        <section>
+            <h2>The Role of Dark Matter</h2>
+            <img class="main-img" src="images/dark_matter_structure.png" alt="Dark Matter Map">
+            <h3>While we can see galaxies, they only make up a tiny fraction of the Cosmic Web. The structure is primarily held together by <strong>Dark Matter</strong>.
+                <ol>
+                    <li>Dark matter provides the gravitational "glue" that pulls gas and stars together.</li>
+                    <li>Shortly after the Big Bang, small ripples in density caused dark matter to clump.</li>
+                    <li>These clumps grew into the filaments we see today, acting as scaffolds for galaxy formation.</li>
+                </ol>
+            </h3>
+        </section>
+
+        <section>
+            <h2>Comparison of Cosmic Scales</h2>
+            <div class="table-wrap">
+                <table>
+                    <tr>
+                        <th>Scale</th>
+                        <th>Dominant Feature</th>
+                        <th>Size Estimate</th>
+                        <th>Our Location</th>
+                    </tr>
+                    <tr>
+                        <td>Galactic</td>
+                        <td>Stars & Nebulae</td>
+                        <td>100,000 Light Years</td>
+                        <td>Orion Arm</td>
+                    </tr>
+                    <tr>
+                        <td>Supercluster</td>
+                        <td>Galaxy Groups</td>
+                        <td>500 Million Light Years</td>
+                        <td>Laniakea</td>
+                    </tr>
+                    <tr>
+                        <td>Cosmic Web</td>
+                        <td>Filaments & Voids</td>
+                        <td>10+ Billion Light Years</td>
+                        <td>The Local Filament</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section>
+            <h2>Tracing the Web</h2>
+            <img class="main-img" src="images/mapping_universe.jpg" alt="Mapping the Universe">
+            <h3>Astronomers use massive telescopes and supercomputer simulations (like the Illustris project) to map this structure. By looking at the light from distant <strong>Quasars</strong>, they can detect the invisible hydrogen gas that clings to the web's filaments.</h3>
+        </section>
+
+        <div class="footer-hr"></div>
+    </div>
+
+    <div id="feedback-widget">
+        <span>Did you learn something new?</span>
+        <button onclick="hideFeedback('Yes')"> 👍</button>
+        <button onclick="hideFeedback('No')"> 👎</button>
+    </div>
+
+    <style>
+    #feedback-widget {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #000000;
+        box-shadow: 0 4px 15px rgba(162, 155, 254, 0.3);
+        padding: 15px;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        z-index: 1000;
+        border: 1px solid #a29bfe;
+    }
+    #feedback-widget button {
+        border: none;
+        background: #000000;
+        padding: 5px 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 18px;
+    }
+    #feedback-widget button:hover { background: #1a1a1a; }
+    </style>
+
+    <script>
+    function hideFeedback(type) {
+        alert("Thanks for exploring the Cosmic Web with us!");
+        document.getElementById('feedback-widget').style.display = 'none';
+    }
+    </script>
+</body>
+</html>
