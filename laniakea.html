@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laniakea - I T L</title>
+    <style>
+        /* Base Settings */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #02040a;
+            color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-image: radial-gradient(circle at 20% 30%, #1a1b41 0%, #02040a 100%);
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: rgba(0, 0, 0, 0.85);
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 2px solid #3a506b;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(8px);
+        }
+
+        nav a {
+            color: #5bc0be;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 8px #6fffe9;
+        }
+
+        /* Title Styling */
+        h1 {
+            font-size: clamp(40px, 8vw, 80px);
+            text-align: center;
+            margin-top: 40px;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            background: linear-gradient(to bottom, #ffffff, #5bc0be);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+
+        /* Image Containers */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .main-img {
+            width: 100%;
+            max-width: 900px;
+            height: auto;
+            border-radius: 20px;
+            display: block;
+            margin: 30px auto;
+            box-shadow: 0 0 30px rgba(91, 192, 190, 0.2);
+        }
+
+        .star-img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 15px;
+            margin: 20px auto;
+            display: block;
+            border: 1px solid #3a506b;
+        }
+
+        /* Section Content */
+        section {
+            background: rgba(11, 19, 43, 0.5);
+            padding: 35px;
+            border-radius: 25px;
+            margin-bottom: 35px;
+            border: 1px solid rgba(91, 192, 190, 0.1);
+        }
+
+        h2 {
+            color: #6fffe9;
+            font-size: 30px;
+            margin-bottom: 20px;
+            border-left: 5px solid #5bc0be;
+            padding-left: 15px;
+        }
+
+        h3 {
+            font-size: 19px;
+            font-weight: normal;
+            color: #cbd5e1;
+        }
+
+        /* Table Styling */
+        .table-wrap {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #3a506b;
+        }
+
+        th {
+            background-color: #1c2541;
+            color: #6fffe9;
+        }
+
+        .footer-hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #5bc0be, transparent);
+            margin: 60px 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div class="container">
+        <h1>Laniakea</h1>
+        <img class="main-img" src="images/laniakea_main.png" alt="Laniakea Supercluster Visualization">
+
+        <section>
+            <h2>What is Laniakea?</h2>
+            <h3><strong>Laniakea</strong> is the galaxy supercluster that is home to the Milky Way and approximately 100,000 other nearby galaxies. The name means "immense heaven" in Hawaiian, which perfectly describes its staggering scale in the universe.</h3>
+        </section>
+
+        <section>
+            <h2>Key Characteristics</h2>
+            <ul>
+                <li><strong>Scale:</strong> It spans over 520 million light-years in diameter.</li>
+                <img class="star-img" src="images/milky_way_location.jpg" alt="Milky Way in Laniakea">
+                
+                <li><strong>Mass:</strong> It has the mass of approximately 100 quadrillion suns.</li>
+                
+                <li><strong>The Great Attractor:</strong> All galaxies within Laniakea are flowing inward toward a mysterious gravitational focal point known as the Great Attractor.</li>
+                <img class="star-img" src="images/great_attractor.jpg" alt="Great Attractor Visualization">
+            </ul>
+        </section>
+
+        <section>
+            <h2>The Structure of Our Cosmic Home</h2>
+            <img class="main-img" src="images/supercluster_structure.png" alt="Structure of Supercluster">
+            <h3>Laniakea is divided into several sub-parts:
+                <ol>
+                    <li><strong>Virgo Supercluster:</strong> The smaller group that contains our own Milky Way.</li>
+                    <li><strong>Hydra-Centaurus Supercluster:</strong> The region where the Great Attractor is located.</li>
+                    <li><strong>Pavo-Indus Supercluster:</strong> Another major branch of this cosmic web.</li>
+                </ol>
+            </h3>
+        </section>
+
+        <section>
+            <h2>Laniakea vs. Other Structures</h2>
+            <div class="table-wrap">
+                <table>
+                    <tr>
+                        <th>Structure</th>
+                        <th>Type</th>
+                        <th>Approx. Size (Light Years)</th>
+                        <th>Includes</th>
+                    </tr>
+                    <tr>
+                        <td>Solar System</td>
+                        <td>Star System</td>
+                        <td>~2 Light Years</td>
+                        <td>Earth, Sun, Planets</td>
+                    </tr>
+                    <tr>
+                        <td>Milky Way</td>
+                        <td>Galaxy</td>
+                        <td>100,000 Light Years</td>
+                        <td>Billions of Stars</td>
+                    </tr>
+                    <tr>
+                        <td>Local Group</td>
+                        <td>Galaxy Group</td>
+                        <td>10 Million Light Years</td>
+                        <td>Milky Way, Andromeda</td>
+                    </tr>
+                    <tr>
+                        <td>Laniakea</td>
+                        <td>Supercluster</td>
+                        <td>520 Million Light Years</td>
+                        <td>100,000+ Galaxies</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section>
+            <h2>The Cosmic Web</h2>
+            <img class="main-img" src="images/cosmic_web.jpg" alt="The Cosmic Web">
+            <h3>Laniakea is just one "branch" of the larger <strong>Cosmic Web</strong>. Beyond it lie other massive superclusters like the Shapley Supercluster, toward which Laniakea itself is moving.
+                <ul>
+                    <li><strong>Filaments:</strong> The long strands of galaxies that connect superclusters.</li>
+                    <li><strong>Voids:</strong> Massive empty spaces between these cosmic threads.</li>
+                </ul>
+            </h3>
+        </section>
+
+        <div class="footer-hr"></div>
+    </div>
+
+    <div id="feedback-widget">
+        <span>Was this helpful?</span>
+        <button onclick="hideFeedback('Yes')"> 👍</button>
+        <button onclick="hideFeedback('No')"> 👎</button>
+    </div>
+
+    <style>
+    #feedback-widget {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #000000;
+        box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+        padding: 15px;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        z-index: 1000;
+    }
+    #feedback-widget button {
+        border: none;
+        background: #000000;
+        padding: 5px 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 18px;
+    }
+    #feedback-widget button:hover { background: #333; }
+    </style>
+
+    <script>
+    function hideFeedback(type) {
+        alert("Thank you for your feedback about Laniakea!");
+        document.getElementById('feedback-widget').style.display = 'none';
+    }
+    </script>
+</body>
+</html>
