@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Observable Universe - I T L</title>
+    <style>
+        /* Base Settings */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #02040a;
+            color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-image: radial-gradient(circle at 50% 50%, #0d1b2a 0%, #02040a 100%);
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: rgba(0, 0, 0, 0.85);
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 2px solid #3a506b;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(8px);
+        }
+
+        nav a {
+            color: #5bc0be;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 8px #6fffe9;
+        }
+
+        /* Title Styling */
+        h1 {
+            font-size: clamp(35px, 7vw, 70px);
+            text-align: center;
+            margin-top: 40px;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            background: linear-gradient(to bottom, #ffffff, #f1c40f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+
+        /* Image Containers */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .main-img {
+            width: 100%;
+            max-width: 900px;
+            height: auto;
+            border-radius: 20px;
+            display: block;
+            margin: 30px auto;
+            box-shadow: 0 0 30px rgba(241, 196, 15, 0.2);
+        }
+
+        .star-img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 15px;
+            margin: 20px auto;
+            display: block;
+            border: 1px solid #3a506b;
+        }
+
+        /* Section Content */
+        section {
+            background: rgba(11, 19, 43, 0.6);
+            padding: 35px;
+            border-radius: 25px;
+            margin-bottom: 35px;
+            border: 1px solid rgba(241, 196, 15, 0.1);
+        }
+
+        h2 {
+            color: #f1c40f;
+            font-size: 30px;
+            margin-bottom: 20px;
+            border-left: 5px solid #f1c40f;
+            padding-left: 15px;
+        }
+
+        h3 {
+            font-size: 19px;
+            font-weight: normal;
+            color: #cbd5e1;
+        }
+
+        /* Table Styling */
+        .table-wrap {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #3a506b;
+        }
+
+        th {
+            background-color: #1c2541;
+            color: #f1c40f;
+        }
+
+        .footer-hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #f1c40f, transparent);
+            margin: 60px 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div class="container">
+        <h1>Observable Universe</h1>
+        <img class="main-img" src="images/observable_universe_main.png" alt="Observable Universe Logarithmic Map">
+
+        <section>
+            <h2>What is the Observable Universe?</h2>
+            <h3>The <strong>Observable Universe</strong> is a spherical region of the universe comprising all matter that can be observed from Earth or its space-based telescopes at the present time. This is because electromagnetic radiation from these objects has had time to reach the Solar System since the beginning of the cosmological expansion.</h3>
+        </section>
+
+        <section>
+            <h2>Mind-Boggling Scale</h2>
+            <ul>
+                <li><strong>Diameter:</strong> It is approximately 93 billion light-years in diameter.</li>
+                <img class="star-img" src="images/cosmic_horizon.jpg" alt="The Cosmic Light Horizon">
+                
+                <li><strong>The Center:</strong> From our perspective, Earth is at the center of the <em>observable</em> universe, but this does not mean Earth is the center of the entire universe.</li>
+                
+                <li><strong>Contents:</strong> It is estimated to contain about 2 trillion galaxies and more stars than there are grains of sand on all of Earth's beaches.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>The Cosmic Boundary</h2>
+            <img class="main-img" src="images/cmb_radiation.jpg" alt="Cosmic Microwave Background Radiation">
+            <h3>The further we look into space, the further back in time we see. The edge of what we can see is defined by:
+                <ol>
+                    <li><strong>The Cosmological Horizon:</strong> The limit beyond which light hasn't had time to reach us yet.</li>
+                    <li><strong>The CMB:</strong> The <em>Cosmic Microwave Background</em> radiation, which is the "afterglow" of the Big Bang, marking the limit of visible light.</li>
+                </ol>
+            </h3>
+        </section>
+
+        <section>
+            <h2>Universe vs. Observable Universe</h2>
+            <div class="table-wrap">
+                <table>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Observable Universe</th>
+                        <th>Entire Universe</th>
+                    </tr>
+                    <tr>
+                        <td>Size</td>
+                        <td>93 Billion Light Years</td>
+                        <td>Infinite (or much larger)</td>
+                    </tr>
+                    <tr>
+                        <td>Edge</td>
+                        <td>Has a visible limit (Horizon)</td>
+                        <td>Likely has no edge</td>
+                    </tr>
+                    <tr>
+                        <td>Age</td>
+                        <td>13.8 Billion Years</td>
+                        <td>13.8 Billion Years</td>
+                    </tr>
+                    <tr>
+                        <td>Shape</td>
+                        <td>Spherical (from our view)</td>
+                        <td>Flat (according to data)</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section>
+            <h2>The Expansion Factor</h2>
+            <img class="main-img" src="images/universe_expansion.png" alt="Expansion of Space Visualization">
+            <h3>Even though the universe is only 13.8 billion years old, the observable universe is 93 billion light-years wide. This is because **space itself is expanding**, pushing distant galaxies away from us faster than the light can travel through it.</h3>
+        </section>
+
+        <div class="footer-hr"></div>
+    </div>
+
+    <div id="feedback-widget">
+        <span>Feeling small yet?</span>
+        <button onclick="hideFeedback('Yes')"> 🌌</button>
+        <button onclick="hideFeedback('No')"> 🔭</button>
+    </div>
+
+    <style>
+    #feedback-widget {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #000000;
+        box-shadow: 0 4px 15px rgba(241, 196, 15, 0.3);
+        padding: 15px;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        z-index: 1000;
+        border: 1px solid #f1c40f;
+    }
+    #feedback-widget button {
+        border: none;
+        background: #000000;
+        padding: 5px 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 18px;
+    }
+    #feedback-widget button:hover { background: #222; }
+    </style>
+
+    <script>
+    function hideFeedback(type) {
+        alert("Thanks for traveling to the edge of the universe with us!");
+        document.getElementById('feedback-widget').style.display = 'none';
+    }
+    </script>
+</body>
+</html>
