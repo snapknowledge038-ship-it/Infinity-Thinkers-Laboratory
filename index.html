@@ -8,20 +8,11 @@
     <meta property="og:type" content="website">
     
     <meta name="keywords" content="Educational Discovery,Fascinating World Facts,Space and Science Wonders,Ancient Mythology & Mystery,Dinosaur History,Modern Technology Trends,Infinity-Thinkers-Laboratory">
-    <meta name="description" content="Infinity Thinkers Laboratory is a digital encyclopedia designed for explorers of all ages. We transform complex topics into simple, engaging, and bite-sized insights. Whether you are fascinated by the giants of the Prehistoric Era, the secrets of Ancient Mythology, or the frontiers of Space and Technology, ITL is your gateway to the world's most amazing wonders. Our mission is to fuel your curiosity and make learning an everyday adventure. Dive into our collection of mind-blowing facts and discoveries today!">
+    <meta name="description" content="Infinity Thinkers Laboratory is a digital encyclopedia designed for explorers of all ages.">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Infinity Thinkers Laboratory</title>
-    <meta name="google-site-verification" content="__nEQL7HWiw1ky-17ipjUgGpnSADJpnbtMdCrMXTugw" />
     
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V05GCCY7JN"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-V05GCCY7JN');
-    </script>
-
     <style>
         /* මූලික සැකසුම් */
         body {
@@ -66,23 +57,55 @@
             text-shadow: 0 0 10px #00d4ff;
         }
 
-        .about-btn {
+        /* දකුණු පස ඇති බටන් එකතු කරන Container එක */
+        .nav-right {
             margin-left: auto;
-            border: 2px solid #00d4ff;
-            padding: 6px 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Help Us Grow Button */
+        .help-grow-btn {
+            background: linear-gradient(45deg, #ffd700, #ffa500);
+            color: #000 !important;
+            border: none;
+            padding: 6px 15px;
             border-radius: 30px;
-            font-size: 16px !important;
+            font-size: 14px !important;
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: 0.4s;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+            white-space: nowrap;
+        }
+
+        .help-grow-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+            background: #fff;
+        }
+
+        /* About Button */
+        .about-btn {
+            border: 2px solid #00d4ff;
+            padding: 5px 18px;
+            border-radius: 30px;
+            font-size: 14px !important;
             transition: 0.4s ease-in-out;
             text-transform: uppercase;
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: bold;
         }
 
         .about-btn:hover {
             background-color: #00d4ff;
             color: #000 !important;
-            box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
         }
 
-        /* Header */
+        /* Header & Other Styles */
         h1 {
             font-size: clamp(40px, 8vw, 70px);
             text-align: center;
@@ -93,157 +116,26 @@
             text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
         }
 
-        /* Image */
-        .hero-img-container {
-            text-align: center;
-            margin: 30px 0;
-        }
+        .hero-img-container { text-align: center; margin: 30px 0; }
+        .all-img { max-width: 90%; border-radius: 15px; border: 1px solid #333; }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; text-align: center; }
+        .description { font-size: 20px; color: #bbb; text-align: justify; background: #161616; padding: 30px; border-radius: 10px; border-left: 5px solid #00d4ff; }
+        
+        .mcq-container { margin: 40px 0; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+        .mcq-btn { background: linear-gradient(45deg, #ffd700, #ff8c00); color: #000; text-decoration: none; font-size: 24px; font-weight: bold; padding: 15px 45px; border-radius: 50px; transition: 0.4s; text-transform: uppercase; }
+        .facts-btn-special { background: transparent; color: #00d4ff; border: 3px solid #00d4ff; text-decoration: none; font-size: 26px; font-weight: 800; padding: 18px 50px; border-radius: 15px; transition: 0.5s; text-transform: uppercase; }
+        
+        .discover-list { list-style: none; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+        .discover-list li { background: #222; padding: 10px 25px; border-radius: 50px; border: 1px solid #444; }
+        .discover-list a { color: white; text-decoration: none; font-weight: bold; }
 
-        .all-img {
-            max-width: 90%;
-            height: auto;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            border: 1px solid #333;
-        }
+        h2 { color: #00d4ff; font-size: 32px; }
+        hr { border: 0; height: 1px; background-image: linear-gradient(to right, transparent, #333, transparent); margin: 50px 0; }
 
-        /* Container */
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .description {
-            font-size: 20px;
-            color: #bbb;
-            text-align: justify;
-            background: #161616;
-            padding: 30px;
-            border-radius: 10px;
-            border-left: 5px solid #00d4ff;
-        }
-
-        /* --- MCQ & Facts Section --- */
-        .mcq-container {
-            margin: 40px 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .mcq-btn {
-            background: linear-gradient(45deg, #ffd700, #ff8c00);
-            color: #000;
-            text-decoration: none;
-            font-size: 24px;
-            font-weight: bold;
-            padding: 15px 45px;
-            border-radius: 50px;
-            display: inline-block;
-            transition: 0.4s;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
-            border: 2px solid #fff;
-            text-transform: uppercase;
-            width: fit-content;
-        }
-
-        .mcq-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 30px rgba(255, 215, 0, 0.7);
-            background: #ffffff;
-        }
-
-        /* විශේෂ වූ Fun Facts බටන් එක */
-        .facts-btn-special {
-            background: transparent;
-            color: #00d4ff;
-            border: 3px solid #00d4ff;
-            text-decoration: none;
-            font-size: 26px;
-            font-weight: 800;
-            padding: 18px 50px;
-            border-radius: 15px;
-            display: inline-block;
-            transition: 0.5s;
-            text-transform: uppercase;
-            box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .facts-btn-special:hover {
-            background: #00d4ff;
-            color: #000;
-            box-shadow: 0 0 40px #00d4ff;
-            transform: translateY(-5px);
-        }
-
-        /* Discover List */
-        .discover-list {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .discover-list li {
-            background: #222;
-            padding: 10px 25px;
-            border-radius: 50px;
-            transition: 0.3s;
-            border: 1px solid #444;
-        }
-
-        .discover-list li:hover {
-            background: #00d4ff;
-            transform: translateY(-5px);
-        }
-
-        .discover-list a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .discover-list li:hover a {
-            color: #000;
-        }
-
-        h2 {
-            color: #00d4ff;
-            font-size: 32px;
-            margin-top: 40px;
-        }
-
-        hr {
-            border: 0;
-            height: 1px;
-            background-image: linear-gradient(to right, transparent, #333, transparent);
-            margin: 50px 0;
-        }
-
-        /* Mobile Responsive */
         @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                padding: 10px;
-            }
-            .nav-links {
-                position: static;
-                transform: none;
-                margin: 10px 0;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .about-btn {
-                margin: 5px auto;
-            }
+            nav { flex-direction: column; padding: 10px; }
+            .nav-links { position: static; transform: none; margin: 10px 0; flex-wrap: wrap; justify-content: center; }
+            .nav-right { margin: 5px auto; }
         }
     </style>
 </head>
@@ -258,7 +150,12 @@
             <a href="mysteries.html">Mysteries</a>
             <a href="history.html">History</a>
         </div>
-        <a href="aaaextradatapage.html" class="about-btn">About</a>
+        
+        <!-- දකුණු පස ඇති බටන් දෙක -->
+        <div class="nav-right">
+            <a href="ad.html" class="help-grow-btn">❤️ Help us grow!</a>
+            <a href="aaaextradatapage.html" class="about-btn">About</a>
+        </div>
     </nav>
 
     <h1>Infinity Thinkers Laboratory</h1>
