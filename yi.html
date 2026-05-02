@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Your Thoughts - Infinity Thinkers Laboratory</title>
+    <style>
+        /* මූලික සැකසුම් (Index එකට ගැලපෙන සේ) */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0b0b0b;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #1a1a1a;
+            padding: 15px 30px;
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        nav a {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px #00d4ff;
+        }
+
+        .nav-right {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Button Styles */
+        .share-thoughts-btn {
+            background: linear-gradient(45deg, #00ff88, #00ad5d);
+            color: #000 !important;
+            padding: 6px 15px;
+            border-radius: 30px;
+            font-size: 14px !important;
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .help-grow-btn {
+            background: linear-gradient(45deg, #ffd700, #ffa500);
+            color: #000 !important;
+            padding: 6px 15px;
+            border-radius: 30px;
+            font-size: 14px !important;
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .about-btn {
+            border: 2px solid #00d4ff;
+            padding: 5px 18px;
+            border-radius: 30px;
+            font-size: 14px !important;
+            color: #00d4ff;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        /* Content Container */
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #00ff88;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
+            font-size: 40px;
+        }
+
+        .feedback-card {
+            background: #161616;
+            padding: 40px;
+            border-radius: 15px;
+            border-top: 5px solid #00ff88;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            text-align: left;
+            margin-top: 30px;
+        }
+
+        .input-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #00ff88;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        input[type="text"], 
+        input[type="email"], 
+        textarea {
+            width: 100%;
+            padding: 15px;
+            background: #222;
+            border: 1px solid #333;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 16px;
+            box-sizing: border-box;
+            transition: 0.3s;
+        }
+
+        textarea {
+            height: 180px;
+            resize: none;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #00ff88;
+            background: #2a2a2a;
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.1);
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, #00ff88, #00ad5d);
+            color: #000;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.4s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .submit-btn:hover {
+            background: #fff;
+            box-shadow: 0 0 25px #00ff88;
+            transform: translateY(-3px);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav { flex-direction: column; padding: 10px; }
+            .nav-links { position: static; transform: none; margin: 10px 0; flex-wrap: wrap; justify-content: center; }
+            .nav-right { margin: 10px auto; flex-wrap: wrap; justify-content: center; }
+            h1 { font-size: 30px; }
+            .feedback-card { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="earth.html">Earth</a>
+            <a href="animals.html">Animals</a>
+            <a href="space.html">Space</a>
+            <a href="mysteries.html">Mysteries</a>
+            <a href="history.html">History</a>
+        </div>
+        
+        <div class="nav-right">
+            <a href="yi.html" class="share-thoughts-btn">💬 Share thoughts!</a>
+            <a href="ad.html" class="help-grow-btn">❤️ Help us grow!</a>
+            <a href="aaaextradatapage.html" class="about-btn">About</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Share Your Thoughts</h1>
+        <p style="color: #bbb; font-size: 18px;">Got an idea, a feedback, or an amazing fact? We'd love to hear from you!</p>
+        
+        <div class="feedback-card">
+            <form action="https://formspree.io/f/snapknowledge038@gmail.com" method="POST">
+                <div class="input-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="message">Your Message / Idea</label>
+                    <textarea id="message" name="message" placeholder="What's on your mind?" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Message 🚀</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
