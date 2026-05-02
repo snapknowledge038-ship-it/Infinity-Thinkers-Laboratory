@@ -5,15 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Infinity Thinkers Laboratory</title>
     <meta name="description" content="Infinity Thinkers Laboratory is a digital encyclopedia designed for explorers of all ages.">
-    <meta name="keywords" content="Educational Discovery,Fascinating World Facts,Space and Science Wonders,Ancient Mythology & Mystery,Dinosaur History,Modern Technology Trends,Infinity-Thinkers-Laboratory">
-    <meta name="google-site-verification" content="__nEQL7HWiw1ky-17ipjUgGpnSADJpnbtMdCrMXTugw" />
-
-    <meta property="og:title" content="Infinity Thinkers Laboratory">
-    <meta property="og:description" content="Discover mind-blowing facts about dinosaurs, space, and ancient mysteries with Infinity Thinkers Laboratory.">
-    <meta property="og:image" content="https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/images/ITL.jpeg">
-    <meta property="og:url" content="https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/">
-    <meta property="og:type" content="website">
-
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
 
     <style>
@@ -31,23 +22,36 @@
             display: flex; align-items: center; justify-content: center;
         }
 
-        /* Static Background */
         .bg-stars {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             z-index: -1; background: radial-gradient(circle at center, #111 0%, #000 100%);
         }
 
-        .ad-container { text-align: center; max-width: 850px; padding: 40px; z-index: 10; }
+        /* --- ENTRANCE ANIMATIONS --- */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-        /* --- FIXED LOGO STYLE --- */
+        @keyframes subtlePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+
+        .ad-container { 
+            text-align: center; max-width: 850px; padding: 40px; z-index: 10;
+            animation: fadeInUp 1.2s ease-out forwards;
+        }
+
+        /* --- FIXED LOGO WITH SUBTLE ANIMATION --- */
         #staticWrapper {
-            position: fixed; /* එක තැනක තබා ගැනීමට */
-            top: 30px; 
-            left: 30px; 
-            z-index: 100;
-            width: 120px; height: 120px;
+            position: fixed;
+            top: 40px; left: 40px; z-index: 100;
+            width: 110px; height: 110px;
             cursor: pointer; display: flex; align-items: center; justify-content: center;
             text-decoration: none;
+            /* Logo එක සෙමින් පණ ගැන්වේ */
+            animation: fadeInUp 1s ease-out, subtlePulse 4s ease-in-out infinite;
         }
 
         #logoImg {
@@ -61,55 +65,64 @@
             background: var(--secondary-glow);
             color: white; border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
-            font-weight: 900; font-size: 14px; text-align: center;
+            font-weight: 900; font-size: 13px; text-align: center;
             opacity: 0; transition: 0.5s ease;
             text-transform: uppercase; border: 3px solid #fff;
         }
 
-        /* Mouse එක ගෙන ගිය විට සිදුවන වෙනස */
-        #staticWrapper:hover #logoImg { opacity: 0; transform: scale(0.9); }
-        #staticWrapper:hover #catchMe { opacity: 1; transform: scale(1); }
+        #staticWrapper:hover #logoImg { opacity: 0; transform: scale(0.9) rotate(-10deg); }
+        #staticWrapper:hover #catchMe { opacity: 1; transform: scale(1.1); }
 
-        /* --- TEXT & BUTTONS --- */
+        /* --- TEXT ANIMATIONS --- */
         h1 {
             font-size: clamp(35px, 8vw, 65px);
             margin-bottom: 20px; font-weight: 900;
             color: #fff;
             text-shadow: 0 0 15px var(--primary-glow);
+            animation: fadeInUp 1s ease-out 0.3s backwards; /* Delay සහිතව */
         }
 
-        p { color: #ccc; font-size: 19px; line-height: 1.7; }
+        p { 
+            color: #ccc; font-size: 19px; line-height: 1.7; 
+            animation: fadeInUp 1s ease-out 0.6s backwards;
+        }
 
+        /* --- BUTTON ANIMATION --- */
         .index-btn {
             padding: 18px 50px; font-size: 22px; font-weight: bold; color: white;
             background: linear-gradient(45deg, var(--primary-glow), var(--secondary-glow));
             border-radius: 50px; text-decoration: none; display: inline-block;
-            margin-top: 25px; transition: 0.3s;
+            margin-top: 25px; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+            animation: fadeInUp 1s ease-out 0.9s backwards;
         }
 
-        .index-btn:hover { transform: scale(1.05); box-shadow: 0 0 25px var(--primary-glow); }
+        .index-btn:hover { 
+            transform: scale(1.1); 
+            box-shadow: 0 0 30px var(--primary-glow);
+            letter-spacing: 1px;
+        }
 
         /* --- SHARE SECTION --- */
         #share-wrapper {
             position: fixed; bottom: 30px; left: 30px; z-index: 1000;
-            display: flex; flex-direction: column; align-items: center;
+            animation: fadeInUp 1s ease-out 1.2s backwards;
         }
 
         .share-btn {
-            background: transparent; color: white; border: 2px solid var(--primary-glow);
-            padding: 10px 25px; border-radius: 15px; cursor: pointer; font-weight: bold;
-            transition: 0.3s;
+            background: rgba(255, 255, 255, 0.05); color: white; border: 1px solid var(--primary-glow);
+            padding: 10px 25px; border-radius: 12px; cursor: pointer; font-weight: bold;
+            transition: 0.3s; backdrop-filter: blur(5px);
         }
 
-        .share-btn:hover { background: var(--primary-glow); color: #000; }
+        .share-btn:hover { background: var(--primary-glow); color: #000; transform: translateY(-3px); }
     </style>
 </head>
 <body>
 
     <div class="bg-stars" id="starField"></div>
 
-    <!-- Image එක දැන් එකම තැනක පවතී (Fixed) -->
+    <!-- ස්ථාවර නමුත් සෙමින් Pulse වන Logo එක -->
     <a href="https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/" id="staticWrapper">
         <img src="https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/images/ITL.jpeg" alt="ITL Logo" id="logoImg">
         <div id="catchMe">ENTER<br>LAB</div>
@@ -130,7 +143,6 @@
     </div>
 
     <script>
-        // 1. Share Functionality
         async function sharePage() {
             const shareData = {
                 title: 'Infinity Thinkers Laboratory',
@@ -138,22 +150,19 @@
                 url: 'https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/'
             };
             try {
-                if (navigator.share) {
-                    await navigator.share(shareData);
-                } else {
+                if (navigator.share) { await navigator.share(shareData); } 
+                else {
                     navigator.clipboard.writeText(shareData.url);
                     alert("Link copied! 🚀");
                 }
             } catch (err) { console.log(err); }
         }
 
-        // 2. Simple Background Stars
         const starField = document.getElementById('starField');
         for (let i = 0; i < 40; i++) {
             const star = document.createElement('div');
             star.style.position = 'absolute';
-            star.style.width = '2px';
-            star.style.height = '2px';
+            star.style.width = '2px'; star.style.height = '2px';
             star.style.background = 'rgba(255, 255, 255, 0.2)';
             star.style.left = Math.random() * 100 + '%';
             star.style.top = Math.random() * 100 + '%';
