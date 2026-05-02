@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to ITL - Journey of Knowledge</title>
     <style>
-        /* මූලික සැකසුම් */
         :root {
             --primary-glow: #00d4ff;
             --secondary-glow: #ff007a;
@@ -25,7 +24,6 @@
             justify-content: center;
         }
 
-        /* Animated Background */
         .bg-stars {
             position: fixed;
             top: 0;
@@ -36,7 +34,6 @@
             background: radial-gradient(circle at center, #111 0%, #000 100%);
         }
 
-        /* ප්‍රධාන Content එක */
         .ad-container {
             text-align: center;
             max-width: 800px;
@@ -66,16 +63,7 @@
             transition: transform 0.3s ease;
         }
 
-        .logo:hover {
-            box-shadow: 0 0 50px var(--secondary-glow);
-            transform: scale(1.1);
-        }
-
-        /* --- INDEX BUTTON (Stable & Pulsing) --- */
-        .stable-btn-container {
-            margin-top: 30px;
-        }
-
+        /* --- INDEX BUTTON --- */
         .index-btn {
             padding: 15px 45px;
             font-size: 22px;
@@ -89,65 +77,81 @@
             box-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
             display: inline-block;
             animation: pulseBtn 2s infinite ease-in-out;
-            transition: 0.3s;
         }
 
         @keyframes pulseBtn {
-            0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 212, 255, 0.6); }
-            50% { transform: scale(1.1); box-shadow: 0 0 40px rgba(255, 0, 122, 0.8); }
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
         }
 
-        .index-btn:hover {
-            letter-spacing: 2px;
-        }
-
-        /* Text Styles */
-        h1 {
-            font-size: 55px;
-            margin-bottom: 15px;
-            background: linear-gradient(90deg, #fff, var(--primary-glow), var(--secondary-glow), #fff);
-            background-size: 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: shineText 5s linear infinite;
-        }
-
-        @keyframes shineText {
-            to { background-position: 200%; }
-        }
-
-        p {
-            font-size: 18px;
-            color: #ccc;
-            line-height: 1.6;
-        }
-
-        /* Share Button (Bottom Left) */
-        #share-container {
+        /* --- SHARE SECTION WITH ARROW --- */
+        #share-wrapper {
             position: fixed;
             bottom: 30px;
             left: 30px;
             z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        /* Help Text */
+        .share-help-text {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-size: 13px;
+            border-left: 4px solid var(--secondary-glow);
+            backdrop-filter: blur(5px);
+            max-width: 200px;
+            line-height: 1.4;
+            animation: slideInLeft 1s ease-out;
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        /* Animated Arrow */
+        .arrow-pointer {
+            font-size: 40px;
+            color: var(--secondary-glow);
+            margin-left: 20px;
+            animation: pointDown 1s infinite alternate;
+            filter: drop-shadow(0 0 10px var(--secondary-glow));
+        }
+
+        @keyframes pointDown {
+            from { transform: translateY(0); }
+            to { transform: translateY(15px); }
         }
 
         .share-btn {
             background: rgba(255, 255, 255, 0.05);
             color: white;
-            border: 1px solid var(--primary-glow);
-            padding: 10px 20px;
+            border: 2px solid var(--primary-glow);
+            padding: 12px 25px;
             border-radius: 12px;
             cursor: pointer;
             backdrop-filter: blur(10px);
             display: flex;
             align-items: center;
             gap: 10px;
+            font-weight: bold;
             transition: 0.3s;
         }
 
         .share-btn:hover {
             background: var(--primary-glow);
             color: black;
+            transform: scale(1.05);
         }
+
+        /* General Styles */
+        h1 { font-size: 50px; background: linear-gradient(90deg, #fff, var(--primary-glow)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        p { color: #ccc; max-width: 600px; margin: 0 auto 20px auto; }
 
     </style>
 </head>
@@ -160,48 +164,37 @@
     </a>
 
     <div class="ad-container">
-        <h1 class="animate">Discover ITL</h1>
+        <h1>Discover ITL</h1>
         <p>
-            ITL is a platform created for curious minds who love exploring new knowledge every day. 
-            We bring fascinating facts about 🦖 dinosaurs, 🔮 mythology, 🔬 science discoveries, 
-            🌍 nature, space, technology, and amazing things around the world.
+            ITL is a platform created for curious minds who love exploring new knowledge every day.
+            Our content is simple, clear, and engaging.
         </p>
-        <p>
-            Our content is presented in a simple, clear, and engaging way — making learning fun and easy for everyone.
-        </p>
-        
-        <div class="stable-btn-container">
-            <a href="index.html" class="index-btn">EXPLORE NOW 🚀</a>
-        </div>
+        <a href="index.html" class="index-btn">EXPLORE NOW 🚀</a>
     </div>
 
-    <div id="share-container">
+    <div id="share-wrapper">
+        <div class="share-help-text">
+            අපට උදව්වක් ලෙස ITL ගැන ඔයාගේ හිතවතුන් අතරේ Share කරන්න! 🤝
+        </div>
+        <div class="arrow-pointer">↓</div>
         <button onclick="sharePage()" class="share-btn">
-            <span>🔗</span> SHARE ITL
+            <span>🔗</span> SHARE WITH FRIENDS
         </button>
     </div>
 
     <script>
-        // LOGO එක Bounce කරවීමේ Script එක
+        // Logo Animation
         const logo = document.getElementById('movingLogo');
         let posX = Math.random() * (window.innerWidth - 120);
         let posY = Math.random() * (window.innerHeight - 120);
-        let velX = 2; 
-        let velY = 2; 
+        let velX = 2; let velY = 2;
 
         function animateLogo() {
-            const width = logo.offsetWidth;
-            const height = logo.offsetHeight;
-
-            posX += velX;
-            posY += velY;
-
-            if (posX + width >= window.innerWidth || posX <= 0) velX *= -1;
-            if (posY + height >= window.innerHeight || posY <= 0) velY *= -1;
-
+            if (posX + 120 >= window.innerWidth || posX <= 0) velX *= -1;
+            if (posY + 120 >= window.innerHeight || posY <= 0) velY *= -1;
+            posX += velX; posY += velY;
             logo.style.left = posX + 'px';
             logo.style.top = posY + 'px';
-
             requestAnimationFrame(animateLogo);
         }
         animateLogo();
@@ -212,27 +205,26 @@
                 if (navigator.share) {
                     await navigator.share({
                         title: 'ITL Journey',
-                        text: 'Explore amazing facts on ITL! 🚀',
+                        text: 'අලුත් දේවල් ඉගෙන ගන්න ITL එක්ක එකතු වෙන්න! 🚀',
                         url: window.location.href
                     });
                 } else {
                     navigator.clipboard.writeText(window.location.href);
-                    alert("Link copied! 🚀");
+                    alert("Link copied! Share it with your friends. 🚀");
                 }
             } catch (err) { console.log(err); }
         }
 
-        // Background stars
+        // Stars
         const bg = document.querySelector('.bg-stars');
-        for (let i = 0; i < 80; i++) {
+        for (let i = 0; i < 50; i++) {
             const star = document.createElement('div');
             star.style.position = 'absolute';
-            star.style.width = Math.random() * 2 + 'px';
-            star.style.height = star.style.width;
+            star.style.width = '2px';
+            star.style.height = '2px';
             star.style.background = 'white';
             star.style.left = Math.random() * 100 + '%';
             star.style.top = Math.random() * 100 + '%';
-            star.style.borderRadius = '50%';
             star.style.opacity = Math.random();
             bg.appendChild(star);
         }
