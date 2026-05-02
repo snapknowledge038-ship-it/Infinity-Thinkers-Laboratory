@@ -31,7 +31,7 @@
             display: flex; align-items: center; justify-content: center;
         }
 
-        /* Static Background with very subtle gradient */
+        /* Static Background */
         .bg-stars {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             z-index: -1; background: radial-gradient(circle at center, #111 0%, #000 100%);
@@ -39,84 +39,66 @@
 
         .ad-container { text-align: center; max-width: 850px; padding: 40px; z-index: 10; }
 
-        /* --- REDUCED ANIMATION TEXT --- */
-        h1 {
-            font-size: clamp(35px, 8vw, 65px);
-            margin-bottom: 20px; font-weight: 900;
-            color: #fff;
-            /* අකුරු වලට ඇති වේගවත් වර්ණ වෙනස්වීම් ඉවත් කර සරල glow එකක් ලබා දී ඇත */
-            text-shadow: 0 0 15px var(--primary-glow);
-            animation: slowFloat 4s ease-in-out infinite;
-        }
-
-        @keyframes slowFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        p {
-            color: #ccc; font-size: 19px; line-height: 1.7;
-            /* හුස්ම ගන්නාක් මෙන් වන ඇනිමේෂන් එක ඉවත් කර සරලව තබා ඇත */
-        }
-
-        /* --- STABILIZED LOGO --- */
-        #bouncingWrapper {
-            position: absolute; z-index: 100;
-            width: 140px; height: 140px;
+        /* --- FIXED LOGO STYLE --- */
+        #staticWrapper {
+            position: fixed; /* එක තැනක තබා ගැනීමට */
+            top: 30px; 
+            left: 30px; 
+            z-index: 100;
+            width: 120px; height: 120px;
             cursor: pointer; display: flex; align-items: center; justify-content: center;
             text-decoration: none;
         }
 
         #logoImg {
-            width: 130px; height: 130px; border-radius: 50%;
+            width: 100%; height: 100%; border-radius: 50%;
             box-shadow: 0 0 20px var(--primary-glow);
-            /* කරකැවෙන වේගය ඉතා අඩු කර ඇත */
-            animation: rotateLogo 20s linear infinite;
+            transition: 0.5s ease;
         }
 
-        @keyframes rotateLogo { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-
         #catchMe {
-            position: absolute; width: 130px; height: 130px;
+            position: absolute; width: 100%; height: 100%;
             background: var(--secondary-glow);
             color: white; border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
-            font-weight: 900; font-size: 18px; text-align: center;
-            opacity: 0; transition: opacity 0.5s ease;
-            text-transform: uppercase; border: 4px solid #fff;
+            font-weight: 900; font-size: 14px; text-align: center;
+            opacity: 0; transition: 0.5s ease;
+            text-transform: uppercase; border: 3px solid #fff;
         }
 
-        /* --- STABLE BUTTONS --- */
+        /* Mouse එක ගෙන ගිය විට සිදුවන වෙනස */
+        #staticWrapper:hover #logoImg { opacity: 0; transform: scale(0.9); }
+        #staticWrapper:hover #catchMe { opacity: 1; transform: scale(1); }
+
+        /* --- TEXT & BUTTONS --- */
+        h1 {
+            font-size: clamp(35px, 8vw, 65px);
+            margin-bottom: 20px; font-weight: 900;
+            color: #fff;
+            text-shadow: 0 0 15px var(--primary-glow);
+        }
+
+        p { color: #ccc; font-size: 19px; line-height: 1.7; }
+
         .index-btn {
             padding: 18px 50px; font-size: 22px; font-weight: bold; color: white;
             background: linear-gradient(45deg, var(--primary-glow), var(--secondary-glow));
             border-radius: 50px; text-decoration: none; display: inline-block;
-            margin-top: 25px;
-            transition: 0.3s;
+            margin-top: 25px; transition: 0.3s;
             box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
         }
 
-        .index-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 25px var(--primary-glow);
-        }
+        .index-btn:hover { transform: scale(1.05); box-shadow: 0 0 25px var(--primary-glow); }
 
-        /* --- SHARE SECTION (Simplified) --- */
+        /* --- SHARE SECTION --- */
         #share-wrapper {
             position: fixed; bottom: 30px; left: 30px; z-index: 1000;
             display: flex; flex-direction: column; align-items: center;
         }
 
-        .share-help-text {
-            background: rgba(255, 255, 255, 0.1); padding: 12px 18px;
-            border-radius: 12px; font-size: 14px; color: #fff;
-            backdrop-filter: blur(10px); margin-bottom: 5px;
-            font-weight: 600; text-align: center;
-        }
-
         .share-btn {
             background: transparent; color: white; border: 2px solid var(--primary-glow);
-            padding: 12px 28px; border-radius: 15px; cursor: pointer; font-weight: bold;
+            padding: 10px 25px; border-radius: 15px; cursor: pointer; font-weight: bold;
             transition: 0.3s;
         }
 
@@ -127,9 +109,10 @@
 
     <div class="bg-stars" id="starField"></div>
 
-    <a href="https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/" id="bouncingWrapper">
+    <!-- Image එක දැන් එකම තැනක පවතී (Fixed) -->
+    <a href="https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/" id="staticWrapper">
         <img src="https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/images/ITL.jpeg" alt="ITL Logo" id="logoImg">
-        <div id="catchMe">GO TO<br>LAB</div>
+        <div id="catchMe">ENTER<br>LAB</div>
     </a>
 
     <div class="ad-container">
@@ -143,37 +126,11 @@
     </div>
 
     <div id="share-wrapper">
-        <div class="share-help-text">Help us grow! 🤝</div>
         <button onclick="sharePage()" class="share-btn">SHARE WITH FRIENDS</button>
     </div>
 
     <script>
-        const wrapper = document.getElementById('bouncingWrapper');
-        const logo = document.getElementById('logoImg');
-        const catchMe = document.getElementById('catchMe');
-
-        // 1. Bouncing Logic (වේගය අඩු කර ඇත - Smooth Motion)
-        let posX = Math.random() * (window.innerWidth - 140);
-        let posY = Math.random() * (window.innerHeight - 140);
-        let velX = 1.2; let velY = 1.2; // වේගය 2.2 සිට 1.2 දක්වා අඩු කළා
-
-        function animate() {
-            const width = window.innerWidth;
-            const height = window.innerHeight;
-            if (posX + 140 >= width || posX <= 0) velX *= -1;
-            if (posY + 140 >= height || posY <= 0) velY *= -1;
-            posX += velX; posY += velY;
-            wrapper.style.left = posX + 'px';
-            wrapper.style.top = posY + 'px';
-            requestAnimationFrame(animate);
-        }
-        animate();
-
-        // 2. Toggling logic (සරලව තබා ඇත)
-        wrapper.onmouseenter = () => { logo.style.opacity = "0"; catchMe.style.opacity = "1"; };
-        wrapper.onmouseleave = () => { logo.style.opacity = "1"; catchMe.style.opacity = "0"; };
-
-        // 3. Share Functionality
+        // 1. Share Functionality
         async function sharePage() {
             const shareData = {
                 title: 'Infinity Thinkers Laboratory',
@@ -185,19 +142,19 @@
                     await navigator.share(shareData);
                 } else {
                     navigator.clipboard.writeText(shareData.url);
-                    alert("Link copied! Share it with your friends. 🚀");
+                    alert("Link copied! 🚀");
                 }
             } catch (err) { console.log(err); }
         }
 
-        // 4. Static Stars (තරු ගැසීම/නිවීම නතර කර ඇත)
+        // 2. Simple Background Stars
         const starField = document.getElementById('starField');
-        for (let i = 0; i < 50; i++) {
+        for (let i = 0; i < 40; i++) {
             const star = document.createElement('div');
             star.style.position = 'absolute';
             star.style.width = '2px';
             star.style.height = '2px';
-            star.style.background = 'rgba(255, 255, 255, 0.3)';
+            star.style.background = 'rgba(255, 255, 255, 0.2)';
             star.style.left = Math.random() * 100 + '%';
             star.style.top = Math.random() * 100 + '%';
             star.style.borderRadius = '50%';
