@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mariana Trench - The Deepest Abyss</title>
+    <style>
+        /* Deep Sea Theme Colors */
+        :root {
+            --abyss-black: #020508;
+            --midnight-blue: #0a192f;
+            --neon-blue: #00f2ff;
+            --ghost-white: #e6f1ff;
+            --depth-purple: #1d1135;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--abyss-black);
+            color: var(--ghost-white);
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-image: radial-gradient(circle at center, #0a192f 0%, #020508 100%);
+            overflow-x: hidden;
+        }
+
+        /* Fluid Animation */
+        @keyframes slideIn {
+            0% { opacity: 0; transform: translateX(-50px); filter: blur(5px); }
+            100% { opacity: 1; transform: translateX(0); filter: blur(0); }
+        }
+
+        .animate {
+            opacity: 0; /* JS මගින් පාලනය වේ */
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .reveal {
+            opacity: 1;
+            transform: translateY(0) !important;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: rgba(2, 5, 8, 0.9);
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--neon-blue);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(20px);
+        }
+
+        nav a {
+            color: var(--neon-blue);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: white;
+            text-shadow: 0 0 15px var(--neon-blue);
+        }
+
+        /* Header Area */
+        h1 {
+            font-size: clamp(35px, 9vw, 80px);
+            text-align: center;
+            margin-top: 60px;
+            letter-spacing: 15px;
+            text-transform: uppercase;
+            background: linear-gradient(to bottom, #fff, var(--neon-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 20px rgba(0, 242, 255, 0.4));
+        }
+
+        /* Image Display */
+        .img-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 50px 0;
+        }
+
+        .img-grid img {
+            width: 40%;
+            min-width: 300px;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 242, 255, 0.3);
+            transition: 0.6s;
+            filter: grayscale(30%) brightness(0.8);
+        }
+
+        .img-grid img:hover {
+            filter: grayscale(0%) brightness(1.1);
+            transform: scale(1.03) translateY(-10px);
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 40px rgba(0, 242, 255, 0.2);
+        }
+
+        /* Content Blocks */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(10, 25, 47, 0.5);
+            padding: 40px;
+            border-radius: 30px;
+            margin-bottom: 50px;
+            border: 1px solid rgba(0, 242, 255, 0.1);
+            transform: translateY(40px); /* Initial state for animation */
+        }
+
+        h2 {
+            color: var(--neon-blue);
+            font-size: 28px;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 18px;
+            padding-left: 35px;
+            position: relative;
+        }
+
+        li::before {
+            content: "⚓";
+            position: absolute;
+            left: 0;
+            color: var(--neon-blue);
+            filter: drop-shadow(0 0 5px var(--neon-blue));
+        }
+
+        /* Depth Meter (Scroll Progress) */
+        #depth-meter {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 200px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+        }
+
+        #progress-bar {
+            width: 100%;
+            height: 0%;
+            background: var(--neon-blue);
+            box-shadow: 0 0 15px var(--neon-blue);
+            border-radius: 10px;
+        }
+
+        /* Feedback Widget */
+        #feedback-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--midnight-blue);
+            padding: 15px 25px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border: 1px solid var(--neon-blue);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+        }
+
+        #feedback-widget button {
+            background: var(--neon-blue);
+            border: none;
+            color: var(--abyss-black);
+            font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div id="depth-meter"><div id="progress-bar"></div></div>
+
+    <div class="container">
+        <h1 class="animate">Mariana Trench</h1>
+
+        <div class="img-grid animate">
+            <img src="images/trench_deep.jpg" alt="Deep Abyss">
+            <img src="images/trench_creature.jpg" alt="Deep Sea Creature">
+        </div>
+
+        <section class="animate">
+            <h3>The Mariana Trench is the deepest part of the world's oceans. Located in the western Pacific Ocean, it is a crescent-shaped scar in the Earth’s crust that measures about 2,550 km long.</h3>
+        </section>
+
+        <section class="animate">
+            <h2>Challenger Deep</h2>
+            <h3>The deepest known point is the <strong>Challenger Deep</strong>. It reaches a depth of approximately 10,935 meters (35,876 feet) below sea level. If Mount Everest were dropped into the trench, its peak would still be over 2 kilometers underwater.</h3>
+        </section>
+
+        <section class="animate">
+            <h2>Extreme Conditions</h2>
+            <ul>
+                <li><strong>Crushing Pressure:</strong> At the bottom, the pressure is over 1,000 times the standard atmospheric pressure at sea level. It's like having an elephant stand on your thumb.</li>
+                <li><strong>Freezing Temperatures:</strong> The water temperature at the bottom fluctuates between 1°C and 4°C.</li>
+                <li><strong>Eternal Darkness:</strong> No sunlight reaches these depths, creating a world of perpetual night.</li>
+            </ul>
+        </section>
+
+        <section class="animate">
+            <h2>Life in the Void</h2>
+            <h3>Despite the extreme pressure and cold, life exists here. Scientists have discovered xenophyophores, amphipods, and small sea cucumbers that have adapted to survive in one of the harshest environments on the planet.</h3>
+        </section>
+
+        <div style="text-align: center; font-size: 24px; margin: 60px 0; opacity: 0.5; letter-spacing: 5px;">
+            DIVE DEEPER . . .
+        </div>
+    </div>
+
+    <div id="feedback-widget">
+        <span style="font-size: 14px;">Survive the pressure?</span>
+        <button onclick="hideFeedback()">YES</button>
+    </div>
+
+    <script>
+        // Scroll Progress & Animation Logic
+        window.onscroll = function() {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.height = scrolled + "%";
+            
+            // Trigger Animation on Scroll
+            document.querySelectorAll('.animate').forEach(el => {
+                let rect = el.getBoundingClientRect();
+                if(rect.top < window.innerHeight - 100) {
+                    el.classList.add('reveal');
+                }
+            });
+        };
+
+        // Initial trigger for top elements
+        window.onload = () => {
+            document.querySelectorAll('.animate').forEach(el => {
+                let rect = el.getBoundingClientRect();
+                if(rect.top < window.innerHeight) el.classList.add('reveal');
+            });
+        };
+
+        function hideFeedback() {
+            alert("Feedback received from the depths!");
+            document.getElementById('feedback-widget').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
