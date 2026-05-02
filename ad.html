@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Infinity Thinkers Laboratory</title>
-    <meta name="description" content="Infinity Thinkers Laboratory is a digital encyclopedia designed for explorers of all ages. Dive into our collection of mind-blowing facts and discoveries today!">
+    <meta name="description" content="Infinity Thinkers Laboratory is a digital encyclopedia designed for explorers of all ages.">
     <meta name="keywords" content="Educational Discovery,Fascinating World Facts,Space and Science Wonders,Ancient Mythology & Mystery,Dinosaur History,Modern Technology Trends,Infinity-Thinkers-Laboratory">
     <meta name="google-site-verification" content="__nEQL7HWiw1ky-17ipjUgGpnSADJpnbtMdCrMXTugw" />
 
@@ -31,7 +31,7 @@
             display: flex; align-items: center; justify-content: center;
         }
 
-        /* Animated Background Particles */
+        /* Static Background with very subtle gradient */
         .bg-stars {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             z-index: -1; background: radial-gradient(circle at center, #111 0%, #000 100%);
@@ -39,32 +39,27 @@
 
         .ad-container { text-align: center; max-width: 850px; padding: 40px; z-index: 10; }
 
-        /* --- ALWAYS ANIMATED TEXT --- */
+        /* --- REDUCED ANIMATION TEXT --- */
         h1 {
             font-size: clamp(35px, 8vw, 65px);
             margin-bottom: 20px; font-weight: 900;
-            background: linear-gradient(90deg, #fff, var(--primary-glow), var(--secondary-glow), #fff);
-            background-size: 200%; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            animation: textFlow 4s linear infinite, floatText 3s ease-in-out infinite;
+            color: #fff;
+            /* අකුරු වලට ඇති වේගවත් වර්ණ වෙනස්වීම් ඉවත් කර සරල glow එකක් ලබා දී ඇත */
+            text-shadow: 0 0 15px var(--primary-glow);
+            animation: slowFloat 4s ease-in-out infinite;
         }
 
-        @keyframes textFlow { to { background-position: 200%; } }
-        @keyframes floatText {
-            0%, 100% { transform: translateY(0); filter: drop-shadow(0 0 10px var(--primary-glow)); }
-            50% { transform: translateY(-20px); filter: drop-shadow(0 0 30px var(--secondary-glow)); }
+        @keyframes slowFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
 
         p {
             color: #ccc; font-size: 19px; line-height: 1.7;
-            animation: breathText 4s ease-in-out infinite;
+            /* හුස්ම ගන්නාක් මෙන් වන ඇනිමේෂන් එක ඉවත් කර සරලව තබා ඇත */
         }
 
-        @keyframes breathText {
-            0%, 100% { opacity: 0.7; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.03); color: #fff; }
-        }
-
-        /* --- THE INTERACTIVE BOUNCING ELEMENT --- */
+        /* --- STABILIZED LOGO --- */
         #bouncingWrapper {
             position: absolute; z-index: 100;
             width: 140px; height: 140px;
@@ -74,9 +69,9 @@
 
         #logoImg {
             width: 130px; height: 130px; border-radius: 50%;
-            box-shadow: 0 0 30px var(--primary-glow);
-            transition: opacity 0.5s ease;
-            animation: rotateLogo 10s linear infinite;
+            box-shadow: 0 0 20px var(--primary-glow);
+            /* කරකැවෙන වේගය ඉතා අඩු කර ඇත */
+            animation: rotateLogo 20s linear infinite;
         }
 
         @keyframes rotateLogo { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
@@ -87,31 +82,26 @@
             color: white; border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
             font-weight: 900; font-size: 18px; text-align: center;
-            box-shadow: 0 0 35px var(--secondary-glow);
             opacity: 0; transition: opacity 0.5s ease;
             text-transform: uppercase; border: 4px solid #fff;
-            animation: pulseCatch 0.6s infinite alternate;
         }
 
-        @keyframes pulseCatch {
-            from { transform: scale(1); } to { transform: scale(1.15); }
-        }
-
-        /* --- BUTTONS --- */
+        /* --- STABLE BUTTONS --- */
         .index-btn {
             padding: 18px 50px; font-size: 22px; font-weight: bold; color: white;
             background: linear-gradient(45deg, var(--primary-glow), var(--secondary-glow));
             border-radius: 50px; text-decoration: none; display: inline-block;
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
-            animation: pulseBtn 2s infinite ease-in-out; margin-top: 25px;
+            margin-top: 25px;
             transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
         }
 
-        @keyframes pulseBtn {
-            0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); }
+        .index-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px var(--primary-glow);
         }
 
-        /* --- SHARE FOCUS SECTION --- */
+        /* --- SHARE SECTION (Simplified) --- */
         #share-wrapper {
             position: fixed; bottom: 30px; left: 30px; z-index: 1000;
             display: flex; flex-direction: column; align-items: center;
@@ -120,29 +110,17 @@
         .share-help-text {
             background: rgba(255, 255, 255, 0.1); padding: 12px 18px;
             border-radius: 12px; font-size: 14px; color: #fff;
-            border-bottom: 3px solid var(--secondary-glow);
             backdrop-filter: blur(10px); margin-bottom: 5px;
             font-weight: 600; text-align: center;
-            animation: pulseHelp 2s infinite alternate;
         }
-
-        @keyframes pulseHelp { from { opacity: 0.8; } to { opacity: 1; transform: translateY(-5px); } }
-
-        .arrow-pointer {
-            font-size: 45px; color: var(--secondary-glow);
-            animation: bounceDown 0.6s infinite alternate;
-            filter: drop-shadow(0 0 10px var(--secondary-glow));
-        }
-
-        @keyframes bounceDown { from { transform: translateY(0); } to { transform: translateY(15px); } }
 
         .share-btn {
-            background: rgba(0, 212, 255, 0.1); color: white; border: 2px solid var(--primary-glow);
+            background: transparent; color: white; border: 2px solid var(--primary-glow);
             padding: 12px 28px; border-radius: 15px; cursor: pointer; font-weight: bold;
-            transition: 0.3s; margin-top: 10px;
+            transition: 0.3s;
         }
 
-        .share-btn:hover { background: var(--primary-glow); color: #000; box-shadow: 0 0 20px var(--primary-glow); }
+        .share-btn:hover { background: var(--primary-glow); color: #000; }
     </style>
 </head>
 <body>
@@ -151,7 +129,7 @@
 
     <a href="https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/" id="bouncingWrapper">
         <img src="https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/images/ITL.jpeg" alt="ITL Logo" id="logoImg">
-        <div id="catchMe">CATCH<br>THE LAB!</div>
+        <div id="catchMe">GO TO<br>LAB</div>
     </a>
 
     <div class="ad-container">
@@ -159,14 +137,13 @@
         <p>
             Dive into a digital encyclopedia designed for curious minds. 
             From the giants of the 🦖 <b>Prehistoric Era</b> to the secrets of 🔮 <b>Ancient Mythology</b> 
-            and the frontiers of 🚀 <b>Space & Tech</b> — ITL is your gateway to the world's amazing wonders!
+            and the frontiers of 🚀 <b>Space & Tech</b>.
         </p>
         <a href="https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/" class="index-btn">EXPLORE NOW 🚀</a>
     </div>
 
     <div id="share-wrapper">
-        <div class="share-help-text">Help us grow by sharing! 🤝</div>
-        <div class="arrow-pointer">↓</div>
+        <div class="share-help-text">Help us grow! 🤝</div>
         <button onclick="sharePage()" class="share-btn">SHARE WITH FRIENDS</button>
     </div>
 
@@ -175,10 +152,10 @@
         const logo = document.getElementById('logoImg');
         const catchMe = document.getElementById('catchMe');
 
-        // 1. Bouncing Logic
+        // 1. Bouncing Logic (වේගය අඩු කර ඇත - Smooth Motion)
         let posX = Math.random() * (window.innerWidth - 140);
         let posY = Math.random() * (window.innerHeight - 140);
-        let velX = 2.2; let velY = 2.2;
+        let velX = 1.2; let velY = 1.2; // වේගය 2.2 සිට 1.2 දක්වා අඩු කළා
 
         function animate() {
             const width = window.innerWidth;
@@ -192,19 +169,9 @@
         }
         animate();
 
-        // 2. 3s Image, 2s Catch Me Toggling logic
-        function toggleDisplay() {
-            logo.style.opacity = "1";
-            catchMe.style.opacity = "0";
-            setTimeout(() => {
-                logo.style.opacity = "0";
-                catchMe.style.opacity = "1";
-                setTimeout(() => {
-                    toggleDisplay();
-                }, 2000);
-            }, 3000);
-        }
-        toggleDisplay();
+        // 2. Toggling logic (සරලව තබා ඇත)
+        wrapper.onmouseenter = () => { logo.style.opacity = "0"; catchMe.style.opacity = "1"; };
+        wrapper.onmouseleave = () => { logo.style.opacity = "1"; catchMe.style.opacity = "0"; };
 
         // 3. Share Functionality
         async function sharePage() {
@@ -218,24 +185,22 @@
                     await navigator.share(shareData);
                 } else {
                     navigator.clipboard.writeText(shareData.url);
-                    alert("Link copied to clipboard! Share it with your friends. 🚀");
+                    alert("Link copied! Share it with your friends. 🚀");
                 }
             } catch (err) { console.log(err); }
         }
 
-        // 4. Background Stars Generation
+        // 4. Static Stars (තරු ගැසීම/නිවීම නතර කර ඇත)
         const starField = document.getElementById('starField');
-        for (let i = 0; i < 70; i++) {
+        for (let i = 0; i < 50; i++) {
             const star = document.createElement('div');
             star.style.position = 'absolute';
-            star.style.width = Math.random() * 3 + 'px';
-            star.style.height = star.style.width;
-            star.style.background = '#fff';
+            star.style.width = '2px';
+            star.style.height = '2px';
+            star.style.background = 'rgba(255, 255, 255, 0.3)';
             star.style.left = Math.random() * 100 + '%';
             star.style.top = Math.random() * 100 + '%';
             star.style.borderRadius = '50%';
-            star.style.opacity = Math.random();
-            star.style.boxShadow = '0 0 5px #fff';
             starField.appendChild(star);
         }
     </script>
