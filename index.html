@@ -74,7 +74,7 @@
             gap: 10px;
         }
 
-        /* Share Your Thoughts Button (New) */
+        /* Share Button Style */
         .share-thoughts-btn {
             background: linear-gradient(45deg, #00ff88, #00ad5d);
             color: #000 !important;
@@ -88,6 +88,7 @@
             transition: 0.4s;
             box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
             white-space: nowrap;
+            cursor: pointer;
         }
 
         .share-thoughts-btn:hover {
@@ -316,6 +317,9 @@
         </div>
         
         <div class="nav-right">
+            <!-- බොත්තම මෙහි ඇත -->
+            <a class="share-thoughts-btn" onclick="shareToFriends()">🔗 SHARE WITH FRIENDS</a>
+            
             <a href="ad.html" class="help-grow-btn">❤️ Help us grow!</a>
             <a href="aaaextradatapage.html" class="about-btn">About</a>
         </div>
@@ -355,6 +359,20 @@
         
         <hr>
     </div>
+
+    <script>
+        function shareToFriends() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Infinity Thinkers Laboratory',
+                    text: 'Check out these mind-blowing facts about space, dinosaurs, and more!',
+                    url: window.location.href
+                }).catch((error) => console.log('Error sharing:', error));
+            } else {
+                alert("Share not supported. Copy this link: " + window.location.href);
+            }
+        }
+    </script>
 
 </body>
 </html>
