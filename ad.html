@@ -5,62 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Infinity Thinkers Laboratory</title>
     <meta name="description" content="Infinity Thinkers Laboratory is a digital encyclopedia designed for explorers of all ages.">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
 
     <style>
         :root {
             --primary-glow: #00d4ff;
             --secondary-glow: #ff007a;
-            --bg-dark: #050505;
+            --bg-dark: #050509;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+        }
+
+        /* මූලික සැකසුම් */
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
         }
 
         body, html {
-            height: 100%; margin: 0; padding: 0;
+            height: 100%; width: 100%;
             font-family: 'Poppins', sans-serif;
             background: var(--bg-dark);
-            color: #fff; overflow: hidden; 
-            display: flex; align-items: center; justify-content: center;
+            color: #fff;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
+        /* --- 1. පසුබිම (Space & Nebula) --- */
         .bg-stars {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            z-index: -1; background: radial-gradient(circle at center, #111 0%, #000 100%);
+            z-index: -1;
+            background-image: 
+                radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 3px),
+                radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 2px);
+            background-size: 550px 550px, 350px 350px;
+            background-position: 0 0, 40px 60px;
         }
 
-        /* --- ENTRANCE ANIMATIONS --- */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+        .bg-stars::before {
+            content: "";
+            position: absolute; width: 100%; height: 100%;
+            background: 
+                radial-gradient(circle at 10% 70%, rgba(0, 150, 255, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 20%, rgba(255, 0, 150, 0.15) 0%, transparent 40%);
+            filter: blur(50px);
         }
 
-        @keyframes subtlePulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.03); }
+        /* --- 2. මධ්‍ය කාඩ්පත (Main Glass Card) --- */
+        .main-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 60px 40px;
+            width: 90%;
+            max-width: 700px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1.2s ease-out;
         }
 
-        .ad-container { 
-            text-align: center; max-width: 850px; padding: 40px; z-index: 10;
-            animation: fadeInUp 1.2s ease-out forwards;
-        }
-
-        /* --- FIXED LOGO WITH SUBTLE ANIMATION --- */
-        #staticWrapper {
-            position: fixed;
-            top: 40px; left: 40px; z-index: 100;
+        /* --- 3. සජීවී ලාංඡනය (Animated Logo) --- */
+        .logo-wrapper {
+            position: relative;
             width: 110px; height: 110px;
-            cursor: pointer; display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 30px auto;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
             text-decoration: none;
-            /* Logo එක සෙමින් පණ ගැන්වේ */
-            animation: fadeInUp 1s ease-out, subtlePulse 4s ease-in-out infinite;
+            animation: subtlePulse 4s ease-in-out infinite;
         }
 
-        #logoImg {
+        .logo-img {
             width: 100%; height: 100%; border-radius: 50%;
             box-shadow: 0 0 20px var(--primary-glow);
             transition: 0.5s ease;
+            object-fit: cover;
+            border: 2px solid var(--primary-glow);
         }
 
-        #catchMe {
+        .catch-me {
             position: absolute; width: 100%; height: 100%;
             background: var(--secondary-glow);
             color: white; border-radius: 50%;
@@ -70,75 +96,111 @@
             text-transform: uppercase; border: 3px solid #fff;
         }
 
-        #staticWrapper:hover #logoImg { opacity: 0; transform: scale(0.9) rotate(-10deg); }
-        #staticWrapper:hover #catchMe { opacity: 1; transform: scale(1.1); }
+        .logo-wrapper:hover .logo-img { opacity: 0; transform: scale(0.9) rotate(-10deg); }
+        .logo-wrapper:hover .catch-me { opacity: 1; transform: scale(1.1); }
 
-        /* --- TEXT ANIMATIONS --- */
+        /* --- 4. අකුරු සහ බොත්තම් (Typography & Buttons) --- */
         h1 {
-            font-size: clamp(35px, 8vw, 65px);
-            margin-bottom: 20px; font-weight: 900;
-            color: #fff;
+            font-size: clamp(28px, 6vw, 42px);
+            font-weight: 900;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             text-shadow: 0 0 15px var(--primary-glow);
-            animation: fadeInUp 1s ease-out 0.3s backwards; /* Delay සහිතව */
         }
 
-        p { 
-            color: #ccc; font-size: 19px; line-height: 1.7; 
-            animation: fadeInUp 1s ease-out 0.6s backwards;
+        p {
+            color: #b0b8c3;
+            font-size: 17px;
+            line-height: 1.7;
+            margin-bottom: 40px;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        /* --- BUTTON ANIMATION --- */
-        .index-btn {
-            padding: 18px 50px; font-size: 22px; font-weight: bold; color: white;
-            background: linear-gradient(45deg, var(--primary-glow), var(--secondary-glow));
-            border-radius: 50px; text-decoration: none; display: inline-block;
-            margin-top: 25px; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
-            animation: fadeInUp 1s ease-out 0.9s backwards;
+        .explore-btn {
+            display: inline-block;
+            width: 100%; max-width: 400px;
+            padding: 18px;
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            background: linear-gradient(90deg, #38bdf8 0%, #c026d3 100%);
+            border-radius: 50px;
+            text-transform: uppercase;
+            box-shadow: 0 10px 25px rgba(192, 38, 211, 0.4);
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            margin-bottom: 30px;
         }
 
-        .index-btn:hover { 
-            transform: scale(1.1); 
+        .explore-btn:hover {
+            transform: scale(1.05);
             box-shadow: 0 0 30px var(--primary-glow);
             letter-spacing: 1px;
         }
 
-        /* --- SHARE SECTION --- */
-        #share-wrapper {
-            position: fixed; bottom: 30px; left: 30px; z-index: 1000;
-            animation: fadeInUp 1s ease-out 1.2s backwards;
-        }
-
         .share-btn {
-            background: rgba(255, 255, 255, 0.05); color: white; border: 1px solid var(--primary-glow);
-            padding: 10px 25px; border-radius: 12px; cursor: pointer; font-weight: bold;
-            transition: 0.3s; backdrop-filter: blur(5px);
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #ccc;
+            padding: 12px 30px;
+            border-radius: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
         }
 
-        .share-btn:hover { background: var(--primary-glow); color: #000; transform: translateY(-3px); }
+        .share-btn:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            border-color: white;
+        }
+
+        /* --- Animations --- */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes subtlePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.04); }
+        }
+
+        @media (max-width: 480px) {
+            .main-card { padding: 40px 20px; }
+            h1 { font-size: 24px; }
+            p { font-size: 14px; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="bg-stars" id="starField"></div>
+    <div class="bg-stars"></div>
 
-    <!-- ස්ථාවර නමුත් සෙමින් Pulse වන Logo එක -->
-    <a href="https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/" id="staticWrapper">
-        <img src="https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/images/ITL.jpeg" alt="ITL Logo" id="logoImg">
-        <div id="catchMe">ENTER<br>LAB</div>
-    </a>
+    <div class="main-card">
+        <!-- Logo -->
+        <a href="https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/" class="logo-wrapper">
+            <img src="https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/images/ITL.jpeg" alt="ITL Logo" class="logo-img">
+            <div class="catch-me">ENTER<br>LAB</div>
+        </a>
 
-    <div class="ad-container">
+        <!-- Content -->
         <h1>Infinity Thinkers Laboratory</h1>
         <p>
-            Dive into a digital encyclopedia designed for curious minds. 
-            From the giants of the 🦖 <b>Prehistoric Era</b> to the secrets of 🔮 <b>Ancient Mythology</b> 
-            and the frontiers of 🚀 <b>Space & Tech</b>.
+            Dive into a digital encyclopedia designed for explorers of all ages. 
+            From the giants of the 🦖 Prehistoric Era to the secrets of 🔮 Ancient Mythology 
+            and the frontiers of 🚀 Space & Tech.
         </p>
-        <a href="https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/" class="index-btn">EXPLORE NOW 🚀</a>
-    </div>
 
-    <div id="share-wrapper">
+        <!-- Buttons -->
+        <a href="https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/" class="explore-btn">EXPLORE NOW 🚀</a>
+        <br>
         <button onclick="sharePage()" class="share-btn">SHARE WITH FRIENDS</button>
     </div>
 
@@ -156,18 +218,6 @@
                     alert("Link copied! 🚀");
                 }
             } catch (err) { console.log(err); }
-        }
-
-        const starField = document.getElementById('starField');
-        for (let i = 0; i < 40; i++) {
-            const star = document.createElement('div');
-            star.style.position = 'absolute';
-            star.style.width = '2px'; star.style.height = '2px';
-            star.style.background = 'rgba(255, 255, 255, 0.2)';
-            star.style.left = Math.random() * 100 + '%';
-            star.style.top = Math.random() * 100 + '%';
-            star.style.borderRadius = '50%';
-            starField.appendChild(star);
         }
     </script>
 </body>
