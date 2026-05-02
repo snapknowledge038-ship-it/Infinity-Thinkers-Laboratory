@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ITL - Journey of Knowledge</title>
+    <title>ITL - Always Exploring</title>
     <style>
-        /* Base Styling */
         :root {
             --primary-glow: #00d4ff;
             --secondary-glow: #ff007a;
@@ -25,7 +24,6 @@
             justify-content: center;
         }
 
-        /* Animated Background */
         .bg-stars {
             position: fixed;
             top: 0;
@@ -36,18 +34,55 @@
             background: radial-gradient(circle at center, #111 0%, #000 100%);
         }
 
-        /* Main Content Container */
         .ad-container {
             text-align: center;
             max-width: 800px;
             padding: 40px;
             z-index: 10;
-            animation: fadeInScale 2s ease-out forwards;
         }
 
-        @keyframes fadeInScale {
-            0% { opacity: 0; transform: scale(0.8); filter: blur(10px); }
-            100% { opacity: 1; transform: scale(1); filter: blur(0); }
+        /* --- ALWAYS ANIMATED TEXT --- */
+        
+        /* 1. Main Title - Floating & Glowing */
+        h1 {
+            font-size: 65px;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #fff, var(--primary-glow), var(--secondary-glow), #fff);
+            background-size: 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            
+            /* Animations */
+            animation: 
+                textFlow 4s linear infinite, 
+                floatText 3s ease-in-out infinite;
+        }
+
+        @keyframes textFlow { 
+            to { background-position: 200%; } 
+        }
+
+        @keyframes floatText {
+            0%, 100% { transform: translateY(0); filter: drop-shadow(0 0 10px rgba(0,212,255,0.3)); }
+            50% { transform: translateY(-15px); filter: drop-shadow(0 0 25px rgba(0,212,255,0.6)); }
+        }
+
+        /* 2. Description - Breathing/Pulse Effect */
+        p {
+            color: #ddd;
+            font-size: 19px;
+            max-width: 650px;
+            margin: 0 auto 30px auto;
+            line-height: 1.6;
+            
+            /* Always Animate */
+            animation: breathText 4s ease-in-out infinite;
+        }
+
+        @keyframes breathText {
+            0%, 100% { opacity: 0.7; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.02); color: #fff; }
         }
 
         /* --- BOUNCING LOGO --- */
@@ -55,7 +90,6 @@
             position: absolute;
             z-index: 100;
             cursor: pointer;
-            text-decoration: none;
         }
 
         .logo {
@@ -63,10 +97,15 @@
             height: 130px;
             border-radius: 50%;
             box-shadow: 0 0 30px var(--primary-glow);
-            transition: transform 0.3s ease;
+            animation: rotateLogo 10s linear infinite;
         }
 
-        /* --- STABLE EXPLORE BUTTON --- */
+        @keyframes rotateLogo {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* --- STABLE BUTTON --- */
         .index-btn {
             padding: 18px 50px;
             font-size: 24px;
@@ -79,17 +118,15 @@
             text-decoration: none;
             box-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
             display: inline-block;
-            margin-top: 20px;
             animation: pulseBtn 2s infinite ease-in-out;
-            transition: 0.3s;
         }
 
         @keyframes pulseBtn {
             0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 212, 255, 0.6); }
-            50% { transform: scale(1.1); box-shadow: 0 0 40px rgba(255, 0, 122, 0.8); }
+            50% { transform: scale(1.15); box-shadow: 0 0 40px rgba(255, 0, 122, 0.9); }
         }
 
-        /* --- SHARE SECTION (Bottom Left) --- */
+        /* --- SHARE SECTION (Focus Arrow) --- */
         #share-wrapper {
             position: fixed;
             bottom: 30px;
@@ -97,35 +134,29 @@
             z-index: 1000;
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
-            gap: 12px;
+            align-items: center;
         }
 
-        /* English Help Text */
         .share-help-text {
             background: rgba(255, 255, 255, 0.1);
             padding: 12px 18px;
             border-radius: 12px;
             font-size: 14px;
-            border-left: 5px solid var(--secondary-glow);
+            border-bottom: 3px solid var(--secondary-glow);
             backdrop-filter: blur(10px);
-            max-width: 220px;
-            font-weight: 500;
-            animation: slideIn 1s ease-out;
+            margin-bottom: 5px;
+            animation: pulseHelp 2s infinite alternate;
         }
 
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateX(-30px); }
-            to { opacity: 1; transform: translateX(0); }
+        @keyframes pulseHelp {
+            from { transform: scale(1); opacity: 0.8; }
+            to { transform: scale(1.05); opacity: 1; }
         }
 
-        /* Big Animated Arrow */
         .arrow-pointer {
             font-size: 45px;
             color: var(--secondary-glow);
-            margin-left: 30px;
-            animation: bounceDown 0.8s infinite alternate;
-            filter: drop-shadow(0 0 10px var(--secondary-glow));
+            animation: bounceDown 0.6s infinite alternate;
         }
 
         @keyframes bounceDown {
@@ -141,40 +172,12 @@
             border-radius: 15px;
             cursor: pointer;
             backdrop-filter: blur(5px);
-            display: flex;
-            align-items: center;
-            gap: 12px;
             font-weight: bold;
-            letter-spacing: 1px;
             transition: 0.3s;
+            margin-top: 10px;
         }
 
-        .share-btn:hover {
-            background: var(--primary-glow);
-            color: #000;
-            transform: scale(1.05);
-        }
-
-        /* Typography */
-        h1 {
-            font-size: 60px;
-            margin-bottom: 10px;
-            background: linear-gradient(90deg, #fff, var(--primary-glow), var(--secondary-glow));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-size: 200%;
-            animation: textFlow 5s linear infinite;
-        }
-
-        @keyframes textFlow { to { background-position: 200%; } }
-
-        p {
-            color: #ddd;
-            font-size: 18px;
-            max-width: 650px;
-            margin: 0 auto 30px auto;
-            line-height: 1.6;
-        }
+        .share-btn:hover { background: var(--primary-glow); color: #000; }
 
     </style>
 </head>
@@ -189,17 +192,15 @@
     <div class="ad-container">
         <h1>Discover ITL</h1>
         <p>
-            ITL is a platform for curious minds exploring the wonders of 🦖 dinosaurs, 
-            🔮 mysteries, 🔬 science, and the 🌍 universe. Dive into amazing facts presented in a way that makes learning fun for everyone!
+            Dive into the world of 🦖 dinosaurs, 🔮 mysteries, 🔬 science, and the 🌍 universe. 
+            Experience fascinating facts in an engaging way that brings learning to life!
         </p>
         
         <a href="index.html" class="index-btn">EXPLORE NOW 🚀</a>
     </div>
 
     <div id="share-wrapper">
-        <div class="share-help-text">
-            Help us grow by sharing ITL with your friends! 🤝
-        </div>
+        <div class="share-help-text">Help us grow by sharing! 🤝</div>
         <div class="arrow-pointer">↓</div>
         <button onclick="sharePage()" class="share-btn">
             <span>🔗</span> SHARE WITH FRIENDS
@@ -207,51 +208,40 @@
     </div>
 
     <script>
-        // Logo Bouncing Logic
+        // Logo Bouncing logic
         const logo = document.getElementById('bouncingLogo');
         let posX = Math.random() * (window.innerWidth - 130);
         let posY = Math.random() * (window.innerHeight - 130);
-        let velX = 2.5; 
-        let velY = 2.5; 
+        let velX = 2; let velY = 2;
 
         function animate() {
-            const size = 130;
-            if (posX + size >= window.innerWidth || posX <= 0) velX *= -1;
-            if (posY + size >= window.innerHeight || posY <= 0) velY *= -1;
-            
-            posX += velX;
-            posY += velY;
-
+            if (posX + 130 >= window.innerWidth || posX <= 0) velX *= -1;
+            if (posY + 130 >= window.innerHeight || posY <= 0) velY *= -1;
+            posX += velX; posY += velY;
             logo.style.left = posX + 'px';
             logo.style.top = posY + 'px';
-
             requestAnimationFrame(animate);
         }
         animate();
 
-        // Share API
         async function sharePage() {
             try {
                 if (navigator.share) {
-                    await navigator.share({
-                        title: 'ITL - Journey of Knowledge',
-                        text: 'Explore fascinating facts and mysteries with ITL! 🚀',
-                        url: window.location.href
-                    });
+                    await navigator.share({ title: 'ITL', text: 'Check out ITL! 🚀', url: window.location.href });
                 } else {
                     navigator.clipboard.writeText(window.location.href);
-                    alert("Link copied! Share it with your friends. 🚀");
+                    alert("Link copied! 🚀");
                 }
             } catch (err) { console.log(err); }
         }
 
-        // Star Background Generation
+        // Stars
         const bg = document.querySelector('.bg-stars');
-        for (let i = 0; i < 70; i++) {
+        for (let i = 0; i < 60; i++) {
             const star = document.createElement('div');
             star.style.position = 'absolute';
-            star.style.width = Math.random() * 3 + 'px';
-            star.style.height = star.style.width;
+            star.style.width = '2px';
+            star.style.height = '2px';
             star.style.background = 'white';
             star.style.left = Math.random() * 100 + '%';
             star.style.top = Math.random() * 100 + '%';
