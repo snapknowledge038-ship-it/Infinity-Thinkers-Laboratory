@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Grand Canyon - Ancient Wonders</title>
+    <style>
+        /* Canyon Theme Colors */
+        :root {
+            --canyon-red: #8b3d1f;
+            --desert-sand: #e2a04e;
+            --deep-black: #0d0d0d;
+            --soft-white: #f4f1ea;
+            --accent-orange: #ff6b35;
+        }
+
+        body {
+            font-family: 'Georgia', serif; /* ටිකක් පෞරාණික පෙනුමක් සඳහා */
+            background-color: var(--deep-black);
+            color: var(--soft-white);
+            margin: 0;
+            padding: 0;
+            line-height: 1.9;
+            background-image: linear-gradient(180deg, #1a0f0a 0%, #0d0d0d 100%);
+        }
+
+        /* Fade-in Animation */
+        @keyframes reveal {
+            from { opacity: 0; transform: scale(0.95) translateY(20px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .animate {
+            animation: reveal 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: rgba(26, 15, 10, 0.9);
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--canyon-red);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        nav a {
+            color: var(--desert-sand);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            transition: 0.4s;
+        }
+
+        nav a:hover {
+            color: white;
+            text-shadow: 0 0 15px var(--accent-orange);
+        }
+
+        /* Heading Style */
+        h1 {
+            font-size: clamp(35px, 8vw, 75px);
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            text-shadow: 5px 5px 15px rgba(139, 61, 31, 0.5);
+        }
+
+        /* Interactive Image Grid */
+        .img-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin: 40px auto;
+            max-width: 1100px;
+        }
+
+        .img-grid img {
+            width: 45%;
+            min-width: 300px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 5px;
+            filter: sepia(20%) contrast(1.1);
+            border: 1px solid var(--canyon-red);
+            transition: 0.6s all ease;
+            cursor: pointer;
+        }
+
+        .img-grid img:hover {
+            filter: sepia(0%) contrast(1.2);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(226, 160, 78, 0.3);
+            border-color: var(--desert-sand);
+        }
+
+        /* Content Sections */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(139, 61, 31, 0.08);
+            padding: 45px;
+            border-radius: 2px;
+            margin-bottom: 40px;
+            border-left: 3px solid var(--accent-orange);
+            transition: 0.4s;
+        }
+
+        section:hover {
+            background: rgba(139, 61, 31, 0.15);
+        }
+
+        h2 {
+            color: var(--desert-sand);
+            font-size: 32px;
+            border-bottom: 1px solid rgba(226, 160, 78, 0.3);
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        li::before {
+            content: "🏜️";
+            position: absolute;
+            left: 0;
+        }
+
+        /* Feedback Widget */
+        #feedback-widget {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            background: var(--canyon-red);
+            padding: 12px 20px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border: 1px solid var(--desert-sand);
+        }
+
+        #feedback-widget button {
+            background: transparent;
+            border: 1px solid white;
+            color: white;
+            cursor: pointer;
+            padding: 5px 10px;
+            transition: 0.3s;
+        }
+
+        #feedback-widget button:hover {
+            background: white;
+            color: var(--canyon-red);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div class="container">
+        <h1 class="animate">The Grand Canyon</h1>
+
+        <div class="img-grid animate">
+            <img src="images/canyon_hero.jpg" alt="Grand Canyon View">
+            <img src="images/canyon_river.jpg" alt="Colorado River">
+        </div>
+
+        <section class="animate">
+            <h3>The Grand Canyon is a steep-sided canyon carved by the <strong>Colorado River</strong> in Arizona, United States. It is one of the most studied geological landscapes in the world.</h3>
+        </section>
+
+        <section class="animate">
+            <h2>A Journey Through Time</h2>
+            <h3>The canyon is nearly 1,500 meters deep and stretches for 446 kilometers. The layers of rock exposed in the canyon walls reveal nearly <strong>two billion years</strong> of Earth's geological history.</h3>
+        </section>
+
+        <section class="animate">
+            <h2>Breathtaking Facts</h2>
+            <ul>
+                <li><strong>Dynamic Weather:</strong> The temperature at the top (Rim) can be freezing, while the bottom of the canyon feels like a hot desert.</li>
+                <li><strong>Unique Ecosystem:</strong> It is home to rare animals like the California Condor and the Bighorn Sheep.</li>
+                <li><strong>Native History:</strong> For thousands of years, the area has been continuously inhabited by Native Americans, who built settlements within the canyon.</li>
+            </ul>
+        </section>
+
+        <section class="animate">
+            <h2>The Power of Water</h2>
+            <h3>While it looks like a silent monument, the Grand Canyon is still changing. The Colorado River continues to erode the rock, deepening the canyon by the thickness of a sheet of paper every year.</h3>
+        </section>
+
+        <div style="text-align: center; font-size: 40px; margin: 50px 0; opacity: 0.3;">🦅</div>
+    </div>
+
+    <div id="feedback-widget">
+        <span>Was this epic?</span>
+        <button onclick="hideFeedback()">YES</button>
+        <button onclick="hideFeedback()">NO</button>
+    </div>
+
+    <script>
+        // Scroll Animation Logic
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.animate, section').forEach(el => {
+            observer.observe(el);
+        });
+
+        function hideFeedback() {
+            alert("Thank you for exploring the Canyon!");
+            document.getElementById('feedback-widget').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
