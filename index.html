@@ -325,6 +325,33 @@
         </div>
     </nav>
 
+<!-- Audio File එක -->
+<audio id="myAudio" loop>
+  <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Music Control Button (Tabs වලට යටින් දකුණු පසට) -->
+<div style="display: flex; justify-content: flex-end; padding: 10px 20px;">
+  <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 24px; user-select: none;">
+    <span id="music-icon">🔇</span>
+  </div>
+</div>
+
+<script>
+  function toggleMusic() {
+    var audio = document.getElementById("myAudio");
+    var icon = document.getElementById("music-icon");
+
+    if (audio.paused) {
+      audio.play();
+      icon.innerHTML = "🔊"; // Play වන විට සලකුණ
+    } else {
+      audio.pause();
+      icon.innerHTML = "🔇"; // Mute වී ඇති විට සලකුණ
+    }
+  }
+</script>
+    
     <h1>Infinity Thinkers Laboratory</h1>
 
     <div class="hero-img-container">
