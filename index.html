@@ -125,6 +125,28 @@
             color: #000 !important;
         }
 
+        /* Install App Button Style */
+        #installBtn {
+            display: none;
+            background: linear-gradient(45deg, #00d4ff, #005f73);
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 20px auto;
+            text-transform: uppercase;
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+            transition: 0.3s;
+        }
+
+        #installBtn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(0, 212, 255, 0.7);
+        }
+
         h1 {
             font-size: clamp(40px, 8vw, 70px);
             text-align: center;
@@ -277,6 +299,10 @@
 
     <h1>Infinity Thinkers Laboratory</h1>
 
+    <div style="text-align: center;">
+        <button id="installBtn">📲 Install ITL App</button>
+    </div>
+
     <div class="hero-img-container">
         <img class="all-img" src="images/all.jpeg" alt="Infinity Thinkers Banner">
     </div>
@@ -326,13 +352,32 @@
             }
         }
 
-        // --- IMPORTANT: Service Worker Registration ---
+        // --- PWA & Install Button Logic ---
+        let deferredPrompt;
+        const installBtn = document.getElementById('installBtn');
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            installBtn.style.display = 'block'; // පී.ඩබ්ලිව්.ඒ. එක සූදානම් නම් බටන් එක පෙන්වන්න
+        });
+
+        installBtn.addEventListener('click', (e) => {
+            installBtn.style.display = 'none';
+            deferredPrompt.prompt();
+            deferredPrompt.userChoice.then((choiceResult) => {
+                if (choiceResult.outcome === 'accepted') {
+                    console.log('User installed the app');
+                }
+                deferredPrompt = null;
+            });
+        });
+
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                // path එක 'sw.js' ලෙස පමණක් යොදන්න
                 navigator.serviceWorker.register('sw.js')
-                .then(reg => console.log('PWA Success!'))
-                .catch(err => console.log('PWA Failed', err));
+                .then(reg => console.log('Service Worker Registered!'))
+                .catch(err => console.log('Service Worker Failed', err));
             });
         }
     </script>
