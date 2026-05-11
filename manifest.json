@@ -6,11 +6,18 @@
     {
       "src": "images/ITL.jpeg",
       "type": "image/jpeg",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/ITL.jpeg",
+      "type": "image/jpeg",
+      "sizes": "192x192"
     }
   ],
-  "start_url": "/",
-  "background_color": "#ffffff",
+  "start_url": "index.html",
+  "background_color": "#0b0b0b",
   "display": "standalone",
-  "theme_color": "#000000"
+  "theme_color": "#000000",
+  "orientation": "portrait"
 }
