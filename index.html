@@ -37,6 +37,87 @@
             line-height: 1.6;
         }
 
+        /* --- SPLASH SCREEN STYLES --- */
+        #it-splash {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #0b0b0b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            transition: opacity 0.6s ease-in-out;
+        }
+
+        .splash-content {
+            text-align: center;
+        }
+
+        .logo-circle {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid #00d4ff;
+            animation: pulse 2s infinite;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+        }
+
+        .logo-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .splash-title {
+            color: #fff;
+            font-size: 38px;
+            letter-spacing: 5px;
+            margin: 0;
+            text-shadow: 0 0 15px #00d4ff;
+            font-weight: bold;
+        }
+
+        .splash-desc {
+            color: #00d4ff;
+            font-size: 14px;
+            margin: 10px 0 25px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0;
+            animation: fadeIn 1s forwards 0.5s;
+        }
+
+        .loading-bar {
+            width: 180px;
+            height: 4px;
+            background: #1a1a1a;
+            margin: 0 auto;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, #00d4ff, #00ff88);
+            animation: loadProgress 1.8s ease-in-out forwards;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.4); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 20px rgba(0, 212, 255, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 212, 255, 0); }
+        }
+
+        @keyframes fadeIn { to { opacity: 1; } }
+        @keyframes loadProgress { to { width: 100%; } }
+        .fade-out { opacity: 0 !important; pointer-events: none; }
+
         /* Navigation Bar */
         nav {
             background-color: #1a1a1a;
@@ -125,7 +206,6 @@
             color: #000 !important;
         }
 
-        /* Install App Button Style */
         #installBtn {
             display: none;
             background: linear-gradient(45deg, #00d4ff, #005f73);
@@ -271,6 +351,19 @@
 </head>
 <body>
 
+    <div id="it-splash">
+        <div class="splash-content">
+            <div class="logo-circle">
+                <img src="images/ITL.jpeg" alt="ITL Logo">
+            </div>
+            <h2 class="splash-title">ITL</h2>
+            <p class="splash-desc">The Laboratory for Curious Minds</p>
+            <div class="loading-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+    </div>
+
     <nav>
         <div class="nav-links">
             <a href="index.html">Home</a>
@@ -331,6 +424,14 @@
     </div>
 
     <script>
+        // Splash Screen Logic
+        window.addEventListener("load", function() {
+            setTimeout(() => {
+                const splash = document.getElementById("it-splash");
+                splash.classList.add("fade-out");
+            }, 2000); // තත්පර 2ක් පෙන්වයි
+        });
+
         // Music Toggle
         function toggleMusic() {
             var audio = document.getElementById("myAudio");
@@ -359,7 +460,7 @@
         window.addEventListener('beforeinstallprompt', (e) => {
             e.preventDefault();
             deferredPrompt = e;
-            installBtn.style.display = 'block'; // පී.ඩබ්ලිව්.ඒ. එක සූදානම් නම් බටන් එක පෙන්වන්න
+            installBtn.style.display = 'block';
         });
 
         installBtn.addEventListener('click', (e) => {
