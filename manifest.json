@@ -1,7 +1,7 @@
 {
   "short_name": "ITL",
   "name": "Infinity Thinkers Laboratory",
-  "description": "Dive into a digital encyclopedia designed for explorers of all ages. From the giants of the Prehistoric Era to the secrets of Ancient Mythology and the frontiers of Space & Tech.",
+  "description": "Explore the wonders of Space, Dinosaurs, and Mysteries.",
   "icons": [
     {
       "src": "images/ITL.jpeg",
@@ -12,12 +12,23 @@
     {
       "src": "images/ITL.jpeg",
       "type": "image/jpeg",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "purpose": "any"
     }
   ],
   "start_url": "index.html",
   "background_color": "#0b0b0b",
   "display": "standalone",
   "theme_color": "#000000",
-  "orientation": "portrait"
+  "orientation": "portrait",
+  "categories": ["education", "knowledge"],
+  "screenshots": [
+    {
+      "src": "images/all.jpeg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "ITL Home Screen"
+    }
+  ]
 }
