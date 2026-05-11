@@ -236,5 +236,16 @@ function hideFeedback(type) {
   document.getElementById('feedback-widget').style.display = 'none';
 }
 </script>
+    <audio id="myAudio" loop>
+    <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
+</audio>
+
+<div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
+    <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
+        <span id="music-icon">🔇</span>
+    </div>
+</div>
+
+<script src="music.js"></script>
 </body>
 </html>
