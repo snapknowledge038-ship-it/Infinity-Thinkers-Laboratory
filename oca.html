@@ -12,26 +12,31 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
+            overflow-x: hidden; /* පැත්තට ඇදීම වැළැක්වීමට */
         }
 
         /* Navigation Bar Styles */
         nav {
             background-color: #0a111a;
-            padding: 15px 0;
+            padding: 15px 10px;
             text-align: center;
             border-bottom: 2px solid #1e3a5f;
             position: sticky;
             top: 0;
             z-index: 1000;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* ලින්ක් වැඩි වුණොත් දෙවැනි පේළියට යාමට */
+            gap: 10px;
         }
 
         nav a {
             color: #ffffff;
             text-decoration: none;
-            margin: 0 15px;
             font-weight: 500;
-            font-size: 1.1em;
+            font-size: 16px;
             transition: color 0.3s ease;
+            padding: 5px 10px;
         }
 
         nav a:hover {
@@ -40,9 +45,9 @@
 
         .container {
             max-width: 1000px;
-            margin: 40px auto;
+            margin: 20px auto;
             background: #0a0e14;
-            padding: 40px;
+            padding: 25px;
             border-radius: 15px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.7);
         }
@@ -53,6 +58,7 @@
             border-bottom: 2px solid #1e3a5f;
             padding-bottom: 15px;
             margin-bottom: 30px;
+            font-size: clamp(24px, 5vw, 40px); /* ෆෝන් එකට අනුව සයිස් එක වෙනස් වේ */
         }
 
         .intro {
@@ -130,15 +136,32 @@
             margin: 0 10px;
         }
 
-        /* Mobile responsiveness */
+        /* --- Mobile responsiveness --- */
         @media (max-width: 600px) {
+            nav {
+                padding: 10px 5px;
+                gap: 5px;
+            }
+            
+            nav a {
+                font-size: 14px; /* ෆෝන් එකේදී අකුරු චුට්ටක් කුඩා කළා */
+                margin: 0 5px;
+                padding: 3px;
+            }
+
             .section {
-                flex-direction: column;
+                flex-direction: column; /* ෆෝන් එකේදී පින්තූරය උඩට යනවා */
                 text-align: center;
             }
-            nav a {
-                display: block;
-                margin: 10px 0;
+
+            .section img {
+                width: 100%; /* පින්තූරය සම්පූර්ණ පළලට පේන්න */
+                height: auto;
+            }
+
+            .container {
+                margin: 10px;
+                padding: 15px;
             }
         }
     </style>
@@ -174,57 +197,7 @@
             <h3>2. Solar System</h3>
             <p>A star-centered system bound by gravity, including 8 planets and various celestial bodies.</p>
             <p><span class="label">Specialty:</span> The Sun provides the energy for everything within this system.</p>
-            <p><span class="label">Connection:</span> Located in the "Orion Arm" of the Milky Way, 25,000 light-years from the center.</p>
-        </div>
-    </div>
-
-    <div class="section">
-        <img src="images/milky-way.jpg" alt="Milky Way">
-        <div class="section-text">
-            <h3>3. Milky Way (The Galaxy)</h3>
-            <p>A barred spiral galaxy containing 100 to 400 billion stars.</p>
-            <p><span class="label">Specialty:</span> Home to a supermassive black hole called Sagittarius A* at its core.</p>
-            <p><span class="label">Connection:</span> A member of the "Local Group," which belongs to the Laniakea Supercluster.</p>
-        </div>
-    </div>
-
-    <div class="section">
-        <img src="images/laniakea.jpg" alt="Laniakea">
-        <div class="section-text">
-            <h3>4. Laniakea (Supercluster)</h3>
-            <p>A massive structural web of roughly 100,000 galaxies.</p>
-            <p><span class="label">Specialty:</span> "Laniakea" means "Immeasurable Heaven" in Hawaiian. Everything here moves toward the "Great Attractor."</p>
-            <p><span class="label">Connection:</span> It is a dense node within the greater Cosmic Web.</p>
-        </div>
-    </div>
-
-    <div class="section">
-        <img src="images/cosmic-web.jpg" alt="Cosmic Web">
-        <div class="section-text">
-            <h3>5. The Cosmic Web</h3>
-            <p>The largest structure in the universe, made of filaments of dark matter and gas.</p>
-            <p><span class="label">Specialty:</span> It acts as the skeleton of the universe, with vast empty spaces known as "Voids."</p>
-            <p><span class="label">Connection:</span> This is the fundamental framework of the entire Universe.</p>
-        </div>
-    </div>
-
-    <div class="section">
-        <img src="images/observable-universe.jpg" alt="Universe">
-        <div class="section-text">
-            <h3>6. The Universe</h3>
-            <p>The totality of space, time, matter, and energy.</p>
-            <p><span class="label">Specialty:</span> Expanding since the Big Bang 13.8 billion years ago. We study the "Observable Universe."</p>
-            <p><span class="label">Connection:</span> In modern theory, our universe may be just one part of a Multiverse.</p>
-        </div>
-    </div>
-
-    <div class="section">
-        <img src="images/multiverse-theory.jpg" alt="Multiverse">
-        <div class="section-text">
-            <h3>7. The Multiverse</h3>
-            <p>A theoretical concept of infinite universes with different physical laws.</p>
-            <p><span class="label">Specialty:</span> Could contain infinite versions of reality where even gravity behaves differently.</p>
-            <p><span class="label">Connection:</span> Our universe is like a single bubble in the vast ocean of the Multiverse.</p>
+            <p><span class="label">Connection:</span> Located in the "Orion Arm" of the Milky Way.</p>
         </div>
     </div>
 
