@@ -2,17 +2,20 @@
 <html lang="en">
 <head>
     <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#000000">
+    <link rel="apple-touch-icon" href="images/ITL.jpeg">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity Thinkers Laboratory</title>
+    
     <meta property="og:title" content="Infinity Thinkers Laboratory">
     <meta property="og:description" content="Discover mind-blowing facts about dinosaurs, space, and ancient mysteries with Infinity Thinkers Laboratory.">
     <meta property="og:image" content="https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/images/ITL.jpeg">
     <meta property="og:url" content="https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/">
     <meta property="og:type" content="website">
-    
-    <meta name="keywords" content="Educational Discovery,Fascinating World Facts,Space and Science Wonders,Ancient Mythology & Mystery,Dinosaur History,Modern Technology Trends,Infinity-Thinkers-Laboratory">
+    <meta name="keywords" content="Educational Discovery, Fascinating World Facts, Space and Science Wonders, Ancient Mythology & Mystery, Dinosaur History, Modern Technology Trends, Infinity-Thinkers-Laboratory">
     <meta name="description" content="Infinity Thinkers Laboratory is a digital encyclopedia designed for explorers of all ages.">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infinity Thinkers Laboratory</title>
     <meta name="google-site-verification" content="__nEQL7HWiw1ky-17ipjUgGpnSADJpnbtMdCrMXTugw" />
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-V05GCCY7JN"></script>
@@ -67,7 +70,6 @@
             text-shadow: 0 0 10px #00d4ff;
         }
 
-        /* දකුණු පස ඇති බටන් Container එක */
         .nav-right {
             margin-left: auto;
             display: flex;
@@ -75,7 +77,6 @@
             gap: 10px;
         }
 
-        /* Share Button Style */
         .share-thoughts-btn {
             background: linear-gradient(45deg, #00ff88, #00ad5d);
             color: #000 !important;
@@ -92,13 +93,6 @@
             cursor: pointer;
         }
 
-        .share-thoughts-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(0, 255, 136, 0.6);
-            background: #fff;
-        }
-
-        /* Help Us Grow Button */
         .help-grow-btn {
             background: linear-gradient(45deg, #ffd700, #ffa500);
             color: #000 !important;
@@ -114,13 +108,6 @@
             white-space: nowrap;
         }
 
-        .help-grow-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
-            background: #fff;
-        }
-
-        /* About Button */
         .about-btn {
             border: 2px solid #00d4ff;
             padding: 5px 18px;
@@ -136,10 +123,8 @@
         .about-btn:hover {
             background-color: #00d4ff;
             color: #000 !important;
-            box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
         }
 
-        /* Header */
         h1 {
             font-size: clamp(40px, 8vw, 70px);
             text-align: center;
@@ -150,7 +135,6 @@
             text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
         }
 
-        /* Image */
         .hero-img-container {
             text-align: center;
             margin: 30px 0;
@@ -164,7 +148,6 @@
             border: 1px solid #333;
         }
 
-        /* Container */
         .container {
             max-width: 900px;
             margin: 0 auto;
@@ -182,7 +165,6 @@
             border-left: 5px solid #00d4ff;
         }
 
-        /* --- MCQ & Facts Section --- */
         .mcq-container {
             margin: 40px 0;
             padding: 20px;
@@ -202,16 +184,8 @@
             border-radius: 50px;
             display: inline-block;
             transition: 0.4s;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
             border: 2px solid #fff;
             text-transform: uppercase;
-            width: fit-content;
-        }
-
-        .mcq-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 30px rgba(255, 215, 0, 0.7);
-            background: #ffffff;
         }
 
         .facts-btn-special {
@@ -226,19 +200,14 @@
             display: inline-block;
             transition: 0.5s;
             text-transform: uppercase;
-            box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
-            position: relative;
-            overflow: hidden;
         }
 
         .facts-btn-special:hover {
             background: #00d4ff;
             color: #000;
             box-shadow: 0 0 40px #00d4ff;
-            transform: translateY(-5px);
         }
 
-        /* Discover List */
         .discover-list {
             list-style: none;
             padding: 0;
@@ -258,7 +227,6 @@
 
         .discover-list li:hover {
             background: #00d4ff;
-            transform: translateY(-5px);
         }
 
         .discover-list a {
@@ -267,41 +235,15 @@
             font-weight: bold;
         }
 
-        .discover-list li:hover a {
-            color: #000;
-        }
-
         h2 {
             color: #00d4ff;
             font-size: 32px;
             margin-top: 40px;
         }
 
-        hr {
-            border: 0;
-            height: 1px;
-            background-image: linear-gradient(to right, transparent, #333, transparent);
-            margin: 50px 0;
-        }
-
-        /* Mobile Responsive */
         @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                padding: 10px;
-            }
-            .nav-links {
-                position: static;
-                transform: none;
-                margin: 10px 0;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .nav-right {
-                margin: 10px auto;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
+            nav { flex-direction: column; padding: 10px; }
+            .nav-links, .nav-right { position: static; transform: none; margin: 10px auto; justify-content: center; }
         }
     </style>
 </head>
@@ -316,43 +258,23 @@
             <a href="mysteries.html">Mysteries</a>
             <a href="history.html">History</a>
         </div>
-        
         <div class="nav-right">
-            <!-- බොත්තම මෙහි ඇත -->
-            <a class="share-thoughts-btn" onclick="shareToFriends()">🔗 SHARE WITH FRIENDS</a>
-            
-            <a href="ad.html" class="help-grow-btn">❤️ Help us grow!</a>
+            <a class="share-thoughts-btn" onclick="shareToFriends()">🔗 SHARE</a>
+            <a href="ad.html" class="help-grow-btn">❤️ Help</a>
             <a href="aaaextradatapage.html" class="about-btn">About</a>
         </div>
     </nav>
 
-<!-- Audio File එක -->
-<audio id="myAudio" loop>
-  <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
-</audio>
+    <audio id="myAudio" loop>
+      <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
+    </audio>
 
-<!-- Music Control Button (Tabs වලට යටින් දකුණු පසට) -->
-<div style="display: flex; justify-content: flex-end; padding: 10px 20px;">
-  <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 24px; user-select: none;">
-    <span id="music-icon">🔇</span>
-  </div>
-</div>
+    <div style="display: flex; justify-content: flex-end; padding: 10px 20px;">
+      <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 24px; user-select: none;">
+        <span id="music-icon">🔇</span>
+      </div>
+    </div>
 
-<script>
-  function toggleMusic() {
-    var audio = document.getElementById("myAudio");
-    var icon = document.getElementById("music-icon");
-
-    if (audio.paused) {
-      audio.play();
-      icon.innerHTML = "🔊"; // Play වන විට සලකුණ
-    } else {
-      audio.pause();
-      icon.innerHTML = "🔇"; // Mute වී ඇති විට සලකුණ
-    }
-  }
-</script>
-    
     <h1>Infinity Thinkers Laboratory</h1>
 
     <div class="hero-img-container">
@@ -365,18 +287,14 @@
             ITL is a platform created for curious minds who love exploring new knowledge every day. We bring fascinating facts about 🦖 dinosaurs, 🔮 mythology, 🔬 science discoveries, 🌍 nature, space, technology, and amazing things around the world.
             <br><br>
             Our content is presented in a simple, clear, and engaging way — making learning fun and easy for everyone. 🚀📚
-            <br><br>
-            If you love discovery, mystery, and mind-blowing facts, then ITL is the perfect place for you. Subscribe and join us on this journey of knowledge!
         </div>
-
-        <hr>
 
         <div class="mcq-container">
             <a href="mcq.html" class="mcq-btn">📝 Start MCQ Quiz</a>
             <a href="facts.html" class="facts-btn-special">⚡ Fun Amazing Facts ⚡</a>
         </div>
 
-        <h2>You can Discover about</h2>
+        <h2>Discover More</h2>
         <ul class="discover-list"> 
             <li><a href="earth.html">Earth</a></li>
             <li><a href="animals.html">Animals</a></li>
@@ -384,30 +302,39 @@
             <li><a href="mysteries.html">Mysteries</a></li>
             <li><a href="history.html">History</a></li>
         </ul>
-        
-        <hr>
     </div>
 
     <script>
+        // Music Toggle
+        function toggleMusic() {
+            var audio = document.getElementById("myAudio");
+            var icon = document.getElementById("music-icon");
+            if (audio.paused) { audio.play(); icon.innerHTML = "🔊"; }
+            else { audio.pause(); icon.innerHTML = "🔇"; }
+        }
+
+        // Share Function
         function shareToFriends() {
             if (navigator.share) {
                 navigator.share({
                     title: 'Infinity Thinkers Laboratory',
-                    text: 'Check out these mind-blowing facts about space, dinosaurs, and more!',
+                    text: 'Check out these mind-blowing facts!',
                     url: window.location.href
-                }).catch((error) => console.log('Error sharing:', error));
+                });
             } else {
-                alert("Share not supported. Copy this link: " + window.location.href);
+                alert("Link: " + window.location.href);
             }
         }
-    </script>
-    <script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/sw.js');
-    });
-  }
-</script>
 
+        // --- IMPORTANT: Service Worker Registration ---
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                // path එක 'sw.js' ලෙස පමණක් යොදන්න
+                navigator.serviceWorker.register('sw.js')
+                .then(reg => console.log('PWA Success!'))
+                .catch(err => console.log('PWA Failed', err));
+            });
+        }
+    </script>
 </body>
 </html>
