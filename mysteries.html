@@ -95,6 +95,16 @@
             text-align: center;
         }
 
+        /* කාණ්ඩවල උප මාතෘකා */
+        h3 {
+            color: #caa6ff;
+            font-size: 22px;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            border-left: 4px solid #4b0082;
+            padding-left: 15px;
+        }
+
         /* අභිරහස් ලැයිස්තුව (Grid) */
         .mystery-list {
             display: grid;
@@ -102,7 +112,8 @@
             gap: 15px;
             padding: 0;
             list-style: none;
-            margin-top: 30px;
+            margin-top: 15px;
+            margin-bottom: 30px;
         }
 
         .mystery-list li {
@@ -154,17 +165,17 @@
         <a href="mysteries.html">Mysteries</a>
         <a href="history.html">History</a>
     </nav>
-<audio id="myAudio" loop>
-    <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
-</audio>
+    <audio id="myAudio" loop>
+        <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
+    </audio>
 
-<div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
-    <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
-        <span id="music-icon">🔇</span>
+    <div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
+        <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
+            <span id="music-icon">🔇</span>
+        </div>
     </div>
-</div>
 
-<script src="music.js"></script>
+    <script src="music.js"></script>
     <div class="container">
         <h1>Mysteries – Exploring the Unknown</h1>
 
@@ -182,27 +193,38 @@
 
         <h2>What are the details you are expecting?</h2>
         
+        <!-- Category 1: Mythology & Folklore -->
+        <h3>Ancient Mythology & Folklore</h3>
         <ul class="mystery-list">
             <li><a href="grim reaper.html">Grim Reaper</a></li>
             <li><a href="excalibur.html">Excalibur</a></li>
             <li><a href="dracula.html">Dracula</a></li>
-            <li><a href="phoenix.html">Phoenix</a></li>
             <li><a href="medusa.html">Medusa</a></li>
             <li><a href="Banshee.html">Banshee</a></li>
-            <li><a href="Jack the Ripper.html">Jack the Ripper</a></li>
             <li><a href="The Sirens.html">The Sirens</a></li>
-            <li><a href="aliens.html">Aliens</a></li>
+            <li><a href="bloody-mary.html">Bloody Mary</a></li>
+        </ul>
+
+        <!-- Category 2: Cryptids & Mythical Creatures -->
+        <h3>Cryptids & Mythical Creatures</h3>
+        <ul class="mystery-list">
+            <li><a href="phoenix.html">Phoenix</a></li>
             <li><a href="hydra.html">Hydra</a></li>
             <li><a href="cerberus.html">Cerberus</a></li>
             <li><a href="kraken.html">Kraken</a></li>
-            <li><a href="bloody-mary.html">Bloody Mary</a></li>
+            <li><a href="chupacabra_creature.html">Chupacabra</a></li>
+        </ul>
+
+        <!-- Category 3: Unsolved Real-World Mysteries -->
+        <h3>Unsolved Real-World Mysteries</h3>
+        <ul class="mystery-list">
+            <li><a href="Jack the Ripper.html">Jack the Ripper</a></li>
+            <li><a href="aliens.html">Aliens</a></li>
             <li><a href="voynich.html">The Voynich Manuscript</a></li>
             <li><a href="crying_boy.html">The Crying Boy</a></li>
             <li><a href="mary_celeste_ship.html">The Mary Celeste</a></li>
             <li><a href="atlantis_city.html">Atlantis</a></li>
             <li><a href="hope_diamond.html">The Hope Diamond</a></li>
-            <li><a href="chupacabra_creature.html">Chupacabra</a></li>
-            
         </ul>
 
         <div class="dotted-hr"></div>
