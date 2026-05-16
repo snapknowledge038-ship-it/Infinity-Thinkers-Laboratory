@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Mary Celeste - I T L</title>
+    <style>
+        /* මූලික සැකසුම් (Ghost Ship & Misty Ocean Theme) */
+        body {
+            font-family: 'Garamond', 'Georgia', serif; 
+            background-color: #0c0d0f; /* තද අළු/කළු පැහැය */
+            color: #cbd5e1; /* සුදුමැලි රිදී පැහැය */
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-image: linear-gradient(180deg, #050a12 0%, #0c0d0f 100%); /* මීදුම් සහිත සාගර නිල් සහ අළු මිශ්‍රණයක් */
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #0b111a;
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 2px solid #475569;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #94a3b8;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: #e2e8f0;
+            text-shadow: 0 0 10px #ffffff;
+        }
+
+        /* මාතෘකාව (Eerie Muted Silver Style) */
+        h1 {
+            font-size: clamp(40px, 9vw, 80px);
+            text-align: center;
+            color: #94a3b8; /* Ghostly Silver */
+            margin-top: 40px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 3px 3px 15px rgba(255, 255, 255, 0.1);
+        }
+
+        /* පින්තූර සැකසුම */
+        .img-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .img-container img {
+            max-width: 45%;
+            height: auto;
+            border: 2px solid #334155;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+            filter: grayscale(30%) contrast(105%);
+            border-radius: 4px;
+        }
+
+        /* අන්තර්ගතය */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(15, 23, 42, 0.6); /* Semi-transparent deep slate blue */
+            padding: 35px;
+            border-radius: 8px;
+            margin-bottom: 35px;
+            border: 1px solid #1e293b;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+        }
+
+        h2 {
+            color: #cbd5e1; 
+            font-size: 32px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #334155;
+            display: inline-block;
+            letter-spacing: 2px;
+        }
+
+        h3 {
+            font-size: 21px;
+            font-weight: normal;
+            color: #94a3b8;
+            margin: 0;
+            text-align: justify;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        li::before {
+            content: "⚓"; /* සාගරයට සහ නැවට ගැලපෙන නැංගුරම් අයිකනය */
+            position: absolute;
+            left: 0;
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        strong {
+            color: #f1f5f9; /* වැදගත් වචන කැපී පේන ලා පැහැයකින් */
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #334155, transparent);
+            margin: 40px 0;
+        }
+
+        .footer-hr {
+            border-top: 3px dotted #1e293b;
+            margin: 60px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div class="container">
+        <h1>The Mary Celeste</h1>
+
+        <div class="img-container">
+            <img src="images/mary_celeste_ship.jpg" alt="The Ghost Ship Mary Celeste">
+            <img src="images/benjamin_briggs.jpg" alt="Captain Benjamin Briggs">
+        </div>
+
+        <section>
+            <h3>Discovered drifting aimlessly in the Atlantic Ocean in December 1872, the <strong>Mary Celeste</strong> remains history's most famous "ghost ship." The merchant brigantine was found completely seaworthy, yet its entire crew had vanished without a trace, leaving behind an unsolved maritime enigma.</h3>
+        </section>
+
+        <section>
+            <h2>The Ghostly Discovery</h2>
+            <h3>The Canadian ship *Dei Gratia* spotted the Mary Celeste about 400 miles east of the Azores. Upon boarding, the crew found the ship in perfect structural condition, with its sails partly set and a <strong>six-month supply of food and water</strong> untouched. However, the single lifeboat was missing.</h3>
+        </section>
+
+        <section>
+            <h2>The Missing Crew</h2>
+            <h3>The ship had set sail from New York bound for Genoa, Italy, carrying 1,701 barrels of industrial alcohol. On board were <strong>Captain Benjamin Briggs</strong>, his wife, their two-year-old daughter, and a highly experienced crew of seven. None of them were ever seen or heard from again.</h3>
+        </section>
+
+        <section>
+            <h2>The Baffling Clues</h2>
+            <ul>
+                <li><strong>Valuables Left Behind:</strong> The crew's personal belongings, money, and valuable cargo were completely intact, ruling out a typical pirate raid.</li>
+                <li><strong>The Last Log Entry:</strong> The ship’s logbook showed a final routine entry made nine days prior to the discovery, with no indication of any danger or distress.</li>
+                <li><strong>An Ordered Departure:</strong> There were no signs of violence or a struggle onboard; the evacuation appeared to have been done in a hurry but with organization.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Popular Theories</h2>
+            <ul>
+                <li><strong>Alcohol Explosion Panic:</strong> The most plausible theory suggests that some alcohol barrels leaked, creating toxic fumes. Fearing an imminent explosion, Captain Briggs ordered everyone into the lifeboat, which later became detached and sank in a storm.</li>
+                <li><strong>Sea Quake or Waterspout:</strong> A sudden underwater earthquake or a localized waterspout could have frightened the crew into abandoning the ship temporarily before being swept away by heavy waves.</li>
+                <li><strong>Mutiny:</strong> Speculation arose that the crew murdered the captain and his family to steal the cargo, though no signs of violence or missing valuables support this idea.</li>
+            </ul>
+        </section>
+
+        <div class="footer-hr"></div>
+    </div>
+
+    <!-- Feedback Widget -->
+    <div id="feedback-widget">
+        <span>Was this helpful?</span>
+        <button onclick="hideFeedback('Yes')"> 👍</button>
+        <button onclick="hideFeedback('No')"> 👎</button>
+    </div>
+
+    <style>
+    #feedback-widget {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #0b111a;
+        box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+        padding: 15px;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        z-index: 1000;
+        color: #cbd5e1;
+        border: 1px solid #1e293b;
+    }
+    #feedback-widget button {
+        border: none;
+        background: transparent;
+        padding: 5px 10px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    #feedback-widget button:hover { 
+        background: rgba(255, 255, 255, 0.1); 
+        border-radius: 50%;
+    }
+    </style>
+
+    <script>
+    function hideFeedback(type) {
+        alert("Thank you for your feedback!");
+        document.getElementById('feedback-widget').style.display = 'none';
+    }
+    </script>
+
+    <!-- Audio Element -->
+    <audio id="myAudio" loop>
+        <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
+    </audio>
+
+    <div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
+        <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
+            <span id="music-icon">🔇</span>
+        </div>
+    </div>
+
+    <script src="music.js"></script>
+</body>
+</html>
