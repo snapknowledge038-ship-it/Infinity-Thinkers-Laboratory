@@ -78,7 +78,7 @@
             border: 1px solid #1e3a8a;
         }
 
-        /* අන්තර්ගතය */
+        /* અન્તર્ગતય */
         .container {
             max-width: 1000px;
             margin: 0 auto;
@@ -114,6 +114,18 @@
             letter-spacing: 1px;
         }
 
+        /* කාණ්ඩවල උප මාතෘකා */
+        h3 {
+            color: #7dd3fc;
+            font-size: 22px;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            border-left: 4px solid #1e3a8a;
+            padding-left: 15px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
         /* ලැයිස්තුව (Cosmic Grid) */
         .cosmic-grid {
             display: grid;
@@ -121,7 +133,8 @@
             gap: 20px;
             list-style: none;
             padding: 0;
-            margin-top: 40px;
+            margin-top: 15px;
+            margin-bottom: 35px;
         }
 
         .cosmic-grid li {
@@ -161,7 +174,6 @@
             border-top: 2px dotted rgba(56, 189, 248, 0.2);
             margin-bottom: 80px;
         }
-
     </style>
 </head>
 <body>
@@ -174,32 +186,34 @@
         <a href="mysteries.html">Mysteries</a>
         <a href="history.html">History</a>
     </nav>
-<!-- Audio File එක -->
-<audio id="myAudio" loop>
-  <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
-</audio>
 
-<!-- Music Control Button (Tabs වලට යටින් දකුණු පසට) -->
-<div style="display: flex; justify-content: flex-end; padding: 10px 20px;">
-  <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 24px; user-select: none;">
-    <span id="music-icon">🔇</span>
-  </div>
-</div>
+    <!-- Audio File එක -->
+    <audio id="myAudio" loop>
+        <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
+    </audio>
 
-<script>
-  function toggleMusic() {
-    var audio = document.getElementById("myAudio");
-    var icon = document.getElementById("music-icon");
+    <!-- Music Control Button -->
+    <div style="display: flex; justify-content: flex-end; padding: 10px 20px;">
+        <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 24px; user-select: none;">
+            <span id="music-icon">🔇</span>
+        </div>
+    </div>
 
-    if (audio.paused) {
-      audio.play();
-      icon.innerHTML = "🔊"; // Play වන විට සලකුණ
-    } else {
-      audio.pause();
-      icon.innerHTML = "🔇"; // Mute වී ඇති විට සලකුණ
-    }
-  }
-</script>
+    <script>
+        function toggleMusic() {
+            var audio = document.getElementById("myAudio");
+            var icon = document.getElementById("music-icon");
+
+            if (audio.paused) {
+                audio.play();
+                icon.innerHTML = "🔊";
+            } else {
+                audio.pause();
+                icon.innerHTML = "🔇";
+            }
+        }
+    </script>
+
     <div class="container">
         <h1>Space – The Universe Beyond</h1>
 
@@ -219,17 +233,29 @@
 
         <h2>What are the details you are expecting?</h2>
         
+        <!-- Category 1: Our Solar System & Neighbors -->
+        <h3>Our Solar System & Neighbors</h3>
         <ul class="cosmic-grid">
-            <li><a href="oca.html">Our Cosmic Address</a></li>
-            <li><a href="black hole.html">Black Hole</a></li>
-            <li><a href="nova.html">Nova</a></li>
-            <li><a href="star.html">Stars</a></li>
-            <li><a href="galaxies.html">Galaxies</a></li>
+            <li><a href="solar system.html">Solar System</a></li>
+            <li><a href="moon.html">Moon</a></li>
             <li><a href="meteor.html">Meteor</a></li>
             <li><a href="comet.html">Comet</a></li>
-            <li><a href="moon.html">Moon</a></li>
-            <li><a href="solar system.html">Solar System</a></li>
+        </ul>
+
+        <!-- Category 2: Deep Space Phenomena -->
+        <h3>Deep Space Phenomena</h3>
+        <ul class="cosmic-grid">
+            <li><a href="star.html">Stars</a></li>
+            <li><a href="black hole.html">Black Hole</a></li>
+            <li><a href="nova.html">Nova</a></li>
             <li><a href="quasar.html">Quasar</a></li>
+            <li><a href="galaxies.html">Galaxies</a></li>
+        </ul>
+
+        <!-- Category 3: The Grand Cosmic Scale -->
+        <h3>The Grand Cosmic Scale</h3>
+        <ul class="cosmic-grid">
+            <li><a href="oca.html">Our Cosmic Address</a></li>
             <li><a href="laniakea.html">Laniakea</a></li>
             <li><a href="cosmic_web.html">The Cosmic Web</a></li>
             <li><a href="observable_universe.html">Observable Universe</a></li>
@@ -238,16 +264,6 @@
 
         <div class="dotted-hr"></div>
     </div>
-<audio id="myAudio" loop>
-    <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
-</audio>
 
-<div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
-    <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
-        <span id="music-icon">🔇</span>
-    </div>
-</div>
-
-<script src="music.js"></script>
 </body>
 </html>
