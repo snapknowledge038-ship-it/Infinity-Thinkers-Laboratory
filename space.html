@@ -13,33 +13,64 @@
         /* මූලික සැකසුම් */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #02040a; /* ඉතා තද අභ්‍යවකාශ නිල් පැහැයක් */
+            background-color: #02040a;
             color: #e0e6ed;
             margin: 0;
             padding: 0;
             line-height: 1.8;
             background-image: radial-gradient(circle at center, #0a1128 0%, #02040a 100%);
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* --- BACKGROUND STARS ANIMATION --- */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image: 
+                radial-gradient(1.5px 1.5px at 20px 30px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 90px 10px, #7dd3fc, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 150px 120px, #fff, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 200px 50px, #38bdf8, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 300px 250px, #fff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 350px 80px, #fff, rgba(0,0,0,0));
+            background-size: 550px 550px;
+            animation: spaceTravel 120s linear infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes spaceTravel {
+            from { background-position: 0 0; }
+            to { background-position: 0 -550px; }
         }
 
         /* Navigation Bar */
         nav {
-            background-color: rgba(10, 17, 40, 0.9);
-            padding: 15px 0;
+            background-color: rgba(10, 17, 40, 0.85);
+            padding: 18px 0;
             text-align: center;
-            border-bottom: 1px solid #1e3a8a;
+            border-bottom: 1px solid rgba(56, 189, 248, 0.15);
             position: sticky;
             top: 0;
             z-index: 1000;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         nav a {
-            color: #38bdf8; /* දීප්තිමත් නිල් පැහැයක් */
+            color: #38bdf8;
             text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            font-size: 17px;
-            transition: 0.3s;
+            margin: 0 20px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.4s ease;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -49,19 +80,29 @@
             text-shadow: 0 0 15px #38bdf8;
         }
 
-        /* ප්‍රධාන මාතෘකාව */
+        /* ප්‍රධාන මාතෘකාව (Floating & Glowing Animation) */
         h1 {
-            font-size: clamp(35px, 7vw, 65px);
+            font-size: clamp(28px, 6vw, 55px);
             text-align: center;
-            color: #fff;
             margin-top: 50px;
-            text-decoration: none;
             letter-spacing: 4px;
             text-transform: uppercase;
-            background: linear-gradient(to bottom, #fff, #38bdf8);
+            font-weight: 800;
+            background: linear-gradient(to bottom, #ffffff 40%, #cceeff 70%, #38bdf8 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.3));
+            animation: floatAndGlow 5s infinite ease-in-out;
+        }
+
+        @keyframes floatAndGlow {
+            0%, 100% {
+                transform: translateY(0);
+                filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.3));
+            }
+            50% {
+                transform: translateY(-8px);
+                filter: drop-shadow(0 0 25px rgba(56, 189, 248, 0.6));
+            }
         }
 
         /* Space පින්තූරය */
@@ -73,12 +114,17 @@
         .space-img {
             max-width: 90%;
             height: auto;
-            border-radius: 20px;
-            box-shadow: 0 0 60px rgba(56, 189, 248, 0.2);
-            border: 1px solid #1e3a8a;
+            border-radius: 16px;
+            box-shadow: 0 20px 50px rgba(10, 17, 40, 0.6), 0 0 40px rgba(56, 189, 248, 0.15);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            transition: transform 0.5s ease;
         }
 
-        /* અન્તર્ગતય */
+        .space-img:hover {
+            transform: scale(1.01);
+        }
+
+        /* අන්තර්ගතය */
         .container {
             max-width: 1000px;
             margin: 0 auto;
@@ -86,50 +132,53 @@
         }
 
         .space-description {
-            font-size: 20px;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 40px;
-            border-radius: 24px;
+            font-size: 18px;
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(8px);
+            padding: 35px;
+            border-radius: 20px;
             text-align: justify;
-            border: 1px solid rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.08);
             position: relative;
             overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         .space-description::before {
             content: "“";
             position: absolute;
-            top: -10px;
+            top: -15px;
             left: 20px;
             font-size: 100px;
-            color: rgba(56, 189, 248, 0.1);
+            color: rgba(56, 189, 248, 0.05);
+            font-family: serif;
         }
 
         h2 {
-            color: #38bdf8;
-            font-size: 32px;
+            color: #ffffff;
+            font-size: 28px;
             margin-top: 60px;
             text-align: center;
-            font-weight: 300;
-            letter-spacing: 1px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
         }
 
         /* කාණ්ඩවල උප මාතෘකා */
         h3 {
             color: #7dd3fc;
-            font-size: 22px;
-            margin-top: 40px;
+            font-size: 20px;
+            margin-top: 45px;
             margin-bottom: 15px;
-            border-left: 4px solid #1e3a8a;
+            border-left: 3px solid #38bdf8;
             padding-left: 15px;
-            font-weight: 400;
+            font-weight: 600;
             letter-spacing: 0.5px;
         }
 
-        /* ලැයිස්තුව (Cosmic Grid) */
+        /* ලැයිස්තුව (Cosmic Grid with Glow Animations) */
         .cosmic-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             list-style: none;
             padding: 0;
@@ -138,40 +187,49 @@
         }
 
         .cosmic-grid li {
-            background: rgba(10, 17, 40, 0.6);
-            border: 1px solid #1e3a8a;
-            border-radius: 12px;
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: rgba(10, 17, 40, 0.4);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(56, 189, 248, 0.15);
+            border-radius: 14px;
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            cursor: pointer;
         }
 
         .cosmic-grid li:hover {
-            background: #38bdf8;
-            transform: scale(1.05) translateY(-5px);
-            box-shadow: 0 10px 20px rgba(56, 189, 248, 0.3);
+            background: rgba(56, 189, 248, 0.15);
+            transform: translateY(-8px) scale(1.02);
+            border-color: #ffffff;
+            box-shadow: 0 15px 35px rgba(56, 189, 248, 0.25), 0 0 15px rgba(255, 255, 255, 0.1);
         }
 
         .cosmic-grid a {
-            color: #fff;
+            color: #e2eefc;
             text-decoration: none;
-            padding: 20px;
+            padding: 22px 15px;
             display: block;
             font-weight: 600;
+            font-size: 17px;
             text-align: center;
+            transition: all 0.3s ease;
         }
 
         .cosmic-grid li:hover a {
-            color: #02040a;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px #38bdf8;
         }
 
+        /* Separators */
         hr {
             border: 0;
             height: 1px;
-            background: linear-gradient(to right, transparent, #1e3a8a, transparent);
+            background: linear-gradient(to right, transparent, rgba(56, 189, 248, 0.3), transparent);
             margin: 60px 0;
         }
 
         .dotted-hr {
-            border-top: 2px dotted rgba(56, 189, 248, 0.2);
+            border: 0;
+            height: 2px;
+            background: linear-gradient(to right, transparent, rgba(56, 189, 248, 0.1), transparent);
             margin-bottom: 80px;
         }
     </style>
@@ -193,8 +251,8 @@
     </audio>
 
     <!-- Music Control Button -->
-    <div style="display: flex; justify-content: flex-end; padding: 10px 20px;">
-        <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 24px; user-select: none;">
+    <div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
+        <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px; user-select: none;">
             <span id="music-icon">🔇</span>
         </div>
     </div>
