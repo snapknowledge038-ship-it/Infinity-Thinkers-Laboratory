@@ -10,11 +10,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mysteries - I T L</title>
     <style>
-        /* මූලික සැකසුම් */
+        /* මූලික සැකසුම් (Horror Theme) */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #080808;
-            color: #d1d1d1;
+            background-color: #050505; /* තවත් කළු කළා */
+            color: #b5b5b5; /* ලාවට අළු පැහැයක් */
             margin: 0;
             padding: 0;
             line-height: 1.7;
@@ -22,38 +22,40 @@
 
         /* Navigation Bar */
         nav {
-            background-color: #121212;
+            background-color: #0a0a0a;
             padding: 15px 0;
             text-align: center;
-            border-bottom: 2px solid #4b0082;
+            border-bottom: 2px solid #8b0000; /* Dark Crimson Red */
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 5px 20px rgba(139, 0, 0, 0.2);
         }
 
         nav a {
-            color: #a066ff;
+            color: #ff3333; /* Blood Red Links */
             text-decoration: none;
             margin: 0 15px;
             font-weight: bold;
             font-size: 18px;
             transition: 0.3s;
+            letter-spacing: 1px;
         }
 
         nav a:hover {
             color: #ffffff;
-            text-shadow: 0 0 10px #a066ff;
+            text-shadow: 0 0 10px #ff3333, 0 0 20px #8b0000;
         }
 
-        /* මාතෘකාව */
+        /* මාතෘකාව (Bloody Gothic Style) */
         h1 {
             font-size: clamp(30px, 6vw, 55px);
             text-align: center;
-            color: #fff;
+            color: #eee;
             text-transform: uppercase;
             margin-top: 40px;
-            letter-spacing: 3px;
-            text-shadow: 0 0 20px rgba(160, 102, 255, 0.4);
+            letter-spacing: 4px;
+            text-shadow: 0 0 15px rgba(255, 0, 0, 0.6), 0 0 30px rgba(139, 0, 0, 0.8);
         }
 
         /* අභිරහස් පින්තූරය */
@@ -65,10 +67,10 @@
         .mysteries-img {
             max-width: 85%;
             height: auto;
-            border-radius: 10px;
-            filter: grayscale(30%) contrast(110%);
-            box-shadow: 0 0 50px rgba(75, 0, 130, 0.3);
-            border: 1px solid #333;
+            border-radius: 5px;
+            filter: grayscale(60%) contrast(130%) brightness(80%); /* Creepy look */
+            box-shadow: 0 0 50px rgba(139, 0, 0, 0.4);
+            border: 1px solid #444;
         }
 
         /* ප්‍රධාන විස්තරය */
@@ -80,29 +82,37 @@
 
         .mystery-box {
             font-size: 19px;
-            background: linear-gradient(145deg, #121212, #1a1a1a);
+            background: linear-gradient(145deg, #0d0d0d, #141414);
             padding: 35px;
-            border-radius: 20px;
+            border-radius: 10px;
             text-align: justify;
-            border: 1px solid #2a2a2a;
-            box-shadow: inset 0 0 20px rgba(160, 102, 255, 0.05);
+            border: 1px solid #3a0000; /* Dark red border */
+            box-shadow: inset 0 0 30px rgba(139, 0, 0, 0.1);
         }
 
         h2 {
-            color: #a066ff;
+            color: #ff3333;
             font-size: 30px;
             margin-top: 50px;
             text-align: center;
+            text-shadow: 0 0 10px rgba(255, 51, 51, 0.3);
         }
 
         /* කාණ්ඩවල උප මාතෘකා */
         h3 {
-            color: #caa6ff;
+            color: #ff6666;
             font-size: 22px;
             margin-top: 40px;
             margin-bottom: 15px;
-            border-left: 4px solid #4b0082;
+            border-left: 4px solid #8b0000;
             padding-left: 15px;
+            letter-spacing: 1px;
+            animation: pulseGlow 3s infinite alternate;
+        }
+
+        @keyframes pulseGlow {
+            0% { text-shadow: 0 0 5px rgba(255, 0, 0, 0.2); }
+            100% { text-shadow: 0 0 15px rgba(255, 0, 0, 0.6); }
         }
 
         /* අභිරහස් ලැයිස්තුව (Grid) */
@@ -117,40 +127,43 @@
         }
 
         .mystery-list li {
-            background: #161616;
+            background: #0f0f0f;
             padding: 15px;
-            border-radius: 8px;
+            border-radius: 4px;
             text-align: center;
-            border: 1px solid #333;
+            border: 1px solid #222;
             transition: 0.4s ease;
         }
 
         .mystery-list li:hover {
-            background: #4b0082;
-            border-color: #a066ff;
-            transform: translateY(-8px);
+            background: #5c0000; /* Blood background on hover */
+            border-color: #ff3333;
+            transform: scale(1.03); /* Slight jump scare pop */
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
         }
 
         .mystery-list a {
-            color: #eee;
+            color: #cdcdcd;
             text-decoration: none;
             font-weight: 500;
             display: block;
+            transition: 0.3s;
         }
 
         .mystery-list li:hover a {
             color: #fff;
+            text-shadow: 0 0 5px #000;
         }
 
-        /r {
+        hr {
             border: 0;
             height: 1px;
-            background: linear-gradient(to right, transparent, #4b0082, transparent);
+            background: linear-gradient(to right, transparent, #8b0000, transparent);
             margin: 50px 0;
         }
 
         .dotted-hr {
-            border-top: 3px dotted #444;
+            border-top: 3px dotted #4a0000;
             margin-bottom: 50px;
         }
     </style>
