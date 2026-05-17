@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMB Radiation - I T L</title>
+    <style>
+        /* Base Settings */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #05050a;
+            color: #e2e8f0;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-image: radial-gradient(circle at center, #0a0a20 0%, #05050a 100%);
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 2px solid #1e40af;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        nav a {
+            color: #93c5fd;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 17px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px #3b82f6;
+        }
+
+        /* Title Styling */
+        h1 {
+            font-size: clamp(40px, 8vw, 80px);
+            text-align: center;
+            margin-top: 50px;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #fbbf24, #f59e0b, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+
+        /* Image Styling */
+        .img-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .planet-img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 0 40px rgba(59, 130, 246, 0.2);
+            border: 1px solid #1e40af;
+            transition: 0.4s;
+        }
+
+        .planet-img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 50px rgba(59, 130, 246, 0.4);
+        }
+
+        /* Content Sections */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(15, 23, 42, 0.7);
+            padding: 40px;
+            border-radius: 30px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+        }
+
+        h2 {
+            color: #fbbf24;
+            font-size: 32px;
+            margin-bottom: 25px;
+            border-left: 6px solid #1e40af;
+            padding-left: 20px;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: normal;
+            color: #cbd5e1;
+            margin: 0;
+        }
+
+        .planet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .planet-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        strong {
+            color: #ffffff;
+            display: block;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #1e40af;
+        }
+
+        th {
+            background-color: #1e40af;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        .footer-hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #1e40af, transparent);
+            margin: 80px 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div class="container">
+        <h1>CMB Radiation</h1>
+
+        <div class="img-container">
+            <img class="planet-img" src="images/CMB_Map_Main.jpg" alt="ESA Planck satellite Cosmic Microwave Background map">
+        </div>
+
+        <section>
+            <h2>What is Cosmic Microwave Background Radiation?</h2>
+            <h3>The Cosmic Microwave Background (CMB) is the oldest light in the universe, dating back to about 380,000 years after the Big Bang. It is an faint, uniform glow of thermal radiation that fills the entire sky, acting as a "baby picture" of our cosmos before any stars or galaxies ever existed.</h3>
+        </section>
+
+        <section>
+            <h2>The Cosmic Echo of Creation</h2>
+            <div class="img-container">
+                <img class="planet-img" src="images/Cosmic_Timeline.jpg" alt="Timeline of the universe from Big Bang to CMB expansion">
+            </div>
+            <h3>When the universe was born, it was an incredibly hot, dense plasma of particles that trapped light. As space expanded, it finally cooled down enough for atoms to form, allowing photons (light) to break free and travel across space. Over billions of years, this ancient light stretched due to the expansion of the cosmos, shifting into the low-energy microwave spectrum we observe today.</h3>
+        </section>
+
+        <section>
+            <h2>Why is CMB So Important?</h2>
+            <div class="planet-grid">
+                <div class="planet-card">
+                    <strong>Proof of the Big Bang</strong>
+                    The CMB is the strongest empirical evidence backing the Big Bang theory, proving that our universe began from a hot, concentrated point.
+                </div>
+                <div class="planet-card">
+                    <strong>Fluctuations (Anisotropy)</strong>
+                    The slight color/temperature variations seen in the sky map represent areas of different densities. These tiny ripples eventually clumped together to grow into today's galaxies.
+                </div>
+                <div class="planet-card">
+                    <strong>Cosmic Recipe</strong>
+                    By analyzing the CMB radiation, scientists can calculate the exact age of the universe (13.8 billion years) and determine its composition of normal matter, dark matter, and dark energy.
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Quick Facts Table</h2>
+            <table>
+                <tr>
+                    <th>Feature</th>
+                    <th>Detail</th>
+                </tr>
+                <tr>
+                    <td><strong>Discovered In</strong></td>
+                    <td>1964 by Arno Penzias and Robert Wilson (Earned a Nobel Prize)</td>
+                </tr>
+                <tr>
+                    <td><strong>Current Temperature</strong></td>
+                    <td>2.725 Kelvin (-270.425°C), just slightly above absolute zero</td>
+                </tr>
+                <tr>
+                    <td><strong>Everyday Effect</strong></td>
+                    <td>About 1% of the static "snow" on old, untuned analog TVs was caused by the CMB</td>
+                </tr>
+            </table>
+        </section>
+
+        <div class="footer-hr"></div>
+    </div>
+
+    <!-- Feedback Widget -->
+    <div id="feedback-widget">
+        <span>Was this helpful?</span>
+        <button onclick="hideFeedback('Yes')"> 👍</button>
+        <button onclick="hideFeedback('No')"> 👎</button>
+    </div>
+
+    <style>
+    #feedback-widget {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #000000;
+        box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+        padding: 15px;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        z-index: 1000;
+    }
+    #feedback-widget button {
+        border: none;
+        background: #000000;
+        padding: 5px 10px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    #feedback-widget button:hover { background: #ddd; }
+    </style>
+
+    <script>
+    function hideFeedback(type) {
+        alert("Thank you for your feedback!");
+        document.getElementById('feedback-widget').style.display = 'none';
+    }
+    </script>
+
+    <!-- Audio Settings -->
+    <audio id="myAudio" loop>
+        <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
+    </audio>
+
+    <div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
+        <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
+            <span id="music-icon">🔇</span>
+        </div>
+    </div>
+
+    <script src="music.js"></script>
+</body>
+</html>
