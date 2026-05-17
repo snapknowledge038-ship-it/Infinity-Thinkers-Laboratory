@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Dorado - I T L</title>
+    <style>
+        /* මූලික සැකසුම් */
+        body {
+            font-family: 'Garamond', 'Georgia', serif; /* පැරණි පොත් වල විලාසිතාව */
+            background-color: #060502;
+            color: #ccc2b2;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-image: linear-gradient(180deg, #120e05 0%, #060502 100%);
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #1a1307;
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 2px solid #a67c1e; /* රන්වන් තඹ පැහැය */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #918266;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: #ffc83b; /* රන් පැහැය */
+            text-shadow: 0 0 10px #ffc83b;
+        }
+
+        /* මාතෘකාව */
+        h1 {
+            font-size: clamp(35px, 7vw, 70px);
+            text-align: center;
+            color: #e5a922;
+            margin-top: 40px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            font-family: 'Cinzel', 'Old English Text MT', serif; 
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 1);
+        }
+
+        /* පින්තූර සැකසුම */
+        .img-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .img-container img {
+            max-width: 45%;
+            height: auto;
+            border: 2px solid #543f13;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            filter: sepia(35%) contrast(105%);
+        }
+
+        /* අන්තර්ගතය */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(26, 19, 7, 0.5);
+            padding: 35px;
+            border-radius: 5px;
+            margin-bottom: 35px;
+            border: 1px solid #3b2c0d;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+        }
+
+        h2 {
+            color: #ffc83b;
+            font-size: 32px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #543f13;
+            display: inline-block;
+        }
+
+        h3 {
+            font-size: 21px;
+            font-weight: normal;
+            color: #e6decb;
+            margin: 0;
+            text-align: justify;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        li::before {
+            content: "☀️"; /* රන්වන් සූර්ය සංකේතය */
+            position: absolute;
+            left: 0;
+            font-size: 14px;
+            color: #ffc83b;
+        }
+
+        strong {
+            color: #ffc83b;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #a67c1e, transparent);
+            margin: 40px 0;
+        }
+
+        .footer-hr {
+            border-top: 3px dotted #3b2c0d;
+            margin: 60px 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div class="container">
+        <h1>El Dorado</h1>
+
+        <div class="img-container">
+            <img src="images/el_dorado.jpg" alt="The Lost City of Gold">
+            <img src="images/muisca_raft.jpg" alt="The Golden Muisca Raft">
+        </div>
+
+        <section>
+            <h3>Hidden deep within the uncharted, perilous jungles of South America lies <strong>El Dorado</strong>—the legendary empire of gold. For centuries, European conquistadors, driven by an unquenchable greed, risked and lost their lives searching for this mythical civilization, carving an unforgettable mystery into history.</h3>
+        </section>
+
+        <section>
+            <h2>The Myth of the Gilded Man</h2>
+            <h3>The true origin of El Dorado is not actually a city, but a person. In Spanish, <i>El Dorado</i> translates to <strong>"The Gilded One."</strong> The legend stems from the ancient Muisca civilization of Colombia. When a new chieftain came to power, he would cover his entire body in sticky sap and fine gold dust, transforming into a living golden statue.</h3>
+        </section>
+
+        <section>
+            <h2>The Ritual of Lake Guatavita</h2>
+            <h3>As thousands of citizens watched and chanted, the golden chieftain would be rowed out to the center of the sacred <strong>Lake Guatavita</strong> on a ceremonial raft. He would dive into the water to wash the gold dust away as an offering to the gods, while his people threw priceless gold ornaments, emeralds, and treasures into the deep lake.</h3>
+        </section>
+
+        <section>
+            <h2>The Obsession of the Conquistadors</h2>
+            <ul>
+                <li><strong>The Evolution of a Tale:</strong> When Spanish explorers heard rumors of this golden ritual, their imaginations ran wild. Over decades, the story of a "gilded man" mutated into a massive, heavily fortified city—and eventually an entire empire—made completely out of solid gold.</li>
+                <li><strong>Tragic Expeditions:</strong> Famous explorers like Gonzalo Pizarro and Sir Walter Raleigh led massive, heavily armed expeditions into the deadly Amazon rainforest. They battled tropical diseases, treacherous terrains, and hostile wildlife, but found absolutely nothing.</li>
+                <li><strong>Draining the Lake:</strong> Multiple attempts were made by the Spanish and English to completely drain Lake Guatavita. While they recovered a few beautiful gold trinkets from the mud, the main hoard of treasure remained out of reach.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Historical Legacy & Modern Status</h2>
+            <ul>
+                <li><strong>The Muisca Raft:</strong> In 1969, three farmers in Colombia discovered a small, breathtaking pre-Columbian gold sculpture depicting the chieftain on his raft. This artifact proved that the ancient golden ritual was 100% real, even if the golden city was a myth.</li>
+                <li><strong>An Eternal Mystery:</strong> Though modern satellites have mapped the entire Amazon basin, showing no hidden cities of gold, the phrase "El Dorado" survives today as a powerful symbol for any impossible quest or ultimate hidden prize.</li>
+            </ul>
+        </section>
+
+        <div class="footer-hr"></div>
+    </div>
+
+<div id="feedback-widget">
+  <span>Was this helpful?</span>
+  <button onclick="hideFeedback('Yes')"> 👍</button>
+  <button onclick="hideFeedback('No')"> 👎</button>
+</div>
+
+<style>
+#feedback-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #1a1307;
+  border: 1px solid #3b2c0d;
+  box-shadow: 0 4px 15px rgba(255, 200, 59, 0.2);
+  padding: 15px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 1000;
+  color: #ccc2b2;
+}
+#feedback-widget button {
+  border: none;
+  background: #060502;
+  padding: 5px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #ffc83b;
+}
+#feedback-widget button:hover { background: #3b2c0d; }
+</style>
+
+<script>
+function hideFeedback(type) {
+  alert("Thank you for your feedback!");
+  document.getElementById('feedback-widget').style.display = 'none';
+}
+</script>
+
+<audio id="myAudio" loop>
+    <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
+</audio>
+
+<div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
+    <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
+        <span id="music-icon">🔇</span>
+    </div>
+</div>
+
+<script src="music.js"></script>
+</body>
+</html>
