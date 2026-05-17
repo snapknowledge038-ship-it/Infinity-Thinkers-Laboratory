@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Headless Horseman - I T L</title>
+    <style>
+        /* මූලික සැකසුම් */
+        body {
+            font-family: 'Garamond', 'Georgia', serif; /* පැරණි පොත් වල විලාසිතාව */
+            background-color: #050705;
+            color: #ced4ce;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-image: linear-gradient(180deg, #0d120d 0%, #050705 100%);
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #0a100a;
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 2px solid #2e4d2e;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #7fa67f;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: #ff7700;
+            text-shadow: 0 0 10px #ff7700;
+        }
+
+        /* මාතෘකාව */
+        h1 {
+            font-size: clamp(35px, 7vw, 70px);
+            text-align: center;
+            color: #ff7700; /* වට්ටක්කා තැඹිලි පැහැය */
+            margin-top: 40px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            font-family: 'Cinzel', 'Old English Text MT', serif; 
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 1);
+        }
+
+        /* පින්තූර සැකසුම */
+        .img-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .img-container img {
+            max-width: 45%;
+            height: auto;
+            border: 2px solid #2e4d2e;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            filter: sepia(20%) hue-rotate(85deg) contrast(110%); /* අඳුරු වනාන්තර ගතියක් දීමට */
+        }
+
+        /* අන්තර්ගතය */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(10, 15, 10, 0.6);
+            padding: 35px;
+            border-radius: 5px;
+            margin-bottom: 35px;
+            border: 1px solid #1f331f;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+        }
+
+        h2 {
+            color: #ff9933;
+            font-size: 32px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #2e4d2e;
+            display: inline-block;
+        }
+
+        h3 {
+            font-size: 21px;
+            font-weight: normal;
+            color: #e2e8e2;
+            margin: 0;
+            text-align: justify;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        li::before {
+            content: "🎃"; /* හොල්මන් වට්ටක්කා අයිකනයක් */
+            position: absolute;
+            left: 0;
+            font-size: 14px;
+        }
+
+        strong {
+            color: #ff7700;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #2e4d2e, transparent);
+            margin: 40px 0;
+        }
+
+        .footer-hr {
+            border-top: 3px dotted #1f331f;
+            margin: 60px 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div class="container">
+        <h1>The Headless Horseman</h1>
+
+        <div class="img-container">
+            <img src="images/headless_horseman.jpg" alt="The Headless Horseman">
+            <img src="images/sleepy_hollow.jpg" alt="The Legend of Sleepy Hollow">
+        </div>
+
+        <section>
+            <h3>Haunting the fog-covered paths of a secluded valley, <strong>The Headless Horseman</strong> is one of the most enduring figures in American folklore. Riding a powerful black steed through the dead of night, this terrifying specter carries his severed head—or a flaming jack-o'-lantern—searching for a replacement.</h3>
+        </section>
+
+        <section>
+            <h2>The Legend of Sleepy Hollow</h2>
+            <h3>The phantom was popularized by Washington Irving in his 1820 short story, <i>"The Legend of Sleepy Hollow."</i> The tale is set in a Dutch settlement in New York and revolves around a superstitious schoolmaster named <strong>Ichabod Crane</strong>, who encounters the ghostly rider on a dark, lonely night.</h3>
+        </section>
+
+        <section>
+            <h2>Origins: The Hessian Soldier</h2>
+            <h3>According to the folklore, the Horseman was originally a fierce <strong>Hessian soldier</strong> (German mercenary) who fought during the American Revolutionary War in 1776. During a brutal battle, his head was completely carried away by a stray American cannonball. His comrades buried him in a local churchyard, from which his spirit now rises.</h3>
+        </section>
+
+        <section>
+            <h2>The Myth and Rules</h2>
+            <ul>
+                <li><strong>The Nightly Hunt:</strong> The ghost is bound to the graveyard and can only wander out into the surrounding woods during the midnight hours. He must return to his grave before the first light of dawn.</li>
+                <li><strong>The Sacred Bridge:</strong> Folklore states that the Horseman’s dark powers vanish if he tries to cross running water. In the story, Ichabod Crane desperately races toward a wooden bridge near the Old Dutch Church to escape the monster.</li>
+                <li><strong>The Weapon:</strong> In many modern adaptations and visual retellings, he hurls a flaming <strong>pumpkin</strong> at his victims to strike them down.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Historical Inspiration</h2>
+            <ul>
+                <li><strong>Real Warfare:</strong> The myth is heavily grounded in the terrifying reality of the Revolutionary War, where artillery fire caused catastrophic and traumatic injuries to soldiers.</li>
+                <li><strong>European Folklore:</strong> Irving drew inspiration from older European tales, such as the Irish <i>Dullahan</i> (a headless fairy who rides a black horse) and German myths of the wild huntsman.</li>
+                <li><strong>An Unsolved Disappearance:</strong> In Irving's tale, after Ichabod Crane vanishes following his encounter with the Horseman, only a shattered pumpkin and Ichabod's horse are left behind, leaving it an eternal mystery whether he was taken by a ghost or tricked by a local rival.</li>
+            </ul>
+        </section>
+
+        <div class="footer-hr"></div>
+    </div>
+
+<div id="feedback-widget">
+  <span>Was this helpful?</span>
+  <button onclick="hideFeedback('Yes')"> 👍</button>
+  <button onclick="hideFeedback('No')"> 👎</button>
+</div>
+
+<style>
+#feedback-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #0a100a;
+  border: 1px solid #1f331f;
+  box-shadow: 0 4px 15px rgba(255, 119, 0, 0.2);
+  padding: 15px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 1000;
+  color: #ced4ce;
+}
+#feedback-widget button {
+  border: none;
+  background: #050705;
+  padding: 5px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+#feedback-widget button:hover { background: #1f331f; }
+</style>
+
+<script>
+function hideFeedback(type) {
+  alert("Thank you for your feedback!");
+  document.getElementById('feedback-widget').style.display = 'none';
+}
+</script>
+
+<audio id="myAudio" loop>
+    <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
+</audio>
+
+<div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
+    <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
+        <span id="music-icon">🔇</span>
+    </div>
+</div>
+
+<script src="music.js"></script>
+</body>
+</html>
