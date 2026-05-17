@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamma-Ray Bursts - I T L</title>
+    <style>
+        /* Base Settings */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #05050a;
+            color: #e2e8f0;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-image: radial-gradient(circle at center, #0a0a20 0%, #05050a 100%);
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 2px solid #1e40af;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        nav a {
+            color: #93c5fd;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 17px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px #3b82f6;
+        }
+
+        /* Title Styling */
+        h1 {
+            font-size: clamp(40px, 8vw, 80px);
+            text-align: center;
+            margin-top: 50px;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #fbbf24, #f59e0b, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+
+        /* Image Styling */
+        .img-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .planet-img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 0 40px rgba(59, 130, 246, 0.2);
+            border: 1px solid #1e40af;
+            transition: 0.4s;
+        }
+
+        .planet-img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 50px rgba(59, 130, 246, 0.4);
+        }
+
+        /* Content Sections */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(15, 23, 42, 0.7);
+            padding: 40px;
+            border-radius: 30px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+        }
+
+        h2 {
+            color: #fbbf24;
+            font-size: 32px;
+            margin-bottom: 25px;
+            border-left: 6px solid #1e40af;
+            padding-left: 20px;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: normal;
+            color: #cbd5e1;
+            margin: 0;
+        }
+
+        .planet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .planet-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        strong {
+            color: #ffffff;
+            display: block;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #1e40af;
+        }
+
+        th {
+            background-color: #1e40af;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        .footer-hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #1e40af, transparent);
+            margin: 80px 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div class="container">
+        <h1>Gamma-Ray Bursts</h1>
+
+        <div class="img-container">
+            <img class="planet-img" src="images/GRB_Main.jpg" alt="A powerful Gamma-Ray Burst jet shooting through space">
+        </div>
+
+        <section>
+            <h2>What are Gamma-Ray Bursts?</h2>
+            <h3>Gamma-Ray Bursts (GRBs) are the most powerful, violent, and luminous electromagnetic explosions known in the universe. They release more energy in a few seconds than our Sun will produce over its entire 10-billion-year lifetime, emitting intense flashes of high-energy gamma-ray light.</h3>
+        </section>
+
+        <section>
+            <h2>How do GRBs Happen?</h2>
+            <div class="img-container">
+                <img class="planet-img" src="images/GRB_Source.jpg" alt="Two neutron stars colliding to trigger a short gamma-ray burst">
+            </div>
+            <h3>GRBs occur billions of light-years away from Earth and are linked to catastrophic cosmic events. When a massive star collapses into a black hole (a hypernova) or when two ultra-dense neutron stars merge together, they trigger a colossal blast that focus energy into narrow, highly concentrated beams traveling near the speed of light.</h3>
+        </section>
+
+        <section>
+            <h2>Classification of GRBs</h2>
+            <div class="planet-grid">
+                <div class="planet-card">
+                    <strong>Short-Duration GRBs</strong>
+                    These bursts last for less than two seconds. They are usually caused by the violent collision and merger of two neutron stars, or a neutron star spinning directly into a black hole.
+                </div>
+                <div class="planet-card">
+                    <strong>Long-Duration GRBs</strong>
+                    Making up about 70% of detected events, these bursts last from a few seconds to several minutes. They are triggered by the death of extremely massive, rapidly spinning stars.
+                </div>
+                <div class="planet-card">
+                    <strong>Afterglow Effects</strong>
+                    Once the initial flash of gamma rays fades, a slower, fading "afterglow" of longer-wavelength light (X-rays, UV, optical, and radio waves) can be observed by astronomers for days or weeks.
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Quick Comparison Table</h2>
+            <table>
+                <tr>
+                    <th>Type</th>
+                    <th>Average Duration</th>
+                    <th>Primary Cosmic Cause</th>
+                </tr>
+                <tr>
+                    <td>Short GRB</td>
+                    <td>Less than 2 seconds</td>
+                    <td>Neutron Star Mergers (Kilonovae)</td>
+                </tr>
+                <tr>
+                    <td>Long GRB</td>
+                    <td>More than 2 seconds (up to minutes)</td>
+                    <td>Collapse of Massive Stars (Hypernovae)</td>
+                </tr>
+                <tr>
+                    <td>Ultra-Long GRB</td>
+                    <td>Hours</td>
+                    <td>Birth of highly magnetized magnetars</td>
+                </tr>
+            </table>
+        </section>
+
+        <div class="footer-hr"></div>
+    </div>
+
+    <!-- Feedback Widget -->
+    <div id="feedback-widget">
+        <span>Was this helpful?</span>
+        <button onclick="hideFeedback('Yes')"> 👍</button>
+        <button onclick="hideFeedback('No')"> 👎</button>
+    </div>
+
+    <style>
+    #feedback-widget {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #000000;
+        box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+        padding: 15px;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        z-index: 1000;
+    }
+    #feedback-widget button {
+        border: none;
+        background: #000000;
+        padding: 5px 10px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    #feedback-widget button:hover { background: #ddd; }
+    </style>
+
+    <script>
+    function hideFeedback(type) {
+        alert("Thank you for your feedback!");
+        document.getElementById('feedback-widget').style.display = 'none';
+    }
+    </script>
+
+    <!-- Audio Settings -->
+    <audio id="myAudio" loop>
+        <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
+    </audio>
+
+    <div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
+        <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
+            <span id="music-icon">🔇</span>
+        </div>
+    </div>
+
+    <script src="music.js"></script>
+</body>
+</html>
