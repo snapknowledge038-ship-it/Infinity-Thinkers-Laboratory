@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mothman - I T L</title>
+    <style>
+        /* මූලික සැකසුම් */
+        body {
+            font-family: 'Garamond', 'Georgia', serif; /* පැරණි පොත් වල විලාසිතාව */
+            background-color: #050505;
+            color: #b5b5b5;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-image: linear-gradient(180deg, #120808 0%, #050505 100%);
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #121212;
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 2px solid #551a1a; /* අඳුරු රතු පැහැය */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #7a7a7a;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: #ff3333; /* දිලිසෙන රතු පැහැය */
+            text-shadow: 0 0 10px #ff3333;
+        }
+
+        /* මාතෘකාව */
+        h1 {
+            font-size: clamp(35px, 7vw, 70px);
+            text-align: center;
+            color: #cc2222;
+            margin-top: 40px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            font-family: 'Cinzel', 'Old English Text MT', serif; 
+            text-shadow: 3px 3px 12px rgba(0, 0, 0, 1);
+        }
+
+        /* පින්තූර සැකසුම */
+        .img-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .img-container img {
+            max-width: 45%;
+            height: auto;
+            border: 2px solid #3a1c1c;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            filter: grayscale(40%) contrast(115%);
+        }
+
+        /* අන්තර්ගතය */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(20, 12, 12, 0.6);
+            padding: 35px;
+            border-radius: 5px;
+            margin-bottom: 35px;
+            border: 1px solid #2a1515;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+        }
+
+        h2 {
+            color: #ff4444;
+            font-size: 32px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #551a1a;
+            display: inline-block;
+        }
+
+        h3 {
+            font-size: 21px;
+            font-weight: normal;
+            color: #d1c7c7;
+            margin: 0;
+            text-align: justify;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        li::before {
+            content: "🔴"; /* දිලිසෙන රතු ඇස් නිරූපණය කිරීමට */
+            position: absolute;
+            left: 0;
+            font-size: 12px;
+        }
+
+        strong {
+            color: #ff4444;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #551a1a, transparent);
+            margin: 40px 0;
+        }
+
+        .footer-hr {
+            border-top: 3px dotted #2a1515;
+            margin: 60px 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div class="container">
+        <h1>The Mothman</h1>
+
+        <div class="img-container">
+            <img src="images/mothman.jpg" alt="The Mothman Cryptid">
+            <img src="images/silver_bridge.jpg" alt="The Silver Bridge Collapse">
+        </div>
+
+        <section>
+            <h3>Spotted in the dark skies of West Virginia during the mid-1960s, the <strong>Mothman</strong> stands as one of the most chilling cryptids in modern folklore. Described as a massive, winged humanoid with glowing, hypnotic red eyes, his appearances are famously believed to be a terrifying omen of impending disaster.</h3>
+        </section>
+
+        <section>
+            <h2>The Point Pleasant Sightings (1966–1967)</h2>
+            <h3>The mystery began in November 1966 in Point Pleasant, West Virginia. Two young couples driving late at night near an abandoned World War II munitions plant—known as the <strong>"TNT Area"</strong>—encountered a seven-foot-tall creature. They claimed it effortlessly chased their speeding car, rising into the air without flapping its massive wings.</h3>
+        </section>
+
+        <section>
+            <h2>Anatomy of a Nightmare</h2>
+            <h3>Over thirteen months, more than a hundred witnesses reported similar sightings. The descriptions were terrifyingly consistent: a creature with no distinct head, whose piercing, <strong>reflective red eyes</strong> were set directly into its broad chest. Witnesses also reported experiencing intense psychological dread and severe insomnia after looking into its eyes.</h3>
+        </section>
+
+        <section>
+            <h2>The Silver Bridge Tragedy & Harbinger Myth</h2>
+            <ul>
+                <li><strong>The Omen:</strong> On December 15, 1967, the crowded <strong>Silver Bridge</strong> connecting Point Pleasant to Ohio suddenly collapsed into the freezing Ohio River, tragically claiming 46 lives.</li>
+                <li><strong>The Disappearance:</strong> Following the disaster, the frequent Mothman sightings in the area completely stopped. This led to the chilling theory that the creature was not a predator, but a harbinger or messenger trying to warn the town of the disaster.</li>
+                <li><strong>Global Sightings:</strong> UFO researchers and cryptozoologists claim similar winged figures were spotted right before other global catastrophes, including the Chernobyl nuclear disaster in 1986.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Scientific Explanations vs. Eternal Mystery</h2>
+            <ul>
+                <li><strong>The Sandhill Crane Theory:</strong> Skeptics and biologists argue that terrified witnesses actually saw a <strong>Sandhill Crane</strong>—a massive bird with a large wingspan and bright red patches around its eyes that can reflect light vividly in the dark.</li>
+                <li><strong>Legacy:</strong> Today, Point Pleasant embraces its legendary history. The town features a life-sized chrome statue of the creature, hosts an annual Mothman Festival, and houses a dedicated museum, keeping the unsolved modern myth alive for generations.</li>
+            </ul>
+        </section>
+
+        <div class="footer-hr"></div>
+    </div>
+
+<div id="feedback-widget">
+  <span>Was this helpful?</span>
+  <button onclick="hideFeedback('Yes')"> 👍</button>
+  <button onclick="hideFeedback('No')"> 👎</button>
+</div>
+
+<style>
+#feedback-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #121212;
+  border: 1px solid #2a1515;
+  box-shadow: 0 4px 15px rgba(255, 51, 51, 0.15);
+  padding: 15px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 1000;
+  color: #b5b5b5;
+}
+#feedback-widget button {
+  border: none;
+  background: #050505;
+  padding: 5px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #ff3333;
+}
+#feedback-widget button:hover { background: #2a1515; }
+</style>
+
+<script>
+function hideFeedback(type) {
+  alert("Thank you for your feedback!");
+  document.getElementById('feedback-widget').style.display = 'none';
+}
+</script>
+
+<audio id="myAudio" loop>
+    <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
+</audio>
+
+<div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
+    <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
+        <span id="music-icon">🔇</span>
+    </div>
+</div>
+
+<script src="music.js"></script>
+</body>
+</html>
