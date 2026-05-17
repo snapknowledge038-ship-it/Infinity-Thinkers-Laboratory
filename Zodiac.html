@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Zodiac Killer - I T L</title>
+    <style>
+        /* මූලික සැකසුම් */
+        body {
+            font-family: 'Courier New', Courier, monospace; /* ටයිප්රයිටර්/රහස් කේත විලාසිතාව */
+            background-color: #080808;
+            color: #c0c0c0;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-image: linear-gradient(180deg, #121212 0%, #080808 100%);
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #151515;
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 2px solid #444444;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #888888;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px #ffffff;
+        }
+
+        /* මාතෘකාව */
+        h1 {
+            font-size: clamp(35px, 7vw, 70px);
+            text-align: center;
+            color: #e0e0e0;
+            margin-top: 40px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 1);
+        }
+
+        /* පින්තූර සැකසුම */
+        .img-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .img-container img {
+            max-width: 45%;
+            height: auto;
+            border: 2px solid #333333;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            filter: grayscale(80%) contrast(120%);
+        }
+
+        /* අන්තර්ගතය */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(20, 20, 20, 0.7);
+            padding: 35px;
+            border-radius: 5px;
+            margin-bottom: 35px;
+            border: 1px solid #2a2a2a;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+        }
+
+        h2 {
+            color: #ffffff;
+            font-size: 28px;
+            margin-bottom: 20px;
+            border-bottom: 2px dashed #444444;
+            display: inline-block;
+            font-family: 'Garamond', serif;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: normal;
+            color: #dcdcdc;
+            margin: 0;
+            text-align: justify;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        li::before {
+            content: "🎯"; /* Zodiac ගේ ප්‍රසිද්ධ Crosshair සලකුණ */
+            position: absolute;
+            left: 0;
+            font-size: 14px;
+        }
+
+        strong {
+            color: #ffffff;
+            background-color: #222222;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #555555, transparent);
+            margin: 40px 0;
+        }
+
+        .footer-hr {
+            border-top: 3px dotted #333333;
+            margin: 60px 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div class="container">
+        <h1>The Zodiac Killer</h1>
+
+        <div class="img-container">
+            <img src="images/zodiac_sketch.jpg" alt="Zodiac Killer Police Sketch">
+            <img src="images/zodiac_cipher.jpg" alt="Zodiac Cipher Letter">
+        </div>
+
+        <section>
+            <h3>Operating in Northern California during the late 1960s and early 1970s, the <strong>Zodiac Killer</strong> remains one of the most infamous unidentified serial killers in American history. He transformed his crimes into a terrifying public game, taunting authorities and the media with complex cryptograms.</h3>
+        </section>
+
+        <section>
+            <h2>The Crimes & Confirmed Victims</h2>
+            <h3>The Zodiac has been officially linked to <strong>five brutal murders and two attempted murders</strong> (survivors who provided vital descriptions). However, in his twisted letters to the press, he boasted of taking the lives of as many as 37 victims. His primary targets were young couples in isolated areas.</h3>
+        </section>
+
+        <section>
+            <h2>"This is the Zodiac Speaking"</h2>
+            <h3>The killer actively sought global notoriety. He sent dozens of letters to Bay Area newspapers, opening each with his chilling catchphrase and signing them with a signature <strong>crosshairs symbol</strong>. He threatened to kill more innocents if the editors refused to print his letters on the front page.</h3>
+        </section>
+
+        <section>
+            <h2>The Cryptograms (Ciphers)</h2>
+            <ul>
+                <li><strong>The Z408 Cipher:</strong> Sent in 1969 and cracked quickly by a schoolteacher and his wife. It revealed a disturbing mind, stating: <i>"I like killing people because it is so much fun..."</i></li>
+                <li><strong>The Z340 Cipher:</strong> This incredibly complex code baffled top government cryptographers for over 50 years. It was finally cracked by amateur codebreakers in <strong>December 2020</strong>, beginning with: <i>"I hope you are having lots of fun in trying to catch me..."</i></li>
+                <li><strong>Unsolved Codes:</strong> Two shorter ciphers (including one supposedly containing his real name) remain completely unsolved to this day.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>The Prime Suspect: Arthur Leigh Allen</h2>
+            <ul>
+                <li><strong>Circumstantial Evidence:</strong> Allen was a former schoolteacher and convicted offender. He wore a wristwatch branded "Zodiac" featuring the crosshairs logo, lived near early crime scenes, and made highly suspicious statements.</li>
+                <li><strong>The Dead End:</strong> Despite being the police's top suspect for decades, his fingerprints, handwriting samples, and DNA did not match the physical evidence left behind by the killer. Allen died in 1992 without ever being charged.</li>
+            </ul>
+        </section>
+
+        <div class="footer-hr"></div>
+    </div>
+
+<div id="feedback-widget">
+  <span>Was this helpful?</span>
+  <button onclick="hideFeedback('Yes')"> 👍</button>
+  <button onclick="hideFeedback('No')"> 👎</button>
+</div>
+
+<style>
+#feedback-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #151515;
+  border: 1px solid #444444;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 1000;
+  color: #c0c0c0;
+}
+#feedback-widget button {
+  border: none;
+  background: #080808;
+  padding: 5px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #ffffff;
+}
+#feedback-widget button:hover { background: #333333; }
+</style>
+
+<script>
+function hideFeedback(type) {
+  alert("Thank you for your feedback!");
+  document.getElementById('feedback-widget').style.display = 'none';
+}
+</script>
+
+<audio id="myAudio" loop>
+    <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
+</audio>
+
+<div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
+    <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
+        <span id="music-icon">🔇</span>
+    </div>
+</div>
+
+<script src="music.js"></script>
+</body>
+</html>
