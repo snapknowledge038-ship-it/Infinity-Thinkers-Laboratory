@@ -24,6 +24,11 @@
             overflow-x: hidden;
         }
 
+        /* --- 🌐 MULTI-LANGUAGE TOGGLE DISPLAY STYLES --- */
+        .lang-si {
+            display: none;
+        }
+
         /* --- BACKGROUND STARS ANIMATION --- */
         body::before {
             content: "";
@@ -51,25 +56,39 @@
             to { background-position: 0 -550px; }
         }
 
-        /* Navigation Bar */
+        /* 🖥️ NAVIGATION BAR */
         nav {
             background-color: rgba(10, 17, 40, 0.85);
-            padding: 18px 0;
-            text-align: center;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             border-bottom: 1px solid rgba(56, 189, 248, 0.15);
             position: sticky;
             top: 0;
             z-index: 1000;
             backdrop-filter: blur(12px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-sizing: border-box;
+        }
+
+        .nav-left {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 12px;
+            align-items: center;
         }
 
         nav a {
             color: #38bdf8;
             text-decoration: none;
-            margin: 0 20px;
             font-weight: 600;
-            font-size: 16px;
+            font-size: 15px;
             transition: all 0.4s ease;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -78,6 +97,108 @@
         nav a:hover {
             color: #ffffff;
             text-shadow: 0 0 15px #38bdf8;
+        }
+
+        /* 🌐 LANGUAGE BUTTONS */
+        .nav-btn {
+            background: rgba(255, 255, 255, 0.05);
+            color: #38bdf8;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            padding: 6px 14px;
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: rgba(56, 189, 248, 0.1);
+            border-color: #ffffff;
+            color: #ffffff;
+        }
+
+        .nav-btn.active {
+            background: #38bdf8;
+            color: #02040a;
+            border-color: #38bdf8;
+            font-weight: bold;
+        }
+
+        /* 📱 HAMBURGER & SIDEBAR FOR MOBILE */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 5px;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 28px;
+            height: 3px;
+            background-color: #38bdf8;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -280px; 
+            width: 280px;
+            height: 100vh;
+            background-color: rgba(10, 17, 40, 0.98);
+            backdrop-filter: blur(15px);
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            padding: 80px 30px 30px 30px;
+            gap: 20px;
+            box-sizing: border-box;
+            transition: right 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            z-index: 999;
+            border-left: 1px solid rgba(56, 189, 248, 0.15);
+        }
+
+        .sidebar.open {
+            right: 0; 
+        }
+
+        .sidebar a {
+            font-size: 18px;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(56, 189, 248, 0.05);
+        }
+
+        .sidebar-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 900px) {
+            .nav-left, .nav-right {
+                display: none; 
+            }
+            .hamburger {
+                display: flex; 
+            }
+            
+            .hamburger.toggle span:nth-child(1) {
+                transform: rotate(45deg) translate(6px, 5px);
+            }
+            .hamburger.toggle span:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger.toggle span:nth-child(3) {
+                transform: rotate(-45deg) translate(6px, -5px);
+            }
         }
 
         /* ප්‍රධාන මාතෘකාව (Floating & Glowing Animation) */
@@ -175,7 +296,7 @@
             letter-spacing: 0.5px;
         }
 
-        /* ලැයිස්තුව (Cosmic Grid with Glow Animations) */
+        /* ලැයිස්තුව (Cosmic Grid) */
         .cosmic-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -236,16 +357,47 @@
 </head>
 <body>
 
+    <!-- 🖥️ Computer Navigation Bar -->
     <nav>
-        <a href="index.html">Home</a>
-        <a href="earth.html">Earth</a>
-        <a href="animals.html">Animals</a>
-        <a href="space.html">Space</a>
-        <a href="mysteries.html">Mysteries</a>
-        <a href="history.html">History</a>
+        <div class="nav-left">
+            <a href="index.html">Home</a>
+            <a href="earth.html">Earth</a>
+            <a href="animals.html">Animals</a>
+            <a href="space.html">Space</a>
+            <a href="quantum.html">Quantum</a>
+            <a href="mysteries.html">Mysteries</a>
+            <a href="history.html">History</a>
+        </div>
+        
+        <div class="nav-right">
+            <button class="nav-btn btn-en" onclick="changeLanguage('en')">English</button>
+            <button class="nav-btn btn-si" onclick="changeLanguage('si')">සිංහල</button>
+        </div>
+
+        <button class="hamburger" id="hamburger-menu" onclick="toggleSidebar()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </nav>
 
-    <!-- Audio File එක -->
+    <!-- 📱 Mobile Sidebar Slide-out -->
+    <div class="sidebar" id="mobile-sidebar">
+        <a href="index.html" onclick="toggleSidebar()">Home</a>
+        <a href="earth.html" onclick="toggleSidebar()">Earth</a>
+        <a href="animals.html" onclick="toggleSidebar()">Animals</a>
+        <a href="space.html" onclick="toggleSidebar()">Space</a>
+        <a href="quantum.html" onclick="toggleSidebar()">Quantum</a>
+        <a href="mysteries.html" onclick="toggleSidebar()">Mysteries</a>
+        <a href="history.html" onclick="toggleSidebar()">History</a>
+        
+        <div class="sidebar-buttons">
+            <button class="nav-btn btn-en" onclick="changeLanguage('en'); toggleSidebar();">English</button>
+            <button class="nav-btn btn-si" onclick="changeLanguage('si'); toggleSidebar();">සිංහල</button>
+        </div>
+    </div>
+
+    <!-- Audio File -->
     <audio id="myAudio" loop>
         <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
     </audio>
@@ -273,69 +425,203 @@
     </script>
 
     <div class="container">
-        <h1>Space – The Universe Beyond</h1>
+        <!-- 🌐 Multi-language Title -->
+        <h1>
+            <span class="lang-en">Space – The Universe Beyond</span>
+            <span class="lang-si">අවකාශය – එහා ලෝකය</span>
+        </h1>
 
         <div class="img-container">
             <img class="space-img" src="images/space.jpeg" alt="Infinity Space">
         </div>
 
+        <!-- 🌐 Multi-language Description -->
         <div class="space-description">
-            You have arrived here to explore the vast and fascinating universe beyond our planet. From distant galaxies and mysterious black holes to planets, stars, and cosmic phenomena, space is filled with wonders that continue to amaze scientists and explorers.
-            <br><br>
-            Here you will discover intriguing information about the universe, space exploration, and the incredible discoveries that help us understand our place in the cosmos. Through the articles and information below, you can journey beyond Earth and learn more about the mysteries and beauty of the universe.
-            <br><br>
-            We hope the knowledge you find here will expand your curiosity, deepen your understanding of space, and inspire you to keep exploring the endless universe.
+            <div class="lang-en">
+                You have arrived here to explore the vast and fascinating universe beyond our planet. From distant galaxies and mysterious black holes to planets, stars, and cosmic phenomena, space is filled with wonders that continue to amaze scientists and explorers.
+                <br><br>
+                Here you will discover intriguing information about the universe, space exploration, and the incredible discoveries that help us understand our place in the cosmos. Through the articles and information below, you can journey beyond Earth and learn more about the mysteries and beauty of the universe.
+            </div>
+            <div class="lang-si">
+                ඔබ මෙහි පැමිණ සිටින්නේ අපගේ පෘථිවියෙන් ඔබ්බට ඇති විශාල හා සිත් ඇදගන්නාසුළු විශ්වය ගවේෂණය කිරීමටයි. ඈත මන්දාකිණි සහ අද්භූත කළු කුහරවල සිට ග්‍රහලෝක, තරු සහ විශ්වීය සංසිද්ධීන් දක්වා, අභ්‍යවකාශය විද්‍යාඥයන් සහ ගවේෂකයන් පුදුමයට පත් කරන අරුමපුදුම දේවලින් පිරී ඇත.
+                <br><br>
+                විශ්වය, අභ්‍යවකාශ ගවේෂණය සහ විශ්වය තුළ අපගේ ස්ථානය අවබෝධ කර ගැනීමට උපකාරී වන ඇදහිය නොහැකි සොයාගැනීම් පිළිබඳ සිත්ගන්නාසුලු තොරතුරු මෙහිදී ඔබ සොයා ගනු ඇත. පහත දැක්වෙන ලිපි සහ තොරතුරු මඟින් ඔබට පෘථිවියෙන් ඔබ්බට ගොස් විශ්වයේ අභිරහස් සහ සුන්දරත්වය ගැන වැඩිදුර ඉගෙන ගත හැකිය.
+            </div>
         </div>
 
         <hr>
 
-        <h2>What are the details you are expecting?</h2>
+        <h2>
+            <span class="lang-en">What are the details you are expecting?</span>
+            <span class="lang-si">ඔබ අපේක්ෂා කරන තොරතුරු මොනවාද?</span>
+        </h2>
         
         <!-- Category 1: Our Solar System & Neighbors -->
-        <h3>Our Solar System & Neighbors</h3>
+        <h3>
+            <span class="lang-en">Our Solar System & Neighbors</span>
+            <span class="lang-si">අපේ සෞරග්‍රහ මණ්ඩලය සහ අසල්වැසියෝ</span>
+        </h3>
         <ul class="cosmic-grid">
-            <li><a href="solar system.html">Solar System</a></li>
-            <li><a href="moon.html">Moon</a></li>
-            <li><a href="meteor.html">Meteor</a></li>
-            <li><a href="comet.html">Comet</a></li>
-            <li><a href="asteroids.html">Asteroids</a></li>
-            <li><a href="dwarf_planets.html">Dwarf Planets</a></li>
-            <li><a href="kuiper_oort.html">Kuiper Belt & Oort Cloud</a></li>
+            <li>
+                <a href="solar system.html" class="lang-en">Solar System</a>
+                <a href="solar system.html" class="lang-si">සෞරග්‍රහ මණ්ඩලය</a>
+            </li>
+            <li>
+                <a href="moon.html" class="lang-en">Moon</a>
+                <a href="moon.html" class="lang-si">චන්ද්‍රයා</a>
+            </li>
+            <li>
+                <a href="meteor.html" class="lang-en">Meteor</a>
+                <a href="meteor.html" class="lang-si">උල්කාපාත</a>
+            </li>
+            <li>
+                <a href="comet.html" class="lang-en">Comet</a>
+                <a href="comet.html" class="lang-si">වල්ගාතරු</a>
+            </li>
+            <li>
+                <a href="asteroids.html" class="lang-en">Asteroids</a>
+                <a href="asteroids.html" class="lang-si">ග්‍රහක (ඇස්ටරොයිඩ)</a>
+            </li>
+            <li>
+                <a href="dwarf_planets.html" class="lang-en">Dwarf Planets</a>
+                <a href="dwarf_planets.html" class="lang-si">වාමන ග්‍රහලෝක</a>
+            </li>
+            <li>
+                <a href="kuiper_oort.html" class="lang-en">Kuiper Belt & Oort Cloud</a>
+                <a href="kuiper_oort.html" class="lang-si">කයිපර් පටිය සහ ඕට් වලාකුළ</a>
+            </li>
         </ul>
 
         <!-- Category 2: Deep Space Phenomena -->
-        <h3>Deep Space Phenomena</h3>
+        <h3>
+            <span class="lang-en">Deep Space Phenomena</span>
+            <span class="lang-si">ගැඹුරු අභ්‍යවකාශ සංසිද්ධි</span>
+        </h3>
         <ul class="cosmic-grid">
-            <li><a href="star.html">Stars</a></li>
-            <li><a href="black hole.html">Black Hole</a></li>
-            <li><a href="nova.html">Nova</a></li>
-            <li><a href="quasar.html">Quasar</a></li>
-            <li><a href="galaxies.html">Galaxies</a></li>
-            <li><a href="neutron_stars.html">Neutron Stars</a></li>
-            <li><a href="gamma_ray_bursts.html">Gamma-Ray Bursts</a></li>
+            <li>
+                <a href="star.html" class="lang-en">Stars</a>
+                <a href="star.html" class="lang-si">තාරකා</a>
+            </li>
+            <li>
+                <a href="black hole.html" class="lang-en">Black Hole</a>
+                <a href="black hole.html" class="lang-si">කළු කුහර</a>
+            </li>
+            <li>
+                <a href="nova.html" class="lang-en">Nova</a>
+                <a href="nova.html" class="lang-si">නෝවා (සුපර්නෝවා)</a>
+            </li>
+            <li>
+                <a href="quasar.html" class="lang-en">Quasar</a>
+                <a href="quasar.html" class="lang-si">ක්වේසාර්</a>
+            </li>
+            <li>
+                <a href="galaxies.html" class="lang-en">Galaxies</a>
+                <a href="galaxies.html" class="lang-si">මන්දාකිණි (ගැලැක්සි)</a>
+            </li>
+            <li>
+                <a href="neutron_stars.html" class="lang-en">Neutron Stars</a>
+                <a href="neutron_stars.html" class="lang-si">නියුට්‍රෝන තරු</a>
+            </li>
+            <li>
+                <a href="gamma_ray_bursts.html" class="lang-en">Gamma-Ray Bursts</a>
+                <a href="gamma_ray_bursts.html" class="lang-si">ගැමා කිරණ පිපිරුම්</a>
+            </li>
         </ul>
 
         <!-- Category 3: Cosmic Frontiers & Mysteries -->
-        <h3>Cosmic Frontiers & Mysteries</h3>
+        <h3>
+            <span class="lang-en">Cosmic Frontiers & Mysteries</span>
+            <span class="lang-si">විශ්වයේ සීමා සහ අභිරහස්</span>
+        </h3>
         <ul class="cosmic-grid">
-            <li><a href="exoplanets.html">Exoplanets</a></li>
-            <li><a href="dark_matter_energy.html">Dark Matter & Energy</a></li>
-            <li><a href="strings_wormholes.html">Strings & Wormholes</a></li>
+            <li>
+                <a href="exoplanets.html" class="lang-en">Exoplanets</a>
+                <a href="exoplanets.html" class="lang-si">බාහිර ග්‍රහලෝක</a>
+            </li>
+            <li>
+                <a href="dark_matter_energy.html" class="lang-en">Dark Matter & Energy</a>
+                <a href="dark_matter_energy.html" class="lang-si">අඳුරු පදාර්ථය සහ ශක්තිය</a>
+            </li>
+            <li>
+                <a href="strings_wormholes.html" class="lang-en">Strings & Wormholes</a>
+                <a href="strings_wormholes.html" class="lang-si">ස්‍ට්‍රින්ග්ස් සහ වර්ම්හෝල්ස්</a>
+            </li>
         </ul>
 
         <!-- Category 4: The Grand Cosmic Scale -->
-        <h3>The Grand Cosmic Scale</h3>
+        <h3>
+            <span class="lang-en">The Grand Cosmic Scale</span>
+            <span class="lang-si">මහා විශ්ව පරිමාණය</span>
+        </h3>
         <ul class="cosmic-grid">
-            <li><a href="oca.html">Our Cosmic Address</a></li>
-            <li><a href="laniakea.html">Laniakea</a></li>
-            <li><a href="cosmic_web.html">The Cosmic Web</a></li>
-            <li><a href="observable_universe.html">Observable Universe</a></li>
-            <li><a href="multiverse.html">The Multiverse</a></li>
-            <li><a href="cmb_radiation.html">CMB Radiation</a></li>
+            <li>
+                <a href="oca.html" class="lang-en">Our Cosmic Address</a>
+                <a href="oca.html" class="lang-si">අපේ විශ්වීය ලිපිනය</a>
+            </li>
+            <li>
+                <a href="laniakea.html" class="lang-en">Laniakea</a>
+                <a href="laniakea.html" class="lang-si">ලනියාකියා</a>
+            </li>
+            <li>
+                <a href="cosmic_web.html" class="lang-en">The Cosmic Web</a>
+                <a href="cosmic_web.html" class="lang-si">විශ්වීය ජාලය</a>
+            </li>
+            <li>
+                <a href="observable_universe.html" class="lang-en">Observable Universe</a>
+                <a href="observable_universe.html" class="lang-si">නිරීක්ෂණය කළ හැකි විශ්වය</a>
+            </li>
+            <li>
+                <a href="multiverse.html" class="lang-en">The Multiverse</a>
+                <a href="multiverse.html" class="lang-si">බහු-විශ්වය (මල්ටිවර්ස්)</a>
+            </li>
+            <li>
+                <a href="cmb_radiation.html" class="lang-en">CMB Radiation</a>
+                <a href="cmb_radiation.html" class="lang-si">CMB පසුබිම් විකිරණය</a>
+            </li>
         </ul>
 
         <div class="dotted-hr"></div>
     </div>
 
+    <!-- 🌐 MULTI-LANGUAGE & SIDEBAR SCRIPT -->
+    <script type="text/javascript">
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('siteLang') || 'en';
+            applyLanguage(savedLang);
+        });
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById('mobile-sidebar');
+            const hamburger = document.getElementById('hamburger-menu');
+            sidebar.classList.toggle('open');
+            hamburger.classList.toggle('toggle');
+        }
+
+        function applyLanguage(lang) {
+            const engElements = document.querySelectorAll('.lang-en');
+            const sinElements = document.querySelectorAll('.lang-si');
+            const btnsEn = document.querySelectorAll('.btn-en');
+            const btnsSi = document.querySelectorAll('.btn-si');
+
+            if (lang === 'si') {
+                engElements.forEach(el => el.style.display = 'none');
+                sinElements.forEach(el => el.style.display = 'block');
+                
+                btnsSi.forEach(b => b.classList.add('active'));
+                btnsEn.forEach(b => b.classList.remove('active'));
+            } else {
+                sinElements.forEach(el => el.style.display = 'none');
+                engElements.forEach(el => el.style.display = 'block');
+                
+                btnsEn.forEach(b => b.classList.add('active'));
+                btnsSi.forEach(b => b.classList.remove('active'));
+            }
+        }
+
+        function changeLanguage(lang) {
+            localStorage.setItem('siteLang', lang); 
+            applyLanguage(lang); 
+        }
+    </script>
 </body>
 </html>
