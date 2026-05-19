@@ -4,11 +4,17 @@
     <meta name="description" content="Embark on a journey through the cosmos with ITL. Discover the wonders of our solar system, distant galaxies, black holes, and the latest in space exploration.">
     <meta name="keywords" content="Space Facts, Astronomy, Solar System, Galaxies, Black Holes, Universe, ITL Space, NASA News">
 
+    <!-- Meta Tags with Page Image -->
     <meta property="og:title" content="Space – The Universe Beyond | ITL">
     <meta property="og:description" content="Explore the vast wonders of the universe, from planets to distant galaxies.">
+    <meta property="og:image" content="https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/images/space.jpeg">
+    <meta property="og:url" content="https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/space.html">
+    <meta property="og:type" content="website">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Space - I T L</title>
+    
     <style>
         /* මූලික සැකසුම් */
         body {
@@ -25,7 +31,7 @@
         }
 
         /* --- 🌐 MULTI-LANGUAGE TOGGLE DISPLAY STYLES --- */
-        .lang-si {
+        .lang-si, nav a.lang-si, .sidebar a.lang-si {
             display: none;
         }
 
@@ -76,6 +82,7 @@
             display: flex;
             gap: 20px;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         .nav-right {
@@ -99,7 +106,7 @@
             text-shadow: 0 0 15px #38bdf8;
         }
 
-        /* 🌐 LANGUAGE BUTTONS */
+        /* 🌐 LANGUAGE & SHARE BUTTONS */
         .nav-btn {
             background: rgba(255, 255, 255, 0.05);
             color: #38bdf8;
@@ -123,6 +130,18 @@
             color: #02040a;
             border-color: #38bdf8;
             font-weight: bold;
+        }
+
+        .share-btn {
+            background: linear-gradient(45deg, #38bdf8, #0369a1);
+            color: #ffffff !important;
+            border: none;
+            font-weight: bold;
+        }
+
+        .share-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
         }
 
         /* 📱 HAMBURGER & SIDEBAR FOR MOBILE */
@@ -170,8 +189,13 @@
         }
 
         .sidebar a {
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: 600;
             font-size: 18px;
             padding: 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             border-bottom: 1px solid rgba(56, 189, 248, 0.05);
         }
 
@@ -314,6 +338,7 @@
             border-radius: 14px;
             transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
             cursor: pointer;
+            text-align: center;
         }
 
         .cosmic-grid li:hover {
@@ -330,7 +355,6 @@
             display: block;
             font-weight: 600;
             font-size: 17px;
-            text-align: center;
             transition: all 0.3s ease;
         }
 
@@ -357,14 +381,15 @@
 </head>
 <body>
 
-    <!-- 🖥️ Computer Navigation Bar -->
+    <!-- 🖥️ Responsive Navigation Bar -->
     <nav>
         <div class="nav-left">
             <a href="index.html">Home</a>
             <a href="earth.html">Earth</a>
             <a href="animals.html">Animals</a>
             <a href="space.html">Space</a>
-            <a href="quantum.html">Quantum</a>
+            <a href="quantum.html" class="lang-en">Quantum Physics</a>
+            <a href="quantum.html" class="lang-si">ක්වොන්ටම් විද්‍යාව</a>
             <a href="mysteries.html">Mysteries</a>
             <a href="history.html">History</a>
         </div>
@@ -372,6 +397,7 @@
         <div class="nav-right">
             <button class="nav-btn btn-en" onclick="changeLanguage('en')">English</button>
             <button class="nav-btn btn-si" onclick="changeLanguage('si')">සිංහල</button>
+            <button class="nav-btn share-btn" onclick="shareCurrentPage()">🔗 SHARE</button>
         </div>
 
         <button class="hamburger" id="hamburger-menu" onclick="toggleSidebar()">
@@ -387,13 +413,15 @@
         <a href="earth.html" onclick="toggleSidebar()">Earth</a>
         <a href="animals.html" onclick="toggleSidebar()">Animals</a>
         <a href="space.html" onclick="toggleSidebar()">Space</a>
-        <a href="quantum.html" onclick="toggleSidebar()">Quantum</a>
+        <a href="quantum.html" class="lang-en" onclick="toggleSidebar()">Quantum Physics</a>
+        <a href="quantum.html" class="lang-si" onclick="toggleSidebar()">ක්වොන්ටම් විද්‍යාව</a>
         <a href="mysteries.html" onclick="toggleSidebar()">Mysteries</a>
         <a href="history.html" onclick="toggleSidebar()">History</a>
         
         <div class="sidebar-buttons">
             <button class="nav-btn btn-en" onclick="changeLanguage('en'); toggleSidebar();">English</button>
             <button class="nav-btn btn-si" onclick="changeLanguage('si'); toggleSidebar();">සිංහල</button>
+            <button class="nav-btn share-btn" onclick="shareCurrentPage()">🔗 SHARE</button>
         </div>
     </div>
 
@@ -409,20 +437,7 @@
         </div>
     </div>
 
-    <script>
-        function toggleMusic() {
-            var audio = document.getElementById("myAudio");
-            var icon = document.getElementById("music-icon");
-
-            if (audio.paused) {
-                audio.play();
-                icon.innerHTML = "🔊";
-            } else {
-                audio.pause();
-                icon.innerHTML = "🔇";
-            }
-        }
-    </script>
+    <script src="music.js"></script>
 
     <div class="container">
         <!-- 🌐 Multi-language Title -->
@@ -583,13 +598,14 @@
         <div class="dotted-hr"></div>
     </div>
 
-    <!-- 🌐 MULTI-LANGUAGE & SIDEBAR SCRIPT -->
+    <!-- 🌐 MULTI-LANGUAGE, SIDEBAR & SHARE SCRIPT -->
     <script type="text/javascript">
         window.addEventListener('DOMContentLoaded', () => {
             const savedLang = localStorage.getItem('siteLang') || 'en';
             applyLanguage(savedLang);
         });
 
+        // 📱 Mobile Sidebar Function
         function toggleSidebar() {
             const sidebar = document.getElementById('mobile-sidebar');
             const hamburger = document.getElementById('hamburger-menu');
@@ -597,6 +613,7 @@
             hamburger.classList.toggle('toggle');
         }
 
+        // 🔄 Apply Language
         function applyLanguage(lang) {
             const engElements = document.querySelectorAll('.lang-en');
             const sinElements = document.querySelectorAll('.lang-si');
@@ -607,20 +624,46 @@
                 engElements.forEach(el => el.style.display = 'none');
                 sinElements.forEach(el => el.style.display = 'block');
                 
+                // Navbar, Sidebar and Cosmic Grid alignment
+                document.querySelectorAll('nav a.lang-si, .sidebar a.lang-si').forEach(el => el.style.display = 'block');
+                document.querySelectorAll('.cosmic-grid li .lang-si').forEach(el => el.style.display = 'block');
+                
                 btnsSi.forEach(b => b.classList.add('active'));
                 btnsEn.forEach(b => b.classList.remove('active'));
             } else {
                 sinElements.forEach(el => el.style.display = 'none');
                 engElements.forEach(el => el.style.display = 'block');
                 
+                // Navbar, Sidebar and Cosmic Grid alignment
+                document.querySelectorAll('nav a.lang-en, .sidebar a.lang-en').forEach(el => el.style.display = 'block');
+                document.querySelectorAll('.cosmic-grid li .lang-en').forEach(el => el.style.display = 'block');
+                
                 btnsEn.forEach(b => b.classList.add('active'));
                 btnsSi.forEach(b => b.classList.remove('active'));
             }
         }
 
+        // 🖱️ Change Language
         function changeLanguage(lang) {
             localStorage.setItem('siteLang', lang); 
             applyLanguage(lang); 
+        }
+
+        // 🔗 Share Function
+        function shareCurrentPage() {
+            if (navigator.share) {
+                navigator.share({
+                    title: document.title,
+                    text: 'Check out this amazing page on ITL Space!',
+                    url: window.location.href 
+                }).catch(err => console.log("Share failed", err));
+            } else {
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    alert("Link copied to clipboard: " + window.location.href);
+                }).catch(() => {
+                    alert("Copy this link: " + window.location.href);
+                });
+            }
         }
     </script>
 </body>
