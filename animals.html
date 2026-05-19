@@ -137,7 +137,7 @@
         .sidebar {
             position: fixed;
             top: 0;
-            right: -280px; /* පටන් ගැන්මේදී දකුණු පැත්තෙන් හැංගිලා තියෙන්නේ */
+            right: -280px; 
             width: 280px;
             height: 100vh;
             background-color: rgba(10, 26, 13, 0.98);
@@ -154,7 +154,7 @@
         }
 
         .sidebar.open {
-            right: 0; /* ඇවිස්සුණු විට මෙහාට එනවා */
+            right: 0; 
         }
 
         .sidebar a {
@@ -173,13 +173,12 @@
         /* 📱 MOBILE MEDIA QUERIES (RESPONSIVE) */
         @media (max-width: 768px) {
             .nav-left, .nav-right {
-                display: none; /* Computer Menu එක හංගනවා */
+                display: none; 
             }
             .hamburger {
-                display: flex; /* Hamburger Icon එක පෙන්වනවා */
+                display: flex; 
             }
             
-            /* Hamburger සජීවීකරණය (X එකක් වීමට) */
             .hamburger.toggle span:nth-child(1) {
                 transform: rotate(45deg) translate(6px, 5px);
             }
@@ -316,24 +315,23 @@
 
     <!-- 🖥️ Responsive Navigation Bar -->
     <nav>
-        <!-- Computer Layout Links -->
         <div class="nav-left">
             <a href="index.html">Home</a>
             <a href="earth.html">Earth</a>
             <a href="animals.html">Animals</a>
             <a href="space.html">Space</a>
+            <!-- 🌟 Navigation Bar එකට ක්වොන්ටම් යාන්ත්‍ර විද්‍යාව එකතු කළා -->
+            <a href="quantum.html">Quantum</a>
             <a href="mysteries.html">Mysteries</a>
             <a href="history.html">History</a>
         </div>
         
-        <!-- Computer Layout Buttons -->
         <div class="nav-right">
             <button class="nav-btn btn-en" onclick="changeLanguage('en')">English</button>
             <button class="nav-btn btn-si" onclick="changeLanguage('si')">සිංහල</button>
             <button class="nav-btn share-btn" onclick="shareCurrentPage()">🔗 SHARE</button>
         </div>
 
-        <!-- Mobile Menu Hamburger Icon -->
         <button class="hamburger" id="hamburger-menu" onclick="toggleSidebar()">
             <span></span>
             <span></span>
@@ -347,6 +345,8 @@
         <a href="earth.html" onclick="toggleSidebar()">Earth</a>
         <a href="animals.html" onclick="toggleSidebar()">Animals</a>
         <a href="space.html" onclick="toggleSidebar()">Space</a>
+        <!-- 🌟 Mobile Menu එකටත් Quantum එකතු කළා -->
+        <a href="quantum.html" onclick="toggleSidebar()">Quantum</a>
         <a href="mysteries.html" onclick="toggleSidebar()">Mysteries</a>
         <a href="history.html" onclick="toggleSidebar()">History</a>
         
@@ -371,15 +371,15 @@
 
     <div class="container">
         
-        <!-- Heading Switcher -->
-        <h1 class="lang-en">Animals – The World of Wildlife</h1>
-        <h1 class="lang-si">සතුන් – වනජීවී ලෝකය</h1>
+        <h1>
+            <span class="lang-en">Animals – The World of Wildlife</span>
+            <span class="lang-si">සතුන් – වනජීවී ලෝකය</span>
+        </h1>
 
         <div class="img-container">
             <img class="animals-img" src="images/animals.jpeg" alt="Amazing Wildlife">
         </div>
 
-        <!-- Description Switcher -->
         <div class="wildlife-text">
             <div class="lang-en">
                 You have arrived here to explore the incredible world of animals. From the smallest creatures on Earth to the largest giants of the oceans, the animal kingdom is filled with diversity, beauty, and extraordinary adaptations. 
@@ -395,11 +395,11 @@
 
         <hr>
 
-        <!-- Details Prompt Switcher -->
-        <h2 class="lang-en">What are the details you are expecting?</h2>
-        <h2 class="lang-si">ඔබ අපේක්ෂා කරන තොරතුරු මොනවාද?</h2>
+        <h2>
+            <span class="lang-en">What are the details you are expecting?</span>
+            <span class="lang-si">ඔබ අපේක්ෂා කරන තොරතුරු මොනවාද?</span>
+        </h2>
         
-        <!-- Grid Links Switcher -->
         <ul class="animal-grid">
             <li>
                 <a href="dino.html" class="lang-en">Dinosaurs</a>
@@ -419,7 +419,7 @@
             </li>
             <li>
                 <a href="mammoth.html" class="lang-en">Woolly Mammoth</a>
-                <a href="mammoth.html" class="lang-si"> වූලි මැමත්</a>
+                <a href="mammoth.html" class="lang-si">වූලි මැමත්</a>
             </li>
         </ul>
 
@@ -433,7 +433,6 @@
             applyLanguage(savedLang);
         });
 
-        // 📱 Mobile Sidebar Open/Close Function
         function toggleSidebar() {
             const sidebar = document.getElementById('mobile-sidebar');
             const hamburger = document.getElementById('hamburger-menu');
@@ -441,12 +440,9 @@
             hamburger.classList.toggle('toggle');
         }
 
-        // 🔄 Apply Language
         function applyLanguage(lang) {
             const engElements = document.querySelectorAll('.lang-en');
             const sinElements = document.querySelectorAll('.lang-si');
-            
-            // Computer සහ Mobile Buttons දෙකම එක පාර active කරන්න querySelectorAll පාවිච්චි කලා
             const btnsEn = document.querySelectorAll('.btn-en');
             const btnsSi = document.querySelectorAll('.btn-si');
 
@@ -467,13 +463,11 @@
             }
         }
 
-        // 🖱️ Change Language
         function changeLanguage(lang) {
             localStorage.setItem('siteLang', lang); 
             applyLanguage(lang); 
         }
 
-        // 🔗 Share Function
         function shareCurrentPage() {
             if (navigator.share) {
                 navigator.share({
