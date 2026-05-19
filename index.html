@@ -3,7 +3,7 @@
 <head>
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#000000">
-    <link rel="apple-touch-icon" href="images/ITL.jpeg">
+    <link class="apple-touch-icon" href="images/ITL.jpeg">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -111,7 +111,7 @@
         @keyframes loadProgress { to { width: 100%; } }
         .fade-out { opacity: 0 !important; pointer-events: none; }
 
-        /* --- NEW NAVIGATION BAR --- */
+        /* --- NAVIGATION BAR --- */
         nav {
             background-color: #1a1a1a;
             padding: 12px 20px;
@@ -152,15 +152,48 @@
             transition: 0.3s;
         }
 
-        nav a.home-btn:hover {
-            color: #00d4ff;
+        /* PC එකේදී විතරක් පෙනෙන මැද ටැබ් ටික */
+        .nav-links-pc {
+            display: none; /* Phone වලදී හැංගෙනවා */
+            gap: 20px;
         }
 
-        /* --- SIDEBAR DRAWER --- */
+        .nav-links-pc a {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .nav-links-pc a:hover {
+            color: #ffffff;
+        }
+
+        /* PC එකේදී විතරක් පෙනෙන දකුණු පැත්තේ බොත්තම් */
+        .nav-right-pc {
+            display: none; /* Phone වලදී හැංගෙනවා */
+            gap: 10px;
+        }
+
+        .share-thoughts-btn, .help-grow-btn, .about-btn {
+            padding: 6px 15px;
+            font-size: 13px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .share-thoughts-btn { background: linear-gradient(45deg, #00ff88, #00ad5d); color: #000; cursor: pointer; }
+        .help-grow-btn { background: linear-gradient(45deg, #ffd700, #ffa500); color: #000; }
+        .about-btn { border: 2px solid #00d4ff; color: #00d4ff; }
+
+        /* --- SIDEBAR DRAWER (PHONE ONLY) --- */
         .sidebar {
             position: fixed;
             top: 0;
-            left: -280px; /* ආරම්භයේදී සැඟවී පවතී */
+            left: -280px;
             width: 280px;
             height: 100%;
             background-color: #111111;
@@ -172,28 +205,28 @@
             overflow-y: auto;
         }
 
-        .sidebar.open {
-            left: 0; /* මෙනුව විවෘත වූ විට */
+        .sidebar.open { left: 0; }
+
+        .sidebar-close { text-align: right; margin-bottom: 15px; }
+
+        .close-btn { background: none; border: none; color: #ff4a4a; font-size: 24px; cursor: pointer; }
+
+        /* Sidebar Title */
+        .sidebar-title {
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #ffffff;
+            text-align: center;
+            letter-spacing: 1.5px;
+            margin-bottom: 25px;
+            line-height: 1.3;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
         }
 
-        .sidebar-close {
-            text-align: right;
-            margin-bottom: 15px;
-        }
+        .sidebar-title span { color: #00d4ff; font-size: 14px; letter-spacing: 3px; font-weight: 500; }
 
-        .close-btn {
-            background: none;
-            border: none;
-            color: #ff4a4a;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        .sidebar-menu {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
+        .sidebar-menu { display: flex; flex-direction: column; gap: 10px; }
 
         .sidebar-menu a {
             color: #e0e0e0;
@@ -211,24 +244,15 @@
             padding-left: 20px;
         }
 
-        /* මෙනු වෙන් කරන ඉරි */
-        .sidebar-divider {
-            border: none;
-            border-top: 1px solid #333;
-            margin: 15px 0;
-        }
+        .sidebar-divider { border: none; border-top: 1px solid #333; margin: 15px 0; }
 
-        /* විශේෂ බොත්තම් සැකසුම් (Sidebar ඇතුළත) */
-        .sb-special-btn {
-            font-weight: bold !important;
-        }
+        .sb-special-btn { font-weight: bold !important; }
         .sb-facts { color: #ffd700 !important; }
         .sb-mcq { color: #00ff88 !important; }
         .sb-share { color: #00d4ff !important; cursor: pointer; }
         .sb-help { color: #ff8c00 !important; }
         .sb-about { color: #b0b0b0 !important; }
 
-        /* පිටුපස අඳුරු තිරය (Overlay) */
         .sidebar-overlay {
             position: fixed;
             top: 0;
@@ -242,9 +266,25 @@
             transition: opacity 0.4s ease;
         }
 
-        .sidebar-overlay.show {
-            display: block;
-            opacity: 1;
+        .sidebar-overlay.show { display: block; opacity: 1; }
+
+        /* --- 💻 COMPUTER RESPONSIVE STYLES (Screen size 768px වලට වඩා වැඩි නම්) --- */
+        @media (min-width: 768px) {
+            .menu-btn {
+                display: none; /* ඉරි තුනේ බොත්තම හැංගෙනවා */
+            }
+            .nav-links-pc {
+                display: flex; /* මැද ටැබ් ටික පෙනෙනවා */
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .nav-right-pc {
+                display: flex; /* දකුණු පැත්තේ බොත්තම් පෙනෙනවා */
+            }
+            .sidebar, .sidebar-overlay {
+                display: none !important; /* PC වලදී Sidebar එක සම්පූර්ණයෙන්ම අක්‍රිය වේ */
+            }
         }
 
         /* Content Styles */
@@ -338,25 +378,6 @@
         .discover-list a { color: white; text-decoration: none; font-weight: bold; font-size: 14px; }
         
         h2 { color: #00d4ff; font-size: 28px; margin-top: 30px; }
-        /* Sidebar Title Styling */
-.sidebar-title {
-    font-size: 20px;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #ffffff;
-    text-align: center;
-    letter-spacing: 1.5px;
-    margin-bottom: 25px;
-    line-height: 1.3;
-    text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
-}
-
-.sidebar-title span {
-    color: #00d4ff;
-    font-size: 14px;
-    letter-spacing: 3px;
-    font-weight: 500;
-}
     </style>
 </head>
 <body>
@@ -378,23 +399,40 @@
     <!-- Navigation Bar -->
     <nav>
         <div class="nav-left">
+            <!-- Phone වලදී විතරක් පෙනෙන Hamburger බොත්තම -->
             <button class="menu-btn" onclick="toggleSidebar()">☰</button>
             <a href="index.html" class="home-btn">Home</a>
         </div>
+
+        <!-- PC වලදී විතරක් පෙනෙන මැද ටැබ්ස් -->
+        <div class="nav-links-pc">
+            <a href="earth.html">Earth</a>
+            <a href="animals.html">Animals</a>
+            <a href="space.html">Space</a>
+            <a href="mysteries.html">Mysteries</a>
+            <a href="history.html">History</a>
+        </div>
+
+        <!-- PC වලදී විතරක් පෙනෙන දකුණු පැත්තේ බොත්තම් -->
+        <div class="nav-right-pc">
+            <a class="share-thoughts-btn" onclick="shareToFriends()">🔗 SHARE</a>
+            <a href="ad.html" class="help-grow-btn">❤️ Help</a>
+            <a href="aaaextradatapage.html" class="about-btn">About</a>
+        </div>
     </nav>
 
-    <!-- Sidebar Drawer (පැත්තෙන් එන මෙනුව) -->
+    <!-- Sidebar Drawer (PHONE වලදී විතරක් ක්‍රියාත්මක වේ) -->
     <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
     <div class="sidebar" id="sidebarMenu">
         <div class="sidebar-close">
             <button class="close-btn" onclick="toggleSidebar()">✕</button>
         </div>
-        <!-- මෙනුවේ ඉහළින්ම පෙනෙන ලස්සන Title එක -->
-<div class="sidebar-title">
-    Infinity Thinkers<br><span>Laboratory</span>
-</div>
+        
+        <div class="sidebar-title">
+            Infinity Thinkers<br><span>Laboratory</span>
+        </div>
+
         <div class="sidebar-menu">
-            <!-- පළමු කොටස: ප්‍රධාන පිටු -->
             <a href="index.html" onclick="toggleSidebar()">Home</a>
             <a href="earth.html">Earth</a>
             <a href="animals.html">Animals</a>
@@ -405,13 +443,11 @@
 
             <hr class="sidebar-divider">
 
-            <!-- දෙවන කොටස: Fun Facts & MCQ -->
             <a href="facts.html" class="sb-special-btn sb-facts">⚡ Fun Amazing Facts</a>
             <a href="mcq.html" class="sb-special-btn sb-mcq">📝 MCQ QUIZ QUIZ</a>
 
             <hr class="sidebar-divider">
 
-            <!-- තෙවන කොටස: Utilities -->
             <a class="sb-special-btn sb-share" onclick="shareToFriends(); toggleSidebar();">🔗 SHARE</a>
             <a href="ad.html" class="sb-special-btn sb-help">❤️ Help</a>
             <a href="aaaextradatapage.html" class="sb-special-btn sb-about">About</a>
@@ -473,7 +509,7 @@
             }, 2200); 
         });
 
-        // Sidebar Toggle Function (මෙනුව විවෘත කිරීමට සහ වැසීමට)
+        // Sidebar Toggle Function
         function toggleSidebar() {
             const sidebar = document.getElementById("sidebarMenu");
             const overlay = document.getElementById("sidebarOverlay");
