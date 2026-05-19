@@ -27,7 +27,6 @@
     </script>
 
     <style>
-        /* මූලික සැකසුම් - Responsive Fix */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #0b0b0b;
@@ -143,19 +142,12 @@
             align-items: center;
         }
 
-        nav a.home-btn {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 20px;
-            letter-spacing: 1px;
-            transition: 0.3s;
-        }
-
-        /* PC එකේදී විතරක් පෙනෙන මැද ටැබ් ටික */
+        /* PC Layout Links Container */
         .nav-links-pc {
-            display: none; /* Phone වලදී හැංගෙනවා */
+            display: none;
             gap: 20px;
+            flex-grow: 1;
+            justify-content: center;
         }
 
         .nav-links-pc a {
@@ -170,9 +162,8 @@
             color: #ffffff;
         }
 
-        /* PC එකේදී විතරක් පෙනෙන දකුණු පැත්තේ බොත්තම් */
         .nav-right-pc {
-            display: none; /* Phone වලදී හැංගෙනවා */
+            display: none;
             align-items: center;
             gap: 10px;
         }
@@ -197,7 +188,6 @@
             text-align: center;
         }
         
-        /* Google Translate එකේ සිම්පල් බොක්ස් එක ලස්සන කරන්න */
         .goog-te-gadget-simple {
             background-color: #222 !important;
             border: 1px solid #00d4ff !important;
@@ -212,7 +202,7 @@
             font-size: 14px !important;
             font-weight: bold !important;
         }
-        .goog-te-gadget-icon { display: none !important; } /* Google logo එක අයින් කරනවා */
+        .goog-te-gadget-icon { display: none !important; }
         .goog-te-banner-frame.skiptranslate { display: none !important; }
         body { top: 0px !important; }
 
@@ -233,12 +223,9 @@
         }
 
         .sidebar.open { left: 0; }
-
         .sidebar-close { text-align: right; margin-bottom: 15px; }
-
         .close-btn { background: none; border: none; color: #ff4a4a; font-size: 24px; cursor: pointer; }
 
-        /* Sidebar Title */
         .sidebar-title {
             font-size: 20px;
             font-weight: bold;
@@ -252,7 +239,6 @@
         }
 
         .sidebar-title span { color: #00d4ff; font-size: 14px; letter-spacing: 3px; font-weight: 500; }
-
         .sidebar-menu { display: flex; flex-direction: column; gap: 10px; }
 
         .sidebar-menu a {
@@ -272,7 +258,6 @@
         }
 
         .sidebar-divider { border: none; border-top: 1px solid #333; margin: 15px 0; }
-
         .sb-special-btn { font-weight: bold !important; }
         .sb-facts { color: #ffd700 !important; }
         .sb-mcq { color: #00ff88 !important; }
@@ -297,29 +282,13 @@
 
         /* --- 💻 COMPUTER RESPONSIVE STYLES --- */
         @media (min-width: 768px) {
-            .menu-btn {
-                display: none;
-            }
-            .nav-links-pc {
-                display: flex;
-                position: absolute;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            .nav-right-pc {
-                display: flex;
-            }
-            .sidebar, .sidebar-overlay {
-                display: none !important;
-            }
-            /* PC එකේදී Translate බොත්තම Nav Bar එක ඇතුලට ගන්නවා */
-            .translate-container {
-                display: inline-block;
-                margin: 0;
-            }
+            .menu-btn { display: none; }
+            .nav-links-pc { display: flex; }
+            .nav-right-pc { display: flex; }
+            .sidebar, .sidebar-overlay { display: none !important; }
+            .translate-container { margin: 0; }
         }
 
-        /* Content Styles */
         h1 {
             font-size: clamp(30px, 8vw, 60px);
             text-align: center;
@@ -428,7 +397,7 @@
         </div>
     </div>
 
-    <!-- HTML එකේ එකම එක තැනක විතරක් Translate Div එක තියනවා (PC එකේදී Nav Bar එකට CSS වලින් මාරු වෙනවා) -->
+    <!-- Google Translate Holder Template -->
     <template id="translate-template">
         <div id="google_translate_element" class="translate-container"></div>
     </template>
@@ -437,6 +406,7 @@
     <nav>
         <div class="nav-left">
             <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+            <a href="index.html" class="home-btn" style="color: #ffffff; text-decoration: none; font-weight: bold; font-size: 20px;">ITL</a>
         </div>
 
         <!-- PC Tabs -->
@@ -451,7 +421,6 @@
 
         <!-- PC Buttons -->
         <div class="nav-right-pc" id="nav-right-pc">
-            <!-- PC එකේදී Translate Widget එක මෙතනට ලෝඩ් වෙනවා -->
             <a class="share-thoughts-btn" onclick="shareToFriends()">🔗 SHARE</a>
             <a href="ad.html" class="help-grow-btn">❤️ Help</a>
             <a href="aaaextradatapage.html" class="about-btn">About</a>
@@ -469,7 +438,6 @@
             Infinity Thinkers<br><span>Laboratory</span>
         </div>
 
-        <!-- Phone එකේදී Translate Widget එක ලෝඩ් වෙන්න හදපු විශේෂ තැන -->
         <div id="sidebar-translate-wrapper"></div>
 
         <div class="sidebar-menu">
@@ -484,7 +452,7 @@
             <hr class="sidebar-divider">
 
             <a href="facts.html" class="sb-special-btn sb-facts">⚡ Fun Amazing Facts</a>
-            <a href="mcq.html" class="sb-special-btn sb-mcq">📝 MCQ QUIZ QUIZ</a>
+            <a href="mcq.html" class="sb-special-btn sb-mcq">📝 MCQ QUIZ</a>
 
             <hr class="sidebar-divider">
 
@@ -494,6 +462,7 @@
         </div>
     </div>
 
+    <!-- Background Music Area -->
     <audio id="myAudio" loop>
         <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
     </audio>
@@ -503,8 +472,6 @@
             <span id="music-icon">🔇</span>
         </div>
     </div>
-
-    <script src="music.js"></script>
 
     <h1>Infinity Thinkers Laboratory</h1>
 
@@ -540,22 +507,20 @@
         </ul>
     </div>
 
-    <!-- Google Translate Script (ප්‍රධාන භාෂා 10ක් පමණක් ඇතුලත් කර ඇත) -->
+    <!-- Scripts Configuration -->
     <script type="text/javascript">
-        // Screen එක අනුව Translate Div එක නිවැරදි තැනට දාන ක්‍රියාවලිය
-        const template = document.getElementById('translate-template').content.cloneNode(true);
+        // Inject Google Translate into correct position based on width
+        const translateTemplate = document.getElementById('translate-template').content.cloneNode(true);
         if (window.innerWidth >= 768) {
             const pcNav = document.getElementById('nav-right-pc');
-            pcNav.insertBefore(template, pcNav.firstChild);
+            pcNav.insertBefore(translateTemplate, pcNav.firstChild);
         } else {
-            document.getElementById('sidebar-translate-wrapper').appendChild(template);
+            document.getElementById('sidebar-translate-wrapper').appendChild(translateTemplate);
         }
 
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'en',
-                // මෙතනට ඔයා ඉල්ලපු ප්‍රධාන භාෂා 10 එකතු කළා:
-                // English, Sinhala, Tamil, Hindi, Spanish, French, German, Arabic, Japanese, Chinese
                 includedLanguages: 'en,si,ta,hi,es,fr,de,ar,ja,zh-CN', 
                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
                 autoDisplay: false
@@ -563,17 +528,18 @@
         }
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="music.js" defer></script>
 
     <script>
-        // Splash Screen
+        // Splash Screen Transition
         window.addEventListener("load", function() {
             setTimeout(() => {
                 const splash = document.getElementById("it-splash");
-                splash.classList.add("fade-out");
+                if(splash) splash.classList.add("fade-out");
             }, 2200); 
         });
 
-        // Sidebar Toggle Function
+        // Sidebar Navigation Handling
         function toggleSidebar() {
             const sidebar = document.getElementById("sidebarMenu");
             const overlay = document.getElementById("sidebarOverlay");
@@ -591,15 +557,20 @@
             }
         }
 
-        // Music
+        // Native Audio Controller
         function toggleMusic() {
             var audio = document.getElementById("myAudio");
             var icon = document.getElementById("music-icon");
-            if (audio.paused) { audio.play(); icon.innerHTML = "🔊"; }
-            else { audio.pause(); icon.innerHTML = "🔇"; }
+            if (audio.paused) { 
+                audio.play().catch(err => console.log("Audio interactions require user gesture first.")); 
+                icon.innerHTML = "🔊"; 
+            } else { 
+                audio.pause(); 
+                icon.innerHTML = "🔇"; 
+            }
         }
 
-        // Share
+        // Web Share Integration
         function shareToFriends() {
             if (navigator.share) {
                 navigator.share({ title: 'ITL', text: 'Check this out!', url: window.location.href });
@@ -608,7 +579,7 @@
             }
         }
 
-        // PWA
+        // Progressive Web App Setup
         let deferredPrompt;
         const installBtn = document.getElementById('installBtn');
         window.addEventListener('beforeinstallprompt', (e) => {
@@ -618,8 +589,10 @@
         });
         installBtn.addEventListener('click', () => {
             installBtn.style.display = 'none';
-            deferredPrompt.prompt();
-            deferredPrompt = null;
+            if(deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt = null;
+            }
         });
 
         if ('serviceWorker' in navigator) {
