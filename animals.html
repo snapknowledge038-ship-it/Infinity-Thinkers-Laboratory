@@ -28,7 +28,7 @@
         }
 
         /* --- 🌐 MULTI-LANGUAGE TOGGLE DISPLAY STYLES --- */
-        .lang-si {
+        .lang-si, nav a.lang-si, .sidebar a.lang-si {
             display: none;
         }
 
@@ -50,8 +50,9 @@
 
         .nav-left {
             display: flex;
-            gap: 25px;
+            gap: 22px;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         .nav-right {
@@ -102,7 +103,7 @@
 
         .share-btn {
             background: linear-gradient(45deg, #4ade80, #15803d);
-            color: #040d06 !important;
+            color: #ffffff !important;
             border: none;
             font-weight: bold;
         }
@@ -146,7 +147,7 @@
             display: flex;
             flex-direction: column;
             padding: 80px 30px 30px 30px;
-            gap: 20px;
+            gap: 15px;
             box-sizing: border-box;
             transition: right 0.4s cubic-bezier(0.25, 1, 0.5, 1);
             z-index: 999;
@@ -159,7 +160,9 @@
 
         .sidebar a {
             font-size: 18px;
-            padding: 10px 0;
+            padding: 8px 0;
+            text-decoration: none;
+            font-weight: 600;
             border-bottom: 1px solid rgba(74, 222, 128, 0.05);
         }
 
@@ -203,8 +206,14 @@
         }
 
         @keyframes textBreathe {
-            0%, 100% { text-shadow: 0 0 20px rgba(74, 222, 128, 0.2); }
-            50% { text-shadow: 0 0 35px rgba(74, 222, 128, 0.5); transform: scale(1.01); }
+            0%, 100% { 
+                text-shadow: 0 0 20px rgba(74, 222, 128, 0.3), 0 0 40px rgba(255, 255, 255, 0.1);
+                transform: scale(1);
+            }
+            50% { 
+                text-shadow: 0 0 35px rgba(74, 222, 128, 0.6), 0 0 50px rgba(255, 255, 255, 0.3);
+                transform: scale(1.02);
+            }
         }
 
         /* පින්තූරය */
@@ -217,13 +226,13 @@
             max-width: 90%;
             height: auto;
             border-radius: 16px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
-            border: 1px solid rgba(74, 222, 128, 0.1);
-            transition: transform 0.5s ease;
+            box-shadow: 0 15px 50px rgba(13, 26, 13, 0.7);
+            border: 1px solid rgba(74, 222, 128, 0.2);
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
         }
         
         .animals-img:hover {
-            transform: scale(1.01);
+            transform: scale(1.015);
         }
 
         /* අන්තර්ගතය */
@@ -235,14 +244,15 @@
 
         .wildlife-text {
             font-size: 18px;
+            color: #e2f0e5;
+            text-align: justify;
             background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(8px);
             padding: 35px;
             border-radius: 16px;
+            border: 1px solid rgba(74, 222, 128, 0.1);
             border-left: 4px solid #4ade80; 
-            border-right: none;
-            text-align: justify;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
         }
 
         h2 {
@@ -251,6 +261,7 @@
             margin-top: 60px;
             text-align: center;
             font-weight: 700;
+            letter-spacing: 0.5px;
         }
 
         /* ලිපි ලැයිස්තුව */
@@ -264,35 +275,35 @@
         }
 
         .animal-grid li {
-            background: rgba(13, 26, 13, 0.6);
-            backdrop-filter: blur(5px);
+            background: rgba(13, 26, 13, 0.5);
+            backdrop-filter: blur(6px);
             padding: 25px 20px;
             border-radius: 14px;
             text-align: center;
-            border: 1px solid rgba(74, 222, 128, 0.08);
+            border: 1px solid rgba(74, 222, 128, 0.1);
             transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
             cursor: pointer;
         }
 
         .animal-grid li:hover {
-            background: rgba(45, 90, 39, 0.3);
+            background: rgba(74, 222, 128, 0.15);
             transform: translateY(-8px) scale(1.02);
-            border-color: #4ade80;
-            box-shadow: 0 15px 35px rgba(74, 222, 128, 0.15);
+            border-color: #ffffff;
+            box-shadow: 0 15px 35px rgba(74, 222, 128, 0.25), 0 0 15px rgba(255, 255, 255, 0.1);
         }
 
         .animal-grid a {
             color: #e2f0e5;
             text-decoration: none;
             font-weight: 600;
-            font-size: 18px;
+            font-size: 17px;
             display: block;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .animal-grid li:hover a {
             color: #ffffff;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px #4ade80;
         }
 
         /* Lines & Separators */
@@ -320,10 +331,11 @@
             <a href="earth.html">Earth</a>
             <a href="animals.html">Animals</a>
             <a href="space.html">Space</a>
-            <!-- 🌟 Navigation Bar එකට ක්වොන්ටම් යාන්ත්‍ර විද්‍යාව එකතු කළා -->
-            <a href="quantum.html">Quantum</a>
             <a href="mysteries.html">Mysteries</a>
             <a href="history.html">History</a>
+            <!-- 🌌 Quantum Physics links added with language toggle classes -->
+            <a href="quantum.html" class="lang-en">Quantum Physics</a>
+            <a href="quantum.html" class="lang-si">ක්වොන්ටම් විද්‍යාව</a>
         </div>
         
         <div class="nav-right">
@@ -345,10 +357,11 @@
         <a href="earth.html" onclick="toggleSidebar()">Earth</a>
         <a href="animals.html" onclick="toggleSidebar()">Animals</a>
         <a href="space.html" onclick="toggleSidebar()">Space</a>
-        <!-- 🌟 Mobile Menu එකටත් Quantum එකතු කළා -->
-        <a href="quantum.html" onclick="toggleSidebar()">Quantum</a>
         <a href="mysteries.html" onclick="toggleSidebar()">Mysteries</a>
         <a href="history.html" onclick="toggleSidebar()">History</a>
+        <!-- 🌌 Mobile Menu Quantum Physics links -->
+        <a href="quantum.html" class="lang-en" onclick="toggleSidebar()">Quantum Physics</a>
+        <a href="quantum.html" class="lang-si" onclick="toggleSidebar()">ක්වොන්ටම් විද්‍යාව</a>
         
         <div class="sidebar-buttons">
             <button class="nav-btn btn-en" onclick="changeLanguage('en'); toggleSidebar();">English</button>
@@ -371,15 +384,15 @@
 
     <div class="container">
         
-        <h1>
-            <span class="lang-en">Animals – The World of Wildlife</span>
-            <span class="lang-si">සතුන් – වනජීවී ලෝකය</span>
-        </h1>
+        <!-- Heading Switcher -->
+        <h1 class="lang-en">Animals – The World of Wildlife</h1>
+        <h1 class="lang-si">සතුන් – වනජීවී ලෝකය</h1>
 
         <div class="img-container">
             <img class="animals-img" src="images/animals.jpeg" alt="Amazing Wildlife">
         </div>
 
+        <!-- Description Switcher -->
         <div class="wildlife-text">
             <div class="lang-en">
                 You have arrived here to explore the incredible world of animals. From the smallest creatures on Earth to the largest giants of the oceans, the animal kingdom is filled with diversity, beauty, and extraordinary adaptations. 
@@ -395,11 +408,11 @@
 
         <hr>
 
-        <h2>
-            <span class="lang-en">What are the details you are expecting?</span>
-            <span class="lang-si">ඔබ අපේක්ෂා කරන තොරතුරු මොනවාද?</span>
-        </h2>
+        <!-- Details Prompt Switcher -->
+        <h2 class="lang-en">What are the details you are expecting?</h2>
+        <h2 class="lang-si">ඔබ අපේක්ෂා කරන තොරතුරු මොනවාද?</h2>
         
+        <!-- Grid Links Switcher -->
         <ul class="animal-grid">
             <li>
                 <a href="dino.html" class="lang-en">Dinosaurs</a>
@@ -433,6 +446,7 @@
             applyLanguage(savedLang);
         });
 
+        // 📱 Mobile Sidebar Open/Close Function
         function toggleSidebar() {
             const sidebar = document.getElementById('mobile-sidebar');
             const hamburger = document.getElementById('hamburger-menu');
@@ -440,6 +454,7 @@
             hamburger.classList.toggle('toggle');
         }
 
+        // 🔄 Apply Language
         function applyLanguage(lang) {
             const engElements = document.querySelectorAll('.lang-en');
             const sinElements = document.querySelectorAll('.lang-si');
@@ -449,6 +464,9 @@
             if (lang === 'si') {
                 engElements.forEach(el => el.style.display = 'none');
                 sinElements.forEach(el => el.style.display = 'block');
+                
+                // Navbar, Sidebar and Grid links language alignment
+                document.querySelectorAll('nav a.lang-si, .sidebar a.lang-si').forEach(el => el.style.display = 'block');
                 document.querySelectorAll('.animal-grid li .lang-si').forEach(el => el.style.display = 'block');
                 
                 btnsSi.forEach(b => b.classList.add('active'));
@@ -456,6 +474,9 @@
             } else {
                 sinElements.forEach(el => el.style.display = 'none');
                 engElements.forEach(el => el.style.display = 'block');
+                
+                // Navbar, Sidebar and Grid links language alignment
+                document.querySelectorAll('nav a.lang-en, .sidebar a.lang-en').forEach(el => el.style.display = 'block');
                 document.querySelectorAll('.animal-grid li .lang-en').forEach(el => el.style.display = 'block');
                 
                 btnsEn.forEach(b => b.classList.add('active'));
@@ -463,11 +484,13 @@
             }
         }
 
+        // 🖱️ Change Language
         function changeLanguage(lang) {
             localStorage.setItem('siteLang', lang); 
             applyLanguage(lang); 
         }
 
+        // 🔗 Share Function
         function shareCurrentPage() {
             if (navigator.share) {
                 navigator.share({
