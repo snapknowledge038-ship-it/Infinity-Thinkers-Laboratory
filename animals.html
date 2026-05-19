@@ -2,19 +2,24 @@
 <html lang="en">
 <head>
     <meta name="description" content="Explore the incredible world of wildlife with ITL. From majestic predators to fascinating tiny creatures, discover amazing facts, habitats, and secrets of the animal kingdom.">
-
     <meta name="keywords" content="Wildlife Discovery, Animal Kingdom Facts, Endangered Species, Amazing Animal Behavior, Nature and Wildlife, Biodiversity Education, ITL Animals">
 
+    <!-- Meta Tags with Page Image -->
     <meta property="og:title" content="Animals – The World of Wildlife | ITL">
     <meta property="og:description" content="Discover the secrets of the animal kingdom with fascinating facts and stories.">
+    <meta property="og:image" content="https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/images/animals.jpeg">
+    <meta property="og:url" content="https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/animals.html">
+    <meta property="og:type" content="website">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animals - I T L</title>
+    
     <style>
         /* මූලික සැකසුම් (Modern Dark Green Theme) */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #040d06; /* තවත් පිරිසිදු තද නිල්-කොළ අඳුරු පසුබිමක් */
+            background-color: #040d06; 
             color: #e2f0e5;
             margin: 0;
             padding: 0;
@@ -22,23 +27,36 @@
             overflow-x: hidden;
         }
 
+        /* --- 🌐 MULTI-LANGUAGE TOGGLE DISPLAY STYLES --- */
+        .lang-si {
+            display: none;
+        }
+
         /* Navigation Bar */
         nav {
             background-color: rgba(10, 26, 13, 0.95);
-            backdrop-filter: blur(10px); /* Glassmorphism effect */
-            padding: 18px 0;
-            text-align: center;
+            backdrop-filter: blur(10px); 
+            padding: 18px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             border-bottom: 1px solid rgba(74, 222, 128, 0.15);
             position: sticky;
             top: 0;
             z-index: 1000;
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+            box-sizing: border-box;
+        }
+
+        .nav-left {
+            display: flex;
+            gap: 20px;
+            align-items: center;
         }
 
         nav a {
-            color: #9bf4bc; /* මෘදු ලා කොළ පැහැයක් */
+            color: #9bf4bc; 
             text-decoration: none;
-            margin: 0 20px;
             font-weight: 600;
             font-size: 16px;
             transition: all 0.4s ease;
@@ -50,7 +68,26 @@
             text-shadow: 0 0 15px rgba(74, 222, 128, 0.6);
         }
 
-        /* මාතෘකාව (Modern Glow & Breathe Animation) */
+        /* 🔗 SHARE BUTTON STYLE */
+        .share-btn {
+            background: linear-gradient(45deg, #4ade80, #15803d);
+            color: #040d06 !important;
+            padding: 6px 16px;
+            font-size: 13px;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .share-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(74, 222, 128, 0.4);
+            color: #040d06 !important;
+        }
+
+        /* මාතෘකාව */
         h1 {
             font-size: clamp(28px, 5vw, 50px);
             text-align: center;
@@ -99,7 +136,7 @@
             backdrop-filter: blur(5px);
             padding: 35px;
             border-radius: 16px;
-            border-left: 4px solid #4ade80; /* වම් පැත්තට මාරු කළා (Standard UI style) */
+            border-left: 4px solid #4ade80; 
             border-right: none;
             text-align: justify;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -113,7 +150,7 @@
             font-weight: 700;
         }
 
-        /* ලිපි ලැයිස්තුව (Modern Interactive Grid) */
+        /* ලිපි ලැයිස්තුව */
         .animal-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -173,52 +210,125 @@
 </head>
 <body>
 
+    <!-- Updated Navigation with Share Button -->
     <nav>
-        <a href="index.html">Home</a>
-        <a href="earth.html">Earth</a>
-        <a href="animals.html">Animals</a>
-        <a href="space.html">Space</a>
-        <a href="mysteries.html">Mysteries</a>
-        <a href="history.html">History</a>
+        <div class="nav-left">
+            <a href="index.html">Home</a>
+            <a href="earth.html">Earth</a>
+            <a href="animals.html">Animals</a>
+            <a href="space.html">Space</a>
+            <a href="mysteries.html">Mysteries</a>
+            <a href="history.html">History</a>
+        </div>
+        <div>
+            <a class="share-btn" onclick="shareCurrentPage()">🔗 SHARE</a>
+        </div>
     </nav>
-<audio id="myAudio" loop>
-    <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
-</audio>
 
-<div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
-    <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
-        <span id="music-icon">🔇</span>
+    <audio id="myAudio" loop>
+        <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
+    </audio>
+
+    <div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
+        <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
+            <span id="music-icon">🔇</span>
+        </div>
     </div>
-</div>
 
-<script src="music.js"></script>
+    <script src="music.js"></script>
+
     <div class="container">
-        <h1>Animals – The World of Wildlife</h1>
+        
+        <!-- Heading Switcher -->
+        <h1 class="lang-en">Animals – The World of Wildlife</h1>
+        <h1 class="lang-si">සතුන් – වනජීවී ලෝකය</h1>
 
         <div class="img-container">
             <img class="animals-img" src="images/animals.jpeg" alt="Amazing Wildlife">
         </div>
 
+        <!-- Description Switcher -->
         <div class="wildlife-text">
-            You have arrived here to explore the incredible world of animals. From the smallest creatures on Earth to the largest giants of the oceans, the animal kingdom is filled with diversity, beauty, and extraordinary adaptations. 
-            <br><br>
-            Here you will discover fascinating facts about wildlife, unique species, and the remarkable ways animals survive and interact with their environments. Through the articles and information below, you can learn more about the wonders of the animal world and deepen your understanding of the life that shares our planet.
+            <div class="lang-en">
+                You have arrived here to explore the incredible world of animals. From the smallest creatures on Earth to the largest giants of the oceans, the animal kingdom is filled with diversity, beauty, and extraordinary adaptations. 
+                <br><br>
+                Here you will discover fascinating facts about wildlife, unique species, and the remarkable ways animals survive and interact with their environments. Through the articles and information below, you can learn more about the wonders of the animal world and deepen your understanding of the life that shares our planet.
+            </div>
+            <div class="lang-si">
+                ඔබ මෙහි පැමිණ සිටින්නේ සතුන්ගේ ඇදහිය නොහැකි ලෝකය ගවේෂණය කිරීමටයි. පෘථිවියේ කුඩාම ජීවීන්ගේ සිට සාගරවල වෙසෙන දැවැන්තම යෝධයන් දක්වා, සත්ව රාජධානිය විවිධත්වයෙන්, සුන්දරත්වයෙන් සහ අසාමාන්‍ය අනුවර්තනයන්ගෙන් පිරී පවතී.
+                <br><br>
+                මෙහිදී ඔබ වනජීවීන් පිළිබඳ සිත් ඇදගන්නාසුළු කරුණු, අද්විතීය විශේෂ සහ සතුන් තම පරිසරය සමඟ ජීවත් වන සහ අන්තර් ක්‍රියා කරන කැපී පෙනෙන ආකාරය සොයා ගනු ඇත. පහත දැක්වෙන ලිපි සහ තොරතුරු මඟින්, ඔබට සත්ව ලෝකයේ අරුමපුදුම දේ ගැන වැඩිදුරක් ඉගෙන ගත හැකි අතර අපගේ පෘථිවිය බෙදා ගන්නා ජීවය පිළිබඳ ඔබේ අවබෝධය ගැඹුරු කර ගත හැකිය.
+            </div>
         </div>
 
         <hr>
 
-        <h2>What are the details you are expecting?</h2>
+        <!-- Details Prompt Switcher -->
+        <h2 class="lang-en">What are the details you are expecting?</h2>
+        <h2 class="lang-si">ඔබ අපේක්ෂා කරන තොරතුරු මොනවාද?</h2>
         
+        <!-- Grid Links Switcher -->
         <ul class="animal-grid">
-            <li><a href="dino.html">Dinosaurs</a></li>
-            <li><a href="megalodon.html">Megalodon</a></li>
-            <li><a href="titanoboa.html">Titanoboa</a></li>
-            <li><a href="Smilodon.html">Smilodon</a></li>
-            <li><a href="mammoth.html">Woolly Mammoth</a></li>
+            <li>
+                <a href="dino.html" class="lang-en">Dinosaurs</a>
+                <a href="dino.html" class="lang-si">දයිනසෝරයන්</a>
+            </li>
+            <li>
+                <a href="megalodon.html" class="lang-en">Megalodon</a>
+                <a href="megalodon.html" class="lang-si">මෙගලඩොන්</a>
+            </li>
+            <li>
+                <a href="titanoboa.html" class="lang-en">Titanoboa</a>
+                <a href="titanoboa.html" class="lang-si">ටයිටනොබෝවා</a>
+            </li>
+            <li>
+                <a href="Smilodon.html" class="lang-en">Smilodon</a>
+                <a href="Smilodon.html" class="lang-si">ස්මිලඩොන්</a>
+            </li>
+            <li>
+                <a href="mammoth.html" class="lang-en">Woolly Mammoth</a>
+                <a href="mammoth.html" class="lang-si"> වූලි මැමත්</a>
+            </li>
         </ul>
 
         <div class="dotted-hr"></div>
     </div>
 
+    <!-- 🌐 AUTOMATIC LANGUAGE LOADER & SHARE SCRIPT -->
+    <script type="text/javascript">
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('siteLang') || 'en';
+            const engElements = document.querySelectorAll('.lang-en');
+            const sinElements = document.querySelectorAll('.lang-si');
+
+            if (savedLang === 'si') {
+                engElements.forEach(el => el.style.display = 'none');
+                sinElements.forEach(el => el.style.display = 'block');
+                document.querySelectorAll('.animal-grid li .lang-si').forEach(el => el.style.display = 'block');
+            } else {
+                sinElements.forEach(el => el.style.display = 'none');
+                engElements.forEach(el => el.style.display = 'block');
+                document.querySelectorAll('.animal-grid li .lang-en').forEach(el => el.style.display = 'block');
+            }
+        });
+
+        // 🔗 Dynamic Share Function
+        function shareCurrentPage() {
+            if (navigator.share) {
+                navigator.share({
+                    title: document.title,
+                    text: 'Check out this amazing page on ITL!',
+                    url: window.location.href // මේකෙන් දැනට ඉන්න පිටුවේම ලින්ක් එක ශෙයා වෙනවා
+                }).catch(err => console.log("Share cancelled or failed", err));
+            } else {
+                // Web Share API වැඩ නොකරන බ්‍රවුසර් සඳහා ලින්ක් එක කොපි කර පෙන්වීම
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    alert("Link copied to clipboard: " + window.location.href);
+                }).catch(() => {
+                    alert("Copy this link: " + window.location.href);
+                });
+            }
+        }
+    </script>
 </body>
 </html>
