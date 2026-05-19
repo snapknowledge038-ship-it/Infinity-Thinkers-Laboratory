@@ -3,14 +3,18 @@
 <head>
     <meta name="description" content="Uncover the world's greatest secrets with ITL. From ancient enigmas to unsolved scientific puzzles, join us as we explore the unknown and dive deep into mysteries.">
     <meta name="keywords" content="Unsolved Mysteries, Ancient Secrets, Supernatural, Historical Enigmas, Unknown Facts, ITL Mysteries, Paranormal Discoveries">
-
     <meta property="og:title" content="Mysteries – Exploring the Unknown | ITL">
     <meta property="og:description" content="Dive into the world's most fascinating unsolved mysteries and secrets.">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mysteries - I T L</title>
     <style>
-        /* මූලික සැකසුම් (Horror Theme) */
+        /* --- 🌐 LANGUAGE TOGGLE LOGIC --- */
+        body.lang-si .lang-en { display: none !important; }
+        body.lang-si .lang-si { display: block !important; }
+        body:not(.lang-si) .lang-si { display: none !important; }
+        
+        /* මූලික සැකසුම් */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #050505; 
@@ -19,11 +23,8 @@
             padding: 0;
             line-height: 1.7;
             overflow-x: hidden;
-        }
-
-        /* --- 🌐 MULTI-LANGUAGE TOGGLE DISPLAY STYLES --- */
-        .lang-si {
-            display: none;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
         }
 
         /* 🖥️ NAVIGATION BAR */
@@ -37,576 +38,104 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.8);
-            box-sizing: border-box;
         }
 
-        .nav-left {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
+        .nav-left { display: flex; gap: 20px; align-items: center; }
+        .nav-right { display: flex; gap: 12px; align-items: center; }
 
-        .nav-right {
-            display: flex;
-            gap: 12px;
-            align-items: center;
-        }
+        nav a { color: #888; text-decoration: none; font-weight: bold; font-size: 16px; transition: 0.3s; text-transform: uppercase; }
+        nav a:hover { color: #ffffff; text-shadow: 0 0 10px #bbb; }
 
-        nav a {
-            color: #888;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 16px;
-            transition: 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+        .nav-btn { background: rgba(255, 255, 255, 0.02); color: #888; border: 1px solid #333; padding: 6px 14px; cursor: pointer; border-radius: 4px; transition: 0.3s; }
+        .nav-btn.active { background: #fff; color: #000; font-weight: bold; }
 
-        nav a:hover {
-            color: #ffffff;
-            text-shadow: 0 0 10px #bbb, 0 0 20px #555;
-        }
-
-        /* 🌐 LANGUAGE BUTTONS (Horror Dark Style) */
-        .nav-btn {
-            background: rgba(255, 255, 255, 0.02);
-            color: #888;
-            border: 1px solid #333;
-            padding: 6px 14px;
-            font-size: 13px;
-            font-weight: 600;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .nav-btn:hover {
-            background: #222;
-            border-color: #888;
-            color: #fff;
-        }
-
-        .nav-btn.active {
-            background: #fff;
-            color: #000;
-            border-color: #fff;
-            font-weight: bold;
-        }
-
-        /* 🔗 SHARE BUTTON HOVER */
-        #share-control:hover {
-            color: #fff !important;
-            border-color: #888 !important;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-        }
-
-        /* 📱 HAMBURGER & SIDEBAR FOR MOBILE */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 5px;
-            z-index: 1001;
-        }
-
-        .hamburger span {
-            display: block;
-            width: 28px;
-            height: 3px;
-            background-color: #888;
-            border-radius: 2px;
-            transition: all 0.3s ease;
-        }
-
-        .sidebar {
-            position: fixed;
-            top: 0;
-            right: -280px; 
-            width: 280px;
-            height: 100vh;
-            background-color: #0a0a0a;
-            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.9);
-            display: flex;
-            flex-direction: column;
-            padding: 80px 30px 30px 30px;
-            gap: 20px;
-            box-sizing: border-box;
-            transition: right 0.4s ease;
-            z-index: 999;
-            border-left: 1px solid #222;
-        }
-
-        .sidebar.open {
-            right: 0; 
-        }
-
-        .sidebar a {
-            font-size: 18px;
-            padding: 10px 0;
-            border-bottom: 1px solid #1c1c1c;
-        }
-
-        .sidebar-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-top: 20px;
-        }
+        /* Mobile Sidebar */
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; }
+        .hamburger span { display: block; width: 28px; height: 3px; background-color: #888; }
+        
+        .sidebar { position: fixed; top: 0; right: -280px; width: 280px; height: 100vh; background-color: #0a0a0a; padding: 80px 30px; transition: 0.4s; z-index: 999; border-left: 1px solid #222; }
+        .sidebar.open { right: 0; }
+        .sidebar a { display: block; padding: 10px 0; color: #fff; text-decoration: none; }
 
         @media (max-width: 950px) {
-            .nav-left, .nav-right {
-                display: none; 
-            }
-            .hamburger {
-                display: flex; 
-            }
-            
-            .hamburger.toggle span:nth-child(1) {
-                transform: rotate(45deg) translate(6px, 5px);
-            }
-            .hamburger.toggle span:nth-child(2) {
-                opacity: 0;
-            }
-            .hamburger.toggle span:nth-child(3) {
-                transform: rotate(-45deg) translate(6px, -5px);
-            }
+            .nav-left, .nav-right { display: none; }
+            .hamburger { display: flex; }
         }
 
-        /* මාතෘකාව (Horror Ghost Animation & Gray Glow) */
-        h1 {
-            font-size: clamp(30px, 6vw, 55px);
-            text-align: center;
-            color: #eee;
-            text-transform: uppercase;
-            margin-top: 40px;
-            letter-spacing: 4px;
-            animation: ghostFlicker 4s infinite linear; 
-        }
-
-        @keyframes ghostFlicker {
-            0%, 100% { 
-                text-shadow: 0 0 8px rgba(170, 170, 170, 0.6), 0 0 20px rgba(100, 100, 100, 0.4);
-                opacity: 1;
-            }
-            50% { 
-                text-shadow: 0 0 15px rgba(238, 238, 238, 0.8), 0 0 30px rgba(136, 136, 136, 0.6);
-                opacity: 0.9;
-                transform: skewX(-1deg);
-            }
-            52% { opacity: 0.3; } 
-            54% { opacity: 0.9; }
-        }
-
-        /* අභිරහස් පින්තූරය */
-        .img-container {
-            text-align: center;
-            margin: 30px 0;
-        }
-
-        .mysteries-img {
-            max-width: 85%;
-            height: auto;
-            border-radius: 5px;
-            filter: grayscale(85%) contrast(120%) brightness(75%); 
-            box-shadow: 0 0 40px rgba(100, 100, 100, 0.3);
-            border: 1px solid #333;
-        }
-
-        /* ප්‍රධාන විස්තරය */
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .mystery-box {
-            font-size: 19px;
-            background: linear-gradient(145deg, #0d0d0d, #141414);
-            padding: 35px;
-            border-radius: 10px;
-            text-align: justify;
-            border: 1px solid #252525; 
-            box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.02);
-        }
-
-        h2 {
-            color: #aaa;
-            font-size: 30px;
-            margin-top: 50px;
-            text-align: center;
-            text-shadow: 0 0 8px rgba(136, 136, 136, 0.3);
-        }
-
-        /* කාණ්ඩවල උප මාතෘකා (Creepy Floating Animation) */
-        h3 {
-            color: #ccc;
-            font-size: 22px;
-            margin-top: 40px;
-            margin-bottom: 15px;
-            border-left: 4px solid #666;
-            padding-left: 15px;
-            letter-spacing: 1px;
-            animation: spookyFloat 3s infinite ease-in-out;
-        }
-
-        @keyframes spookyFloat {
-            0%, 100% { 
-                transform: translateY(0);
-                text-shadow: 0 0 5px rgba(136, 136, 136, 0.4);
-            }
-            50% { 
-                transform: translateY(-3px); 
-                text-shadow: 0 0 12px rgba(200, 200, 200, 0.7);
-                color: #fff;
-            }
-        }
-
-        /* අභිරහස් ලැයිස්තුව (Grid) */
-        .mystery-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            padding: 0;
-            list-style: none;
-            margin-top: 15px;
-            margin-bottom: 30px;
-        }
-
-        .mystery-list li {
-            background: #0f0f0f;
-            padding: 15px;
-            border-radius: 4px;
-            text-align: center;
-            border: 1px solid #222;
-            transition: 0.4s ease;
-        }
-
-        .mystery-list li:hover {
-            background: #222; 
-            border-color: #888;
-            transform: scale(1.02);
-            box-shadow: 0 0 15px rgba(136, 136, 136, 0.4);
-        }
-
-        .mystery-list a {
-            color: #999;
-            text-decoration: none;
-            font-weight: 500;
-            display: block;
-            transition: 0.3s;
-        }
-
-        .mystery-list li:hover a {
-            color: #fff;
-            text-shadow: 0 0 5px #000;
-        }
-
-        hr {
-            border: 0;
-            height: 1px;
-            background: linear-gradient(to right, transparent, #444, transparent);
-            margin: 50px 0;
-        }
-
-        .dotted-hr {
-            border-top: 3px dotted #333;
-            margin-bottom: 50px;
-        }
+        /* මාතෘකාව සහ අන්තර්ගතය */
+        h1 { text-align: center; color: #eee; text-transform: uppercase; margin-top: 40px; }
+        .mysteries-img { max-width: 85%; height: auto; border-radius: 5px; filter: grayscale(85%) contrast(120%); display: block; margin: 0 auto; }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        .mystery-box { background: #0d0d0d; padding: 35px; border-radius: 10px; border: 1px solid #252525; }
+        
+        h3 { color: #ccc; border-left: 4px solid #666; padding-left: 15px; margin-top: 40px; }
+        .mystery-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; list-style: none; padding: 0; }
+        .mystery-list li { background: #0f0f0f; padding: 15px; border: 1px solid #222; transition: 0.3s; }
+        .mystery-list li:hover { background: #222; transform: scale(1.02); }
+        .mystery-list a { color: #999; text-decoration: none; display: block; }
     </style>
 </head>
 <body>
 
-    <!-- 🖥️ Computer Navigation Bar -->
+    <!-- භාෂා සැකසුම මුලින්ම ලෝඩ් කිරීමට -->
+    <script>
+        const savedLang = localStorage.getItem('siteLang') || 'en';
+        document.body.classList.add(savedLang === 'si' ? 'lang-si' : 'lang-en');
+    </script>
+
     <nav>
         <div class="nav-left">
             <a href="index.html">Home</a>
-            <a href="earth.html">Earth</a>
-            <a href="animals.html">Animals</a>
-            <a href="space.html">Space</a>
-            <a href="quantum.html">Quantum</a>
             <a href="mysteries.html">Mysteries</a>
-            <a href="history.html">History</a>
         </div>
-        
         <div class="nav-right">
             <button class="nav-btn btn-en" onclick="changeLanguage('en')">English</button>
             <button class="nav-btn btn-si" onclick="changeLanguage('si')">සිංහල</button>
         </div>
-
         <button class="hamburger" id="hamburger-menu" onclick="toggleSidebar()">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span></span><span></span><span></span>
         </button>
     </nav>
 
-    <!-- 📱 Mobile Sidebar Slide-out -->
     <div class="sidebar" id="mobile-sidebar">
-        <a href="index.html" onclick="toggleSidebar()">Home</a>
-        <a href="earth.html" onclick="toggleSidebar()">Earth</a>
-        <a href="animals.html" onclick="toggleSidebar()">Animals</a>
-        <a href="space.html" onclick="toggleSidebar()">Space</a>
-        <a href="quantum.html" onclick="toggleSidebar()">Quantum</a>
-        <a href="mysteries.html" onclick="toggleSidebar()">Mysteries</a>
-        <a href="history.html" onclick="toggleSidebar()">History</a>
-        
-        <div class="sidebar-buttons">
-            <button class="nav-btn btn-en" onclick="changeLanguage('en'); toggleSidebar();">English</button>
-            <button class="nav-btn btn-si" onclick="changeLanguage('si'); toggleSidebar();">සිංහල</button>
-        </div>
+        <a href="index.html">Home</a>
+        <a href="mysteries.html">Mysteries</a>
+        <button class="nav-btn" onclick="changeLanguage('en')">English</button>
+        <button class="nav-btn" onclick="changeLanguage('si')">සිංහල</button>
     </div>
-
-    <!-- Audio File -->
-    <audio id="myAudio" loop>
-        <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
-    </audio>
-
-    <!-- Controls (Share & Music) -->
-    <div style="display: flex; justify-content: flex-end; align-items: center; padding: 5px 15px; gap: 20px;">
-        <!-- 🔗 Share Button -->
-        <div id="share-control" onclick="sharePage()" style="cursor: pointer; font-size: 16px; user-select: none; color: #888; border: 1px solid #222; padding: 4px 10px; border-radius: 4px; background: #0a0a0a; transition: 0.3s;">
-            <span class="lang-en">🔗 Share Page</span>
-            <span class="lang-si">🔗 පිටුව බෙදාගන්න</span>
-        </div>
-
-        <!-- Music Icon -->
-        <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px; user-select: none;">
-            <span id="music-icon">🔇</span>
-        </div>
-    </div>
-
-    <script src="music.js"></script>
 
     <div class="container">
-        <!-- 🌐 Title Toggle -->
         <h1>
             <span class="lang-en">Mysteries – Exploring the Unknown</span>
             <span class="lang-si">අභිරහස් – නොදන්නා ලෝකය ගවේෂණය</span>
         </h1>
 
-        <div class="img-container">
-            <img class="mysteries-img" src="images/mysteries.jpeg" alt="World Mysteries">
-        </div>
-
-        <!-- 🌐 Description Toggle -->
         <div class="mystery-box">
-            <div class="lang-en">
-                You have arrived here to explore the mysteries of the world—phenomena that have not yet been fully explained. From strange events in history and unexplored places to questions that even scientists have not completely answered, you will encounter them all here. 
-                <br><br>
-                Through the articles and information below, you can dive deeper into this fascinating world of mysteries and expand your understanding of the unknown. We hope that what you discover here will inspire you to think about new ideas, broaden your knowledge of the world, and encourage your curiosity to keep exploring.
-            </div>
-            <div class="lang-si">
-                ඔබ මෙහි පැමිණ සිටින්නේ ලෝකයේ නොවිසඳුණු අභිරහස්—තවමත් සම්පූර්ණයෙන් පැහැදිලි කර නොමැති සංසිද්ධීන් ගවේෂණය කිරීමටයි. ඉතිහාසයේ අමුතු සිදුවීම් සහ ගවේෂණය නොකළ ස්ථානවල සිට විද්‍යාඥයින්ට පවා සම්පූර්ණයෙන් පිළිතුරු දීමට නොහැකි වූ ප්‍රශ්න දක්වා සියල්ල ඔබට මෙහිදී හමුවනු ඇත.
-                <br><br>
-                පහත දැක්වෙන ලිපි සහ තොරතුරු හරහා ඔබට මෙම සිත් ඇදගන්නාසුළු අභිරහස් ලෝකයට ගැඹුරට කිමිදිය හැකි අතර නොදන්නා දේ පිළිබඳ ඔබේ අවබෝධය පුළුල් කරගත හැකිය. මෙහිදී ඔබ සොයා ගන්නා දේ නව අදහස් ගැන සිතීමටත්, ලෝකය පිළිබඳ ඔබේ දැනුම පුළුල් කිරීමටත්, දිගින් දිගටම ගවේෂණය කිරීමට ඔබේ කුතුහලය දල්වන්නටත් හේතු වනු ඇතැයි අපි බලාපොරොත්තු වෙමු.
-            </div>
+            <div class="lang-en">Welcome to the world of mysteries...</div>
+            <div class="lang-si">අභිරහස් ලෝකයට සාදරයෙන් පිළිගනිමු...</div>
         </div>
-
-        <hr>
-
-        <h2>
-            <span class="lang-en">What are the details you are expecting?</span>
-            <span class="lang-si">ඔබ අපේක්ෂා කරන තොරතුරු මොනවාද?</span>
-        </h2>
-         
-        <!-- Category 1: Mythology & Folklore -->
+        
         <h3>
-            <span class="lang-en">Ancient Mythology & Folklore</span>
-            <span class="lang-si">පැරණි මිථ්‍යා කථා සහ ජනප්‍රවාද</span>
+            <span class="lang-en">Ancient Mythology</span>
+            <span class="lang-si">පැරණි මිථ්‍යා කථා</span>
         </h3>
         <ul class="mystery-list">
-            <li>
-                <a href="grim reaper.html" class="lang-en">Grim Reaper</a>
-                <a href="grim reaper.html" class="lang-si">ග්‍රිම් රීපර් (මරණයේ දූතයා)</a>
-            </li>
-            <li>
-                <a href="excalibur.html" class="lang-en">Excalibur</a>
-                <a href="excalibur.html" class="lang-si">එක්ස්කැලිබර් කඩුව</a>
-            </li>
             <li>
                 <a href="dracula.html" class="lang-en">Dracula</a>
                 <a href="dracula.html" class="lang-si">ඩ්‍රැකියුලා</a>
             </li>
-            <li>
-                <a href="medusa.html" class="lang-en">Medusa</a>
-                <a href="medusa.html" class="lang-si">මෙඩූසා</a>
-            </li>
-            <li>
-                <a href="Banshee.html" class="lang-en">Banshee</a>
-                <a href="Banshee.html" class="lang-si">බන්ෂි (මරණ විලාපය)</a>
-            </li>
-            <li>
-                <a href="The Sirens.html" class="lang-en">The Sirens</a>
-                <a href="The Sirens.html" class="lang-si">සයිරන්වරියන්</a>
-            </li>
-            <li>
-                <a href="bloody-mary.html" class="lang-en">Bloody Mary</a>
-                <a href="bloody-mary.html" class="lang-si">බ්ලඩී මේරි</a>
-            </li>
-            <li>
-                <a href="Minotaur.html" class="lang-en">The Minotaur & The Labyrinth</a>
-                <a href="Minotaur.html" class="lang-si">මිනොටෝර් සහ වංකගිරිය</a>
-            </li>
-            <li>
-                <a href="headless-horseman.html" class="lang-en">Headless Horseman</a>
-                <a href="headless-horseman.html" class="lang-si">හිසක් නැති අශ්වාරෝහකයා</a>
-            </li>
-            <li>
-                <a href="anubis.html" class="lang-en">Anubis</a>
-                <a href="anubis.html" class="lang-si">අනූබිස්</a>
-            </li>
         </ul>
-
-        <!-- Category 2: Cryptids & Mythical Creatures -->
-        <h3>
-            <span class="lang-en">Cryptids & Mythical Creatures</span>
-            <span class="lang-si">අභිරහස් සහ මිථ්‍යා සත්වයන්</span>
-        </h3>
-        <ul class="mystery-list">
-            <li>
-                <a href="phoenix.html" class="lang-en">Phoenix</a>
-                <a href="phoenix.html" class="lang-si">ෆීනික්ස් පක්ෂියා</a>
-            </li>
-            <li>
-                <a href="hydra.html" class="lang-en">Hydra</a>
-                <a href="hydra.html" class="lang-si">හයිඩ්‍රා</a>
-            </li>
-            <li>
-                <a href="cerberus.html" class="lang-en">Cerberus</a>
-                <a href="cerberus.html" class="lang-si">සර්බරස්</a>
-            </li>
-            <li>
-                <a href="kraken.html" class="lang-en">Kraken</a>
-                <a href="kraken.html" class="lang-si">ක්‍රැකන් මුහුදු රක්ෂසා</a>
-            </li>
-            <li>
-                <a href="chupacabra_creature.html" class="lang-en">Chupacabra</a>
-                <a href="chupacabra_creature.html" class="lang-si">චුපකැබ්‍රා</a>
-            </li>
-            <li>
-                <a href="wendigo.html" class="lang-en">The Wendigo</a>
-                <a href="wendigo.html" class="lang-si">වෙන්ඩිගෝ</a>
-            </li>
-            <li>
-                <a href="mothman.html" class="lang-en">Mothman</a>
-                <a href="mothman.html" class="lang-si">මොත්මෑන්</a>
-            </li>
-        </ul>
-
-        <!-- Category 3: Unsolved Real-World Mysteries -->
-        <h3>
-            <span class="lang-en">Unsolved Real-World Mysteries</span>
-            <span class="lang-si">ලෝකයේ නොවිසඳුණු සැබෑ අභිරහස්</span>
-        </h3>
-        <ul class="mystery-list">
-            <li>
-                <a href="Jack the Ripper.html" class="lang-en">Jack the Ripper</a>
-                <a href="Jack the Ripper.html" class="lang-si">ජැක් ද රිපර්</a>
-            </li>
-            <li>
-                <a href="aliens.html" class="lang-en">Aliens</a>
-                <a href="aliens.html" class="lang-si">පිටසක්වල ජීවීන්</a>
-            </li>
-            <li>
-                <a href="voynich.html" class="lang-en">The Voynich Manuscript</a>
-                <a href="voynich.html" class="lang-si">වොයිනිච් අත්පිටපත</a>
-            </li>
-            <li>
-                <a href="crying_boy.html" class="lang-en">The Crying Boy</a>
-                <a href="crying_boy.html" class="lang-si">හඬන පිරිමි ළමයාගේ චිත්‍රය</a>
-            </li>
-            <li>
-                <a href="mary_celeste_ship.html" class="lang-en">The Mary Celeste</a>
-                <a href="mary_celeste_ship.html" class="lang-si">මේරි සෙලෙස්ට් නැව</a>
-            </li>
-            <li>
-                <a href="atlantis_city.html" class="lang-en">Atlantis</a>
-                <a href="atlantis_city.html" class="lang-si">ඇට්ලන්ටිස් පුරාවෘත්තය</a>
-            </li>
-            <li>
-                <a href="hope_diamond.html" class="lang-en">The Hope Diamond</a>
-                <a href="hope_diamond.html" class="lang-si">හෝප් දියමන්තිය</a>
-            </li>
-            <li>
-                <a href="Zodiac.html" class="lang-en">The Zodiac Killer</a>
-                <a href="Zodiac.html" class="lang-si">සෝඩියැක් මිනීමරුවා</a>
-            </li>
-            <li>
-                <a href="el-dorado.html" class="lang-en">El Dorado</a>
-                <a href="el-dorado.html" class="lang-si">එල් ඩොරාඩෝ (රන් නගරය)</a>
-            </li>
-        </ul>
-
-        <div class="dotted-hr"></div>
     </div>
 
-    <!-- 🌐 MULTI-LANGUAGE, SIDEBAR & SHARE SCRIPT -->
-    <script type="text/javascript">
-        window.addEventListener('DOMContentLoaded', () => {
-            const savedLang = localStorage.getItem('siteLang') || 'en';
-            applyLanguage(savedLang);
-        });
-
+    <script>
         function toggleSidebar() {
-            const sidebar = document.getElementById('mobile-sidebar');
-            const hamburger = document.getElementById('hamburger-menu');
-            sidebar.classList.toggle('open');
-            hamburger.classList.toggle('toggle');
-        }
-
-        function applyLanguage(lang) {
-            const engElements = document.querySelectorAll('.lang-en');
-            const sinElements = document.querySelectorAll('.lang-si');
-            const btnsEn = document.querySelectorAll('.btn-en');
-            const btnsSi = document.querySelectorAll('.btn-si');
-
-            if (lang === 'si') {
-                engElements.forEach(el => el.style.display = 'none');
-                sinElements.forEach(el => el.style.display = 'block');
-                
-                btnsSi.forEach(b => b.classList.add('active'));
-                btnsEn.forEach(b => b.classList.remove('active'));
-            } else {
-                sinElements.forEach(el => el.style.display = 'none');
-                engElements.forEach(el => el.style.display = 'block');
-                
-                btnsEn.forEach(b => b.classList.add('active'));
-                btnsSi.forEach(b => b.classList.remove('active'));
-            }
+            document.getElementById('mobile-sidebar').classList.toggle('open');
         }
 
         function changeLanguage(lang) {
-            localStorage.setItem('siteLang', lang); 
-            applyLanguage(lang); 
-        }
-
-        async function sharePage() {
-            const pageTitle = document.title;
-            const pageUrl = window.location.href;
-            const currentLang = localStorage.getItem('siteLang') || 'en';
-
-            if (navigator.share) {
-                try {
-                    await navigator.share({
-                        title: pageTitle,
-                        text: currentLang === 'si' ? 'ITL වෙතින් මෙම අපූරු අභිරහස් පිටුව කියවන්න!' : 'Check out this amazing mysteries page from ITL!',
-                        url: pageUrl
-                    });
-                } catch (err) {
-                    console.log('Share canceled or failed', err);
-                }
-            } else {
-                navigator.clipboard.writeText(pageUrl).then(() => {
-                    const alertMsg = currentLang === 'si' ? '🔗 ලින්ක් එක සාර්ථකව කොපි කරගත්තා! දැන් ඔබට එය ඕනෑම තැනක බෙදාගත හැක.' : '🔗 Link copied to clipboard! You can now paste and share it.';
-                    alert(alertMsg);
-                }).catch(err => {
-                    console.error('Could not copy text: ', err);
-                });
-            }
+            localStorage.setItem('siteLang', lang);
+            document.body.className = ''; 
+            document.body.classList.add(lang === 'si' ? 'lang-si' : 'lang-en');
         }
     </script>
 </body>
