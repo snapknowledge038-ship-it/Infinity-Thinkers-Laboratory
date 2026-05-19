@@ -261,8 +261,9 @@
             gap: 10px;
         }
 
-        .discover-list li { background: #222; padding: 8px 20px; border-radius: 50px; border: 1px solid #444; }
-        .discover-list a { color: white; text-decoration: none; font-weight: bold; font-size: 14px; }
+        .discover-list a { text-decoration: none; display: block; }
+        .discover-list li { background: #222; padding: 8px 20px; border-radius: 50px; border: 1px solid #444; color: white; font-weight: bold; font-size: 14px; transition: 0.3s; }
+        .discover-list a:hover li { background: #333; border-color: #00d4ff; }
         
         h2 { color: #00d4ff; font-size: 28px; margin-top: 30px; }
     </style>
@@ -303,7 +304,7 @@
     </audio>
 
     <div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
-        <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
+        <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px; user-select: none;">
             <span id="music-icon">🔇</span>
         </div>
     </div>
@@ -335,30 +336,25 @@
 
         <h2>Discover More</h2>
         <ul class="discover-list"> 
-            <li><a href="earth.html">Earth</a></li>
-            <li><a href="animals.html">Animals</a></li>
-            <li><a href="space.html">Space</a></li>
-            <li><a href="mysteries.html">Mysteries</a></li>
-            <li><a href="history.html">History</a></li>
+            <a href="earth.html"><li>Earth</li></a>
+            <a href="animals.html"><li>Animals</li></a>
+            <a href="space.html"><li>Space</li></a>
+            <a href="mysteries.html"><li>Mysteries</li></a>
+            <a href="history.html"><li>History</li></a>
         </ul>
     </div>
 
     <script>
-        // Splash Screen
+        // Splash Screen - Fade out and Display block hidden completely
         window.addEventListener("load", function() {
             setTimeout(() => {
                 const splash = document.getElementById("it-splash");
                 splash.classList.add("fade-out");
+                setTimeout(() => {
+                    splash.style.display = "none";
+                }, 600); // Wait for opacity transition to finish
             }, 2200); 
         });
-
-        // Music
-        function toggleMusic() {
-            var audio = document.getElementById("myAudio");
-            var icon = document.getElementById("music-icon");
-            if (audio.paused) { audio.play(); icon.innerHTML = "🔊"; }
-            else { audio.pause(); icon.innerHTML = "🔇"; }
-        }
 
         // Share
         function shareToFriends() {
