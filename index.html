@@ -173,6 +173,7 @@
         /* PC එකේදී විතරක් පෙනෙන දකුණු පැත්තේ බොත්තම් */
         .nav-right-pc {
             display: none; /* Phone වලදී හැංගෙනවා */
+            align-items: center;
             gap: 10px;
         }
 
@@ -188,6 +189,26 @@
         .share-thoughts-btn { background: linear-gradient(45deg, #00ff88, #00ad5d); color: #000; cursor: pointer; }
         .help-grow-btn { background: linear-gradient(45deg, #ffd700, #ffa500); color: #000; }
         .about-btn { border: 2px solid #00d4ff; color: #00d4ff; }
+
+        /* Google Translate Styling Customization */
+        .translate-box {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .goog-te-gadget-simple {
+            background-color: #222 !important;
+            border: 1px solid #444 !important;
+            padding: 4px 8px !important;
+            border-radius: 20px !important;
+            cursor: pointer;
+        }
+        .goog-te-gadget-simple a span {
+            color: #00d4ff !important;
+            font-size: 13px !important;
+            font-weight: bold !important;
+        }
+        .goog-te-banner-frame.skiptranslate { display: none !important; }
+        body { top: 0px !important; }
 
         /* --- SIDEBAR DRAWER (PHONE ONLY) --- */
         .sidebar {
@@ -268,22 +289,22 @@
 
         .sidebar-overlay.show { display: block; opacity: 1; }
 
-        /* --- 💻 COMPUTER RESPONSIVE STYLES (Screen size 768px වලට වඩා වැඩි නම්) --- */
+        /* --- 💻 COMPUTER RESPONSIVE STYLES --- */
         @media (min-width: 768px) {
             .menu-btn {
-                display: none; /* ඉරි තුනේ බොත්තම හැංගෙනවා */
+                display: none;
             }
             .nav-links-pc {
-                display: flex; /* මැද ටැබ් ටික පෙනෙනවා */
+                display: flex;
                 position: absolute;
                 left: 50%;
                 transform: translateX(-50%);
             }
             .nav-right-pc {
-                display: flex; /* දකුණු පැත්තේ බොත්තම් පෙනෙනවා */
+                display: flex;
             }
             .sidebar, .sidebar-overlay {
-                display: none !important; /* PC වලදී Sidebar එක සම්පූර්ණයෙන්ම අක්‍රිය වේ */
+                display: none !important;
             }
         }
 
@@ -399,29 +420,30 @@
     <!-- Navigation Bar -->
     <nav>
         <div class="nav-left">
-            <!-- Phone වලදී විතරක් පෙනෙන Hamburger බොත්තම -->
             <button class="menu-btn" onclick="toggleSidebar()">☰</button>
             <a href="index.html" class="home-btn">Home</a>
         </div>
 
-        <!-- PC වලදී විතරක් පෙනෙන මැද ටැබ්ස් -->
+        <!-- PC Tabs -->
         <div class="nav-links-pc">
             <a href="earth.html">Earth</a>
             <a href="animals.html">Animals</a>
             <a href="space.html">Space</a>
             <a href="mysteries.html">Mysteries</a>
             <a href="history.html">History</a>
+            <a href="quantum.html">Quantum Physics</a>
         </div>
 
-        <!-- PC වලදී විතරක් පෙනෙන දකුණු පැත්තේ බොත්තම් -->
+        <!-- PC Buttons + Translate Dropdown -->
         <div class="nav-right-pc">
+            <div id="google_translate_element_pc" class="translate-box"></div>
             <a class="share-thoughts-btn" onclick="shareToFriends()">🔗 SHARE</a>
             <a href="ad.html" class="help-grow-btn">❤️ Help</a>
             <a href="aaaextradatapage.html" class="about-btn">About</a>
         </div>
     </nav>
 
-    <!-- Sidebar Drawer (PHONE වලදී විතරක් ක්‍රියාත්මක වේ) -->
+    <!-- Sidebar Drawer (PHONE) -->
     <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
     <div class="sidebar" id="sidebarMenu">
         <div class="sidebar-close">
@@ -433,6 +455,9 @@
         </div>
 
         <div class="sidebar-menu">
+            <!-- Mobile Translate Element inside Sidebar -->
+            <div id="google_translate_element_mobile" style="margin: 10px auto; text-align: center;"></div>
+            
             <a href="index.html" onclick="toggleSidebar()">Home</a>
             <a href="earth.html">Earth</a>
             <a href="animals.html">Animals</a>
@@ -499,6 +524,24 @@
             <li><a href="quantum.html">Quantum Physics</a></li>
         </ul>
     </div>
+
+    <!-- Google Translate Script Setup -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            // PC Layout එක සඳහා
+            new google.translate.TranslateElement({
+                pageLanguage: 'en', 
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element_pc');
+            
+            // Mobile (Sidebar) Layout එක සඳහා
+            new google.translate.TranslateElement({
+                pageLanguage: 'en', 
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element_mobile');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <script>
         // Splash Screen
