@@ -31,26 +31,28 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #0b0b0b;
             color: #e0e0e0;
-            margin: 0;
-            padding: 0;
+            margin: 0 !important;
+            padding: 0 !important;
             line-height: 1.6;
             overflow-x: hidden;
             width: 100%;
-            top: 0px !important; /* පිටුව පහළට තල්ලු වීම වළක්වයි */
+            top: 0px !important; 
+            position: static !important;
         }
 
-        /* --- 🌟 GOOGLE TRANSLATE WHITE BAR HIDE FIX (SAFE METHOD) 🌟 --- */
-        /* උඩින් එන සුදු බාර් එක සහ ඉෆ්‍රේම් එක විතරක් හංගන්න */
+        /* --- 🌟 GOOGLE TRANSLATE FORCED HIDE CSS 🌟 --- */
+        /* Frame එක loading වෙන වෙලාවෙම පෙන්නන එක නතර කරන්න */
         .goog-te-banner-frame, 
-        .goog-te-banner,
-        .goog-te-banner-frame.skiptranslate, 
-        iframe.goog-te-banner-frame,
-        #goog-gt-tt {
+        .goog-te-banner, 
+        #goog-gt-tt, 
+        .goog-te-balloon-frame {
             display: none !important;
             visibility: hidden !important;
+            opacity: 0 !important;
+            height: 0 !important;
         }
-        
-        /* මුළු පිටුවම උඩටම ගන්න (Margin එක බිංදුව කරන්න) */
+
+        /* Highlight වෙන කොටස් සාමාන්‍ය තත්ත්වයට පත් කිරීම */
         .goog-text-highlight {
             background-color: transparent !important;
             box-shadow: none !important;
@@ -545,6 +547,23 @@
     <script src="music.js" defer></script>
 
     <script>
+        // 🌟 JAVASCRIPT FORCE-REMOVE WHITE BANNER FUNCTION 🌟
+        // මේ කොටසින් වෙබ් පිටුවේ වෙනස්කම් නිරීක්ෂණය කරලා සුදු බාර් එක ආපු ගමන්ම සිස්ටම් එකෙන් Delete කරනවා.
+        const observer = new MutationObserver(() => {
+            const translateFrames = document.querySelectorAll('.goog-te-banner-frame, iframe.goog-te-banner-frame, .goog-te-banner');
+            translateFrames.forEach(frame => {
+                frame.remove(); // සුදු බාර් එක සම්පූර්ණයෙන්ම Delete කරලා දමයි
+            });
+            
+            // පිටුවේ බොඩි එක බලහත්කාරයෙන් උඩටම තල්ලු කර තබයි
+            if (document.body.style.top !== '0px') {
+                document.body.style.top = '0px';
+            }
+        });
+
+        // මුළු HTML පිටුවම නිරීක්ෂණයට ලක් කිරීම ආරම්භ කිරීම
+        observer.observe(document.documentElement, { attributes: true, childList: true, subtree: true });
+
         // Splash Screen Transition
         window.addEventListener("load", function() {
             setTimeout(() => {
