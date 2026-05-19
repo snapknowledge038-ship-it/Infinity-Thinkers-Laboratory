@@ -32,11 +32,11 @@
             display: none;
         }
 
-        /* Navigation Bar */
+        /* 🖥️ NAVIGATION BAR (COMPUTER) */
         nav {
             background-color: rgba(10, 26, 13, 0.95);
             backdrop-filter: blur(10px); 
-            padding: 18px 20px;
+            padding: 15px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -50,7 +50,13 @@
 
         .nav-left {
             display: flex;
-            gap: 20px;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 12px;
             align-items: center;
         }
 
@@ -68,23 +74,121 @@
             text-shadow: 0 0 15px rgba(74, 222, 128, 0.6);
         }
 
-        /* 🔗 SHARE BUTTON STYLE */
+        /* 🌐 LANGUAGE & SHARE BUTTONS */
+        .nav-btn {
+            background: rgba(255, 255, 255, 0.05);
+            color: #9bf4bc;
+            border: 1px solid rgba(74, 222, 128, 0.3);
+            padding: 6px 14px;
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: rgba(74, 222, 128, 0.1);
+            border-color: #4ade80;
+            color: #4ade80;
+        }
+
+        .nav-btn.active {
+            background: #4ade80;
+            color: #040d06;
+            border-color: #4ade80;
+            font-weight: bold;
+        }
+
         .share-btn {
             background: linear-gradient(45deg, #4ade80, #15803d);
             color: #040d06 !important;
-            padding: 6px 16px;
-            font-size: 13px;
+            border: none;
             font-weight: bold;
-            border-radius: 30px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .share-btn:hover {
             transform: scale(1.05);
             box-shadow: 0 0 15px rgba(74, 222, 128, 0.4);
-            color: #040d06 !important;
+        }
+
+        /* 📱 HAMBURGER MENU (MOBILE ICON) */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 5px;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 28px;
+            height: 3px;
+            background-color: #4ade80;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        /* 📱 SIDEBAR (MOBILE MENU) */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -280px; /* පටන් ගැන්මේදී දකුණු පැත්තෙන් හැංගිලා තියෙන්නේ */
+            width: 280px;
+            height: 100vh;
+            background-color: rgba(10, 26, 13, 0.98);
+            backdrop-filter: blur(15px);
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            padding: 80px 30px 30px 30px;
+            gap: 20px;
+            box-sizing: border-box;
+            transition: right 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            z-index: 999;
+            border-left: 1px solid rgba(74, 222, 128, 0.15);
+        }
+
+        .sidebar.open {
+            right: 0; /* ඇවිස්සුණු විට මෙහාට එනවා */
+        }
+
+        .sidebar a {
+            font-size: 18px;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(74, 222, 128, 0.05);
+        }
+
+        .sidebar-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        /* 📱 MOBILE MEDIA QUERIES (RESPONSIVE) */
+        @media (max-width: 768px) {
+            .nav-left, .nav-right {
+                display: none; /* Computer Menu එක හංගනවා */
+            }
+            .hamburger {
+                display: flex; /* Hamburger Icon එක පෙන්වනවා */
+            }
+            
+            /* Hamburger සජීවීකරණය (X එකක් වීමට) */
+            .hamburger.toggle span:nth-child(1) {
+                transform: rotate(45deg) translate(6px, 5px);
+            }
+            .hamburger.toggle span:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger.toggle span:nth-child(3) {
+                transform: rotate(-45deg) translate(6px, -5px);
+            }
         }
 
         /* මාතෘකාව */
@@ -210,8 +314,9 @@
 </head>
 <body>
 
-    <!-- Updated Navigation with Share Button -->
+    <!-- 🖥️ Responsive Navigation Bar -->
     <nav>
+        <!-- Computer Layout Links -->
         <div class="nav-left">
             <a href="index.html">Home</a>
             <a href="earth.html">Earth</a>
@@ -220,10 +325,37 @@
             <a href="mysteries.html">Mysteries</a>
             <a href="history.html">History</a>
         </div>
-        <div>
-            <a class="share-btn" onclick="shareCurrentPage()">🔗 SHARE</a>
+        
+        <!-- Computer Layout Buttons -->
+        <div class="nav-right">
+            <button class="nav-btn btn-en" onclick="changeLanguage('en')">English</button>
+            <button class="nav-btn btn-si" onclick="changeLanguage('si')">සිංහල</button>
+            <button class="nav-btn share-btn" onclick="shareCurrentPage()">🔗 SHARE</button>
         </div>
+
+        <!-- Mobile Menu Hamburger Icon -->
+        <button class="hamburger" id="hamburger-menu" onclick="toggleSidebar()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </nav>
+
+    <!-- 📱 Mobile Sidebar Slide-out Links -->
+    <div class="sidebar" id="mobile-sidebar">
+        <a href="index.html" onclick="toggleSidebar()">Home</a>
+        <a href="earth.html" onclick="toggleSidebar()">Earth</a>
+        <a href="animals.html" onclick="toggleSidebar()">Animals</a>
+        <a href="space.html" onclick="toggleSidebar()">Space</a>
+        <a href="mysteries.html" onclick="toggleSidebar()">Mysteries</a>
+        <a href="history.html" onclick="toggleSidebar()">History</a>
+        
+        <div class="sidebar-buttons">
+            <button class="nav-btn btn-en" onclick="changeLanguage('en'); toggleSidebar();">English</button>
+            <button class="nav-btn btn-si" onclick="changeLanguage('si'); toggleSidebar();">සිංහල</button>
+            <button class="nav-btn share-btn" onclick="shareCurrentPage()">🔗 SHARE</button>
+        </div>
+    </div>
 
     <audio id="myAudio" loop>
         <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
@@ -294,34 +426,62 @@
         <div class="dotted-hr"></div>
     </div>
 
-    <!-- 🌐 AUTOMATIC LANGUAGE LOADER & SHARE SCRIPT -->
+    <!-- 🌐 MULTI-LANGUAGE, SIDEBAR & SHARE SCRIPT -->
     <script type="text/javascript">
         window.addEventListener('DOMContentLoaded', () => {
             const savedLang = localStorage.getItem('siteLang') || 'en';
+            applyLanguage(savedLang);
+        });
+
+        // 📱 Mobile Sidebar Open/Close Function
+        function toggleSidebar() {
+            const sidebar = document.getElementById('mobile-sidebar');
+            const hamburger = document.getElementById('hamburger-menu');
+            sidebar.classList.toggle('open');
+            hamburger.classList.toggle('toggle');
+        }
+
+        // 🔄 Apply Language
+        function applyLanguage(lang) {
             const engElements = document.querySelectorAll('.lang-en');
             const sinElements = document.querySelectorAll('.lang-si');
+            
+            // Computer සහ Mobile Buttons දෙකම එක පාර active කරන්න querySelectorAll පාවිච්චි කලා
+            const btnsEn = document.querySelectorAll('.btn-en');
+            const btnsSi = document.querySelectorAll('.btn-si');
 
-            if (savedLang === 'si') {
+            if (lang === 'si') {
                 engElements.forEach(el => el.style.display = 'none');
                 sinElements.forEach(el => el.style.display = 'block');
                 document.querySelectorAll('.animal-grid li .lang-si').forEach(el => el.style.display = 'block');
+                
+                btnsSi.forEach(b => b.classList.add('active'));
+                btnsEn.forEach(b => b.classList.remove('active'));
             } else {
                 sinElements.forEach(el => el.style.display = 'none');
                 engElements.forEach(el => el.style.display = 'block');
                 document.querySelectorAll('.animal-grid li .lang-en').forEach(el => el.style.display = 'block');
+                
+                btnsEn.forEach(b => b.classList.add('active'));
+                btnsSi.forEach(b => b.classList.remove('active'));
             }
-        });
+        }
 
-        // 🔗 Dynamic Share Function
+        // 🖱️ Change Language
+        function changeLanguage(lang) {
+            localStorage.setItem('siteLang', lang); 
+            applyLanguage(lang); 
+        }
+
+        // 🔗 Share Function
         function shareCurrentPage() {
             if (navigator.share) {
                 navigator.share({
                     title: document.title,
                     text: 'Check out this amazing page on ITL!',
-                    url: window.location.href // මේකෙන් දැනට ඉන්න පිටුවේම ලින්ක් එක ශෙයා වෙනවා
-                }).catch(err => console.log("Share cancelled or failed", err));
+                    url: window.location.href 
+                }).catch(err => console.log("Share failed", err));
             } else {
-                // Web Share API වැඩ නොකරන බ්‍රවුසර් සඳහා ලින්ක් එක කොපි කර පෙන්වීම
                 navigator.clipboard.writeText(window.location.href).then(() => {
                     alert("Link copied to clipboard: " + window.location.href);
                 }).catch(() => {
