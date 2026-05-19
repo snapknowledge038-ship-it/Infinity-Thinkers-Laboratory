@@ -36,6 +36,22 @@
             line-height: 1.6;
             overflow-x: hidden;
             width: 100%;
+            top: 0px !important; /* Translate නිසා පිටුව පහළට යාම වළක්වයි */
+        }
+
+        /* --- GOOGLE TRANSLATE WHITE BAR HIDE FIX --- */
+        .goog-te-banner-frame, 
+        .goog-te-banner-frame.skiptranslate, 
+        .goog-translate-skiptranslate,
+        iframe.goog-te-banner-frame,
+        #goog-gt-tt {
+            display: none !important;
+            visibility: hidden !important;
+        }
+        
+        /* Translate කිරීමෙන් පසු ඇතිවන ඉඩ මකා දැමීමට */
+        .skiptranslate {
+            display: none !important;
         }
 
         /* --- SPLASH SCREEN STYLES --- */
@@ -158,9 +174,7 @@
             transition: 0.3s;
         }
 
-        .nav-links-pc a:hover {
-            color: #ffffff;
-        }
+        .nav-links-pc a:hover { color: #ffffff; }
 
         .nav-right-pc {
             display: none;
@@ -203,8 +217,6 @@
             font-weight: bold !important;
         }
         .goog-te-gadget-icon { display: none !important; }
-        .goog-te-banner-frame.skiptranslate { display: none !important; }
-        body { top: 0px !important; }
 
         /* --- SIDEBAR DRAWER (PHONE ONLY) --- */
         .sidebar {
