@@ -16,443 +16,134 @@
     <title>Animals - I T L</title>
     
     <style>
-        /* මූලික සැකසුම් (Modern Dark Green Theme) */
+        /* Dark Green වර්ණ සහ මූලික Text කලර්ස් පමණි */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #040d06; 
             color: #e2f0e5;
-            margin: 0;
-            padding: 0;
-            line-height: 1.8;
-            overflow-x: hidden;
+            font-family: sans-serif;
         }
 
-        /* --- 🌐 MULTI-LANGUAGE TOGGLE DISPLAY STYLES --- */
-        .lang-si, nav a.lang-si, .sidebar a.lang-si {
-            display: none;
-        }
-
-        /* 🖥️ NAVIGATION BAR (COMPUTER) */
+        /* Navigation Bar වර්ණ */
         nav {
-            background-color: rgba(10, 26, 13, 0.95);
-            backdrop-filter: blur(10px); 
-            padding: 15px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(74, 222, 128, 0.15);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
-            box-sizing: border-box;
+            background-color: #0a1a0d;
+            border-bottom: 1px solid #4ade80;
         }
 
-        .nav-left {
-            display: flex;
-            gap: 22px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .nav-right {
-            display: flex;
-            gap: 12px;
-            align-items: center;
-        }
-
-        nav a {
-            color: #9bf4bc; 
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 16px;
-            transition: all 0.4s ease;
-            letter-spacing: 0.5px;
-        }
-
-        nav a:hover {
-            color: #4ade80;
-            text-shadow: 0 0 15px rgba(74, 222, 128, 0.6);
-        }
-
-        /* 🌐 LANGUAGE & SHARE BUTTONS */
-        .nav-btn {
-            background: rgba(255, 255, 255, 0.05);
+        /* ලින්ක්ස් වල වර්ණ */
+        a {
             color: #9bf4bc;
-            border: 1px solid rgba(74, 222, 128, 0.3);
-            padding: 6px 14px;
-            font-size: 13px;
-            font-weight: 600;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            text-decoration: none;
         }
-
-        .nav-btn:hover {
-            background: rgba(74, 222, 128, 0.1);
-            border-color: #4ade80;
+        a:hover {
             color: #4ade80;
         }
 
-        .nav-btn.active {
-            background: #4ade80;
-            color: #040d06;
-            border-color: #4ade80;
-            font-weight: bold;
+        /* මාතෘකා වල වර්ණ */
+        h1, h2 {
+            color: #ffffff;
         }
 
+        /* Buttons වල වර්ණ */
+        .nav-btn {
+            background-color: #0d1a0d;
+            color: #9bf4bc;
+            border: 1px solid #4ade80;
+            cursor: pointer;
+        }
         .share-btn {
-            background: linear-gradient(45deg, #4ade80, #15803d);
-            color: #ffffff !important;
+            background-color: #15803d;
+            color: #ffffff;
             border: none;
-            font-weight: bold;
-        }
-
-        .share-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(74, 222, 128, 0.4);
-        }
-
-        /* 📱 HAMBURGER MENU (MOBILE ICON) */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
             cursor: pointer;
-            background: none;
-            border: none;
-            padding: 5px;
-            z-index: 1001;
-        }
-
-        .hamburger span {
-            display: block;
-            width: 28px;
-            height: 3px;
-            background-color: #4ade80;
-            border-radius: 2px;
-            transition: all 0.3s ease;
-        }
-
-        /* 📱 SIDEBAR (MOBILE MENU) */
-        .sidebar {
-            position: fixed;
-            top: 0;
-            right: -280px; 
-            width: 280px;
-            height: 100vh;
-            background-color: rgba(10, 26, 13, 0.98);
-            backdrop-filter: blur(15px);
-            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
-            display: flex;
-            flex-direction: column;
-            padding: 80px 30px 30px 30px;
-            gap: 15px;
-            box-sizing: border-box;
-            transition: right 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-            z-index: 999;
-            border-left: 1px solid rgba(74, 222, 128, 0.15);
-        }
-
-        .sidebar.open {
-            right: 0; 
-        }
-
-        .sidebar a {
-            font-size: 18px;
-            padding: 8px 0;
-            text-decoration: none;
-            font-weight: 600;
-            border-bottom: 1px solid rgba(74, 222, 128, 0.05);
-        }
-
-        .sidebar-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-top: 20px;
-        }
-
-        /* 📱 MOBILE MEDIA QUERIES (RESPONSIVE) */
-        @media (max-width: 768px) {
-            .nav-left, .nav-right {
-                display: none; 
-            }
-            .hamburger {
-                display: flex; 
-            }
-            
-            .hamburger.toggle span:nth-child(1) {
-                transform: rotate(45deg) translate(6px, 5px);
-            }
-            .hamburger.toggle span:nth-child(2) {
-                opacity: 0;
-            }
-            .hamburger.toggle span:nth-child(3) {
-                transform: rotate(-45deg) translate(6px, -5px);
-            }
-        }
-
-        /* මාතෘකාව */
-        h1 {
-            font-size: clamp(28px, 5vw, 50px);
-            text-align: center;
-            color: #ffffff;
-            text-transform: uppercase;
-            margin-top: 50px;
-            letter-spacing: 3px;
-            font-weight: 800;
-            animation: textBreathe 4s infinite ease-in-out;
-        }
-
-        @keyframes textBreathe {
-            0%, 100% { 
-                text-shadow: 0 0 20px rgba(74, 222, 128, 0.3), 0 0 40px rgba(255, 255, 255, 0.1);
-                transform: scale(1);
-            }
-            50% { 
-                text-shadow: 0 0 35px rgba(74, 222, 128, 0.6), 0 0 50px rgba(255, 255, 255, 0.3);
-                transform: scale(1.02);
-            }
-        }
-
-        /* පින්තූරය */
-        .img-container {
-            text-align: center;
-            margin: 40px 0;
-        }
-
-        .animals-img {
-            max-width: 90%;
-            height: auto;
-            border-radius: 16px;
-            box-shadow: 0 15px 50px rgba(13, 26, 13, 0.7);
-            border: 1px solid rgba(74, 222, 128, 0.2);
-            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-        }
-        
-        .animals-img:hover {
-            transform: scale(1.015);
-        }
-
-        /* අන්තර්ගතය */
-        .container {
-            max-width: 950px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .wildlife-text {
-            font-size: 18px;
-            color: #e2f0e5;
-            text-align: justify;
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(8px);
-            padding: 35px;
-            border-radius: 16px;
-            border: 1px solid rgba(74, 222, 128, 0.1);
-            border-left: 4px solid #4ade80; 
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        h2 {
-            color: #ffffff;
-            font-size: 28px;
-            margin-top: 60px;
-            text-align: center;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-        }
-
-        /* ලිපි ලැයිස්තුව */
-        .animal-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            list-style: none;
-            padding: 0;
-            margin-top: 35px;
-        }
-
-        .animal-grid li {
-            background: rgba(13, 26, 13, 0.5);
-            backdrop-filter: blur(6px);
-            padding: 25px 20px;
-            border-radius: 14px;
-            text-align: center;
-            border: 1px solid rgba(74, 222, 128, 0.1);
-            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-            cursor: pointer;
-        }
-
-        .animal-grid li:hover {
-            background: rgba(74, 222, 128, 0.15);
-            transform: translateY(-8px) scale(1.02);
-            border-color: #ffffff;
-            box-shadow: 0 15px 35px rgba(74, 222, 128, 0.25), 0 0 15px rgba(255, 255, 255, 0.1);
-        }
-
-        .animal-grid a {
-            color: #e2f0e5;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 17px;
-            display: block;
-            transition: all 0.3s ease;
-        }
-
-        .animal-grid li:hover a {
-            color: #ffffff;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px #4ade80;
-        }
-
-        /* Lines & Separators */
-        hr {
-            border: 0;
-            height: 1px;
-            background: linear-gradient(to right, transparent, rgba(74, 222, 128, 0.3), transparent);
-            margin: 60px 0;
-        }
-
-        .dotted-hr {
-            border: 0;
-            height: 2px;
-            background: linear-gradient(to right, transparent, rgba(74, 222, 128, 0.1), transparent);
-            margin-bottom: 60px;
         }
     </style>
 </head>
 <body>
 
-    <!-- 🖥️ Responsive Navigation Bar -->
+    <!-- 🌐 Navigation Bar -->
     <nav>
-        <div class="nav-left">
-            <a href="index.html">Home</a>
-            <a href="earth.html">Earth</a>
-            <a href="animals.html">Animals</a>
-            <a href="space.html">Space</a>
-            <a href="mysteries.html">Mysteries</a>
-            <a href="history.html">History</a>
-            <!-- 🌌 Quantum Physics links added with language toggle classes -->
-            <a href="quantum.html" class="lang-en">Quantum Physics</a>
-            <a href="quantum.html" class="lang-si">ක්වොන්ටම් විද්‍යාව</a>
-        </div>
+        <a href="index.html">Home</a> | 
+        <a href="earth.html">Earth</a> | 
+        <a href="animals.html">Animals</a> | 
+        <a href="space.html">Space</a> | 
+        <a href="mysteries.html">Mysteries</a> | 
+        <a href="history.html">History</a> | 
+        <a href="quantum.html" class="lang-en">Quantum Physics</a>
+        <a href="quantum.html" class="lang-si" style="display:none;">ක්වොන්ටම් විද්‍යාව</a>
         
-        <div class="nav-right">
-            <button class="nav-btn btn-en" onclick="changeLanguage('en')">English</button>
-            <button class="nav-btn btn-si" onclick="changeLanguage('si')">සිංහල</button>
-            <button class="nav-btn share-btn" onclick="shareCurrentPage()">🔗 SHARE</button>
-        </div>
-
-        <button class="hamburger" id="hamburger-menu" onclick="toggleSidebar()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+        <br><br>
+        
+        <!-- Language & Share Buttons -->
+        <button class="nav-btn btn-en" onclick="changeLanguage('en')">English</button>
+        <button class="nav-btn btn-si" onclick="changeLanguage('si')">සිංහල</button>
+        <button class="share-btn" onclick="shareCurrentPage()">🔗 SHARE</button>
     </nav>
 
-    <!-- 📱 Mobile Sidebar Slide-out Links -->
-    <div class="sidebar" id="mobile-sidebar">
-        <a href="index.html" onclick="toggleSidebar()">Home</a>
-        <a href="earth.html" onclick="toggleSidebar()">Earth</a>
-        <a href="animals.html" onclick="toggleSidebar()">Animals</a>
-        <a href="space.html" onclick="toggleSidebar()">Space</a>
-        <a href="mysteries.html" onclick="toggleSidebar()">Mysteries</a>
-        <a href="history.html" onclick="toggleSidebar()">History</a>
-        <!-- 🌌 Mobile Menu Quantum Physics links -->
-        <a href="quantum.html" class="lang-en" onclick="toggleSidebar()">Quantum Physics</a>
-        <a href="quantum.html" class="lang-si" onclick="toggleSidebar()">ක්වොන්ටම් විද්‍යාව</a>
-        
-        <div class="sidebar-buttons">
-            <button class="nav-btn btn-en" onclick="changeLanguage('en'); toggleSidebar();">English</button>
-            <button class="nav-btn btn-si" onclick="changeLanguage('si'); toggleSidebar();">සිංහල</button>
-            <button class="nav-btn share-btn" onclick="shareCurrentPage()">🔗 SHARE</button>
-        </div>
-    </div>
+    <hr style="border-color: #4ade80;">
 
-    <audio id="myAudio" loop>
-        <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
-    </audio>
-
-    <div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
-        <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
-            <span id="music-icon">🔇</span>
-        </div>
-    </div>
-
-    <script src="music.js"></script>
-
-    <div class="container">
-        
-        <!-- Heading Switcher -->
+    <!-- 📝 Main Content -->
+    <div>
+        <!-- Headings -->
         <h1 class="lang-en">Animals – The World of Wildlife</h1>
-        <h1 class="lang-si">සතුන් – වනජීවී ලෝකය</h1>
+        <h1 class="lang-si" style="display:none;">සතුන් – වනජීවී ලෝකය</h1>
 
-        <div class="img-container">
-            <img class="animals-img" src="images/animals.jpeg" alt="Amazing Wildlife">
+        <!-- Page Image -->
+        <div>
+            <img src="images/animals.jpeg" alt="Amazing Wildlife" width="600">
         </div>
 
-        <!-- Description Switcher -->
-        <div class="wildlife-text">
+        <br>
+
+        <!-- Description -->
+        <div>
             <div class="lang-en">
-                You have arrived here to explore the incredible world of animals. From the smallest creatures on Earth to the largest giants of the oceans, the animal kingdom is filled with diversity, beauty, and extraordinary adaptations. 
-                <br><br>
-                Here you will discover fascinating facts about wildlife, unique species, and the remarkable ways animals survive and interact with their environments. Through the articles and information below, you can learn more about the wonders of the animal world and deepen your understanding of the life that shares our planet.
+                <p>You have arrived here to explore the incredible world of animals. From the smallest creatures on Earth to the largest giants of the oceans, the animal kingdom is filled with diversity, beauty, and extraordinary adaptations.</p>
+                <p>Here you will discover fascinating facts about wildlife, unique species, and the remarkable ways animals survive and interact with their environments. Through the articles and information below, you can learn more about the wonders of the animal world and deepen your understanding of the life that shares our planet.</p>
             </div>
-            <div class="lang-si">
-                ඔබ මෙහි පැමිණ සිටින්නේ සතුන්ගේ ඇදහිය නොහැකි ලෝකය ගවේෂණය කිරීමටයි. පෘථිවියේ කුඩාම ජීවීන්ගේ සිට සාගරවල වෙසෙන දැවැන්තම යෝධයන් දක්වා, සත්ව රාජධානිය විවිධත්වයෙන්, සුන්දරත්වයෙන් සහ අසාමාන්‍ය අනුවර්තනයන්ගෙන් පිරී පවතී.
-                <br><br>
-                මෙහිදී ඔබ වනජීවීන් පිළිබඳ සිත් ඇදගන්නාසුළු කරුණු, අද්විතීය විශේෂ සහ සතුන් තම පරිසරය සමඟ ජීවත් වන සහ අන්තර් ක්‍රියා කරන කැපී පෙනෙන ආකාරය සොයා ගනු ඇත. පහත දැක්වෙන ලිපි සහ තොරතුරු මඟින්, ඔබට සත්ව ලෝකයේ අරුමපුදුම දේ ගැන වැඩිදුරක් ඉගෙන ගත හැකි අතර අපගේ පෘථිවිය බෙදා ගන්නා ජීවය පිළිබඳ ඔබේ අවබෝධය ගැඹුරු කර ගත හැකිය.
+            <div class="lang-si" style="display:none;">
+                <p>ඔබ මෙහි පැමිණ සිටින්නේ සතුන්ගේ ඇදහිය නොහැකි ලෝකය ගවේෂණය කිරීමටයි. පෘථිවියේ කුඩාම ජීවීන්ගේ සිට සාගරවල වෙසෙන දැවැන්තම යෝධයන් දක්වා, සත්ව රාජධානිය විවිධත්වයෙන්, සුන්දරත්වයෙන් සහ අසාමාන්‍ය අනුවර්තනයන්ගෙන් පිරී පවතී.</p>
+                <p>මෙහිදී ඔබ වනජීවීන් පිළිබඳ සිත් ඇදගන්නාසුළු කරුණු, අද්විතීය විශේෂ සහ සතුන් තම පරිසරය සමඟ ජීවත් වන සහ අන්තර් ක්‍රියා කරන කැපී පෙනෙන ආකාරය සොයා ගනු ඇත. පහත දැක්වෙන ලිපි සහ තොරතුරු මඟින්, ඔබට සත්ව ලෝකයේ අරුමපුදුම දේ ගැන වැඩිදුරක් ඉගෙන ගත හැකි අතර අපගේ පෘථිවිය බෙදා ගන්නා ජීවය පිළිබඳ ඔබේ අවබෝධය ගැඹුරු කර ගත හැකිය.</p>
             </div>
         </div>
 
-        <hr>
+        <hr style="border-color: #4ade80;">
 
-        <!-- Details Prompt Switcher -->
+        <!-- Details Prompt -->
         <h2 class="lang-en">What are the details you are expecting?</h2>
-        <h2 class="lang-si">ඔබ අපේක්ෂා කරන තොරතුරු මොනවාද?</h2>
+        <h2 class="lang-si" style="display:none;">ඔබ අපේක්ෂා කරන තොරතුරු මොනවාද?</h2>
         
-        <!-- Grid Links Switcher -->
-        <ul class="animal-grid">
+        <!-- Grid Links -->
+        <ul>
             <li>
                 <a href="dino.html" class="lang-en">Dinosaurs</a>
-                <a href="dino.html" class="lang-si">දයිනසෝරයන්</a>
+                <a href="dino.html" class="lang-si" style="display:none;">දයිනසෝරයන්</a>
             </li>
             <li>
                 <a href="megalodon.html" class="lang-en">Megalodon</a>
-                <a href="megalodon.html" class="lang-si">මෙගලඩොන්</a>
+                <a href="megalodon.html" class="lang-si" style="display:none;">මෙගලඩොන්</a>
             </li>
             <li>
                 <a href="titanoboa.html" class="lang-en">Titanoboa</a>
-                <a href="titanoboa.html" class="lang-si">ටයිටනොබෝවා</a>
+                <a href="titanoboa.html" class="lang-si" style="display:none;">ටයිටනොබෝවා</a>
             </li>
             <li>
                 <a href="Smilodon.html" class="lang-en">Smilodon</a>
-                <a href="Smilodon.html" class="lang-si">ස්මිලඩොන්</a>
+                <a href="Smilodon.html" class="lang-si" style="display:none;">ස්මිලඩොන්</a>
             </li>
             <li>
                 <a href="mammoth.html" class="lang-en">Woolly Mammoth</a>
-                <a href="mammoth.html" class="lang-si">වූලි මැමත්</a>
+                <a href="mammoth.html" class="lang-si" style="display:none;">වූලි මැමත්</a>
             </li>
         </ul>
 
-        <div class="dotted-hr"></div>
     </div>
 
-    <!-- 🌐 MULTI-LANGUAGE, SIDEBAR & SHARE SCRIPT -->
+    <!-- 🌐 MULTI-LANGUAGE & SHARE SCRIPT -->
     <script type="text/javascript">
         window.addEventListener('DOMContentLoaded', () => {
             const savedLang = localStorage.getItem('siteLang') || 'en';
             applyLanguage(savedLang);
         });
-
-        // 📱 Mobile Sidebar Open/Close Function
-        function toggleSidebar() {
-            const sidebar = document.getElementById('mobile-sidebar');
-            const hamburger = document.getElementById('hamburger-menu');
-            sidebar.classList.toggle('open');
-            hamburger.classList.toggle('toggle');
-        }
 
         // 🔄 Apply Language
         function applyLanguage(lang) {
@@ -463,24 +154,22 @@
 
             if (lang === 'si') {
                 engElements.forEach(el => el.style.display = 'none');
-                sinElements.forEach(el => el.style.display = 'block');
+                sinElements.forEach(el => el.style.display = 'inline-block'); 
                 
-                // Navbar, Sidebar and Grid links language alignment
-                document.querySelectorAll('nav a.lang-si, .sidebar a.lang-si').forEach(el => el.style.display = 'block');
-                document.querySelectorAll('.animal-grid li .lang-si').forEach(el => el.style.display = 'block');
+                document.getElementsByTagName('h1')[1].style.display = 'block';
+                document.getElementsByTagName('h2')[1].style.display = 'block';
                 
-                btnsSi.forEach(b => b.classList.add('active'));
-                btnsEn.forEach(b => b.classList.remove('active'));
+                btnsSi.forEach(b => b.style.fontWeight = 'bold');
+                btnsEn.forEach(b => b.style.fontWeight = 'normal');
             } else {
                 sinElements.forEach(el => el.style.display = 'none');
-                engElements.forEach(el => el.style.display = 'block');
+                engElements.forEach(el => el.style.display = 'inline-block');
                 
-                // Navbar, Sidebar and Grid links language alignment
-                document.querySelectorAll('nav a.lang-en, .sidebar a.lang-en').forEach(el => el.style.display = 'block');
-                document.querySelectorAll('.animal-grid li .lang-en').forEach(el => el.style.display = 'block');
+                document.getElementsByTagName('h1')[0].style.display = 'block';
+                document.getElementsByTagName('h2')[0].style.display = 'block';
                 
-                btnsEn.forEach(b => b.classList.add('active'));
-                btnsSi.forEach(b => b.classList.remove('active'));
+                btnsEn.forEach(b => b.style.fontWeight = 'bold');
+                btnsSi.forEach(b => b.style.fontWeight = 'normal');
             }
         }
 
