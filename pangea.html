@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pangea - The Supercontinent</title>
+    <style>
+        /* මූලික සැකසුම් සහ Earth Theme */
+        :root {
+            --earth-dark: #0f0907;
+            --earth-brown: #3d261d;
+            --lava-orange: #d94e1f;
+            --gold-sand: #e9c46a;
+            --text-light: #f4f1de;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--earth-dark);
+            color: var(--text-light);
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-image: linear-gradient(180deg, #0f0907 0%, #1e120e 100%);
+            overflow-x: hidden;
+        }
+
+        /* Fade-in Animation Definition */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: rgba(15, 9, 7, 0.95);
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 2px solid var(--earth-brown);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(15px);
+        }
+
+        nav a {
+            color: var(--gold-sand);
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 15px var(--gold-sand);
+        }
+
+        /* Title Area */
+        h1 {
+            font-size: clamp(40px, 8vw, 70px);
+            text-align: center;
+            color: #fff;
+            margin-top: 60px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #e9c46a, #d94e1f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 10px rgba(233, 196, 106, 0.3));
+        }
+
+        /* Images Layout */
+        .img-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .img-grid img {
+            max-width: 45%;
+            min-width: 300px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 2px solid var(--earth-brown);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .img-grid img:hover {
+            transform: scale(1.05) rotate(1deg);
+            border-color: var(--gold-sand);
+            box-shadow: 0 0 25px rgba(233, 196, 106, 0.5);
+        }
+
+        /* Container & Sections */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 40px;
+            border-radius: 25px;
+            margin-bottom: 40px;
+            border-right: 5px solid var(--earth-brown);
+            backdrop-filter: blur(5px);
+            transition: 0.3s;
+        }
+
+        section:hover {
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateX(-5px);
+        }
+
+        h2 {
+            color: var(--gold-sand);
+            font-size: 32px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(233, 196, 106, 0.2);
+            display: inline-block;
+        }
+
+        h3 {
+            font-size: 21px;
+            font-weight: 300;
+            color: #ced4da;
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        li {
+            margin-bottom: 15px;
+            padding-left: 35px;
+            position: relative;
+        }
+
+        li::before {
+            content: "🌍"; 
+            position: absolute;
+            left: 0;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+        
+        li:hover::before {
+            transform: scale(1.3);
+        }
+
+        /* Dotted Separator */
+        .earth-divider {
+            text-align: center;
+            margin: 60px 0;
+            font-size: 30px;
+            opacity: 0.5;
+        }
+
+        /* Feedback Widget */
+        #feedback-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: rgba(61, 38, 29, 0.8);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+            padding: 15px 25px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 1000;
+            border: 1px solid var(--gold-sand);
+            backdrop-filter: blur(10px);
+        }
+
+        #feedback-widget button {
+            border: none;
+            background: rgba(255,255,255,0.1);
+            padding: 8px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        #feedback-widget button:hover { 
+            background: var(--gold-sand);
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div class="container">
+        <h1 class="animate">Pangea: The Supercontinent</h1>
+
+        <div class="img-grid animate">
+            <!-- පින්තූරවල නම් පස්සේ වෙනස් කරගන්න පුළුවන් -->
+            <img src="images/pangea_map.jpg" alt="Pangea Supercontinent Map">
+            <img src="images/continental_drift.jpg" alt="How continents moved">
+        </div>
+
+        <section class="animate">
+            <h3>අදින් වසර මිලියන 300කට විතර කලින්, පෘථිවියේ දැන් තියෙන මහාද්වීප ඔක්කොම එකට එකතු වෙලා එකම එක දැවැන්ත මහාද්වීපයක් විදිහටයි තිබුණේ. මේ මහා ගොඩබිම හැඳින්වූයේ <strong>Pangea (පැන්ජියා)</strong> කියලයි.</h3>
+        </section>
+
+        <section class="animate">
+            <h2>The Giant Ocean & Meaning</h2>
+            <h3>ග්‍රීක භාෂාවෙන් "Pangea" කියන වචනයේ තේරුම "All Earth" (මුළු පෘථිවියම) යන්නයි. මේ දැවැන්ත මහාද්වීපය වටේටම තිබුණේ <strong>Panthalassa</strong> නමින් හැඳින්වුණු එකම එක මහා සාගරයක් විතරයි.</h3>
+        </section>
+
+        <section class="animate">
+            <h2>How it Broke Apart?</h2>  
+            <h3>පෘථිවි අභ්‍යන්තරයේ තියෙන ටෙක්ටොනික් තැටි (Tectonic Plates) නිරන්තරයෙන් චලනය වීම නිසා, වසර මිලියන 175කට විතර කලින් මේ මහාද්වීපය කෑලිවලට වෙන් වෙන්න පටන් ගත්තා.</h3>
+            <ul>
+                <li><strong>Continental Drift:</strong> ජර්මානු විද්‍යාඥ Alfred Wegener විසින් 1912 දී මහාද්වීප චලනය වීමේ සිද්ධාන්තය (Continental Drift Theory) ලෝකයට ඉදිරිපත් කළා.</li>
+                <li><strong>The Evidence:</strong> විවිධ මහාද්වීපවල වෙරළ තීරයන් එකිනෙකට ජිග්සෝ ප්‍රහේලිකාවක් (Jigsaw Puzzle) වගේ කදිමට ගැලපීම මේකට ලොකුම සාක්ෂියක් වුණා. (උදාහරණයක් ලෙස දකුණු ඇමරිකාව සහ අප්‍රිකාව).</li>
+                <li><strong>Fossil Matching:</strong> එකිනෙකට සැතපුම් දහස් ගණන් ඈතින් තියෙන මහාද්වීපවලින් එකම වර්ගයේ ඩයිනෝසර් පොසිල සහ ශාක කොටස් හමු වීම.</li>
+            </ul>
+        </section>
+
+        <section class="animate">
+            <h2>The Future Map</h2>
+            <h3>මෙම තැටි චලනය වීම අදටත් නතර වෙලා නැහැ. ඒවා වසරකට සෙන්ටිමීටර කිහිපයක වේගයෙන් එකිනෙකින් ඈත් වෙනවා හෝ ළං වෙනවා. තවත් වසර මිලියන 250කින් පෘථිවියේ සියලුම මහාද්වීප නැවත එකතු වී <strong>"Pangea Ultima"</strong> නමින් නව සුපිරි මහාද්වීපයක් නිර්මාණය වනු ඇතැයි විද්‍යාඥයන් විශ්වාස කරනවා.</h3>
+        </section>
+
+        <div class="earth-divider">🌋 🌍 🌋</div>
+    </div>
+
+    <div id="feedback-widget">
+        <span style="font-weight: bold; font-size: 14px;">Did you learn something new?</span>
+        <button onclick="hideFeedback('Yes')">🔥</button>
+        <button onclick="hideFeedback('No')">🤎</button>
+    </div>
+
+    <script>
+        // Simple Scroll Animation Trigger
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section, .img-grid, h1').forEach(el => {
+            observer.observe(el);
+        });
+
+        function hideFeedback(type) {
+            alert("Thank you for your response! Exploring more earth mysteries...");
+            document.getElementById('feedback-widget').style.display = 'none';
+        }
+    </script>
+    
+    <audio id="myAudio" loop>
+        <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
+    </audio>
+
+    <div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
+        <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
+            <span id="music-icon">🔇</span>
+        </div>
+    </div>
+
+    <script src="music.js"></script>
+</body>
+</html>
