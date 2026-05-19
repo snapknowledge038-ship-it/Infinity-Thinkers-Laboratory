@@ -31,31 +31,11 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #0b0b0b;
             color: #e0e0e0;
-            margin: 0 !important;
-            padding: 0 !important;
+            margin: 0;
+            padding: 0;
             line-height: 1.6;
             overflow-x: hidden;
             width: 100%;
-            top: 0px !important; 
-            position: static !important;
-        }
-
-        /* --- 🌟 GOOGLE TRANSLATE FORCED HIDE CSS 🌟 --- */
-        /* Frame එක loading වෙන වෙලාවෙම පෙන්නන එක නතර කරන්න */
-        .goog-te-banner-frame, 
-        .goog-te-banner, 
-        #goog-gt-tt, 
-        .goog-te-balloon-frame {
-            display: none !important;
-            visibility: hidden !important;
-            opacity: 0 !important;
-            height: 0 !important;
-        }
-
-        /* Highlight වෙන කොටස් සාමාන්‍ය තත්ත්වයට පත් කිරීම */
-        .goog-text-highlight {
-            background-color: transparent !important;
-            box-shadow: none !important;
         }
 
         /* --- SPLASH SCREEN STYLES --- */
@@ -199,28 +179,32 @@
         .help-grow-btn { background: linear-gradient(45deg, #ffd700, #ffa500); color: #000; }
         .about-btn { border: 2px solid #00d4ff; color: #00d4ff; }
 
-        /* --- GOOGLE TRANSLATE CUSTOM STYLING --- */
-        .translate-container {
-            display: block;
-            margin: 10px auto;
-            text-align: center;
-        }
-        
-        .goog-te-gadget-simple {
-            background-color: #222 !important;
-            border: 1px solid #00d4ff !important;
-            padding: 6px 12px !important;
-            border-radius: 20px !important;
-            cursor: pointer;
-            display: inline-flex !important;
+        /* --- 🌐 NEW CUSTOM TRANSLATE BUTTONS --- */
+        .lang-switch-container {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
             align-items: center;
+            margin: 10px auto;
         }
-        .goog-te-gadget-simple a span {
-            color: #00d4ff !important;
-            font-size: 14px !important;
-            font-weight: bold !important;
+
+        .lang-btn {
+            background-color: #222;
+            border: 1px solid #00d4ff;
+            color: #00d4ff;
+            padding: 6px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 13px;
+            transition: 0.2s ease;
+            text-decoration: none;
         }
-        .goog-te-gadget-icon { display: none !important; }
+
+        .lang-btn:hover, .lang-btn.active {
+            background-color: #00d4ff;
+            color: #000;
+        }
 
         /* --- SIDEBAR DRAWER (PHONE ONLY) --- */
         .sidebar {
@@ -302,7 +286,7 @@
             .nav-links-pc { display: flex; }
             .nav-right-pc { display: flex; }
             .sidebar, .sidebar-overlay { display: none !important; }
-            .translate-container { margin: 0; }
+            .lang-switch-container { margin: 0; }
         }
 
         h1 {
@@ -413,9 +397,12 @@
         </div>
     </div>
 
-    <!-- Google Translate Holder Template -->
+    <!-- 🌐 HTML Language Switcher Component -->
     <template id="translate-template">
-        <div id="google_translate_element" class="translate-container"></div>
+        <div class="lang-switch-container">
+            <button class="lang-btn" onclick="translatePage('en')">English</button>
+            <button class="lang-btn" onclick="translatePage('si')">සිංහල</button>
+        </div>
     </template>
 
     <!-- Navigation Bar -->
@@ -525,7 +512,7 @@
 
     <!-- Scripts Configuration -->
     <script type="text/javascript">
-        // Inject Google Translate into correct position based on width
+        // Inject Buttons into correct position based on screen layout
         const translateTemplate = document.getElementById('translate-template').content.cloneNode(true);
         if (window.innerWidth >= 768) {
             const pcNav = document.getElementById('nav-right-pc');
@@ -534,36 +521,32 @@
             document.getElementById('sidebar-translate-wrapper').appendChild(translateTemplate);
         }
 
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'en',
-                includedLanguages: 'en,si,ta,hi,es,fr,de,ar,ja,zh-CN', 
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-                autoDisplay: false
-            }, 'google_translate_element');
+        // 🌟 NO-BAR TRANSLATION LOGIC 🌟
+        // මේකෙන් කරන්නේ පිටුව සාමාන්‍ය විදිහටම තියලා, Google Translate සේවාව හරහා වෙබ් ලිපිනය Redirect කරලා දෙන එක.
+        function translatePage(langCode) {
+            // දැනට තියෙන සැබෑ වෙබ් ලිපිනය ලබාගැනීම
+            let currentUrl = window.location.href;
+            
+            // දැනටමත් translate වෙලා නම් තියෙන්නේ, ඒක අයින් කරන්න
+            if (currentUrl.includes("translate.google.com")) {
+                // පරිශීලකයා 'en' එබුවොත් මුල් පිටුවටම යවන්න
+                if (langCode === 'en') {
+                    window.top.location.href = "https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/";
+                    return;
+                }
+            }
+
+            // සිංහල තෝරාගත්තොත් Google Web Translation Link එක සාදන්න
+            if (langCode === 'si') {
+                let cleanUrl = "https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/";
+                let googleTranslateUrl = `https://translate.google.com/translate?sl=en&tl=si&u=${encodeURIComponent(cleanUrl)}`;
+                window.top.location.href = googleTranslateUrl;
+            }
         }
     </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script src="music.js" defer></script>
 
     <script>
-        // 🌟 JAVASCRIPT FORCE-REMOVE WHITE BANNER FUNCTION 🌟
-        // මේ කොටසින් වෙබ් පිටුවේ වෙනස්කම් නිරීක්ෂණය කරලා සුදු බාර් එක ආපු ගමන්ම සිස්ටම් එකෙන් Delete කරනවා.
-        const observer = new MutationObserver(() => {
-            const translateFrames = document.querySelectorAll('.goog-te-banner-frame, iframe.goog-te-banner-frame, .goog-te-banner');
-            translateFrames.forEach(frame => {
-                frame.remove(); // සුදු බාර් එක සම්පූර්ණයෙන්ම Delete කරලා දමයි
-            });
-            
-            // පිටුවේ බොඩි එක බලහත්කාරයෙන් උඩටම තල්ලු කර තබයි
-            if (document.body.style.top !== '0px') {
-                document.body.style.top = '0px';
-            }
-        });
-
-        // මුළු HTML පිටුවම නිරීක්ෂණයට ලක් කිරීම ආරම්භ කිරීම
-        observer.observe(document.documentElement, { attributes: true, childList: true, subtree: true });
-
         // Splash Screen Transition
         window.addEventListener("load", function() {
             setTimeout(() => {
