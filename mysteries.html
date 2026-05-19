@@ -1,142 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="description" content="Uncover the world's greatest secrets with ITL. From ancient enigmas to unsolved scientific puzzles, join us as we explore the unknown and dive deep into mysteries.">
-    <meta name="keywords" content="Unsolved Mysteries, Ancient Secrets, Supernatural, Historical Enigmas, Unknown Facts, ITL Mysteries, Paranormal Discoveries">
-    <meta property="og:title" content="Mysteries – Exploring the Unknown | ITL">
-    <meta property="og:description" content="Dive into the world's most fascinating unsolved mysteries and secrets.">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mysteries - I T L</title>
-    <style>
-        /* --- 🌐 LANGUAGE TOGGLE LOGIC --- */
-        body.lang-si .lang-en { display: none !important; }
-        body.lang-si .lang-si { display: block !important; }
-        body:not(.lang-si) .lang-si { display: none !important; }
-        
-        /* මූලික සැකසුම් */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #050505; 
-            color: #b5b5b5; 
-            margin: 0;
-            padding: 0;
-            line-height: 1.7;
-            overflow-x: hidden;
-            touch-action: manipulation;
-            -webkit-tap-highlight-color: transparent;
-        }
+    <meta name="description" content="Uncover the world's greatest secrets with ITL. From ancient enigmas to unsolved scientific puzzles, join us as we explore the unknown and dive deep into mysteries.">
+    <meta name="keywords" content="Unsolved Mysteries, Ancient Secrets, Supernatural, Historical Enigmas, Unknown Facts, ITL Mysteries, Paranormal Discoveries">
 
-        /* 🖥️ NAVIGATION BAR */
-        nav {
-            background-color: #0a0a0a;
-            padding: 15px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #222;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+    <meta property="og:title" content="Mysteries – Exploring the Unknown | ITL">
+    <meta property="og:description" content="Dive into the world's most fascinating unsolved mysteries and secrets.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mysteries - I T L</title>
+    <style>
+        /* මූලික සැකසුම් (Horror Theme) */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #050505; 
+            color: #b5b5b5; 
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
 
-        .nav-left { display: flex; gap: 20px; align-items: center; }
-        .nav-right { display: flex; gap: 12px; align-items: center; }
+        /* Navigation Bar */
+        nav {
+            background-color: #0a0a0a;
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 2px solid #444; /* Dark Gray Border */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.8);
+        }
 
-        nav a { color: #888; text-decoration: none; font-weight: bold; font-size: 16px; transition: 0.3s; text-transform: uppercase; }
-        nav a:hover { color: #ffffff; text-shadow: 0 0 10px #bbb; }
+        nav a {
+            color: #888; /* Gray Links */
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.3s;
+            letter-spacing: 1px;
+        }
 
-        .nav-btn { background: rgba(255, 255, 255, 0.02); color: #888; border: 1px solid #333; padding: 6px 14px; cursor: pointer; border-radius: 4px; transition: 0.3s; }
-        .nav-btn.active { background: #fff; color: #000; font-weight: bold; }
+        nav a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px #bbb, 0 0 20px #555;
+        }
 
-        /* Mobile Sidebar */
-        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; }
-        .hamburger span { display: block; width: 28px; height: 3px; background-color: #888; }
-        
-        .sidebar { position: fixed; top: 0; right: -280px; width: 280px; height: 100vh; background-color: #0a0a0a; padding: 80px 30px; transition: 0.4s; z-index: 999; border-left: 1px solid #222; }
-        .sidebar.open { right: 0; }
-        .sidebar a { display: block; padding: 10px 0; color: #fff; text-decoration: none; }
+        /* මාතෘකාව (Horror Ghost Animation & Gray Glow) */
+        h1 {
+            font-size: clamp(30px, 6vw, 55px);
+            text-align: center;
+            color: #eee;
+            text-transform: uppercase;
+            margin-top: 40px;
+            letter-spacing: 4px;
+            animation: ghostFlicker 4s infinite linear; /* Horror Animation */
+        }
 
-        @media (max-width: 950px) {
-            .nav-left, .nav-right { display: none; }
-            .hamburger { display: flex; }
-        }
+        /* Horror Ghost Text Animation */
+        @keyframes ghostFlicker {
+            0%, 100% { 
+                text-shadow: 0 0 8px rgba(170, 170, 170, 0.6), 0 0 20px rgba(100, 100, 100, 0.4);
+                opacity: 1;
+            }
+            50% { 
+                text-shadow: 0 0 15px rgba(238, 238, 238, 0.8), 0 0 30px rgba(136, 136, 136, 0.6);
+                opacity: 0.9;
+                transform: skewX(-1deg); /* Slight creepy distortion */
+            }
+            52% { opacity: 0.3; } /* Sudden glitch drop */
+            54% { opacity: 0.9; }
+        }
 
-        /* මාතෘකාව සහ අන්තර්ගතය */
-        h1 { text-align: center; color: #eee; text-transform: uppercase; margin-top: 40px; }
-        .mysteries-img { max-width: 85%; height: auto; border-radius: 5px; filter: grayscale(85%) contrast(120%); display: block; margin: 0 auto; }
-        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
-        .mystery-box { background: #0d0d0d; padding: 35px; border-radius: 10px; border: 1px solid #252525; }
-        
-        h3 { color: #ccc; border-left: 4px solid #666; padding-left: 15px; margin-top: 40px; }
-        .mystery-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; list-style: none; padding: 0; }
-        .mystery-list li { background: #0f0f0f; padding: 15px; border: 1px solid #222; transition: 0.3s; }
-        .mystery-list li:hover { background: #222; transform: scale(1.02); }
-        .mystery-list a { color: #999; text-decoration: none; display: block; }
-    </style>
+        /* അභිරഹസ് පින්තූරය */
+        .img-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .mysteries-img {
+            max-width: 85%;
+            height: auto;
+            border-radius: 5px;
+            filter: grayscale(85%) contrast(120%) brightness(75%); /* Dark Gray Creepy Look */
+            box-shadow: 0 0 40px rgba(100, 100, 100, 0.3);
+            border: 1px solid #333;
+        }
+
+        /* ප්‍රධාන විස්තරය */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .mystery-box {
+            font-size: 19px;
+            background: linear-gradient(145deg, #0d0d0d, #141414);
+            padding: 35px;
+            border-radius: 10px;
+            text-align: justify;
+            border: 1px solid #252525; 
+            box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.02);
+        }
+
+        h2 {
+            color: #aaa;
+            font-size: 30px;
+            margin-top: 50px;
+            text-align: center;
+            text-shadow: 0 0 8px rgba(136, 136, 136, 0.3);
+        }
+
+        /* කාණ්ඩවල උප මාතෘකා (Creepy Floating Animation) */
+        h3 {
+            color: #ccc;
+            font-size: 22px;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            border-left: 4px solid #666;
+            padding-left: 15px;
+            letter-spacing: 1px;
+            animation: spookyFloat 3s infinite ease-in-out;
+        }
+
+        @keyframes spookyFloat {
+            0%, 100% { 
+                transform: translateY(0);
+                text-shadow: 0 0 5px rgba(136, 136, 136, 0.4);
+            }
+            50% { 
+                transform: translateY(-3px); /* Mist like floating */
+                text-shadow: 0 0 12px rgba(200, 200, 200, 0.7);
+                color: #fff;
+            }
+        }
+
+        /* අභිරහස් ලැයිස්තුව (Grid) */
+        .mystery-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 0;
+            list-style: none;
+            margin-top: 15px;
+            margin-bottom: 30px;
+        }
+
+        .mystery-list li {
+            background: #0f0f0f;
+            padding: 15px;
+            border-radius: 4px;
+            text-align: center;
+            border: 1px solid #222;
+            transition: 0.4s ease;
+        }
+
+        .mystery-list li:hover {
+            background: #222; /* Dark Gray background on hover */
+            border-color: #888;
+            transform: scale(1.02);
+            box-shadow: 0 0 15px rgba(136, 136, 136, 0.4);
+        }
+
+        .mystery-list a {
+            color: #999;
+            text-decoration: none;
+            font-weight: 500;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .mystery-list li:hover a {
+            color: #fff;
+            text-shadow: 0 0 5px #000;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #444, transparent);
+            margin: 50px 0;
+        }
+
+        .dotted-hr {
+            border-top: 3px dotted #333;
+            margin-bottom: 50px;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- භාෂා සැකසුම මුලින්ම ලෝඩ් කිරීමට -->
-    <script>
-        const savedLang = localStorage.getItem('siteLang') || 'en';
-        document.body.classList.add(savedLang === 'si' ? 'lang-si' : 'lang-en');
-    </script>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
+    <audio id="myAudio" loop>
+        <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
+    </audio>
 
-    <nav>
-        <div class="nav-left">
-            <a href="index.html">Home</a>
-            <a href="mysteries.html">Mysteries</a>
-        </div>
-        <div class="nav-right">
-            <button class="nav-btn btn-en" onclick="changeLanguage('en')">English</button>
-            <button class="nav-btn btn-si" onclick="changeLanguage('si')">සිංහල</button>
-        </div>
-        <button class="hamburger" id="hamburger-menu" onclick="toggleSidebar()">
-            <span></span><span></span><span></span>
-        </button>
-    </nav>
+    <div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
+        <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
+            <span id="music-icon">🔇</span>
+        </div>
+    </div>
 
-    <div class="sidebar" id="mobile-sidebar">
-        <a href="index.html">Home</a>
-        <a href="mysteries.html">Mysteries</a>
-        <button class="nav-btn" onclick="changeLanguage('en')">English</button>
-        <button class="nav-btn" onclick="changeLanguage('si')">සිංහල</button>
-    </div>
+    <script src="music.js"></script>
+    <div class="container">
+        <h1>Mysteries – Exploring the Unknown</h1>
 
-    <div class="container">
-        <h1>
-            <span class="lang-en">Mysteries – Exploring the Unknown</span>
-            <span class="lang-si">අභිරහස් – නොදන්නා ලෝකය ගවේෂණය</span>
-        </h1>
+        <div class="img-container">
+            <img class="mysteries-img" src="images/mysteries.jpeg" alt="World Mysteries">
+        </div>
 
-        <div class="mystery-box">
-            <div class="lang-en">Welcome to the world of mysteries...</div>
-            <div class="lang-si">අභිරහස් ලෝකයට සාදරයෙන් පිළිගනිමු...</div>
-        </div>
-        
-        <h3>
-            <span class="lang-en">Ancient Mythology</span>
-            <span class="lang-si">පැරණි මිථ්‍යා කථා</span>
-        </h3>
-        <ul class="mystery-list">
-            <li>
-                <a href="dracula.html" class="lang-en">Dracula</a>
-                <a href="dracula.html" class="lang-si">ඩ්‍රැකියුලා</a>
-            </li>
-        </ul>
-    </div>
+        <div class="mystery-box">
+            You have arrived here to explore the mysteries of the world—phenomena that have not yet been fully explained. From strange events in history and unexplored places to questions that even scientists have not completely answered, you will encounter them all here. 
+            <br><br>
+            Through the articles and information below, you can dive deeper into this fascinating world of mysteries and expand your understanding of the unknown. We hope that what you discover here will inspire you to think about new ideas, broaden your knowledge of the world, and encourage your curiosity to keep exploring.
+        </div>
 
-    <script>
-        function toggleSidebar() {
-            document.getElementById('mobile-sidebar').classList.toggle('open');
-        }
+        <hr>
 
-        function changeLanguage(lang) {
-            localStorage.setItem('siteLang', lang);
-            document.body.className = ''; 
-            document.body.classList.add(lang === 'si' ? 'lang-si' : 'lang-en');
-        }
-    </script>
+        <h2>What are the details you are expecting?</h2>
+         
+        <!-- Category 1: Mythology & Folklore -->
+        <h3>Ancient Mythology & Folklore</h3>
+        <ul class="mystery-list">
+            <li><a href="grim reaper.html">Grim Reaper</a></li>
+            <li><a href="excalibur.html">Excalibur</a></li>
+            <li><a href="dracula.html">Dracula</a></li>
+            <li><a href="medusa.html">Medusa</a></li>
+            <li><a href="Banshee.html">Banshee</a></li>
+            <li><a href="The Sirens.html">The Sirens</a></li>
+            <li><a href="bloody-mary.html">Bloody Mary</a></li>
+            <li><a href="Minotaur.html">The Minotaur & The Labyrinth</a></li>
+            <li><a href="headless-horseman.html">Headless Horseman</a></li>
+            <li><a href="anubis.html">Anubis</a></li>
+        </ul>
+
+        <!-- Category 2: Cryptids & Mythical Creatures -->
+        <h3>Cryptids & Mythical Creatures</h3>
+        <ul class="mystery-list">
+            <li><a href="phoenix.html">Phoenix</a></li>
+            <li><a href="hydra.html">Hydra</a></li>
+            <li><a href="cerberus.html">Cerberus</a></li>
+            <li><a href="kraken.html">Kraken</a></li>
+            <li><a href="chupacabra_creature.html">Chupacabra</a></li>
+            <li><a href="wendigo.html">The Wendigo</a></li>
+            <li><a href="mothman.html">Mothman</a></li>
+        </ul>
+
+        <!-- Category 3: Unsolved Real-World Mysteries -->
+        <h3>Unsolved Real-World Mysteries</h3>
+        <ul class="mystery-list">
+            <li><a href="Jack the Ripper.html">Jack the Ripper</a></li>
+            <li><a href="aliens.html">Aliens</a></li>
+            <li><a href="voynich.html">The Voynich Manuscript</a></li>
+            <li><a href="crying_boy.html">The Crying Boy</a></li>
+            <li><a href="mary_celeste_ship.html">The Mary Celeste</a></li>
+            <li><a href="atlantis_city.html">Atlantis</a></li>
+            <li><a href="hope_diamond.html">The Hope Diamond</a></li>
+            <li><a href="Zodiac.html">The Zodiac Killer</a></li>
+            <li><a href="el-dorado.html">El Dorado</a></li>
+        </ul>
+
+        <div class="dotted-hr"></div>
+    </div>
+
 </body>
 </html>
+ sinhala english wadei Quontum physics nui add karanna
