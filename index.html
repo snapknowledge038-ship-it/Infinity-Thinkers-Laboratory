@@ -35,7 +35,7 @@
             margin: 0;
             padding: 0;
             line-height: 1.6;
-            overflow-x: hidden; /* පැත්තට ඇදීම වළක්වයි */
+            overflow-x: hidden;
             width: 100%;
         }
 
@@ -111,12 +111,12 @@
         @keyframes loadProgress { to { width: 100%; } }
         .fade-out { opacity: 0 !important; pointer-events: none; }
 
-        /* Navigation Bar - Responsive Update */
+        /* --- NEW NAVIGATION BAR --- */
         nav {
             background-color: #1a1a1a;
-            padding: 10px;
+            padding: 12px 20px;
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
             border-bottom: 2px solid #333;
             position: sticky;
@@ -126,52 +126,125 @@
             box-sizing: border-box;
         }
 
-        .nav-links {
+        .nav-left {
             display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-bottom: 10px;
-            width: 100%;
+            align-items: center;
+            gap: 15px;
         }
 
-        nav a {
+        .menu-btn {
+            background: none;
+            border: none;
             color: #00d4ff;
+            font-size: 26px;
+            cursor: pointer;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        nav a.home-btn {
+            color: #ffffff;
             text-decoration: none;
             font-weight: bold;
-            font-size: 15px;
+            font-size: 20px;
+            letter-spacing: 1px;
             transition: 0.3s;
         }
 
-        .nav-right {
+        nav a.home-btn:hover {
+            color: #00d4ff;
+        }
+
+        /* --- SIDEBAR DRAWER --- */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -280px; /* ආරම්භයේදී සැඟවී පවතී */
+            width: 280px;
+            height: 100%;
+            background-color: #111111;
+            box-shadow: 4px 0 15px rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            transition: left 0.4s ease;
+            box-sizing: border-box;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .sidebar.open {
+            left: 0; /* මෙනුව විවෘත වූ විට */
+        }
+
+        .sidebar-close {
+            text-align: right;
+            margin-bottom: 15px;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: #ff4a4a;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .sidebar-menu {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 8px;
-            width: 100%;
+            flex-direction: column;
+            gap: 10px;
         }
 
-        /* Buttons responsive size */
-        .share-thoughts-btn, .help-grow-btn, .about-btn {
-            padding: 5px 12px;
-            font-size: 12px !important;
-            border-radius: 30px;
+        .sidebar-menu a {
+            color: #e0e0e0;
             text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: 0.3s;
         }
 
-        .share-thoughts-btn { background: linear-gradient(45deg, #00ff88, #00ad5d); color: #000 !important; cursor: pointer; }
-        .help-grow-btn { background: linear-gradient(45deg, #ffd700, #ffa500); color: #000 !important; }
-        .about-btn { border: 2px solid #00d4ff; color: #00d4ff; }
+        .sidebar-menu a:hover {
+            background-color: #1a1a1a;
+            color: #00d4ff;
+            padding-left: 20px;
+        }
 
-        /* PC එකේදී පෙනුම වෙනස් කිරීමට */
-        @media (min-width: 768px) {
-            nav { flex-direction: row; padding: 15px 30px; }
-            .nav-links { position: absolute; left: 50%; transform: translateX(-50%); margin-bottom: 0; width: auto; }
-            nav a { font-size: 18px; }
-            .nav-right { width: auto; margin-left: auto; }
-            .share-thoughts-btn, .help-grow-btn, .about-btn { padding: 6px 15px; font-size: 14px !important; }
+        /* මෙනු වෙන් කරන ඉරි */
+        .sidebar-divider {
+            border: none;
+            border-top: 1px solid #333;
+            margin: 15px 0;
+        }
+
+        /* විශේෂ බොත්තම් සැකසුම් (Sidebar ඇතුළත) */
+        .sb-special-btn {
+            font-weight: bold !important;
+        }
+        .sb-facts { color: #ffd700 !important; }
+        .sb-mcq { color: #00ff88 !important; }
+        .sb-share { color: #00d4ff !important; cursor: pointer; }
+        .sb-help { color: #ff8c00 !important; }
+        .sb-about { color: #b0b0b0 !important; }
+
+        /* පිටුපස අඳුරු තිරය (Overlay) */
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1500;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .sidebar-overlay.show {
+            display: block;
+            opacity: 1;
         }
 
         /* Content Styles */
@@ -269,6 +342,7 @@
 </head>
 <body>
 
+    <!-- Splash Screen -->
     <div id="it-splash">
         <div class="splash-content">
             <div class="logo-circle">
@@ -282,33 +356,56 @@
         </div>
     </div>
 
+    <!-- Navigation Bar -->
     <nav>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
+        <div class="nav-left">
+            <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+            <a href="index.html" class="home-btn">Home</a>
+        </div>
+    </nav>
+
+    <!-- Sidebar Drawer (පැත්තෙන් එන මෙනුව) -->
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+    <div class="sidebar" id="sidebarMenu">
+        <div class="sidebar-close">
+            <button class="close-btn" onclick="toggleSidebar()">✕</button>
+        </div>
+        <div class="sidebar-menu">
+            <!-- පළමු කොටස: ප්‍රධාන පිටු -->
+            <a href="index.html" onclick="toggleSidebar()">Home</a>
             <a href="earth.html">Earth</a>
             <a href="animals.html">Animals</a>
             <a href="space.html">Space</a>
             <a href="mysteries.html">Mysteries</a>
             <a href="history.html">History</a>
+            <a href="quantum.html">Quantum Physics</a>
+
+            <hr class="sidebar-divider">
+
+            <!-- දෙවන කොටස: Fun Facts & MCQ -->
+            <a href="facts.html" class="sb-special-btn sb-facts">⚡ Fun Amazing Facts</a>
+            <a href="mcq.html" class="sb-special-btn sb-mcq">📝 MCQ QUIZ QUIZ</a>
+
+            <hr class="sidebar-divider">
+
+            <!-- තෙවන කොටස: Utilities -->
+            <a class="sb-special-btn sb-share" onclick="shareToFriends(); toggleSidebar();">🔗 SHARE</a>
+            <a href="ad.html" class="sb-special-btn sb-help">❤️ Help</a>
+            <a href="aaaextradatapage.html" class="sb-special-btn sb-about">About</a>
         </div>
-        <div class="nav-right">
-            <a class="share-thoughts-btn" onclick="shareToFriends()">🔗 SHARE</a>
-            <a href="ad.html" class="help-grow-btn">❤️ Help</a>
-            <a href="aaaextradatapage.html" class="about-btn">About</a>
-        </div>
-    </nav>
+    </div>
 
     <audio id="myAudio" loop>
-    <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
-</audio>
+        <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
+    </audio>
 
-<div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
-    <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
-        <span id="music-icon">🔇</span>
+    <div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
+        <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
+            <span id="music-icon">🔇</span>
+        </div>
     </div>
-</div>
 
-<script src="music.js"></script>
+    <script src="music.js"></script>
 
     <h1>Infinity Thinkers Laboratory</h1>
 
@@ -340,6 +437,7 @@
             <li><a href="space.html">Space</a></li>
             <li><a href="mysteries.html">Mysteries</a></li>
             <li><a href="history.html">History</a></li>
+            <li><a href="quantum.html">Quantum Physics</a></li>
         </ul>
     </div>
 
@@ -351,6 +449,24 @@
                 splash.classList.add("fade-out");
             }, 2200); 
         });
+
+        // Sidebar Toggle Function (මෙනුව විවෘත කිරීමට සහ වැසීමට)
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebarMenu");
+            const overlay = document.getElementById("sidebarOverlay");
+            
+            if (sidebar.classList.contains("open")) {
+                sidebar.classList.remove("open");
+                overlay.classList.remove("show");
+                setTimeout(() => { overlay.style.display = "none"; }, 400);
+            } else {
+                overlay.style.display = "block";
+                setTimeout(() => {
+                    sidebar.classList.add("open");
+                    overlay.classList.add("show");
+                }, 10);
+            }
+        }
 
         // Music
         function toggleMusic() {
