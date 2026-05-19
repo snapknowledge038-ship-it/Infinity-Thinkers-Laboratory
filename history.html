@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="description" content="Journey back in time with ITL to explore the stories that shaped our world.">
+    <meta name="description" content="Journey back in time with ITL to explore the stories that shaped our world. From ancient civilizations to life-changing historical events, discover the fascinating story of our past.">
+    <meta name="keywords" content="World History, Ancient Civilizations, Historical Figures, History Facts, Human Past, ITL History, Mysteries of History">
+    <meta property="og:title" content="History – The Story of Our Past | ITL">
+    <meta property="og:description" content="Explore the fascinating events and people that shaped our world.">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>History - I T L</title>
+    
     <style>
-        /* --- 🌐 LANGUAGE TOGGLE LOGIC --- */
+        /* --- 🌐 LANGUAGE TOGGLE LOGIC (CSS Based) --- */
         body.lang-si .lang-en { display: none !important; }
         body.lang-si .lang-si { display: block !important; }
         body:not(.lang-si) .lang-si { display: none !important; }
+        body:not(.lang-si) .lang-en { display: block !important; }
 
+        /* මූලික සැකසුම් */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #0b0b0b;
@@ -22,39 +28,161 @@
             background-attachment: fixed;
         }
 
-        /* Nav */
-        nav { background-color: rgba(26, 26, 26, 0.9); padding: 18px 0; text-align: center; border-bottom: 1px solid rgba(255, 204, 0, 0.2); position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(10px); }
-        nav a { color: #ffcc00; text-decoration: none; margin: 0 15px; font-weight: 600; }
-        
-        .lang-btn { background: none; border: 1px solid #ffcc00; color: #ffcc00; cursor: pointer; padding: 5px 10px; margin: 0 5px; border-radius: 4px; }
+        /* Navigation Bar එක */
+        nav {
+            background-color: rgba(26, 26, 26, 0.9);
+            padding: 18px 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 204, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+        }
+
+        nav a {
+            color: #ffcc00;
+            text-decoration: none;
+            margin: 0 18px;
+            font-weight: 600;
+            font-size: 17px;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 12px #ffcc00;
+        }
+
+        /* භාෂා මාරු කිරීමේ බොත්තම් */
+        .lang-btn {
+            background: none;
+            border: 1px solid #ffcc00;
+            color: #ffcc00;
+            cursor: pointer;
+            padding: 5px 10px;
+            margin-left: 10px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
         .lang-btn:hover { background: #ffcc00; color: #000; }
 
-        /* Heading */
-        h1 { font-size: clamp(30px, 6vw, 55px); text-align: center; margin-top: 50px; background: linear-gradient(to right, #ffea80, #ffcc00, #b38f00); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        /* ප්‍රධාන මාතෘකාව */
+        h1 {
+            font-size: clamp(30px, 6vw, 55px);
+            text-align: center;
+            margin-top: 50px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 800;
+            background: linear-gradient(to right, #ffea80, #ffcc00, #b38f00, #ffea80);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: goldShine 4s linear infinite, headingGlow 3s ease-in-out infinite alternate;
+            display: inline-block;
+            width: 100%;
+        }
+
+        @keyframes goldShine { to { background-position: 200% center; } }
+        @keyframes headingGlow {
+            from { filter: drop-shadow(0 0 4px rgba(255, 204, 0, 0.2)); }
+            to { filter: drop-shadow(0 0 15px rgba(255, 204, 0, 0.5)); }
+        }
+
+        .img-container { text-align: center; margin: 40px 0; }
+        .history-img {
+            max-width: 90%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 204, 0, 0.1);
+            border: 1px solid rgba(255, 204, 0, 0.15);
+            transition: transform 0.4s ease;
+        }
+        .history-img:hover { transform: scale(1.01); }
 
         .container { max-width: 950px; margin: 0 auto; padding: 20px; }
-        .main-text { background: rgba(255, 255, 255, 0.02); padding: 35px; border-radius: 16px; border-left: 4px solid #ffcc00; }
+        .main-text {
+            font-size: 19px;
+            color: #cccccc;
+            text-align: justify;
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(5px);
+            padding: 35px;
+            border-radius: 16px;
+            border-left: 4px solid #ffcc00;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
 
-        /* Grid */
-        .topic-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; list-style: none; padding: 0; }
-        .topic-grid li { background: rgba(26, 26, 26, 0.6); padding: 22px; border-radius: 14px; text-align: center; border: 1px solid rgba(255, 204, 0, 0.1); transition: 0.3s; }
-        .topic-grid li:hover { border-color: #ffcc00; transform: translateY(-5px); }
-        .topic-grid a { color: #f0f0f0; text-decoration: none; font-weight: 600; }
+        h2 { color: #ffffff; font-size: 28px; margin-top: 60px; text-align: center; font-weight: 700; }
+        h3 { color: #ffe680; font-size: 21px; margin-top: 45px; margin-bottom: 18px; border-left: 4px solid #ffcc00; padding-left: 15px; font-weight: 600; }
+
+        .topic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+        }
+        .topic-grid li {
+            background: rgba(26, 26, 26, 0.6);
+            padding: 22px;
+            border-radius: 14px;
+            text-align: center;
+            border: 1px solid rgba(255, 204, 0, 0.1);
+            transition: all 0.4s;
+            cursor: pointer;
+        }
+        .topic-grid li:hover {
+            background: rgba(255, 204, 0, 0.08);
+            border-color: #ffcc00;
+            transform: translateY(-6px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
+        }
+        .topic-grid a { color: #f0f0f0; text-decoration: none; font-weight: 600; font-size: 17px; display: block; }
+
+        hr { border: 0; height: 1px; background-image: linear-gradient(to right, transparent, rgba(255, 204, 0, 0.25), transparent); margin: 50px 0; }
+        .dotted-hr { border: 0; height: 2px; background-image: linear-gradient(to right, transparent, rgba(255, 204, 0, 0.1), transparent); margin-bottom: 60px; }
     </style>
 </head>
 <body>
 
+    <!-- භාෂා සැකසුම මුලින්ම ලබාගැනීම -->
     <script>
         const savedLang = localStorage.getItem('siteLang') || 'en';
         document.body.classList.add(savedLang === 'si' ? 'lang-si' : 'lang-en');
+
+        function changeLanguage(lang) {
+            localStorage.setItem('siteLang', lang);
+            document.body.className = '';
+            document.body.classList.add(lang === 'si' ? 'lang-si' : 'lang-en');
+        }
     </script>
 
     <nav>
         <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
         <a href="history.html">History</a>
         <button class="lang-btn" onclick="changeLanguage('en')">EN</button>
         <button class="lang-btn" onclick="changeLanguage('si')">සිං</button>
     </nav>
+
+    <audio id="myAudio" loop>
+        <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
+    </audio>
+
+    <div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
+        <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
+            <span id="music-icon">🔇</span>
+        </div>
+    </div>
+
+    <script src="music.js"></script>
 
     <div class="container">
         <h1>
@@ -62,36 +190,63 @@
             <span class="lang-si">ඉතිහාසය – අපේ අතීතයේ කතාව</span>
         </h1>
 
+        <div class="img-container">
+            <img class="history-img" src="images/history.jpeg" alt="History Journey">
+        </div>
+
         <div class="main-text">
             <div class="lang-en">
-                You have arrived here to explore the fascinating story of human history. From ancient civilizations to influential figures, discover how our world evolved.
+                You have arrived here to explore the fascinating story of human history. From ancient civilizations and great empires to remarkable events that shaped the modern world, history reveals how societies, cultures, and ideas have evolved over time.
+                <br><br>
+                Here you will discover intriguing facts about historical events, influential figures, and the civilizations that left their mark on the world.
             </div>
             <div class="lang-si">
-                මිනිස් ඉතිහාසයේ සිත් ඇදගන්නාසුළු කතාව ගවේෂණය කිරීමට ඔබ මෙහි පැමිණ ඇත. පුරාණ ශිෂ්ටාචාරවල සිට බලගතු පුද්ගලයන් දක්වා, අපේ ලෝකය පරිණාමය වූ ආකාරය මෙහිදී සොයා ගන්න.
+                මිනිස් ඉතිහාසයේ සිත් ඇදගන්නාසුළු කතාව ගවේෂණය කිරීමට ඔබ මෙහි පැමිණ ඇත. පුරාණ ශිෂ්ටාචාර සහ මහා අධිරාජ්‍යවල සිට නූතන ලෝකය හැඩගස්වන ලද සුවිශේෂී සිදුවීම් දක්වා, සමාජයන්, සංස්කෘතීන් සහ අදහස් කාලයත් සමඟ පරිණාමය වූ ආකාරය ඉතිහාසය හෙළි කරයි.
+                <br><br>
+                ඓතිහාසික සිදුවීම්, බලගතු පුද්ගලයින් සහ ලෝකයේ තම සලකුණ තැබූ ශිෂ්ටාචාර පිළිබඳ සිත්ගන්නාසුලු කරුණු මෙහිදී ඔබට සොයාගත හැකිය.
             </div>
         </div>
 
+        <hr>
+
         <h2>
-            <span class="lang-en">What are you expecting?</span>
+            <span class="lang-en">What are the details you are expecting?</span>
             <span class="lang-si">ඔබ අපේක්ෂා කරන තොරතුරු මොනවාද?</span>
         </h2>
-
+        
         <h3>
-            <span class="lang-en">Great Leaders</span>
-            <span class="lang-si">මහා නායකයින්</span>
+            <span class="lang-en">Great Leaders & Historical Figures</span>
+            <span class="lang-si">මහා නායකයින් සහ ඓතිහාසික පුද්ගලයින්</span>
         </h3>
         <ul class="topic-grid">
-            <li><a href="cleopatra.html">Cleopatra / ක්ලියෝපැට්රා</a></li>
-            <li><a href="napoleon.html">Napoleon / නැපෝලියන්</a></li>
+            <li><a href="Alexander the Great.html">Alexander the Great</a></li>
+            <li><a href="napoleon.html">Napoleon Bonaparte</a></li>
+            <li><a href="cleopatra.html">Cleopatra</a></li>
+            <li><a href="Genghis Khan.html">Genghis Khan</a></li>
+            <li><a href="Queen Elizabeth I.html">Queen Elizabeth I</a></li>
+            <li><a href="hitler.html">Adolf Hitler</a></li>
         </ul>
-    </div>
 
-    <script>
-        function changeLanguage(lang) {
-            localStorage.setItem('siteLang', lang);
-            document.body.className = ''; 
-            document.body.classList.add(lang === 'si' ? 'lang-si' : 'lang-en');
-        }
-    </script>
+        <h3>
+            <span class="lang-en">Global Wars & Conflicts</span>
+            <span class="lang-si">ගෝලීය යුද්ධ සහ ගැටුම්</span>
+        </h3>
+        <ul class="topic-grid">
+            <li><a href="ww1.html">World War I</a></li>
+            <li><a href="ww2.html">World War II</a></li>
+            <li><a href="emuwar.html">The Great Emu War</a></li>
+        </ul>
+
+        <h3>
+            <span class="lang-en">Empires & Warrior Cultures</span>
+            <span class="lang-si">අධිරාජ්‍ය සහ රණකාමී සංස්කෘතීන්</span>
+        </h3>
+        <ul class="topic-grid">
+            <li><a href="great-empires.html">Great Empires</a></li>
+            <li><a href="samurai.html">The Samurai</a></li>
+        </ul>
+
+        <div class="dotted-hr"></div>
+    </div>
 </body>
 </html>
