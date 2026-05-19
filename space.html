@@ -1,341 +1,319 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="description" content="Embark on a journey through the cosmos with ITL. Discover the wonders of our solar system, distant galaxies, black holes, and the latest in space exploration.">
-    <meta name="keywords" content="Space Facts, Astronomy, Solar System, Galaxies, Black Holes, Universe, ITL Space, NASA News">
+    <meta name="description" content="Embark on a journey through the cosmos with ITL. Discover the wonders of our solar system, distant galaxies, black holes, and the latest in space exploration.">
+    <meta name="keywords" content="Space Facts, Astronomy, Solar System, Galaxies, Black Holes, Universe, ITL Space, NASA News">
 
-    <meta property="og:title" content="Space – The Universe Beyond | ITL">
-    <meta property="og:description" content="Explore the vast wonders of the universe, from planets to distant galaxies.">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Space - I T L</title>
-    <style>
-        /* මූලික සැකසුම් */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #02040a;
-            color: #e0e6ed;
-            margin: 0;
-            padding: 0;
-            line-height: 1.8;
-            background-image: radial-gradient(circle at center, #0a1128 0%, #02040a 100%);
-            position: relative;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
+    <meta property="og:title" content="Space – The Universe Beyond | ITL">
+    <meta property="og:description" content="Explore the vast wonders of the universe, from planets to distant galaxies.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space - I T L</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #02040a;
+            color: #e0e6ed;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-image: radial-gradient(circle at center, #0a1128 0%, #02040a 100%);
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
 
-        /* --- BACKGROUND STARS ANIMATION --- */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background-image: 
-                radial-gradient(1.5px 1.5px at 20px 30px, #fff, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 90px 10px, #7dd3fc, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 150px 120px, #fff, rgba(0,0,0,0)),
-                radial-gradient(1.5px 1.5px at 200px 50px, #38bdf8, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 300px 250px, #fff, rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 350px 80px, #fff, rgba(0,0,0,0));
-            background-size: 550px 550px;
-            animation: spaceTravel 120s linear infinite;
-            opacity: 0.6;
-        }
+        /* --- BACKGROUND STARS ANIMATION --- */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image: 
+                radial-gradient(1.5px 1.5px at 20px 30px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 90px 10px, #7dd3fc, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 150px 120px, #fff, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 200px 50px, #38bdf8, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 300px 250px, #fff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 350px 80px, #fff, rgba(0,0,0,0));
+            background-size: 550px 550px;
+            animation: spaceTravel 120s linear infinite;
+            opacity: 0.6;
+        }
 
-        @keyframes spaceTravel {
-            from { background-position: 0 0; }
-            to { background-position: 0 -550px; }
-        }
+        @keyframes spaceTravel {
+            from { background-position: 0 0; }
+            to { background-position: 0 -550px; }
+        }
 
-        /* Navigation Bar */
-        nav {
-            background-color: rgba(10, 17, 40, 0.85);
-            padding: 18px 0;
-            text-align: center;
-            border-bottom: 1px solid rgba(56, 189, 248, 0.15);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            backdrop-filter: blur(12px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
+        /* Navigation Bar */
+        nav {
+            background-color: rgba(10, 17, 40, 0.85);
+            padding: 18px 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
 
-        nav a {
-            color: #38bdf8;
-            text-decoration: none;
-            margin: 0 20px;
-            font-weight: 600;
-            font-size: 16px;
-            transition: all 0.4s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+        nav a {
+            color: #38bdf8;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.4s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-        nav a:hover {
-            color: #ffffff;
-            text-shadow: 0 0 15px #38bdf8;
-        }
+        nav a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 15px #38bdf8;
+        }
 
-        /* ප්‍රධාන මාතෘකාව (Floating & Glowing Animation) */
-        h1 {
-            font-size: clamp(28px, 6vw, 55px);
-            text-align: center;
-            margin-top: 50px;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            font-weight: 800;
-            background: linear-gradient(to bottom, #ffffff 40%, #cceeff 70%, #38bdf8 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: floatAndGlow 5s infinite ease-in-out;
-        }
+        /* Glowing Cosmic Title */
+        h1 {
+            font-size: clamp(28px, 6vw, 55px);
+            text-align: center;
+            margin-top: 50px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: 800;
+            background: linear-gradient(to bottom, #ffffff 40%, #cceeff 70%, #38bdf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: floatAndGlow 5s infinite ease-in-out;
+        }
 
-        @keyframes floatAndGlow {
-            0%, 100% {
-                transform: translateY(0);
-                filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.3));
-            }
-            50% {
-                transform: translateY(-8px);
-                filter: drop-shadow(0 0 25px rgba(56, 189, 248, 0.6));
-            }
-        }
+        @keyframes floatAndGlow {
+            0%, 100% {
+                transform: translateY(0);
+                filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.3));
+            }
+            50% {
+                transform: translateY(-8px);
+                filter: drop-shadow(0 0 25px rgba(56, 189, 248, 0.6));
+            }
+        }
 
-        /* Space පින්තූරය */
-        .img-container {
-            text-align: center;
-            margin: 40px 0;
-        }
+        /* Space Image */
+        .img-container {
+            text-align: center;
+            margin: 40px 0;
+        }
 
-        .space-img {
-            max-width: 90%;
-            height: auto;
-            border-radius: 16px;
-            box-shadow: 0 20px 50px rgba(10, 17, 40, 0.6), 0 0 40px rgba(56, 189, 248, 0.15);
-            border: 1px solid rgba(56, 189, 248, 0.2);
-            transition: transform 0.5s ease;
-        }
+        .space-img {
+            max-width: 90%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 20px 50px rgba(10, 17, 40, 0.6), 0 0 40px rgba(56, 189, 248, 0.15);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            transition: transform 0.5s ease;
+        }
 
-        .space-img:hover {
-            transform: scale(1.01);
-        }
+        .space-img:hover {
+            transform: scale(1.01);
+        }
 
-        /* අන්තර්ගතය */
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+        /* Content Structure */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-        .space-description {
-            font-size: 18px;
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(8px);
-            padding: 35px;
-            border-radius: 20px;
-            text-align: justify;
-            border: 1px solid rgba(56, 189, 248, 0.08);
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
+        .space-description {
+            font-size: 18px;
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(8px);
+            padding: 35px;
+            border-radius: 20px;
+            text-align: justify;
+            border: 1px solid rgba(56, 189, 248, 0.08);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
 
-        .space-description::before {
-            content: "“";
-            position: absolute;
-            top: -15px;
-            left: 20px;
-            font-size: 100px;
-            color: rgba(56, 189, 248, 0.05);
-            font-family: serif;
-        }
+        .space-description::before {
+            content: "“";
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            font-size: 100px;
+            color: rgba(56, 189, 248, 0.05);
+            font-family: serif;
+        }
 
-        h2 {
-            color: #ffffff;
-            font-size: 28px;
-            margin-top: 60px;
-            text-align: center;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-        }
+        h2 {
+            color: #ffffff;
+            font-size: 28px;
+            margin-top: 60px;
+            text-align: center;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
 
-        /* කාණ්ඩවල උප මාතෘකා */
-        h3 {
-            color: #7dd3fc;
-            font-size: 20px;
-            margin-top: 45px;
-            margin-bottom: 15px;
-            border-left: 3px solid #38bdf8;
-            padding-left: 15px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
+        h3 {
+            color: #7dd3fc;
+            font-size: 20px;
+            margin-top: 45px;
+            margin-bottom: 15px;
+            border-left: 3px solid #38bdf8;
+            padding-left: 15px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
 
-        /* ලැයිස්තුව (Cosmic Grid with Glow Animations) */
-        .cosmic-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            list-style: none;
-            padding: 0;
-            margin-top: 15px;
-            margin-bottom: 35px;
-        }
+        /* Interactive Cosmic Grid */
+        .cosmic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+            margin-bottom: 35px;
+        }
 
-        .cosmic-grid li {
-            background: rgba(10, 17, 40, 0.4);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(56, 189, 248, 0.15);
-            border-radius: 14px;
-            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-            cursor: pointer;
-        }
+        .cosmic-grid a {
+            text-decoration: none;
+            display: block;
+        }
 
-        .cosmic-grid li:hover {
-            background: rgba(56, 189, 248, 0.15);
-            transform: translateY(-8px) scale(1.02);
-            border-color: #ffffff;
-            box-shadow: 0 15px 35px rgba(56, 189, 248, 0.25), 0 0 15px rgba(255, 255, 255, 0.1);
-        }
+        .cosmic-grid li {
+            background: rgba(10, 17, 40, 0.4);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(56, 189, 248, 0.15);
+            border-radius: 14px;
+            padding: 22px 15px;
+            text-align: center;
+            color: #e2eefc;
+            font-weight: 600;
+            font-size: 17px;
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
 
-        .cosmic-grid a {
-            color: #e2eefc;
-            text-decoration: none;
-            padding: 22px 15px;
-            display: block;
-            font-weight: 600;
-            font-size: 17px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
+        .cosmic-grid a:hover li {
+            background: rgba(56, 189, 248, 0.15);
+            transform: translateY(-8px) scale(1.02);
+            border-color: #ffffff;
+            box-shadow: 0 15px 35px rgba(56, 189, 248, 0.25), 0 0 15px rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px #38bdf8;
+        }
 
-        .cosmic-grid li:hover a {
-            color: #ffffff;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px #38bdf8;
-        }
+        /* Separators */
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(56, 189, 248, 0.3), transparent);
+            margin: 60px 0;
+        }
 
-        /* Separators */
-        hr {
-            border: 0;
-            height: 1px;
-            background: linear-gradient(to right, transparent, rgba(56, 189, 248, 0.3), transparent);
-            margin: 60px 0;
-        }
-
-        .dotted-hr {
-            border: 0;
-            height: 2px;
-            background: linear-gradient(to right, transparent, rgba(56, 189, 248, 0.1), transparent);
-            margin-bottom: 80px;
-        }
-    </style>
+        .dotted-hr {
+            border: 0;
+            height: 2px;
+            background: linear-gradient(to right, transparent, rgba(56, 189, 248, 0.1), transparent);
+            margin-bottom: 80px;
+        }
+    </style>
 </head>
 <body>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="earth.html">Earth</a>
-        <a href="animals.html">Animals</a>
-        <a href="space.html">Space</a>
-        <a href="mysteries.html">Mysteries</a>
-        <a href="history.html">History</a>
-    </nav>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
 
-    <!-- Audio File එක -->
-    <audio id="myAudio" loop>
-        <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
-    </audio>
+    <audio id="myAudio" loop>
+        <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
+    </audio>
 
-    <!-- Music Control Button -->
-    <div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
-        <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px; user-select: none;">
-            <span id="music-icon">🔇</span>
-        </div>
-    </div>
+    <div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
+        <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px; user-select: none;">
+            <span id="music-icon">🔇</span>
+        </div>
+    </div>
 
-    <script>
-        function toggleMusic() {
-            var audio = document.getElementById("myAudio");
-            var icon = document.getElementById("music-icon");
+    <!-- බාහිර music.js එක සම්බන්ධ කිරීම පමණක් සිදු කර ඇත -->
+    <script src="music.js"></script>
 
-            if (audio.paused) {
-                audio.play();
-                icon.innerHTML = "🔊";
-            } else {
-                audio.pause();
-                icon.innerHTML = "🔇";
-            }
-        }
-    </script>
+    <div class="container">
+        <h1>Space – The Universe Beyond</h1>
 
-    <div class="container">
-        <h1>Space – The Universe Beyond</h1>
+        <div class="img-container">
+            <img class="space-img" src="images/space.jpeg" alt="Infinity Space">
+        </div>
 
-        <div class="img-container">
-            <img class="space-img" src="images/space.jpeg" alt="Infinity Space">
-        </div>
+        <div class="space-description">
+            You have arrived here to explore the vast and fascinating universe beyond our planet. From distant galaxies and mysterious black holes to planets, stars, and cosmic phenomena, space is filled with wonders that continue to amaze scientists and explorers.
+            <br><br>
+            Here you will discover intriguing information about the universe, space exploration, and the incredible discoveries that help us understand our place in the cosmos. Through the articles and information below, you can journey beyond Earth and learn more about the mysteries and beauty of the universe.
+            <br><br>
+            We hope the knowledge you find here will expand your curiosity, deepen your understanding of space, and inspire you to keep exploring the endless universe.
+        </div>
 
-        <div class="space-description">
-            You have arrived here to explore the vast and fascinating universe beyond our planet. From distant galaxies and mysterious black holes to planets, stars, and cosmic phenomena, space is filled with wonders that continue to amaze scientists and explorers.
-            <br><br>
-            Here you will discover intriguing information about the universe, space exploration, and the incredible discoveries that help us understand our place in the cosmos. Through the articles and information below, you can journey beyond Earth and learn more about the mysteries and beauty of the universe.
-            <br><br>
-            We hope the knowledge you find here will expand your curiosity, deepen your understanding of space, and inspire you to keep exploring the endless universe.
-        </div>
+        <hr>
 
-        <hr>
+        <h2>What are the details you are expecting?</h2>
+        
+        <!-- Category 1: Our Solar System & Neighbors -->
+        <h3>Our Solar System & Neighbors</h3>
+        <ul class="cosmic-grid">
+            <a href="solar system.html"><li>Solar System</li></a>
+            <a href="moon.html"><li>Moon</li></a>
+            <a href="meteor.html"><li>Meteor</li></a>
+            <a href="comet.html"><li>Comet</li></a>
+            <a href="asteroids.html"><li>Asteroids</li></a>
+            <a href="dwarf_planets.html"><li>Dwarf Planets</li></a>
+            <a href="kuiper_oort.html"><li>Kuiper Belt & Oort Cloud</li></a>
+        </ul>
 
-        <h2>What are the details you are expecting?</h2>
-        
-        <!-- Category 1: Our Solar System & Neighbors -->
-        <h3>Our Solar System & Neighbors</h3>
-        <ul class="cosmic-grid">
-            <li><a href="solar system.html">Solar System</a></li>
-            <li><a href="moon.html">Moon</a></li>
-            <li><a href="meteor.html">Meteor</a></li>
-            <li><a href="comet.html">Comet</a></li>
-            <li><a href="asteroids.html">Asteroids</a></li>
-            <li><a href="dwarf_planets.html">Dwarf Planets</a></li>
-            <li><a href="kuiper_oort.html">Kuiper Belt & Oort Cloud</a></li>
-        </ul>
+        <!-- Category 2: Deep Space Phenomena -->
+        <h3>Deep Space Phenomena</h3>
+        <ul class="cosmic-grid">
+            <a href="star.html"><li>Stars</li></a>
+            <a href="black hole.html"><li>Black Hole</li></a>
+            <a href="nova.html"><li>Nova</li></a>
+            <a href="quasar.html"><li>Quasar</li></a>
+            <a href="galaxies.html"><li>Galaxies</li></a>
+            <a href="neutron_stars.html"><li>Neutron Stars</li></a>
+            <a href="gamma_ray_bursts.html"><li>Gamma-Ray Bursts</li></a>
+        </ul>
 
-        <!-- Category 2: Deep Space Phenomena -->
-        <h3>Deep Space Phenomena</h3>
-        <ul class="cosmic-grid">
-            <li><a href="star.html">Stars</a></li>
-            <li><a href="black hole.html">Black Hole</a></li>
-            <li><a href="nova.html">Nova</a></li>
-            <li><a href="quasar.html">Quasar</a></li>
-            <li><a href="galaxies.html">Galaxies</a></li>
-            <li><a href="neutron_stars.html">Neutron Stars</a></li>
-            <li><a href="gamma_ray_bursts.html">Gamma-Ray Bursts</a></li>
-        </ul>
+        <!-- Category 3: Cosmic Frontiers & Mysteries -->
+        <h3>Cosmic Frontiers & Mysteries</h3>
+        <ul class="cosmic-grid">
+            <a href="exoplanets.html"><li>Exoplanets</li></a>
+            <a href="dark_matter_energy.html"><li>Dark Matter & Energy</li></a>
+            <a href="strings_wormholes.html"><li>Strings & Wormholes</li></a>
+        </ul>
 
-        <!-- Category 3: Cosmic Frontiers & Mysteries -->
-        <h3>Cosmic Frontiers & Mysteries</h3>
-        <ul class="cosmic-grid">
-            <li><a href="exoplanets.html">Exoplanets</a></li>
-            <li><a href="dark_matter_energy.html">Dark Matter & Energy</a></li>
-            <li><a href="strings_wormholes.html">Strings & Wormholes</a></li>
-        </ul>
+        <!-- Category 4: The Grand Cosmic Scale -->
+        <h3>The Grand Cosmic Scale</h3>
+        <ul class="cosmic-grid">
+            <a href="oca.html"><li>Our Cosmic Address</li></a>
+            <a href="laniakea.html"><li>Laniakea</li></a>
+            <a href="cosmic_web.html"><li>The Cosmic Web</li></a>
+            <a href="observable_universe.html"><li>Observable Universe</li></a>
+            <a href="multiverse.html"><li>The Multiverse</li></a>
+            <a href="cmb_radiation.html"><li>CMB Radiation</li></a>
+        </ul>
 
-        <!-- Category 4: The Grand Cosmic Scale -->
-        <h3>The Grand Cosmic Scale</h3>
-        <ul class="cosmic-grid">
-            <li><a href="oca.html">Our Cosmic Address</a></li>
-            <li><a href="laniakea.html">Laniakea</a></li>
-            <li><a href="cosmic_web.html">The Cosmic Web</a></li>
-            <li><a href="observable_universe.html">Observable Universe</a></li>
-            <li><a href="multiverse.html">The Multiverse</a></li>
-            <li><a href="cmb_radiation.html">CMB Radiation</a></li>
-        </ul>
-
-        <div class="dotted-hr"></div>
-    </div>
-
+        <div class="dotted-hr"></div>
+    </div>
 </body>
 </html>
