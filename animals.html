@@ -1,224 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="description" content="Explore the incredible world of wildlife with ITL. From majestic predators to fascinating tiny creatures, discover amazing facts, habitats, and secrets of the animal kingdom.">
+    <meta name="description" content="Explore the incredible world of wildlife with ITL. From majestic predators to fascinating tiny creatures, discover amazing facts, habitats, and secrets of the animal kingdom.">
+    <meta name="keywords" content="Wildlife Discovery, Animal Kingdom Facts, Endangered Species, Amazing Animal Behavior, Nature and Wildlife, Biodiversity Education, ITL Animals">
 
-    <meta name="keywords" content="Wildlife Discovery, Animal Kingdom Facts, Endangered Species, Amazing Animal Behavior, Nature and Wildlife, Biodiversity Education, ITL Animals">
+    <meta property="og:title" content="Animals – The World of Wildlife | ITL">
+    <meta property="og:description" content="Discover the secrets of the animal kingdom with fascinating facts and stories.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animals - I T L</title>
+    <style>
+        /* Modern Dark Green Theme Setup */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #040d06; 
+            color: #e2f0e5;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
 
-    <meta property="og:title" content="Animals – The World of Wildlife | ITL">
-    <meta property="og:description" content="Discover the secrets of the animal kingdom with fascinating facts and stories.">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animals - I T L</title>
-    <style>
-        /* මූලික සැකසුම් (Modern Dark Green Theme) */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #040d06; /* තවත් පිරිසිදු තද නිල්-කොළ අඳුරු පසුබිමක් */
-            color: #e2f0e5;
-            margin: 0;
-            padding: 0;
-            line-height: 1.8;
-            overflow-x: hidden;
-        }
+        /* Navigation Bar */
+        nav {
+            background-color: rgba(10, 26, 13, 0.95);
+            backdrop-filter: blur(10px); 
+            padding: 18px 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(74, 222, 128, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+        }
 
-        /* Navigation Bar */
-        nav {
-            background-color: rgba(10, 26, 13, 0.95);
-            backdrop-filter: blur(10px); /* Glassmorphism effect */
-            padding: 18px 0;
-            text-align: center;
-            border-bottom: 1px solid rgba(74, 222, 128, 0.15);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
-        }
+        nav a {
+            color: #9bf4bc; 
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.4s ease;
+            letter-spacing: 0.5px;
+        }
 
-        nav a {
-            color: #9bf4bc; /* මෘදු ලා කොළ පැහැයක් */
-            text-decoration: none;
-            margin: 0 20px;
-            font-weight: 600;
-            font-size: 16px;
-            transition: all 0.4s ease;
-            letter-spacing: 0.5px;
-        }
+        nav a:hover {
+            color: #4ade80;
+            text-shadow: 0 0 15px rgba(74, 222, 128, 0.6);
+        }
 
-        nav a:hover {
-            color: #4ade80;
-            text-shadow: 0 0 15px rgba(74, 222, 128, 0.6);
-        }
+        /* Title Glow Animation */
+        h1 {
+            font-size: clamp(28px, 5vw, 50px);
+            text-align: center;
+            color: #ffffff;
+            text-transform: uppercase;
+            margin-top: 50px;
+            letter-spacing: 3px;
+            font-weight: 800;
+            animation: textBreathe 4s infinite ease-in-out;
+        }
 
-        /* මාතෘකාව (Modern Glow & Breathe Animation) */
-        h1 {
-            font-size: clamp(28px, 5vw, 50px);
-            text-align: center;
-            color: #ffffff;
-            text-transform: uppercase;
-            margin-top: 50px;
-            letter-spacing: 3px;
-            font-weight: 800;
-            animation: textBreathe 4s infinite ease-in-out;
-        }
+        @keyframes textBreathe {
+            0%, 100% { text-shadow: 0 0 20px rgba(74, 222, 128, 0.2); }
+            50% { text-shadow: 0 0 35px rgba(74, 222, 128, 0.5); transform: scale(1.01); }
+        }
 
-        @keyframes textBreathe {
-            0%, 100% { text-shadow: 0 0 20px rgba(74, 222, 128, 0.2); }
-            50% { text-shadow: 0 0 35px rgba(74, 222, 128, 0.5); transform: scale(1.01); }
-        }
+        /* Image Styling */
+        .img-container {
+            text-align: center;
+            margin: 40px 0;
+        }
 
-        /* පින්තූරය */
-        .img-container {
-            text-align: center;
-            margin: 40px 0;
-        }
+        .animals-img {
+            max-width: 90%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(74, 222, 128, 0.1);
+            transition: transform 0.5s ease;
+        }
+        
+        .animals-img:hover {
+            transform: scale(1.01);
+        }
 
-        .animals-img {
-            max-width: 90%;
-            height: auto;
-            border-radius: 16px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
-            border: 1px solid rgba(74, 222, 128, 0.1);
-            transition: transform 0.5s ease;
-        }
-        
-        .animals-img:hover {
-            transform: scale(1.01);
-        }
+        /* Main Content Container */
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-        /* අන්තර්ගතය */
-        .container {
-            max-width: 950px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+        .wildlife-text {
+            font-size: 18px;
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(5px);
+            padding: 35px;
+            border-radius: 16px;
+            border-left: 4px solid #4ade80; 
+            text-align: justify;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
 
-        .wildlife-text {
-            font-size: 18px;
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(5px);
-            padding: 35px;
-            border-radius: 16px;
-            border-left: 4px solid #4ade80; /* වම් පැත්තට මාරු කළා (Standard UI style) */
-            border-right: none;
-            text-align: justify;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
+        h2 {
+            color: #ffffff;
+            font-size: 28px;
+            margin-top: 60px;
+            text-align: center;
+            font-weight: 700;
+        }
 
-        h2 {
-            color: #ffffff;
-            font-size: 28px;
-            margin-top: 60px;
-            text-align: center;
-            font-weight: 700;
-        }
+        /* Interactive Grid Layout */
+        .animal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+            margin-top: 35px;
+        }
 
-        /* ලිපි ලැයිස්තුව (Modern Interactive Grid) */
-        .animal-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            list-style: none;
-            padding: 0;
-            margin-top: 35px;
-        }
+        .animal-grid a {
+            text-decoration: none;
+            display: block;
+        }
 
-        .animal-grid li {
-            background: rgba(13, 26, 13, 0.6);
-            backdrop-filter: blur(5px);
-            padding: 25px 20px;
-            border-radius: 14px;
-            text-align: center;
-            border: 1px solid rgba(74, 222, 128, 0.08);
-            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-            cursor: pointer;
-        }
+        .animal-grid li {
+            background: rgba(13, 26, 13, 0.6);
+            backdrop-filter: blur(5px);
+            padding: 25px 20px;
+            border-radius: 14px;
+            text-align: center;
+            border: 1px solid rgba(74, 222, 128, 0.08);
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            color: #e2f0e5;
+            font-weight: 600;
+            font-size: 18px;
+        }
 
-        .animal-grid li:hover {
-            background: rgba(45, 90, 39, 0.3);
-            transform: translateY(-8px) scale(1.02);
-            border-color: #4ade80;
-            box-shadow: 0 15px 35px rgba(74, 222, 128, 0.15);
-        }
+        .animal-grid a:hover li {
+            background: rgba(45, 90, 39, 0.3);
+            transform: translateY(-8px) scale(1.02);
+            border-color: #4ade80;
+            box-shadow: 0 15px 35px rgba(74, 222, 128, 0.15);
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
 
-        .animal-grid a {
-            color: #e2f0e5;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 18px;
-            display: block;
-            transition: color 0.3s ease;
-        }
+        /* Separators */
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(74, 222, 128, 0.3), transparent);
+            margin: 60px 0;
+        }
 
-        .animal-grid li:hover a {
-            color: #ffffff;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-        }
-
-        /* Lines & Separators */
-        hr {
-            border: 0;
-            height: 1px;
-            background: linear-gradient(to right, transparent, rgba(74, 222, 128, 0.3), transparent);
-            margin: 60px 0;
-        }
-
-        .dotted-hr {
-            border: 0;
-            height: 2px;
-            background: linear-gradient(to right, transparent, rgba(74, 222, 128, 0.1), transparent);
-            margin-bottom: 60px;
-        }
-    </style>
+        .dotted-hr {
+            border: 0;
+            height: 2px;
+            background: linear-gradient(to right, transparent, rgba(74, 222, 128, 0.1), transparent);
+            margin-bottom: 60px;
+        }
+    </style>
 </head>
 <body>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="earth.html">Earth</a>
-        <a href="animals.html">Animals</a>
-        <a href="space.html">Space</a>
-        <a href="mysteries.html">Mysteries</a>
-        <a href="history.html">History</a>
-    </nav>
-<audio id="myAudio" loop>
-    <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
-</audio>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="earth.html">Earth</a>
+        <a href="animals.html">Animals</a>
+        <a href="space.html">Space</a>
+        <a href="mysteries.html">Mysteries</a>
+        <a href="history.html">History</a>
+    </nav>
 
-<div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
-    <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
-        <span id="music-icon">🔇</span>
-    </div>
-</div>
+    <audio id="myAudio" loop>
+        <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
+    </audio>
 
-<script src="music.js"></script>
-    <div class="container">
-        <h1>Animals – The World of Wildlife</h1>
+    <div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
+        <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
+            <span id="music-icon">🔇</span>
+        </div>
+    </div>
 
-        <div class="img-container">
-            <img class="animals-img" src="images/animals.jpeg" alt="Amazing Wildlife">
-        </div>
+    <script src="music.js"></script>
 
-        <div class="wildlife-text">
-            You have arrived here to explore the incredible world of animals. From the smallest creatures on Earth to the largest giants of the oceans, the animal kingdom is filled with diversity, beauty, and extraordinary adaptations. 
-            <br><br>
-            Here you will discover fascinating facts about wildlife, unique species, and the remarkable ways animals survive and interact with their environments. Through the articles and information below, you can learn more about the wonders of the animal world and deepen your understanding of the life that shares our planet.
-        </div>
+    <div class="container">
+        <h1>Animals – The World of Wildlife</h1>
 
-        <hr>
+        <div class="img-container">
+            <img class="animals-img" src="images/animals.jpeg" alt="Amazing Wildlife">
+        </div>
 
-        <h2>What are the details you are expecting?</h2>
-        
-        <ul class="animal-grid">
-            <li><a href="dino.html">Dinosaurs</a></li>
-            <li><a href="megalodon.html">Megalodon</a></li>
-            <li><a href="titanoboa.html">Titanoboa</a></li>
-            <li><a href="Smilodon.html">Smilodon</a></li>
-            <li><a href="mammoth.html">Woolly Mammoth</a></li>
-        </ul>
+        <div class="wildlife-text">
+            You have arrived here to explore the incredible world of animals. From the smallest creatures on Earth to the largest giants of the oceans, the animal kingdom is filled with diversity, beauty, and extraordinary adaptations. 
+            <br><br>
+            Here you will discover fascinating facts about wildlife, unique species, and the remarkable ways animals survive and interact with their environments. Through the articles and information below, you can learn more about the wonders of the animal world and deepen your understanding of the life that shares our planet.
+        </div>
 
-        <div class="dotted-hr"></div>
-    </div>
+        <hr>
 
+        <h2>What are the details you are expecting?</h2>
+        
+        <ul class="animal-grid">
+            <a href="dino.html"><li>Dinosaurs</li></a>
+            <a href="megalodon.html"><li>Megalodon</li></a>
+            <a href="titanoboa.html"><li>Titanoboa</li></a>
+            <a href="Smilodon.html"><li>Smilodon</li></a>
+            <a href="mammoth.html"><li>Woolly Mammoth</li></a>
+        </ul>
+
+        <div class="dotted-hr"></div>
+    </div>
+
+    <script>
+        // Music Player Logic
+        function toggleMusic() {
+            var audio = document.getElementById("myAudio");
+            var icon = document.getElementById("music-icon");
+            if (audio.paused) { 
+                audio.play(); 
+                icon.innerHTML = "🔊"; 
+            } else { 
+                audio.pause(); 
+                icon.innerHTML = "🔇"; 
+            }
+        }
+    </script>
 </body>
-</html> 
+</html>
