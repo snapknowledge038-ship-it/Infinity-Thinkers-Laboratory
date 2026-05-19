@@ -38,6 +38,12 @@
             width: 100%;
         }
 
+        /* --- 🌐 MULTI-LANGUAGE TOGGLE DISPLAY STYLES --- */
+        /* ආරම්භයේදී සිංහල කොටස් සියල්ල සඟවා තබයි */
+        .lang-si {
+            display: none;
+        }
+
         /* --- SPLASH SCREEN STYLES --- */
         #it-splash {
             position: fixed;
@@ -179,31 +185,36 @@
         .help-grow-btn { background: linear-gradient(45deg, #ffd700, #ffa500); color: #000; }
         .about-btn { border: 2px solid #00d4ff; color: #00d4ff; }
 
-        /* --- 🌐 NEW CUSTOM TRANSLATE BUTTONS --- */
+        /* --- 🌐 MODERN LANGUAGE TOGGLE BUTTONS --- */
         .lang-switch-container {
             display: flex;
-            gap: 8px;
+            gap: 5px;
             justify-content: center;
             align-items: center;
             margin: 10px auto;
+            background: #222;
+            padding: 4px;
+            border-radius: 25px;
+            border: 1px solid #333;
+            width: fit-content;
         }
 
-        .lang-btn {
-            background-color: #222;
-            border: 1px solid #00d4ff;
-            color: #00d4ff;
-            padding: 6px 14px;
+        .lang-toggle-btn {
+            background: transparent;
+            border: none;
+            color: #888;
+            padding: 6px 16px;
             border-radius: 20px;
             cursor: pointer;
             font-weight: bold;
             font-size: 13px;
-            transition: 0.2s ease;
-            text-decoration: none;
+            transition: all 0.3s ease;
         }
 
-        .lang-btn:hover, .lang-btn.active {
+        .lang-toggle-btn.active {
             background-color: #00d4ff;
             color: #000;
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.4);
         }
 
         /* --- SIDEBAR DRAWER (PHONE ONLY) --- */
@@ -397,11 +408,11 @@
         </div>
     </div>
 
-    <!-- 🌐 HTML Language Switcher Component -->
+    <!-- 🌐 HTML Language Switcher Design Pattern -->
     <template id="translate-template">
         <div class="lang-switch-container">
-            <button class="lang-btn" onclick="translatePage('en')">English</button>
-            <button class="lang-btn" onclick="translatePage('si')">සිංහල</button>
+            <button class="lang-toggle-btn active" id="btn-en" onclick="setLanguage('en')">EN</button>
+            <button class="lang-toggle-btn" id="btn-si" onclick="setLanguage('si')">සිංහල</button>
         </div>
     </template>
 
@@ -487,32 +498,68 @@
     </div>
 
     <div class="container">
-        <h2>For Infinity Thinkers...</h2>
+        <!-- Heading Switcher -->
+        <h2 class="lang-en">For Infinity Thinkers...</h2>
+        <h2 class="lang-si">අනන්තය ගැන සිතන්නන් වෙනුවෙන්...</h2>
+        
+        <!-- Description Switcher -->
         <div class="description">
-            ITL is a platform created for curious minds who love exploring new knowledge every day. We bring fascinating facts about 🦖 dinosaurs, 🔮 mythology, 🔬 science discoveries, 🌍 nature, space, technology, and amazing things around the world.
-            <br><br>
-            Our content is presented in a simple, clear, and engaging way — making learning fun and easy for everyone. 🚀📚
+            <div class="lang-en">
+                ITL is a platform created for curious minds who love exploring new knowledge every day. We bring fascinating facts about 🦖 dinosaurs, 🔮 mythology, 🔬 science discoveries, 🌍 nature, space, technology, and amazing things around the world.
+                <br><br>
+                Our content is presented in a simple, clear, and engaging way — making learning fun and easy for everyone. 🚀📚
+            </div>
+            <div class="lang-si">
+                ITL යනු දිනපතා අලුත් දැනුම ගවේෂණය කිරීමට කැමති කුතුහලයෙන් පිරි මොළයන් සඳහා නිර්මාණය කරන ලද වේදිකාවකි. අපි 🦖 දිනසෝරයන්, 🔮 මිථ්‍යා කථා, 🔬 විද්‍යාත්මක සොයාගැනීම්, 🌍 ස්වභාවධර්මය, අභ්‍යවකාශය, තාක්‍ෂණය සහ ලොව පුරා ඇති පුදුමාකාර දේවල් පිළිබඳ ආකර්ශනීය කරුණු ඔබ වෙත ගෙන එන්නෙමු.
+                <br><br>
+                අපගේ අන්තර්ගතය සරල, පැහැදිලි සහ සිත් ඇදගන්නා සුළු ආකාරයකින් ඉදිරිපත් කර ඇත — එමඟින් ඉගෙනීම සෑම කෙනෙකුටම විනෝදජනක සහ පහසු කරයි. 🚀📚
+            </div>
         </div>
 
+        <!-- Buttons Switcher -->
         <div class="mcq-container">
-            <a href="mcq.html" class="mcq-btn">📝 Start MCQ Quiz</a>
-            <a href="facts.html" class="facts-btn-special">⚡ Fun Amazing Facts ⚡</a>
+            <a href="mcq.html" class="mcq-btn lang-en">📝 Start MCQ Quiz</a>
+            <a href="mcq.html" class="mcq-btn lang-si">📝 MCQ ප්‍රශ්නාවලිය අරඹන්න</a>
+            
+            <a href="facts.html" class="facts-btn-special lang-en">⚡ Fun Amazing Facts ⚡</a>
+            <a href="facts.html" class="facts-btn-special lang-si">⚡ පුදුම හිතෙන විනෝදජනක කරුණු ⚡</a>
         </div>
 
-        <h2>Discover More</h2>
+        <!-- Discover List Switcher -->
+        <h2 class="lang-en">Discover More</h2>
+        <h2 class="lang-si">තවත් ගවේෂණය කරන්න</h2>
+        
         <ul class="discover-list"> 
-            <li><a href="earth.html">Earth</a></li>
-            <li><a href="animals.html">Animals</a></li>
-            <li><a href="space.html">Space</a></li>
-            <li><a href="mysteries.html">Mysteries</a></li>
-            <li><a href="history.html">History</a></li>
-            <li><a href="quantum.html">Quantum Physics</a></li>
+            <li>
+                <a href="earth.html" class="lang-en">Earth</a>
+                <a href="earth.html" class="lang-si">පෘථිවිය</a>
+            </li>
+            <li>
+                <a href="animals.html" class="lang-en">Animals</a>
+                <a href="animals.html" class="lang-si">සතුන්</a>
+            </li>
+            <li>
+                <a href="space.html" class="lang-en">Space</a>
+                <a href="space.html" class="lang-si">අභ්‍යවකාශය</a>
+            </li>
+            <li>
+                <a href="mysteries.html" class="lang-en">Mysteries</a>
+                <a href="mysteries.html" class="lang-si">අභිරහස්</a>
+            </li>
+            <li>
+                <a href="history.html" class="lang-en">History</a>
+                <a href="history.html" class="lang-si">ඉතිහාසය</a>
+            </li>
+            <li>
+                <a href="quantum.html" class="lang-en">Quantum Physics</a>
+                <a href="quantum.html" class="lang-si">ක්වොන්ටම් භෞතික විද්‍යාව</a>
+            </li>
         </ul>
     </div>
 
     <!-- Scripts Configuration -->
     <script type="text/javascript">
-        // Inject Buttons into correct position based on screen layout
+        // Inject Switcher Element to Screen Positions
         const translateTemplate = document.getElementById('translate-template').content.cloneNode(true);
         if (window.innerWidth >= 768) {
             const pcNav = document.getElementById('nav-right-pc');
@@ -521,26 +568,33 @@
             document.getElementById('sidebar-translate-wrapper').appendChild(translateTemplate);
         }
 
-        // 🌟 NO-BAR TRANSLATION LOGIC 🌟
-        // මේකෙන් කරන්නේ පිටුව සාමාන්‍ය විදිහටම තියලා, Google Translate සේවාව හරහා වෙබ් ලිපිනය Redirect කරලා දෙන එක.
-        function translatePage(langCode) {
-            // දැනට තියෙන සැබෑ වෙබ් ලිපිනය ලබාගැනීම
-            let currentUrl = window.location.href;
-            
-            // දැනටමත් translate වෙලා නම් තියෙන්නේ, ඒක අයින් කරන්න
-            if (currentUrl.includes("translate.google.com")) {
-                // පරිශීලකයා 'en' එබුවොත් මුල් පිටුවටම යවන්න
-                if (langCode === 'en') {
-                    window.top.location.href = "https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/";
-                    return;
-                }
-            }
+        // 🌟 CUSTOM NATIVE LANGUAGE SWITCHER SCRIPT 🌟
+        function setLanguage(lang) {
+            const engElements = document.querySelectorAll('.lang-en');
+            const sinElements = document.querySelectorAll('.lang-si');
+            const btnEn = document.getElementById('btn-en');
+            const btnSi = document.getElementById('btn-si');
 
-            // සිංහල තෝරාගත්තොත් Google Web Translation Link එක සාදන්න
-            if (langCode === 'si') {
-                let cleanUrl = "https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/";
-                let googleTranslateUrl = `https://translate.google.com/translate?sl=en&tl=si&u=${encodeURIComponent(cleanUrl)}`;
-                window.top.location.href = googleTranslateUrl;
+            if (lang === 'si') {
+                // සිංහල පෙන්වන්න, ඉංග්‍රීසි හංගන්න
+                engElements.forEach(el => el.style.display = 'none');
+                sinElements.forEach(el => el.style.display = 'block');
+                
+                // ලැයිස්තු අයිතම (li a) Inline-block එකක් ලෙස තැබීමට
+                document.querySelectorAll('.discover-list li .lang-si').forEach(el => el.style.display = 'inline-block');
+
+                // බටන් Active තත්ත්වය වෙනස් කිරීම
+                if(btnSi) btnSi.classList.add('active');
+                if(btnEn) btnEn.classList.remove('active');
+            } else {
+                // ඉංග්‍රීසි පෙන්වන්න, සිංහල හංගන්න
+                sinElements.forEach(el => el.style.display = 'none');
+                engElements.forEach(el => el.style.display = 'block');
+                
+                document.querySelectorAll('.discover-list li .lang-en').forEach(el => el.style.display = 'inline-block');
+
+                if(btnEn) btnEn.classList.add('active');
+                if(btnSi) btnSi.classList.remove('active');
             }
         }
     </script>
