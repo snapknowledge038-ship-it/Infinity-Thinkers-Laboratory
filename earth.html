@@ -4,12 +4,17 @@
     <meta name="description" content="Explore the wonders of our home, Earth. Discover fascinating facts about our planet's layers, atmosphere, ecosystems, and the unique conditions that support life.">
     <meta name="keywords" content="Earth Facts, Our Planet, Atmosphere, Ecosystems, Geography, Environment, ITL Earth">
 
+    <!-- Meta Tags with Page Image -->
     <meta property="og:title" content="Earth – Our Planet | ITL">
     <meta property="og:description" content="Discover the amazing secrets and science behind our home planet.">
+    <meta property="og:image" content="https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/images/earth.jpeg">
+    <meta property="og:url" content="https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/earth.html">
     <meta property="og:type" content="website">
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Earth - I T L</title>
+    
     <style>
         /* මූලික සැකසුම් (Modern Cosmic Blue Theme) */
         body {
@@ -22,23 +27,43 @@
             overflow-x: hidden;
         }
 
-        /* Navigation Bar */
+        /* --- 🌐 MULTI-LANGUAGE TOGGLE DISPLAY STYLES --- */
+        .lang-si, nav a.lang-si, .sidebar a.lang-si {
+            display: none;
+        }
+
+        /* 🖥️ NAVIGATION BAR (COMPUTER) */
         nav {
             background-color: rgba(10, 20, 38, 0.9);
-            backdrop-filter: blur(12px); /* Modern glass look */
-            padding: 18px 0;
-            text-align: center;
+            backdrop-filter: blur(12px); 
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             border-bottom: 1px solid rgba(0, 212, 255, 0.15);
             position: sticky;
             top: 0;
             z-index: 1000;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            box-sizing: border-box;
+        }
+
+        .nav-left {
+            display: flex;
+            gap: 22px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 12px;
+            align-items: center;
         }
 
         nav a {
-            color: #9cdfff; /* Soft ice blue */
+            color: #9cdfff; 
             text-decoration: none;
-            margin: 0 20px;
             font-weight: 600;
             font-size: 16px;
             transition: all 0.4s ease;
@@ -50,6 +75,124 @@
             text-shadow: 0 0 15px #00d4ff, 0 0 30px #0077ff;
         }
 
+        /* 🌐 LANGUAGE & SHARE BUTTONS */
+        .nav-btn {
+            background: rgba(255, 255, 255, 0.05);
+            color: #9cdfff;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            padding: 6px 14px;
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: #00d4ff;
+            color: #ffffff;
+        }
+
+        .nav-btn.active {
+            background: #00d4ff;
+            color: #030914;
+            border-color: #00d4ff;
+            font-weight: bold;
+        }
+
+        .share-btn {
+            background: linear-gradient(45deg, #00d4ff, #0077ff);
+            color: #ffffff !important;
+            border: none;
+            font-weight: bold;
+        }
+
+        .share-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+        }
+
+        /* 📱 HAMBURGER MENU (MOBILE ICON) */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 5px;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 28px;
+            height: 3px;
+            background-color: #00d4ff;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        /* 📱 SIDEBAR (MOBILE MENU) */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -280px; 
+            width: 280px;
+            height: 100vh;
+            background-color: rgba(10, 20, 38, 0.98);
+            backdrop-filter: blur(15px);
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            padding: 80px 30px 30px 30px;
+            gap: 15px;
+            box-sizing: border-box;
+            transition: right 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            z-index: 999;
+            border-left: 1px solid rgba(0, 212, 255, 0.15);
+        }
+
+        .sidebar.open {
+            right: 0; 
+        }
+
+        .sidebar a {
+            font-size: 18px;
+            padding: 8px 0;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.05);
+        }
+
+        .sidebar-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        /* 📱 MOBILE RESPONSIVE QUERIES */
+        @media (max-width: 768px) {
+            .nav-left, .nav-right {
+                display: none; 
+            }
+            .hamburger {
+                display: flex; 
+            }
+            
+            .hamburger.toggle span:nth-child(1) {
+                transform: rotate(45deg) translate(6px, 5px);
+            }
+            .hamburger.toggle span:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger.toggle span:nth-child(3) {
+                transform: rotate(-45deg) translate(6px, -5px);
+            }
+        }
+
         /* මාතෘකාව (Cosmic Glow & Pulse Animation) */
         h1 {
             font-size: clamp(28px, 5vw, 50px);
@@ -59,16 +202,15 @@
             margin-top: 50px;
             letter-spacing: 3px;
             font-weight: 800;
-            text-decoration: none; /* Removed ugly underline */
             animation: earthPulse 4s infinite ease-in-out;
         }
 
         @keyframes earthPulse {
-            0%, 100% { 
+            0%, 100% { 
                 text-shadow: 0 0 20px rgba(0, 212, 255, 0.3), 0 0 40px rgba(255, 255, 255, 0.1);
                 transform: scale(1);
             }
-            50% { 
+            50% { 
                 text-shadow: 0 0 35px rgba(0, 212, 255, 0.6), 0 0 50px rgba(255, 255, 255, 0.3);
                 transform: scale(1.02);
             }
@@ -109,7 +251,7 @@
             padding: 35px;
             border-radius: 16px;
             border: 1px solid rgba(0, 212, 255, 0.1);
-            border-left: 4px solid #00d4ff; /* Cool blue accent bar */
+            border-left: 4px solid #00d4ff; 
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
         }
 
@@ -182,56 +324,203 @@
 </head>
 <body>
 
+    <!-- 🖥️ Responsive Navigation Bar -->
     <nav>
-        <a href="index.html">Home</a>
-        <a href="earth.html">Earth</a>
-        <a href="animals.html">Animals</a>
-        <a href="space.html">Space</a>
-        <a href="mysteries.html">Mysteries</a>
-        <a href="history.html">History</a>
+        <!-- Computer Layout Links -->
+        <div class="nav-left">
+            <a href="index.html">Home</a>
+            <a href="earth.html">Earth</a>
+            <a href="animals.html">Animals</a>
+            <a href="space.html">Space</a>
+            <a href="mysteries.html">Mysteries</a>
+            <a href="history.html">History</a>
+            <!-- 🌌 Navigation Bar එකට අලුතින් Quantum Physics ලින්ක් එක එකතු කළා -->
+            <a href="quantum.html" class="lang-en">Quantum Physics</a>
+            <a href="quantum.html" class="lang-si">ක්වොන්ටම් විද්‍යාව</a>
+        </div>
+        
+        <!-- Computer Layout Buttons -->
+        <div class="nav-right">
+            <button class="nav-btn btn-en" onclick="changeLanguage('en')">English</button>
+            <button class="nav-btn btn-si" onclick="changeLanguage('si')">සිංහල</button>
+            <button class="nav-btn share-btn" onclick="shareCurrentPage()">🔗 SHARE</button>
+        </div>
+
+        <!-- Mobile Menu Hamburger Icon -->
+        <button class="hamburger" id="hamburger-menu" onclick="toggleSidebar()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </nav>
-<audio id="myAudio" loop>
-    <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
-</audio>
 
-<div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
-    <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
-        <span id="music-icon">🔇</span>
+    <!-- 📱 Mobile Sidebar Slide-out Links -->
+    <div class="sidebar" id="mobile-sidebar">
+        <a href="index.html" onclick="toggleSidebar()">Home</a>
+        <a href="earth.html" onclick="toggleSidebar()">Earth</a>
+        <a href="animals.html" onclick="toggleSidebar()">Animals</a>
+        <a href="space.html" onclick="toggleSidebar()">Space</a>
+        <a href="mysteries.html" onclick="toggleSidebar()">Mysteries</a>
+        <a href="history.html" onclick="toggleSidebar()">History</a>
+        <!-- 🌌 Mobile Menu එකටත් Quantum Physics ලින්ක් එක එකතු කළා -->
+        <a href="quantum.html" class="lang-en" onclick="toggleSidebar()">Quantum Physics</a>
+        <a href="quantum.html" class="lang-si" onclick="toggleSidebar()">ක්වොන්ටම් විද්‍යාව</a>
+        
+        <div class="sidebar-buttons">
+            <button class="nav-btn btn-en" onclick="changeLanguage('en'); toggleSidebar();">English</button>
+            <button class="nav-btn btn-si" onclick="changeLanguage('si'); toggleSidebar();">සිංහල</button>
+            <button class="nav-btn share-btn" onclick="shareCurrentPage()">🔗 SHARE</button>
+        </div>
     </div>
-</div>
 
-<script src="music.js"></script>
+    <audio id="myAudio" loop>
+        <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
+    </audio>
+
+    <div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
+        <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
+            <span id="music-icon">🔇</span>
+        </div>
+    </div>
+
+    <script src="music.js"></script>
+
     <div class="container">
-        <h1>Earth – Our Planet</h1>
+        
+        <!-- Heading Switcher -->
+        <h1 class="lang-en">Earth – Our Planet</h1>
+        <h1 class="lang-si">පෘථිවිය – අපේ ග්‍රහලෝකය</h1>
 
         <div class="img-container">
             <img class="earth-img" src="images/earth.jpeg" alt="Our Beautiful Planet Earth">
         </div>
 
+        <!-- Description Switcher -->
         <div class="main-text">
-            You have arrived here to explore our planet, Earth, in greater depth. With vast oceans, towering mountains, powerful volcanoes, dense forests, and countless natural phenomena, Earth is an extraordinary and complex world. 
-            <br><br>
-            Here you will discover fascinating information about the planet’s natural systems, geological features, and the powerful forces that shape the world we live in. Through the articles and information below, you can learn more about our remarkable planet and deepen your understanding of the place we call home.
-            <br><br>
-            We hope that what you find here will broaden your knowledge, inspire curiosity, and encourage you to explore and appreciate the incredible planet we live on.
+            <div class="lang-en">
+                You have arrived here to explore our planet, Earth, in greater depth. With vast oceans, towering mountains, powerful volcanoes, dense forests, and countless natural phenomena, Earth is an extraordinary and complex world. 
+                <br><br>
+                Here you will discover fascinating information about the planet’s natural systems, geological features, and the powerful forces that shape the world we live in. Through the articles and information below, you can learn more about our remarkable planet and deepen your understanding of the place we call home.
+                <br><br>
+                We hope that what you find here will broaden your knowledge, inspire curiosity, and encourage you to explore and appreciate the incredible planet we live on.
+            </div>
+            <div class="lang-si">
+                ඔබ මෙහි පැමිණ සිටින්නේ අපගේ පෘථිවිය පිළිබඳව වඩාත් ගැඹුරින් ගවේෂණය කිරීමටයි. විශාල සාගර, උස් කඳු වැටි, ප්‍රබල ගිනි කඳු, ඝන වනාන්තර සහ ගණන් කළ නොහැකි ස්වභාවික සංසිද්ධීන්ගෙන් සමන්විත පෘථිවිය අසාමාන්‍ය මෙන්ම සංකීර්ණ ලෝකයකි.
+                <br><br>
+                මෙහිදී ඔබ පෘථිවියේ ස්වභාවික පද්ධති, භූ විද්‍යාත්මක ලක්ෂණ සහ අප ජීවත් වන ලෝකය හැඩගස්වන ප්‍රබල බලවේග පිළිබඳ සිත් ඇදගන්නාසුළු තොරතුරු සොයා ගනු ඇත. පහත දැක්වෙන ලිපි සහ තොරතුරු මඟින්, අපගේ මෙම අපූර්ව ග්‍රහලෝකය ගැන වැඩිදුර ඉගෙන ගත හැකි අතර අප නිවස ලෙස හඳුන්වන ස්ථානය පිළිබඳ ඔබේ අවබෝධය ගැඹුරු කර ගත හැකිය.
+                <br><br>
+                මෙහිදී ඔබට හමුවන දේ ඔබේ දැනුම පුළුල් කිරීමට, කුතුහලය දනවන සහ අප ජීවත් වන මෙම පුදුමාකාර ග්‍රහලෝකය අගය කිරීමට සහ ගවේෂණය කිරීමට ඔබව දිරිමත් කරනු ඇතැයි අපි බලාපොරොත්තු වෙමු.
+            </div>
         </div>
 
         <hr>
 
-        <h2>What are the details you are expecting?</h2>
+        <!-- Details Prompt Switcher -->
+        <h2 class="lang-en">What are the details you are expecting?</h2>
+        <h2 class="lang-si">ඔබ අපේක්ෂා කරන තොරතුරු මොනවාද?</h2>
         
+        <!-- Grid Links Switcher -->
         <ul class="topic-list">
-            <li><a href="aokigahara.html">Aokigahara Forest</a></li>
-            <li><a href="amazon.html">The Amazon Rainforest</a></li>
-            <li><a href="era.html">Geological Time Scale</a></li>
-            <li><a href="reef.html">Great Barrier Reef</a></li>
-            <li><a href="The Grand Canyon.html">The Grand Canyon</a></li>
-            <li><a href="Mariana Trench.html">Mariana Trench</a></li>
-            <li><a href="pangea.html">Pangea - The Supercontinent</a></li>
+            <li>
+                <a href="aokigahara.html" class="lang-en">Aokigahara Forest</a>
+                <a href="aokigahara.html" class="lang-si">ඕකිගහරා වනාන්තරය</a>
+            </li>
+            <li>
+                <a href="amazon.html" class="lang-en">The Amazon Rainforest</a>
+                <a href="amazon.html" class="lang-si">ඇමසන් වැසි වනාන්තරය</a>
+            </li>
+            <li>
+                <a href="era.html" class="lang-en">Geological Time Scale</a>
+                <a href="era.html" class="lang-si">භූ විද්‍යාත්මක කාල පරිමාණය</a>
+            </li>
+            <li>
+                <a href="reef.html" class="lang-en">Great Barrier Reef</a>
+                <a href="reef.html" class="lang-si">මහත් බාධක පරය</a>
+            </li>
+            <li>
+                <a href="The Grand Canyon.html" class="lang-en">The Grand Canyon</a>
+                <a href="The Grand Canyon.html" class="lang-si">ග්‍රෑන්ඩ් කැන්යොන්</a>
+            </li>
+            <li>
+                <a href="Mariana Trench.html" class="lang-en">Mariana Trench</a>
+                <a href="Mariana Trench.html" class="lang-si">මරියානා අගාධය</a>
+            </li>
+            <li>
+                <a href="pangea.html" class="lang-en">Pangea - The Supercontinent</a>
+                <a href="pangea.html" class="lang-si">පැන්ජියා මහාද්වීපය</a>
+            </li>
         </ul>
 
         <div class="dotted-hr"></div>
     </div>
 
+    <!-- 🌐 MULTI-LANGUAGE, SIDEBAR & SHARE SCRIPT -->
+    <script type="text/javascript">
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('siteLang') || 'en';
+            applyLanguage(savedLang);
+        });
+
+        // 📱 Mobile Sidebar Open/Close Function
+        function toggleSidebar() {
+            const sidebar = document.getElementById('mobile-sidebar');
+            const hamburger = document.getElementById('hamburger-menu');
+            sidebar.classList.toggle('open');
+            hamburger.classList.toggle('toggle');
+        }
+
+        // 🔄 Apply Language
+        function applyLanguage(lang) {
+            const engElements = document.querySelectorAll('.lang-en');
+            const sinElements = document.querySelectorAll('.lang-si');
+            const btnsEn = document.querySelectorAll('.btn-en');
+            const btnsSi = document.querySelectorAll('.btn-si');
+
+            if (lang === 'si') {
+                engElements.forEach(el => el.style.display = 'none');
+                sinElements.forEach(el => el.style.display = 'block');
+                
+                // 🔄 Navbar එක ඇතුළේ තියෙන සිංහල ලින්ක්ස් පෙන්වන්න සකස් කළා
+                document.querySelectorAll('nav a.lang-si, .sidebar a.lang-si').forEach(el => el.style.display = 'block');
+                document.querySelectorAll('.topic-list li .lang-si').forEach(el => el.style.display = 'block');
+                
+                btnsSi.forEach(b => b.classList.add('active'));
+                btnsEn.forEach(b => b.classList.remove('active'));
+            } else {
+                sinElements.forEach(el => el.style.display = 'none');
+                engElements.forEach(el => el.style.display = 'block');
+                
+                // 🔄 Navbar එක ඇතුළේ තියෙන ඉංග්‍රීසි ලින්ක්ස් පෙන්වන්න සකස් කළා
+                document.querySelectorAll('nav a.lang-en, .sidebar a.lang-en').forEach(el => el.style.display = 'block');
+                document.querySelectorAll('.topic-list li .lang-en').forEach(el => el.style.display = 'block');
+                
+                btnsEn.forEach(b => b.classList.add('active'));
+                btnsSi.forEach(b => b.classList.remove('active'));
+            }
+        }
+
+        // 🖱️ Change Language
+        function changeLanguage(lang) {
+            localStorage.setItem('siteLang', lang); 
+            applyLanguage(lang); 
+        }
+
+        // 🔗 Share Function
+        function shareCurrentPage() {
+            if (navigator.share) {
+                navigator.share({
+                    title: document.title,
+                    text: 'Check out this amazing page on ITL!',
+                    url: window.location.href 
+                }).catch(err => console.log("Share failed", err));
+            } else {
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    alert("Link copied to clipboard: " + window.location.href);
+                }).catch(() => {
+                    alert("Copy this link: " + window.location.href);
+                });
+            }
+        }
+    </script>
 </body>
 </html>
