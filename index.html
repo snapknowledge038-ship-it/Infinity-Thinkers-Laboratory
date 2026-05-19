@@ -36,22 +36,24 @@
             line-height: 1.6;
             overflow-x: hidden;
             width: 100%;
-            top: 0px !important; /* Translate නිසා පිටුව පහළට යාම වළක්වයි */
+            top: 0px !important; /* පිටුව පහළට තල්ලු වීම වළක්වයි */
         }
 
-        /* --- GOOGLE TRANSLATE WHITE BAR HIDE FIX --- */
+        /* --- 🌟 GOOGLE TRANSLATE WHITE BAR HIDE FIX (SAFE METHOD) 🌟 --- */
+        /* උඩින් එන සුදු බාර් එක සහ ඉෆ්‍රේම් එක විතරක් හංගන්න */
         .goog-te-banner-frame, 
+        .goog-te-banner,
         .goog-te-banner-frame.skiptranslate, 
-        .goog-translate-skiptranslate,
         iframe.goog-te-banner-frame,
         #goog-gt-tt {
             display: none !important;
             visibility: hidden !important;
         }
         
-        /* Translate කිරීමෙන් පසු ඇතිවන ඉඩ මකා දැමීමට */
-        .skiptranslate {
-            display: none !important;
+        /* මුළු පිටුවම උඩටම ගන්න (Margin එක බිංදුව කරන්න) */
+        .goog-text-highlight {
+            background-color: transparent !important;
+            box-shadow: none !important;
         }
 
         /* --- SPLASH SCREEN STYLES --- */
