@@ -533,27 +533,27 @@
             <li>
                 <a href="earth.html" class="lang-en">Earth</a>
                 <a href="earth.html" class="lang-si">පෘථිවිය</a>
-            </li>
+            </td>
             <li>
                 <a href="animals.html" class="lang-en">Animals</a>
                 <a href="animals.html" class="lang-si">සතුන්</a>
-            </li>
+            </td>
             <li>
                 <a href="space.html" class="lang-en">Space</a>
                 <a href="space.html" class="lang-si">අභ්‍යවකාශය</a>
-            </li>
+            </td>
             <li>
                 <a href="mysteries.html" class="lang-en">Mysteries</a>
                 <a href="mysteries.html" class="lang-si">අභිරහස්</a>
-            </li>
+            </td>
             <li>
                 <a href="history.html" class="lang-en">History</a>
                 <a href="history.html" class="lang-si">ඉතිහාසය</a>
-            </li>
+            </td>
             <li>
                 <a href="quantum.html" class="lang-en">Quantum Physics</a>
                 <a href="quantum.html" class="lang-si">ක්වොන්ටම් භෞතික විද්‍යාව</a>
-            </li>
+            </td>
         </ul>
     </div>
 
@@ -568,8 +568,17 @@
             document.getElementById('sidebar-translate-wrapper').appendChild(translateTemplate);
         }
 
-        // 🌟 CUSTOM NATIVE LANGUAGE SWITCHER SCRIPT 🌟
+        // 🌟 පිටුව ලෝඩ් වෙනකොටම බ්‍රවුසර් මතකයේ (localStorage) කලින් සේව් කරපු භාෂාවක් තියෙනවාද බලනවා
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('siteLang') || 'en';
+            setLanguage(savedLang);
+        });
+
+        // 🌟 CUSTOM NATIVE LANGUAGE SWITCHER SCRIPT (UPDATED WITH LOCALSTORAGE) 🌟
         function setLanguage(lang) {
+            // තෝරාගන්නා භාෂාව බ්‍රවුසර් එකේ සේව් කර ගන්නවා
+            localStorage.setItem('siteLang', lang);
+
             const engElements = document.querySelectorAll('.lang-en');
             const sinElements = document.querySelectorAll('.lang-si');
             const btnEn = document.getElementById('btn-en');
