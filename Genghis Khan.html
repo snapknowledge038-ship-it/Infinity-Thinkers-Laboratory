@@ -340,6 +340,14 @@ nav .nav-home {
     </style>
 
     <script>
+        // Sidebar Toggle Function
+function toggleSidebar() {
+    const sidebar = document.getElementById("sidebarMenu");
+    const overlay = document.getElementById("sidebarOverlay");
+    
+    sidebar.classList.toggle("open");
+    overlay.classList.toggle("show");
+}
         function hideFeedback(type) {
             alert("The Great Khan's history has been secured in the Laboratory.");
             document.getElementById('feedback-widget').style.display = 'none';
