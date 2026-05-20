@@ -15,7 +15,7 @@
         }
 
         body {
-            font-family: 'Segoe UI', sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
             background-color: var(--abyss-black);
             color: var(--ghost-white);
             margin: 0;
@@ -42,114 +42,143 @@
         }
 
         /* New Navigation Bar Header */
-nav {
-    background-color: #1a1a1a;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #333;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    width: 100%;
-    box-sizing: border-box;
-}
+        nav {
+            background-color: #1a1a1a;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            box-sizing: border-box;
+        }
 
-nav .nav-home {
-    color: #00d4ff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
-}
+        nav .nav-home {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+        }
 
-/* Hamburger Menu Button */
-.menu-toggle {
-    background: none;
-    border: none;
-    color: #00d4ff;
-    font-size: 28px;
-    cursor: pointer;
-    user-select: none;
-}
+        /* Right side of Nav for buttons */
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
-/* Slide-out Sidebar Styles */
-.sidebar {
-    position: fixed;
-    top: 0;
-    right: -280px; /* දකුණු පැත්තේ සැඟවී පවතී */
-    width: 280px;
-    height: 100%;
-    background-color: #111;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
-    z-index: 10001;
-    transition: right 0.3s ease-in-out;
-    padding: 20px;
-    box-sizing: border-box;
-    overflow-y: auto;
-}
+        /* Language Toggle Button Style */
+        .lang-btn {
+            background-color: transparent;
+            border: 1px solid var(--neon-blue);
+            color: var(--neon-blue);
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.3s;
+        }
 
-.sidebar.open {
-    right: 0; /* ක්ලික් කළ විට මතු වේ */
-}
+        .lang-btn:hover {
+            background-color: var(--neon-blue);
+            color: var(--abyss-black);
+        }
 
-/* Close Button inside Sidebar */
-.close-btn {
-    text-align: right;
-    font-size: 30px;
-    color: #ff4a4a;
-    cursor: pointer;
-    margin-bottom: 20px;
-}
+        /* Hamburger Menu Button */
+        .menu-toggle {
+            background: none;
+            border: none;
+            color: #00d4ff;
+            font-size: 28px;
+            cursor: pointer;
+            user-select: none;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
 
-/* Sidebar Links Grouping */
-.sidebar-section {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
+        /* Slide-out Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -280px; /* දකුණු පැත්තේ සැඟවී පවතී */
+            width: 280px;
+            height: 100%;
+            background-color: #111;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+            z-index: 10001;
+            transition: right 0.3s ease-in-out;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
 
-.sidebar-divider {
-    border: none;
-    border-top: 1px solid #333;
-    margin: 15px 0;
-}
+        .sidebar.open {
+            right: 0; /* ක්ලික් කළ විට මතු වේ */
+        }
 
-.sidebar a {
-    color: #e0e0e0;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: 0.2s;
-}
+        /* Close Button inside Sidebar */
+        .close-btn {
+            text-align: right;
+            font-size: 30px;
+            color: #ff4a4a;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
 
-.sidebar a:hover {
-    background-color: #1a1a1a;
-    color: #00d4ff;
-}
+        /* Sidebar Links Grouping */
+        .sidebar-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
-/* Special Styling for buttons inside menu */
-.sb-mcq { color: #ffd700 !important; font-weight: bold !important; }
-.sb-facts { color: #00ff88 !important; font-weight: bold !important; }
-.sb-share { color: #00d4ff !important; }
-.sb-help { color: #ffa500 !important; }
+        .sidebar-divider {
+            border: none;
+            border-top: 1px solid #333;
+            margin: 15px 0;
+        }
 
-/* Overlay Background */
-.sidebar-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6);
-    z-index: 10000;
-    display: none;
-}
-.sidebar-overlay.show {
-    display: block;
-}
+        .sidebar a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: 0.2s;
+        }
+
+        .sidebar a:hover {
+            background-color: #1a1a1a;
+            color: #00d4ff;
+        }
+
+        /* Special Styling for buttons inside menu */
+        .sb-mcq { color: #ffd700 !important; font-weight: bold !important; }
+        .sb-facts { color: #00ff88 !important; font-weight: bold !important; }
+        .sb-share { color: #00d4ff !important; }
+        .sb-help { color: #ffa500 !important; }
+
+        /* Overlay Background */
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 10000;
+            display: none;
+        }
+        .sidebar-overlay.show {
+            display: block;
+        }
+        
         /* Header Area */
         h1 {
             font-size: clamp(35px, 9vw, 80px);
@@ -276,105 +305,217 @@ nav .nav-home {
             border-radius: 5px;
             cursor: pointer;
         }
+
+        /* Language visibility rules */
+        .lang-en, .lang-si {
+            display: none;
+        }
+        
+        html[lang="en"] .lang-en {
+            display: block;
+        }
+        
+        html[lang="si"] .lang-si {
+            display: block;
+        }
+
+        /* For inline elements like <strong> or <span> */
+        html[lang="en"] span.lang-en, html[lang="en"] strong.lang-en {
+            display: inline;
+        }
+        html[lang="si"] span.lang-si, html[lang="si"] strong.lang-si {
+            display: inline;
+        }
     </style>
 </head>
 <body>
 
     <!-- New Top Navbar -->
-<nav>
-    <a href="index.html" class="nav-home">🏠 Home</a>
-    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
-</nav>
+    <nav>
+        <a href="index.html" class="nav-home">
+            <span class="lang-en">🏠 Home</span>
+            <span class="lang-si">🏠 මුල් පිටුව</span>
+        </a>
+        <div class="nav-controls">
+            <!-- Language Toggle Button added right next to hamburger menu -->
+            <button id="langToggleBtn" class="lang-btn" onclick="toggleLanguage()">සිංහල</button>
+            <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+        </div>
+    </nav>
 
-<!-- Sidebar Overlay -->
-<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
 
-<!-- Slide-out Sidebar Menu -->
-<div class="sidebar" id="sidebarMenu">
-    <div class="close-btn" onclick="toggleSidebar()">×</div>
-    
-    <div class="sidebar-section">
-        <!-- Main Pages Links -->
-        <a href="index.html">Home</a>
-        <a href="earth.html">Earth</a>
-        <a href="animals.html">Animals</a>
-        <a href="space.html">Space</a>
-        <a href="mysteries.html">Mysteries</a>
-        <a href="history.html">History</a>
-        <a href="quantum.html">🌌 Quantum Physics</a>
-    </div>
+    <!-- Slide-out Sidebar Menu -->
+    <div class="sidebar" id="sidebarMenu">
+        <div class="close-btn" onclick="toggleSidebar()">×</div>
         
+        <div class="sidebar-section">
+            <!-- Main Pages Links -->
+            <a href="index.html">
+                <span class="lang-en">Home</span><span class="lang-si">මුල් පිටුව</span>
+            </a>
+            <a href="earth.html">
+                <span class="lang-en">Earth</span><span class="lang-si">පෘථිවිය</span>
+            </a>
+            <a href="animals.html">
+                <span class="lang-en">Animals</span><span class="lang-si">සතුන්</span>
+            </a>
+            <a href="space.html">
+                <span class="lang-en">Space</span><span class="lang-si">අභ්‍යවකාශය</span>
+            </a>
+            <a href="mysteries.html">
+                <span class="lang-en">Mysteries</span><span class="lang-si">අභිරහස්</span>
+            </a>
+            <a href="history.html">
+                <span class="lang-en">History</span><span class="lang-si">ඉතිහාසය</span>
+            </a>
+            <a href="quantum.html">
+                <span class="lang-en">🌌 Quantum Physics</span><span class="lang-si">🌌 ක්වොන්ටම් භෞතික විද්‍යාව</span>
+            </a>
+        </div>
+            
         <!-- පළමු ඉරෙන් වෙන් කිරීම -->
         <hr class="sidebar-divider">
-        
+            
         <!-- Quiz & Facts Links -->
-        <a href="mcq.html" class="sb-mcq">📝 Start MCQ Quiz</a>
-        <a href="facts.html" class="sb-facts">⚡ Fun Amazing Facts ⚡</a>
-        
+        <a href="mcq.html" class="sb-mcq">
+            <span class="lang-en">📝 Start MCQ Quiz</span><span class="lang-si">📝 MCQ ප්‍රශ්නාවලිය අරඹන්න</span>
+        </a>
+        <a href="facts.html" class="sb-facts">
+            <span class="lang-en">⚡ Fun Amazing Facts ⚡</span><span class="lang-si">⚡ පුදුම සහගත කරුණු ⚡</span>
+        </a>
+            
         <!-- දෙවැනි ඉරෙන් වෙන් කිරීම -->
         <hr class="sidebar-divider">
-        
+            
         <!-- Action Links -->
-        <a onclick="shareToFriends(); toggleSidebar();" style="cursor:pointer;" class="sb-share">🔗 SHARE</a>
-        <a href="ad.html" class="sb-help">❤️ Help</a>
-        <a href="aaaextradatapage.html">About</a>
+        <a onclick="shareToFriends(); toggleSidebar();" style="cursor:pointer;" class="sb-share">
+            <span class="lang-en">🔗 SHARE</span><span class="lang-si">🔗 බෙදාගන්න</span>
+        </a>
+        <a href="ad.html" class="sb-help">
+            <span class="lang-en">❤️ Help</span><span class="lang-si">❤️ උදව්</span>
+        </a>
+        <a href="aaaextradatapage.html">
+            <span class="lang-en">About</span><span class="lang-si">අප ගැන</span>
+        </a>
     </div>
-</div>
-
-
 
     <div id="depth-meter"><div id="progress-bar"></div></div>
 
     <div class="container">
-        <h1 class="animate">Mariana Trench</h1>
+        <!-- Main Title -->
+        <h1 class="animate">
+            <span class="lang-en">Mariana Trench</span>
+            <span class="lang-si">මරියානා අගාධය</span>
+        </h1>
 
         <div class="img-grid animate">
             <img src="images/trench_deep.jpg" alt="Deep Abyss">
             <img src="images/trench_creature.jpg" alt="Deep Sea Creature">
         </div>
 
+        <!-- Section 1 -->
         <section class="animate">
-            <h3>The Mariana Trench is the deepest part of the world's oceans. Located in the western Pacific Ocean, it is a crescent-shaped scar in the Earth’s crust that measures about 2,550 km long.</h3>
+            <h3 class="lang-en">The Mariana Trench is the deepest part of the world's oceans. Located in the western Pacific Ocean, it is a crescent-shaped scar in the Earth’s crust that measures about 2,550 km long.</h3>
+            <h3 class="lang-si">මරියානා අගාධය යනු ලොව සාගරවල ඇති ගැඹුරුම කොටසයි. බටහිර පැසිෆික් සාගරයේ පිහිටා ඇති මෙය පෘථිවි පෘෂ්ඨයේ ඇති අඩ සඳක හැඩති කැළලක් බඳු වන අතර එය දිගින් කිලෝමීටර් 2,550ක් පමණ වේ.</h3>
         </section>
 
+        <!-- Section 2 -->
         <section class="animate">
-            <h2>Challenger Deep</h2>
-            <h3>The deepest known point is the <strong>Challenger Deep</strong>. It reaches a depth of approximately 10,935 meters (35,876 feet) below sea level. If Mount Everest were dropped into the trench, its peak would still be over 2 kilometers underwater.</h3>
+            <h2>
+                <span class="lang-en">Challenger Deep</span>
+                <span class="lang-si">චැලෙන්ජර් දීප් (Challenger Deep)</span>
+            </h2>
+            <h3 class="lang-en">The deepest known point is the <strong>Challenger Deep</strong>. It reaches a depth of approximately 10,935 meters (35,876 feet) below sea level. If Mount Everest were dropped into the trench, its peak would still be over 2 kilometers underwater.</h3>
+            <h3 class="lang-si">මෙහි ඇති ගැඹුරුම ස්ථානය ලෙස හඳුනාගෙන ඇත්තේ <strong>චැලෙන්ජර් දීප්</strong> ස්ථානයයි. එය මුහුදු මට්ටමේ සිට මීටර් 10,935ක් (අඩි 35,876ක්) පමණ ගැඹුරකට විහිදේ. එවරස්ට් කන්ද මෙම අගාධයට දැමුවහොත්, එහි මුදුන පවා තවත් කිලෝමීටර් 2කට වඩා ජලයෙන් යටව පවතිනු ඇත.</h3>
         </section>
 
+        <!-- Section 3 -->
         <section class="animate">
-            <h2>Extreme Conditions</h2>
-            <ul>
+            <h2>
+                <span class="lang-en">Extreme Conditions</span>
+                <span class="lang-si">අධික කෲර පරිසරය</span>
+            </h2>
+            
+            <!-- English List -->
+            <ul class="lang-en">
                 <li><strong>Crushing Pressure:</strong> At the bottom, the pressure is over 1,000 times the standard atmospheric pressure at sea level. It's like having an elephant stand on your thumb.</li>
                 <li><strong>Freezing Temperatures:</strong> The water temperature at the bottom fluctuates between 1°C and 4°C.</li>
                 <li><strong>Eternal Darkness:</strong> No sunlight reaches these depths, creating a world of perpetual night.</li>
             </ul>
+
+            <!-- Sinhala List -->
+            <ul class="lang-si">
+                <li><strong>දරාගත නොහැකි පීඩනය:</strong> මෙහි පතුලේ පීඩනය මුහුදු මට්ටමේ පවතින සාමාන්‍ය වායුගෝලීය පීඩනය මෙන් 1,000 ගුණයකට වඩා වැඩිය. එය හරියට ඔබේ මහපට ඇඟිල්ල මත අලියෙකු සිටගෙන සිටින්නාක් මෙනි.</li>
+                <li><strong>දැඩි සීතල:</strong> පතුලේ ඇති ජල උෂ්ණත්වය සෙල්සියස් අංශක 1 ත් 4 ත් අතර වෙනස් වේ.</li>
+                <li><strong>සදාකාලික අන්ධකාරය:</strong> මෙම ගැඹුරට සූර්යාලෝකය කිසිසේත් ළඟා නොවන බැවින්, එහි පවතින්නේ සදාකාලික රාත්‍රියකි.</li>
+            </ul>
         </section>
 
+        <!-- Section 4 -->
         <section class="animate">
-            <h2>Life in the Void</h2>
-            <h3>Despite the extreme pressure and cold, life exists here. Scientists have discovered xenophyophores, amphipods, and small sea cucumbers that have adapted to survive in one of the harshest environments on the planet.</h3>
+            <h2>
+                <span class="lang-en">Life in the Void</span>
+                <span class="lang-si">ශූන්‍යතාවයේ ජීවය</span>
+            </h2>
+            <h3 class="lang-en">Despite the extreme pressure and cold, life exists here. Scientists have discovered xenophyophores, amphipods, and small sea cucumbers that have adapted to survive in one of the harshest environments on the planet.</h3>
+            <h3 class="lang-si">මෙම දැඩි පීඩනය සහ සීතල මධ්‍යයේ වුවද මෙහි ජීවය පවතී. පෘථිවියේ පවතින දුෂ්කරම පරිසරයක ජීවත් වීමට හැඩගැසුණු සෙනොෆියෝෆෝර්ස් (xenophyophores), ඇම්ෆිපෝඩ්ස් (amphipods) සහ කුඩා මුහුදු කැකිරි වැනි සතුන් විද්‍යාඥයන් විසින් සොයාගෙන ඇත.</h3>
         </section>
 
+        <!-- Footer Text -->
         <div style="text-align: center; font-size: 24px; margin: 60px 0; opacity: 0.5; letter-spacing: 5px;">
-            DIVE DEEPER . . .
+            <span class="lang-en">DIVE DEEPER . . .</span>
+            <span class="lang-si">තවත් ගැඹුරට...</span>
         </div>
     </div>
 
+    <!-- Feedback Widget -->
     <div id="feedback-widget">
-        <span style="font-size: 14px;">Survive the pressure?</span>
-        <button onclick="hideFeedback()">YES</button>
+        <span style="font-size: 14px;" class="lang-en">Survive the pressure?</span>
+        <span style="font-size: 14px;" class="lang-si">පීඩනයට ඔරොත්තු දුන්නාද?</span>
+        
+        <button onclick="hideFeedback()">
+            <span class="lang-en">YES</span><span class="lang-si">ඔව්</span>
+        </button>
     </div>
 
     <script>
+        // Check local storage on page load to persist language across pages
+        document.addEventListener("DOMContentLoaded", function() {
+            const savedLang = localStorage.getItem("preferredLanguage") || "en";
+            setLanguage(savedLang);
+        });
+
+        // Function to set language and update button text
+        function setLanguage(lang) {
+            document.documentElement.setAttribute("lang", lang);
+            localStorage.setItem("preferredLanguage", lang);
+            
+            const langBtn = document.getElementById("langToggleBtn");
+            if (lang == "si") {
+                langBtn.textContent = "English";
+            } else {
+                langBtn.textContent = "සිංහල";
+            }
+        }
+
+        // Toggle button click logic
+        function toggleLanguage() {
+            const currentLang = document.documentElement.getAttribute("lang") || "en";
+            const nextLang = currentLang === "en" ? "si" : "en";
+            setLanguage(nextLang);
+        }
+
         // Sidebar Toggle Function
-function toggleSidebar() {
-    const sidebar = document.getElementById("sidebarMenu");
-    const overlay = document.getElementById("sidebarOverlay");
-    
-    sidebar.classList.toggle("open");
-    overlay.classList.toggle("show");
-}
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebarMenu");
+            const overlay = document.getElementById("sidebarOverlay");
+            
+            sidebar.classList.toggle("open");
+            overlay.classList.toggle("show");
+        }
+
         // Scroll Progress & Animation Logic
         window.onscroll = function() {
             let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
@@ -400,20 +541,30 @@ function toggleSidebar() {
         };
 
         function hideFeedback() {
-            alert("Feedback received from the depths!");
+            const currentLang = document.documentElement.getAttribute("lang") || "en";
+            if(currentLang === "si") {
+                alert("ගැඹුරු සාගරයේ සිට ප්‍රතිචාර ලැබුණි!");
+            } else {
+                alert("Feedback received from the depths!");
+            }
             document.getElementById('feedback-widget').style.display = 'none';
         }
+
+        function shareToFriends() {
+            alert("Link copied!");
+        }
     </script>
+
     <audio id="myAudio" loop>
-    <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
-</audio>
+        <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
+    </audio>
 
-<div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
-    <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
-        <span id="music-icon">🔇</span>
+    <div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
+        <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
+            <span id="music-icon">🔇</span>
+        </div>
     </div>
-</div>
 
-<script src="music.js"></script>
+    <script src="music.js"></script>
 </body>
 </html>
