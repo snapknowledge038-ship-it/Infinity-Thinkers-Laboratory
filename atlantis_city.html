@@ -4,6 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atlantis - I T L</title>
+
+    <!-- Meta Tags for Link Preview (WhatsApp, Facebook, etc.) -->
+    <meta name="description" content="Explore the mysteries, advanced civilization, tragic downfall, and modern theories of the legendary sunken city of Atlantis.">
+    
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/atlantis.html">
+    <meta property="og:title" content="Atlantis – The Legendary Sunken Empire | ITL">
+    <meta property="og:description" content="First mentioned by Plato, discovered the golden civilization of Atlantis, its tragic downfall, and modern search theories with bilingual support! 🔱🌊">
+    <meta property="og:image" content="images/atlantis_city.jpg">
+
+    <!-- Twitter Card Data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Atlantis – The Legendary Sunken Empire | ITL">
+    <meta name="twitter:description" content="Did the lost paradise of Atlantis actually exist? Explore Plato's myths and modern connection theories.">
+    <meta name="twitter:image" content="images/atlantis_city.jpg">
+
     <style>
         /* මූලික සැකසුම් (Oceanic & Mystical Theme) */
         body {
@@ -17,114 +34,143 @@
         }
 
         /* New Navigation Bar Header */
-nav {
-    background-color: #1a1a1a;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #333;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    width: 100%;
-    box-sizing: border-box;
-}
+        nav {
+            background-color: #1a1a1a;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            box-sizing: border-box;
+        }
 
-nav .nav-home {
-    color: #00d4ff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
-}
+        nav .nav-home {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+        }
 
-/* Hamburger Menu Button */
-.menu-toggle {
-    background: none;
-    border: none;
-    color: #00d4ff;
-    font-size: 28px;
-    cursor: pointer;
-    user-select: none;
-}
+        /* Nav Controls Container */
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
-/* Slide-out Sidebar Styles */
-.sidebar {
-    position: fixed;
-    top: 0;
-    right: -280px; /* දකුණු පැත්තේ සැඟවී පවතී */
-    width: 280px;
-    height: 100%;
-    background-color: #111;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
-    z-index: 10001;
-    transition: right 0.3s ease-in-out;
-    padding: 20px;
-    box-sizing: border-box;
-    overflow-y: auto;
-}
+        /* Language Toggle Button Style */
+        .lang-btn {
+            background: rgba(0, 229, 255, 0.05);
+            border: 1px solid #ffd700;
+            color: #ffd700;
+            padding: 6px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+            font-family: 'Segoe UI', sans-serif;
+        }
 
-.sidebar.open {
-    right: 0; /* ක්ලික් කළ විට මතු වේ */
-}
+        .lang-btn:hover {
+            background: #ffd700;
+            color: #020813;
+            box-shadow: 0 0 15px #ffd700;
+        }
 
-/* Close Button inside Sidebar */
-.close-btn {
-    text-align: right;
-    font-size: 30px;
-    color: #ff4a4a;
-    cursor: pointer;
-    margin-bottom: 20px;
-}
+        /* Hamburger Menu Button */
+        .menu-toggle {
+            background: none;
+            border: none;
+            color: #00d4ff;
+            font-size: 28px;
+            cursor: pointer;
+            user-select: none;
+        }
 
-/* Sidebar Links Grouping */
-.sidebar-section {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
+        /* Slide-out Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -280px; /* දකුණු පැත්තේ සැඟවී පවතී */
+            width: 280px;
+            height: 100%;
+            background-color: #111;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+            z-index: 10001;
+            transition: right 0.3s ease-in-out;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
 
-.sidebar-divider {
-    border: none;
-    border-top: 1px solid #333;
-    margin: 15px 0;
-}
+        .sidebar.open {
+            right: 0; /* ක්ලික් කළ විට මතු වේ */
+        }
 
-.sidebar a {
-    color: #e0e0e0;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: 0.2s;
-}
+        /* Close Button inside Sidebar */
+        .close-btn {
+            text-align: right;
+            font-size: 30px;
+            color: #ff4a4a;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
 
-.sidebar a:hover {
-    background-color: #1a1a1a;
-    color: #00d4ff;
-}
+        /* Sidebar Links Grouping */
+        .sidebar-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
-/* Special Styling for buttons inside menu */
-.sb-mcq { color: #ffd700 !important; font-weight: bold !important; }
-.sb-facts { color: #00ff88 !important; font-weight: bold !important; }
-.sb-share { color: #00d4ff !important; }
-.sb-help { color: #ffa500 !important; }
+        .sidebar-divider {
+            border: none;
+            border-top: 1px solid #333;
+            margin: 15px 0;
+        }
 
-/* Overlay Background */
-.sidebar-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6);
-    z-index: 10000;
-    display: none;
-}
-.sidebar-overlay.show {
-    display: block;
-}
+        .sidebar a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: 0.2s;
+        }
+
+        .sidebar a:hover {
+            background-color: #1a1a1a;
+            color: #00d4ff;
+        }
+
+        /* Special Styling for buttons inside menu */
+        .sb-mcq { color: #ffd700 !important; font-weight: bold !important; }
+        .sb-facts { color: #00ff88 !important; font-weight: bold !important; }
+        .sb-share { color: #00d4ff !important; }
+        .sb-help { color: #ffa500 !important; }
+
+        /* Overlay Background */
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 10000;
+            display: none;
+        }
+        .sidebar-overlay.show {
+            display: block;
+        }
+
         /* මාතෘකාව (Ancient Gold Text Style) */
         h1 {
             font-size: clamp(40px, 9vw, 80px);
@@ -198,6 +244,8 @@ nav .nav-home {
             margin-bottom: 15px;
             padding-left: 25px;
             position: relative;
+            font-size: 19px;
+            text-align: justify;
         }
 
         li::before {
@@ -222,55 +270,90 @@ nav .nav-home {
             border-top: 3px dotted #004f77;
             margin: 60px 0;
         }
+
+        #feedback-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #031935;
+            box-shadow: 0 4px 15px rgba(0, 229, 255, 0.3);
+            padding: 15px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 1000;
+            color: #fff;
+            border: 1px solid #005f87;
+            font-weight: bold;
+        }
+        #feedback-widget button {
+            border: none;
+            background: transparent;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #ffd700;
+        }
+        #feedback-widget button:hover { 
+            background: rgba(0, 229, 255, 0.2); 
+            border-radius: 50%;
+        }
+
+        @media (max-width: 600px) {
+            .img-container img { max-width: 90%; }
+            section { padding: 20px; }
+        }
     </style>
 </head>
 <body>
 
     <!-- New Top Navbar -->
-<nav>
-    <a href="index.html" class="nav-home">🏠 Home</a>
-    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
-</nav>
+    <nav>
+        <a href="index.html" class="nav-home" data-en="🏠 Home" data-si="🏠 මුල් පිටුව">🏠 Home</a>
+        <div class="nav-controls">
+            <!-- Language Toggle Button -->
+            <button id="langToggle" class="lang-btn" onclick="toggleLanguage()">සිංහල</button>
+            <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+        </div>
+    </nav>
 
-<!-- Sidebar Overlay -->
-<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
 
-<!-- Slide-out Sidebar Menu -->
-<div class="sidebar" id="sidebarMenu">
-    <div class="close-btn" onclick="toggleSidebar()">×</div>
-    
-    <div class="sidebar-section">
-        <!-- Main Pages Links -->
-        <a href="index.html">Home</a>
-        <a href="earth.html">Earth</a>
-        <a href="animals.html">Animals</a>
-        <a href="space.html">Space</a>
-        <a href="mysteries.html">Mysteries</a>
-        <a href="history.html">History</a>
-        <a href="quantum.html">🌌 Quantum Physics</a>
-    </div>
+    <!-- Slide-out Sidebar Menu -->
+    <div class="sidebar" id="sidebarMenu">
+        <div class="close-btn" onclick="toggleSidebar()">×</div>
         
+        <div class="sidebar-section">
+            <!-- Main Pages Links -->
+            <a href="index.html" data-en="Home" data-si="මුල් පිටුව">Home</a>
+            <a href="earth.html" data-en="Earth" data-si="පෘථිවිය">Earth</a>
+            <a href="animals.html" data-en="Animals" data-si="සතුන්">Animals</a>
+            <a href="space.html" data-en="Space" data-si="අභ්‍යවකාශය">Space</a>
+            <a href="mysteries.html" data-en="Mysteries" data-si="අභිරහස්">Mysteries</a>
+            <a href="history.html" data-en="History" data-si="ඉතිහාසය">History</a>
+            <a href="quantum.html" data-en="🌌 Quantum Physics" data-si="🌌 ක්වොන්ටම් භෞතික විද්‍යාව">🌌 Quantum Physics</a>
+        </div>
+            
         <!-- පළමු ඉරෙන් වෙන් කිරීම -->
         <hr class="sidebar-divider">
-        
+            
         <!-- Quiz & Facts Links -->
-        <a href="mcq.html" class="sb-mcq">📝 Start MCQ Quiz</a>
-        <a href="facts.html" class="sb-facts">⚡ Fun Amazing Facts ⚡</a>
-        
+        <a href="mcq.html" class="sb-mcq" data-en="📝 Start MCQ Quiz" data-si="📝 MCQ ප්‍රශ්නාවලිය අරඹන්න">📝 Start MCQ Quiz</a>
+        <a href="facts.html" class="sb-facts" data-en="⚡ Fun Amazing Facts ⚡" data-si="⚡ පුදුම හිතෙන කරුණු ⚡">⚡ Fun Amazing Facts ⚡</a>
+            
         <!-- දෙවැනි ඉරෙන් වෙන් කිරීම -->
         <hr class="sidebar-divider">
-        
+            
         <!-- Action Links -->
-        <a onclick="shareToFriends(); toggleSidebar();" style="cursor:pointer;" class="sb-share">🔗 SHARE</a>
-        <a href="ad.html" class="sb-help">❤️ Help</a>
-        <a href="aaaextradatapage.html">About</a>
+        <a onclick="shareToFriends(); toggleSidebar();" style="cursor:pointer;" class="sb-share" data-en="🔗 SHARE" data-si="🔗 බෙදාගන්න (SHARE)">🔗 SHARE</a>
+        <a href="ad.html" class="sb-help" data-en="❤️ Help" data-si="❤️ උදව්">❤️ Help</a>
+        <a href="aaaextradatapage.html" data-en="About" data-si="අපි ගැන">About</a>
     </div>
-</div>
-
-
 
     <div class="container">
-        <h1>Atlantis</h1>
+        <h1 data-en="Atlantis" data-si="ඇට්ලන්ටිස් (Atlantis)">Atlantis</h1>
 
         <div class="img-container">
             <img src="images/atlantis_city.jpg" alt="The Sunken City of Atlantis">
@@ -278,34 +361,67 @@ nav .nav-home {
         </div>
 
         <section>
-            <h3>First mentioned by the ancient Greek philosopher Plato around 360 BC, <strong>Atlantis</strong> stands as the ultimate symbol of a lost paradise. Described as a powerful and advanced utopian empire, it allegedly vanished into the ocean in a single day and night of catastrophe.</h3>
+            <h3 data-en="First mentioned by the ancient Greek philosopher Plato around 360 BC, <strong>Atlantis</strong> stands as the ultimate symbol of a lost paradise. Described as a powerful and advanced utopian empire, it allegedly vanished into the ocean in a single day and night of catastrophe."
+                data-si="ක්‍රිස්තු පූර්ව 360 දී පමණ පැරණි ග්‍රීක දාර්ශනික ප්ලේටෝ (Plato) විසින් ප්‍රථම වරට සඳහන් කරන ලද <strong>ඇට්ලන්ටිස් (Atlantis)</strong>, අහිමි වූ පරාදීසයක උපරිම සංකේතය ලෙස සැලකේ. බලගතු සහ දියුණු යුතෝපියානු (Utopian) අධිරාජ්‍යයක් ලෙස විස්තර කෙරෙන මෙය, එක් දිනක් සහ එක් රාත්‍රියක් වැනි කෙටි කාලයකදී සිදු වූ මහා ව්‍යසනයකින් සාගරය පතුලටම ගිලී විනාශ වී ගිය බව කියනු ලැබේ.">
+                First mentioned by the ancient Greek philosopher Plato around 360 BC, <strong>Atlantis</strong> stands as the ultimate symbol of a lost paradise. Described as a powerful and advanced utopian empire, it allegedly vanished into the ocean in a single day and night of catastrophe.
+            </h3>
         </section>
 
         <section>
-            <h2>The Origin Myth</h2>
-            <h3>According to Plato's dialogues *Timaeus* and *Critias*, Atlantis was a massive island located beyond the "Pillars of Heracles" (the Strait of Gibraltar). It was founded by <strong>Poseidon</strong>, the Greek god of the sea, who created concentric rings of water and land to protect his mortal lover, Cleito.</h3>
+            <h2 data-en="The Origin Myth" data-si="ආරම්භක පුරාවෘත්තය">The Origin Myth</h2>
+            <h3 data-en="According to Plato's dialogues *Timaeus* and *Critias*, Atlantis was a massive island located beyond the 'Pillars of Heracles' (the Strait of Gibraltar). It was founded by <strong>Poseidon</strong>, the Greek god of the sea, who created concentric rings of water and land to protect his mortal lover, Cleito."
+                data-si="ප්ලේටෝගේ 'ටිමේයස්' (Timaeus) සහ 'ක්‍රිටියාස්' (Critias) යන දේශනාවලට අනුව, ඇට්ලන්ටිස් යනු 'හර්කියුලිස්ගේ කුළුණු' (දැනට ජිබ්‍රෝල්ටා සමුද්‍ර සන්ධිය) වලින් ඔබ්බෙහි පිහිටි දැවැන්ත දූපතකි. මෙය ග්‍රීක සාගරයටධිපති <strong>පොසයිඩන් (Poseidon)</strong> දෙවියන් විසින් ආරම්භ කරන ලද අතර, ඔහු තම මනුෂ්‍ය ප්‍රේමවන්තිය වූ ක්ලීටෝ (Cleito) ආරක්ෂා කිරීම සඳහා භූමිය වටා කේන්ද්‍රීය ජල සහ ගොඩබිම් වළලු නිර්මාණය කළේය.">
+                According to Plato's dialogues *Timaeus* and *Critias*, Atlantis was a massive island located beyond the "Pillars of Heracles" (the Strait of Gibraltar). It was founded by <strong>Poseidon</strong>, the Greek god of the sea, who created concentric rings of water and land to protect his mortal lover, Cleito.
+            </h3>
         </section>
 
         <section>
-            <h2>A Golden Civilization</h2>
-            <h3>The Atlanteans built a magnificent civilization with towering temples, advanced naval ports, and grand palaces coated in rare metals like <strong>orichalcum</strong>. They possessed immense wealth, complex engineering skills, and a powerful military that conquered parts of Europe and Africa.</h3>
+            <h2 data-en="A Golden Civilization" data-si="රන්වන් ශිෂ්ටාචාරය">A Golden Civilization</h2>
+            <h3 data-en="The Atlanteans built a magnificent civilization with towering temples, advanced naval ports, and grand palaces coated in rare metals like <strong>orichalcum</strong>. They possessed immense wealth, complex engineering skills, and a powerful military that conquered parts of Europe and Africa."
+                data-si="ඇට්ලන්ටිස් වැසියන් උස් වූ දේවාල, දියුණු නාවික වරායන් සහ <strong>ඔරිචල්කම් (orichalcum)</strong> වැනි දුර්ලභ වටිනා ලෝහවලින් ආලේපිත මාලිගා සහිත විශිෂ්ට ශිෂ්ටාචාරයක් ගොඩනැඟූහ. ඔවුහු අතිමහත් ධන සම්භාරයක්, සංකීර්ණ ඉංජිනේරු කුසලතා සහ යුරෝපයේ හා අප්‍රිකාවේ කොටස් යටත් කරගත් ප්‍රබල හමුදාවකට හිමිකම් කීහ.">
+                The Atlanteans built a magnificent civilization with towering temples, advanced naval ports, and grand palaces coated in rare metals like <strong>orichalcum</strong>. They possessed immense wealth, complex engineering skills, and a powerful military that conquered parts of Europe and Africa.
+            </h3>
         </section>
 
         <section>
-            <h2>The Tragic Downfall</h2>
+            <h2 data-en="The Tragic Downfall" data-si="ඛේදජනක අවසානය">The Tragic Downfall</h2>
             <ul>
-                <li><strong>Moral Decay:</strong> Over generations, the people of Atlantis became greedy, corrupt, and arrogant, losing their divine, noble nature.</li>
-                <li><strong>Divine Punishment:</strong> Angered by their wickedness, Zeus summoned the gods to decree a severe punishment for the empire.</li>
-                <li><strong>The Cataclysm:</strong> Severe earthquakes and floods erupted, causing the entire island to sink beneath the waves, erasing it from history.</li>
+                <li>
+                    <strong data-en="Moral Decay:" data-si="සන්නීතිමය පිරිහීම:">Moral Decay:</strong> 
+                    <span data-en="Over generations, the people of Atlantis became greedy, corrupt, and arrogant, losing their divine, noble nature."
+                          data-si="පරම්පරා ගණනාවක් ඇවෑමෙන්, ඇට්ලන්ටිස් වැසියන් කෑදර, දූෂිත සහ අහංකාර පිරිසක් බවට පත් වූ අතර ඔවුන් සතු වූ දේවත්වයට සමාන උදාර ගුණාංග නැති කර ගත්හ.">Over generations, the people of Atlantis became greedy, corrupt, and arrogant, losing their divine, noble nature.</span>
+                </li>
+                <li>
+                    <strong data-en="Divine Punishment:" data-si="දේව දඬුවම:">Divine Punishment:</strong> 
+                    <span data-en="Angered by their wickedness, Zeus summoned the gods to decree a severe punishment for the empire."
+                          data-si="ඔවුන්ගේ මෙම දුෂ්ටකම් දැක කෝපයට පත් වූ සියුස් (Zeus) දෙවියන්, අනෙකුත් දෙවිවරුන් කැඳවා මෙම අධිරාජ්‍යයට දැඩි දඬුවමක් දීමට තීරණය කළේය.">Angered by their wickedness, Zeus summoned the gods to decree a severe punishment for the empire.</span>
+                </li>
+                <li>
+                    <strong data-en="The Cataclysm:" data-si="මහා ව්‍යසනය:">The Cataclysm:</strong> 
+                    <span data-en="Severe earthquakes and floods erupted, causing the entire island to sink beneath the waves, erasing it from history."
+                          data-si="එක්වරම ප්‍රබල භූමිකම්පා සහ මහා ගංවතුර හටගත් අතර, මුළු දූපතම සාගර තරංග අතර ගිලී ඉතිහාසයෙන් සදහටම මැකී ගියේය.">Severe earthquakes and floods erupted, causing the entire island to sink beneath the waves, erasing it from history.</span>
+                </li>
             </ul>
         </section>
 
         <section>
-            <h2>Modern Theories</h2>
+            <h2 data-en="Modern Theories" data-si="නූතන මතවාද">Modern Theories</h2>
             <ul>
-                <li><strong>Philosophical Allegory:</strong> Most historians believe Plato invented Atlantis merely as a fictional story to warn about the dangers of hubris and political corruption.</li>
-                <li><strong>The Minoan Connection:</strong> Some researchers link the myth to the real-world volcanic eruption of <strong>Thera (Santorini)</strong>, which devastated the advanced Minoan civilization around 1600 BC.</li>
-                <li><strong>The Eternal Search:</strong> Despite lack of physical proof, explorers continue to search for its remains in locations ranging from the Atlantic Ocean to the Mediterranean Sea and even Antarctica.</li>
+                <li>
+                    <strong data-en="Philosophical Allegory:" data-si="දාර්ශනික උපමා කතාවක්:">Philosophical Allegory:</strong> 
+                    <span data-en="Most historians believe Plato invented Atlantis merely as a fictional story to warn about the dangers of hubris and political corruption."
+                          data-si="බොහෝ ඉතිහාසඥයන් විශ්වාස කරන්නේ ප්ලේටෝ ඇට්ලන්ටිස් කතාව නිර්මාණය කළේ මිනිස් අහංකාරය සහ දේශපාලන දූෂණයේ ඇති භයානකකම ගැන සමාජයට අනතුරු ඇඟවීමේ උපමාවක් (Fiction) ලෙස පමණක් බවයි.">Most historians believe Plato invented Atlantis merely as a fictional story to warn about the dangers of hubris and political corruption.</span>
+                </li>
+                <li>
+                    <strong data-en="The Minoan Connection:" data-si="මිනෝවන් සබැඳියාව:">The Minoan Connection:</strong> 
+                    <span data-en="Some researchers link the myth to the real-world volcanic eruption of Thera (Santorini), which devastated the advanced Minoan civilization around 1600 BC."
+                          data-si="සමහර පර්යේෂකයන් මෙම පුරාවෘත්තය ක්‍රිස්තු පූර්ව 1600 දී පමණ එවකට ඉතා දියුණුව තිබූ මිනෝවන් (Minoan) ශිෂ්ටාචාරය සම්පූර්ණයෙන්ම විනාශ කළ 'තෙරා' (Thera / වර්තමාන සැන්ටොරිනි) ගිනිකඳු පිපිරීමට සම්බන්ධ කරයි.">Some researchers link the myth to the real-world volcanic eruption of <strong>Thera (Santorini)</strong>, which devastated the advanced Minoan civilization around 1600 BC.</span>
+                </li>
+                <li>
+                    <strong data-en="The Eternal Search:" data-si="සදාකාලික ගවේෂණය:">The Eternal Search:</strong> 
+                    <span data-en="Despite lack of physical proof, explorers continue to search for its remains in locations ranging from the Atlantic Ocean to the Mediterranean Sea and even Antarctica."
+                          data-si="කිසිදු භෞතික සාක්ෂියක් නොමැති වුවද, ගවේෂකයන් අත්ලාන්තික් සාගරයේ සිට මධ්‍යධරණී මුහුද දක්වාත්, ඇන්ටාක්ටිකාව දක්වාත් විවිධ ස්ථානවල මෙහි නටබුන් සෙවීම අදටත් නතර කර නැත.">Despite lack of physical proof, explorers continue to search for its remains in locations ranging from the Atlantic Ocean to the Mediterranean Sea and even Antarctica.</span>
+                </li>
             </ul>
         </section>
 
@@ -314,53 +430,69 @@ nav .nav-home {
 
     <!-- Feedback Widget -->
     <div id="feedback-widget">
-        <span>Was this helpful?</span>
+        <span data-en="Was this helpful?" data-si="මෙය ප්‍රයෝජනවත් වූවාද?">Was this helpful?</span>
         <button onclick="hideFeedback('Yes')"> 👍</button>
         <button onclick="hideFeedback('No')"> 👎</button>
     </div>
 
-    <style>
-    #feedback-widget {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: #031935;
-        box-shadow: 0 4px 15px rgba(0, 229, 255, 0.3);
-        padding: 15px;
-        border-radius: 30px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        z-index: 1000;
-        color: #fff;
-        border: 1px solid #005f87;
-    }
-    #feedback-widget button {
-        border: none;
-        background: transparent;
-        padding: 5px 10px;
-        cursor: pointer;
-        font-size: 16px;
-    }
-    #feedback-widget button:hover { 
-        background: rgba(0, 229, 255, 0.2); 
-        border-radius: 50%;
-    }
-    </style>
-
     <script>
-    function hideFeedback(type) {
-        alert("Thank you for your feedback!");
-        document.getElementById('feedback-widget').style.display = 'none';
-    }
         // Sidebar Toggle Function
-function toggleSidebar() {
-    const sidebar = document.getElementById("sidebarMenu");
-    const overlay = document.getElementById("sidebarOverlay");
-    
-    sidebar.classList.toggle("open");
-    overlay.classList.toggle("show");
-}
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebarMenu");
+            const overlay = document.getElementById("sidebarOverlay");
+            
+            sidebar.classList.toggle("open");
+            overlay.classList.toggle("show");
+        }
+
+        // Multi-language Feedback Alert
+        function hideFeedback(type) {
+            let currentLang = localStorage.getItem("preferredLanguage") || "en";
+            if (currentLang === "si") {
+                alert("ඔබගේ ප්‍රතිචාරයට ස්තුතියි! 🔱");
+            } else {
+                alert("Thank you for your feedback! 🔱");
+            }
+            document.getElementById('feedback-widget').style.display = 'none';
+        }
+
+        // --- භාෂා මාරු කිරීමේ පද්ධතිය (Language Switcher Logic) ---
+        function toggleLanguage() {
+            let currentLang = localStorage.getItem("preferredLanguage") || "en";
+            let newLang = (currentLang === "en") ? "si" : "en";
+            
+            localStorage.setItem("preferredLanguage", newLang);
+            applyLanguage(newLang);
+        }
+
+        function applyLanguage(lang) {
+            const btn = document.getElementById("langToggle");
+            
+            if (lang === "si") {
+                btn.textContent = "English";
+            } else {
+                btn.textContent = "සිංහල";
+            }
+
+            const elements = document.querySelectorAll('[data-en], [data-si]');
+            elements.forEach(el => {
+                if (lang === "si") {
+                    if (el.getAttribute('data-si')) {
+                        el.innerHTML = el.getAttribute('data-si');
+                    }
+                } else {
+                    if (el.getAttribute('data-en')) {
+                        el.innerHTML = el.getAttribute('data-en');
+                    }
+                }
+            });
+        }
+
+        // පිටුව මුලින්ම ලෝඩ් වන විට ක්‍රියාත්මක වන කොටස
+        document.addEventListener("DOMContentLoaded", () => {
+            let savedLang = localStorage.getItem("preferredLanguage") || "en";
+            applyLanguage(savedLang);
+        });
     </script>
 
     <!-- Audio Element -->
@@ -369,7 +501,7 @@ function toggleSidebar() {
     </audio>
 
     <div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
-        <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
+        <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px; user-select: none;">
             <span id="music-icon">🔇</span>
         </div>
     </div>
