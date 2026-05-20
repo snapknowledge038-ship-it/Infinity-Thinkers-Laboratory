@@ -16,114 +16,142 @@
         }
 
         /* New Navigation Bar Header */
-nav {
-    background-color: #1a1a1a;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #333;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    width: 100%;
-    box-sizing: border-box;
-}
+        nav {
+            background-color: #1a1a1a;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            box-sizing: border-box;
+        }
 
-nav .nav-home {
-    color: #00d4ff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
-}
+        nav .nav-home {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+        }
 
-/* Hamburger Menu Button */
-.menu-toggle {
-    background: none;
-    border: none;
-    color: #00d4ff;
-    font-size: 28px;
-    cursor: pointer;
-    user-select: none;
-}
+        /* Right side container for buttons */
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
-/* Slide-out Sidebar Styles */
-.sidebar {
-    position: fixed;
-    top: 0;
-    right: -280px; /* දකුණු පැත්තේ සැඟවී පවතී */
-    width: 280px;
-    height: 100%;
-    background-color: #111;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
-    z-index: 10001;
-    transition: right 0.3s ease-in-out;
-    padding: 20px;
-    box-sizing: border-box;
-    overflow-y: auto;
-}
+        /* Language Button Styling */
+        .lang-btn {
+            background: transparent;
+            border: 1px solid #ff0000;
+            color: #ff0000;
+            padding: 5px 12px;
+            font-size: 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+        }
 
-.sidebar.open {
-    right: 0; /* ක්ලික් කළ විට මතු වේ */
-}
+        .lang-btn:hover {
+            background: #ff0000;
+            color: #0a0a0a;
+            box-shadow: 0 0 10px #ff0000;
+        }
 
-/* Close Button inside Sidebar */
-.close-btn {
-    text-align: right;
-    font-size: 30px;
-    color: #ff4a4a;
-    cursor: pointer;
-    margin-bottom: 20px;
-}
+        /* Hamburger Menu Button */
+        .menu-toggle {
+            background: none;
+            border: none;
+            color: #00d4ff;
+            font-size: 28px;
+            cursor: pointer;
+            user-select: none;
+            padding: 0;
+        }
 
-/* Sidebar Links Grouping */
-.sidebar-section {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
+        /* Slide-out Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -280px; /* දකුණු පැත්තේ සැඟවී පවතී */
+            width: 280px;
+            height: 100%;
+            background-color: #111;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+            z-index: 10001;
+            transition: right 0.3s ease-in-out;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
 
-.sidebar-divider {
-    border: none;
-    border-top: 1px solid #333;
-    margin: 15px 0;
-}
+        .sidebar.open {
+            right: 0; /* ක්ලික් කළ විට මතු වේ */
+        }
 
-.sidebar a {
-    color: #e0e0e0;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: 0.2s;
-}
+        /* Close Button inside Sidebar */
+        .close-btn {
+            text-align: right;
+            font-size: 30px;
+            color: #ff4a4a;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
 
-.sidebar a:hover {
-    background-color: #1a1a1a;
-    color: #00d4ff;
-}
+        /* Sidebar Links Grouping */
+        .sidebar-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
-/* Special Styling for buttons inside menu */
-.sb-mcq { color: #ffd700 !important; font-weight: bold !important; }
-.sb-facts { color: #00ff88 !important; font-weight: bold !important; }
-.sb-share { color: #00d4ff !important; }
-.sb-help { color: #ffa500 !important; }
+        .sidebar-divider {
+            border: none;
+            border-top: 1px solid #333;
+            margin: 15px 0;
+        }
 
-/* Overlay Background */
-.sidebar-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6);
-    z-index: 10000;
-    display: none;
-}
-.sidebar-overlay.show {
-    display: block;
-}
+        .sidebar a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: 0.2s;
+        }
+
+        .sidebar a:hover {
+            background-color: #1a1a1a;
+            color: #00d4ff;
+        }
+
+        /* Special Styling for buttons inside menu */
+        .sb-mcq { color: #ffd700 !important; font-weight: bold !important; }
+        .sb-facts { color: #00ff88 !important; font-weight: bold !important; }
+        .sb-share { color: #00d4ff !important; }
+        .sb-help { color: #ffa500 !important; }
+
+        /* Overlay Background */
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 10000;
+            display: none;
+        }
+        .sidebar-overlay.show {
+            display: block;
+        }
+
         /* මාතෘකාව */
         h1 {
             font-size: clamp(35px, 7vw, 65px);
@@ -220,6 +248,15 @@ nav .nav-home {
             margin: 60px 0;
         }
 
+        /* Language Toggle Classes */
+        .lang-en, .lang-si {
+            transition: opacity 0.3s ease;
+        }
+        
+        /* Default Hide for Sinhala elements */
+        [lang="si"] {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -227,7 +264,11 @@ nav .nav-home {
     <!-- New Top Navbar -->
 <nav>
     <a href="index.html" class="nav-home">🏠 Home</a>
-    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+    <div class="nav-controls">
+        <!-- Language Switcher Button -->
+        <button id="langToggle" class="lang-btn" onclick="toggleLanguage()">සිංහල</button>
+        <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+    </div>
 </nav>
 
 <!-- Sidebar Overlay -->
@@ -265,8 +306,6 @@ nav .nav-home {
     </div>
 </div>
 
-
-
     <div class="container">
         <h1>Jack the Ripper</h1>
 
@@ -274,107 +313,214 @@ nav .nav-home {
             <img class="ripper-img" src="images/jack the rip.jpg" alt="Victorian London Mystery">
         </div>
 
+        <!-- Section 1 -->
         <section>
-            <h2>Identity and Origin</h2>
-            <h3>"Jack the Ripper" is a pseudonym given to an unidentified killer who terrorized the Whitechapel district in the East End of London in 1888. The name originated from the <strong>"Dear Boss"</strong> letter sent to the Central News Agency, claiming to be the murderer.</h3>
+            <!-- English -->
+            <div lang="en">
+                <h2>Identity and Origin</h2>
+                <h3>"Jack the Ripper" is a pseudonym given to an unidentified killer who terrorized the Whitechapel district in the East End of London in 1888. The name originated from the <strong>"Dear Boss"</strong> letter sent to the Central News Agency, claiming to be the murderer.</h3>
+            </div>
+            <!-- Sinhala -->
+            <div lang="si">
+                <h2>අනන්‍යතාවය සහ ආරම්භය</h2>
+                <h3>"ජැක් ද රිපර්" (Jack the Ripper) යනු 1888 වසරේ ලන්ඩනයේ ඊස්ට් එන්ඩ් හි වයිට්චැපල් (Whitechapel) ප්‍රදේශයේ භීෂණයක් මතු කළ, මෙතෙක් කවුදැයි හඳුනා නොගත් ඝාතකයෙකුට ලබා දී ඇති අප්‍රසිද්ධ නාමයකි. මෙම නම නිර්මාණය වූයේ තමා මිනීමරුවා බව පවසමින් මධ්‍යම ප්‍රවෘත්ති ඒජන්සිය වෙත එවූ <strong>"Dear Boss"</strong> නැමැති ලිපියෙනි.</h3>
+            </div>
         </section>
 
+        <!-- Section 2 -->
         <section>
-            <h2>The "Canonical Five" Victims</h2>
-            <h3>Historians generally agree on five victims killed by the same hand between August and November 1888:</h3>
-            <ul>
-                <li>Mary Ann Nichols</li>
-                <li>Annie Chapman</li>
-                <li>Elizabeth Stride</li>
-                <li>Catherine Eddowes</li>
-                <li>Mary Jane Kelly</li>
-            </ul>
+            <!-- English -->
+            <div lang="en">
+                <h2>The "Canonical Five" Victims</h2>
+                <h3>Historians generally agree on five victims killed by the same hand between August and November 1888:</h3>
+                <ul>
+                    <li>Mary Ann Nichols</li>
+                    <li>Annie Chapman</li>
+                    <li>Elizabeth Stride</li>
+                    <li>Catherine Eddowes</li>
+                    <li>Mary Jane Kelly</li>
+                </ul>
+            </div>
+            <!-- Sinhala -->
+            <div lang="si">
+                <h2>"කැනොනිකල් ෆයිව්" (Canonical Five) වින්දිතයන්</h2>
+                <h3>1888 අගෝස්තු සහ නොවැම්බර් මාස අතර කාලය තුළ එකම පුද්ගලයෙකු අතින් ඝාතනයට ලක් වූ ප්‍රධාන ගොදුරු පහක් පිළිබඳව ඉතිහාසඥයන් සාමාන්‍යයෙන් එකඟ වෙති:</h3>
+                <ul>
+                    <li>මේරි ඈන් නිපෝල්ස් (Mary Ann Nichols)</li>
+                    <li>ඇනී චැප්මන් (Annie Chapman)</li>
+                    <li>එලිසබෙත් ස්ට්‍රයිඩ් (Elizabeth Stride)</li>
+                    <li>කැතරින් එඩෝස් (Catherine Eddowes)</li>
+                    <li>මේරි ජේන් කෙලී (Mary Jane Kelly)</li>
+                </ul>
+            </div>
         </section>
 
+        <!-- Section 3 -->
         <section>
-            <h2>The Modus Operandi (Method)</h2>
-            <h3>The killer's methods were uniquely brutal, gaining him global notoriety:</h3>
-            <ul>
-                <li><strong>Surgical Precision:</strong> The victims' throats were cut, followed by extensive abdominal mutilations.</li>
-                <li><strong>Organ Removal:</strong> In several cases, internal organs were removed with professional skill.</li>
-                <li><strong>Expertise:</strong> This led investigators to believe the killer had medical training, was a surgeon, or a butcher.</li>
-            </ul>
+            <!-- English -->
+            <div lang="en">
+                <h2>The Modus Operandi (Method)</h2>
+                <h3>The killer's methods were uniquely brutal, gaining him global notoriety:</h3>
+                <ul>
+                    <li><strong>Surgical Precision:</strong> The victims' throats were cut, followed by extensive abdominal mutilations.</li>
+                    <li><strong>Organ Removal:</strong> In several cases, internal organs were removed with professional skill.</li>
+                    <li><strong>Expertise:</strong> This led investigators to believe the killer had medical training, was a surgeon, or a butcher.</li>
+                </ul>
+            </div>
+            <!-- Sinhala -->
+            <div lang="si">
+                <h2>ඝාතන රටාව සහ ක්‍රමවේදය (Modus Operandi)</h2>
+                <h3>ඝාතකයාගේ ක්‍රමවේදයන් අතිශයින්ම කුරිරු වූ අතර, එමගින් ඔහු ලොව පුරා ප්‍රසිද්ධියට පත් විය:</h3>
+                <ul>
+                    <li><strong>ශල්‍යකර්ම නිරවද්‍යතාවය:</strong> වින්දිතයන්ගේ බෙල්ල කපා දමා, ඉන්පසු උදර ප්‍රදේශයට බරපතල ලෙස හානි කර තිබුණි.</li>
+                    <li><strong>අභ්‍යන්තර ඉන්ද්‍රියයන් ඉවත් කිරීම:</strong> සිදුවීම් කිහිපයකදීම, වින්දිතයන්ගේ ශරීරයේ අභ්‍යන්තර ඉන්ද්‍රියයන් වෘත්තීය මට්ටමේ දක්ෂතාවයකින් යුතුව ශරීරයෙන් ඉවත් කර තිබුණි.</li>
+                    <li><strong>විශේෂඥතාවය:</strong> මේ හේතුවෙන් විමර්ශකයින් විශ්වාස කළේ ඝාතකයා වෛද්‍ය පුහුණුවක් ලැබූ අයෙකු, ශල්‍ය වෛද්‍යවරයෙකු හෝ මස් කපන්නෙකු විය හැකි බවයි.</li>
+                </ul>
+            </div>
         </section>
 
+        <!-- Section 4 -->
         <section>
-            <h2>Famous Letters from the Killer</h2>
-            <ul>
-                <li><strong>"Dear Boss" Letter:</strong> Where the name "Jack the Ripper" was first used.</li>
-                <li><strong>"Saucy Jacky" Postcard:</strong> Sent shortly after the "Double Event" murders.</li>
-                <li><strong>"From Hell" Letter:</strong> Sent with a small box containing half a human kidney preserved in wine.</li>
-            </ul>
+            <!-- English -->
+            <div lang="en">
+                <h2>Famous Letters from the Killer</h2>
+                <ul>
+                    <li><strong>"Dear Boss" Letter:</strong> Where the name "Jack the Ripper" was first used.</li>
+                    <li><strong>"Saucy Jacky" Postcard:</strong> Sent shortly after the "Double Event" murders.</li>
+                    <li><strong>"From Hell" Letter:</strong> Sent with a small box containing half a human kidney preserved in wine.</li>
+                </ul>
+            </div>
+            <!-- Sinhala -->
+            <div lang="si">
+                <h2>ඝාතකයාගෙන් ලැබුණු ප්‍රසිද්ධ ලිපි</h2>
+                <ul>
+                    <li><strong>"Dear Boss" ලිපිය:</strong> "ජැක් ද රිපර්" යන නාමය මුල් වරට භාවිතා කරන ලද්දේ මෙම ලිපියේය.</li>
+                    <li><strong>"Saucy Jacky" තැපැල්පත:</strong> එකම රැයක සිදුවූ ද්විත්ව ඝාතනයෙන් (Double Event) සුළු වේලාවකට පසුව මෙය එවා තිබුණි.</li>
+                    <li><strong>"From Hell" ලිපිය:</strong> වයින් වල බහා සංරක්ෂණය කරන ලද මිනිස් වකුගඩුවක අර්ධයක් අඩංගු කුඩා පෙට්ටියක් ද සමඟින් මෙම ලිපිය එවා තිබුණි.</li>
+                </ul>
+            </div>
         </section>
 
+        <!-- Section 5 -->
         <section>
-            <h2>Why was he never caught?</h2>
-            <ul>
-                <li><strong>Lack of Technology:</strong> There was no DNA profiling, no fingerprinting, and no security cameras in 1888.</li>
-                <li><strong>Environment:</strong> Whitechapel was a maze of dark, foggy alleys and overcrowded slums.</li>
-                <li><strong>The Confusion:</strong> Mass panic and a lack of organized forensic science made the investigation nearly impossible.</li>
-            </ul>
+            <!-- English -->
+            <div lang="en">
+                <h2>Why was he never caught?</h2>
+                <ul>
+                    <li><strong>Lack of Technology:</strong> There was no DNA profiling, no fingerprinting, and no security cameras in 1888.</li>
+                    <li><strong>Environment:</strong> Whitechapel was a maze of dark, foggy alleys and overcrowded slums.</li>
+                    <li><strong>The Confusion:</strong> Mass panic and a lack of organized forensic science made the investigation nearly impossible.</li>
+                </ul>
+            </div>
+            <!-- Sinhala -->
+            <div lang="si">
+                <h2>ඔහු කිසිදා හසු නොවූයේ ඇයි?</h2>
+                <ul>
+                    <li><strong>තාක්ෂණයේ හිඟකම:</strong> 1888 වර්ෂයේදී DNA පරීක්ෂණ, ඇඟිලි සලකුණු තාක්ෂණය හෝ ආරක්ෂක කැමරා (CCTV) තිබුණේ නැත.</li>
+                    <li><strong>පරිසරය:</strong> වයිට්චැපල් ප්‍රදේශය අඳුරු, මීදුම් සහිත පටු මාර්ග සහ ජනාකීර්ණ මුඩුක්කු වලින් පිරුණු වංකගිරියක් බඳු විය.</li>
+                    <li><strong>කලබලකාරී වාතාවරණය:</strong> මහජන භීතිය සහ විද්‍යාත්මක වෝහාරික විද්‍යාවේ (Forensic Science) දියුණුවක් නොමැති වීම නිසා විමර්ශන කටයුතු අතිශය දුෂ්කර විය.</li>
+                </ul>
+            </div>
         </section>
 
         <div class="dotted-hr"></div>
     </div>
-<div id="feedback-widget">
-  <span>Was this helpful?</span>
-  <button onclick="hideFeedback('Yes')"> 👍</button>
-  <button onclick="hideFeedback('No')"> 👎</button>
-</div>
 
-<style>
-#feedback-widget {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #000000;
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
-  padding: 15px;
-  border-radius: 30px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  z-index: 1000;
-}
-#feedback-widget button {
-  border: none;
-  background: #000000;
-  padding: 5px 10px;
-  border-radius: 50%;
-  cursor: pointer;
-}
-#feedback-widget button:hover { background: #ddd; }
-</style>
-
-<script>
-    // Sidebar Toggle Function
-function toggleSidebar() {
-    const sidebar = document.getElementById("sidebarMenu");
-    const overlay = document.getElementById("sidebarOverlay");
-    
-    sidebar.classList.toggle("open");
-    overlay.classList.toggle("show");
-}
-function hideFeedback(type) {
-  alert("Thank you for your feedback!");
-  document.getElementById('feedback-widget').style.display = 'none';
-}
-</script>
-    <audio id="myAudio" loop>
-    <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
-</audio>
-
-<div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
-    <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
-        <span id="music-icon">🔇</span>
+    <!-- Feedback Widget -->
+    <div id="feedback-widget">
+        <span lang="en">Was this helpful?</span>
+        <span lang="si">මෙම ලිපිය වැදගත් වූවාද?</span>
+        
+        <button onclick="hideFeedback('Yes')"> 👍</button>
+        <button onclick="hideFeedback('No')"> 👎</button>
     </div>
-</div>
 
-<script src="music.js"></script>
+    <style>
+    #feedback-widget {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #000000;
+        box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+        padding: 15px;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        z-index: 1000;
+    }
+    #feedback-widget button {
+        border: none;
+        background: #000000;
+        padding: 5px 10px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    #feedback-widget button:hover { background: #ddd; }
+    </style>
+
+    <script>
+        // Sidebar Toggle Function
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebarMenu");
+            const overlay = document.getElementById("sidebarOverlay");
+            
+            sidebar.classList.toggle("open");
+            overlay.classList.toggle("show");
+        }
+
+        function hideFeedback(type) {
+            const currentLang = localStorage.getItem('selectedLanguage') || 'en';
+            if (currentLang === 'si') {
+                alert("ඔබගේ ප්‍රතිචාරයට ස්තූතියි!");
+            } else {
+                alert("Thank you for your feedback!");
+            }
+            document.getElementById('feedback-widget').style.display = 'none';
+        }
+
+        // --- Language Switcher Logic ---
+        function toggleLanguage() {
+            let currentLang = localStorage.getItem('selectedLanguage') || 'en';
+            let newLang = (currentLang === 'en') ? 'si' : 'en';
+            
+            localStorage.setItem('selectedLanguage', newLang);
+            applyLanguage(newLang);
+        }
+
+        function applyLanguage(lang) {
+            const enElements = document.querySelectorAll('[lang="en"]');
+            const siElements = document.querySelectorAll('[lang="si"]');
+            const langBtn = document.getElementById('langToggle');
+
+            if (lang === 'si') {
+                enElements.forEach(el => el.style.display = 'none');
+                siElements.forEach(el => el.style.display = 'block');
+                langBtn.textContent = 'English';
+            } else {
+                siElements.forEach(el => el.style.display = 'none');
+                enElements.forEach(el => el.style.display = 'block');
+                langBtn.textContent = 'සිංහල';
+            }
+        }
+
+        // Load the saved language on startup
+        document.addEventListener("DOMContentLoaded", function() {
+            let savedLang = localStorage.getItem('selectedLanguage') || 'en';
+            applyLanguage(savedLang);
+        });
+    </script>
+
+    <audio id="myAudio" loop>
+        <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
+    </audio>
+
+    <div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
+        <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
+            <span id="music-icon">🔇</span>
+        </div>
+    </div>
+
+    <script src="music.js"></script>
 </body>
 </html>
