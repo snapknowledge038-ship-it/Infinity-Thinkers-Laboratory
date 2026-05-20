@@ -342,6 +342,14 @@ nav .nav-home {
             alert("The mystery remains locked in the Laboratory. Don't look back!");
             document.getElementById('feedback-widget').style.display = 'none';
         }
+        // Sidebar Toggle Function
+function toggleSidebar() {
+    const sidebar = document.getElementById("sidebarMenu");
+    const overlay = document.getElementById("sidebarOverlay");
+    
+    sidebar.classList.toggle("open");
+    overlay.classList.toggle("show");
+}
     </script>
     
     <audio id="myAudio" loop>
