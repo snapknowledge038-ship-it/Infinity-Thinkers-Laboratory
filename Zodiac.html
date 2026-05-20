@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Zodiac Killer - I T L</title>
+    <title>The Zodiac Killer - Ancient Wonders</title>
     <style>
         /* මූලික සැකසුම් */
         body {
@@ -17,114 +17,144 @@
         }
 
         /* New Navigation Bar Header */
-nav {
-    background-color: #1a1a1a;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #333;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    width: 100%;
-    box-sizing: border-box;
-}
+        nav {
+            background-color: #1a1a1a;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            box-sizing: border-box;
+        }
 
-nav .nav-home {
-    color: #00d4ff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
-}
+        nav .nav-home {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+        }
 
-/* Hamburger Menu Button */
-.menu-toggle {
-    background: none;
-    border: none;
-    color: #00d4ff;
-    font-size: 28px;
-    cursor: pointer;
-    user-select: none;
-}
+        /* Nav controls container */
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
-/* Slide-out Sidebar Styles */
-.sidebar {
-    position: fixed;
-    top: 0;
-    right: -280px; /* දකුණු පැත්තේ සැඟවී පවතී */
-    width: 280px;
-    height: 100%;
-    background-color: #111;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
-    z-index: 10001;
-    transition: right 0.3s ease-in-out;
-    padding: 20px;
-    box-sizing: border-box;
-    overflow-y: auto;
-}
+        /* Language Toggle Button Style */
+        .lang-btn {
+            background: linear-gradient(45deg, #111, #222);
+            border: 1px solid #00d4ff;
+            color: #00d4ff;
+            padding: 6px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+            font-family: 'Segoe UI', sans-serif; /* බටන් එක කියවීමට පහසු වීමට */
+        }
 
-.sidebar.open {
-    right: 0; /* ක්ලික් කළ විට මතු වේ */
-}
+        .lang-btn:hover {
+            background: #00d4ff;
+            color: #000;
+            box-shadow: 0 0 15px #00d4ff;
+        }
 
-/* Close Button inside Sidebar */
-.close-btn {
-    text-align: right;
-    font-size: 30px;
-    color: #ff4a4a;
-    cursor: pointer;
-    margin-bottom: 20px;
-}
+        /* Hamburger Menu Button */
+        .menu-toggle {
+            background: none;
+            border: none;
+            color: #00d4ff;
+            font-size: 28px;
+            cursor: pointer;
+            user-select: none;
+        }
 
-/* Sidebar Links Grouping */
-.sidebar-section {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
+        /* Slide-out Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -280px; /* දකුණු පැත්තේ සැඟවී පවතී */
+            width: 280px;
+            height: 100%;
+            background-color: #111;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+            z-index: 10001;
+            transition: right 0.3s ease-in-out;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+            font-family: 'Segoe UI', sans-serif;
+        }
 
-.sidebar-divider {
-    border: none;
-    border-top: 1px solid #333;
-    margin: 15px 0;
-}
+        .sidebar.open {
+            right: 0; /* ක්ලික් කළ විට මතු වේ */
+        }
 
-.sidebar a {
-    color: #e0e0e0;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: 0.2s;
-}
+        /* Close Button inside Sidebar */
+        .close-btn {
+            text-align: right;
+            font-size: 30px;
+            color: #ff4a4a;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
 
-.sidebar a:hover {
-    background-color: #1a1a1a;
-    color: #00d4ff;
-}
+        /* Sidebar Links Grouping */
+        .sidebar-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
-/* Special Styling for buttons inside menu */
-.sb-mcq { color: #ffd700 !important; font-weight: bold !important; }
-.sb-facts { color: #00ff88 !important; font-weight: bold !important; }
-.sb-share { color: #00d4ff !important; }
-.sb-help { color: #ffa500 !important; }
+        .sidebar-divider {
+            border: none;
+            border-top: 1px solid #333;
+            margin: 15px 0;
+        }
 
-/* Overlay Background */
-.sidebar-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6);
-    z-index: 10000;
-    display: none;
-}
-.sidebar-overlay.show {
-    display: block;
-}
+        .sidebar a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: 0.2s;
+        }
+
+        .sidebar a:hover {
+            background-color: #1a1a1a;
+            color: #00d4ff;
+        }
+
+        /* Special Styling for buttons inside menu */
+        .sb-mcq { color: #ffd700 !important; font-weight: bold !important; }
+        .sb-facts { color: #00ff88 !important; font-weight: bold !important; }
+        .sb-share { color: #00d4ff !important; }
+        .sb-help { color: #ffa500 !important; }
+
+        /* Overlay Background */
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 10000;
+            display: none;
+        }
+        .sidebar-overlay.show {
+            display: block;
+        }
+
         /* මාතෘකාව */
         h1 {
             font-size: clamp(35px, 7vw, 70px);
@@ -196,6 +226,7 @@ nav .nav-home {
             margin-bottom: 15px;
             padding-left: 25px;
             position: relative;
+            text-align: justify;
         }
 
         li::before {
@@ -224,55 +255,82 @@ nav .nav-home {
             margin: 60px 0;
         }
 
+        /* Feedback Widget */
+        #feedback-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #151515;
+            border: 1px solid #444444;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 1000;
+            color: #c0c0c0;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        #feedback-widget button {
+            border: none;
+            background: #080808;
+            padding: 5px 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            color: #ffffff;
+        }
+        #feedback-widget button:hover { background: #333333; }
     </style>
 </head>
 <body>
 
-    <!-- New Top Navbar -->
-<nav>
-    <a href="index.html" class="nav-home">🏠 Home</a>
-    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
-</nav>
+    <!-- Top Navbar -->
+    <nav>
+        <a href="index.html" class="nav-home" data-en="🏠 Home" data-si="🏠 මුල් පිටුව">🏠 Home</a>
+        <div class="nav-controls">
+            <!-- Language Toggle Button -->
+            <button id="langToggle" class="lang-btn" onclick="toggleLanguage()">සිංහල</button>
+            <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+        </div>
+    </nav>
 
-<!-- Sidebar Overlay -->
-<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
 
-<!-- Slide-out Sidebar Menu -->
-<div class="sidebar" id="sidebarMenu">
-    <div class="close-btn" onclick="toggleSidebar()">×</div>
-    
-    <div class="sidebar-section">
-        <!-- Main Pages Links -->
-        <a href="index.html">Home</a>
-        <a href="earth.html">Earth</a>
-        <a href="animals.html">Animals</a>
-        <a href="space.html">Space</a>
-        <a href="mysteries.html">Mysteries</a>
-        <a href="history.html">History</a>
-        <a href="quantum.html">🌌 Quantum Physics</a>
-    </div>
+    <!-- Slide-out Sidebar Menu -->
+    <div class="sidebar" id="sidebarMenu">
+        <div class="close-btn" onclick="toggleSidebar()">×</div>
         
+        <div class="sidebar-section">
+            <!-- Main Pages Links -->
+            <a href="index.html" data-en="Home" data-si="මුල් පිටුව">Home</a>
+            <a href="earth.html" data-en="Earth" data-si="පෘථිවිය">Earth</a>
+            <a href="animals.html" data-en="Animals" data-si="සතුන්">Animals</a>
+            <a href="space.html" data-en="Space" data-si="අභ්‍යවකාශය">Space</a>
+            <a href="mysteries.html" data-en="Mysteries" data-si="අභිරහස්">Mysteries</a>
+            <a href="history.html" data-en="History" data-si="ඉතිහාසය">History</a>
+            <a href="quantum.html" data-en="🌌 Quantum Physics" data-si="🌌 ක්වොන්ටම් භෞතික විද්‍යාව">🌌 Quantum Physics</a>
+        </div>
+            
         <!-- පළමු ඉරෙන් වෙන් කිරීම -->
         <hr class="sidebar-divider">
-        
+            
         <!-- Quiz & Facts Links -->
-        <a href="mcq.html" class="sb-mcq">📝 Start MCQ Quiz</a>
-        <a href="facts.html" class="sb-facts">⚡ Fun Amazing Facts ⚡</a>
-        
+        <a href="mcq.html" class="sb-mcq" data-en="📝 Start MCQ Quiz" data-si="📝 MCQ ප්‍රශ්නාවලිය අරඹන්න">📝 Start MCQ Quiz</a>
+        <a href="facts.html" class="sb-facts" data-en="⚡ Fun Amazing Facts ⚡" data-si="⚡ පුදුම හිතෙන කරුණු ⚡">⚡ Fun Amazing Facts ⚡</a>
+            
         <!-- දෙවැනි ඉරෙන් වෙන් කිරීම -->
         <hr class="sidebar-divider">
-        
+            
         <!-- Action Links -->
-        <a onclick="shareToFriends(); toggleSidebar();" style="cursor:pointer;" class="sb-share">🔗 SHARE</a>
-        <a href="ad.html" class="sb-help">❤️ Help</a>
-        <a href="aaaextradatapage.html">About</a>
+        <a onclick="shareToFriends(); toggleSidebar();" style="cursor:pointer;" class="sb-share" data-en="🔗 SHARE" data-si="🔗 බෙදාගන්න (SHARE)">🔗 SHARE</a>
+        <a href="ad.html" class="sb-help" data-en="❤️ Help" data-si="❤️ උදව්">❤️ Help</a>
+        <a href="aaaextradatapage.html" data-en="About" data-si="අපි ගැන">About</a>
     </div>
-</div>
-
-
 
     <div class="container">
-        <h1>The Zodiac Killer</h1>
+        <h1 data-en="The Zodiac Killer" data-si="සෝඩියැක් ඝාතකයා">The Zodiac Killer</h1>
 
         <div class="img-container">
             <img src="images/zodiac_sketch.jpg" alt="Zodiac Killer Police Sketch">
@@ -280,97 +338,150 @@ nav .nav-home {
         </div>
 
         <section>
-            <h3>Operating in Northern California during the late 1960s and early 1970s, the <strong>Zodiac Killer</strong> remains one of the most infamous unidentified serial killers in American history. He transformed his crimes into a terrifying public game, taunting authorities and the media with complex cryptograms.</h3>
+            <h3 data-en="Operating in Northern California during the late 1960s and early 1970s, the Zodiac Killer remains one of the most infamous unidentified serial killers in American history. He transformed his crimes into a terrifying public game, taunting authorities and the media with complex cryptograms."
+                data-si="1960 දශකයේ අගභාගයේ සහ 1970 දශකයේ මුල් භාගයේදී උතුරු කැලිෆෝනියාවේ ක්‍රියාත්මක වූ සෝඩියැක් ඝාතකයා (Zodiac Killer), ඇමරිකානු ඉතිහාසයේ මෙතෙක් කවුදැයි හඳුනා නොගත් වඩාත්ම දරුණු ගණයේ අනුක්‍රමික මිනීමරුවෙකි. ඔහු තමන්ගේ අපරාධ භයානක ප්‍රසිද්ධ ක්‍රීඩාවක් බවට පත් කරගත් අතර, සංකීර්ණ රහස් කේත (Cryptograms) මාධ්‍ය වෙත එවමින් පොලිසියට සහ බලධාරීන්ට ප්‍රසිද්ධියේ අභියෝග කළේය.">
+                Operating in Northern California during the late 1960s and early 1970s, the <strong>Zodiac Killer</strong> remains one of the most infamous unidentified serial killers in American history. He transformed his crimes into a terrifying public game, taunting authorities and the media with complex cryptograms.
+            </h3>
         </section>
 
         <section>
-            <h2>The Crimes & Confirmed Victims</h2>
-            <h3>The Zodiac has been officially linked to <strong>five brutal murders and two attempted murders</strong> (survivors who provided vital descriptions). However, in his twisted letters to the press, he boasted of taking the lives of as many as 37 victims. His primary targets were young couples in isolated areas.</h3>
+            <h2 data-en="The Crimes & Confirmed Victims" data-si="අපරාධ සහ තහවුරු වූ ගොදුරු">The Crimes & Confirmed Victims</h2>
+            <h3 data-en="The Zodiac has been officially linked to five brutal murders and two attempted murders (survivors who provided vital descriptions). However, in his twisted letters to the press, he boasted of taking the lives of as many as 37 victims. His primary targets were young couples in isolated areas."
+                data-si="සෝඩියැක් විසින් සිදුකළ ඝාතන 5ක් සහ ඝාතනය කිරීමට තැත්කිරීම් 2ක් (මිනීමරුවාගේ බාහිර පෙනුම විස්තර කළ දිවි ගලවා ගත් අය) පොලිසිය විසින් නිල වශයෙන් තහවුරු කර ඇත. කෙසේ වෙතත්, ඔහු පුවත්පත් වෙත එවූ විකෘති ලිපි මගින් තමන් පුද්ගලයන් 37 දෙනෙකු ජීවිතක්ෂයට පත් කළ බවට පුරසාරම් දොඩන ලදී. හුදකලා ප්‍රදේශවල සිටි තරුණ යුවළවල් ඔහුගේ ප්‍රධාන ඉලක්ක බවට පත් විය.">
+                The Zodiac has been officially linked to <strong>five brutal murders and two attempted murders</strong> (survivors who provided vital descriptions). However, in his twisted letters to the press, he boasted of taking the lives of as many as 37 victims. His primary targets were young couples in isolated areas.
+            </h3>
         </section>
 
         <section>
-            <h2>"This is the Zodiac Speaking"</h2>
-            <h3>The killer actively sought global notoriety. He sent dozens of letters to Bay Area newspapers, opening each with his chilling catchphrase and signing them with a signature <strong>crosshairs symbol</strong>. He threatened to kill more innocents if the editors refused to print his letters on the front page.</h3>
+            <h2 data-en="&quot;This is the Zodiac Speaking&quot;" data-si="&quot;මේ සෝඩියැක් කතා කරන්නේ&quot;">"This is the Zodiac Speaking"</h2>
+            <h3 data-en="The killer actively sought global notoriety. He sent dozens of letters to Bay Area newspapers, opening each with his chilling catchphrase and signing them with a signature crosshairs symbol. He threatened to kill more innocents if the editors refused to print his letters on the front page."
+                data-si="මෙම ඝාතකයා ලෝකය පුරා ප්‍රසිද්ධියක් ලැබීමට දැඩි ලෙස උත්සාහ කළේය. ඔහු සැන් ෆ්‍රැන්සිස්කෝ බේ ඒරියා හි ප්‍රධාන පුවත්පත් වෙත ලිපි දුසිම් ගණනක් එවා තිබූ අතර, ඒ සෑම ලිපියක්ම ආරම්භ කළේ 'This is the Zodiac speaking' යන භීතිකාජනක වැකියෙනි. ලිපිය අවසානයේ ඔහුගේ සලකුණ වූ රවුමක් මැදින් ඇති කුරුස සලකුණ (Crosshairs Symbol) යොදන ලදී. පුවත්පත්වල මුල් පිටුවේ මෙම ලිපි පළ නොකළහොත් තවත් අහිංසක මිනිසුන් මරා දමන බවට ඔහු තර්ජනය කළේය.">
+                The killer actively sought global notoriety. He sent dozens of letters to Bay Area newspapers, opening each with his chilling catchphrase and signing them with a signature <strong>crosshairs symbol</strong>. He threatened to kill more innocents if the editors refused to print his letters on the front page.
+            </h3>
         </section>
 
         <section>
-            <h2>The Cryptograms (Ciphers)</h2>
+            <h2 data-en="The Cryptograms (Ciphers)" data-si="රහස් සංකේත කේතයන් (Ciphers)">The Cryptograms (Ciphers)</h2>
             <ul>
-                <li><strong>The Z408 Cipher:</strong> Sent in 1969 and cracked quickly by a schoolteacher and his wife. It revealed a disturbing mind, stating: <i>"I like killing people because it is so much fun..."</i></li>
-                <li><strong>The Z340 Cipher:</strong> This incredibly complex code baffled top government cryptographers for over 50 years. It was finally cracked by amateur codebreakers in <strong>December 2020</strong>, beginning with: <i>"I hope you are having lots of fun in trying to catch me..."</i></li>
-                <li><strong>Unsolved Codes:</strong> Two shorter ciphers (including one supposedly containing his real name) remain completely unsolved to this day.</li>
+                <li>
+                    <strong data-en="The Z408 Cipher:" data-si="Z408 කේතය:">The Z408 Cipher:</strong> 
+                    <span data-en="Sent in 1969 and cracked quickly by a schoolteacher and his wife. It revealed a disturbing mind, stating: 'I like killing people because it is so much fun...'" 
+                          data-si="1969 දී එවන ලද මෙය පාසල් ගුරුවරයෙකු සහ ඔහුගේ බිරිඳ විසින් ඉතා ඉක්මනින් විසඳන ලදී. එයින් ඔහුගේ විකෘති මානසිකත්වය හෙළි වූ අතර, එහි 'මම මිනිසුන් මැරීමට කැමතියි, මොකද ඒක මාර විනෝදයක්...' යනුවෙන් සඳහන් විය."></span>
+                </li>
+                <li>
+                    <strong data-en="The Z340 Cipher:" data-si="Z340 කේතය:">The Z340 Cipher:</strong> 
+                    <span data-en="This incredibly complex code baffled top government cryptographers for over 50 years. It was finally cracked by amateur codebreakers in December 2020, beginning with: 'I hope you are having lots of fun in trying to catch me...'" 
+                          data-si="මෙම අතිශය සංකීර්ණ කේතය වසර 50කට වැඩි කාලයක් රජයේ ඉහළම රහස් කේත විශ්ලේෂකයන් පවා අන්දමන්ද කිරීමට සමත් විය. අවසානයේ 2020 දෙසැම්බර් මාසයේදී ආධුනික කේත විසඳන්නන් පිරිසක් විසින් මෙය සාර්ථකව විසඳූ අතර, එහි ආරම්භයේ 'මාව අල්ලන්න උත්සාහ කරන එකෙන් ඔබලා ගොඩක් විනෝද වෙනවා ඇති කියා මම හිතනවා...' යනුවෙන් ලියා තිබුණි."></span>
+                </li>
+                <li>
+                    <strong data-en="Unsolved Codes:" data-si="නොවිසඳුණු කේත:">Unsolved Codes:</strong> 
+                    <span data-en="Two shorter ciphers (including one supposedly containing his real name) remain completely unsolved to this day." 
+                          data-si="ඔහුගේ සැබෑ නම අඩංගු බව කියන කෙටි කේත ඇතුළුව තවත් කේත දෙකක් අද වනතුරුත් කිසිවෙකුට විසඳීමට නොහැකි වී පවතී."></span>
+                </li>
             </ul>
         </section>
 
         <section>
-            <h2>The Prime Suspect: Arthur Leigh Allen</h2>
+            <h2 data-en="The Prime Suspect: Arthur Leigh Allen" data-si="ප්‍රධාන සැකකරු: ආතර් ලී ඇලන්">The Prime Suspect: Arthur Leigh Allen</h2>
             <ul>
-                <li><strong>Circumstantial Evidence:</strong> Allen was a former schoolteacher and convicted offender. He wore a wristwatch branded "Zodiac" featuring the crosshairs logo, lived near early crime scenes, and made highly suspicious statements.</li>
-                <li><strong>The Dead End:</strong> Despite being the police's top suspect for decades, his fingerprints, handwriting samples, and DNA did not match the physical evidence left behind by the killer. Allen died in 1992 without ever being charged.</li>
+                <li>
+                    <strong data-en="Circumstantial Evidence:" data-si="සන්නිවේදනාත්මක සාක්ෂි:">Circumstantial Evidence:</strong> 
+                    <span data-en="Allen was a former schoolteacher and convicted offender. He wore a wristwatch branded 'Zodiac' featuring the crosshairs logo, lived near early crime scenes, and made highly suspicious statements." 
+                          = data-si="ඇලන් යනු හිටපු පාසල් ගුරුවරයෙකු වූ අතර අපරාධ වාර්තා සහිත අයෙකි. ඔහු 'Zodiac' සන්නාමය සහිත සහ එම ක්‍රොස්හෙයාර් ලාංඡනය සහිත අත් ඔරලෝසුවක් පැළඳ සිටි අතර, මුල්ම අපරාධ සිදුවූ ස්ථාන අසල ජීවත් විය. එමෙන්ම ඔහු විසින් කරන ලද ප්‍රකාශද ඉතා සැක සහිත විය."></span>
+                </li>
+                <li>
+                    <strong data-en="The Dead End:" data-si="නොවිසඳුණු අගුල:">The Dead End:</strong> 
+                    <span data-en="Despite being the police's top suspect for decades, his fingerprints, handwriting samples, and DNA did not match the physical evidence left behind by the killer. Allen died in 1992 without ever being charged." 
+                          data-si="දශක ගණනාවක් තිස්සේ පොලිසියේ ප්‍රධාන සැකකරු වුවද, ඔහුගේ ඇඟිලි සලකුණු, අත්අකුරු සාම්පල හෝ ඩී.එන්.ඒ (DNA) ඝාතකයා විසින් ඉතිරි කර ගිය භෞතික සාක්ෂි සමඟ කිසිසේත්ම ගැලපුණේ නැත. ඇලන් 1992 දී කිසිදු චෝදනාවකට ලක් නොවී මියගියේය."></span>
+                </li>
             </ul>
         </section>
 
         <div class="footer-hr"></div>
     </div>
 
-<div id="feedback-widget">
-  <span>Was this helpful?</span>
-  <button onclick="hideFeedback('Yes')"> 👍</button>
-  <button onclick="hideFeedback('No')"> 👎</button>
-</div>
-
-<style>
-#feedback-widget {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #151515;
-  border: 1px solid #444444;
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
-  padding: 15px;
-  border-radius: 30px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  z-index: 1000;
-  color: #c0c0c0;
-}
-#feedback-widget button {
-  border: none;
-  background: #080808;
-  padding: 5px 10px;
-  border-radius: 50%;
-  cursor: pointer;
-  color: #ffffff;
-}
-#feedback-widget button:hover { background: #333333; }
-</style>
-
-<script>
-function hideFeedback(type) {
-  alert("Thank you for your feedback!");
-  document.getElementById('feedback-widget').style.display = 'none';
-}
-    // Sidebar Toggle Function
-function toggleSidebar() {
-    const sidebar = document.getElementById("sidebarMenu");
-    const overlay = document.getElementById("sidebarOverlay");
-    
-    sidebar.classList.toggle("open");
-    overlay.classList.toggle("show");
-}
-</script>
-
-<audio id="myAudio" loop>
-    <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
-</audio>
-
-<div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
-    <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
-        <span id="music-icon">🔇</span>
+    <!-- Feedback Widget -->
+    <div id="feedback-widget">
+        <span data-en="Was this helpful?" data-si="මෙය ප්‍රයෝජනват වූවාද?">Was this helpful?</span>
+        <button onclick="hideFeedback('Yes')"> 👍</button>
+        <button onclick="hideFeedback('No')"> 👎</button>
     </div>
-</div>
 
-<script src="music.js"></script>
+    <!-- Music Control UI -->
+    <div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
+        <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
+            <span id="music-icon">🔇</span>
+        </div>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="myAudio" loop>
+        <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // Sidebar Toggle Function
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebarMenu");
+            const overlay = document.getElementById("sidebarOverlay");
+            
+            sidebar.classList.toggle("open");
+            overlay.classList.toggle("show");
+        }
+
+        // Feedback system Alert
+        function hideFeedback(type) {
+            let currentLang = localStorage.getItem("preferredLanguage") || "en";
+            if(currentLang === "si") {
+                alert("ඔබගේ ප්‍රතිචාරයට ස්තුතියි!");
+            } else {
+                alert("Thank you for your feedback!");
+            }
+            document.getElementById('feedback-widget').style.display = 'none';
+        }
+
+        // --- භාෂා මාරු කිරීමේ පද්ධතිය (Language Switcher Logic) ---
+        function toggleLanguage() {
+            let currentLang = localStorage.getItem("preferredLanguage") || "en";
+            let newLang = (currentLang === "en") ? "si" : "en";
+            
+            localStorage.setItem("preferredLanguage", newLang);
+            applyLanguage(newLang);
+        }
+
+        function applyLanguage(lang) {
+            const btn = document.getElementById("langToggle");
+            
+            if (lang === "si") {
+                btn.textContent = "English";
+            } else {
+                btn.textContent = "සිංහල";
+            }
+
+            const elements = document.querySelectorAll('[data-en], [data-si]');
+            elements.forEach(el => {
+                if (lang === "si") {
+                    if (el.getAttribute('data-si')) {
+                        if(["A", "P", "H1", "H2", "H3", "SPAN", "DIV", "STRONG"].includes(el.tagName)) {
+                            el.textContent = el.getAttribute('data-si');
+                        }
+                    }
+                } else {
+                    if (el.getAttribute('data-en')) {
+                        if(["A", "P", "H1", "H2", "H3", "SPAN", "DIV", "STRONG"].includes(el.tagName)) {
+                            el.textContent = el.getAttribute('data-en');
+                        }
+                    }
+                }
+            });
+        }
+
+        // පිටුව මුලින්ම ලෝඩ් වන විට ක්‍රියාත්මක වන කොටස
+        document.addEventListener("DOMContentLoaded", () => {
+            let savedLang = localStorage.getItem("preferredLanguage") || "en";
+            applyLanguage(savedLang);
+        });
+    </script>
+    <script src="music.js"></script>
 </body>
 </html>
