@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Sirens - I T L</title>
+    <title>The Sirens - Ancient Wonders</title>
     <style>
         /* මූලික සැකසුම් */
         body {
@@ -17,114 +17,141 @@
         }
 
         /* New Navigation Bar Header */
-nav {
-    background-color: #1a1a1a;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #333;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    width: 100%;
-    box-sizing: border-box;
-}
+        nav {
+            background-color: #1a1a1a;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            box-sizing: border-box;
+        }
 
-nav .nav-home {
-    color: #00d4ff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
-}
+        nav .nav-home {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+        }
 
-/* Hamburger Menu Button */
-.menu-toggle {
-    background: none;
-    border: none;
-    color: #00d4ff;
-    font-size: 28px;
-    cursor: pointer;
-    user-select: none;
-}
+        /* Nav controls container */
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
-/* Slide-out Sidebar Styles */
-.sidebar {
-    position: fixed;
-    top: 0;
-    right: -280px; /* දකුණු පැත්තේ සැඟවී පවතී */
-    width: 280px;
-    height: 100%;
-    background-color: #111;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
-    z-index: 10001;
-    transition: right 0.3s ease-in-out;
-    padding: 20px;
-    box-sizing: border-box;
-    overflow-y: auto;
-}
+        /* Language Toggle Button Style */
+        .lang-btn {
+            background: linear-gradient(45deg, #111, #222);
+            border: 1px solid #00d4ff;
+            color: #00d4ff;
+            padding: 6px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+        }
 
-.sidebar.open {
-    right: 0; /* ක්ලික් කළ විට මතු වේ */
-}
+        .lang-btn:hover {
+            background: #00d4ff;
+            color: #000;
+            box-shadow: 0 0 15px #00d4ff;
+        }
 
-/* Close Button inside Sidebar */
-.close-btn {
-    text-align: right;
-    font-size: 30px;
-    color: #ff4a4a;
-    cursor: pointer;
-    margin-bottom: 20px;
-}
+        /* Hamburger Menu Button */
+        .menu-toggle {
+            background: none;
+            border: none;
+            color: #00d4ff;
+            font-size: 28px;
+            cursor: pointer;
+            user-select: none;
+        }
 
-/* Sidebar Links Grouping */
-.sidebar-section {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
+        /* Slide-out Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -280px; /* දකුණු පැත්තේ සැඟවී පවතී */
+            width: 280px;
+            height: 100%;
+            background-color: #111;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+            z-index: 10001;
+            transition: right 0.3s ease-in-out;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
 
-.sidebar-divider {
-    border: none;
-    border-top: 1px solid #333;
-    margin: 15px 0;
-}
+        .sidebar.open {
+            right: 0; /* ක්ලික් කළ විට මතු වේ */
+        }
 
-.sidebar a {
-    color: #e0e0e0;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: 0.2s;
-}
+        /* Close Button inside Sidebar */
+        .close-btn {
+            text-align: right;
+            font-size: 30px;
+            color: #ff4a4a;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
 
-.sidebar a:hover {
-    background-color: #1a1a1a;
-    color: #00d4ff;
-}
+        /* Sidebar Links Grouping */
+        .sidebar-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
-/* Special Styling for buttons inside menu */
-.sb-mcq { color: #ffd700 !important; font-weight: bold !important; }
-.sb-facts { color: #00ff88 !important; font-weight: bold !important; }
-.sb-share { color: #00d4ff !important; }
-.sb-help { color: #ffa500 !important; }
+        .sidebar-divider {
+            border: none;
+            border-top: 1px solid #333;
+            margin: 15px 0;
+        }
 
-/* Overlay Background */
-.sidebar-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6);
-    z-index: 10000;
-    display: none;
-}
-.sidebar-overlay.show {
-    display: block;
-}
+        .sidebar a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: 0.2s;
+        }
+
+        .sidebar a:hover {
+            background-color: #1a1a1a;
+            color: #00d4ff;
+        }
+
+        /* Special Styling for buttons inside menu */
+        .sb-mcq { color: #ffd700 !important; font-weight: bold !important; }
+        .sb-facts { color: #00ff88 !important; font-weight: bold !important; }
+        .sb-share { color: #00d4ff !important; }
+        .sb-help { color: #ffa500 !important; }
+
+        /* Overlay Background */
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 10000;
+            display: none;
+        }
+        .sidebar-overlay.show {
+            display: block;
+        }
 
         /* ප්‍රධාන මාතෘකාව */
         h1 {
@@ -210,38 +237,6 @@ nav .nav-home {
             color: #88aaaa;
         }
 
-        /* YouTube Promo */
-        .promo-box {
-            text-align: center;
-            background: linear-gradient(145deg, #002b30, #040d14);
-            padding: 30px;
-            border-radius: 20px;
-            border: 1px solid #005f6b;
-            margin-top: 50px;
-        }
-
-        .promo-link {
-            color: #ff4545;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 22px;
-            display: inline-block;
-            margin-top: 10px;
-            transition: 0.3s;
-        }
-
-        .promo-link mark {
-            background-color: #ff4545;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 5px;
-        }
-
-        .promo-link:hover {
-            transform: scale(1.05);
-            text-shadow: 0 0 15px #ff4545;
-        }
-
         hr {
             border: 0;
             height: 1px;
@@ -249,155 +244,242 @@ nav .nav-home {
             margin: 40px 0;
         }
 
+        /* Feedback Widget */
+        #feedback-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #000000;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 1000;
+        }
+        #feedback-widget button {
+            border: none;
+            background: #000000;
+            padding: 5px 10px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        #feedback-widget button:hover { background: #ddd; }
     </style>
 </head>
 <body>
 
-    <!-- New Top Navbar -->
-<nav>
-    <a href="index.html" class="nav-home">🏠 Home</a>
-    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
-</nav>
+    <!-- Top Navbar -->
+    <nav>
+        <a href="index.html" class="nav-home" data-en="🏠 Home" data-si="🏠 මුල් පිටුව">🏠 Home</a>
+        <div class="nav-controls">
+            <!-- Language Toggle Button -->
+            <button id="langToggle" class="lang-btn" onclick="toggleLanguage()">සිංහල</button>
+            <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+        </div>
+    </nav>
 
-<!-- Sidebar Overlay -->
-<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
 
-<!-- Slide-out Sidebar Menu -->
-<div class="sidebar" id="sidebarMenu">
-    <div class="close-btn" onclick="toggleSidebar()">×</div>
-    
-    <div class="sidebar-section">
-        <!-- Main Pages Links -->
-        <a href="index.html">Home</a>
-        <a href="earth.html">Earth</a>
-        <a href="animals.html">Animals</a>
-        <a href="space.html">Space</a>
-        <a href="mysteries.html">Mysteries</a>
-        <a href="history.html">History</a>
-        <a href="quantum.html">🌌 Quantum Physics</a>
-    </div>
+    <!-- Slide-out Sidebar Menu -->
+    <div class="sidebar" id="sidebarMenu">
+        <div class="close-btn" onclick="toggleSidebar()">×</div>
         
+        <div class="sidebar-section">
+            <!-- Main Pages Links -->
+            <a href="index.html" data-en="Home" data-si="මුල් පිටුව">Home</a>
+            <a href="earth.html" data-en="Earth" data-si="පෘථිවිය">Earth</a>
+            <a href="animals.html" data-en="Animals" data-si="සතුන්">Animals</a>
+            <a href="space.html" data-en="Space" data-si="අභ්‍යවකාශය">Space</a>
+            <a href="mysteries.html" data-en="Mysteries" data-si="අභිරහස්">Mysteries</a>
+            <a href="history.html" data-en="History" data-si="ඉතිහාසය">History</a>
+            <a href="quantum.html" data-en="🌌 Quantum Physics" data-si="🌌 ක්වොන්ටම් භෞතික විද්‍යාව">🌌 Quantum Physics</a>
+        </div>
+            
         <!-- පළමු ඉරෙන් වෙන් කිරීම -->
         <hr class="sidebar-divider">
-        
+            
         <!-- Quiz & Facts Links -->
-        <a href="mcq.html" class="sb-mcq">📝 Start MCQ Quiz</a>
-        <a href="facts.html" class="sb-facts">⚡ Fun Amazing Facts ⚡</a>
-        
+        <a href="mcq.html" class="sb-mcq" data-en="📝 Start MCQ Quiz" data-si="📝 MCQ ප්‍රශ්නාවලිය අරඹන්න">📝 Start MCQ Quiz</a>
+        <a href="facts.html" class="sb-facts" data-en="⚡ Fun Amazing Facts ⚡" data-si="⚡ පුදුම හිතෙන කරුණු ⚡">⚡ Fun Amazing Facts ⚡</a>
+            
         <!-- දෙවැනි ඉරෙන් වෙන් කිරීම -->
         <hr class="sidebar-divider">
-        
+            
         <!-- Action Links -->
-        <a onclick="shareToFriends(); toggleSidebar();" style="cursor:pointer;" class="sb-share">🔗 SHARE</a>
-        <a href="ad.html" class="sb-help">❤️ Help</a>
-        <a href="aaaextradatapage.html">About</a>
+        <a onclick="shareToFriends(); toggleSidebar();" style="cursor:pointer;" class="sb-share" data-en="🔗 SHARE" data-si="🔗 බෙදාගන්න (SHARE)">🔗 SHARE</a>
+        <a href="ad.html" class="sb-help" data-en="❤️ Help" data-si="❤️ උදව්">❤️ Help</a>
+        <a href="aaaextradatapage.html" data-en="About" data-si="අපි ගැන">About</a>
     </div>
-</div>
-
 
     <div class="container">
-        <h1>The Sirens</h1>
+        <h1 data-en="The Sirens" data-si="සයිරන්වරුන්">The Sirens</h1>
 
         <div class="img-container">
             <img class="siren-img" src="images/the Sirens.jpg" alt="Mythical Sirens">
         </div>
 
         <section>
-            <h2>Who were the Sirens?</h2>
-            <h3>In Greek mythology, Sirens were sea nymphs who lived on rocky islands.</h3>
+            <h2 data-en="Who were the Sirens?" data-si="සයිරන්වරුන් යනු කවුද?">Who were the Sirens?</h2>
+            <h3 data-en="In Greek mythology, Sirens were sea nymphs who lived on rocky islands." 
+                data-si="ග්‍රීක පුරාවෘත්තයන්ට අනුව, සයිරන්වරුන් (Sirens) යනු ගල්පර සහිත දූපත් වල ජීවත් වූ මුහුදු අප්සරාවන් (නයිම්ෆ්වරුන්) පිරිසකි.">
+                In Greek mythology, Sirens were sea nymphs who lived on rocky islands.
+            </h3>
             <ul>
-                <li><strong>Early Myths:</strong> They were originally depicted as creatures with the body of a bird and the head of a woman.</li>
-                <li><strong>Later Evolution:</strong> Over time, their image changed to resemble mermaids, though in classical myth, they remained bird-like.</li>
+                <li>
+                    <strong data-en="Early Myths:" data-si="මුල්කාලීන මතවාද:">Early Myths:</strong> 
+                    <span data-en="They were originally depicted as creatures with the body of a bird and the head of a woman." 
+                          data-si="මුල් කාලයේදී ඔවුන්ව නිරූපණය කළේ කුරුල්ලෙකුගේ ශරීරයක් සහ කාන්තාවකගේ හිසක් ඇති ජීවීන් විශේෂයක් ලෙසය."></span>
+                </li>
+                <li>
+                    <strong data-en="Later Evolution:" data-si="පසුකාලීන පරිණාමය:">Later Evolution:</strong> 
+                    <span data-en="Over time, their image changed to resemble mermaids, though in classical myth, they remained bird-like." 
+                          data-si="කාලයත් සමඟ ඔවුන්ගේ ස්වරූපය දියකිඳුරියන් (Mermaids) ලෙස වෙනස් වුවද, සම්භාව්‍ය ග්‍රීක මතයන්ට අනුව ඔවුන් පක්ෂි ස්වරූපයට වඩාත් සමීප විය."></span>
+                </li>
             </ul>
         </section>
 
         <section>
-            <h2>The Deadly Song</h2>
-            <h3>The Sirens’ most dangerous power was their voice, singing songs so haunting that any sailor would lose his mind.</h3>
+            <h2 data-en="The Deadly Song" data-si="මාරාන්තික ගීතය">The Deadly Song</h2>
+            <h3 data-en="The Sirens’ most dangerous power was their voice, singing songs so haunting that any sailor would lose his mind." 
+                data-si="සයිරන්වරුන් සතු වූ භයානකම බලය වූයේ ඔවුන්ගේ කටහඬයි. ඔවුන් ගායනා කළ මනමෝහනීය ගීත නිසා ඕනෑම නැවියෙකුට තමන් කවුද යන්න පවා අමතක විය.">
+                The Sirens’ most dangerous power was their voice, singing songs so haunting that any sailor would lose his mind.
+            </h3>
             <ul>
-                <li><strong>The Trap:</strong> Sailors would become so entranced that they would forget their homes and families.</li>
-                <li><strong>The Outcome:</strong> They would steer ships toward rocky shores, causing them to crash and drown.</li>
+                <li>
+                    <strong data-en="The Trap:" data-si="උගුල:">The Trap:</strong> 
+                    <span data-en="Sailors would become so entranced that they would forget their homes and families." 
+                          data-si="ඔවුන්ගේ ගායනයට වසඟ වන නැවියන් තමන්ගේ නිවෙස්, පවුල් සහ ගමනාන්තයන් පවා සම්පූර්ණයෙන්ම අමතක කර දැමූහ."></span>
+                </li>
+                <li>
+                    <strong data-en="The Outcome:" data-si="ප්‍රතිඵලය:">The Outcome:</strong> 
+                    <span data-en="They would steer ships toward rocky shores, causing them to crash and drown." 
+                          data-si="මේ නිසා ඔවුන් නැව් ගල්පර දෙසට පදවාගෙන ගිය අතර, අවසානයේ නැව් අනතුරට ලක්වී සියලුම නැවියන් මුහුදේ ගිලී මිය ගියහ."></span>
+                </li>
             </ul>
         </section>
 
         <section>
-            <h2>Famous Encounters</h2>
-            <h3>Two major legends where heroes managed to survive:</h3>
+            <h2 data-en="Famous Encounters" data-si="ප්‍රසිද්ධ සිදුවීම්">Famous Encounters</h2>
+            <h3 data-en="Two major legends where heroes managed to survive:" 
+                data-si="මෙම මාරාන්තික ගායනයෙන් බේරීමට සමත් වූ ප්‍රධාන වීරයන් දෙදෙනෙකුගේ පුවත් මෙසේය:">
+                Two major legends where heroes managed to survive:
+            </h3>
             
             <ul>
-                <li><strong>A. The Odyssey (Odysseus)</strong></li>
-                <li class="sub-item">His crew plugged their ears with beeswax.</li>
-                <li class="sub-item">Odysseus was tied tightly to the mast to hear the song safely.</li>
+                <li style="font-weight: bold;" data-en="A. The Odyssey (Odysseus)" data-si="A. ද ඔඩිසි (ඔඩීසියස්ගේ පුවත)">A. The Odyssey (Odysseus)</li>
+                <li class="sub-item" data-en="His crew plugged their ears with beeswax." data-si="ඔඩීසියස් තමාගේ නැව් කණ්ඩායමේ සියලුම දෙනාගේ කන් මී ඉටි (Beeswax) දමා වසා දැමුවේය.">His crew plugged their ears with beeswax.</li>
+                <li class="sub-item" data-en="Odysseus was tied tightly to the mast to hear the song safely." data-si="ඔඩීසියස්ට එම ගීතය ඇසීමට අවශ්‍ය වූ නිසා ඔහුව නැවේ කුඹගසට තබා තදින් ගැටගසන ලදී.">Odysseus was tied tightly to the mast to hear the song safely.</li>
                 
-                <li><strong>B. Jason and the Argonauts</strong></li>
-                <li class="sub-item">Orpheus played his lyre so beautifully it drowned out the Sirens' voices.</li>
+                <li style="font-weight: bold; margin-top: 10px;" data-en="B. Jason and the Argonauts" data-si="B. ජේසන් සහ ආගොනෝට්ස්">B. Jason and the Argonauts</li>
+                <li class="sub-item" data-en="Orpheus played his lyre so beautifully it drowned out the Sirens' voices." data-si="ඔවුන් සමඟ ගිය ඕෆියස් (Orpheus) තමාගේ වීණාව (Lyre) සයිරන්වරුන්ගේ හඬට වඩා මිහිරි ලෙස වාදනය කරමින් සයිරන් හඬ යටපත් කළේය.">Orpheus played his lyre so beautifully it drowned out the Sirens' voices.</li>
             </ul>
         </section>
 
         <section>
-            <h2>Origin and Fate</h2>
+            <h2 data-en="Origin and Fate" data-si="ආරම්භය සහ අවසානය">Origin and Fate</h2>
             <ul>
-                <li><strong>Origin:</strong> Often said to be the daughters of the river god Achelous and a Muse.</li>
-                <li><strong>Their Death:</strong> Legend says if a mortal ever heard their song and survived, the Sirens were destined to die. After Odysseus, they threw themselves into the sea and turned into rocks.</li>
+                <li>
+                    <strong data-en="Origin:" data-si="උත්පත්තිය:">Origin:</strong> 
+                    <span data-en="Often said to be the daughters of the river god Achelous and a Muse." 
+                          data-si="පුරාවෘත්තවලට අනුව ඔවුන් ඇචිලෝස් (Achelous) නම් ගංගා දෙවියන්ට සහ කලාවටධිපති මියුස් (Muse) කෙනෙකුට දාව උපන් දරුවන් වේ."></span>
+                </li>
+                <li>
+                    <strong data-en="Their Death:" data-si="ඔවුන්ගේ මරණය:">Their Death:</strong> 
+                    <span data-en="Legend says if a mortal ever heard their song and survived, the Sirens were destined to die. After Odysseus, they threw themselves into the sea and turned into rocks." 
+                          data-si="යම් හෙයකින් මිනිසෙකු සයිරන් ගීතය අසා බේරුණහොත් සයිරන්වරුන් මියයන බව දෛවෝපගත වී තිබුණි. ඔඩීසියස් බේරීමෙන් පසු බලාපොරොත්තු සුන් වූ ඔවුන් මුහුදට පැන ගල්පර බවට පත් වූ බව කියැවේ."></span>
+                </li>
             </ul>
         </section>
 
         <hr>
     </div>
-<div id="feedback-widget">
-  <span>Was this helpful?</span>
-  <button onclick="hideFeedback('Yes')"> 👍</button>
-  <button onclick="hideFeedback('No')"> 👎</button>
-</div>
 
-<style>
-#feedback-widget {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #000000;
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
-  padding: 15px;
-  border-radius: 30px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  z-index: 1000;
-}
-#feedback-widget button {
-  border: none;
-  background: #000000;
-  padding: 5px 10px;
-  border-radius: 50%;
-  cursor: pointer;
-}
-#feedback-widget button:hover { background: #ddd; }
-</style>
-
-<script>
-    // Sidebar Toggle Function
-function toggleSidebar() {
-    const sidebar = document.getElementById("sidebarMenu");
-    const overlay = document.getElementById("sidebarOverlay");
-    
-    sidebar.classList.toggle("open");
-    overlay.classList.toggle("show");
-}
-function hideFeedback(type) {
-  alert("Thank you for your feedback!");
-  document.getElementById('feedback-widget').style.display = 'none';
-}
-</script>
-    <audio id="myAudio" loop>
-    <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
-</audio>
-
-<div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
-    <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
-        <span id="music-icon">🔇</span>
+    <!-- Feedback Widget -->
+    <div id="feedback-widget">
+        <span data-en="Was this helpful?" data-si="මෙය ප්‍රයෝජනවත් වූවාද?">Was this helpful?</span>
+        <button onclick="hideFeedback('Yes')"> 👍</button>
+        <button onclick="hideFeedback('No')"> 👎</button>
     </div>
-</div>
 
-<script src="music.js"></script>
+    <!-- Music Control UI -->
+    <div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
+        <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
+            <span id="music-icon">🔇</span>
+        </div>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="myAudio" loop>
+        <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // Sidebar Toggle Function
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebarMenu");
+            const overlay = document.getElementById("sidebarOverlay");
+            
+            sidebar.classList.toggle("open");
+            overlay.classList.toggle("show");
+        }
+
+        // Feedback system Alert
+        function hideFeedback(type) {
+            let currentLang = localStorage.getItem("preferredLanguage") || "en";
+            if(currentLang === "si") {
+                alert("ඔබගේ ප්‍රතිචාරයට ස්තුතියි!");
+            } else {
+                alert("Thank you for your feedback!");
+            }
+            document.getElementById('feedback-widget').style.display = 'none';
+        }
+
+        // --- භාෂා මාරු කිරීමේ පද්ධතිය (Language Switcher Logic) ---
+        function toggleLanguage() {
+            let currentLang = localStorage.getItem("preferredLanguage") || "en";
+            let newLang = (currentLang === "en") ? "si" : "en";
+            
+            localStorage.setItem("preferredLanguage", newLang);
+            applyLanguage(newLang);
+        }
+
+        function applyLanguage(lang) {
+            const btn = document.getElementById("langToggle");
+            
+            if (lang === "si") {
+                btn.textContent = "English";
+            } else {
+                btn.textContent = "සිංහල";
+            }
+
+            // data attributes තියෙන හැම element එකක්ම අප්ඩේට් කිරීම
+            const elements = document.querySelectorAll('[data-en], [data-si]');
+            elements.forEach(el => {
+                if (lang === "si") {
+                    if (el.getAttribute('data-si')) {
+                        if(["A", "P", "H1", "H2", "H3", "SPAN", "DIV", "STRONG"].includes(el.tagName)) {
+                            el.textContent = el.getAttribute('data-si');
+                        }
+                    }
+                } else {
+                    if (el.getAttribute('data-en')) {
+                        if(["A", "P", "H1", "H2", "H3", "SPAN", "DIV", "STRONG"].includes(el.tagName)) {
+                            el.textContent = el.getAttribute('data-en');
+                        }
+                    }
+                }
+            });
+        }
+
+        // පිටුව මුලින්ම ලෝඩ් වන විට ක්‍රියාත්මක වන කොටස
+        document.addEventListener("DOMContentLoaded", () => {
+            let savedLang = localStorage.getItem("preferredLanguage") || "en";
+            applyLanguage(savedLang);
+        });
+    </script>
+    <script src="music.js"></script>
 </body>
 </html>
