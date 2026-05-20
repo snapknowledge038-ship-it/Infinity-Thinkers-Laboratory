@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="description" content="Explore the incredible world of wildlife with ITL. From majestic predators to fascinating tiny creatures, discover amazing facts, habitats, and secrets of the animal kingdom.">
-    <meta name="keywords" content="Wildlife Discovery, Animal Kingdom Facts, Endangered Species, Amazing Animal Behavior, Nature and Wildlife, Biodiversity Education, ITL Animals">
-
-    <meta property="og:title" content="Animals – The World of Wildlife | ITL">
-    <meta property="og:description" content="Discover the secrets of the animal kingdom with fascinating facts and stories.">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animals - I T L</title>
+
+    <!-- Meta Tags for Link Preview (WhatsApp, Facebook, etc.) -->
+    <meta name="description" content="Explore the incredible world of wildlife with ITL. From majestic predators to fascinating tiny creatures, discover amazing facts, habitats, and secrets of the animal kingdom.">
+    <meta name="keywords" content="Wildlife Discovery, Animal Kingdom Facts, Endangered Species, Amazing Animal Behavior, Nature and Wildlife, Biodiversity Education, ITL Animals">
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/animals.html">
+    <meta property="og:title" content="Animals – The World of Wildlife | ITL">
+    <meta property="og:description" content="Discover the secrets of the animal kingdom with fascinating facts and stories. From massive giants to prehistoric monsters! 🦁🦖">
+    <meta property="og:image" content="images/animals.jpeg">
+
+    <!-- Twitter Card Data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Animals – The World of Wildlife | ITL">
+    <meta name="twitter:description" content="Discover the secrets of the animal kingdom with fascinating facts and stories.">
+    <meta name="twitter:image" content="images/animals.jpeg">
+
     <style>
         /* Modern Dark Green Theme Setup */
         body {
@@ -22,114 +35,143 @@
         }
 
         /* New Navigation Bar Header */
-nav {
-    background-color: #1a1a1a;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #333;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    width: 100%;
-    box-sizing: border-box;
-}
+        nav {
+            background-color: #1a1a1a;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            box-sizing: border-box;
+        }
 
-nav .nav-home {
-    color: #00d4ff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
-}
+        nav .nav-home {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+        }
 
-/* Hamburger Menu Button */
-.menu-toggle {
-    background: none;
-    border: none;
-    color: #00d4ff;
-    font-size: 28px;
-    cursor: pointer;
-    user-select: none;
-}
+        /* Nav Controls wrapper */
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
-/* Slide-out Sidebar Styles */
-.sidebar {
-    position: fixed;
-    top: 0;
-    right: -280px; /* දකුණු පැත්තේ සැඟවී පවතී */
-    width: 280px;
-    height: 100%;
-    background-color: #111;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
-    z-index: 10001;
-    transition: right 0.3s ease-in-out;
-    padding: 20px;
-    box-sizing: border-box;
-    overflow-y: auto;
-}
+        /* Language Toggle Button Style */
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid #4ade80;
+            color: #4ade80;
+            padding: 6px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(74, 222, 128, 0.2);
+            font-family: 'Segoe UI', sans-serif;
+        }
 
-.sidebar.open {
-    right: 0; /* ක්ලික් කළ විට මතු වේ */
-}
+        .lang-btn:hover {
+            background: #4ade80;
+            color: #040d06;
+            box-shadow: 0 0 15px #4ade80;
+        }
 
-/* Close Button inside Sidebar */
-.close-btn {
-    text-align: right;
-    font-size: 30px;
-    color: #ff4a4a;
-    cursor: pointer;
-    margin-bottom: 20px;
-}
+        /* Hamburger Menu Button */
+        .menu-toggle {
+            background: none;
+            border: none;
+            color: #00d4ff;
+            font-size: 28px;
+            cursor: pointer;
+            user-select: none;
+        }
 
-/* Sidebar Links Grouping */
-.sidebar-section {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
+        /* Slide-out Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -280px; /* දකුණු පැත්තේ සැඟවී පවතී */
+            width: 280px;
+            height: 100%;
+            background-color: #111;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+            z-index: 10001;
+            transition: right 0.3s ease-in-out;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
 
-.sidebar-divider {
-    border: none;
-    border-top: 1px solid #333;
-    margin: 15px 0;
-}
+        .sidebar.open {
+            right: 0; /* ක්ලික් කළ විට මතු වේ */
+        }
 
-.sidebar a {
-    color: #e0e0e0;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: 0.2s;
-}
+        /* Close Button inside Sidebar */
+        .close-btn {
+            text-align: right;
+            font-size: 30px;
+            color: #ff4a4a;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
 
-.sidebar a:hover {
-    background-color: #1a1a1a;
-    color: #00d4ff;
-}
+        /* Sidebar Links Grouping */
+        .sidebar-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
-/* Special Styling for buttons inside menu */
-.sb-mcq { color: #ffd700 !important; font-weight: bold !important; }
-.sb-facts { color: #00ff88 !important; font-weight: bold !important; }
-.sb-share { color: #00d4ff !important; }
-.sb-help { color: #ffa500 !important; }
+        .sidebar-divider {
+            border: none;
+            border-top: 1px solid #333;
+            margin: 15px 0;
+        }
 
-/* Overlay Background */
-.sidebar-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6);
-    z-index: 10000;
-    display: none;
-}
-.sidebar-overlay.show {
-    display: block;
-}
+        .sidebar a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: 0.2s;
+        }
+
+        .sidebar a:hover {
+            background-color: #1a1a1a;
+            color: #00d4ff;
+        }
+
+        /* Special Styling for buttons inside menu */
+        .sb-mcq { color: #ffd700 !important; font-weight: bold !important; }
+        .sb-facts { color: #00ff88 !important; font-weight: bold !important; }
+        .sb-share { color: #00d4ff !important; }
+        .sb-help { color: #ffa500 !important; }
+
+        /* Overlay Background */
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 10000;
+            display: none;
+        }
+        .sidebar-overlay.show {
+            display: block;
+        }
+
         /* Title Glow Animation */
         h1 {
             font-size: clamp(28px, 5vw, 50px);
@@ -247,55 +289,56 @@ nav .nav-home {
 </head>
 <body>
 
-   <!-- New Top Navbar -->
-<nav>
-    <a href="index.html" class="nav-home">🏠 Home</a>
-    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
-</nav>
+    <!-- New Top Navbar -->
+    <nav>
+        <a href="index.html" class="nav-home" data-en="🏠 Home" data-si="🏠 මුල් පිටුව">🏠 Home</a>
+        <div class="nav-controls">
+            <!-- Language Toggle Button -->
+            <button id="langToggle" class="lang-btn" onclick="toggleLanguage()">සිංහල</button>
+            <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+        </div>
+    </nav>
 
-<!-- Sidebar Overlay -->
-<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
 
-<!-- Slide-out Sidebar Menu -->
-<div class="sidebar" id="sidebarMenu">
-    <div class="close-btn" onclick="toggleSidebar()">×</div>
-    
-    <div class="sidebar-section">
-        <!-- Main Pages Links -->
-        <a href="index.html">Home</a>
-        <a href="earth.html">Earth</a>
-        <a href="animals.html">Animals</a>
-        <a href="space.html">Space</a>
-        <a href="mysteries.html">Mysteries</a>
-        <a href="history.html">History</a>
-        <a href="quantum.html">🌌 Quantum Physics</a>
-    </div>
+    <!-- Slide-out Sidebar Menu -->
+    <div class="sidebar" id="sidebarMenu">
+        <div class="close-btn" onclick="toggleSidebar()">×</div>
         
+        <div class="sidebar-section">
+            <!-- Main Pages Links -->
+            <a href="index.html" data-en="Home" data-si="මුල් පිටුව">Home</a>
+            <a href="earth.html" data-en="Earth" data-si="පෘථිවිය">Earth</a>
+            <a href="animals.html" data-en="Animals" data-si="සතුන්">Animals</a>
+            <a href="space.html" data-en="Space" data-si="අභ්‍යවකාශය">Space</a>
+            <a href="mysteries.html" data-en="Mysteries" data-si="අභිරහස්">Mysteries</a>
+            <a href="history.html" data-en="History" data-si="ඉතිහාසය">History</a>
+            <a href="quantum.html" data-en="🌌 Quantum Physics" data-si="🌌 ක්වොන්ටම් භෞතික විද්‍යාව">🌌 Quantum Physics</a>
+        </div>
+            
         <!-- පළමු ඉරෙන් වෙන් කිරීම -->
         <hr class="sidebar-divider">
-        
+            
         <!-- Quiz & Facts Links -->
-        <a href="mcq.html" class="sb-mcq">📝 Start MCQ Quiz</a>
-        <a href="facts.html" class="sb-facts">⚡ Fun Amazing Facts ⚡</a>
-        
+        <a href="mcq.html" class="sb-mcq" data-en="📝 Start MCQ Quiz" data-si="📝 MCQ ප්‍රශ්නාවලිය අරඹන්න">📝 Start MCQ Quiz</a>
+        <a href="facts.html" class="sb-facts" data-en="⚡ Fun Amazing Facts ⚡" data-si="⚡ පුදුම හිතෙන කරුණු ⚡">⚡ Fun Amazing Facts ⚡</a>
+            
         <!-- දෙවැනි ඉරෙන් වෙන් කිරීම -->
         <hr class="sidebar-divider">
-        
+            
         <!-- Action Links -->
-        <a onclick="shareToFriends(); toggleSidebar();" style="cursor:pointer;" class="sb-share">🔗 SHARE</a>
-        <a href="ad.html" class="sb-help">❤️ Help</a>
-        <a href="aaaextradatapage.html">About</a>
+        <a onclick="shareToFriends(); toggleSidebar();" style="cursor:pointer;" class="sb-share" data-en="🔗 SHARE" data-si="🔗 බෙදාගන්න (SHARE)">🔗 SHARE</a>
+        <a href="ad.html" class="sb-help" data-en="❤️ Help" data-si="❤️ උදව්">❤️ Help</a>
+        <a href="aaaextradatapage.html" data-en="About" data-si="අපි ගැන">About</a>
     </div>
-</div>
-
-
 
     <audio id="myAudio" loop>
         <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
     </audio>
 
     <div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
-        <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
+        <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px; user-select: none;">
             <span id="music-icon">🔇</span>
         </div>
     </div>
@@ -303,13 +346,15 @@ nav .nav-home {
     <script src="music.js"></script>
 
     <div class="container">
-        <h1>Animals – The World of Wildlife</h1>
+        <h1 data-en="Animals – The World of Wildlife" data-si="සතුන් – වනජීවී ලෝකය">Animals – The World of Wildlife</h1>
 
         <div class="img-container">
             <img class="animals-img" src="images/animals.jpeg" alt="Amazing Wildlife">
         </div>
 
-        <div class="wildlife-text">
+        <div class="wildlife-text" 
+             data-en="You have arrived here to explore the incredible world of animals. From the smallest creatures on Earth to the largest giants of the oceans, the animal kingdom is filled with diversity, beauty, and extraordinary adaptations. <br><br>Here you will discover fascinating facts about wildlife, unique species, and the remarkable ways animals survive and interact with their environments. Through the articles and information below, you can learn more about the wonders of the animal world and deepen your understanding of the life that shares our planet."
+             data-si="ඔබ මෙහි පැමිණ සිටින්නේ සතුන්ගේ ඇදහිය නොහැකි ලෝකය ගවේෂණය කිරීමටයි. පෘථිවියේ කුඩාම ජීවීන්ගේ සිට සාගරයේ වෙසෙන දැවැන්තයින් දක්වා සත්ව රාජධානිය විවිධත්වයෙන්, සුන්දරත්වයෙන් සහ අසාමාන්‍ය අනුවර්තනයන්ගෙන් පිරී පවතී. <br><br>වනජීවීන් පිළිබඳ සිත්ගන්නාසුලු කරුණු, සුවිශේෂී සත්ව විශේෂ සහ සතුන් තම පරිසරය සමඟ අන්තර් ක්‍රියා කරමින් ජීවත් වන විශ්මිත ක්‍රම ඔබ මෙහිදී සොයා ගනු ඇත. පහත දැක්වෙන ලිපි සහ තොරතුරු මඟින් ඔබට සත්ව ලෝකයේ අරුමපුදුම දේ පිළිබඳව වැඩිදුර ඉගෙන ගත හැකි අතර අපේ පෘථිවිය බෙදා ගන්නා ජීවය පිළිබඳ ඔබේ අවබෝධය ගැඹුරු කර ගත හැකිය.">
             You have arrived here to explore the incredible world of animals. From the smallest creatures on Earth to the largest giants of the oceans, the animal kingdom is filled with diversity, beauty, and extraordinary adaptations. 
             <br><br>
             Here you will discover fascinating facts about wildlife, unique species, and the remarkable ways animals survive and interact with their environments. Through the articles and information below, you can learn more about the wonders of the animal world and deepen your understanding of the life that shares our planet.
@@ -317,14 +362,14 @@ nav .nav-home {
 
         <hr>
 
-        <h2>What are the details you are expecting?</h2>
+        <h2 data-en="What are the details you are expecting?" data-si="ඔබ බලාපොරොත්තු වන තොරතුරු මොනවාද?">What are the details you are expecting?</h2>
         
         <ul class="animal-grid">
-            <a href="dino.html"><li>Dinosaurs</li></a>
-            <a href="megalodon.html"><li>Megalodon</li></a>
-            <a href="titanoboa.html"><li>Titanoboa</li></a>
-            <a href="Smilodon.html"><li>Smilodon</li></a>
-            <a href="mammoth.html"><li>Woolly Mammoth</li></a>
+            <a href="dino.html"><li data-en="Dinosaurs" data-si="ඩයිනෝසරයන්">Dinosaurs</li></a>
+            <a href="megalodon.html"><li data-en="Megalodon" data-si="මෙගලඩොන්">Megalodon</li></a>
+            <a href="titanoboa.html"><li data-en="Titanoboa" data-si="ටයිටනොබෝවා">Titanoboa</li></a>
+            <a href="Smilodon.html"><li data-en="Smilodon" data-si="ස්මිලඩොන්">Smilodon</li></a>
+            <a href="mammoth.html"><li data-en="Woolly Mammoth" data-si="වූලි මැමත්">Woolly Mammoth</li></a>
         </ul>
 
         <div class="dotted-hr"></div>
@@ -332,13 +377,14 @@ nav .nav-home {
 
     <script>
         // Sidebar Toggle Function
-function toggleSidebar() {
-    const sidebar = document.getElementById("sidebarMenu");
-    const overlay = document.getElementById("sidebarOverlay");
-    
-    sidebar.classList.toggle("open");
-    overlay.classList.toggle("show");
-}
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebarMenu");
+            const overlay = document.getElementById("sidebarOverlay");
+            
+            sidebar.classList.toggle("open");
+            overlay.classList.toggle("show");
+        }
+
         // Music Player Logic
         function toggleMusic() {
             var audio = document.getElementById("myAudio");
@@ -351,6 +397,44 @@ function toggleSidebar() {
                 icon.innerHTML = "🔇"; 
             }
         }
+
+        // --- භාෂා මාරු කිරීමේ පද්ධතිය (Language Switcher Logic) ---
+        function toggleLanguage() {
+            let currentLang = localStorage.getItem("preferredLanguage") || "en";
+            let newLang = (currentLang === "en") ? "si" : "en";
+            
+            localStorage.setItem("preferredLanguage", newLang);
+            applyLanguage(newLang);
+        }
+
+        function applyLanguage(lang) {
+            const btn = document.getElementById("langToggle");
+            
+            if (lang === "si") {
+                btn.textContent = "English";
+            } else {
+                btn.textContent = "සිංහල";
+            }
+
+            const elements = document.querySelectorAll('[data-en], [data-si]');
+            elements.forEach(el => {
+                if (lang === "si") {
+                    if (el.getAttribute('data-si')) {
+                        el.innerHTML = el.getAttribute('data-si');
+                    }
+                } else {
+                    if (el.getAttribute('data-en')) {
+                        el.innerHTML = el.getAttribute('data-en');
+                    }
+                }
+            });
+        }
+
+        // පිටුව මුලින්ම ලෝඩ් වන විට ක්‍රියාත්මක වන කොටස
+        document.addEventListener("DOMContentLoaded", () => {
+            let savedLang = localStorage.getItem("preferredLanguage") || "en";
+            applyLanguage(savedLang);
+        });
     </script>
 </body>
 </html>
