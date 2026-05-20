@@ -341,6 +341,14 @@ nav .nav-home {
             alert("The ancient secrets are safe in the Laboratory!");
             document.getElementById('feedback-widget').style.display = 'none';
         }
+        // Sidebar Toggle Function
+function toggleSidebar() {
+    const sidebar = document.getElementById("sidebarMenu");
+    const overlay = document.getElementById("sidebarOverlay");
+    
+    sidebar.classList.toggle("open");
+    overlay.classList.toggle("show");
+}
     </script>
     
     <audio id="myAudio" loop>
