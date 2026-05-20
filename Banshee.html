@@ -16,114 +16,138 @@
         }
 
         /* New Navigation Bar Header */
-nav {
-    background-color: #1a1a1a;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #333;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    width: 100%;
-    box-sizing: border-box;
-}
+        nav {
+            background-color: #1a1a1a;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            box-sizing: border-box;
+        }
 
-nav .nav-home {
-    color: #00d4ff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
-}
+        nav .nav-home {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+        }
 
-/* Hamburger Menu Button */
-.menu-toggle {
-    background: none;
-    border: none;
-    color: #00d4ff;
-    font-size: 28px;
-    cursor: pointer;
-    user-select: none;
-}
+        /* Right side menu layout */
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
-/* Slide-out Sidebar Styles */
-.sidebar {
-    position: fixed;
-    top: 0;
-    right: -280px; /* දකුණු පැත්තේ සැඟවී පවතී */
-    width: 280px;
-    height: 100%;
-    background-color: #111;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
-    z-index: 10001;
-    transition: right 0.3s ease-in-out;
-    padding: 20px;
-    box-sizing: border-box;
-    overflow-y: auto;
-}
+        /* Language Toggle Button Style */
+        .lang-btn {
+            background: #222;
+            color: #00d4ff;
+            border: 1px solid #00d4ff;
+            padding: 5px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+        .lang-btn:hover {
+            background: #00d4ff;
+            color: #000;
+        }
 
-.sidebar.open {
-    right: 0; /* ක්ලික් කළ විට මතු වේ */
-}
+        /* Hamburger Menu Button */
+        .menu-toggle {
+            background: none;
+            border: none;
+            color: #00d4ff;
+            font-size: 28px;
+            cursor: pointer;
+            user-select: none;
+        }
 
-/* Close Button inside Sidebar */
-.close-btn {
-    text-align: right;
-    font-size: 30px;
-    color: #ff4a4a;
-    cursor: pointer;
-    margin-bottom: 20px;
-}
+        /* Slide-out Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -280px; /* දකුණු පැත්තේ සැඟවී පවතී */
+            width: 280px;
+            height: 100%;
+            background-color: #111;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+            z-index: 10001;
+            transition: right 0.3s ease-in-out;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
 
-/* Sidebar Links Grouping */
-.sidebar-section {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
+        .sidebar.open {
+            right: 0; /* ක්ලික් කළ විට මතු වේ */
+        }
 
-.sidebar-divider {
-    border: none;
-    border-top: 1px solid #333;
-    margin: 15px 0;
-}
+        /* Close Button inside Sidebar */
+        .close-btn {
+            text-align: right;
+            font-size: 30px;
+            color: #ff4a4a;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
 
-.sidebar a {
-    color: #e0e0e0;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: 0.2s;
-}
+        /* Sidebar Links Grouping */
+        .sidebar-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
-.sidebar a:hover {
-    background-color: #1a1a1a;
-    color: #00d4ff;
-}
+        .sidebar-divider {
+            border: none;
+            border-top: 1px solid #333;
+            margin: 15px 0;
+        }
 
-/* Special Styling for buttons inside menu */
-.sb-mcq { color: #ffd700 !important; font-weight: bold !important; }
-.sb-facts { color: #00ff88 !important; font-weight: bold !important; }
-.sb-share { color: #00d4ff !important; }
-.sb-help { color: #ffa500 !important; }
+        .sidebar a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: 0.2s;
+        }
 
-/* Overlay Background */
-.sidebar-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6);
-    z-index: 10000;
-    display: none;
-}
-.sidebar-overlay.show {
-    display: block;
-}
+        .sidebar a:hover {
+            background-color: #1a1a1a;
+            color: #00d4ff;
+        }
+
+        /* Special Styling for buttons inside menu */
+        .sb-mcq { color: #ffd700 !important; font-weight: bold !important; }
+        .sb-facts { color: #00ff88 !important; font-weight: bold !important; }
+        .sb-share { color: #00d4ff !important; }
+        .sb-help { color: #ffa500 !important; }
+
+        /* Overlay Background */
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 10000;
+            display: none;
+        }
+        .sidebar-overlay.show {
+            display: block;
+        }
 
         /* මාතෘකාව */
         h1 {
@@ -209,158 +233,294 @@ nav .nav-home {
             margin: 60px 0;
         }
 
+        /* 🌐 Multi-language Visibility Controller */
+        .lang-si { display: none; } /* Default සිංහල සඟවන්න */
+        
+        body.sinhala-mode .lang-en { display: none; } /* සිංහල Mode වලදී ඉංග්‍රීසි සඟවන්න */
+        body.sinhala-mode .lang-si { display: inline-block; } 
+        body.sinhala-mode h3.lang-si, 
+        body.sinhala-mode ul.lang-si,
+        body.sinhala-mode h2.lang-si,
+        body.sinhala-mode h1.lang-si { display: block; } 
     </style>
 </head>
 <body>
 
     <!-- New Top Navbar -->
-<nav>
-    <a href="index.html" class="nav-home">🏠 Home</a>
-    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
-</nav>
+    <nav>
+        <a href="index.html" class="nav-home">
+            <span class="lang-en">🏠 Home</span>
+            <span class="lang-si">🏠 මුල් පිටුව</span>
+        </a>
+        <div class="nav-right">
+            <!-- 🌐 Language Switcher Button -->
+            <button id="langToggle" class="lang-btn" onclick="toggleLanguage()">Sinhala</button>
+            <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+        </div>
+    </nav>
 
-<!-- Sidebar Overlay -->
-<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
 
-<!-- Slide-out Sidebar Menu -->
-<div class="sidebar" id="sidebarMenu">
-    <div class="close-btn" onclick="toggleSidebar()">×</div>
-    
-    <div class="sidebar-section">
-        <!-- Main Pages Links -->
-        <a href="index.html">Home</a>
-        <a href="earth.html">Earth</a>
-        <a href="animals.html">Animals</a>
-        <a href="space.html">Space</a>
-        <a href="mysteries.html">Mysteries</a>
-        <a href="history.html">History</a>
-        <a href="quantum.html">🌌 Quantum Physics</a>
-    </div>
+    <!-- Slide-out Sidebar Menu -->
+    <div class="sidebar" id="sidebarMenu">
+        <div class="close-btn" onclick="toggleSidebar()">×</div>
         
+        <div class="sidebar-section">
+            <!-- Main Pages Links -->
+            <a href="index.html">
+                <span class="lang-en">Home</span><span class="lang-si">මුල් පිටුව</span>
+            </a>
+            <a href="earth.html">
+                <span class="lang-en">Earth</span><span class="lang-si">පෘථිවිය</span>
+            </a>
+            <a href="animals.html">
+                <span class="lang-en">Animals</span><span class="lang-si">සතුන්</span>
+            </a>
+            <a href="space.html">
+                <span class="lang-en">Space</span><span class="lang-si">අවකාශය</span>
+            </a>
+            <a href="mysteries.html">
+                <span class="lang-en">Mysteries</span><span class="lang-si">අභිරහස්</span>
+            </a>
+            <a href="history.html">
+                <span class="lang-en">History</span><span class="lang-si">ඉතිහාසය</span>
+            </a>
+            <a href="quantum.html">
+                <span class="lang-en">🌌 Quantum Physics</span><span class="lang-si">🌌 ක්වොන්ටම් භෞතික විද්‍යාව</span>
+            </a>
+        </div>
+            
         <!-- පළමු ඉරෙන් වෙන් කිරීම -->
         <hr class="sidebar-divider">
-        
+            
         <!-- Quiz & Facts Links -->
-        <a href="mcq.html" class="sb-mcq">📝 Start MCQ Quiz</a>
-        <a href="facts.html" class="sb-facts">⚡ Fun Amazing Facts ⚡</a>
-        
+        <a href="mcq.html" class="sb-mcq">
+            <span class="lang-en">📝 Start MCQ Quiz</span><span class="lang-si">📝 MCQ ප්‍රශ්නාවලිය</span>
+        </a>
+        <a href="facts.html" class="sb-facts">
+            <span class="lang-en">⚡ Fun Amazing Facts ⚡</span><span class="lang-si">⚡ පුදුම සහගත කරුණු ⚡</span>
+        </a>
+            
         <!-- දෙවැනි ඉරෙන් වෙන් කිරීම -->
         <hr class="sidebar-divider">
-        
+            
         <!-- Action Links -->
-        <a onclick="shareToFriends(); toggleSidebar();" style="cursor:pointer;" class="sb-share">🔗 SHARE</a>
-        <a href="ad.html" class="sb-help">❤️ Help</a>
-        <a href="aaaextradatapage.html">About</a>
+        <a onclick="shareToFriends(); toggleSidebar();" style="cursor:pointer;" class="sb-share">
+            <span class="lang-en">🔗 SHARE</span><span class="lang-si">🔗 බෙදාගන්න</span>
+        </a>
+        <a href="ad.html" class="sb-help">
+            <span class="lang-en">❤️ Help</span><span class="lang-si">❤️ උදව්</span>
+        </a>
+        <a href="aaaextradatapage.html">
+            <span class="lang-en">About</span><span class="lang-si">අපි ගැන</span>
+        </a>
     </div>
-</div>
-
-
 
     <div class="container">
-        <h1>Banshee</h1>
+        <!-- Main Title -->
+        <h1 class="lang-en">Banshee</h1>
+        <h1 class="lang-si">බන්ෂි (Banshee)</h1>
 
         <div class="img-container">
             <img class="banshee-img" src="images/Banshee.jpg" alt="The Banshee Spirit">
         </div>
 
+        <!-- Section 1 -->
         <section>
-            <h2>Origin and Etymology</h2>
-            <h3>The word "Banshee" comes from the Irish Gaelic <strong>"Bean Sídhe"</strong>, which literally translates to "Woman of the Fairy Mound" or "Fairy Woman." In Irish mythology, she is a spirit attached to specific ancient family lineages.</h3>
+            <h2>
+                <span class="lang-en">Origin and Etymology</span>
+                <span class="lang-si">සම්භවය සහ නිරුක්තිය</span>
+            </h2>
+            <h3 class="lang-en">The word "Banshee" comes from the Irish Gaelic <strong>"Bean Sídhe"</strong>, which literally translates to "Woman of the Fairy Mound" or "Fairy Woman." In Irish mythology, she is a spirit attached to specific ancient family lineages.</h3>
+            <h3 class="lang-si">"බන්ෂි" (Banshee) යන වචනය පැමිණෙන්නේ අයිරිෂ් ගේලික් භාෂාවේ <strong>"Bean Sídhe"</strong> යන වචනයෙනි. එහි සෘජු අර්ථය "සුරංගනා කන්දේ කාන්තාව" හෝ "සුරංගනා ස්ත්‍රිය" යන්නයි. අයිරිෂ් පුරාවෘත්තවලට අනුව, ඇය විශේෂිත පැරණි පවුල් පරම්පරාවලට සම්බන්ධ ආත්මයකි.</h3>
         </section>
 
+        <!-- Section 2 -->
         <section>
-            <h2>Appearance</h2>
-            <h3>According to legends, a Banshee can appear in three different forms:</h3>
-            <ul>
+            <h2>
+                <span class="lang-en">Appearance</span>
+                <span class="lang-si">බාහිර පෙනුම</span>
+            </h2>
+            <h3 class="lang-en">According to legends, a Banshee can appear in three different forms:</h3>
+            <h3 class="lang-si">ජනප්‍රවාදවලට අනුව, බන්ෂි කෙනෙකුට ආකාර තුනකින් පෙනී සිටිය හැකිය:</h3>
+            
+            <!-- English List -->
+            <ul class="lang-en">
                 <li><strong>The Young Woman:</strong> A beautiful lady with long, flowing silver or red hair.</li>
                 <li><strong>The Stately Matron:</strong> A middle-aged woman with a more serious or grieving expression.</li>
                 <li><strong>The Old Hag:</strong> A terrifying, withered old woman with sunken eyes and grey hair.</li>
             </ul>
-            <h3>She is often described wearing a grey hooded cloak or a white burial shroud. Her eyes are usually permanent red from centuries of continuous weeping.</h3>
+
+            <!-- Sinhala List -->
+            <ul class="lang-si">
+                <li><strong>තරුණ කාන්තාව:</strong> දිගු, ගලායන රිදී හෝ රතු පැහැති කෙස් කළඹක් ඇති ලස්සන කාන්තාවක්.</li>
+                <li><strong>වැදගත් පෙනුමක් ඇති මැට්‍රන්:</strong> වඩාත් බැරෑරුම් හෝ ශෝකී පෙනුමක් ඇති මැදිවියේ කාන්තාවක්.</li>
+                <li><strong>මහලු මන්තර ගුරුකම් කරන්නිය:</strong> ගිලුණු ඇස් සහ අළු පැහැති කෙස් ඇති භයානක, වැහැරුණු මහලු කාන්තාවක්.</li>
+            </ul>
+
+            <h3 class="lang-en">She is often described wearing a grey hooded cloak or a white burial shroud. Her eyes are usually permanent red from centuries of continuous weeping.</h3>
+            <h3 class="lang-si">ඇය බොහෝ විට අළු පැහැති හිස්වැස්මක් සහිත සිවුරක් හෝ සුදු පැහැති මිනී කفنක් හැඳ සිටින බව විස්තර කෙරේ. සියවස් ගණනාවක් පුරා නොකඩවා හැඬීම නිසා ඇගේ ඇස් සාමාන්‍යයෙන් තද රතු පැහැයෙන් යුක්ත වේ.</h3>
         </section>
 
+        <!-- Section 3 -->
         <section>
-            <h2>The Omen of Death (The Keen)</h2>
-            <h3>The most famous characteristic of the Banshee is her piercing scream or wail, known as the <strong>"Keen" (caoine)</strong>.</h3>
-            <ul>
+            <h2>
+                <span class="lang-en">The Omen of Death (The Keen)</span>
+                <span class="lang-si">මරණයේ පෙරනිමිත්ත (ද කීන්)</span>
+            </h2>
+            <h3 class="lang-en">The most famous characteristic of the Banshee is her piercing scream or wail, known as the <strong>"Keen" (caoine)</strong>.</h3>
+            <h3 class="lang-si">බන්ෂිගේ වඩාත්ම ප්‍රසිද්ධ ලක්ෂණය වන්නේ ඇගේ කන් බිහිරි කරවන කෑගැසීම හෝ වැලපීමයි, මෙය <strong>"කීන්" (Keen - caoine)</strong> ලෙස හැඳින්වේ.</h3>
+            
+            <!-- English List -->
+            <ul class="lang-en">
                 <li><strong>The Warning:</strong> She does not kill people. Instead, her wail is a warning that a member of the household is about to die.</li>
                 <li><strong>The Sound:</strong> Descriptions vary—from pleasant singing to a terrifying screech that can shatter glass.</li>
                 <li><strong>Timing:</strong> The scream is usually heard at night, shortly before a death occurs.</li>
             </ul>
+
+            <!-- Sinhala List -->
+            <ul class="lang-si">
+                <li><strong>අනතුරු ඇඟවීම:</strong> ඇය මිනිසුන් මරන්නේ නැත. ඒ වෙනුවට, ඇගේ වැලපීම නිවසේ සාමාජිකයෙකු මිය යාමට ආසන්න බවට අනතුරු ඇඟවීමකි.</li>
+                <li><strong>ශබ්දය:</strong> මෙහි විස්තර කිරීම් එකිනෙකට වෙනස් වේ — මිහිරි ගායනයක සිට වීදුරු පවා බිඳ දැමිය හැකි භයානක කෑගැසීමක් දක්වා එය වෙනස් විය හැක.</li>
+                <li><strong>වේලාව:</strong> මෙම කෑගැසීම සාමාන්‍යයෙන් ඇසෙන්නේ රාත්‍රී කාලයේදී, මරණයක් සිදුවීමට සුළු මොහොතකට පෙරය.</li>
+            </ul>
         </section>
 
+        <!-- Section 4 -->
         <section>
-            <h2>The "Five Great Families"</h2>
-            <h3>Ancient tradition suggests that Banshees only followed the five great Milesian families of Ireland: the O'Gradys, O'Neills, O'Briens, O'Connors, and Kavanaghs. Over time, it was believed she followed any family whose name began with "O" or "Mac".</h3>
+            <h2>
+                <span class="lang-en">The "Five Great Families"</span>
+                <span class="lang-si">"මහා පවුල් පහ"</span>
+            </h2>
+            <h3 class="lang-en">Ancient tradition suggests that Banshees only followed the five great Milesian families of Ireland: the O'Gradys, O'Neills, O'Briens, O'Connors, and Kavanaghs. Over time, it was believed she followed any family whose name began with "O" or "Mac".</h3>
+            <h3 class="lang-si">පැරණි සම්ප්‍රදායට අනුව බන්ෂිලා පසුපස ගියේ අයර්ලන්තයේ මහා මයිලේෂියානු පවුල් පහක් පමණි: O'Gradys, O'Neills, O'Briens, O'Connors, සහ Kavanaghs ය. කාලයත් සමඟ ඇය "O" හෝ "Mac" වලින් ආරම්භ වන ඕනෑම පවුලක් පසුපස යන බව විශ්වාස කෙරිණි.</h3>
         </section>
 
+        <!-- Section 5 -->
         <section>
-            <h2>Folklore and Superstitions</h2>
-            <ul>
+            <h2>
+                <span class="lang-en">Folklore and Superstitions</span>
+                <span class="lang-si">ජනප්‍රවාද සහ මිත්‍යා විශ්වාස</span>
+            </h2>
+            
+            <!-- English List -->
+            <ul class="lang-en">
                 <li><strong>The Silver Comb:</strong> Legend says that if you find a silver comb on the ground, never pick it up. It belongs to a Banshee, and she will hunt down anyone who takes it.</li>
                 <li><strong>The Washerwoman:</strong> In some regions, she is seen as the "Bean-Nighe," a spirit found near lonely streams washing the blood-stained clothes of those about to die.</li>
+            </ul>
+
+            <!-- Sinhala List -->
+            <ul class="lang-si">
+                <li><strong>රිදී පනාව:</strong> ජනප්‍රවාද පවසන්නේ ඔබට බිම තිබී රිදී පනාවක් හමු වුවහොත් එය කිසි විටෙකත් අහුලා නොගන්නා ලෙසයි. එය බන්ෂි කෙනෙකුට අයිති එකක් වන අතර, එය ගන්නා ඕනෑම කෙනෙකු පසුපස ඇය පන්නා එනු ඇත.</li>
+                <li><strong>රෙදි සෝදන කාන්තාව:</strong> සමහර ප්‍රදේශවල ඇයව "Bean-Nighe" ලෙස දකින අතර, ඇය මිය යාමට ආසන්න පුද්ගලයින්ගේ ලේ තැවරුණු ඇඳුම් සෝදමින් පාළු දිය පහරවල් අසල සිටින ආත්මයකි.</li>
             </ul>
         </section>
 
         <div class="dotted-hr"></div>
     </div>
 
-
-
+    <!-- Feedback Widget -->
     <div id="feedback-widget">
-  <span>Was this helpful?</span>
-  <button onclick="hideFeedback('Yes')"> 👍</button>
-  <button onclick="hideFeedback('No')"> 👎</button>
-</div>
-
-<style>
-#feedback-widget {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #000000;
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
-  padding: 15px;
-  border-radius: 30px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  z-index: 1000;
-}
-#feedback-widget button {
-  border: none;
-  background: #000000;
-  padding: 5px 10px;
-  border-radius: 50%;
-  cursor: pointer;
-}
-#feedback-widget button:hover { background: #ddd; }
-</style>
-
-<script>
-    // Sidebar Toggle Function
-function toggleSidebar() {
-    const sidebar = document.getElementById("sidebarMenu");
-    const overlay = document.getElementById("sidebarOverlay");
-    
-    sidebar.classList.toggle("open");
-    overlay.classList.toggle("show");
-}
-function hideFeedback(type) {
-  alert("Thank you for your feedback!");
-  document.getElementById('feedback-widget').style.display = 'none';
-}
-</script>
-    <audio id="myAudio" loop>
-    <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
-</audio>
-
-<div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
-    <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
-        <span id="music-icon">🔇</span>
+        <span>
+            <span class="lang-en">Was this helpful?</span>
+            <span class="lang-si">ප්‍රයෝජනවත්ද?</span>
+        </span>
+        <button onclick="hideFeedback('Yes')"> 👍</button>
+        <button onclick="hideFeedback('No')"> 👎</button>
     </div>
-</div>
 
-<script src="music.js"></script>
+    <style>
+        #feedback-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #000000;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 1000;
+            color: #fff;
+        }
+        #feedback-widget button {
+            border: none;
+            background: #000000;
+            padding: 5px 10px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        #feedback-widget button:hover { background: #ddd; color: #000; }
+    </style>
+
+    <script>
+        // 🌐 Language Toggle and Persistence Logic
+        function updateLanguageUI(lang) {
+            const btn = document.getElementById("langToggle");
+            if (lang === "si") {
+                document.body.classList.add("sinhala-mode");
+                btn.textContent = "English";
+            } else {
+                document.body.classList.remove("sinhala-mode");
+                btn.textContent = "Sinhala";
+            }
+        }
+
+        function toggleLanguage() {
+            let currentLang = localStorage.getItem("selectedLanguage") || "en";
+            let newLang = currentLang === "en" ? "si" : "en";
+            localStorage.setItem("selectedLanguage", newLang);
+            updateLanguageUI(newLang);
+        }
+
+        // Run as soon as page loads to sync language state
+        document.addEventListener("DOMContentLoaded", function() {
+            const savedLang = localStorage.getItem("selectedLanguage") || "en";
+            updateLanguageUI(savedLang);
+        });
+
+        // Sidebar Toggle Function
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebarMenu");
+            const overlay = document.getElementById("sidebarOverlay");
+            
+            sidebar.classList.toggle("open");
+            overlay.classList.toggle("show");
+        }
+
+        // Feedback Logic
+        function hideFeedback(type) {
+            const currentLang = localStorage.getItem("selectedLanguage") || "en";
+            if (currentLang === "si") {
+                alert("ඔබේ ප්‍රතිචාරයට ස්තූතියි!");
+            } else {
+                alert("Thank you for your feedback!");
+            }
+            document.getElementById('feedback-widget').style.display = 'none';
+        }
+
+        // Share Function
+        function shareToFriends() {
+            if (navigator.share) {
+                navigator.share({ title: 'ITL', text: 'Check this out!', url: window.location.href });
+            } else {
+                alert("Link: " + window.location.href);
+            }
+        }
+    </script>
+
+    <audio id="myAudio" loop>
+        <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
+    </audio>
+
+    <div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
+        <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
+            <span id="music-icon">🔇</span>
+        </div>
+    </div>
+
+    <script src="music.js"></script>
 </body>
 </html>
