@@ -17,114 +17,141 @@
         }
 
         /* New Navigation Bar Header */
-nav {
-    background-color: #1a1a1a;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #333;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    width: 100%;
-    box-sizing: border-box;
-}
+        nav {
+            background-color: #1a1a1a;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            box-sizing: border-box;
+        }
 
-nav .nav-home {
-    color: #00d4ff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
-}
+        nav .nav-home {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+        }
 
-/* Hamburger Menu Button */
-.menu-toggle {
-    background: none;
-    border: none;
-    color: #00d4ff;
-    font-size: 28px;
-    cursor: pointer;
-    user-select: none;
-}
+        /* Right side container for buttons */
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
-/* Slide-out Sidebar Styles */
-.sidebar {
-    position: fixed;
-    top: 0;
-    right: -280px; /* දකුණු පැත්තේ සැඟවී පවතී */
-    width: 280px;
-    height: 100%;
-    background-color: #111;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
-    z-index: 10001;
-    transition: right 0.3s ease-in-out;
-    padding: 20px;
-    box-sizing: border-box;
-    overflow-y: auto;
-}
+        /* Language Button Styling */
+        .lang-btn {
+            background: transparent;
+            border: 1px solid #df9e51;
+            color: #df9e51;
+            padding: 5px 12px;
+            font-size: 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+        }
 
-.sidebar.open {
-    right: 0; /* ක්ලික් කළ විට මතු වේ */
-}
+        .lang-btn:hover {
+            background: #df9e51;
+            color: #0b0805;
+            box-shadow: 0 0 10px #df9e51;
+        }
 
-/* Close Button inside Sidebar */
-.close-btn {
-    text-align: right;
-    font-size: 30px;
-    color: #ff4a4a;
-    cursor: pointer;
-    margin-bottom: 20px;
-}
+        /* Hamburger Menu Button */
+        .menu-toggle {
+            background: none;
+            border: none;
+            color: #00d4ff;
+            font-size: 28px;
+            cursor: pointer;
+            user-select: none;
+            padding: 0;
+        }
 
-/* Sidebar Links Grouping */
-.sidebar-section {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
+        /* Slide-out Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -280px; /* දකුණු පැත්තේ සැඟවී පවතී */
+            width: 280px;
+            height: 100%;
+            background-color: #111;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+            z-index: 10001;
+            transition: right 0.3s ease-in-out;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
 
-.sidebar-divider {
-    border: none;
-    border-top: 1px solid #333;
-    margin: 15px 0;
-}
+        .sidebar.open {
+            right: 0; /* ක්ලික් කළ විට මතු වේ */
+        }
 
-.sidebar a {
-    color: #e0e0e0;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: 0.2s;
-}
+        /* Close Button inside Sidebar */
+        .close-btn {
+            text-align: right;
+            font-size: 30px;
+            color: #ff4a4a;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
 
-.sidebar a:hover {
-    background-color: #1a1a1a;
-    color: #00d4ff;
-}
+        /* Sidebar Links Grouping */
+        .sidebar-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
-/* Special Styling for buttons inside menu */
-.sb-mcq { color: #ffd700 !important; font-weight: bold !important; }
-.sb-facts { color: #00ff88 !important; font-weight: bold !important; }
-.sb-share { color: #00d4ff !important; }
-.sb-help { color: #ffa500 !important; }
+        .sidebar-divider {
+            border: none;
+            border-top: 1px solid #333;
+            margin: 15px 0;
+        }
 
-/* Overlay Background */
-.sidebar-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6);
-    z-index: 10000;
-    display: none;
-}
-.sidebar-overlay.show {
-    display: block;
-}
+        .sidebar a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: 0.2s;
+        }
+
+        .sidebar a:hover {
+            background-color: #1a1a1a;
+            color: #00d4ff;
+        }
+
+        /* Special Styling for buttons inside menu */
+        .sb-mcq { color: #ffd700 !important; font-weight: bold !important; }
+        .sb-facts { color: #00ff88 !important; font-weight: bold !important; }
+        .sb-share { color: #00d4ff !important; }
+        .sb-help { color: #ffa500 !important; }
+
+        /* Overlay Background */
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 10000;
+            display: none;
+        }
+        .sidebar-overlay.show {
+            display: block;
+        }
 
         /* මාතෘකාව */
         h1 {
@@ -222,6 +249,16 @@ nav .nav-home {
             margin: 60px 0;
         }
 
+        /* Language Toggle Classes */
+        .lang-en, .lang-si {
+            transition: opacity 0.3s ease;
+        }
+        
+        /* Default Hide for Sinhala elements */
+        [lang="si"] {
+            display: none;
+        }
+
     </style>
 </head>
 <body>
@@ -229,7 +266,11 @@ nav .nav-home {
     <!-- New Top Navbar -->
 <nav>
     <a href="index.html" class="nav-home">🏠 Home</a>
-    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+    <div class="nav-controls">
+        <!-- Language Switcher Button -->
+        <button id="langToggle" class="lang-btn" onclick="toggleLanguage()">සිංහල</button>
+        <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+    </div>
 </nav>
 
 <!-- Sidebar Overlay -->
@@ -267,8 +308,6 @@ nav .nav-home {
     </div>
 </div>
 
-
-
     <div class="container">
         <h1>The Minotaur & The Labyrinth</h1>
 
@@ -277,43 +316,97 @@ nav .nav-home {
             <img src="images/labyrinth.jpg" alt="The Labyrinth of Crete">
         </div>
 
+        <!-- Section 1 -->
         <section>
-            <h3>Deep beneath the palace of Knossos in Crete lay the <strong>Labyrinth</strong>—an impossibly complex maze designed by the legendary architect Daedalus. At its dark center trapped a monstrous creature born of a divine curse: the <strong>Minotaur</strong>, a beast with the body of a man and the head of a bull.</h3>
+            <!-- English -->
+            <div lang="en">
+                <h3>Deep beneath the palace of Knossos in Crete lay the <strong>Labyrinth</strong>—an impossibly complex maze designed by the legendary architect Daedalus. At its dark center trapped a monstrous creature born of a divine curse: the <strong>Minotaur</strong>, a beast with the body of a man and the head of a bull.</h3>
+            </div>
+            <!-- Sinhala -->
+            <div lang="si">
+                <h3>ක්‍රීට් (Crete) දූපතේ නොසෝස් (Knossos) මාලිගයට ගැඹුරින් යටින් **ලැබිරින්ත්** (Labyrinth) නමින් හැඳින්වෙන අතිශය සංකීර්ණ වංකගිරියක් පිහිටා තිබුණි. මෙය සුප්‍රසිද්ධ ගෘහ නිර්මාණ ශිල්පී ඩෙඩලස් (Daedalus) විසින් නිර්මාණය කරන ලද්දකි. එහි අඳුරු මධ්‍යයේ දේව ශාපයකින් උපන් බිහිසුණු සත්වයෙකු සිර කර සිටියේය: ඒ මිනිසෙකුගේ ශරීරයක් සහ ගොනෙකුගේ හිසක් සහිත මිනොටෝර් (**Minotaur**) නම් රාක්ෂයාය.</h3>
+            </div>
         </section>
 
+        <!-- Section 2 -->
         <section>
-            <h2>The Curse of King Minos</h2>
-            <h3>The myth begins when King Minos of Crete refused to sacrifice a majestic white bull sent by the sea god <strong>Poseidon</strong>. Enraged, Poseidon cursed Minos's wife to fall in love with the bull, resulting in the birth of the Minotaur. Unable to bring himself to kill the monster, Minos hid it away inside the inescapable maze.</h3>
+            <!-- English -->
+            <div lang="en">
+                <h2>The Curse of King Minos</h2>
+                <h3>The myth begins when King Minos of Crete refused to sacrifice a majestic white bull sent by the sea god <strong>Poseidon</strong>. Enraged, Poseidon cursed Minos's wife to fall in love with the bull, resulting in the birth of the Minotaur. Unable to bring himself to kill the monster, Minos hid it away inside the inescapable maze.</h3>
+            </div>
+            <!-- Sinhala -->
+            <div lang="si">
+                <h2>මිනොස් රජුගේ ශාපය (The Curse of King Minos)</h2>
+                <h3>මෙම මිථ්‍යා කතාව ආරම්භ වන්නේ ක්‍රීට් හි මිනොස් (Minos) රජු, පොසයිඩන් (**Poseidon**) සාගර දේවතාවා විසින් එවන ලද තේජවන්ත සුදු ගොනෙකු බිලිදීම ප්‍රතික්ෂේප කිරීමත් සමඟය. මෙයින් කෝපයට පත් පොසයිඩන් දේවතාවා, මිනොස් රජුගේ බිරිඳ එම ගොනා සමඟ ආදරයෙන් බැඳීමට සලස්වමින් ශාප කළේය. එහි ප්‍රතිඵලයක් ලෙස මිනොටෝර් උපත ලැබීය. මෙම ම්ලේච්ඡ සත්වයා මරා දැමීමට මිනොස් රජුට සිත නොදුන් නිසා, ඔහු කිසිවෙකුට පැන යා නොහැකි මෙම වංකගිරිය තුළ සත්වයා සඟවා තැබුවේය.</h3>
+            </div>
         </section>
 
+        <!-- Section 3 -->
         <section>
-            <h2>The Cruel Tribute</h2>
-            <h3>After defeating Athens in war, King Minos demanded a horrific tribute. Every nine years, Athens was forced to send <strong>seven young men and seven young women</strong> to Crete. These innocent youths were cast into the dark corridors of the Labyrinth to be hunted and devoured by the ferocious Minotaur.</h3>
+            <!-- English -->
+            <div lang="en">
+                <h2>The Cruel Tribute</h2>
+                <h3>After defeating Athens in war, King Minos demanded a horrific tribute. Every nine years, Athens was forced to send <strong>seven young men and seven young women</strong> to Crete. These innocent youths were cast into the dark corridors of the Labyrinth to be hunted and devoured by the ferocious Minotaur.</h3>
+            </div>
+            <!-- Sinhala -->
+            <div lang="si">
+                <h2>කුරිරු පඬුරු කප්පම (The Cruel Tribute)</h2>
+                <h3>යුද්ධයෙන් ඇතන්ස් (Athens) නුවර පරාජය කිරීමෙන් පසු මිනොස් රජු දරුණු කප්පමක් ඉල්ලා සිටියේය. ඒ අනුව සෑම වසර නවයකට වරක් ඇතන්ස් නුවරින් **තරුණයන් හත්දෙනෙකු සහ තරුණියන් හත්දෙනෙකු** ක්‍රීට් දූපත වෙත එවිය යුතු විය. මෙම අහිංසක තරුණ තරුණියන් ලැබිරින්ත් වංකගිරියේ අඳුරු කොරිඩෝවලට ඇතුළු කරන ලද අතර, එහිදී ඔවුන්ව මිනොටෝර් විසින් දඩයම් කර බිලිගනු ලැබීය.</h3>
+            </div>
         </section>
 
+        <!-- Section 4 -->
         <section>
-            <h2>Theseus and the Thread of Fate</h2>
-            <ul>
-                <li><strong>The Volunteer:</strong> Determined to end the slaughter, the heroic Athenian prince <strong>Theseus</strong> volunteered to be part of the tribute, vowing to slay the beast.</li>
-                <li><strong>Ariadne’s Clue:</strong> King Minos’s daughter, Ariadne, fell in love with Theseus. She gave him a weapon and a simple ball of red thread—<strong>Ariadne's Thread</strong>—to unravel as he entered the maze.</li>
-                <li><strong>The Battle:</strong> Creeping through the pitch-black tunnels, Theseus tracked the monster down, killed it in a brutal struggle, and used the thread to guide the Athenians safely back to the entrance.</li>
-            </ul>
+            <!-- English -->
+            <div lang="en">
+                <h2>Theseus and the Thread of Fate</h2>
+                <ul>
+                    <li><strong>The Volunteer:</strong> Determined to end the slaughter, the heroic Athenian prince <strong>Theseus</strong> volunteered to be part of the tribute, vowing to slay the beast.</li>
+                    <li><strong>Ariadne’s Clue:</strong> King Minos’s daughter, Ariadne, fell in love with Theseus. She gave him a weapon and a simple ball of red thread—<strong>Ariadne's Thread</strong>—to unravel as he entered the maze.</li>
+                    <li><strong>The Battle:</strong> Creeping through the pitch-black tunnels, Theseus tracked the monster down, killed it in a brutal struggle, and used the thread to guide the Athenians safely back to the entrance.</li>
+                </ul>
+            </div>
+            <!-- Sinhala -->
+            <div lang="si">
+                <h2>තීසියස් සහ දේවායත්ත නූල්පට (Theseus and the Thread of Fate)</h2>
+                <ul>
+                    <li><strong>ස්වේච්ඡාවෙන් ඉදිරිපත් වීම:</strong> මෙම මහා විනාශය අවසන් කිරීමට අධිෂ්ඨාන කරගත් ඇතන්ස් හි වීර කුමාරයෙකු වූ **තීසියස්** (Theseus), රාක්ෂයාව මරා දැමීමේ අරමුණින් මෙම කප්පමේ කොටසක් වීමට ස්වේච්ඡාවෙන් ඉදිරිපත් විය.</li>
+                    <li><strong>ඇරියැඩ්නිගේ උපකාරය:</strong> මිනොස් රජුගේ දියණිය වූ ඇරියැඩ්නි (Ariadne) තීසියස් සමඟ ආදරයෙන් බැඳුණාය. ඇය ඔහුට රහසිගත ආයුධයක් සහ රතු නූල් පන්දුවක් (**Ariadne's Thread**) ලබා දුන්නේ වංකගිරියට ඇතුළු වන විට එය දිග හරිමින් යන ලෙස පවසමිනි.</li>
+                    <li><strong>සටන:</strong> තාරකා අඳුරු උමං දිගේ ගමන් කළ තීසියස්, මිනොටෝර් සිටින තැන සොයාගෙන, දරුණු සටනකින් පසු ඌව මරා දැමූ අතර, නැවත පැමිණීමේදී එම නූල් පන්දුව ඔස්සේ ඇතන්ස් වැසියන්ව නිරුපද්‍රිතව වංකගිරියේ ද්වාරය වෙත රැගෙන ආවේය.</li>
+                </ul>
+            </div>
         </section>
 
+        <!-- Section 5 -->
         <section>
-            <h2>Symbolism & Historical Metaphor</h2>
-            <ul>
-                <li><strong>The Architecture of Fear:</strong> The Labyrinth symbolizes the chaos of the human mind, hidden secrets, and inescapable traps.</li>
-                <li><strong>The Palace of Knossos:</strong> Archeologists believe the myth was inspired by the real Palace of Knossos, an enormous, multi-story structure with hundreds of confusing, interconnected rooms.</li>
-                <li><strong>Bull Worship:</strong> The Minoan civilization deeply revered bulls, practicing a dangerous sport called "bull-leaping," which likely fed the folklore of the half-bull monster.</li>
-            </ul>
+            <!-- English -->
+            <div lang="en">
+                <h2>Symbolism & Historical Metaphor</h2>
+                <ul>
+                    <li><strong>The Architecture of Fear:</strong> The Labyrinth symbolizes the chaos of the human mind, hidden secrets, and inescapable traps.</li>
+                    <li><strong>The Palace of Knossos:</strong> Archeologists believe the myth was inspired by the real Palace of Knossos, an enormous, multi-story structure with hundreds of confusing, interconnected rooms.</li>
+                    <li><strong>Bull Worship:</strong> The Minoan civilization deeply revered bulls, practicing a dangerous sport called "bull-leaping," which likely fed the folklore of the half-bull monster.</li>
+                </ul>
+            </div>
+            <!-- Sinhala -->
+            <div lang="si">
+                <h2>සංකේතවාදය සහ ඓතිහාසික පසුබිම (Symbolism & Metaphor)</h2>
+                <ul>
+                    <li><strong>භීතියේ ගෘහ නිර්මාණ ශිල්පය:</strong> ලැබිරින්ත් වංකගිරිය මඟින් මිනිස් මනසේ පවතින අවුල් සහගත බව, සැඟවුණු රහස් සහ ගැලවිය නොහැකි උගුල් සංකේතවත් කරයි.</li>
+                    <li><strong>නොසෝස් මාලිගය:</strong> පුරාවිද්‍යාඥයන් විශ්වාස කරන්නේ මෙම මිථ්‍යා කතාවට ආභාසය ලැබුණේ සැබෑ නොසෝස් මාලිගයෙන් (Palace of Knossos) බවයි. එය සිය ගණනක් පටලැවිලි සහගත, එකිනෙකට සම්බන්ධ කාමර සහිත දැවැන්ත මහල් ගොඩනැඟිල්ලක් විය.</li>
+                    <li><strong>ගොන් වන්දනාව:</strong> මිනෝවන් (Minoan) ශිෂ්ටාචාරයේ වැසියන් ගොනුන්ට බෙහෙවින් ගෞරව කළ අතර, ඔවුන් "bull-leaping" (ගොනුන් මතින් පැනීම) නමැති භයානක ක්‍රීඩාවක නිරත වූහ. මෙම සංස්කෘතිය අර්ධ-ගොන් රාක්ෂයෙකු පිළිබඳ ජනප්‍රවාද නිර්මාණය වීමට හේතු වන්නට ඇත.</li>
+                </ul>
+            </div>
         </section>
 
         <div class="footer-hr"></div>
     </div>
 
 <div id="feedback-widget">
-  <span>Was this helpful?</span>
+  <span lang="en">Was this helpful?</span>
+  <span lang="si">මෙම ලිපිය වැදගත් වූවාද?</span>
+  
   <button onclick="hideFeedback('Yes')"> 👍</button>
   <button onclick="hideFeedback('No')"> 👎</button>
 </div>
@@ -353,10 +446,47 @@ function toggleSidebar() {
     sidebar.classList.toggle("open");
     overlay.classList.toggle("show");
 }
-    function hideFeedback(type) {
-  alert("Thank you for your feedback!");
-  document.getElementById('feedback-widget').style.display = 'none';
+
+function hideFeedback(type) {
+    const currentLang = localStorage.getItem('selectedLanguage') || 'en';
+    if (currentLang === 'si') {
+        alert("ඔබගේ ප්‍රතිචාරයට ස්තූතියി!");
+    } else {
+        alert("Thank you for your feedback!");
+    }
+    document.getElementById('feedback-widget').style.display = 'none';
 }
+
+// --- Language Switcher Logic ---
+function toggleLanguage() {
+    let currentLang = localStorage.getItem('selectedLanguage') || 'en';
+    let newLang = (currentLang === 'en') ? 'si' : 'en';
+    
+    localStorage.setItem('selectedLanguage', newLang);
+    applyLanguage(newLang);
+}
+
+function applyLanguage(lang) {
+    const enElements = document.querySelectorAll('[lang="en"]');
+    const siElements = document.querySelectorAll('[lang="si"]');
+    const langBtn = document.getElementById('langToggle');
+
+    if (lang === 'si') {
+        enElements.forEach(el => el.style.display = 'none');
+        siElements.forEach(el => el.style.display = 'block');
+        langBtn.textContent = 'English';
+    } else {
+        siElements.forEach(el => el.style.display = 'none');
+        enElements.forEach(el => el.style.display = 'block');
+        langBtn.textContent = 'සිංහල';
+    }
+}
+
+// Load the saved language on startup
+document.addEventListener("DOMContentLoaded", function() {
+    let savedLang = localStorage.getItem('selectedLanguage') || 'en';
+    applyLanguage(savedLang);
+});
 </script>
 
 <audio id="myAudio" loop>
