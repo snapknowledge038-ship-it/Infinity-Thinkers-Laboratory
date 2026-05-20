@@ -343,6 +343,14 @@ nav .nav-home {
             alert("The Laboratory record is updated! History never forgets.");
             document.getElementById('feedback-widget').style.display = 'none';
         }
+        // Sidebar Toggle Function
+function toggleSidebar() {
+    const sidebar = document.getElementById("sidebarMenu");
+    const overlay = document.getElementById("sidebarOverlay");
+    
+    sidebar.classList.toggle("open");
+    overlay.classList.toggle("show");
+}
     </script>
     
     <audio id="myAudio" loop>
