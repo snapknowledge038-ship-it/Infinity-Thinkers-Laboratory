@@ -12,6 +12,7 @@
             --deep-black: #0d0d0d;
             --soft-white: #f4f1ea;
             --accent-orange: #ff6b35;
+            --ice-blue: #00d4ff; /* Nav එකට ගැලපෙන්න */
         }
 
         body {
@@ -34,115 +35,142 @@
             animation: reveal 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
         }
 
-        /* New Navigation Bar Header */
-nav {
-    background-color: #1a1a1a;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #333;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    width: 100%;
-    box-sizing: border-box;
-}
+        /* Navigation Bar Header */
+        nav {
+            background-color: #1a1a1a;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            box-sizing: border-box;
+        }
 
-nav .nav-home {
-    color: #00d4ff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
-}
+        nav .nav-home {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+        }
 
-/* Hamburger Menu Button */
-.menu-toggle {
-    background: none;
-    border: none;
-    color: #00d4ff;
-    font-size: 28px;
-    cursor: pointer;
-    user-select: none;
-}
+        /* Nav controls container */
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
-/* Slide-out Sidebar Styles */
-.sidebar {
-    position: fixed;
-    top: 0;
-    right: -280px; /* දකුණු පැත්තේ සැඟවී පවතී */
-    width: 280px;
-    height: 100%;
-    background-color: #111;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
-    z-index: 10001;
-    transition: right 0.3s ease-in-out;
-    padding: 20px;
-    box-sizing: border-box;
-    overflow-y: auto;
-}
+        /* Language Toggle Button Style */
+        .lang-btn {
+            background: linear-gradient(45deg, #111, #222);
+            border: 1px solid var(--ice-blue);
+            color: var(--ice-blue);
+            padding: 6px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+        }
 
-.sidebar.open {
-    right: 0; /* ක්ලික් කළ විට මතු වේ */
-}
+        .lang-btn:hover {
+            background: var(--ice-blue);
+            color: #000;
+            box-shadow: 0 0 15px var(--ice-blue);
+        }
 
-/* Close Button inside Sidebar */
-.close-btn {
-    text-align: right;
-    font-size: 30px;
-    color: #ff4a4a;
-    cursor: pointer;
-    margin-bottom: 20px;
-}
+        /* Hamburger Menu Button */
+        .menu-toggle {
+            background: none;
+            border: none;
+            color: #00d4ff;
+            font-size: 28px;
+            cursor: pointer;
+            user-select: none;
+        }
 
-/* Sidebar Links Grouping */
-.sidebar-section {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
+        /* Slide-out Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -280px; /* දකුණු පැත්තේ සැඟවී පවතී */
+            width: 280px;
+            height: 100%;
+            background-color: #111;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+            z-index: 10001;
+            transition: right 0.3s ease-in-out;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
 
-.sidebar-divider {
-    border: none;
-    border-top: 1px solid #333;
-    margin: 15px 0;
-}
+        .sidebar.open {
+            right: 0; /* ක්ලික් කළ විට මතු වේ */
+        }
 
-.sidebar a {
-    color: #e0e0e0;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: 0.2s;
-}
+        /* Close Button inside Sidebar */
+        .close-btn {
+            text-align: right;
+            font-size: 30px;
+            color: #ff4a4a;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
 
-.sidebar a:hover {
-    background-color: #1a1a1a;
-    color: #00d4ff;
-}
+        /* Sidebar Links Grouping */
+        .sidebar-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
-/* Special Styling for buttons inside menu */
-.sb-mcq { color: #ffd700 !important; font-weight: bold !important; }
-.sb-facts { color: #00ff88 !important; font-weight: bold !important; }
-.sb-share { color: #00d4ff !important; }
-.sb-help { color: #ffa500 !important; }
+        .sidebar-divider {
+            border: none;
+            border-top: 1px solid #333;
+            margin: 15px 0;
+        }
 
-/* Overlay Background */
-.sidebar-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6);
-    z-index: 10000;
-    display: none;
-}
-.sidebar-overlay.show {
-    display: block;
-}
+        .sidebar a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: 0.2s;
+        }
+
+        .sidebar a:hover {
+            background-color: #1a1a1a;
+            color: #00d4ff;
+        }
+
+        /* Special Styling for buttons inside menu */
+        .sb-mcq { color: #ffd700 !important; font-weight: bold !important; }
+        .sb-facts { color: #00ff88 !important; font-weight: bold !important; }
+        .sb-share { color: #00d4ff !important; }
+        .sb-help { color: #ffa500 !important; }
+
+        /* Overlay Background */
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 10000;
+            display: none;
+        }
+        .sidebar-overlay.show {
+            display: block;
+        }
 
         /* Heading Style */
         h1 {
@@ -241,6 +269,7 @@ nav .nav-home {
             align-items: center;
             gap: 15px;
             border: 1px solid var(--desert-sand);
+            z-index: 9999;
         }
 
         #feedback-widget button {
@@ -260,51 +289,52 @@ nav .nav-home {
 </head>
 <body>
 
-    <!-- New Top Navbar -->
-<nav>
-    <a href="index.html" class="nav-home">🏠 Home</a>
-    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
-</nav>
+    <!-- Top Navbar -->
+    <nav>
+        <a href="index.html" class="nav-home" data-en="🏠 Home" data-si="🏠 මුල් පිටුව">🏠 Home</a>
+        <div class="nav-controls">
+            <!-- Language Toggle Button -->
+            <button id="langToggle" class="lang-btn" onclick="toggleLanguage()">සිංහල</button>
+            <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+        </div>
+    </nav>
 
-<!-- Sidebar Overlay -->
-<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
 
-<!-- Slide-out Sidebar Menu -->
-<div class="sidebar" id="sidebarMenu">
-    <div class="close-btn" onclick="toggleSidebar()">×</div>
-    
-    <div class="sidebar-section">
-        <!-- Main Pages Links -->
-        <a href="index.html">Home</a>
-        <a href="earth.html">Earth</a>
-        <a href="animals.html">Animals</a>
-        <a href="space.html">Space</a>
-        <a href="mysteries.html">Mysteries</a>
-        <a href="history.html">History</a>
-        <a href="quantum.html">🌌 Quantum Physics</a>
-    </div>
+    <!-- Slide-out Sidebar Menu -->
+    <div class="sidebar" id="sidebarMenu">
+        <div class="close-btn" onclick="toggleSidebar()">×</div>
         
+        <div class="sidebar-section">
+            <!-- Main Pages Links -->
+            <a href="index.html" data-en="Home" data-si="මුල් පිටුව">Home</a>
+            <a href="earth.html" data-en="Earth" data-si="පෘථිවිය">Earth</a>
+            <a href="animals.html" data-en="Animals" data-si="සතුන්">Animals</a>
+            <a href="space.html" data-en="Space" data-si="අභ්‍යවකාශය">Space</a>
+            <a href="mysteries.html" data-en="Mysteries" data-si="අභිරහස්">Mysteries</a>
+            <a href="history.html" data-en="History" data-si="ඉතිහාසය">History</a>
+            <a href="quantum.html" data-en="🌌 Quantum Physics" data-si="🌌 ක්වොන්ටම් භෞතික විද්‍යාව">🌌 Quantum Physics</a>
+        </div>
+            
         <!-- පළමු ඉරෙන් වෙන් කිරීම -->
         <hr class="sidebar-divider">
-        
+            
         <!-- Quiz & Facts Links -->
-        <a href="mcq.html" class="sb-mcq">📝 Start MCQ Quiz</a>
-        <a href="facts.html" class="sb-facts">⚡ Fun Amazing Facts ⚡</a>
-        
+        <a href="mcq.html" class="sb-mcq" data-en="📝 Start MCQ Quiz" data-si="📝 MCQ ප්‍රශ්නාවලිය අරඹන්න">📝 Start MCQ Quiz</a>
+        <a href="facts.html" class="sb-facts" data-en="⚡ Fun Amazing Facts ⚡" data-si="⚡ පුදුම හිතෙන කරුණු ⚡">⚡ Fun Amazing Facts ⚡</a>
+            
         <!-- දෙවැනි ඉරෙන් වෙන් කිරීම -->
         <hr class="sidebar-divider">
-        
+            
         <!-- Action Links -->
-        <a onclick="shareToFriends(); toggleSidebar();" style="cursor:pointer;" class="sb-share">🔗 SHARE</a>
-        <a href="ad.html" class="sb-help">❤️ Help</a>
-        <a href="aaaextradatapage.html">About</a>
+        <a onclick="shareToFriends(); toggleSidebar();" style="cursor:pointer;" class="sb-share" data-en="🔗 SHARE" data-si="🔗 බෙදාගන්න (SHARE)">🔗 SHARE</a>
+        <a href="ad.html" class="sb-help" data-en="❤️ Help" data-si="❤️ උදව්">❤️ Help</a>
+        <a href="aaaextradatapage.html" data-en="About" data-si="අපි ගැන">About</a>
     </div>
-</div>
-
-
 
     <div class="container">
-        <h1 class="animate">The Grand Canyon</h1>
+        <h1 class="animate" data-en="The Grand Canyon" data-si="ග්‍රෑන්ඩ් කැන්යන">The Grand Canyon</h1>
 
         <div class="img-grid animate">
             <img src="images/canyon_hero.jpg" alt="Grand Canyon View">
@@ -312,35 +342,44 @@ nav .nav-home {
         </div>
 
         <section class="animate">
-            <h3>The Grand Canyon is a steep-sided canyon carved by the <strong>Colorado River</strong> in Arizona, United States. It is one of the most studied geological landscapes in the world.</h3>
+            <h3 data-en="The Grand Canyon is a steep-sided canyon carved by the Colorado River in Arizona, United States. It is one of the most studied geological landscapes in the world." 
+                data-si="ග්‍රෑන්ඩ් කැන්යන (Grand Canyon) යනු ඇමරිකා එක්සත් ජනපදයේ ඇරිසෝනා ප්‍රාන්තයේ කොලරාඩෝ ගඟ (Colorado River) මගින් නිර්මාණය කරන ලද දැවැන්ත හා බෑවුම් සහිත අගාධයකි. එය ලෝකයේ භූ විද්‍යාඥයන්ගේ වැඩිම අධ්‍යයනයට ලක් වූ ස්වාභාවික භූ දර්ශනයක් ලෙස සැලකේ.">
+                The Grand Canyon is a steep-sided canyon carved by the <strong>Colorado River</strong> in Arizona, United States. It is one of the most studied geological landscapes in the world.
+            </h3>
         </section>
 
         <section class="animate">
-            <h2>A Journey Through Time</h2>
-            <h3>The canyon is nearly 1,500 meters deep and stretches for 446 kilometers. The layers of rock exposed in the canyon walls reveal nearly <strong>two billion years</strong> of Earth's geological history.</h3>
+            <h2 data-en="A Journey Through Time" data-si="කාලය හරහා යන ගමනක්">A Journey Through Time</h2>
+            <h3 data-en="The canyon is nearly 1,500 meters deep and stretches for 446 kilometers. The layers of rock exposed in the canyon walls reveal nearly two billion years of Earth's geological history."
+                data-si="මෙම අගාධය මීටර් 1,500ක් පමණ ගැඹුරු වන අතර කිලෝමීටර් 446ක් පුරා විහිදී පවතී. මෙහි ගිරි බිත්ති වල මතු වී ඇති පාෂාණ ස්ථර මගින් පෘථිවියේ වසර බිලියන දෙකකට ආසන්න භූ විද්‍යාත්මක ඉතිහාසයක් ලෝකයට හෙළි කර දෙයි.">
+                The canyon is nearly 1,500 meters deep and stretches for 446 kilometers. The layers of rock exposed in the canyon walls reveal nearly <strong>two billion years</strong> of Earth's geological history.
+            </h3>
         </section>
 
         <section class="animate">
-            <h2>Breathtaking Facts</h2>
+            <h2 data-en="Breathtaking Facts" data-si="පුදුම හිතෙන කරුණු">Breathtaking Facts</h2>
             <ul>
-                <li><strong>Dynamic Weather:</strong> The temperature at the top (Rim) can be freezing, while the bottom of the canyon feels like a hot desert.</li>
-                <li><strong>Unique Ecosystem:</strong> It is home to rare animals like the California Condor and the Bighorn Sheep.</li>
-                <li><strong>Native History:</strong> For thousands of years, the area has been continuously inhabited by Native Americans, who built settlements within the canyon.</li>
+                <li><strong data-en="Dynamic Weather:" data-si="වෙනස් වන දේශගුණය:">Dynamic Weather:</strong> <span data-en="The temperature at the top (Rim) can be freezing, while the bottom of the canyon feels like a hot desert." data-si="අගාධයේ ඉහළ කෙළවරේ (Rim) උෂ්ණත්වය අධික ලෙස ශීතල විය හැකි අතර, එහි පතුල උණුසුම් කාන්තාරයක් මෙන් දැනේ."></span></li>
+                <li><strong data-en="Unique Ecosystem:" data-si="සුවිශේෂී පරිසර පද්ධතිය:">Unique Ecosystem:</strong> <span data-en="It is home to rare animals like the California Condor and the Bighorn Sheep." data-si="මෙය කැලිෆෝනියා කොන්ඩෝර් (California Condor) පක්ෂියා සහ බිග්හෝන් බැටළුවා (Bighorn Sheep) වැනි දුර්ලභ සතුන්ගේ නිවහන වේ."></span></li>
+                <li><strong data-en="Native History:" data-si="දේශීය ඉතිහාසය:">Native History:</strong> <span data-en="For thousands of years, the area has been continuously inhabited by Native Americans, who built settlements within the canyon." data-si="වසර දහස් ගණනක් තිස්සේ රතු ඉන්දියානුවන් (Native Americans) මෙම ප්‍රදේශයේ අඛණ්ඩව ජීවත් වූ අතර, ඔවුන් අගාධය තුළ තමන්ගේ ජනාවාස පවා ගොඩනඟා ගෙන තිබුණි."></span></li>
             </ul>
         </section>
 
         <section class="animate">
-            <h2>The Power of Water</h2>
-            <h3>While it looks like a silent monument, the Grand Canyon is still changing. The Colorado River continues to erode the rock, deepening the canyon by the thickness of a sheet of paper every year.</h3>
+            <h2 data-en="The Power of Water" data-si="ජලයේ මාරාන්තික ශක්තිය">The Power of Water</h2>
+            <h3 data-en="While it looks like a silent monument, the Grand Canyon is still changing. The Colorado River continues to erode the rock, deepening the canyon by the thickness of a sheet of paper every year."
+                data-si="මෙය නිශ්ශබ්ද ස්මාරකයක් මෙන් පෙනුනද, ග්‍රෑන්ඩ් කැන්යනය තවමත් වෙනස් වෙමින් පවතී. කොලරාඩෝ ගඟ මගින් අඛණ්ඩවම මෙම පාෂාණ ඛාදනය කරන අතර, සෑම වසරකම කඩදාසි කොළයක ඝනකම ප්‍රමාණයෙන් මෙම අගාධය ගැඹුරු වෙමින් පවතී.">
+                While it looks like a silent monument, the Grand Canyon is still changing. The Colorado River continues to erode the rock, deepening the canyon by the thickness of a sheet of paper every year.
+            </h3>
         </section>
 
         <div style="text-align: center; font-size: 40px; margin: 50px 0; opacity: 0.3;">🦅</div>
     </div>
 
     <div id="feedback-widget">
-        <span>Was this epic?</span>
-        <button onclick="hideFeedback()">YES</button>
-        <button onclick="hideFeedback()">NO</button>
+        <span data-en="Was this epic?" data-si="මේක පට්ටද?">Was this epic?</span>
+        <button onclick="hideFeedback()" data-en="YES" data-si="ඔව්">YES</button>
+        <button onclick="hideFeedback()" data-en="NO" data-si="නැහැ">NO</button>
     </div>
 
     <script>
@@ -358,28 +397,67 @@ nav .nav-home {
         });
 
         function hideFeedback() {
-            alert("Thank you for exploring the Canyon!");
+            // දැනට තෝරාගෙන තියෙන භාෂාව අනුව Alert එක පෙන්වීමට
+            let currentLang = localStorage.getItem("preferredLanguage") || "en";
+            if(currentLang === "si") {
+                alert("අගාධයේ තොරතුරු ගවේෂණය කළාට ඔබට ස්තුතියි!");
+            } else {
+                alert("Thank you for exploring the Canyon!");
+            }
             document.getElementById('feedback-widget').style.display = 'none';
         }
+
         // Sidebar Toggle Function
-function toggleSidebar() {
-    const sidebar = document.getElementById("sidebarMenu");
-    const overlay = document.getElementById("sidebarOverlay");
-    
-    sidebar.classList.toggle("open");
-    overlay.classList.toggle("show");
-}
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebarMenu");
+            const overlay = document.getElementById("sidebarOverlay");
+            
+            sidebar.classList.toggle("open");
+            overlay.classList.toggle("show");
+        }
+
+        // --- භාෂා මාරු කිරීමේ පද්ධතිය (Language Switcher Logic) ---
+        function toggleLanguage() {
+            let currentLang = localStorage.getItem("preferredLanguage") || "en";
+            let newLang = (currentLang === "en") ? "si" : "en";
+            
+            localStorage.setItem("preferredLanguage", newLang);
+            applyLanguage(newLang);
+        }
+
+        function applyLanguage(lang) {
+            const btn = document.getElementById("langToggle");
+            
+            if (lang === "si") {
+                btn.textContent = "English";
+            } else {
+                btn.textContent = "සිංහල";
+            }
+
+            const elements = document.querySelectorAll('[data-en], [data-si]');
+            elements.forEach(el => {
+                if (lang === "si") {
+                    if (el.getAttribute('data-si')) {
+                        if(["A", "P", "H1", "H2", "H3", "SPAN", "DIV", "STRONG"].includes(el.tagName)) {
+                            el.textContent = el.getAttribute('data-si');
+                        }
+                    }
+                } else {
+                    if (el.getAttribute('data-en')) {
+                        if(["A", "P", "H1", "H2", "H3", "SPAN", "DIV", "STRONG"].includes(el.tagName)) {
+                            el.textContent = el.getAttribute('data-en');
+                        }
+                    }
+                }
+            });
+        }
+
+        // පිටුව මුලින්ම Load වන විට ක්‍රියාත්මක වන කොටස
+        document.addEventListener("DOMContentLoaded", () => {
+            let savedLang = localStorage.getItem("preferredLanguage") || "en";
+            applyLanguage(savedLang);
+        });
     </script>
-    <audio id="myAudio" loop>
-    <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
-</audio>
-
-<div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
-    <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
-        <span id="music-icon">🔇</span>
-    </div>
-</div>
-
-<script src="music.js"></script>
+    <script src="music.js"></script>
 </body>
 </html>
