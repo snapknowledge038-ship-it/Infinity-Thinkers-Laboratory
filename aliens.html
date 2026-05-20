@@ -4,6 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aliens - I T L</title>
+
+    <!-- Meta Tags for Link Preview (WhatsApp, Facebook, Twitter, etc.) -->
+    <meta name="description" content="Explore the mysteries of Extraterrestrial Life, the Grey Visitors, and the Fermi Paradox at Infinity Thinkers Laboratory.">
+    
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/aliens.html">
+    <meta property="og:title" content="Aliens - Infinity Thinkers Laboratory">
+    <meta property="og:description" content="Are we truly alone? Discover fascinating details about alien encounters and cosmic mysteries. 👽🚀">
+    <meta property="og:image" content="images/Aliens.jpg">
+
+    <!-- Twitter Card Data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aliens - Infinity Thinkers Laboratory">
+    <meta name="twitter:description" content="Explore the mysteries of Extraterrestrial Life, the Grey Visitors, and the Fermi Paradox.">
+    <meta name="twitter:image" content="images/Aliens.jpg">
+
     <style>
         /* Neon Theme Settings */
         :root {
@@ -23,114 +40,143 @@
         }
 
         /* New Navigation Bar Header */
-nav {
-    background-color: #1a1a1a;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #333;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    width: 100%;
-    box-sizing: border-box;
-}
+        nav {
+            background-color: #1a1a1a;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            box-sizing: border-box;
+        }
 
-nav .nav-home {
-    color: #00d4ff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
-}
+        nav .nav-home {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+        }
 
-/* Hamburger Menu Button */
-.menu-toggle {
-    background: none;
-    border: none;
-    color: #00d4ff;
-    font-size: 28px;
-    cursor: pointer;
-    user-select: none;
-}
+        /* Nav controls container */
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
-/* Slide-out Sidebar Styles */
-.sidebar {
-    position: fixed;
-    top: 0;
-    right: -280px; /* දකුණු පැත්තේ සැඟවී පවතී */
-    width: 280px;
-    height: 100%;
-    background-color: #111;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
-    z-index: 10001;
-    transition: right 0.3s ease-in-out;
-    padding: 20px;
-    box-sizing: border-box;
-    overflow-y: auto;
-}
+        /* Language Toggle Button Style */
+        .lang-btn {
+            background: linear-gradient(45deg, #111, #222);
+            border: 1px solid var(--neon-cyan);
+            color: var(--neon-cyan);
+            padding: 6px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 242, 255, 0.2);
+            font-family: 'Segoe UI', sans-serif;
+        }
 
-.sidebar.open {
-    right: 0; /* ක්ලික් කළ විට මතු වේ */
-}
+        .lang-btn:hover {
+            background: var(--neon-cyan);
+            color: #000;
+            box-shadow: 0 0 15px var(--neon-cyan);
+        }
 
-/* Close Button inside Sidebar */
-.close-btn {
-    text-align: right;
-    font-size: 30px;
-    color: #ff4a4a;
-    cursor: pointer;
-    margin-bottom: 20px;
-}
+        /* Hamburger Menu Button */
+        .menu-toggle {
+            background: none;
+            border: none;
+            color: #00d4ff;
+            font-size: 28px;
+            cursor: pointer;
+            user-select: none;
+        }
 
-/* Sidebar Links Grouping */
-.sidebar-section {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
+        /* Slide-out Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -280px; /* දකුණු පැත්තේ සැඟවී පවතී */
+            width: 280px;
+            height: 100%;
+            background-color: #111;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+            z-index: 10001;
+            transition: right 0.3s ease-in-out;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
 
-.sidebar-divider {
-    border: none;
-    border-top: 1px solid #333;
-    margin: 15px 0;
-}
+        .sidebar.open {
+            right: 0; /* ක්ලික් කළ විට මතු වේ */
+        }
 
-.sidebar a {
-    color: #e0e0e0;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: 0.2s;
-}
+        /* Close Button inside Sidebar */
+        .close-btn {
+            text-align: right;
+            font-size: 30px;
+            color: #ff4a4a;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
 
-.sidebar a:hover {
-    background-color: #1a1a1a;
-    color: #00d4ff;
-}
+        /* Sidebar Links Grouping */
+        .sidebar-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
-/* Special Styling for buttons inside menu */
-.sb-mcq { color: #ffd700 !important; font-weight: bold !important; }
-.sb-facts { color: #00ff88 !important; font-weight: bold !important; }
-.sb-share { color: #00d4ff !important; }
-.sb-help { color: #ffa500 !important; }
+        .sidebar-divider {
+            border: none;
+            border-top: 1px solid #333;
+            margin: 15px 0;
+        }
 
-/* Overlay Background */
-.sidebar-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6);
-    z-index: 10000;
-    display: none;
-}
-.sidebar-overlay.show {
-    display: block;
-}
+        .sidebar a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: 0.2s;
+        }
+
+        .sidebar a:hover {
+            background-color: #1a1a1a;
+            color: #00d4ff;
+        }
+
+        /* Special Styling for buttons inside menu */
+        .sb-mcq { color: #ffd700 !important; font-weight: bold !important; }
+        .sb-facts { color: #00ff88 !important; font-weight: bold !important; }
+        .sb-share { color: #00d4ff !important; }
+        .sb-help { color: #ffa500 !important; }
+
+        /* Overlay Background */
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 10000;
+            display: none;
+        }
+        .sidebar-overlay.show {
+            display: block;
+        }
+
         /* Title */
         h1 {
             font-size: clamp(45px, 10vw, 80px);
@@ -237,94 +283,6 @@ nav .nav-home {
             opacity: 0.3;
         }
 
-    </style>
-</head>
-<body>
-
-   <!-- New Top Navbar -->
-<nav>
-    <a href="index.html" class="nav-home">🏠 Home</a>
-    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
-</nav>
-
-<!-- Sidebar Overlay -->
-<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
-
-<!-- Slide-out Sidebar Menu -->
-<div class="sidebar" id="sidebarMenu">
-    <div class="close-btn" onclick="toggleSidebar()">×</div>
-    
-    <div class="sidebar-section">
-        <!-- Main Pages Links -->
-        <a href="index.html">Home</a>
-        <a href="earth.html">Earth</a>
-        <a href="animals.html">Animals</a>
-        <a href="space.html">Space</a>
-        <a href="mysteries.html">Mysteries</a>
-        <a href="history.html">History</a>
-        <a href="quantum.html">🌌 Quantum Physics</a>
-    </div>
-        
-        <!-- පළමු ඉරෙන් වෙන් කිරීම -->
-        <hr class="sidebar-divider">
-        
-        <!-- Quiz & Facts Links -->
-        <a href="mcq.html" class="sb-mcq">📝 Start MCQ Quiz</a>
-        <a href="facts.html" class="sb-facts">⚡ Fun Amazing Facts ⚡</a>
-        
-        <!-- දෙවැනි ඉරෙන් වෙන් කිරීම -->
-        <hr class="sidebar-divider">
-        
-        <!-- Action Links -->
-        <a onclick="shareToFriends(); toggleSidebar();" style="cursor:pointer;" class="sb-share">🔗 SHARE</a>
-        <a href="ad.html" class="sb-help">❤️ Help</a>
-        <a href="aaaextradatapage.html">About</a>
-    </div>
-</div>
-
-
-
-    <div class="container">
-        <h1>ALIENS</h1>
-
-        <div class="img-container">
-            <img class="alien-img" src="images/Aliens.jpg" alt="Extraterrestrial Life Illustration">
-        </div>
-
-        <section>
-            <h2>Beyond Our World</h2>
-            <h3>Are we truly alone? The term <strong>"Extraterrestrial Life"</strong> encompasses everything from microbial life on distant moons to highly advanced star-faring civilizations.</h3>
-        </section>
-
-        <section>
-            <h2>The Grey Visitors</h2>
-            <ul>
-                <li><strong>Observation:</strong> Often described as 4-foot tall beings with translucent <strong>grey skin</strong> and large, liquid-black eyes.</li>
-                <li><strong>Technology:</strong> Witnesses claim they possess craft that defy gravity and can vanish in seconds.</li>
-                <li><strong>Abduction Lore:</strong> Thousands claim to have been taken aboard their ships for mysterious biological research.</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>The Fermi Paradox</h2>
-            <h3>If the universe is infinite, where is everybody?</h3>
-            <ul>
-                <li><strong>The Great Filter:</strong> Civilizations might destroy themselves before they can reach us.</li>
-                <li><strong>Cosmic Silence:</strong> We might be looking for radio signals while they use something far more advanced.</li>
-                <li><strong>Dark Forest Theory:</strong> Intelligent life stays hidden to avoid being destroyed by predators.</li>
-            </ul>
-        </section>
-
-        <div class="dotted-hr"></div>
-    </div>
-
-    <div id="feedback-widget">
-        <span>Was this helpful?</span>
-        <button onclick="hideFeedback('Yes')">YES</button>
-        <button onclick="hideFeedback('No')">NO</button>
-    </div>
-
-    <style>
         #feedback-widget {
             position: fixed;
             bottom: 25px;
@@ -341,6 +299,7 @@ nav .nav-home {
             color: #fff;
             font-weight: bold;
         }
+        
         #feedback-widget button {
             border: 1px solid var(--neon-purple);
             background: transparent;
@@ -350,36 +309,197 @@ nav .nav-home {
             cursor: pointer;
             transition: 0.3s;
         }
+        
         #feedback-widget button:hover { 
             background: var(--neon-purple);
             box-shadow: 0 0 10px var(--neon-purple);
         }
+
+        @media (max-width: 768px) {
+            nav { padding: 15px 20px; }
+            .nav-controls { gap: 10px; }
+        }
     </style>
+</head>
+<body>
+
+    <!-- New Top Navbar -->
+    <nav>
+        <a href="index.html" class="nav-home" data-en="🏠 Home" data-si="🏠 මුල් පිටුව">🏠 Home</a>
+        <div class="nav-controls">
+            <!-- Language Toggle Button -->
+            <button id="langToggle" class="lang-btn" onclick="toggleLanguage()">සිංහල</button>
+            <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+        </div>
+    </nav>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+    <!-- Slide-out Sidebar Menu -->
+    <div class="sidebar" id="sidebarMenu">
+        <div class="close-btn" onclick="toggleSidebar()">×</div>
+        
+        <div class="sidebar-section">
+            <!-- Main Pages Links -->
+            <a href="index.html" data-en="Home" data-si="මුල් පිටුව">Home</a>
+            <a href="earth.html" data-en="Earth" data-si="පෘථිවිය">Earth</a>
+            <a href="animals.html" data-en="Animals" data-si="සතුන්">Animals</a>
+            <a href="space.html" data-en="Space" data-si="අභ්‍යවකාශය">Space</a>
+            <a href="mysteries.html" data-en="Mysteries" data-si="අභිරහස්">Mysteries</a>
+            <a href="history.html" data-en="History" data-si="ඉතිහාසය">History</a>
+            <a href="quantum.html" data-en="🌌 Quantum Physics" data-si="🌌 ක්වොන්ටම් භෞතික විද්‍යාව">🌌 Quantum Physics</a>
+        </div>
+            
+        <!-- පළමු ඉරෙන් වෙන් කිරීම -->
+        <hr class="sidebar-divider">
+            
+        <!-- Quiz & Facts Links -->
+        <a href="mcq.html" class="sb-mcq" data-en="📝 Start MCQ Quiz" data-si="📝 MCQ ප්‍රශ්නාවලිය අරඹන්න">📝 Start MCQ Quiz</a>
+        <a href="facts.html" class="sb-facts" data-en="⚡ Fun Amazing Facts ⚡" data-si="⚡ පුදුම හිතෙන කරුණු ⚡">⚡ Fun Amazing Facts ⚡</a>
+            
+        <!-- දෙවැනි ඉරෙන් වෙන් කිරීම -->
+        <hr class="sidebar-divider">
+            
+        <!-- Action Links -->
+        <a onclick="shareToFriends(); toggleSidebar();" style="cursor:pointer;" class="sb-share" data-en="🔗 SHARE" data-si="🔗 බෙදාගන්න (SHARE)">🔗 SHARE</a>
+        <a href="ad.html" class="sb-help" data-en="❤️ Help" data-si="❤️ උදව්">❤️ Help</a>
+        <a href="aaaextradatapage.html" data-en="About" data-si="අපි ගැන">About</a>
+    </div>
+
+    <div class="container">
+        <h1 data-en="ALIENS" data-si="පිටසක්වල ජීවීන්">ALIENS</h1>
+
+        <div class="img-container">
+            <img class="alien-img" src="images/Aliens.jpg" alt="Extraterrestrial Life Illustration">
+        </div>
+
+        <section>
+            <h2 data-en="Beyond Our World" data-si="අපේ ලෝකයෙන් ඔබ්බට">Beyond Our World</h2>
+            <h3 data-en="Are we truly alone? The term &lt;strong&gt;&quot;Extraterrestrial Life&quot;&lt;/strong&gt; encompasses everything from microbial life on distant moons to highly advanced star-faring civilizations."
+                data-si="ඇත්තටම අපි තනිවෙලාද? &lt;strong&gt;&quot;පිටසක්වල ජීවීන්&quot;&lt;/strong&gt; යන යෙදුමට ඈත සඳවල් මත ඇති ක්ෂුද්‍ර ජීවීන්ගේ සිට ඉතා දියුණු තාරකා ශිෂ්ටාචාරයන් දක්වා සෑම දෙයක්ම ඇතුළත් වේ.">
+                Are we truly alone? The term <strong>"Extraterrestrial Life"</strong> encompasses everything from microbial life on distant moons to highly advanced star-faring civilizations.
+            </h3>
+        </section>
+
+        <section>
+            <h2 data-en="The Grey Visitors" data-si="අළු පැහැති අමුත්තන් (The Greys)">The Grey Visitors</h2>
+            <ul>
+                <li data-en="&lt;strong&gt;Observation:&lt;/strong&gt; Often described as 4-foot tall beings with translucent &lt;strong&gt;grey skin&lt;/strong&gt; and large, liquid-black eyes."
+                    data-si="&lt;strong&gt;නිරීක්ෂණය:&lt;/strong&gt; බොහෝ විට විනිවිද පෙනෙන &lt;strong&gt;අළු පැහැති සමක්&lt;/strong&gt; සහ විශාල, තද කළු පැහැති ඇස් ඇති අඩි 4ක් පමණ උසැති ජීවීන් ලෙස විස්තර කෙරේ.">
+                    <strong>Observation:</strong> Often described as 4-foot tall beings with translucent <strong>grey skin</strong> and large, liquid-black eyes.
+                </li>
+                <li data-en="&lt;strong&gt;Technology:&lt;/strong&gt; Witnesses claim they possess craft that defy gravity and can vanish in seconds."
+                    data-si="&lt;strong&gt;තාක්ෂණය:&lt;/strong&gt; ගුරුත්වාකර්ෂණය අභිබවා යා හැකි සහ තත්පර කිහිපයකින් අතුරුදහන් විය හැකි යාත්‍රා ඔවුන් සතු බව සාක්ෂිකරුවන් ප්‍රකාශ කරයි.">
+                    <strong>Technology:</strong> Witnesses claim they possess craft that defy gravity and can vanish in seconds.
+                </li>
+                <li data-en="&lt;strong&gt;Abduction Lore:&lt;/strong&gt; Thousands claim to have been taken aboard their ships for mysterious biological research."
+                    data-si="&lt;strong&gt;පැහැරගැනීම් පිළිබඳ මතවාද:&lt;/strong&gt; අභිරහස් ජීව විද්‍යාත්මක පර්යේෂණ සඳහා තමන්ව ඔවුන්ගේ යාත්‍රා වෙත රැගෙන ගිය බව දහස් ගණනක් මිනිසුන් ප්‍රකාශ කරති.">
+                    <strong>Abduction Lore:</strong> Thousands claim to have been taken aboard their ships for mysterious biological research.
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 data-en="The Fermi Paradox" data-si="ෆර්මි विरोධාභාෂය (Fermi Paradox)">The Fermi Paradox</h2>
+            <h3 data-en="If the universe is infinite, where is everybody?" data-si="විශ්වය අනන්ත නම්, අනෙක් සියලුම දෙනා කොහේද?">If the universe is infinite, where is everybody?</h3>
+            <ul>
+                <li data-en="&lt;strong&gt;The Great Filter:&lt;/strong&gt; Civilizations might destroy themselves before they can reach us."
+                    data-si="&lt;strong&gt;මහා පෙරහන (The Great Filter):&lt;/strong&gt; ශිෂ්ටාචාරයන් අප වෙත ළඟා වීමට පෙර ඔවුන් විසින්ම විනාශ කර ගන්නවා විය හැක.">
+                    <strong>The Great Filter:</strong> Civilizations might destroy themselves before they can reach us.
+                </li>
+                <li data-en="&lt;strong&gt;Cosmic Silence:&lt;/strong&gt; We might be looking for radio signals while they use something far more advanced."
+                    data-si="&lt;strong&gt;විශ්වීය නිශ්ශබ්දතාවය:&lt;/strong&gt; ඔවුන් මීට වඩා දියුණු සන්නිවේදන ක්‍රම භාවිතා කරන අතරතුර අපි තවමත් රේඩියෝ සංඥා සොයමින් සිටිනවා විය හැක.">
+                    <strong>Cosmic Silence:</strong> We might be looking for radio signals while they use something far more advanced.
+                </li>
+                <li data-en="&lt;strong&gt;Dark Forest Theory:&lt;/strong&gt; Intelligent life stays hidden to avoid being destroyed by predators."
+                    data-si="&lt;strong&gt;අඳුරු වනාන්තර සිද්ධාන්තය:&lt;/strong&gt; බුද්ධිමත් ජීවීන් අනෙකුත් විලෝපිකයන්ගෙන් විනාශ වීම වළක්වා ගැනීම සඳහා සැඟවී සිටීමට උත්සාහ කරයි.">
+                    <strong>Dark Forest Theory:</strong> Intelligent life stays hidden to avoid being destroyed by predators.
+                </li>
+            </ul>
+        </section>
+
+        <div class="dotted-hr"></div>
+    </div>
+
+    <!-- Feedback Widget -->
+    <div id="feedback-widget">
+        <span data-en="Was this helpful?" data-si="මෙය ප්‍රයෝජනවත් වූවාද?">Was this helpful?</span>
+        <button onclick="hideFeedback('Yes')" data-en="YES" data-si="ඔව්">YES</button>
+        <button onclick="hideFeedback('No')" data-en="NO" data-si="නැත">NO</button>
+    </div>
 
     <script>
         // Sidebar Toggle Function
-function toggleSidebar() {
-    const sidebar = document.getElementById("sidebarMenu");
-    const overlay = document.getElementById("sidebarOverlay");
-    
-    sidebar.classList.toggle("open");
-    overlay.classList.toggle("show");
-}
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebarMenu");
+            const overlay = document.getElementById("sidebarOverlay");
+            
+            sidebar.classList.toggle("open");
+            overlay.classList.toggle("show");
+        }
+
+        // Feedback system Alert Multi-lang
         function hideFeedback(type) {
-            alert("Thank you! Your feedback helps the Laboratory.");
+            let currentLang = localStorage.getItem("preferredLanguage") || "en";
+            if (currentLang === "si") {
+                alert("ස්තුතියි! ඔබගේ ප්‍රතිචාරය අපගේ රසායනාගාරයට (Laboratory) උදව්වක් වේ.");
+            } else {
+                alert("Thank you! Your feedback helps the Laboratory.");
+            }
             document.getElementById('feedback-widget').style.display = 'none';
         }
+
+        // --- භාෂා මාරු කිරීමේ පද්ධතිය (Language Switcher Logic) ---
+        function toggleLanguage() {
+            let currentLang = localStorage.getItem("preferredLanguage") || "en";
+            let newLang = (currentLang === "en") ? "si" : "en";
+            
+            localStorage.setItem("preferredLanguage", newLang);
+            applyLanguage(newLang);
+        }
+
+        function applyLanguage(lang) {
+            const btn = document.getElementById("langToggle");
+            
+            if (lang === "si") {
+                btn.textContent = "English";
+            } else {
+                btn.textContent = "සිංහල";
+            }
+
+            const elements = document.querySelectorAll('[data-en], [data-si]');
+            elements.forEach(el => {
+                if (lang === "si") {
+                    if (el.getAttribute('data-si')) {
+                        el.innerHTML = el.getAttribute('data-si');
+                    }
+                } else {
+                    if (el.getAttribute('data-en')) {
+                        el.innerHTML = el.getAttribute('data-en');
+                    }
+                }
+            });
+        }
+
+        // පිටුව මුලින්ම ලෝඩ් වන විට ක්‍රියාත්මක වන කොටස
+        document.addEventListener("DOMContentLoaded", () => {
+            let savedLang = localStorage.getItem("preferredLanguage") || "en";
+            applyLanguage(savedLang);
+        });
     </script>
+
+    <!-- Audio Settings -->
     <audio id="myAudio" loop>
-    <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
-</audio>
+        <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
+    </audio>
 
-<div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
-    <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
-        <span id="music-icon">🔇</span>
+    <div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
+        <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px; user-select: none;">
+            <span id="music-icon">🔇</span>
+        </div>
     </div>
-</div>
 
-<script src="music.js"></script>
+    <script src="music.js"></script>
 </body>
 </html>
