@@ -24,114 +24,142 @@
         }
 
         /* New Navigation Bar Header */
-nav {
-    background-color: #1a1a1a;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #333;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    width: 100%;
-    box-sizing: border-box;
-}
+        nav {
+            background-color: #1a1a1a;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            box-sizing: border-box;
+        }
 
-nav .nav-home {
-    color: #00d4ff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
-}
+        nav .nav-home {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+        }
 
-/* Hamburger Menu Button */
-.menu-toggle {
-    background: none;
-    border: none;
-    color: #00d4ff;
-    font-size: 28px;
-    cursor: pointer;
-    user-select: none;
-}
+        /* Nav controls container */
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
-/* Slide-out Sidebar Styles */
-.sidebar {
-    position: fixed;
-    top: 0;
-    right: -280px; /* දකුණු පැත්තේ සැඟවී පවතී */
-    width: 280px;
-    height: 100%;
-    background-color: #111;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
-    z-index: 10001;
-    transition: right 0.3s ease-in-out;
-    padding: 20px;
-    box-sizing: border-box;
-    overflow-y: auto;
-}
+        /* Language Toggle Button Style */
+        .lang-btn {
+            background: linear-gradient(45deg, #111, #222);
+            border: 1px solid var(--ice-blue);
+            color: var(--ice-blue);
+            padding: 6px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+        }
 
-.sidebar.open {
-    right: 0; /* ක්ලික් කළ විට මතු වේ */
-}
+        .lang-btn:hover {
+            background: var(--ice-blue);
+            color: #000;
+            box-shadow: 0 0 15px var(--ice-blue);
+        }
 
-/* Close Button inside Sidebar */
-.close-btn {
-    text-align: right;
-    font-size: 30px;
-    color: #ff4a4a;
-    cursor: pointer;
-    margin-bottom: 20px;
-}
+        /* Hamburger Menu Button */
+        .menu-toggle {
+            background: none;
+            border: none;
+            color: #00d4ff;
+            font-size: 28px;
+            cursor: pointer;
+            user-select: none;
+        }
 
-/* Sidebar Links Grouping */
-.sidebar-section {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
+        /* Slide-out Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -280px; /* දකුණු පැත්තේ සැඟවී පවතී */
+            width: 280px;
+            height: 100%;
+            background-color: #111;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+            z-index: 10001;
+            transition: right 0.3s ease-in-out;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
 
-.sidebar-divider {
-    border: none;
-    border-top: 1px solid #333;
-    margin: 15px 0;
-}
+        .sidebar.open {
+            right: 0; /* ක්ලික් කළ විට මතු වේ */
+        }
 
-.sidebar a {
-    color: #e0e0e0;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: 0.2s;
-}
+        /* Close Button inside Sidebar */
+        .close-btn {
+            text-align: right;
+            font-size: 30px;
+            color: #ff4a4a;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
 
-.sidebar a:hover {
-    background-color: #1a1a1a;
-    color: #00d4ff;
-}
+        /* Sidebar Links Grouping */
+        .sidebar-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
-/* Special Styling for buttons inside menu */
-.sb-mcq { color: #ffd700 !important; font-weight: bold !important; }
-.sb-facts { color: #00ff88 !important; font-weight: bold !important; }
-.sb-share { color: #00d4ff !important; }
-.sb-help { color: #ffa500 !important; }
+        .sidebar-divider {
+            border: none;
+            border-top: 1px solid #333;
+            margin: 15px 0;
+        }
 
-/* Overlay Background */
-.sidebar-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6);
-    z-index: 10000;
-    display: none;
-}
-.sidebar-overlay.show {
-    display: block;
-}
+        .sidebar a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: 0.2s;
+        }
+
+        .sidebar a:hover {
+            background-color: #1a1a1a;
+            color: #00d4ff;
+        }
+
+        /* Special Styling for buttons inside menu */
+        .sb-mcq { color: #ffd700 !important; font-weight: bold !important; }
+        .sb-facts { color: #00ff88 !important; font-weight: bold !important; }
+        .sb-share { color: #00d4ff !important; }
+        .sb-help { color: #ffa500 !important; }
+
+        /* Overlay Background */
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 10000;
+            display: none;
+        }
+        .sidebar-overlay.show {
+            display: block;
+        }
+        
         /* Header */
         header {
             text-align: center;
@@ -205,93 +233,157 @@ nav .nav-home {
 </head>
 <body>
 
-    <!-- New Top Navbar -->
-<nav>
-    <a href="index.html" class="nav-home">🏠 Home</a>
-    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
-</nav>
+    <!-- Top Navbar -->
+    <nav>
+        <a href="index.html" class="nav-home" data-en="🏠 Home" data-si="🏠 මුල් පිටුව">🏠 Home</a>
+        <div class="nav-controls">
+            <!-- Language Toggle Button -->
+            <button id="langToggle" class="lang-btn" onclick="toggleLanguage()">සිංහල</button>
+            <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+        </div>
+    </nav>
 
-<!-- Sidebar Overlay -->
-<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
 
-<!-- Slide-out Sidebar Menu -->
-<div class="sidebar" id="sidebarMenu">
-    <div class="close-btn" onclick="toggleSidebar()">×</div>
-    
-    <div class="sidebar-section">
-        <!-- Main Pages Links -->
-        <a href="index.html">Home</a>
-        <a href="earth.html">Earth</a>
-        <a href="animals.html">Animals</a>
-        <a href="space.html">Space</a>
-        <a href="mysteries.html">Mysteries</a>
-        <a href="history.html">History</a>
-        <a href="quantum.html">🌌 Quantum Physics</a>
-    </div>
+    <!-- Slide-out Sidebar Menu -->
+    <div class="sidebar" id="sidebarMenu">
+        <div class="close-btn" onclick="toggleSidebar()">×</div>
         
+        <div class="sidebar-section">
+            <!-- Main Pages Links -->
+            <a href="index.html" data-en="Home" data-si="මුල් පිටුව">Home</a>
+            <a href="earth.html" data-en="Earth" data-si="පෘථිවිය">Earth</a>
+            <a href="animals.html" data-en="Animals" data-si="සතුන්">Animals</a>
+            <a href="space.html" data-en="Space" data-si="අභ්‍යවකාශය">Space</a>
+            <a href="mysteries.html" data-en="Mysteries" data-si="අභිරහස්">Mysteries</a>
+            <a href="history.html" data-en="History" data-si="ඉතිහාසය">History</a>
+            <a href="quantum.html" data-en="🌌 Quantum Physics" data-si="🌌 ක්වොන්ටම් භෞතික විද්‍යාව">🌌 Quantum Physics</a>
+        </div>
+            
         <!-- පළමු ඉරෙන් වෙන් කිරීම -->
         <hr class="sidebar-divider">
-        
+            
         <!-- Quiz & Facts Links -->
-        <a href="mcq.html" class="sb-mcq">📝 Start MCQ Quiz</a>
-        <a href="facts.html" class="sb-facts">⚡ Fun Amazing Facts ⚡</a>
-        
+        <a href="mcq.html" class="sb-mcq" data-en="📝 Start MCQ Quiz" data-si="📝 MCQ ප්‍රශ්නාවලිය අරඹන්න">📝 Start MCQ Quiz</a>
+        <a href="facts.html" class="sb-facts" data-en="⚡ Fun Amazing Facts ⚡" data-si="⚡ පුදුම හිතෙන කරුණු ⚡">⚡ Fun Amazing Facts ⚡</a>
+            
         <!-- දෙවැනි ඉරෙන් වෙන් කිරීම -->
         <hr class="sidebar-divider">
-        
+            
         <!-- Action Links -->
-        <a onclick="shareToFriends(); toggleSidebar();" style="cursor:pointer;" class="sb-share">🔗 SHARE</a>
-        <a href="ad.html" class="sb-help">❤️ Help</a>
-        <a href="aaaextradatapage.html">About</a>
+        <a onclick="shareToFriends(); toggleSidebar();" style="cursor:pointer;" class="sb-share" data-en="🔗 SHARE" data-si="🔗 බෙදාගන්න (SHARE)">🔗 SHARE</a>
+        <a href="ad.html" class="sb-help" data-en="❤️ Help" data-si="❤️ උදව්">❤️ Help</a>
+        <a href="aaaextradatapage.html" data-en="About" data-si="අපි ගැන">About</a>
     </div>
-</div>
-
-
 
     <header>
-        <h1>SMILODON</h1>
-        <div class="tagline">The Ultimate Ice Age Predator</div>
+        <h1 data-en="SMILODON" data-si="ස්මිලඩොන්">SMILODON</h1>
+        <div class="tagline" data-en="The Ultimate Ice Age Predator" data-si="හිම යුගයේ දරුණුතම විලෝපිකයා">The Ultimate Ice Age Predator</div>
     </header>
 
     <div class="container">
         <div class="content-box">
             <img src="images/smilodon.jpg" alt="Smilodon Tiger" class="dino-img">
-            <h2>The Sabre-Toothed Cat</h2>
-            <p>The <strong>Smilodon</strong> is one of the most famous prehistoric mammals. Often called the "Sabre-toothed Tiger," it was not actually a tiger but a distant cousin. Living during the Pleistocene epoch, it was built for power rather than speed, capable of taking down massive prey like bison and small mammoths.</p>
+            <h2 data-en="The Sabre-Toothed Cat" data-si="හී සැඩ දත් බළලා">The Sabre-Toothed Cat</h2>
+            <p data-en="The Smilodon is one of the most famous prehistoric mammals. Often called the 'Sabre-toothed Tiger,' it was not actually a tiger but a distant cousin. Living during the Pleistocene epoch, it was built for power rather than speed, capable of taking down massive prey like bison and small mammoths." 
+               data-si="ස්මිලඩොන් (Smilodon) යනු ප්‍රාග් ඓතිහාසික යුගයේ විසූ වඩාත්ම ප්‍රසිද්ධ ක්ෂීරපායී සතෙකි. මොවුන්ව සාමාන්‍යයෙන් 'හී සැඩ දත් ව්‍යාඝ්‍රයා' ලෙස හැඳින්වුවද, මොවුන් සැබවින්ම ව්‍යාඝ්‍රයන් නොව, බළල් පවුලේ ඈත නෑදෑයෙක් පමණි. ප්ලයිස්ටොසීන (Pleistocene) යුගයේ විසූ මොවුන් වේගයට වඩා ශක්තිය මුල් කරගෙන පරිණාමය වී ඇති අතර, බයිසන් ගවයන් සහ කුඩා මැමත් වැනි දැවැන්ත සතුන් පවා දඩයම් කිරීමට සමත් විය."></p>
         </div>
 
         <div class="stats-grid">
-            <div class="stat-card"><h3>28 cm</h3><p>Canine Teeth</p></div>
-            <div class="stat-card"><h3>400 kg</h3><p>Body Weight</p></div>
-            <div class="stat-card"><h3>10,000 BC</h3><p>Extinction</p></div>
+            <div class="stat-card">
+                <h3>28 cm</h3>
+                <p data-en="Canine Teeth" data-si="කනිනක දත් (රදනක)"></p>
+            </div>
+            <div class="stat-card">
+                <h3>400 kg</h3>
+                <p data-en="Body Weight" data-si="ශරීර බර"></p>
+            </div>
+            <div class="stat-card">
+                <h3>10,000 BC</h3>
+                <p data-en="Extinction" data-si="වඳ වී යාම"></p>
+            </div>
         </div>
 
         <div class="content-box">
-            <h2>Fearful Facts</h2>
+            <h2 data-en="Fearful Facts" data-si="භයානක සත්‍යයන්">Fearful Facts</h2>
             <ul>
-                <li><span class="highlight">Deadly Teeth:</span> Their iconic 11-inch long canine teeth were fragile. They only used them to deliver a finishing bite to the throat after pinning down prey.</li>
-                <li><span class="highlight">Social Hunters:</span> Evidence suggests Smilodon lived and hunted in packs, much like modern lions.</li>
-                <li><span class="highlight">Sturdy Build:</span> They had extremely muscular front legs to wrestle large animals to the ground.</li>
+                <li><span class="highlight" data-en="Deadly Teeth: " data-si="මාරාන්තික දත්: ">Deadly Teeth: </span><span data-en="Their iconic 11-inch long canine teeth were fragile. They only used them to deliver a finishing bite to the throat after pinning down prey." data-si="මොවුන්ගේ අඟල් 11ක් පමණ දිගැති දත් තරමක් බිඳෙනසුලුය. එම නිසා මොවුන් එම දත් පාවිච්චි කළේ ගොදුර බිම හෙළා මෙල්ල කරගත් පසුව, උගුර සපා කා අවසන් තීරණාත්මක ප්‍රහාරය දීමට පමණි."></span></li>
+                <li><span class="highlight" data-en="Social Hunters: " data-si="රංචු වශයෙන් දඩයම් කිරීම: ">Social Hunters: </span><span data-en="Evidence suggests Smilodon lived and hunted in packs, much like modern lions." data-si="ලැබී ඇති සාක්ෂි වලට අනුව ස්මිලඩොන් සතුන් වර්තමාන සිංහයන් මෙන් රංචු වශයෙන් ජීවත් වූ අතර දඩයම් කිරීමද රංචු පිටින් සිදු කර ඇත."></span></li>
+                <li><span class="highlight" data-en="Sturdy Build: " data-si="ශක්තිමත් සිරුර: ">Sturdy Build: </span><span data-en="They had extremely muscular front legs to wrestle large animals to the ground." data-si="දැවැන්ත සතුන් පොර බදමින් බිම ඇද දැමීම සඳහා මොවුන්ට ඉතාමත් මාංශ පේශි සහිත ශක්තිමත් ඉදිරි පාද තිබුණි."></span></li>
             </ul>
         </div>
     </div>
-<audio id="myAudio" loop>
-    <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
-</audio>
 
-<div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
-    <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
-        <span id="music-icon">🔇</span>
+    <audio id="myAudio" loop>
+        <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
+    </audio>
+
+    <div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
+        <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
+            <span id="music-icon">🔇</span>
+        </div>
     </div>
-</div>
-<script> // Sidebar Toggle Function
-function toggleSidebar() {
-    const sidebar = document.getElementById("sidebarMenu");
-    const overlay = document.getElementById("sidebarOverlay");
-    
-    sidebar.classList.toggle("open");
-    overlay.classList.toggle("show");
-} </script>
-<script src="music.js"></script>
+
+    <script> 
+        // Sidebar Toggle Function
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebarMenu");
+            const overlay = document.getElementById("sidebarOverlay");
+            
+            sidebar.classList.toggle("open");
+            overlay.classList.toggle("show");
+        }
+
+        // --- භාෂා මාරු කිරීමේ පද්ධතිය (Language Switcher Logic) ---
+        function toggleLanguage() {
+            // දැනට තියෙන භාෂාව පරික්ෂා කරලා අනෙක් භාෂාව තෝරාගැනීම
+            let currentLang = localStorage.getItem("preferredLanguage") || "en";
+            let newLang = (currentLang === "en") ? "si" : "en";
+            
+            // තෝරාගත් භාෂාව සේව් කිරීම
+            localStorage.setItem("preferredLanguage", newLang);
+            
+            // පිටුව update කිරීම
+            applyLanguage(newLang);
+        }
+
+        function applyLanguage(lang) {
+            const btn = document.getElementById("langToggle");
+            
+            // බොත්තමේ text එක වෙනස් කිරීම
+            if (lang === "si") {
+                btn.textContent = "English";
+            } else {
+                btn.textContent = "සිංහල";
+            }
+
+            // data-en සහ data-si තියෙන හැම element එකක්ම වෙනස් කිරීම
+            const elements = document.querySelectorAll('[data-en], [data-si]');
+            elements.forEach(el => {
+                if (lang === "si") {
+                    if (el.getAttribute('data-si')) {
+                        // සාමාන්‍ය tags වලට innerText දානවා, හැබැයි span එකක් ඇතුලේ highlight එක රැකගන්න ඕන නිසා textContent හෝ innerHTML බලනවා
+                        if(el.tagName === "A" || el.tagName === "P" || el.tagName === "H1" || el.tagName === "H2" || el.tagName === "SPAN" || el.tagName === "DIV") {
+                            el.textContent = el.getAttribute('data-si');
+                        }
+                    }
+                } else {
+                    if (el.getAttribute('data-en')) {
+                        if(el.tagName === "A" || el.tagName === "P" || el.tagName === "H1" || el.tagName === "H2" || el.tagName === "SPAN" || el.tagName === "DIV") {
+                            el.textContent = el.getAttribute('data-en');
+                        }
+                    }
+                }
+            });
+        }
+
+        // පිටුව මුලින්ම Load වන විට කලින් තේරූ භාෂාව ක්‍රියාත්මක කිරීම
+        document.addEventListener("DOMContentLoaded", () => {
+            let savedLang = localStorage.getItem("preferredLanguage") || "en";
+            applyLanguage(savedLang);
+        });
+    </script>
+    <script src="music.js"></script>
 </body>
 </html>
