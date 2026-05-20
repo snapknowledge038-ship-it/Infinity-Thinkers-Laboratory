@@ -11,6 +11,7 @@
             --neon-gold: #ffd700;
             --bg-dark: #0d0208;
             --text-light: #e8e8e8;
+            --neon-blue: #00d4ff;
         }
 
         body {
@@ -24,114 +25,145 @@
         }
 
         /* New Navigation Bar Header */
-nav {
-    background-color: #1a1a1a;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #333;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    width: 100%;
-    box-sizing: border-box;
-}
+        nav {
+            background-color: #1a1a1a;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            box-sizing: border-box;
+        }
 
-nav .nav-home {
-    color: #00d4ff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
-}
+        nav .nav-home {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+        }
 
-/* Hamburger Menu Button */
-.menu-toggle {
-    background: none;
-    border: none;
-    color: #00d4ff;
-    font-size: 28px;
-    cursor: pointer;
-    user-select: none;
-}
+        /* Nav controls wrapper */
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
-/* Slide-out Sidebar Styles */
-.sidebar {
-    position: fixed;
-    top: 0;
-    right: -280px; /* දකුණු පැත්තේ සැඟවී පවතී */
-    width: 280px;
-    height: 100%;
-    background-color: #111;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
-    z-index: 10001;
-    transition: right 0.3s ease-in-out;
-    padding: 20px;
-    box-sizing: border-box;
-    overflow-y: auto;
-}
+        /* Language Toggle Button Style */
+        .lang-btn {
+            background-color: transparent;
+            border: 1px solid var(--neon-rose);
+            color: var(--neon-rose);
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.3s;
+            text-shadow: 0 0 5px rgba(255, 102, 178, 0.3);
+            box-shadow: 0 0 10px rgba(255, 102, 178, 0.1);
+        }
 
-.sidebar.open {
-    right: 0; /* ක්ලික් කළ විට මතු වේ */
-}
+        .lang-btn:hover {
+            background-color: var(--neon-rose);
+            color: #fff;
+            box-shadow: 0 0 15px var(--neon-rose);
+        }
 
-/* Close Button inside Sidebar */
-.close-btn {
-    text-align: right;
-    font-size: 30px;
-    color: #ff4a4a;
-    cursor: pointer;
-    margin-bottom: 20px;
-}
+        /* Hamburger Menu Button */
+        .menu-toggle {
+            background: none;
+            border: none;
+            color: #00d4ff;
+            font-size: 28px;
+            cursor: pointer;
+            user-select: none;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
 
-/* Sidebar Links Grouping */
-.sidebar-section {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
+        /* Slide-out Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -280px; /* දකුණු පැත්තේ සැඟවී පවතී */
+            width: 280px;
+            height: 100%;
+            background-color: #111;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+            z-index: 10001;
+            transition: right 0.3s ease-in-out;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
 
-.sidebar-divider {
-    border: none;
-    border-top: 1px solid #333;
-    margin: 15px 0;
-}
+        .sidebar.open {
+            right: 0; /* ක්ලික් කළ විට මතු වේ */
+        }
 
-.sidebar a {
-    color: #e0e0e0;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: 0.2s;
-}
+        /* Close Button inside Sidebar */
+        .close-btn {
+            text-align: right;
+            font-size: 30px;
+            color: #ff4a4a;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
 
-.sidebar a:hover {
-    background-color: #1a1a1a;
-    color: #00d4ff;
-}
+        /* Sidebar Links Grouping */
+        .sidebar-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
-/* Special Styling for buttons inside menu */
-.sb-mcq { color: #ffd700 !important; font-weight: bold !important; }
-.sb-facts { color: #00ff88 !important; font-weight: bold !important; }
-.sb-share { color: #00d4ff !important; }
-.sb-help { color: #ffa500 !important; }
+        .sidebar-divider {
+            border: none;
+            border-top: 1px solid #333;
+            margin: 15px 0;
+        }
 
-/* Overlay Background */
-.sidebar-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6);
-    z-index: 10000;
-    display: none;
-}
-.sidebar-overlay.show {
-    display: block;
-}
+        .sidebar a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: 0.2s;
+        }
+
+        .sidebar a:hover {
+            background-color: #1a1a1a;
+            color: #00d4ff;
+        }
+
+        /* Special Styling for buttons inside menu */
+        .sb-mcq { color: #ffd700 !important; font-weight: bold !important; }
+        .sb-facts { color: #00ff88 !important; font-weight: bold !important; }
+        .sb-share { color: #00d4ff !important; }
+        .sb-help { color: #ffa500 !important; }
+
+        /* Overlay Background */
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 10000;
+            display: none;
+        }
+        .sidebar-overlay.show {
+            display: block;
+        }
 
         /* Title */
         h1 {
@@ -225,86 +257,167 @@ nav .nav-home {
             opacity: 0.3;
         }
 
+        /* Language display setup */
+        .lang-en, .lang-si {
+            display: none;
+        }
+        
+        html[lang="en"] .lang-en {
+            display: block;
+        }
+        
+        html[lang="si"] .lang-si {
+            display: block;
+        }
+
+        /* Inline language display rules */
+        html[lang="en"] span.lang-en, html[lang="en"] strong.lang-en {
+            display: inline;
+        }
+        html[lang="si"] span.lang-si, html[lang="si"] strong.lang-si {
+            display: inline;
+        }
     </style>
 </head>
 <body>
 
     <!-- New Top Navbar -->
-<nav>
-    <a href="index.html" class="nav-home">🏠 Home</a>
-    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
-</nav>
+    <nav>
+        <a href="index.html" class="nav-home">
+            <span class="lang-en">🏠 Home</span>
+            <span class="lang-si">🏠 මුල් පිටුව</span>
+        </a>
+        <div class="nav-controls">
+            <!-- Language Toggle Button -->
+            <button id="langToggleBtn" class="lang-btn" onclick="toggleLanguage()">සිංහල</button>
+            <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+        </div>
+    </nav>
 
-<!-- Sidebar Overlay -->
-<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
 
-<!-- Slide-out Sidebar Menu -->
-<div class="sidebar" id="sidebarMenu">
-    <div class="close-btn" onclick="toggleSidebar()">×</div>
-    
-    <div class="sidebar-section">
-        <!-- Main Pages Links -->
-        <a href="index.html">Home</a>
-        <a href="earth.html">Earth</a>
-        <a href="animals.html">Animals</a>
-        <a href="space.html">Space</a>
-        <a href="mysteries.html">Mysteries</a>
-        <a href="history.html">History</a>
-        <a href="quantum.html">🌌 Quantum Physics</a>
-    </div>
+    <!-- Slide-out Sidebar Menu -->
+    <div class="sidebar" id="sidebarMenu">
+        <div class="close-btn" onclick="toggleSidebar()">×</div>
         
+        <div class="sidebar-section">
+            <!-- Main Pages Links -->
+            <a href="index.html">
+                <span class="lang-en">Home</span><span class="lang-si">මුල් පිටුව</span>
+            </a>
+            <a href="earth.html">
+                <span class="lang-en">Earth</span><span class="lang-si">පෘථිවිය</span>
+            </a>
+            <a href="animals.html">
+                <span class="lang-en">Animals</span><span class="lang-si">සතුන්</span>
+            </a>
+            <a href="space.html">
+                <span class="lang-en">Space</span><span class="lang-si">අභ්‍යවකාශය</span>
+            </a>
+            <a href="mysteries.html">
+                <span class="lang-en">Mysteries</span><span class="lang-si">අභිරහස්</span>
+            </a>
+            <a href="history.html">
+                <span class="lang-en">History</span><span class="lang-si">ඉතිහාසය</span>
+            </a>
+            <a href="quantum.html">
+                <span class="lang-en">🌌 Quantum Physics</span><span class="lang-si">🌌 ක්වොන්ටම් භෞතික විද්‍යාව</span>
+            </a>
+        </div>
+            
         <!-- පළමු ඉරෙන් වෙන් කිරීම -->
         <hr class="sidebar-divider">
-        
+            
         <!-- Quiz & Facts Links -->
-        <a href="mcq.html" class="sb-mcq">📝 Start MCQ Quiz</a>
-        <a href="facts.html" class="sb-facts">⚡ Fun Amazing Facts ⚡</a>
-        
+        <a href="mcq.html" class="sb-mcq">
+            <span class="lang-en">📝 Start MCQ Quiz</span><span class="lang-si">📝 MCQ ප්‍රශ්නාවලිය අරඹන්න</span>
+        </a>
+        <a href="facts.html" class="sb-facts">
+            <span class="lang-en">⚡ Fun Amazing Facts ⚡</span><span class="lang-si">⚡ පුදුම සහගත කරුණු ⚡</span>
+        </a>
+            
         <!-- දෙවැනි ඉරෙන් වෙන් කිරීම -->
         <hr class="sidebar-divider">
-        
+            
         <!-- Action Links -->
-        <a onclick="shareToFriends(); toggleSidebar();" style="cursor:pointer;" class="sb-share">🔗 SHARE</a>
-        <a href="ad.html" class="sb-help">❤️ Help</a>
-        <a href="aaaextradatapage.html">About</a>
+        <a onclick="shareToFriends(); toggleSidebar();" style="cursor:pointer;" class="sb-share">
+            <span class="lang-en">🔗 SHARE</span><span class="lang-si">🔗 බෙදාගන්න</span>
+        </a>
+        <a href="ad.html" class="sb-help">
+            <span class="lang-en">❤️ Help</span><span class="lang-si">❤️ උදව්</span>
+        </a>
+        <a href="aaaextradatapage.html">
+            <span class="lang-en">About</span><span class="lang-si">අප ගැන</span>
+        </a>
     </div>
-</div>
-
-
 
     <div class="container">
-        <h1>ELIZABETH I</h1>
+        <h1>
+            <span class="lang-en">ELIZABETH I</span>
+            <span class="lang-si">පළමුවන එලිසබෙත් රැජින</span>
+        </h1>
 
         <div class="img-container">
             <img class="queen-img" src="images/elizabeth.jpg" alt="Queen Elizabeth I Portrait">
         </div>
 
+        <!-- Section 1 -->
         <section>
-            <h2>The Virgin Queen</h2>
-            <h3>Daughter of Henry VIII and Anne Boleyn, <strong>Elizabeth I</strong> was the last monarch of the Tudor dynasty. She ruled England for 44 years, a period that became known as the <strong>Elizabethan Era</strong>.</h3>
+            <h2>
+                <span class="lang-en">The Virgin Queen</span>
+                <span class="lang-si">නිර්මල රැජින (The Virgin Queen)</span>
+            </h2>
+            <h3 class="lang-en">Daughter of Henry VIII and Anne Boleyn, <strong>Elizabeth I</strong> was the last monarch of the Tudor dynasty. She ruled England for 44 years, a period that became known as the <strong>Elizabethan Era</strong>.</h3>
+            <h3 class="lang-si">අටවන හෙන්රි රජුගේ සහ ඈන් බොලීන්ගේ දියණිය වූ <strong>පළමුවන එලිසබෙත්</strong>, ටියුඩර් රාජවංශයේ අවසාන පාලකයා වූවාය. ඇය වසර 44ක් පුරා එංගලන්තය පාලනය කළ අතර, එම කාලය <strong>එලිසබෙතන් යුගය</strong> ලෙස ප්‍රසිද්ධියට පත් විය.</h3>
         </section>
 
+        <!-- Section 2 -->
         <section>
-            <h2>The Golden Age</h2>
-            <ul>
+            <h2>
+                <span class="lang-en">The Golden Age</span>
+                <span class="lang-si">ස්වර්ණමය යුගය</span>
+            </h2>
+            
+            <!-- English Bullet Points -->
+            <ul class="lang-en">
                 <li><strong>Spanish Armada:</strong> In 1588, her navy famously defeated the massive Spanish fleet, establishing England as a dominant sea power.</li>
                 <li><strong>Cultural Renaissance:</strong> Her reign saw the rise of English drama, led by playwrights like <strong>William Shakespeare</strong> and Christopher Marlowe.</li>
                 <li><strong>Global Exploration:</strong> She supported voyages of discovery by explorers like Sir Francis Drake and Sir Walter Raleigh.</li>
             </ul>
+
+            <!-- Sinhala Bullet Points -->
+            <ul class="lang-si">
+                <li><strong>ස්පාඤ්ඤ ආමඩාව (Spanish Armada):</strong> 1588 දී ඇයගේ නාවික හමුදාව දැවැන්ත ස්පාඤ්ඤ නැව් සමූහය පරාජය කරමින්, එංගලන්තය ප්‍රබල මුහුදු බලවතෙකු බවට පත් කළේය.</li>
+                <li><strong>සංස්කෘතික පුනරුදය:</strong> ඇයගේ පාලන කාලය තුළ <strong>විලියම් ෂේක්ස්පියර්</strong> සහ ක්‍රිස්ටෝපර් මාර්ලෝ වැනි නාට්‍යකරුවන්ගේ මූලිකත්වයෙන් ඉංග්‍රීසි නාට්‍ය කලාවේ විශාල දියුණුවක් ඇති විය.</li>
+                <li><strong>ගෝලීය ගවේෂණ:</strong> ඇය සර් ෆ්‍රැන්සිස් ඩ්‍රේක් සහ සර් වෝල්ටර් රේලි වැනි ගවේෂකයන්ගේ දේශගවේෂණ චාරිකා සඳහා පූර්ණ අනුග්‍රහය දැක්වූවාය.</li>
+            </ul>
         </section>
 
+        <!-- Section 3 -->
         <section>
-            <h2>A Powerful Legacy</h2>
-            <h3>Elizabeth was known for her intelligence, caution, and fiery spirit. She famously declared, <strong>"I know I have the body of a weak and feeble woman; but I have the heart and stomach of a king."</strong> She stabilized the country and laid the foundation for the British Empire.</h3>
+            <h2>
+                <span class="lang-en">A Powerful Legacy</span>
+                <span class="lang-si">ප්‍රබල උරුමය</span>
+            </h2>
+            <h3 class="lang-en">Elizabeth was known for her intelligence, caution, and fiery spirit. She famously declared, <strong>"I know I have the body of a weak and feeble woman; but I have the heart and stomach of a king."</strong> She stabilized the country and laid the foundation for the British Empire.</h3>
+            <h3 class="lang-si">එලිසබෙත් රැජින ඇයගේ බුද්ධිමත්භාවය, තීක්ෂණභාවය සහ නොබියව කටයුතු කිරීමේ ගුණය නිසා ප්‍රසිද්ධ විය. ඇය ප්‍රකාශ කළ සුප්‍රසිද්ධ වැකියක් වනුයේ, <strong>"මා සතුව දුර්වල ස්ත්‍රියකගේ ශරීරයක් ඇති බව මම දනිමි; නමුත් මා සතුව රජෙකුගේ හදවතක් සහ චිත්තවේගයක් ඇත"</strong> යන්නයි. ඇය රට ස්ථාවර කර බ්‍රිතාන්‍ය අධිරාජ්‍යයට ශක්තිමත් පදනමක් දැමුවාය.</h3>
         </section>
 
         <div class="dotted-hr"></div>
     </div>
 
+    <!-- Feedback Widget -->
     <div id="feedback-widget">
-        <span>Helpful?</span>
-        <button onclick="hideFeedback('Yes')">YES</button>
-        <button onclick="hideFeedback('No')">NO</button>
+        <span class="lang-en">Helpful?</span>
+        <span class="lang-si">ප්‍රයෝජනවත්ද?</span>
+        
+        <button onclick="hideFeedback('Yes')">
+            <span class="lang-en">YES</span><span class="lang-si">ඔව්</span>
+        </button>
+        <button onclick="hideFeedback('No')">
+            <span class="lang-en">NO</span><span class="lang-si">නැත</span>
+        </button>
     </div>
 
     <style>
@@ -341,29 +454,66 @@ nav .nav-home {
     </style>
 
     <script>
+        // Check localStorage on load to persist language choice
+        document.addEventListener("DOMContentLoaded", function() {
+            const savedLang = localStorage.getItem("preferredLanguage") || "en";
+            setLanguage(savedLang);
+        });
+
+        // Set Language Attribute and Update Toggle Button Text
+        function setLanguage(lang) {
+            document.documentElement.setAttribute("lang", lang);
+            localStorage.setItem("preferredLanguage", lang);
+            
+            const langBtn = document.getElementById("langToggleBtn");
+            if (lang === "si") {
+                langBtn.textContent = "English";
+            } else {
+                langBtn.textContent = "සිංහල";
+            }
+        }
+
+        // Language Toggle functionality
+        function toggleLanguage() {
+            const currentLang = document.documentElement.getAttribute("lang") || "en";
+            const nextLang = currentLang === "en" ? "si" : "en";
+            setLanguage(nextLang);
+        }
+
         // Sidebar Toggle Function
-function toggleSidebar() {
-    const sidebar = document.getElementById("sidebarMenu");
-    const overlay = document.getElementById("sidebarOverlay");
-    
-    sidebar.classList.toggle("open");
-    overlay.classList.toggle("show");
-}
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebarMenu");
+            const overlay = document.getElementById("sidebarOverlay");
+            
+            sidebar.classList.toggle("open");
+            overlay.classList.toggle("show");
+        }
+
         function hideFeedback(type) {
-            alert("The Golden Queen's record is updated in the Laboratory!");
+            const currentLang = document.documentElement.getAttribute("lang") || "en";
+            if (currentLang === "si") {
+                alert("ස්වර්ණමය රැජිනගේ වාර්තාව රසායනාගාරය තුළ යාවත්කාලීන කරන ලදී!");
+            } else {
+                alert("The Golden Queen's record is updated in the Laboratory!");
+            }
             document.getElementById('feedback-widget').style.display = 'none';
         }
+
+        function shareToFriends() {
+            alert("Link copied!");
+        }
     </script>
+
     <audio id="myAudio" loop>
-    <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
-</audio>
+        <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
+    </audio>
 
-<div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
-    <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
-        <span id="music-icon">🔇</span>
+    <div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
+        <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
+            <span id="music-icon">🔇</span>
+        </div>
     </div>
-</div>
 
-<script src="music.js"></script>
+    <script src="music.js"></script>
 </body>
 </html>
