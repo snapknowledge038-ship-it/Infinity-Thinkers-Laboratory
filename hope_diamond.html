@@ -350,6 +350,14 @@ nav .nav-home {
         alert("Thank you for your feedback!");
         document.getElementById('feedback-widget').style.display = 'none';
     }
+        // Sidebar Toggle Function
+function toggleSidebar() {
+    const sidebar = document.getElementById("sidebarMenu");
+    const overlay = document.getElementById("sidebarOverlay");
+    
+    sidebar.classList.toggle("open");
+    overlay.classList.toggle("show");
+}
     </script>
 
     <!-- Audio Element -->
