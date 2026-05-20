@@ -4,6 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anubis - I T L</title>
+
+    <!-- Meta Tags for Link Preview (WhatsApp, Facebook, etc.) -->
+    <meta name="description" content="Explore the legend of Anubis, the ancient Egyptian god of death, mummification, and underworld protector. Discover the ritual of the Weighing of the Heart.">
+    
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/anubis.html">
+    <meta property="og:title" content="Anubis – God of the Underworld | ITL">
+    <meta property="og:description" content="Guarding the gates of the underworld! Discover the dark secrets, mummification rituals, and ancient legends of Anubis. ☥⚖️">
+    <meta property="og:image" content="images/anubis.jpg">
+
+    <!-- Twitter Card Data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Anubis – God of the Underworld | ITL">
+    <meta name="twitter:description" content="Explore the ancient Egyptian legends of Anubis and the Weighing of the Heart.">
+    <meta name="twitter:image" content="images/anubis.jpg">
+
     <style>
         /* මූලික සැකසුම් */
         body {
@@ -17,114 +34,142 @@
         }
 
         /* New Navigation Bar Header */
-nav {
-    background-color: #1a1a1a;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #333;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    width: 100%;
-    box-sizing: border-box;
-}
+        nav {
+            background-color: #1a1a1a;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            box-sizing: border-box;
+        }
 
-nav .nav-home {
-    color: #00d4ff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
-}
+        nav .nav-home {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+        }
 
-/* Hamburger Menu Button */
-.menu-toggle {
-    background: none;
-    border: none;
-    color: #00d4ff;
-    font-size: 28px;
-    cursor: pointer;
-    user-select: none;
-}
+        /* Nav Controls wrapper */
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
-/* Slide-out Sidebar Styles */
-.sidebar {
-    position: fixed;
-    top: 0;
-    right: -280px; /* දකුණු පැත්තේ සැඟවී පවතී */
-    width: 280px;
-    height: 100%;
-    background-color: #111;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
-    z-index: 10001;
-    transition: right 0.3s ease-in-out;
-    padding: 20px;
-    box-sizing: border-box;
-    overflow-y: auto;
-}
+        /* Language Toggle Button Style */
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid #d4af37;
+            color: #d4af37;
+            padding: 6px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(212, 175, 87, 0.2);
+            font-family: 'Segoe UI', sans-serif;
+        }
 
-.sidebar.open {
-    right: 0; /* ක්ලික් කළ විට මතු වේ */
-}
+        .lang-btn:hover {
+            background: #d4af37;
+            color: #080604;
+            box-shadow: 0 0 15px #d4af37;
+        }
 
-/* Close Button inside Sidebar */
-.close-btn {
-    text-align: right;
-    font-size: 30px;
-    color: #ff4a4a;
-    cursor: pointer;
-    margin-bottom: 20px;
-}
+        /* Hamburger Menu Button */
+        .menu-toggle {
+            background: none;
+            border: none;
+            color: #00d4ff;
+            font-size: 28px;
+            cursor: pointer;
+            user-select: none;
+        }
 
-/* Sidebar Links Grouping */
-.sidebar-section {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
+        /* Slide-out Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -280px; /* දකුණු පැත්තේ සැඟවී පවතී */
+            width: 280px;
+            height: 100%;
+            background-color: #111;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+            z-index: 10001;
+            transition: right 0.3s ease-in-out;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
 
-.sidebar-divider {
-    border: none;
-    border-top: 1px solid #333;
-    margin: 15px 0;
-}
+        .sidebar.open {
+            right: 0; /* ක්ලික් කළ විට මතු වේ */
+        }
 
-.sidebar a {
-    color: #e0e0e0;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: 0.2s;
-}
+        /* Close Button inside Sidebar */
+        .close-btn {
+            text-align: right;
+            font-size: 30px;
+            color: #ff4a4a;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
 
-.sidebar a:hover {
-    background-color: #1a1a1a;
-    color: #00d4ff;
-}
+        /* Sidebar Links Grouping */
+        .sidebar-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
-/* Special Styling for buttons inside menu */
-.sb-mcq { color: #ffd700 !important; font-weight: bold !important; }
-.sb-facts { color: #00ff88 !important; font-weight: bold !important; }
-.sb-share { color: #00d4ff !important; }
-.sb-help { color: #ffa500 !important; }
+        .sidebar-divider {
+            border: none;
+            border-top: 1px solid #333;
+            margin: 15px 0;
+        }
 
-/* Overlay Background */
-.sidebar-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6);
-    z-index: 10000;
-    display: none;
-}
-.sidebar-overlay.show {
-    display: block;
-}
+        .sidebar a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: 0.2s;
+        }
+
+        .sidebar a:hover {
+            background-color: #1a1a1a;
+            color: #00d4ff;
+        }
+
+        /* Special Styling for buttons inside menu */
+        .sb-mcq { color: #ffd700 !important; font-weight: bold !important; }
+        .sb-facts { color: #00ff88 !important; font-weight: bold !important; }
+        .sb-share { color: #00d4ff !important; }
+        .sb-help { color: #ffa500 !important; }
+
+        /* Overlay Background */
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 10000;
+            display: none;
+        }
+        .sidebar-overlay.show {
+            display: block;
+        }
 
         /* මාතෘකාව */
         h1 {
@@ -197,6 +242,7 @@ nav .nav-home {
             margin-bottom: 15px;
             padding-left: 25px;
             position: relative;
+            font-size: 19px;
         }
 
         li::before {
@@ -223,55 +269,88 @@ nav .nav-home {
             margin: 60px 0;
         }
 
+        #feedback-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #1a130c;
+            border: 1px solid #403019;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+            padding: 15px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 1000;
+            color: #d1c5b4;
+            font-weight: bold;
+        }
+        #feedback-widget button {
+            border: none;
+            background: #080604;
+            padding: 5px 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            color: #ffd700;
+            font-size: 16px;
+            transition: background 0.2s;
+        }
+        #feedback-widget button:hover { background: #403019; }
+
+        @media (max-width: 768px) {
+            .img-container img { max-width: 90%; }
+            section { padding: 20px; }
+        }
     </style>
 </head>
 <body>
 
     <!-- New Top Navbar -->
-<nav>
-    <a href="index.html" class="nav-home">🏠 Home</a>
-    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
-</nav>
+    <nav>
+        <a href="index.html" class="nav-home" data-en="🏠 Home" data-si="🏠 මුල් පිටුව">🏠 Home</a>
+        <div class="nav-controls">
+            <!-- Language Toggle Button -->
+            <button id="langToggle" class="lang-btn" onclick="toggleLanguage()">සිංහල</button>
+            <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+        </div>
+    </nav>
 
-<!-- Sidebar Overlay -->
-<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
 
-<!-- Slide-out Sidebar Menu -->
-<div class="sidebar" id="sidebarMenu">
-    <div class="close-btn" onclick="toggleSidebar()">×</div>
-    
-    <div class="sidebar-section">
-        <!-- Main Pages Links -->
-        <a href="index.html">Home</a>
-        <a href="earth.html">Earth</a>
-        <a href="animals.html">Animals</a>
-        <a href="space.html">Space</a>
-        <a href="mysteries.html">Mysteries</a>
-        <a href="history.html">History</a>
-        <a href="quantum.html">🌌 Quantum Physics</a>
-    </div>
+    <!-- Slide-out Sidebar Menu -->
+    <div class="sidebar" id="sidebarMenu">
+        <div class="close-btn" onclick="toggleSidebar()">×</div>
         
+        <div class="sidebar-section">
+            <!-- Main Pages Links -->
+            <a href="index.html" data-en="Home" data-si="මුල් පිටුව">Home</a>
+            <a href="earth.html" data-en="Earth" data-si="පෘථිවිය">Earth</a>
+            <a href="animals.html" data-en="Animals" data-si="සතුන්">Animals</a>
+            <a href="space.html" data-en="Space" data-si="අභ්‍යවකාශය">Space</a>
+            <a href="mysteries.html" data-en="Mysteries" data-si="අභිරහස්">Mysteries</a>
+            <a href="history.html" data-en="History" data-si="ඉතිහාසය">History</a>
+            <a href="quantum.html" data-en="🌌 Quantum Physics" data-si="🌌 ක්වොන්ටම් භෞතික විද්‍යාව">🌌 Quantum Physics</a>
+        </div>
+            
         <!-- පළමු ඉරෙන් වෙන් කිරීම -->
         <hr class="sidebar-divider">
-        
+            
         <!-- Quiz & Facts Links -->
-        <a href="mcq.html" class="sb-mcq">📝 Start MCQ Quiz</a>
-        <a href="facts.html" class="sb-facts">⚡ Fun Amazing Facts ⚡</a>
-        
+        <a href="mcq.html" class="sb-mcq" data-en="📝 Start MCQ Quiz" data-si="📝 MCQ ප්‍රශ්නාවලිය අරඹන්න">📝 Start MCQ Quiz</a>
+        <a href="facts.html" class="sb-facts" data-en="⚡ Fun Amazing Facts ⚡" data-si="⚡ පුදුම හිතෙන කරුණු ⚡">⚡ Fun Amazing Facts ⚡</a>
+            
         <!-- දෙවැනි ඉරෙන් වෙන් කිරීම -->
         <hr class="sidebar-divider">
-        
+            
         <!-- Action Links -->
-        <a onclick="shareToFriends(); toggleSidebar();" style="cursor:pointer;" class="sb-share">🔗 SHARE</a>
-        <a href="ad.html" class="sb-help">❤️ Help</a>
-        <a href="aaaextradatapage.html">About</a>
+        <a onclick="shareToFriends(); toggleSidebar();" style="cursor:pointer;" class="sb-share" data-en="🔗 SHARE" data-si="🔗 බෙදාගන්න (SHARE)">🔗 SHARE</a>
+        <a href="ad.html" class="sb-help" data-en="❤️ Help" data-si="❤️ උදව්">❤️ Help</a>
+        <a href="aaaextradatapage.html" data-en="About" data-si="අපි ගැන">About</a>
     </div>
-</div>
-
-
 
     <div class="container">
-        <h1>Anubis</h1>
+        <h1 data-en="Anubis" data-si="අනූබිස්">Anubis</h1>
 
         <div class="img-container">
             <img src="images/anubis.jpg" alt="Anubis God of the Dead">
@@ -279,97 +358,140 @@ nav .nav-home {
         </div>
 
         <section>
-            <h3>Guarding the gates of the underworld, <strong>Anubis</strong> is one of the most iconic and ancient deities of Egyptian mythology. Depicted as a melanistic jackal or a man with a jackal's head, he ruled over death, mummification, and the protection of tombs long before the rise of Osiris.</h3>
+            <h3 data-en="Guarding the gates of the underworld, <strong>Anubis</strong> is one of the most iconic and ancient deities of Egyptian mythology. Depicted as a melanistic jackal or a man with a jackal's head, he ruled over death, mummification, and the protection of tombs long before the rise of Osiris."
+                data-si="පාතාල ලෝකයේ දොරටු ආරක්ෂා කරන <strong>අනූබිස් (Anubis)</strong> යනු ඊජිප්තු පුරාවෘත්තවල එන වඩාත්ම කැපී පෙනෙන සහ පැරණිතම දෙවියන්ගෙන් කෙනෙකි. කළු හිවලෙකු (Jackal) හෝ හිවලෙකුගේ හිසක් ඇති මිනිසෙකු ලෙස නිරූපණය කරන මොහු, ඔසයිරිස්ගේ (Osiris) නැගී සිටීමට බොහෝ කලකට පෙර සිටම මරණය, මමීකරනය සහ සොහොන් ගැබ් ආරක්ෂා කිරීම කෙරෙහි රජකම් කළේය.">
+                Guarding the gates of the underworld, <strong>Anubis</strong> is one of the most iconic and ancient deities of Egyptian mythology. Depicted as a melanistic jackal or a man with a jackal's head, he ruled over death, mummification, and the protection of tombs long before the rise of Osiris.
+            </h3>
         </section>
 
         <section>
-            <h2>Lord of the Sacred Land</h2>
-            <h3>In ancient Egyptian belief, black was not a color of mourning, but a symbol of rebirth and the rich soil of the Nile. Anubis was painted pitch-black to represent his power over the regeneration of life after death. He watched over cemeteries as the <strong>"Lord of the Sacred Land"</strong> to prevent grave robbers and evil spirits from defiling tombs.</h3>
+            <h2 data-en="Lord of the Sacred Land" data-si="පූජනීය භූමියේ අධිපතියා">Lord of the Sacred Land</h2>
+            <h3 data-en="In ancient Egyptian belief, black was not a color of mourning, but a symbol of rebirth and the rich soil of the Nile. Anubis was painted pitch-black to represent his power over the regeneration of life after death. He watched over cemeteries as the <strong>&quot;Lord of the Sacred Land&quot;</strong> to prevent grave robbers and evil spirits from defiling tombs."
+                data-si="පුරාණ ඊජිප්තු විශ්වාසයට අනුව, කළු යනු ශෝකය ප්‍රකාශ කරන වර්ණයක් නොව, නැවත උපත ලැබීමේ සහ නයිල් නදියේ සාරවත් පසෙහි සංකේතයකි. මරණයෙන් පසු ජීවිතය නැවත උත්පාදනය කිරීම කෙරෙහි අනූබිස් සතු බලය නිරූපණය කිරීමට ඔහුව තද කළු පැහැයෙන් වර්ණාලේප කර ඇත. සොහොන් හොරුන්ගෙන් සහ නපුරු ආත්මයන්ගෙන් සොහොන් ආරක්ෂා කිරීම සඳහා ඔහු <strong>&quot;පූජනීය භූමියේ අධිපතියා&quot;</strong> ලෙස සුසාන භූමි නිරීක්ෂණය කළේය.">
+                In ancient Egyptian belief, black was not a color of mourning, but a symbol of rebirth and the rich soil of the Nile. Anubis was painted pitch-black to represent his power over the regeneration of life after death. He watched over cemeteries as the <strong>"Lord of the Sacred Land"</strong> to prevent grave robbers and evil spirits from defiling tombs.
+            </h3>
         </section>
 
         <section>
-            <h2>The Inventor of Mummification</h2>
-            <h3>According to myth, when the god Osiris was murdered and scattered across Egypt, Anubis helped gather his remains. He wrapped the body in linen strips, creating the very first mummy. Through this act, Anubis became the patron god of embalmers, guiding priests during the sacred mummification process to ensure eternal life.</h3>
+            <h2 data-en="The Inventor of Mummification" data-si="මමීකරණයේ නිර්මාතෘ">The Inventor of Mummification</h2>
+            <h3 data-en="According to myth, when the god Osiris was murdered and scattered across Egypt, Anubis helped gather his remains. He wrapped the body in linen strips, creating the very first mummy. Through this act, Anubis became the patron god of embalmers, guiding priests during the sacred mummification process to ensure eternal life."
+                data-si="පුරාවෘත්තයන්ට අනුව, ඔසයිරිස් දෙවියන්ව මරා දමා ඔහුගේ ශරීර කොටස් ඊජිප්තුව පුරා විසිරුවා හරින ලද අවස්ථාවේදී, ඔහුගේ දේහය එකතු කිරීමට අනූබිස් උදව් විය. ඔහු එම සිරුර ලිනන් රෙදි පටිවලින් ඔතා ලොව ප්‍රථම මමිය නිර්මාණය කළේය. මෙම ක්‍රියාව තුළින් අනූබිස් මමී නිෂ්පාදකයන්ගේ ප්‍රධාන දෙවියා බවට පත් වූ අතර, සදාකාලික ජීවනය සහතික කිරීම සඳහා පූජනීය මමීකරන ක්‍රියාවලියේදී පූජකයන්ට මග පෙන්වීය.">
+                According to myth, when the god Osiris was murdered and scattered across Egypt, Anubis helped gather his remains. He wrapped the body in linen strips, creating the very first mummy. Through this act, Anubis became the patron god of embalmers, guiding priests during the sacred mummification process to ensure eternal life.
+            </h3>
         </section>
 
         <section>
-            <h2>The Weighing of the Heart</h2>
+            <h2 data-en="The Weighing of the Heart" data-si="හෘදය කිරා බැලීමේ චාරිත්‍රය">The Weighing of the Heart</h2>
             <ul>
-                <li><strong>The Underworld Guide:</strong> Anubis acted as a psychopomp, guiding the souls of the dead through the perilous underworld to the Hall of Ma'at.</li>
-                <li><strong>The Judgment Scales:</strong> At the final judgment, Anubis stood over a massive golden scale. He placed the deceased person's heart on one side and the <strong>Feather of Truth (Ma'at)</strong> on the other.</li>
-                <li><strong>The Final Verdict:</strong> If the heart was heavy with sins, it would tip the scale and be devoured by the monster Ammit. If the heart was lighter than the feather, Anubis would lead the soul into a blissful eternity.</li>
+                <li data-en="<strong>The Underworld Guide:</strong> Anubis acted as a psychopomp, guiding the souls of the dead through the perilous underworld to the Hall of Ma'at."
+                    data-si="<strong>පාතාල ලෝකයේ මඟපෙන්වන්නා:</strong> අනූබිස් මියගිය අයගේ ආත්මයන් අනතුරුදායක පාතාල ලෝකය හරහා 'මාට්' (Hall of Ma'at) ශාලාව වෙත මෙහෙයවන මඟපෙන්වන්නෙකු ලෙස ක්‍රියා කළේය.">
+                    <strong>The Underworld Guide:</strong> Anubis acted as a psychopomp, guiding the souls of the dead through the perilous underworld to the Hall of Ma'at.
+                </li>
+                <li data-en="<strong>The Judgment Scales:</strong> At the final judgment, Anubis stood over a massive golden scale. He placed the deceased person's heart on one side and the <strong>Feather of Truth (Ma'at)</strong> on the other."
+                    data-si="<strong>විනිශ්චය තරාදිය:</strong> අවසාන විනිශ්චයේදී අනූබිස් දැවැන්ත රන් තරාදියක් අසල සිටගත්තේය. ඔහු මියගිය පුද්ගලයාගේ හදවත එක් පැත්තකින්ද, <strong>සත්‍යයේ පිහාටුව (Ma'at)</strong> අනෙක් පැත්තෙන්ද තැබීය.">
+                    <strong>The Judgment Scales:</strong> At the final judgment, Anubis stood over a massive golden scale. He placed the deceased person's heart on one side and the <strong>Feather of Truth (Ma'at)</strong> on the other.
+                </li>
+                <li data-en="<strong>The Final Verdict:</strong> If the heart was heavy with sins, it would tip the scale and be devoured by the monster Ammit. If the heart was lighter than the feather, Anubis would lead the soul into a blissful eternity."
+                    data-si="<strong>අවසාන තීන්දුව:</strong> පුද්ගලයාගේ හදවත පව්වලින් බර වී තිබුනේ නම්, එය තරාදියේ පහළට ගොස් 'අම්මිට්' (Ammit) නම් මンスターයා විසින් ගිල දමනු ලබයි. නමුත් හදවත පිහාටුවට වඩා සැහැල්ලු වූයේ නම්, අනූබිස් එම ආත්මය සදාකාලික සුඛිතමුදිත පාරාදීසය වෙත කැඳවාගෙන යයි.">
+                    <strong>The Final Verdict:</strong> If the heart was heavy with sins, it would tip the scale and be devoured by the monster Ammit. If the heart was lighter than the feather, Anubis would lead the soul into a blissful eternity.
+                </li>
             </ul>
         </section>
 
         <section>
-            <h2>Archeological Discoveries</h2>
+            <h2 data-en="Archeological Discoveries" data-si="පුරාවිද්‍යාත්මක සොයාගැනීම්">Archeological Discoveries</h2>
             <ul>
-                <li><strong>The Tomb Guardian:</strong> Statues of a reclining black jackal were frequently placed at tomb entrances. A famous, breathtaking statue of Anubis was discovered guarding King Tutankhamun's treasury in 1922.</li>
-                <li><strong>The Jackal Connection:</strong> Historians believe ancient Egyptians associated jackals with death because these wild canines frequently scavenged around shallow desert graves in ancient times. To stop this, they transformed the predator into a divine protector.</li>
+                <li data-en="<strong>The Tomb Guardian:</strong> Statues of a reclining black jackal were frequently placed at tomb entrances. A famous, breathtaking statue of Anubis was discovered guarding King Tutankhamun's treasury in 1922."
+                    data-si="<strong>සොහොන් ගැබ් ආරක්ෂකයා:</strong> වැතිර සිටින කළු හිවලෙකුගේ ප්‍රතිමා නිතරම සොහොන් දොරටු අසල තබා තිබුණි. 1922 දී ටූටන්කාමන් රජුගේ (King Tutankhamun) වස්තු ගබඩාව ආරක්ෂා කරමින් සිටි සුප්‍රසිද්ධ අනූබිස් ප්‍රතිමාව සොයා ගන්නා ලදී.">
+                    <strong>The Tomb Guardian:</strong> Statues of a reclining black jackal were frequently placed at tomb entrances. A famous, breathtaking statue of Anubis was discovered guarding King Tutankhamun's treasury in 1922.
+                </li>
+                <li data-en="<strong>The Jackal Connection:</strong> Historians believe ancient Egyptians associated jackals with death because these wild canines frequently scavenged around shallow desert graves in ancient times. To stop this, they transformed the predator into a divine protector."
+                    data-si="<strong>හිවලා සහ මරණය අතර සබඳතාව:</strong> ඉතිහාසඥයන් විශ්වාස කරන්නේ පුරාණ ඊජිප්තුවරුන් හිවලුන් මරණය සමඟ සම්බන්ධ කළේ මෙම වනචාරී සතුන් කාන්තාරයේ නොගැඹුරු සොහොන් හාරා මළසිරුරු ආහාරයට ගැනීමට පුරුදුව සිටි නිසා බවයි. එය වැළැක්වීම සඳහා, ඔවුන් එම සත්වයා පූජනීය ආරක්ෂකයෙකු ලෙස දේවත්වයට පත් කළහ.">
+                    <strong>The Jackal Connection:</strong> Historians believe ancient Egyptians associated jackals with death because these wild canines frequently scavenged around shallow desert graves in ancient times. To stop this, they transformed the predator into a divine protector.
+                </li>
             </ul>
         </section>
 
         <div class="footer-hr"></div>
     </div>
 
-<div id="feedback-widget">
-  <span>Was this helpful?</span>
-  <button onclick="hideFeedback('Yes')"> 👍</button>
-  <button onclick="hideFeedback('No')"> 👎</button>
-</div>
-
-<style>
-#feedback-widget {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #1a130c;
-  border: 1px solid #403019;
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
-  padding: 15px;
-  border-radius: 30px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  z-index: 1000;
-  color: #d1c5b4;
-}
-#feedback-widget button {
-  border: none;
-  background: #080604;
-  padding: 5px 10px;
-  border-radius: 50%;
-  cursor: pointer;
-  color: #ffd700;
-}
-#feedback-widget button:hover { background: #403019; }
-</style>
-
-<script>
-function hideFeedback(type) {
-  alert("Thank you for your feedback!");
-  document.getElementById('feedback-widget').style.display = 'none';
-}
-    // Sidebar Toggle Function
-function toggleSidebar() {
-    const sidebar = document.getElementById("sidebarMenu");
-    const overlay = document.getElementById("sidebarOverlay");
-    
-    sidebar.classList.toggle("open");
-    overlay.classList.toggle("show");
-}
-</script>
-
-<audio id="myAudio" loop>
-    <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
-</audio>
-
-<div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
-    <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
-        <span id="music-icon">🔇</span>
+    <!-- Feedback Widget -->
+    <div id="feedback-widget">
+        <span data-en="Was this helpful?" data-si="මෙය ප්‍රයෝජනවත් වූවාද?">Was this helpful?</span>
+        <button onclick="hideFeedback('Yes')"> 👍</button>
+        <button onclick="hideFeedback('No')"> 👎</button>
     </div>
-</div>
 
-<script src="music.js"></script>
+    <script>
+        // Sidebar Toggle Function
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebarMenu");
+            const overlay = document.getElementById("sidebarOverlay");
+            
+            sidebar.classList.toggle("open");
+            overlay.classList.toggle("show");
+        }
+
+        // Multi-language Feedback Alert
+        function hideFeedback(type) {
+            let currentLang = localStorage.getItem("preferredLanguage") || "en";
+            if (currentLang === "si") {
+                alert("ඔබගේ ප්‍රතිචාරයට ස්තුතියි! ☥");
+            } else {
+                alert("Thank you for your feedback! ☥");
+            }
+            document.getElementById('feedback-widget').style.display = 'none';
+        }
+
+        // --- භාෂා මාරු කිරීමේ පද්ධතිය (Language Switcher Logic) ---
+        function toggleLanguage() {
+            let currentLang = localStorage.getItem("preferredLanguage") || "en";
+            let newLang = (currentLang === "en") ? "si" : "en";
+            
+            localStorage.setItem("preferredLanguage", newLang);
+            applyLanguage(newLang);
+        }
+
+        function applyLanguage(lang) {
+            const btn = document.getElementById("langToggle");
+            
+            if (lang === "si") {
+                btn.textContent = "English";
+            } else {
+                btn.textContent = "සිංහල";
+            }
+
+            const elements = document.querySelectorAll('[data-en], [data-si]');
+            elements.forEach(el => {
+                if (lang === "si") {
+                    if (el.getAttribute('data-si')) {
+                        el.innerHTML = el.getAttribute('data-si');
+                    }
+                } else {
+                    if (el.getAttribute('data-en')) {
+                        el.innerHTML = el.getAttribute('data-en');
+                    }
+                }
+            });
+        }
+
+        // පිටුව මුලින්ම ලෝඩ් වන විට ක්‍රියාත්මක වන කොටස
+        document.addEventListener("DOMContentLoaded", () => {
+            let savedLang = localStorage.getItem("preferredLanguage") || "en";
+            applyLanguage(savedLang);
+        });
+    </script>
+
+    <audio id="myAudio" loop>
+        <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
+    </audio>
+
+    <div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
+        <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px; user-select: none;">
+            <span id="music-icon">🔇</span>
+        </div>
+    </div>
+
+    <script src="music.js"></script>
 </body>
 </html>
