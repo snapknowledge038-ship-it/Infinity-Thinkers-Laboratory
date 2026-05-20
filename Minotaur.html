@@ -226,14 +226,48 @@ nav .nav-home {
 </head>
 <body>
 
-    <nav>
+    <!-- New Top Navbar -->
+<nav>
+    <a href="index.html" class="nav-home">🏠 Home</a>
+    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+</nav>
+
+<!-- Sidebar Overlay -->
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+<!-- Slide-out Sidebar Menu -->
+<div class="sidebar" id="sidebarMenu">
+    <div class="close-btn" onclick="toggleSidebar()">×</div>
+    
+    <div class="sidebar-section">
+        <!-- Main Pages Links -->
         <a href="index.html">Home</a>
         <a href="earth.html">Earth</a>
         <a href="animals.html">Animals</a>
         <a href="space.html">Space</a>
         <a href="mysteries.html">Mysteries</a>
         <a href="history.html">History</a>
-    </nav>
+        <a href="quantum.html">🌌 Quantum Physics</a>
+    </div>
+        
+        <!-- පළමු ඉරෙන් වෙන් කිරීම -->
+        <hr class="sidebar-divider">
+        
+        <!-- Quiz & Facts Links -->
+        <a href="mcq.html" class="sb-mcq">📝 Start MCQ Quiz</a>
+        <a href="facts.html" class="sb-facts">⚡ Fun Amazing Facts ⚡</a>
+        
+        <!-- දෙවැනි ඉරෙන් වෙන් කිරීම -->
+        <hr class="sidebar-divider">
+        
+        <!-- Action Links -->
+        <a onclick="shareToFriends(); toggleSidebar();" style="cursor:pointer;" class="sb-share">🔗 SHARE</a>
+        <a href="ad.html" class="sb-help">❤️ Help</a>
+        <a href="aaaextradatapage.html">About</a>
+    </div>
+</div>
+
+
 
     <div class="container">
         <h1>The Minotaur & The Labyrinth</h1>
