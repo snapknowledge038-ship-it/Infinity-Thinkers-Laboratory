@@ -285,6 +285,13 @@ nav .nav-home {
     </div>
 </div>
 
-<script src="music.js"></script>
+<script src="music.js">// Sidebar Toggle Function
+function toggleSidebar() {
+    const sidebar = document.getElementById("sidebarMenu");
+    const overlay = document.getElementById("sidebarOverlay");
+    
+    sidebar.classList.toggle("open");
+    overlay.classList.toggle("show");
+}</script>
 </body>
 </html>
