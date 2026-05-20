@@ -1,388 +1,775 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Comet - I T L</title>
+
     <style>
+
         /* මූලික සැකසුම් */
+
         body {
+
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
             background-color: #02050a; /* තද නිල්/කළු අභ්‍යවකාශ වර්ණය */
+
             color: #e2e8f0;
+
             margin: 0;
+
             padding: 0;
+
             line-height: 1.8;
+
             background-image: radial-gradient(circle at top right, #0a192f 0%, #02050a 100%);
+
         }
+
+
 
         /* New Navigation Bar Header */
+
 nav {
+
     background-color: #1a1a1a;
+
     padding: 15px 20px;
+
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
+
     border-bottom: 2px solid #333;
+
     position: sticky;
+
     top: 0;
+
     z-index: 1000;
+
     width: 100%;
+
     box-sizing: border-box;
+
 }
+
+
 
 nav .nav-home {
+
     color: #00d4ff;
+
     text-decoration: none;
+
     font-weight: bold;
+
     font-size: 20px;
+
 }
+
+
 
 /* Hamburger Menu Button */
+
 .menu-toggle {
+
     background: none;
+
     border: none;
+
     color: #00d4ff;
+
     font-size: 28px;
+
     cursor: pointer;
+
     user-select: none;
+
 }
+
+
 
 /* Slide-out Sidebar Styles */
+
 .sidebar {
+
     position: fixed;
+
     top: 0;
+
     right: -280px; /* දකුණු පැත්තේ සැඟවී පවතී */
+
     width: 280px;
+
     height: 100%;
+
     background-color: #111;
+
     box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+
     z-index: 10001;
+
     transition: right 0.3s ease-in-out;
+
     padding: 20px;
+
     box-sizing: border-box;
+
     overflow-y: auto;
+
 }
+
+
 
 .sidebar.open {
+
     right: 0; /* ක්ලික් කළ විට මතු වේ */
+
 }
+
+
 
 /* Close Button inside Sidebar */
+
 .close-btn {
+
     text-align: right;
+
     font-size: 30px;
+
     color: #ff4a4a;
+
     cursor: pointer;
+
     margin-bottom: 20px;
+
 }
+
+
 
 /* Sidebar Links Grouping */
+
 .sidebar-section {
+
     display: flex;
+
     flex-direction: column;
+
     gap: 12px;
+
 }
+
+
 
 .sidebar-divider {
+
     border: none;
+
     border-top: 1px solid #333;
+
     margin: 15px 0;
+
 }
+
+
 
 .sidebar a {
+
     color: #e0e0e0;
+
     text-decoration: none;
+
     font-size: 16px;
+
     font-weight: 500;
+
     padding: 8px 12px;
+
     border-radius: 5px;
+
     transition: 0.2s;
+
 }
+
+
 
 .sidebar a:hover {
+
     background-color: #1a1a1a;
+
     color: #00d4ff;
+
 }
+
+
 
 /* Special Styling for buttons inside menu */
+
 .sb-mcq { color: #ffd700 !important; font-weight: bold !important; }
+
 .sb-facts { color: #00ff88 !important; font-weight: bold !important; }
+
 .sb-share { color: #00d4ff !important; }
+
 .sb-help { color: #ffa500 !important; }
 
+
+
 /* Overlay Background */
+
 .sidebar-overlay {
+
     position: fixed;
+
     top: 0;
+
     left: 0;
+
     width: 100%;
+
     height: 100%;
+
     background: rgba(0,0,0,0.6);
+
     z-index: 10000;
+
     display: none;
+
 }
+
 .sidebar-overlay.show {
+
     display: block;
+
 }
+
+
 
         /* මාතෘකාව */
+
         h1 {
+
             font-size: clamp(35px, 8vw, 65px);
+
             text-align: center;
+
             color: #fff;
+
             margin-top: 50px;
+
             letter-spacing: 6px;
+
             text-transform: uppercase;
+
             background: linear-gradient(to bottom, #fff, #38bdf8);
+
             -webkit-background-clip: text;
+
             -webkit-text-fill-color: transparent;
+
             font-weight: 900;
+
         }
+
+
 
         /* පින්තූර සැකසුම */
+
         .img-container {
+
             text-align: center;
+
             margin: 30px 0;
+
         }
+
+
 
         .comet-img {
+
             max-width: 80%;
+
             height: auto;
+
             border-radius: 20px;
+
             box-shadow: 0 0 50px rgba(56, 189, 248, 0.2);
+
             border: 1px solid #0f172a;
+
             transition: 0.5s;
+
         }
+
+
 
         .comet-img:hover {
+
             transform: scale(1.01);
+
             box-shadow: 0 0 60px rgba(56, 189, 248, 0.4);
+
         }
+
+
 
         /* අන්තර්ගතය */
+
         .container {
+
             max-width: 1000px;
+
             margin: 0 auto;
+
             padding: 20px;
+
         }
+
+
 
         section {
+
             background: rgba(15, 23, 42, 0.4);
+
             padding: 40px;
+
             border-radius: 24px;
+
             margin-bottom: 40px;
+
             border: 1px solid rgba(56, 189, 248, 0.1);
+
         }
+
+
 
         h2 {
+
             color: #38bdf8;
+
             font-size: 32px;
+
             margin-bottom: 20px;
+
             border-left: 4px solid #38bdf8;
+
             padding-left: 20px;
+
         }
+
+
 
         h3 {
+
             font-size: 20px;
+
             font-weight: normal;
+
             color: #cbd5e1;
+
             margin: 0;
+
         }
+
+
 
         ul, ol {
+
             padding-left: 20px;
+
             margin-top: 20px;
+
         }
+
+
 
         li {
+
             margin-bottom: 15px;
+
         }
+
+
 
         strong {
+
             color: #fff;
+
             text-shadow: 0 0 5px rgba(56, 189, 248, 0.5);
+
         }
+
+
 
         hr {
+
             border: 0;
+
             height: 1px;
+
             background: linear-gradient(to right, transparent, #1e293b, transparent);
+
             margin: 50px 0;
+
         }
+
+
 
         .dotted-hr {
+
             border-top: 2px dotted #1e293b;
+
             margin-top: 80px;
+
         }
 
+
+
     </style>
+
 </head>
+
 <body>
 
+
+
     <!-- New Top Navbar -->
+
 <nav>
+
     <a href="index.html" class="nav-home">🏠 Home</a>
+
     <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+
 </nav>
 
+
+
 <!-- Sidebar Overlay -->
+
 <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
 
+
+
 <!-- Slide-out Sidebar Menu -->
+
 <div class="sidebar" id="sidebarMenu">
+
     <div class="close-btn" onclick="toggleSidebar()">×</div>
+
     
+
     <div class="sidebar-section">
+
         <!-- Main Pages Links -->
+
         <a href="index.html">Home</a>
+
         <a href="earth.html">Earth</a>
+
         <a href="animals.html">Animals</a>
+
         <a href="space.html">Space</a>
+
         <a href="mysteries.html">Mysteries</a>
+
         <a href="history.html">History</a>
+
         <a href="quantum.html">🌌 Quantum Physics</a>
+
     </div>
+
         
+
         <!-- පළමු ඉරෙන් වෙන් කිරීම -->
+
         <hr class="sidebar-divider">
+
         
+
         <!-- Quiz & Facts Links -->
+
         <a href="mcq.html" class="sb-mcq">📝 Start MCQ Quiz</a>
+
         <a href="facts.html" class="sb-facts">⚡ Fun Amazing Facts ⚡</a>
+
         
+
         <!-- දෙවැනි ඉරෙන් වෙන් කිරීම -->
+
         <hr class="sidebar-divider">
+
         
+
         <!-- Action Links -->
+
         <a onclick="shareToFriends(); toggleSidebar();" style="cursor:pointer;" class="sb-share">🔗 SHARE</a>
+
         <a href="ad.html" class="sb-help">❤️ Help</a>
+
         <a href="aaaextradatapage.html">About</a>
+
     </div>
+
 </div>
+
+
 
     <div class="container">
+
         <h1>Comet</h1>
 
+
+
         <div class="img-container">
+
             <img class="comet-img" src="images/Comets.jpg" alt="A glowing comet in space">
+
         </div>
 
+
+
         <section>
+
             <h2>1. What is a Comet?</h2>
+
             <h3>A comet is a celestial body composed of <strong>ice, dust, and small rocky particles</strong>. They travel in highly elliptical orbits around the Sun. Because they originate from the cold outer reaches of the solar system, they are often nicknamed <strong>"dirty snowballs."</strong></h3>
+
         </section>
 
+
+
         <section>
+
             <h2>2. Main Parts of a Comet</h2>
+
             <div class="img-container">
+
                 <img class="comet-img" src="images/comet parts.jpg" alt="Diagram of a comet's parts">
+
             </div>
+
             <ul>
+
                 <li><strong>Nucleus:</strong> The solid core made of frozen gases and dust.</li>
+
                 <li><strong>Coma:</strong> The glowing cloud of gas and dust that forms as the ice vaporizes near the Sun.</li>
+
                 <li><strong>Tail:</strong> Solar winds push gas and dust away from the Sun, creating a tail that can stretch for millions of kilometers.</li>
+
             </ul>
+
         </section>
 
+
+
         <section>
+
             <h2>3. Where Do Comets Come From?</h2>
+
             <ol>
+
                 <li>
+
                     <strong>Kuiper Belt:</strong> A region of icy objects located just beyond Neptune.
+
                     <div class="img-container">
+
                         <img class="comet-img" src="images/Kuiper Belt.jpeg" alt="The Kuiper Belt">
+
                     </div>
+
                 </li>
+
                 <li>
+
                     <strong>Oort Cloud:</strong> A giant spherical shell at the very edge of our solar system.
+
                     <div class="img-container">
+
                         <img class="comet-img" src="images/Oort Cloud.jpg" alt="The Oort Cloud">
+
                     </div>
+
                 </li>
+
             </ol>
+
         </section>
 
+
+
         <section>
+
             <h2>4. Famous Comets</h2>
+
             <ul>
+
                 <li><strong>Halley’s Comet:</strong> Visible from Earth every 75–76 years. It is predicted to appear next in <strong>2061</strong>.</li>
+
                 <li><strong>Hale-Bopp:</strong> One of the brightest comets ever, visible to the naked eye in 1997.</li>
+
             </ul>
+
         </section>
 
+
+
         <section>
+
             <h2>Fascinating Facts</h2>
+
             <div class="img-container">
+
                 <img class="comet-img" src="images/Tail Direction.jpg" alt="Direction of a comet's tail">
+
             </div>
+
             <ul>
+
                 <li><strong>Tail Direction:</strong> A comet's tail <strong>always points away from the Sun</strong>, regardless of its travel direction, due to solar wind.</li>
+
             </ul>
+
             <div class="img-container">
+
                 <img class="comet-img" src="images/Meteor Showers.jpg" alt="Meteor shower caused by comet dust">
+
             </div>
+
             <ul>
+
                 <li><strong>Meteor Showers:</strong> When Earth passes through the dust trail left by a comet, we see a meteor shower.</li>
+
             </ul>
+
         </section>
+
+
 
         <div class="dotted-hr"></div>
+
     </div>
+
 <div id="feedback-widget">
+
   <span>Was this helpful?</span>
+
   <button onclick="hideFeedback('Yes')"> 👍</button>
+
   <button onclick="hideFeedback('No')"> 👎</button>
+
 </div>
+
+
 
 <style>
+
 #feedback-widget {
+
   position: fixed;
+
   bottom: 20px;
+
   right: 20px;
+
   background: #000000;
+
   box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+
   padding: 15px;
+
   border-radius: 30px;
+
   display: flex;
+
   align-items: center;
+
   gap: 10px;
+
   z-index: 1000;
+
 }
+
 #feedback-widget button {
+
   border: none;
+
   background: #000000;
+
   padding: 5px 10px;
+
   border-radius: 50%;
+
   cursor: pointer;
+
 }
+
 #feedback-widget button:hover { background: #ddd; }
+
 </style>
 
+
+
 <script>
+
 function hideFeedback(type) {
+
   alert("Thank you for your feedback!");
+
   document.getElementById('feedback-widget').style.display = 'none';
+
 }
+
     // Sidebar Toggle Function
+
 function toggleSidebar() {
+
     const sidebar = document.getElementById("sidebarMenu");
+
     const overlay = document.getElementById("sidebarOverlay");
+
     
+
     sidebar.classList.toggle("open");
+
     overlay.classList.toggle("show");
+
 }
+
 </script>
+
     <audio id="myAudio" loop>
+
     <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
+
 </audio>
 
+
+
 <div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
+
     <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
+
         <span id="music-icon">🔇</span>
+
     </div>
+
 </div>
 
+
+
 <script src="music.js"></script>
+
 </body>
+
 </html>
