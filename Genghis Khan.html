@@ -24,114 +24,142 @@
         }
 
         /* New Navigation Bar Header */
-nav {
-    background-color: #1a1a1a;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #333;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    width: 100%;
-    box-sizing: border-box;
-}
+        nav {
+            background-color: #1a1a1a;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            box-sizing: border-box;
+        }
 
-nav .nav-home {
-    color: #00d4ff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
-}
+        nav .nav-home {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+        }
 
-/* Hamburger Menu Button */
-.menu-toggle {
-    background: none;
-    border: none;
-    color: #00d4ff;
-    font-size: 28px;
-    cursor: pointer;
-    user-select: none;
-}
+        /* Right side container for buttons */
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
-/* Slide-out Sidebar Styles */
-.sidebar {
-    position: fixed;
-    top: 0;
-    right: -280px; /* දකුණු පැත්තේ සැඟවී පවතී */
-    width: 280px;
-    height: 100%;
-    background-color: #111;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
-    z-index: 10001;
-    transition: right 0.3s ease-in-out;
-    padding: 20px;
-    box-sizing: border-box;
-    overflow-y: auto;
-}
+        /* Language Button Styling */
+        .lang-btn {
+            background: transparent;
+            border: 1px solid #00d4ff;
+            color: #00d4ff;
+            padding: 5px 12px;
+            font-size: 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+        }
 
-.sidebar.open {
-    right: 0; /* ක්ලික් කළ විට මතු වේ */
-}
+        .lang-btn:hover {
+            background: #00d4ff;
+            color: #1a1a1a;
+            box-shadow: 0 0 10px #00d4ff;
+        }
 
-/* Close Button inside Sidebar */
-.close-btn {
-    text-align: right;
-    font-size: 30px;
-    color: #ff4a4a;
-    cursor: pointer;
-    margin-bottom: 20px;
-}
+        /* Hamburger Menu Button */
+        .menu-toggle {
+            background: none;
+            border: none;
+            color: #00d4ff;
+            font-size: 28px;
+            cursor: pointer;
+            user-select: none;
+            padding: 0;
+        }
 
-/* Sidebar Links Grouping */
-.sidebar-section {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
+        /* Slide-out Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -280px;
+            width: 280px;
+            height: 100%;
+            background-color: #111;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+            z-index: 10001;
+            transition: right 0.3s ease-in-out;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
 
-.sidebar-divider {
-    border: none;
-    border-top: 1px solid #333;
-    margin: 15px 0;
-}
+        .sidebar.open {
+            right: 0;
+        }
 
-.sidebar a {
-    color: #e0e0e0;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: 0.2s;
-}
+        /* Close Button inside Sidebar */
+        .close-btn {
+            text-align: right;
+            font-size: 30px;
+            color: #ff4a4a;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
 
-.sidebar a:hover {
-    background-color: #1a1a1a;
-    color: #00d4ff;
-}
+        /* Sidebar Links Grouping */
+        .sidebar-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
-/* Special Styling for buttons inside menu */
-.sb-mcq { color: #ffd700 !important; font-weight: bold !important; }
-.sb-facts { color: #00ff88 !important; font-weight: bold !important; }
-.sb-share { color: #00d4ff !important; }
-.sb-help { color: #ffa500 !important; }
+        .sidebar-divider {
+            border: none;
+            border-top: 1px solid #333;
+            margin: 15px 0;
+        }
 
-/* Overlay Background */
-.sidebar-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6);
-    z-index: 10000;
-    display: none;
-}
-.sidebar-overlay.show {
-    display: block;
-}
+        .sidebar a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: 0.2s;
+        }
+
+        .sidebar a:hover {
+            background-color: #1a1a1a;
+            color: #00d4ff;
+        }
+
+        /* Special Styling for buttons inside menu */
+        .sb-mcq { color: #ffd700 !important; font-weight: bold !important; }
+        .sb-facts { color: #00ff88 !important; font-weight: bold !important; }
+        .sb-share { color: #00d4ff !important; }
+        .sb-help { color: #ffa500 !important; }
+
+        /* Overlay Background */
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 10000;
+            display: none;
+        }
+        .sidebar-overlay.show {
+            display: block;
+        }
+
         /* Title */
         h1 {
             font-size: clamp(35px, 8vw, 70px);
@@ -224,6 +252,15 @@ nav .nav-home {
             opacity: 0.2;
         }
 
+        /* Language Toggle Classes */
+        .lang-en, .lang-si {
+            transition: opacity 0.3s ease;
+        }
+        
+        /* ඩිෆෝල්ට් එකෙන්ම සිංහල කොටස් සඟවා තැබීමට */
+        [lang="si"] {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -231,7 +268,11 @@ nav .nav-home {
    <!-- New Top Navbar -->
 <nav>
     <a href="index.html" class="nav-home">🏠 Home</a>
-    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+    <div class="nav-controls">
+        <!-- Language Switcher Button -->
+        <button id="langToggle" class="lang-btn" onclick="toggleLanguage()">සිංහල</button>
+        <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+    </div>
 </nav>
 
 <!-- Sidebar Overlay -->
@@ -269,8 +310,6 @@ nav .nav-home {
     </div>
 </div>
 
-
-
     <div class="container">
         <h1>GENGHIS KHAN</h1>
 
@@ -278,32 +317,72 @@ nav .nav-home {
             <img class="genghis-img" src="images/genghis.jpg" alt="Genghis Khan Illustration">
         </div>
 
+        <!-- Section 1 -->
         <section>
-            <h2>Founder of the Mongol Empire</h2>
-            <h3>Born as <strong>Temujin</strong>, he rose from a brutal childhood to unite the nomadic tribes of Northeast Asia. He founded the <strong>Mongol Empire</strong>, which became the largest contiguous land empire in history.</h3>
+            <!-- English -->
+            <div lang="en">
+                <h2>Founder of the Mongol Empire</h2>
+                <h3>Born as <strong>Temujin</strong>, he rose from a brutal childhood to unite the nomadic tribes of Northeast Asia. He founded the <strong>Mongol Empire</strong>, which became the largest contiguous land empire in history.</h3>
+            </div>
+            <!-- Sinhala -->
+            <div lang="si">
+                <h2>මොන්ගෝලියානු අධිරාජ්‍යයේ නිර්මාතෘ</h2>
+                <h3><strong>තේමුජින්</strong> ලෙස උපත ලැබූ ඔහු, ඉතා දුෂ්කර ළමා කාලයකින් පසු නැගෙනහිර ආසියාවේ විසිරී සිටි ගෝත්‍රිකයන් එක්සේසත් කිරීමට සමත් විය. ඔහු විසින් පිහිටුවන ලද <strong>මොන්ගෝලියානු අධිරාජ්‍යය</strong>, ඉතිහාසයේ ගොඩබිමින් එකිනෙකට යා වූ විශාලතම අධිරාජ්‍යය බවට පත් විය.</h3>
+            </div>
         </section>
 
+        <!-- Section 2 -->
         <section>
-            <h2>Military Strategy & Innovations</h2>
-            <ul>
-                <li><strong>Horse Archers:</strong> His military was built on highly mobile cavalry and expert archers who could shoot with precision at full gallop.</li>
-                <li><strong>Meritocracy:</strong> Unlike other rulers, he promoted his generals based on skill and loyalty rather than family lineage.</li>
-                <li><strong>Psychological Warfare:</strong> He used terrifying tactics to force cities to surrender without a fight, often sparing those who submitted.</li>
-            </ul>
+            <!-- English -->
+            <div lang="en">
+                <h2>Military Strategy & Innovations</h2>
+                <ul>
+                    <li><strong>Horse Archers:</strong> His military was built on highly mobile cavalry and expert archers who could shoot with precision at full gallop.</li>
+                    <li><strong>Meritocracy:</strong> Unlike other rulers, he promoted his generals based on skill and loyalty rather than family lineage.</li>
+                    <li><strong>Psychological Warfare:</strong> He used terrifying tactics to force cities to surrender without a fight, often sparing those who submitted.</li>
+                </ul>
+            </div>
+            <!-- Sinhala -->
+            <div lang="si">
+                <h2>යුද උපාය මාර්ග සහ නවෝත්පාදන</h2>
+                <ul>
+                    <li><strong>අශ්වාරෝහක දුනුවායන්:</strong> ඔහුගේ හමුදාව වේගයෙන් ගමන් කළ හැකි අශ්වාරෝහකයින්ගෙන් සහ වේගයෙන් දිවෙන අශ්වයෙකු පිට සිට වුවද ඉතා නිවැරදිව ඉලක්කයට විදීමට හැකි දක්ෂ දුනුවායන්ගෙන් සමන්විත විය.</li>
+                    <li><strong>දක්ෂතාවයට මුල් තැන දීම (Meritocracy):</strong> අනෙකුත් පාලකයන් මෙන් නොව, ඔහු තම සෙන්පතීන්ට තනතුරු ලබා දුන්නේ පවුල් පසුබිම මත නොව, ඔවුන්ගේ දක්ෂතාවය සහ පක්ෂපාතීත්වය මත පමණි.</li>
+                    <li><strong>මනෝවිද්‍යාත්මක යුද්ධය:</strong> නගර සටනකින් තොරව යටත් කර ගැනීමට ඔහු බිය උපදවන උපක්‍රම භාවිතා කළ අතර, ස්වේච්ඡාවෙන්ම යටත් වූ නගර වැසියන්ට බොහෝ විට සමාව ලබා දුන්නේය.</li>
+                </ul>
+            </div>
         </section>
 
+        <!-- Section 3 -->
         <section>
-            <h2>Legacy & Pax Mongolica</h2>
-            <h3>Despite his reputation as a conqueror, his reign established the <strong>Silk Road</strong> as a safe trade route, connecting the East and West. This era, known as <strong>Pax Mongolica</strong>, allowed for the exchange of ideas, technology, and culture across continents.</h3>
+            <!-- English -->
+            <div lang="en">
+                <h2>Legacy & Pax Mongolica</h2>
+                <h3>Despite his reputation as a conqueror, his reign established the <strong>Silk Road</strong> as a safe trade route, connecting the East and West. This era, known as <strong>Pax Mongolica</strong>, allowed for the exchange of ideas, technology, and culture across continents.</h3>
+            </div>
+            <!-- Sinhala -->
+            <div lang="si">
+                <h2>උරුමය සහ පැක්ස් මොන්ගෝලිකා (Pax Mongolica)</h2>
+                <h3>ඔහු ආක්‍රමණිකයෙකු ලෙස ප්‍රසිද්ධ වුවද, ඔහුගේ පාලන කාලය තුළ පෙරදිග සහ අපරදිග යා කරමින් <strong>පටු මාවත (Silk Road)</strong> ආරක්ෂිත වෙළඳ මාර්ගයක් ලෙස ස්ථාපිත කෙරුණි. **පැක්ස් මොන්ගෝලිකා** ලෙස හැඳින්වෙන මෙම සාමකාමී යුගය නිසා මහාද්වීප පුරා අදහස්, තාක්ෂණය සහ සංස්කෘතිය හුවමාරු කර ගැනීමට මග පෑදුණි.</h3>
+            </div>
         </section>
 
         <div class="dotted-hr"></div>
     </div>
 
+    <!-- Feedback Widget -->
     <div id="feedback-widget">
-        <span>Helpful?</span>
-        <button onclick="hideFeedback('Yes')">YES</button>
-        <button onclick="hideFeedback('No')">NO</button>
+        <span lang="en">Helpful?</span>
+        <span lang="si">මෙම ලිපිය වැදගත් වූවාද?</span>
+        
+        <button onclick="hideFeedback('Yes')">
+            <span lang="en">YES</span>
+            <span lang="si">ඔව්</span>
+        </button>
+        <button onclick="hideFeedback('No')">
+            <span lang="en">NO</span>
+            <span lang="si">නැත</span>
+        </button>
     </div>
 
     <style>
@@ -341,28 +420,75 @@ nav .nav-home {
 
     <script>
         // Sidebar Toggle Function
-function toggleSidebar() {
-    const sidebar = document.getElementById("sidebarMenu");
-    const overlay = document.getElementById("sidebarOverlay");
-    
-    sidebar.classList.toggle("open");
-    overlay.classList.toggle("show");
-}
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebarMenu");
+            const overlay = document.getElementById("sidebarOverlay");
+            
+            sidebar.classList.toggle("open");
+            overlay.classList.toggle("show");
+        }
+
         function hideFeedback(type) {
-            alert("The Great Khan's history has been secured in the Laboratory.");
+            const currentLang = localStorage.getItem('selectedLanguage') || 'en';
+            if (currentLang === 'si') {
+                alert("මහා ඛාන්ගේ ඉතිහාසය රසායනාගාරය (Laboratory) තුළ සුරක්ෂිත කර ඇත.");
+            } else {
+                alert("The Great Khan's history has been secured in the Laboratory.");
+            }
             document.getElementById('feedback-widget').style.display = 'none';
         }
+
+        // --- Language Switcher Logic ---
+        function toggleLanguage() {
+            // දැනට තියෙන ලැන්වේජ් එක බැලීම
+            let currentLang = localStorage.getItem('selectedLanguage') || 'en';
+            // ලැන්වේජ් එක මාරු කිරීම
+            let newLang = (currentLang === 'en') ? 'si' : 'en';
+            
+            // LocalStorage එකේ සේව් කිරීම (ඊළඟ පිටුවට මතක හිටින්න)
+            localStorage.setItem('selectedLanguage', newLang);
+            
+            // පේජ් එක අප්ඩේට් කිරීම
+            applyLanguage(newLang);
+        }
+
+        function applyLanguage(lang) {
+            const enElements = document.querySelectorAll('[lang="en"]');
+            const siElements = document.querySelectorAll('[lang="si"]');
+            const langBtn = document.getElementById('langToggle');
+
+            if (lang === 'si') {
+                // ඉංග්‍රීසි හංගලා සිංහල පෙන්වීම
+                enElements.forEach(el => el.style.display = 'none');
+                siElements.forEach(el => el.style.display = 'block');
+                // බටන් එකේ නම 'English' ලෙස වෙනස් කිරීම
+                langBtn.textContent = 'English';
+            } else {
+                // සිංහල හංගලා ඉංග්‍රීසි පෙන්වීම
+                siElements.forEach(el => el.style.display = 'none');
+                enElements.forEach(el => el.style.display = 'block');
+                // බටන් එකේ නම 'සිංහල' ලෙස වෙනස් කිරීම
+                langBtn.textContent = 'සිංහල';
+            }
+        }
+
+        // පිටුව ලෝඩ් වෙද්දීම කලින් තෝරාගත් භාෂාව ඇප්ලයි කිරීම
+        document.addEventListener("DOMContentLoaded", function() {
+            let savedLang = localStorage.getItem('selectedLanguage') || 'en';
+            applyLanguage(savedLang);
+        });
     </script>
+
     <audio id="myAudio" loop>
-    <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
-</audio>
+        <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
+    </audio>
 
-<div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
-    <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
-        <span id="music-icon">🔇</span>
+    <div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
+        <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
+            <span id="music-icon">🔇</span>
+        </div>
     </div>
-</div>
 
-<script src="music.js"></script>
+    <script src="music.js"></script>
 </body>
 </html>
