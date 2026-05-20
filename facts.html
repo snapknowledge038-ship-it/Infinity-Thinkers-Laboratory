@@ -292,6 +292,14 @@ nav .nav-home {
       icon.innerHTML = "🔇"; // Mute වී ඇති විට සලකුණ
     }
   }
+    // Sidebar Toggle Function
+function toggleSidebar() {
+    const sidebar = document.getElementById("sidebarMenu");
+    const overlay = document.getElementById("sidebarOverlay");
+    
+    sidebar.classList.toggle("open");
+    overlay.classList.toggle("show");
+}
 </script>
     <div class="container">
         <h1>Fun Amazing Facts</h1>
