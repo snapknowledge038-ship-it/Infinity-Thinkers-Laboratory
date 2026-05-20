@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Legend of Bloody Mary - I T L</title>
+
+    <!-- Essential Meta Tags for Social Media Sharing (WhatsApp, Facebook, etc.) -->
+    <meta name="description" content="Explore the terrifying urban legend of Bloody Mary, the ritual, historical theories, and the science behind the mirror illusions. / බ්ලඩි මේරිගේ බිහිසුණු ජනප්‍රවාදය, චාරිත්‍ර සහ එහි විද්‍යාත්මක පසුබිම ගවේෂණය කරන්න.">
+    <meta property="og:title" content="The Legend of Bloody Mary - I T L">
+    <meta property="og:description" content="Stare into the mirror and find out the dark truth behind the legend. / කැඩපත දෙස බලා ජනප්‍රවාදය පිටුපස ඇති අඳුරු සත්‍යය සොයා ගන්න.">
+    <meta property="og:image" content="images/bloody-mary.jpg"> <!-- Ensure this path is correct on your server -->
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://yourwebsite.com/bloody-mary.html"> <!-- Replace with your actual URL -->
+    <meta property="og:type" content="article">
+
     <style>
         /* Horror Red Neon Theme Settings */
         :root {
@@ -24,114 +36,139 @@
         }
 
         /* New Navigation Bar Header */
-nav {
-    background-color: #1a1a1a;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #333;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    width: 100%;
-    box-sizing: border-box;
-}
+        nav {
+            background-color: #1a1a1a;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            box-sizing: border-box;
+        }
 
-nav .nav-home {
-    color: #00d4ff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
-}
+        nav .nav-home {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+        }
 
-/* Hamburger Menu Button */
-.menu-toggle {
-    background: none;
-    border: none;
-    color: #00d4ff;
-    font-size: 28px;
-    cursor: pointer;
-    user-select: none;
-}
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
-/* Slide-out Sidebar Styles */
-.sidebar {
-    position: fixed;
-    top: 0;
-    right: -280px; /* දකුණු පැත්තේ සැඟවී පවතී */
-    width: 280px;
-    height: 100%;
-    background-color: #111;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
-    z-index: 10001;
-    transition: right 0.3s ease-in-out;
-    padding: 20px;
-    box-sizing: border-box;
-    overflow-y: auto;
-}
+        /* Language Switcher Button Style */
+        .lang-btn {
+            background: linear-gradient(45deg, #ff0000, #3a0000);
+            border: 1px solid var(--neon-red);
+            color: white;
+            padding: 6px 15px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 20px;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+            transition: 0.3s ease;
+        }
 
-.sidebar.open {
-    right: 0; /* ක්ලික් කළ විට මතු වේ */
-}
+        .lang-btn:hover {
+            box-shadow: 0 0 15px var(--neon-red);
+            transform: scale(1.05);
+        }
 
-/* Close Button inside Sidebar */
-.close-btn {
-    text-align: right;
-    font-size: 30px;
-    color: #ff4a4a;
-    cursor: pointer;
-    margin-bottom: 20px;
-}
+        /* Hamburger Menu Button */
+        .menu-toggle {
+            background: none;
+            border: none;
+            color: #00d4ff;
+            font-size: 28px;
+            cursor: pointer;
+            user-select: none;
+        }
 
-/* Sidebar Links Grouping */
-.sidebar-section {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
+        /* Slide-out Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -280px;
+            width: 280px;
+            height: 100%;
+            background-color: #111;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+            z-index: 10001;
+            transition: right 0.3s ease-in-out;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
 
-.sidebar-divider {
-    border: none;
-    border-top: 1px solid #333;
-    margin: 15px 0;
-}
+        .sidebar.open {
+            right: 0;
+        }
 
-.sidebar a {
-    color: #e0e0e0;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: 0.2s;
-}
+        /* Close Button inside Sidebar */
+        .close-btn {
+            text-align: right;
+            font-size: 30px;
+            color: #ff4a4a;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
 
-.sidebar a:hover {
-    background-color: #1a1a1a;
-    color: #00d4ff;
-}
+        /* Sidebar Links Grouping */
+        .sidebar-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
-/* Special Styling for buttons inside menu */
-.sb-mcq { color: #ffd700 !important; font-weight: bold !important; }
-.sb-facts { color: #00ff88 !important; font-weight: bold !important; }
-.sb-share { color: #00d4ff !important; }
-.sb-help { color: #ffa500 !important; }
+        .sidebar-divider {
+            border: none;
+            border-top: 1px solid #333;
+            margin: 15px 0;
+        }
 
-/* Overlay Background */
-.sidebar-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6);
-    z-index: 10000;
-    display: none;
-}
-.sidebar-overlay.show {
-    display: block;
-}
+        .sidebar a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: 0.2s;
+        }
+
+        .sidebar a:hover {
+            background-color: #1a1a1a;
+            color: #00d4ff;
+        }
+
+        /* Special Styling for buttons inside menu */
+        .sb-mcq { color: #ffd700 !important; font-weight: bold !important; }
+        .sb-facts { color: #00ff88 !important; font-weight: bold !important; }
+        .sb-share { color: #00d4ff !important; }
+        .sb-help { color: #ffa500 !important; }
+
+        /* Overlay Background */
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 10000;
+            display: none;
+        }
+        .sidebar-overlay.show {
+            display: block;
+        }
 
         /* Title */
         h1 {
@@ -226,50 +263,55 @@ nav .nav-home {
             opacity: 0.3;
         }
 
+        /* Language Display Toggle Logic classes */
+        .lang-en, .lang-si {
+            display: none;
+        }
     </style>
 </head>
 <body>
 
     <!-- New Top Navbar -->
-<nav>
-    <a href="index.html" class="nav-home">🏠 Home</a>
-    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
-</nav>
+    <nav>
+        <a href="index.html" class="nav-home">🏠 <span class="lang-en">Home</span><span class="lang-si">මුල් පිටුව</span></a>
+        <div class="nav-controls">
+            <!-- Language Selection Button next to Hamburger -->
+            <button id="langToggleBtn" class="lang-btn" onclick="toggleLanguage()">සිංහල</button>
+            <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+        </div>
+    </nav>
 
-<!-- Sidebar Overlay -->
-<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
 
-<!-- Slide-out Sidebar Menu -->
-<div class="sidebar" id="sidebarMenu">
-    <div class="close-btn" onclick="toggleSidebar()">×</div>
-    
-    <div class="sidebar-section">
-        <!-- Main Pages Links -->
-        <a href="index.html">Home</a>
-        <a href="earth.html">Earth</a>
-        <a href="animals.html">Animals</a>
-        <a href="space.html">Space</a>
-        <a href="mysteries.html">Mysteries</a>
-        <a href="history.html">History</a>
-        <a href="quantum.html">🌌 Quantum Physics</a>
-    </div>
+    <!-- Slide-out Sidebar Menu -->
+    <div class="sidebar" id="sidebarMenu">
+        <div class="close-btn" onclick="toggleSidebar()">×</div>
         
-        <!-- පළමු ඉරෙන් වෙන් කිරීම -->
+        <div class="sidebar-section">
+            <!-- Main Pages Links -->
+            <a href="index.html"><span class="lang-en">Home</span><span class="lang-si">මුල් පිටුව</span></a>
+            <a href="earth.html"><span class="lang-en">Earth</span><span class="lang-si">පෘථිවිය</span></a>
+            <a href="animals.html"><span class="lang-en">Animals</span><span class="lang-si">සතුන්</span></a>
+            <a href="space.html"><span class="lang-en">Space</span><span class="lang-si">අභ්‍යවකාශය</span></a>
+            <a href="mysteries.html"><span class="lang-en">Mysteries</span><span class="lang-si">අභිරහස්</span></a>
+            <a href="history.html"><span class="lang-en">History</span><span class="lang-si">ඉතිහාසය</span></a>
+            <a href="quantum.html">🌌 <span class="lang-en">Quantum Physics</span><span class="lang-si">ක්වොන්ටම් භෞතික විද්‍යාව</span></a>
+        </div>
+            
         <hr class="sidebar-divider">
-        
+            
         <!-- Quiz & Facts Links -->
-        <a href="mcq.html" class="sb-mcq">📝 Start MCQ Quiz</a>
-        <a href="facts.html" class="sb-facts">⚡ Fun Amazing Facts ⚡</a>
-        
-        <!-- දෙවැනි ඉරෙන් වෙන් කිරීම -->
+        <a href="mcq.html" class="sb-mcq">📝 <span class="lang-en">Start MCQ Quiz</span><span class="lang-si">MCQ ප්‍රශ්නාවලිය</span></a>
+        <a href="facts.html" class="sb-facts">⚡ <span class="lang-en">Fun Amazing Facts ⚡</span><span class="lang-si">පුදුම සහගත කරුණු ⚡</span></a>
+            
         <hr class="sidebar-divider">
-        
+            
         <!-- Action Links -->
-        <a onclick="shareToFriends(); toggleSidebar();" style="cursor:pointer;" class="sb-share">🔗 SHARE</a>
-        <a href="ad.html" class="sb-help">❤️ Help</a>
-        <a href="aaaextradatapage.html">About</a>
+        <a onclick="shareToFriends(); toggleSidebar();" style="cursor:pointer;" class="sb-share">🔗 <span class="lang-en">SHARE</span><span class="lang-si">ශෙයා කරන්න</span></a>
+        <a href="ad.html" class="sb-help">❤️ <span class="lang-en">Help</span><span class="lang-si">උදව්</span></a>
+        <a href="aaaextradatapage.html"><span class="lang-en">About</span><span class="lang-si">අපි ගැන</span></a>
     </div>
-</div>
 
     <div class="container">
         <h1>BLOODY MARY</h1>
@@ -278,32 +320,61 @@ nav .nav-home {
             <img class="mystery-img" src="images/bloody-mary.jpg" alt="Bloody Mary Mirror Legend">
         </div>
 
+        <!-- Section 1: The Ritual -->
         <section>
-            <h2>The Ritual</h2>
-            <h3>The legend claims that if you stand in a dark room before a mirror and chant <strong>"Bloody Mary"</strong> three times while holding a candle, a ghost will appear. Some say she reveals the future, while others warn of a much darker fate.</h3>
+            <div class="lang-en">
+                <h2>The Ritual</h2>
+                <h3>The legend claims that if you stand in a dark room before a mirror and chant <strong>"Bloody Mary"</strong> three times while holding a candle, a ghost will appear. Some say she reveals the future, while others warn of a much darker fate.</h3>
+            </div>
+            <div class="lang-si">
+                <h2>චාරිත්‍රය</h2>
+                <h3>ජනප්‍රවාදයට අනුව ඔබ අඳුරු කාමරයක ඉටිපන්දමක් දල්වාගෙන කැඩපතක් ඉදිරිපිට සිටගෙන <strong>"Bloody Mary"</strong> යන නාමය තුන් වරක් මැතිරුවහොත් අවතාරයක් දර්ශනය වේ. සමහරු ඇය අනාගතය පවසන බව කියන අතර තවත් සමහරු එය ඉතා අඳුරු ඉරණමක ආරම්භයක් බව පවසති.</h3>
+            </div>
         </section>
 
+        <!-- Section 2: Who was She -->
         <section>
-            <h2>Who was She?</h2>
-            <ul>
-                <li><strong>Queen Mary I:</strong> Many believe the legend refers to the first Queen of England, who earned the nickname for her brutal persecution of opponents.</li>
-                <li><strong>Mary Worth:</strong> In American folklore, she is often described as a witch who practiced dark arts.</li>
-                <li><strong>The Mourning Mother:</strong> Another version suggests she is a vengeful spirit searching for her lost children.</li>
-            </ul>
+            <div class="lang-en">
+                <h2>Who was She?</h2>
+                <ul>
+                    <li><strong>Queen Mary I:</strong> Many believe the legend refers to the first Queen of England, who earned the nickname for her brutal persecution of opponents.</li>
+                    <li><strong>Mary Worth:</strong> In American folklore, she is often described as a witch who practiced dark arts.</li>
+                    <li><strong>The Mourning Mother:</strong> Another version suggests she is a vengeful spirit searching for her lost children.</li>
+                </ul>
+            </div>
+            <div class="lang-si">
+                <h2>ඇය කවුද?</h2>
+                <ul>
+                    <li><strong>පළමුවන මේරි රැජින:</strong> බොහෝ දෙනා විශ්වාස කරන්නේ මෙම ජනප්‍රවාදයෙන් කියවෙන්නේ තම විරුද්ධවාදීන්ට අමානුෂික ලෙස දඬුවම් පැමිණවීම නිසා මෙම අන්වර්ථ නාමය ලැබූ එංගලන්තයේ පළමු රැජින ගැන බවයි.</li>
+                    <li><strong>මේරි වර්ත්:</strong> ඇමරිකානු ජනප්‍රවාදවල ඇය බොහෝ විට හඳුන්වනු ලබන්නේ අඳුරු මායාවන් ප්‍රගුණ කළ මායාකාරියක් ලෙසයි.</li>
+                    <li><strong>වැළපෙන මව:</strong> තවත් මතයකට අනුව ඇය තම නැතිවූ දරුවන් සොයමින් යන පළිගන්නා සුළු ආත්මයකි.</li>
+                </ul>
+            </div>
         </section>
 
+        <!-- Section 3: The Science of Fear -->
         <section>
-            <h2>The Science of Fear</h2>
-            <h3>Psychologists explain this phenomenon as <strong>"Troxler's Fading."</strong> When staring into a mirror in low light, the brain gets confused by limited visual data and begins to hallucinate, creating distorted or scary faces out of shadows.</h3>
+            <div class="lang-en">
+                <h2>The Science of Fear</h2>
+                <h3>Psychologists explain this phenomenon as <strong>"Troxler's Fading."</strong> When staring into a mirror in low light, the brain gets confused by limited visual data and begins to hallucinate, creating distorted or scary faces out of shadows.</h3>
+            </div>
+            <div class="lang-si">
+                <h2>භීතියේ විද්‍යාව</h2>
+                <h3>මනෝවිද්‍යාඥයින් මෙම සංසිද්ධිය <strong>"Troxler's Fading"</strong> (ට්‍රොක්ස්ලර්ගේ මැකී යාම) ලෙස හඳුන්වයි. අඩු ආලෝකයකදී කැඩපතක් දෙස බලා සිටින විට, සීමිත දෘශ්‍ය දත්ත නිසා මොළය ව්‍යාකූල වී මායාවන් මවා ගැනීමට පටන් ගනී. එහිදී සෙවණැලි ඇසුරෙන් විකෘති වූ හෝ බියකරු මුහුණු මැවී පෙනේ.</h3>
+            </div>
         </section>
 
         <div class="dotted-hr"></div>
     </div>
 
+    <!-- Feedback Widget -->
     <div id="feedback-widget">
-        <span>Scared?</span>
-        <button onclick="hideFeedback('Yes')">YES</button>
-        <button onclick="hideFeedback('No')">NO</button>
+        <span>
+            <span class="lang-en">Scared?</span>
+            <span class="lang-si">බය වුණාද?</span>
+        </span>
+        <button onclick="hideFeedback('Yes')"><span class="lang-en">YES</span><span class="lang-si">ඔව්</span></button>
+        <button onclick="hideFeedback('No')"><span class="lang-en">NO</span><span class="lang-si">නැත</span></button>
     </div>
 
     <style>
@@ -338,18 +409,72 @@ nav .nav-home {
     </style>
 
     <script>
+        // Language Toggle System with LocalStorage Memory
+        let currentLang = localStorage.getItem('preferredLang') || 'en';
+
+        function applyLanguage(lang) {
+            const enElements = document.querySelectorAll('.lang-en');
+            const siElements = document.querySelectorAll('.lang-si');
+            const toggleBtn = document.getElementById('langToggleBtn');
+
+            if (lang === 'si') {
+                enElements.forEach(el => el.style.display = 'none');
+                siElements.forEach(el => el.style.display = 'block');
+                toggleBtn.innerText = 'English';
+                currentLang = 'si';
+            } else {
+                enElements.forEach(el => el.style.display = 'block');
+                siElements.forEach(el => el.style.display = 'none');
+                toggleBtn.innerText = 'සිංහල';
+                currentLang = 'en';
+            }
+            localStorage.setItem('preferredLang', lang);
+        }
+
+        function toggleLanguage() {
+            if (currentLang === 'en') {
+                applyLanguage('si');
+            } else {
+                applyLanguage('en');
+            }
+        }
+
+        // Run language setup on load
+        window.addEventListener('DOMContentLoaded', () => {
+            applyLanguage(currentLang);
+        });
+
+        // Feedback alert function based on chosen language
         function hideFeedback(type) {
-            alert("The mystery remains locked in the Laboratory. Don't look back!");
+            if (currentLang === 'si') {
+                alert("අභිරහස රසායනාගාරය තුළම අගුලු දමා ඇත. ආපසු හැරී නොබලන්න!");
+            } else {
+                alert("The mystery remains locked in the Laboratory. Don't look back!");
+            }
             document.getElementById('feedback-widget').style.display = 'none';
         }
+
         // Sidebar Toggle Function
-function toggleSidebar() {
-    const sidebar = document.getElementById("sidebarMenu");
-    const overlay = document.getElementById("sidebarOverlay");
-    
-    sidebar.classList.toggle("open");
-    overlay.classList.toggle("show");
-}
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebarMenu");
+            const overlay = document.getElementById("sidebarOverlay");
+            
+            sidebar.classList.toggle("open");
+            overlay.classList.toggle("show");
+        }
+
+        // Sample share function
+        function shareToFriends() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'The Legend of Bloody Mary',
+                    text: 'Check out this mystery article!',
+                    url: window.location.href
+                });
+            } else {
+                alert(currentLang === 'si' ? "ලින්ක් එක කොපි කර යහළුවන් සමඟ බෙදාගන්න!" : "Link copied! Share it with your friends.");
+            }
+        }
     </script>
     
     <audio id="myAudio" loop>
