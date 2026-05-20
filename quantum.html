@@ -44,27 +44,29 @@
             font-size: 20px;
         }
 
-        /* Nav Action Container */
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        /* Language Toggle Button */
-        .lang-btn {
-            background: #00d4ff;
-            color: #000;
+        /* Language Toggle Button Style */
+        .lang-toggle-btn {
+            background: linear-gradient(135deg, #00f2fe, #4facfe);
             border: none;
-            padding: 5px 12px;
+            color: #000;
+            padding: 6px 14px;
             font-size: 14px;
             font-weight: bold;
             border-radius: 20px;
             cursor: pointer;
-            transition: 0.2s;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
         }
-        .lang-btn:hover {
-            background: #00b2d6;
+
+        .lang-toggle-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.6);
+        }
+
+        .nav-right-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
 
         /* Hamburger Menu Button */
@@ -75,8 +77,6 @@
             font-size: 28px;
             cursor: pointer;
             user-select: none;
-            padding: 0;
-            line-height: 1;
         }
 
         /* Slide-out Sidebar Styles */
@@ -136,7 +136,6 @@
             color: #00d4ff;
         }
 
-        /* Special Styling for buttons inside menu */
         .sb-mcq { color: #ffd700 !important; font-weight: bold !important; }
         .sb-facts { color: #00ff88 !important; font-weight: bold !important; }
         .sb-share { color: #00d4ff !important; }
@@ -294,25 +293,19 @@
             margin-bottom: 60px;
         }
 
-        /* Language visibility utility classes */
-        .lang-en { display: block; }
-        .lang-si { display: none; }
-
-        span.lang-en, a.lang-en, li.lang-en { display: inline-block; }
-        span.lang-si, a.lang-si, li.lang-si { display: none; }
+        /* Language visibility defaults */
+        .lang-si {
+            display: none;
+        }
     </style>
 </head>
 <body>
 
-    <!-- Top Navbar -->
+    <!-- Top Navbar with Language Button and Hamburger Menu -->
     <nav>
-        <a href="index.html" class="nav-home">
-            <span class="lang-en">🏠 Home</span>
-            <span class="lang-si">🏠 මුල් පිටුව</span>
-        </a>
-        <div class="nav-actions">
-            <!-- Language Switcher Button -->
-            <button class="lang-btn" id="langBtn" onclick="toggleLanguage()">සිංහල</button>
+        <a href="index.html" class="nav-home">🏠 Home</a>
+        <div class="nav-right-group">
+            <button id="langBtn" class="lang-toggle-btn" onclick="toggleLanguage()">සිංහල</button>
             <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
         </div>
     </nav>
@@ -325,52 +318,25 @@
         <div class="close-btn" onclick="toggleSidebar()">×</div>
         
         <div class="sidebar-section">
-            <!-- Main Pages Links -->
-            <a href="index.html">
-                <span class="lang-en">Home</span><span class="lang-si">මුල් පිටුව</span>
-            </a>
-            <a href="earth.html">
-                <span class="lang-en">Earth</span><span class="lang-si">පෘථිවිය</span>
-            </a>
-            <a href="animals.html">
-                <span class="lang-en">Animals</span><span class="lang-si">සතුන්</span>
-            </a>
-            <a href="space.html">
-                <span class="lang-en">Space</span><span class="lang-si">අවකාශය</span>
-            </a>
-            <a href="mysteries.html">
-                <span class="lang-en">Mysteries</span><span class="lang-si">අභිරහස්</span>
-            </a>
-            <a href="history.html">
-                <span class="lang-en">History</span><span class="lang-si">ඉතිහාසය</span>
-            </a>
-            <a href="quantum.html">
-                <span class="lang-en">🌌 Quantum Physics</span><span class="lang-si">🌌 ක්වොන්ටම් භෞතික විද්‍යාව</span>
-            </a>
-            
-            <hr class="sidebar-divider">
-            
-            <!-- Quiz & Facts Links -->
-            <a href="mcq.html" class="sb-mcq">
-                <span class="lang-en">📝 Start MCQ Quiz</span><span class="lang-si">📝 MCQ ප්‍රශ්නාවලිය</span>
-            </a>
-            <a href="facts.html" class="sb-facts">
-                <span class="lang-en">⚡ Fun Amazing Facts ⚡</span><span class="lang-si">⚡ පුදුම සහගත කරුණු ⚡</span>
-            </a>
-            
-            <hr class="sidebar-divider">
-            
-            <!-- Action Links -->
-            <a onclick="shareToFriends(); toggleSidebar();" style="cursor:pointer;" class="sb-share">
-                <span class="lang-en">🔗 SHARE</span><span class="lang-si">🔗 බෙදාගන්න</span>
-            </a>
-            <a href="ad.html" class="sb-help">
-                <span class="lang-en">❤️ Help</span><span class="lang-si">❤️ උදව්</span>
-            </a>
-            <a href="aaaextradatapage.html">
-                <span class="lang-en">About</span><span class="lang-si">අප ගැන</span>
-            </a>
+            <a href="index.html">Home</a>
+            <a href="earth.html">Earth</a>
+            <a href="animals.html">Animals</a>
+            <a href="space.html">Space</a>
+            <a href="mysteries.html">Mysteries</a>
+            <a href="history.html">History</a>
+            <a href="quantum.html">🌌 Quantum Physics</a>
         </div>
+            
+        <hr class="sidebar-divider">
+            
+        <a href="mcq.html" class="sb-mcq">📝 Start MCQ Quiz</a>
+        <a href="facts.html" class="sb-facts">⚡ Fun Amazing Facts ⚡</a>
+            
+        <hr class="sidebar-divider">
+            
+        <a onclick="shareToFriends(); toggleSidebar();" style="cursor:pointer;" class="sb-share">🔗 SHARE</a>
+        <a href="ad.html" class="sb-help">❤️ Help</a>
+        <a href="aaaextradatapage.html">About</a>
     </div>
 
     <audio id="myAudio" loop>
@@ -386,39 +352,39 @@
     <script src="music.js"></script>
 
     <div class="container">
+        <!-- Main Heading -->
         <h1>
             <span class="lang-en">Quantum Physics – The Subatomic World</span>
-            <span class="lang-si">ක්වොන්ටම් භෞතික විද්‍යාව – පරමාණුක ලෝකය</span>
+            <span class="lang-si">ක්වොන්ටම් භෞතික විද්‍යාව – උප පරමාණුක ලෝකය</span>
         </h1>
 
         <div class="img-container">
             <img class="quantum-img" src="images/quantum.jpeg" alt="Quantum Physics Journey">
         </div>
 
+        <!-- Main Introduction Text -->
         <div class="main-text">
-            <!-- English Intro -->
-            <div class="lang-en">
+            <span class="lang-en">
                 Welcome to the mind-bending reality of quantum physics. At the subatomic level, the ordinary rules of our universe cease to exist. Particles can be in two places at once, walk through solid walls, and communicate instantly across vast cosmic distances. 
                 <br><br>
                 Here, we venture past classical physics into a microscopic realm where observation dictates reality. Through the articles and guides curated below, you will explore the foundational theories, incredible experiments, and future technologies that are reshaping how we define existence itself.
                 <br><br>
                 Get ready to challenge your intuition, spark your curiosity, and uncover the fascinating mechanics behind the universe's ultimate building blocks.
-            </div>
-            <!-- Sinhala Intro -->
-            <div class="lang-si">
-                ක්වොන්ටම් භෞතික විද්‍යාවේ මනස අවුල් කරන යථාර්ථයට සාදරයෙන් පිළිගනිමු. උප පරමාණුක මට්ටමේදී, අපේ විශ්වයේ සාමාන්‍ය නීති සම්පූර්ණයෙන්ම අහෝසි වී යයි. මෙහිදී අංශුවලට එකවර ස්ථාන දෙකක සිටීමටත්, ඝන බිත්ති හරහා ගමන් කිරීමටත්, අතිවිශාල විශ්ව දුර ප්‍රමාණයන් හරහා ක්ෂණිකව සන්නිවේදනය කිරීමටත් හැකියාව ඇත.
+            </span>
+            <span class="lang-si">
+                ක්වොන්ටම් භෞතික විද්‍යාවේ විශ්මයජනක යථාර්ථයට සාදරයෙන් පිළිගනිමු. උප පරමාණුක මට්ටමේදී, අපේ විශ්වයේ සාමාන්‍ය නීති රීති ක්‍රියාත්මක වන්නේ නැත. අංශුවලට එකවර ස්ථාන දෙකක පැවතීමටත්, ඝන බිත්ති හරහා ගමන් කිරීමටත්, අතිවිශාල විශ්වීය දුරක් හරහා ක්ෂණිකව සන්නිවේදනය කිරීමටත් හැකියාව ඇත.
                 <br><br>
-                මෙහිදී, අපි සාම්ප්‍රදායික භෞතික විද්‍යාවෙන් ඔබ්බට ගොස්, නිරීක්ෂණය මගින් යථාර්ථය තීරණය කරන අන්වීක්ෂීය ලෝකයකට පිය නගන්නෙමු. පහතින් දක්වා ඇති ලිපි සහ මාර්ගෝපදේශ හරහා, පැවැත්ම යන්න අප අර්ථ දක්වන ආකාරය වෙනස් කරන මූලික සිද්ධාන්ත, ඇදහිය නොහැකි අත්හදා බැලීම් සහ අනාගත තාක්ෂණයන් පිළිබඳව ඔබ ගවේෂණය කරනු ඇත.
+                මෙහිදී, අප සාමාන්‍ය භෞතික විද්‍යාවෙන් ඔබ්බට ගොස් නිරීක්ෂණය මතම යථාර්ථය තීරණය වන අන්වීක්ෂීය ලෝකයකට පිය නගන්නෙමු. පහතින් පෙළගස්වා ඇති ලිපි සහ මාර්ගෝපදේශ හරහා, පැවැත්ම පිළිබඳ අපගේ අර්ථකථනය මුළුමනින්ම වෙනස් කරන මූලික සිද්ධාන්ත, ඇදහිය නොහැකි අත්හදා බැලීම් සහ අනාගත තාක්ෂණයන් පිළිබඳව ඔබට ගවේෂණය කළ හැකිය.
                 <br><br>
-                ඔබේ සහජ බුද්ධියට අභියෝග කිරීමට, කුතුහලය අවදි කිරීමට සහ විශ්වයේ මූලිකම ගොඩනැඟිලි ඒකක පිටුපස ඇති ආකර්ශනීය යාන්ත්‍රණය සොයා ගැනීමට සූදානම් වන්න.
-            </div>
+                ඔබේ සහජ බුද්ධියට අභියෝග කිරීමටත්, කුතුහලය අවදි කර ගැනීමටත්, විශ්වයේ මූලිකම ගොඩනැඟිලි ඒකක පිටුපස ඇති ආකර්ශනීය ක්‍රියාවලිය සොයා ගැනීමටත් සූදානම් වන්න.
+            </span>
         </div>
 
         <hr>
 
         <h2>
             <span class="lang-en">What are the details you are expecting?</span>
-            <span class="lang-si">ඔබ අපේක්ෂා කරන තොරතුරු මොනවාද?</span>
+            <span class="lang-si">ඔබ බලාපොරොත්තු වන තොරතුරු මොනවාද?</span>
         </h2>
         
         <!-- Category 1: The Basics & History -->
@@ -427,11 +393,36 @@
             <span class="lang-si">මූලික කරුණු සහ ඉතිහාසය</span>
         </h3>
         <ul class="topic-grid">
-            <a href="what-is-quantum-physics.html"><li><span class="lang-en">What is Quantum Physics?</span><span class="lang-si">ක්වොන්ටම් භෞතික විද්‍යාව යනු කුමක්ද?</span></li></a>
-            <a href="max-planck.html"><li><span class="lang-en">Max Planck & Blackbody Radiation</span><span class="lang-si">මැක්ස් ප්ලෑන්ක් සහ කෘෂ්ණ වස්තු විකිරණය</span></li></a>
-            <a href="albert-einstein.html"><li><span class="lang-en">Einstein & The Photoelectric Effect</span><span class="lang-si">අයින්ස්ටයින් සහ ප්‍රකාශ විද්‍යුත් ආචරණය</span></li></a>
-            <a href="quantum-energy-packets.html"><li><span class="lang-en">Understanding Quanta Simply</span><span class="lang-si">ක්වොන්ටා සරලව වටහා ගැනීම</span></li></a>
-            <a href="atomic-structure.html"><li><span class="lang-en">The Electron Cloud Model</span><span class="lang-si">ඉලෙක්ට්‍රෝන වලාකුළු ආකෘතිය</span></li></a>
+            <a href="what-is-quantum-physics.html">
+                <li>
+                    <span class="lang-en">What is Quantum Physics?</span>
+                    <span class="lang-si">ක්වොන්ටම් භෞතික විද්‍යාව යනු කුමක්ද?</span>
+                </li>
+            </a>
+            <a href="max-planck.html">
+                <li>
+                    <span class="lang-en">Max Planck & Blackbody Radiation</span>
+                    <span class="lang-si">මැක්ස් ප්ලාන්ක් සහ කෘෂ්ණ වස්තු විකිරණය</span>
+                </li>
+            </a>
+            <a href="albert-einstein.html">
+                <li>
+                    <span class="lang-en">Einstein & The Photoelectric Effect</span>
+                    <span class="lang-si">අයින්ස්ටයින් සහ ප්‍රකාශ විද්‍යුත් ආචරණය</span>
+                </li>
+            </a>
+            <a href="quantum-energy-packets.html">
+                <li>
+                    <span class="lang-en">Understanding Quanta Simply</span>
+                    <span class="lang-si">ක්වොන්ටා පිළිබඳ සරලව වටහා ගැනීම</span>
+                </li>
+            </a>
+            <a href="atomic-structure.html">
+                <li>
+                    <span class="lang-en">The Electron Cloud Model</span>
+                    <span class="lang-si">ඉලෙක්ට්‍රෝන වලාකුළු ආකෘතිය</span>
+                </li>
+            </a>
         </ul>
 
         <!-- Category 2: Mind-Bending Concepts -->
@@ -440,24 +431,74 @@
             <span class="lang-si">මනස අවුල් කරන සංකල්ප</span>
         </h3>
         <ul class="topic-grid">
-            <a href="wave-particle-duality.html"><li><span class="lang-en">Wave-Particle Duality</span><span class="lang-si">තරංග-අංශු ද්විත්වය</span></li></a>
-            <a href="double-slit-experiment.html"><li><span class="lang-en">Double Slit Experiment</span><span class="lang-si">ද්විත්ව සිදුරු අත්හදා බැලීම</span></li></a>
-            <a href="quantum-superposition.html"><li><span class="lang-en">Quantum Superposition</span><span class="lang-si">ක්වොන්ටම් සමපාත වීම (Superposition)</span></li></a>
-            <a href="schrodingers-cat.html"><li><span class="lang-en">Schrödinger's Cat</span><span class="lang-si">ෂ්‍රොඩිංගර්ගේ බළලා</span></li></a>
-            <a href="heisenberg-uncertainty.html"><li><span class="lang-en">Heisenberg's Uncertainty Principle</span><span class="lang-si">හයිසන්බර්ග්ගේ අවිනිශ්චිතතා නියමය</span></li></a>
+            <a href="wave-particle-duality.html">
+                <li>
+                    <span class="lang-en">Wave-Particle Duality</span>
+                    <span class="lang-si">තරංග-අංශු ද්විත්වය</span>
+                </li>
+            </a>
+            <a href="double-slit-experiment.html">
+                <li>
+                    <span class="lang-en">Double Slit Experiment</span>
+                    <span class="lang-si">ද්විත්ව සිදුරු අත්හදා බැලීම</span>
+                </li>
+            </a>
+            <a href="quantum-superposition.html">
+                <li>
+                    <span class="lang-en">Quantum Superposition</span>
+                    <span class="lang-si">ක්වොන්ටම් සමස්ථාපනය</span>
+                </li>
+            </a>
+            <a href="schrodingers-cat.html">
+                <li>
+                    <span class="lang-en">Schrödinger's Cat</span>
+                    <span class="lang-si">ෂ්‍රෝඩින්ගර්ගේ බළලා</span>
+                </li>
+            </a>
+            <a href="heisenberg-uncertainty.html">
+                <li>
+                    <span class="lang-en">Heisenberg's Uncertainty Principle</span>
+                    <span class="lang-si">හයිසන්බර්ග්ගේ අවිනිශ්චිතතා මූලධර්මය</span>
+                </li>
+            </a>
         </ul>
 
         <!-- Category 3: Advanced Phenomena -->
         <h3>
             <span class="lang-en">Advanced Phenomena</span>
-            <span class="lang-si">උසස් සංසිද්ධීන්</span>
+            <span class="lang-si">උසස් සංසිද්ධි</span>
         </h3>
         <ul class="topic-grid">
-            <a href="quantum-entanglement.html"><li><span class="lang-en">Quantum Entanglement</span><span class="lang-si">ක්වොන්ටම් පැටලීම (Entanglement)</span></li></a>
-            <a href="faster-than-light.html"><li><span class="lang-en">Faster-Than-Light Information</span><span class="lang-si">ආලෝකයට වඩා වේගවත් තොරතුරු හුවමාරුව</span></li></a>
-            <a href="quantum-tunneling.html"><li><span class="lang-en">Quantum Tunneling</span><span class="lang-si">ක්වොන්ටම් උමං මාර්ගගත වීම (Tunneling)</span></li></a>
-            <a href="quantum-decoherence.html"><li><span class="lang-en">Quantum Decoherence</span><span class="lang-si">ක්වොන්ටම් විසංයෝජනය (Decoherence)</span></li></a>
-            <a href="many-worlds-interpretation.html"><li><span class="lang-en">The Many-Worlds Interpretation</span><span class="lang-si">බහුවිශ්ව අර්ථකථනය</span></li></a>
+            <a href="quantum-entanglement.html">
+                <li>
+                    <span class="lang-en">Quantum Entanglement</span>
+                    <span class="lang-si">ක්වොන්ටම් පැටලීම</span>
+                </li>
+            </a>
+            <a href="faster-than-light.html">
+                <li>
+                    <span class="lang-en">Faster-Than-Light Information</span>
+                    <span class="lang-si">ආලෝකයට වඩා වේගවත් තොරතුරු</span>
+                </li>
+            </a>
+            <a href="quantum-tunneling.html">
+                <li>
+                    <span class="lang-en">Quantum Tunneling</span>
+                    <span class="lang-si">ක්වොන්ටම් උමංකරණය</span>
+                </li>
+            </a>
+            <a href="quantum-decoherence.html">
+                <li>
+                    <span class="lang-en">Quantum Decoherence</span>
+                    <span class="lang-si">ක්වොන්ටම් විසංයෝජනය</span>
+                </li>
+            </a>
+            <a href="many-worlds-interpretation.html">
+                <li>
+                    <span class="lang-en">The Many-Worlds Interpretation</span>
+                    <span class="lang-si">බහු-ලෝක අර්ථකථනය</span>
+                </li>
+            </a>
         </ul>
 
         <!-- Category 4: Real-World Applications -->
@@ -466,11 +507,36 @@
             <span class="lang-si">ප්‍රායෝගික භාවිතයන්</span>
         </h3>
         <ul class="topic-grid">
-            <a href="quantum-computing.html"><li><span class="lang-en">Quantum Computing</span><span class="lang-si">ක්වොන්ටම් පරිගණකකරණය</span></li></a>
-            <a href="qubits.html"><li><span class="lang-en">What are Qubits?</span><span class="lang-si">කියුබිට්ස් (Qubits) යනු මොනවාද?</span></li></a>
-            <a href="everyday-quantum.html"><li><span class="lang-en">Quantum in Tech & Medicine</span><span class="lang-si">තාක්ෂණය සහ වෛද්‍ය විද්‍යාවේ ක්වොන්ටම් භාවිතය</span></li></a>
-            <a href="quantum-cryptography.html"><li><span class="lang-en">Quantum Cryptography</span><span class="lang-si">ක්වොන්ටම් ගුප්ත ලේඛන විද්‍යාව</span></li></a>
-            <a href="quantum-biology.html"><li><span class="lang-en">Quantum Biology</span><span class="lang-si">ක්වොන්ටම් ජීව විද්‍යාව</span></li></a>
+            <a href="quantum-computing.html">
+                <li>
+                    <span class="lang-en">Quantum Computing</span>
+                    <span class="lang-si">ක්වොන්ටම් පරිගණනය</span>
+                </li>
+            </a>
+            <a href="qubits.html">
+                <li>
+                    <span class="lang-en">What are Qubits?</span>
+                    <span class="lang-si">කියුබිට්ස් (Qubits) යනු මොනවාද?</span>
+                </li>
+            </a>
+            <a href="everyday-quantum.html">
+                <li>
+                    <span class="lang-en">Quantum in Tech & Medicine</span>
+                    <span class="lang-si">තාක්ෂණය සහ වෛද්‍ය විද්‍යාවේ ක්වොන්ටම්</span>
+                </li>
+            </a>
+            <a href="quantum-cryptography.html">
+                <li>
+                    <span class="lang-en">Quantum Cryptography</span>
+                    <span class="lang-si">ක්වොන්ටම් ගුප්ත ලේඛන විද්‍යාව</span>
+                </li>
+            </a>
+            <a href="quantum-biology.html">
+                <li>
+                    <span class="lang-en">Quantum Biology</span>
+                    <span class="lang-si">ක්වොන්ටම් ජීව විද්‍යාව</span>
+                </li>
+            </a>
         </ul>
 
         <!-- Category 5: Cosmology & Future -->
@@ -479,11 +545,36 @@
             <span class="lang-si">විශ්ව විද්‍යාව සහ අනාගතය</span>
         </h3>
         <ul class="topic-grid">
-            <a href="quantum-teleportation.html"><li><span class="lang-en">Quantum Teleportation</span><span class="lang-si">ක්වොන්ටම් ටෙලිපෝටේෂන්</span></li></a>
-            <a href="black-holes-quantum.html"><li><span class="lang-en">Black Holes & Quantum Physics</span><span class="lang-si">කළු කුහර සහ ක්වොන්ටම් භෞතික විද්‍යාව</span></li></a>
-            <a href="hawking-radiation.html"><li><span class="lang-en">Hawking Radiation</span><span class="lang-si">හෝකින් විකිරණය</span></li></a>
-            <a href="string-theory.html"><li><span class="lang-en">String Theory</span><span class="lang-si">ස්තන්ත්‍ර සිද්ධාන්තය (String Theory)</span></li></a>
-            <a href="theory-of-everything.html"><li><span class="lang-en">Theory of Everything</span><span class="lang-si">සියල්ල පිළිබඳ සිද්ධාන්තය</span></li></a>
+            <a href="quantum-teleportation.html">
+                <li>
+                    <span class="lang-en">Quantum Teleportation</span>
+                    <span class="lang-si">ක්වොන්ටම් ටෙලිපෝටේෂන්</span>
+                </li>
+            </a>
+            <a href="black-holes-quantum.html">
+                <li>
+                    <span class="lang-en">Black Holes & Quantum Physics</span>
+                    <span class="lang-si">කළු කුහර සහ ක්වොන්ටම් භෞතික විද්‍යාව</span>
+                </li>
+            </a>
+            <a href="hawking-radiation.html">
+                <li>
+                    <span class="lang-en">Hawking Radiation</span>
+                    <span class="lang-si">හෝකින් විකිරණය</span>
+                </li>
+            </a>
+            <a href="string-theory.html">
+                <li>
+                    <span class="lang-en">String Theory</span>
+                    <span class="lang-si">තන්තු ප්‍රමේයය (String Theory)</span>
+                </li>
+            </a>
+            <a href="theory-of-everything.html">
+                <li>
+                    <span class="lang-en">Theory of Everything</span>
+                    <span class="lang-si">සියල්ල පිළිබඳ ප්‍රමේයය</span>
+                </li>
+            </a>
         </ul>
 
         <!-- Category 6: Fun & Controversial Topics -->
@@ -492,24 +583,74 @@
             <span class="lang-si">විනෝදජනක සහ මතභේදාත්මක මාතෘකා</span>
         </h3>
         <ul class="topic-grid">
-            <a href="quantum-mysticism.html"><li><span class="lang-en">Quantum Mysticism</span><span class="lang-si">ක්වොන්ටම් අද්භූතවාදය</span></li></a>
-            <a href="simulation-theory.html"><li><span class="lang-en">Are We Living in a Simulation?</span><span class="lang-si">අපි ජීවත් වෙන්නේ පරිගණක අනුකරණයකද?</span></li></a>
-            <a href="quantum-zeno-effect.html"><li><span class="lang-en">Quantum Zeno Effect</span><span class="lang-si">ක්වොන්ටම් සීනෝ ආචරණය</span></li></a>
-            <a href="time-travel.html"><li><span class="lang-en">Time Travel & Quantum Physics</span><span class="lang-si">කාල තරණය සහ ක්වොන්ටම් විද්‍යාව</span></li></a>
-            <a href="famous-quantum-quotes.html"><li><span class="lang-en">Famous Quantum Quotes</span><span class="lang-si">ප්‍රසිද්ධ ක්වොන්ටම් කියමන්</span></li></a>
+            <a href="quantum-mysticism.html">
+                <li>
+                    <span class="lang-en">Quantum Mysticism</span>
+                    <span class="lang-si">ක්වොන්ටම් ගුප්තවාදය</span>
+                </li>
+            </a>
+            <a href="simulation-theory.html">
+                <li>
+                    <span class="lang-en">Are We Living in a Simulation?</span>
+                    <span class="lang-si">අප ජීවත් වන්නේ අනුකරණයකද (Simulation)?</span>
+                </li>
+            </a>
+            <a href="quantum-zeno-effect.html">
+                <li>
+                    <span class="lang-en">Quantum Zeno Effect</span>
+                    <span class="lang-si">ක්වොන්ටම් සීනෝ ආචරණය</span>
+                </li>
+            </a>
+            <a href="time-travel.html">
+                <li>
+                    <span class="lang-en">Time Travel & Quantum Physics</span>
+                    <span class="lang-si">කාල තරණය සහ ක්වොන්ටම්</span>
+                </li>
+            </a>
+            <a href="famous-quantum-quotes.html">
+                <li>
+                    <span class="lang-en">Famous Quantum Quotes</span>
+                    <span class="lang-si">ප්‍රසිද්ධ ක්වොන්ටම් ප්‍රකාශයන්</span>
+                </li>
+            </a>
         </ul>
 
         <!-- Category 7: Exotic Particles -->
         <h3>
             <span class="lang-en">Exotic Particles</span>
-            <span class="lang-si">විදේශීය සහ අද්භූත අංශු</span>
+            <span class="lang-si">විදේශීය සහ අසාමාන්‍ය අංශු</span>
         </h3>
         <ul class="topic-grid">
-            <a href="quarks.html"><li><span class="lang-en">Quarks</span><span class="lang-si">ක්වාර්ක්ස් (Quarks)</span></li></a>
-            <a href="antimatter.html"><li><span class="lang-en">Antimatter vs. Matter</span><span class="lang-si">ප්‍රති-ද්‍රව්‍ය සහ ද්‍රව්‍ය</span></li></a>
-            <a href="god-particle.html"><li><span class="lang-en">The God Particle (Higgs Boson)</span><span class="lang-si">දේව අංශුව (හිග්ස් බෝසෝනය)</span></li></a>
-            <a href="neutrinos.html"><li><span class="lang-en">Neutrinos (Ghost Particles)</span><span class="lang-si">නියුට්‍රිනෝ (ප්‍රේත අංශු)</span></li></a>
-            <a href="tachyons.html"><li><span class="lang-en">Tachyons</span><span class="lang-si">ටැකියෝන (Tachyons)</span></li></a>
+            <a href="quarks.html">
+                <li>
+                    <span class="lang-en">Quarks</span>
+                    <span class="lang-si">ක්වාර්ක්ස් (Quarks)</span>
+                </li>
+            </a>
+            <a href="antimatter.html">
+                <li>
+                    <span class="lang-en">Antimatter vs. Matter</span>
+                    <span class="lang-si">ප්‍රති-ද්‍රව්‍ය සහ ද්‍රව්‍ය</span>
+                </li>
+            </a>
+            <a href="god-particle.html">
+                <li>
+                    <span class="lang-en">The God Particle (Higgs Boson)</span>
+                    <span class="lang-si">දේව අංශුව (හිග්ස් බෝසෝනය)</span>
+                </li>
+            </a>
+            <a href="neutrinos.html">
+                <li>
+                    <span class="lang-en">Neutrinos (Ghost Particles)</span>
+                    <span class="lang-si">නියුට්‍රිනෝ (භූත අංශු)</span>
+                </li>
+            </a>
+            <a href="tachyons.html">
+                <li>
+                    <span class="lang-en">Tachyons</span>
+                    <span class="lang-si">ටැකියෝන (Tachyons)</span>
+                </li>
+            </a>
         </ul>
 
         <!-- Category 8: Space, Time & Quantum -->
@@ -518,24 +659,74 @@
             <span class="lang-si">අවකාශය, කාලය සහ ක්වොන්ටම්</span>
         </h3>
         <ul class="topic-grid">
-            <a href="quantum-foam.html"><li><span class="lang-en">Quantum Foam</span><span class="lang-si">ක්වොන්ටම් පෙන (Quantum Foam)</span></li></a>
-            <a href="big-bang-quantum.html"><li><span class="lang-en">The Big Bang & Quantum Mechanics</span><span class="lang-si">මහා පිපිරුම සහ ක්වොන්ටම් විද්‍යාව</span></li></a>
-            <a href="virtual-particles.html"><li><span class="lang-en">Virtual Particles</span><span class="lang-si">අතථ්‍ය අංශු (Virtual Particles)</span></li></a>
-            <a href="quantum-gravity.html"><li><span class="lang-en">Quantum Gravity</span><span class="lang-si">ක්වොන්ටම් ගුරුත්වාකර්ෂණය</span></li></a>
-            <a href="planck-length.html"><li><span class="lang-en">The Planck Length</span><span class="lang-si">ප්ලෑන්ක් දිග (Planck Length)</span></li></a>
+            <a href="quantum-foam.html">
+                <li>
+                    <span class="lang-en">Quantum Foam</span>
+                    <span class="lang-si">ක්වොන්ටම් පෙන (Quantum Foam)</span>
+                </li>
+            </a>
+            <a href="big-bang-quantum.html">
+                <li>
+                    <span class="lang-en">The Big Bang & Quantum Mechanics</span>
+                    <span class="lang-si">මහා පිපිරුම සහ ක්වොන්ටම් යාන්ත්‍රණය</span>
+                </li>
+            </a>
+            <a href="virtual-particles.html">
+                <li>
+                    <span class="lang-en">Virtual Particles</span>
+                    <span class="lang-si">අතථ්‍ය අංශු (Virtual Particles)</span>
+                </li>
+            </a>
+            <a href="quantum-gravity.html">
+                <li>
+                    <span class="lang-en">Quantum Gravity</span>
+                    <span class="lang-si">ක්වොන්ටම් ගුරුත්වාකර්ෂණය</span>
+                </li>
+            </a>
+            <a href="planck-length.html">
+                <li>
+                    <span class="lang-en">The Planck Length</span>
+                    <span class="lang-si">ප්ලාන්ක් දිග (Planck Length)</span>
+                </li>
+            </a>
         </ul>
 
         <!-- Category 9: Quantum in Nature -->
         <h3>
             <span class="lang-en">Quantum in Nature</span>
-            <span class="lang-si">ස්වභාවධර්මයේ ක්වොන්ටම් භාවිතය</span>
+            <span class="lang-si">ස්වභාවධර්මයේ ක්වොන්ටම් ක්‍රියාවලීන්</span>
         </h3>
         <ul class="topic-grid">
-            <a href="quantum-smell-theory.html"><li><span class="lang-en">Quantum Smell Theory</span><span class="lang-si">ගඳ සුවඳ පිළිබඳ ක්වොන්ටම් වාදය</span></li></a>
-            <a href="how-the-sun-shines.html"><li><span class="lang-en">How the Sun Shines</span><span class="lang-si">සූර්යයා බැබළෙන ආකාරය</span></li></a>
-            <a href="quantum-consciousness.html"><li><span class="lang-en">Quantum Consciousness</span><span class="lang-si">ක්වොන්ටම් විඥානය</span></li></a>
-            <a href="ice-and-water-quantum.html"><li><span class="lang-en">Quantum Changes in Water</span><span class="lang-si">ජලයේ සිදුවන ක්වොන්ටම් වෙනස්කම්</span></li></a>
-            <a href="superconductivity.html"><li><span class="lang-en">Superconductivity & Levitation</span><span class="lang-si">අධිසන්නායකතාව සහ ලෙවිටේෂන්</span></li></a>
+            <a href="quantum-smell-theory.html">
+                <li>
+                    <span class="lang-en">Quantum Smell Theory</span>
+                    <span class="lang-si">ඝ්‍රාණ ක්වොන්ටම් ප්‍රමේයය</span>
+                </li>
+            </a>
+            <a href="how-the-sun-shines.html">
+                <li>
+                    <span class="lang-en">How the Sun Shines</span>
+                    <span class="lang-si">සූර්යයා බැබළෙන ආකාරය</span>
+                </li>
+            </a>
+            <a href="quantum-consciousness.html">
+                <li>
+                    <span class="lang-en">Quantum Consciousness</span>
+                    <span class="lang-si">ක්වොන්ටම් විඥානය</span>
+                </li>
+            </a>
+            <a href="ice-and-water-quantum.html">
+                <li>
+                    <span class="lang-en">Quantum Changes in Water</span>
+                    <span class="lang-si">ජලයේ සිදුවන ක්වොන්ටම් වෙනස්කම්</span>
+                </li>
+            </a>
+            <a href="superconductivity.html">
+                <li>
+                    <span class="lang-en">Superconductivity & Levitation</span>
+                    <span class="lang-si">අධිසන්නායකතාව සහ ලෙවිටේෂන්</span>
+                </li>
+            </a>
         </ul>
 
         <!-- Category 10: Sci-Fi vs Reality -->
@@ -544,24 +735,74 @@
             <span class="lang-si">විද්‍යා ප්‍රබන්ධ සහ යථාර්ථය</span>
         </h3>
         <ul class="topic-grid">
-            <a href="mcu-quantum-realm.html"><li><span class="lang-en">MCU & The Quantum Realm</span><span class="lang-si">මාර්වල් සිනමා විශ්වය සහ ක්වොන්ටම් ලෝකය</span></li></a>
-            <a href="interstellar-tesseract.html"><li><span class="lang-en">Interstellar & The Tesseract</span><span class="lang-si">ඉන්ටර්ස්ටෙලර් චිත්‍රපටය සහ ටෙසරැක්ටය</span></li></a>
-            <a href="tenet-entropy.html"><li><span class="lang-en">Tenet & Entropy Inversion</span><span class="lang-si">ටෙනට් සහ එන්ට්‍රොපි ප්‍රතිලෝමකරණය</span></li></a>
-            <a href="quantum-movies.html"><li><span class="lang-en">Best Movies for Quantum Concepts</span><span class="lang-si">ක්වොන්ටම් සංකල්ප ඇතුළත් හොඳම චිත්‍රපට</span></li></a>
-            <a href="quantum-vs-bitcoin.html"><li><span class="lang-en">Quantum Threats to Bitcoin</span><span class="lang-si">බිට්කොයින් වෙත ඇති ක්වොන්ටම් තර්ජන</span></li></a>
+            <a href="mcu-quantum-realm.html">
+                <li>
+                    <span class="lang-en">MCU & The Quantum Realm</span>
+                    <span class="lang-si">MCU සහ ක්වොන්ටම් ක්ෂේත්‍රය</span>
+                </li>
+            </a>
+            <a href="interstellar-tesseract.html">
+                <li>
+                    <span class="lang-en">Interstellar & The Tesseract</span>
+                    <span class="lang-si">Interstellar සහ ටෙසරැක්ටය</span>
+                </li>
+            </a>
+            <a href="tenet-entropy.html">
+                <li>
+                    <span class="lang-en">Tenet & Entropy Inversion</span>
+                    <span class="lang-si">Tenet සහ එන්ට්‍රොපි ප්‍රතිලෝමකරණය</span>
+                </li>
+            </a>
+            <a href="quantum-movies.html">
+                <li>
+                    <span class="lang-en">Best Movies for Quantum Concepts</span>
+                    <span class="lang-si">ක්වොන්ටම් සංකල්ප සහිත හොඳම චිත්‍රපට</span>
+                </li>
+            </a>
+            <a href="quantum-vs-bitcoin.html">
+                <li>
+                    <span class="lang-en">Quantum Threats to Bitcoin</span>
+                    <span class="lang-si">බිට්කොයින් වෙත ඇති ක්වොන්ටම් තර්ජන</span>
+                </li>
+            </a>
         </ul>
 
         <!-- Category 11: Bizarre Quantum Phenomena -->
         <h3>
             <span class="lang-en">Bizarre Quantum Phenomena</span>
-            <span class="lang-si">අමුතුම ආකාරයේ ක්වොන්ටම් සංසිද්ධීන්</span>
+            <span class="lang-si">අමුතුම ආකාරයේ ක්වොන්ටම් සංසිද්ධි</span>
         </h3>
         <ul class="topic-grid">
-            <a href="quantum-eraser-experiment.html"><li><span class="lang-en">Quantum Eraser Experiment</span><span class="lang-si">ක්වොන්ටම් මකන අත්හදා බැලීම</span></li></a>
-            <a href="delayed-choice-experiment.html"><li><span class="lang-en">Delayed-Choice Experiment</span><span class="lang-si">ප්‍රමාදිත තේරීම් අත්හදා බැලීම</span></li></a>
-            <a href="superfluidity.html"><li><span class="lang-en">Superfluidity</span><span class="lang-si">අධිද්‍රවශීලතාව (Superfluidity)</span></li></a>
-            <a href="quantum-cheshire-cat.html"><li><span class="lang-en">The Quantum Cheshire Cat</span><span class="lang-si">ක්වොන්ටම් චෙෂයර් බළලා</span></li></a>
-            <a href="casimir-effect.html"><li><span class="lang-en">The Casimir Effect</span><span class="lang-si">කැසිමීර් ආචරණය</span></li></a>
+            <a href="quantum-eraser-experiment.html">
+                <li>
+                    <span class="lang-en">Quantum Eraser Experiment</span>
+                    <span class="lang-si">ක්වොන්ටම් මකන අත්හදා බැලීම</span>
+                </li>
+            </a>
+            <a href="delayed-choice-experiment.html">
+                <li>
+                    <span class="lang-en">Delayed-Choice Experiment</span>
+                    <span class="lang-si">ප්‍රමාදිත තේරීම් අත්හදා බැලීම</span>
+                </li>
+            </a>
+            <a href="superfluidity.html">
+                <li>
+                    <span class="lang-en">Superfluidity</span>
+                    <span class="lang-si">අධිප්‍රවාහීතාව (Superfluidity)</span>
+                </li>
+            </a>
+            <a href="quantum-cheshire-cat.html">
+                <li>
+                    <span class="lang-en">The Quantum Cheshire Cat</span>
+                    <span class="lang-si">ක්වොන්ටම් චෙෂයර් බළලා</span>
+                </li>
+            </a>
+            <a href="casimir-effect.html">
+                <li>
+                    <span class="lang-en">The Casimir Effect</span>
+                    <span class="lang-si">කැසිමීර් ආචරණය</span>
+                </li>
+            </a>
         </ul>
 
         <!-- Category 12: Philosophy, Mind & Reality -->
@@ -570,11 +811,36 @@
             <span class="lang-si">දර්ශනය, මනස සහ යථාර්ථය</span>
         </h3>
         <ul class="topic-grid">
-            <a href="einstein-bohr-debate.html"><li><span class="lang-en">The Moon Observation Debate</span><span class="lang-si">චන්ද්‍ර නිරීක්ෂණ වාදය (අයින්ස්ටයින්-බෝර්)</span></li></a>
-            <a href="solipsism-quantum.html"><li><span class="lang-en">Solipsism & Quantum Physics</span><span class="lang-si">ස්වමාත්‍රවාදය (Solipsism) සහ ක්වොන්ටම්</span></li></a>
-            <a href="wigners-friend-paradox.html"><li><span class="lang-en">Wigner's Friend Paradox</span><span class="lang-si">විග්නර්ගේ මිතුරාගේ විරුද්ධාභාසය</span></li></a>
-            <a href="objective-reality.html"><li><span class="lang-en">Does Objective Reality Exist?</span><span class="lang-si">වස්තුගතික යථාර්ථයක් ඇත්තටම පවතිනවාද?</span></li></a>
-            <a href="observer-effect.html"><li><span class="lang-en">The Observer Effect vs. Measurement</span><span class="lang-si">නිරීක්ෂක බලපෑම සහ මැනීම</span></li></a>
+            <a href="einstein-bohr-debate.html">
+                <li>
+                    <span class="lang-en">The Moon Observation Debate</span>
+                    <span class="lang-si">චන්ද්‍ර නිරීක්ෂණ විවාදය</span>
+                </li>
+            </a>
+            <a href="solipsism-quantum.html">
+                <li>
+                    <span class="lang-en">Solipsism & Quantum Physics</span>
+                    <span class="lang-si">ස්වමාත්‍රවාදය (Solipsism) සහ ක්වොන්ටම්</span>
+                </li>
+            </a>
+            <a href="wigners-friend-paradox.html">
+                <li>
+                    <span class="lang-en">Wigner's Friend Paradox</span>
+                    <span class="lang-si">විග්නර්ගේ මිතුරාගේ විරුද්ධාභාසය</span>
+                </li>
+            </a>
+            <a href="objective-reality.html">
+                <li>
+                    <span class="lang-en">Does Objective Reality Exist?</span>
+                    <span class="lang-si">වස්තුගතික යථාර්ථයක් පවතීද?</span>
+                </li>
+            </a>
+            <a href="observer-effect.html">
+                <li>
+                    <span class="lang-en">The Observer Effect vs. Measurement</span>
+                    <span class="lang-si">නිරීක්ෂක ආචරණය සහ මිනුම් ලබා ගැනීම</span>
+                </li>
+            </a>
         </ul>
 
         <!-- Category 13: The Future Tech Revolution -->
@@ -583,52 +849,113 @@
             <span class="lang-si">අනාගත තාක්ෂණික විප්ලවය</span>
         </h3>
         <ul class="topic-grid">
-            <a href="quantum-sensors.html"><li><span class="lang-en">Quantum Sensors</span><span class="lang-si">ක්වොන්ටම් සංවේදක</span></li></a>
-            <a href="quantum-batteries.html"><li><span class="lang-en">Quantum Batteries</span><span class="lang-si">ක්වොන්ටම් බැටරි</span></li></a>
-            <a href="quantum-ai.html"><li><span class="lang-en">Quantum Artificial Intelligence</span><span class="lang-si">ක්වොන්ටම් කෘතිම බුද්ධිය (AI)</span></li></a>
-            <a href="quantum-chemistry.html"><li><span class="lang-en">Quantum Chemistry & Medicine</span><span class="lang-si">ක්වොන්ටම් රසායන විද්‍යාව සහ වෛද්‍ය විද්‍යාව</span></li></a>
-            <a href="quantum-materials.html"><li><span class="lang-en">Exotic Quantum Materials</span><span class="lang-si">සුවිශේෂී ක්වොන්ටම් ද්‍රව්‍ය</span></li></a>
+            <a href="quantum-sensors.html">
+                <li>
+                    <span class="lang-en">Quantum Sensors</span>
+                    <span class="lang-si">ක්වොන්ටම් සංවේදක</span>
+                </li>
+            </a>
+            <a href="quantum-batteries.html">
+                <li>
+                    <span class="lang-en">Quantum Batteries</span>
+                    <span class="lang-si">ක්වොන්ටම් බැටරි</span>
+                </li>
+            </a>
+            <a href="quantum-ai.html">
+                <li>
+                    <span class="lang-en">Quantum Artificial Intelligence</span>
+                    <span class="lang-si">ක්වොන්ටම් කෘතිම බුද්ධිය</span>
+                </li>
+            </a>
+            <a href="quantum-chemistry.html">
+                <li>
+                    <span class="lang-en">Quantum Chemistry & Medicine</span>
+                    <span class="lang-si">ක්වොන්ටම් රසායන විද්‍යාව සහ වෛද්‍ය විද්‍යාව</span>
+                </li>
+            </a>
+            <a href="quantum-materials.html">
+                <li>
+                    <span class="lang-en">Exotic Quantum Materials</span>
+                    <span class="lang-si">අසාමාන්‍ය ක්වොන්ටම් ද්‍රව්‍ය</span>
+                </li>
+            </a>
         </ul>
 
         <!-- Category 14: The Great Debates & Minds -->
         <h3>
             <span class="lang-en">The Great Debates & Minds</span>
-            <span class="lang-si">මහා විවාදයන් සහ ශ්‍රේෂ්ඨ විද්‍යාඥයෝ</span>
+            <span class="lang-si">ශ්‍රේෂ්ඨ විවාදයන් සහ විද්‍යාඥයින්</span>
         </h3>
         <ul class="topic-grid">
-            <a href="solvay-conference-1927.html"><li><span class="lang-en">Solvay Conference 1927</span><span class="lang-si">සොල්වේ සමුළුව 1927</span></li></a>
-            <a href="god-does-not-play-dice.html"><li><span class="lang-en">"God Does Not Play Dice"</span><span class="lang-si">"දෙවියන් වහන්සේ දාදු නොදමති"</span></li></a>
-            <a href="niels-bohr.html"><li><span class="lang-en">Niels Bohr</span><span class="lang-si">නීල්ස් බෝර්</span></li></a>
-            <a href="hugh-everett.html"><li><span class="lang-en">Hugh Everett</span><span class="lang-si">හියු එවරෙට්</span></li></a>
-            <a href="bells-theorem.html"><li><span class="lang-en">Bell's Theorem</span><span class="lang-si">බෙල්ගේ ප්‍රමේයය</span></li></a>
+            <a href="solvay-conference-1927.html">
+                <li>
+                    <span class="lang-en">Solvay Conference 1927</span>
+                    <span class="lang-si">1927 සොල්වේ සමුළුව</span>
+                </li>
+            </a>
+            <a href="god-does-not-play-dice.html">
+                <li>
+                    <span class="lang-en">"God Does Not Play Dice"</span>
+                    <span class="lang-si">"දෙවියන් වහන්සේ දාදු නොකෙළිති"</span>
+                </li>
+            </a>
+            <a href="niels-bohr.html">
+                <li>
+                    <span class="lang-en">Niels Bohr</span>
+                    <span class="lang-si">නිල්ස් බෝර්</span>
+                </li>
+            </a>
+            <a href="hugh-everett.html">
+                <li>
+                    <span class="lang-en">Hugh Everett</span>
+                    <span class="lang-si">හියු එවරෙට්</span>
+                </li>
+            </a>
+            <a href="bells-theorem.html">
+                <li>
+                    <span class="lang-en">Bell's Theorem</span>
+                    <span class="lang-si">බෙල්ගේ ප්‍රමේයය</span>
+                </li>
+            </a>
         </ul>
 
         <div class="dotted-hr"></div>
     </div>
 
     <script>
-        // Language Toggle Function
-        let currentLang = 'en'; 
+        // LocalStorage මත පදනම්ව භාෂාව ලබා ගැනීම හෝ default ලෙස ඉංග්‍රීසි තෝරා ගැනීම
+        let currentLang = localStorage.getItem('selectedLang') || 'en'; 
 
+        // පිටුව මුලින්ම Load වන විට ක්‍රියාත්මක වන කොටස
+        document.addEventListener("DOMContentLoaded", function() {
+            setLanguage(currentLang);
+        });
+
+        // බටන් එක ක්ලික් කළ විට භාෂාව වෙනස් කරන ශ්‍රිතය
         function toggleLanguage() {
+            currentLang = (currentLang === 'en') ? 'si' : 'en';
+            localStorage.setItem('selectedLang', currentLang); // බ්‍රව්සර් මතකයේ සුරැකීම
+            setLanguage(currentLang);
+        }
+
+        // භාෂාව පිටුවට අදාළ කරන ප්‍රධාන ශ්‍රිතය
+        function setLanguage(lang) {
             const langBtn = document.getElementById("langBtn");
             const enElements = document.querySelectorAll(".lang-en");
             const siElements = document.querySelectorAll(".lang-si");
 
-            if (currentLang === 'en') {
-                // Change to Sinhala
+            if (lang === 'si') {
                 enElements.forEach(el => el.style.display = 'none');
                 siElements.forEach(el => {
+                    // Span, A, Li වැනි ටැග් Inline-block ලෙස තැබීමෙන් පෙනුම ලස්සන වේ
                     if(el.tagName === 'SPAN' || el.tagName === 'A' || el.tagName === 'LI') {
                         el.style.display = 'inline-block';
                     } else {
                         el.style.display = 'block';
                     }
                 });
-                langBtn.innerText = "English";
-                currentLang = 'si';
+                if(langBtn) langBtn.innerText = "English";
             } else {
-                // Change to English
                 siElements.forEach(el => el.style.display = 'none');
                 enElements.forEach(el => {
                     if(el.tagName === 'SPAN' || el.tagName === 'A' || el.tagName === 'LI') {
@@ -637,8 +964,7 @@
                         el.style.display = 'block';
                     }
                 });
-                langBtn.innerText = "සිංහල";
-                currentLang = 'en';
+                if(langBtn) langBtn.innerText = "සිංහල";
             }
         }
 
@@ -661,15 +987,6 @@
             } else { 
                 audio.pause(); 
                 icon.innerHTML = "🔇"; 
-            }
-        }
-        
-        // Share placeholder function
-        function shareToFriends() {
-            if (navigator.share) {
-                navigator.share({ title: 'ITL', text: 'Check this out!', url: window.location.href });
-            } else {
-                alert("Link: " + window.location.href);
             }
         }
     </script>
