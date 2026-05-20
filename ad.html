@@ -28,6 +28,7 @@
             color: #fff;
             overflow: hidden;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
         }
@@ -50,6 +51,39 @@
                 radial-gradient(circle at 10% 70%, rgba(0, 150, 255, 0.15) 0%, transparent 40%),
                 radial-gradient(circle at 90% 20%, rgba(255, 0, 150, 0.15) 0%, transparent 40%);
             filter: blur(50px);
+        }
+
+        /* Top Header Control Bar */
+        .top-controls {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 25px;
+            z-index: 10;
+        }
+
+        /* Language Toggle Button Style */
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--primary-glow);
+            color: var(--primary-glow);
+            padding: 6px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .lang-btn:hover {
+            background: var(--primary-glow);
+            color: #000;
+            box-shadow: 0 0 15px var(--primary-glow);
         }
 
         /* --- 2. මධ්‍ය කාඩ්පත (Main Glass Card) --- */
@@ -176,59 +210,112 @@
             .main-card { padding: 40px 20px; }
             h1 { font-size: 24px; }
             p { font-size: 14px; }
+            .top-controls { padding: 10px 15px; }
         }
     </style>
 </head>
 <body>
-<!-- Audio File එක -->
-<audio id="myAudio" loop>
-    <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
-</audio>
 
-<div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
-    <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
-        <span id="music-icon">🔇</span>
+    <!-- Top Control Bar (Language & Music) -->
+    <div class="top-controls">
+        <button id="langToggle" class="lang-btn" onclick="toggleLanguage()">සිංහල</button>
+        <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px; user-select: none;">
+            <span id="music-icon">🔇</span>
+        </div>
     </div>
-</div>
 
-<script src="music.js"></script>    <div class="bg-stars"></div>
+    <!-- Audio File එක -->
+    <audio id="myAudio" loop>
+        <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="bg-stars"></div>
 
     <div class="main-card">
         <!-- Logo -->
         <a href="https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/" class="logo-wrapper">
             <img src="https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/images/ITL.jpeg" alt="ITL Logo" class="logo-img">
-            <div class="catch-me">ENTER<br>LAB</div>
+            <div class="catch-me" data-en="ENTER<br>LAB" data-si="ඇතුල් වන්න<br>LAB">ENTER<br>LAB</div>
         </a>
 
         <!-- Content -->
         <h1>Infinity Thinkers Laboratory</h1>
-        <p>
+        <p data-en="Dive into a digital encyclopedia designed for explorers of all ages. From the giants of the 🦖 Prehistoric Era to the secrets of 🔮 Ancient Mythology and the frontiers of 🚀 Space & Tech."
+           data-si="සියලුම වයස්වල ගවේෂකයන් සඳහා නිර්මාණය කර ඇති ඩිජිටල් විශ්වකෝෂයකට කිමිදෙන්න. 🦖 ප්‍රාග් ඓතිහාසික යුගයේ දැවැන්තයන්ගේ සිට 🔮 පුරාණ මිථ්‍යා කථා වල රහස් සහ 🚀 අභ්‍යවකාශ හා තාක්ෂණයේ සීමාවන් දක්වා මෙහි අන්තර්ගත වේ.">
             Dive into a digital encyclopedia designed for explorers of all ages. 
             From the giants of the 🦖 Prehistoric Era to the secrets of 🔮 Ancient Mythology 
             and the frontiers of 🚀 Space & Tech.
         </p>
 
         <!-- Buttons -->
-        <a href="https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/" class="explore-btn">EXPLORE NOW 🚀</a>
+        <a href="https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/" class="explore-btn" data-en="EXPLORE NOW 🚀" data-si="දැන් ගවේෂණය කරන්න 🚀">EXPLORE NOW 🚀</a>
         <br>
-        <button onclick="sharePage()" class="share-btn">SHARE WITH FRIENDS</button>
+        <button onclick="sharePage()" class="share-btn" data-en="SHARE WITH FRIENDS" data-si="මිතුරන් සමඟ බෙදාගන්න">SHARE WITH FRIENDS</button>
     </div>
 
     <script>
         async function sharePage() {
+            let currentLang = localStorage.getItem("preferredLanguage") || "en";
+            
             const shareData = {
                 title: 'Infinity Thinkers Laboratory',
-                text: 'Discover mind-blowing facts about dinosaurs, space, and ancient mysteries! 🦖🚀',
+                text: currentLang === 'si' 
+                    ? 'දිනසෝරයන්, අභ්‍යවකාශය සහ පැරණි අභිරහස් ගැන පුදුම හිතෙන කරුණු සොයා ගන්න! 🦖🚀' 
+                    : 'Discover mind-blowing facts about dinosaurs, space, and ancient mysteries! 🦖🚀',
                 url: 'https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/'
             };
+            
             try {
-                if (navigator.share) { await navigator.share(shareData); } 
-                else {
+                if (navigator.share) { 
+                    await navigator.share(shareData); 
+                } else {
                     navigator.clipboard.writeText(shareData.url);
-                    alert("Link copied! 🚀");
+                    alert(currentLang === 'si' ? "ලින්ක් එක කොපි කරගත්තා! 🚀" : "Link copied! 🚀");
                 }
-            } catch (err) { console.log(err); }
+            } catch (err) { 
+                console.log(err); 
+            }
         }
+
+        // --- භාෂා මාරු කිරීමේ පද්ධතිය (Language Switcher Logic) ---
+        function toggleLanguage() {
+            let currentLang = localStorage.getItem("preferredLanguage") || "en";
+            let newLang = (currentLang === "en") ? "si" : "en";
+            
+            localStorage.setItem("preferredLanguage", newLang);
+            applyLanguage(newLang);
+        }
+
+        function applyLanguage(lang) {
+            const btn = document.getElementById("langToggle");
+            
+            if (lang === "si") {
+                btn.textContent = "English";
+            } else {
+                btn.textContent = "සිංහල";
+            }
+
+            const elements = document.querySelectorAll('[data-en], [data-si]');
+            elements.forEach(el => {
+                if (lang === "si") {
+                    if (el.getAttribute('data-si')) {
+                        // HTML Tags ඇතුලේ තියෙන සිංහල අකුරු වෙනස් කිරීම (<br> ටැග් එක වැඩ කිරීමට innerHTML යොදා ඇත)
+                        el.innerHTML = el.getAttribute('data-si');
+                    }
+                } else {
+                    if (el.getAttribute('data-en')) {
+                        el.innerHTML = el.getAttribute('data-en');
+                    }
+                }
+            });
+        }
+
+        // පිටුව මුලින්ම ලෝඩ් වන විට ක්‍රියාත්මක වන කොටස
+        document.addEventListener("DOMContentLoaded", () => {
+            let savedLang = localStorage.getItem("preferredLanguage") || "en";
+            applyLanguage(savedLang);
+        });
     </script>
+    <script src="music.js"></script>
 </body>
 </html>
