@@ -44,6 +44,30 @@
             font-size: 20px;
         }
 
+        /* Right side menu layout */
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* Language Toggle Button Style */
+        .lang-btn {
+            background: #222;
+            color: #00d4ff;
+            border: 1px solid #00d4ff;
+            padding: 5px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+        .lang-btn:hover {
+            background: #00d4ff;
+            color: #000;
+        }
+
         /* Hamburger Menu Button */
         .menu-toggle {
             background: none;
@@ -71,7 +95,7 @@
         }
 
         .sidebar.open {
-            right: 0; /* ක්ලික් කළ විට මතු වේ */
+            right: 0; /* 🔑 ක්ලික් කළ විට මතු වේ */
         }
 
         /* Close Button inside Sidebar */
@@ -222,14 +246,30 @@
             margin: 60px 0;
             opacity: 0.3;
         }
+
+        /* 🌐 Multi-language Visibility Controller */
+        .lang-si { display: none; } /* Default සිංහල සඟවන්න */
+        
+        body.sinhala-mode .lang-en { display: none; } /* සිංහල Mode වලදී ඉංග්‍රීසි සඟවන්න */
+        body.sinhala-mode .lang-si { display: inline-block; } 
+        body.sinhala-mode h3.lang-si, 
+        body.sinhala-mode span.lang-si,
+        body.sinhala-mode h1.lang-si { display: block; } /* Block මට්ටමේ ඒවා නිවැරදිව පෙන්වන්න */
     </style>
 </head>
 <body>
 
     <!-- New Top Navbar -->
     <nav>
-        <a href="index.html" class="nav-home">🏠 Home</a>
-        <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+        <a href="index.html" class="nav-home">
+            <span class="lang-en">🏠 Home</span>
+            <span class="lang-si">🏠 මුල් පිටුව</span>
+        </a>
+        <div class="nav-right">
+            <!-- 🌐 Language Switcher Button -->
+            <button id="langToggle" class="lang-btn" onclick="toggleLanguage()">Sinhala</button>
+            <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+        </div>
     </nav>
 
     <!-- Sidebar Overlay -->
@@ -241,64 +281,121 @@
         
         <div class="sidebar-section">
             <!-- Main Pages Links -->
-            <a href="index.html">Home</a>
-            <a href="earth.html">Earth</a>
-            <a href="animals.html">Animals</a>
-            <a href="space.html">Space</a>
-            <a href="mysteries.html">Mysteries</a>
-            <a href="history.html">History</a>
-            <a href="quantum.html" style="color: #00d4ff;">🌌 Quantum Physics</a>
+            <a href="index.html">
+                <span class="lang-en">Home</span><span class="lang-si">මුල් පිටුව</span>
+            </a>
+            <a href="earth.html">
+                <span class="lang-en">Earth</span><span class="lang-si">පෘථිවිය</span>
+            </a>
+            <a href="animals.html">
+                <span class="lang-en">Animals</span><span class="lang-si">සතුන්</span>
+            </a>
+            <a href="space.html">
+                <span class="lang-en">Space</span><span class="lang-si">අවකාශය</span>
+            </a>
+            <a href="mysteries.html">
+                <span class="lang-en">Mysteries</span><span class="lang-si">අභිරහස්</span>
+            </a>
+            <a href="history.html">
+                <span class="lang-en">History</span><span class="lang-si">ඉතිහාසය</span>
+            </a>
+            <a href="quantum.html" style="color: #00d4ff;">
+                <span class="lang-en">🌌 Quantum Physics</span><span class="lang-si">🌌 ක්වොන්ටම් භෞතික විද්‍යාව</span>
+            </a>
             
             <!-- පළමු ඉරෙන් වෙන් කිරීම -->
             <hr class="sidebar-divider">
             
             <!-- Quiz & Facts Links -->
-            <a href="mcq.html" class="sb-mcq">📝 Start MCQ Quiz</a>
-            <a href="facts.html" class="sb-facts">⚡ Fun Amazing Facts ⚡</a>
+            <a href="mcq.html" class="sb-mcq">
+                <span class="lang-en">📝 Start MCQ Quiz</span><span class="lang-si">📝 MCQ ප්‍රශ්නාවලිය</span>
+            </a>
+            <a href="facts.html" class="sb-facts">
+                <span class="lang-en">⚡ Fun Amazing Facts ⚡</span><span class="lang-si">⚡ පුදුම සහගත කරුණු ⚡</span>
+            </a>
             
             <!-- දෙවැනි ඉරෙන් වෙන් කිරීම -->
             <hr class="sidebar-divider">
             
             <!-- Action Links -->
-            <a onclick="shareToFriends(); toggleSidebar();" style="cursor:pointer;" class="sb-share">🔗 SHARE</a>
-            <a href="ad.html" class="sb-help">❤️ Help</a>
-            <a href="aaaextradatapage.html">About</a>
+            <a onclick="shareToFriends(); toggleSidebar();" style="cursor:pointer;" class="sb-share">
+                <span class="lang-en">🔗 SHARE</span><span class="lang-si">🔗 බෙදාගන්න</span>
+            </a>
+            <a href="ad.html" class="sb-help">
+                <span class="lang-en">❤️ Help</span><span class="lang-si">❤️ උදව්</span>
+            </a>
+            <a href="aaaextradatapage.html">
+                <span class="lang-en">About</span><span class="lang-si">අපි ගැන</span>
+            </a>
         </div>
     </div>
 
     <div class="container">
-        <h1>ALEXANDER THE GREAT</h1>
+        <!-- Main Title -->
+        <h1 class="lang-en">ALEXANDER THE GREAT</h1>
+        <h1 class="lang-si">මහා ඇලෙක්සැන්ඩර් රජු</h1>
 
         <div class="img-container">
             <img class="alexander-img" src="images/alexander.jpg" alt="Alexander the Great Illustration">
         </div>
 
+        <!-- Section 1 -->
         <section>
-            <h2>The King of Macedon</h2>
-            <h3><strong>Alexander III of Macedon</strong> was a king of the ancient Greek kingdom of Macedon. Born in 356 BC, he was tutored by the famous philosopher <strong>Aristotle</strong> and became one of history's most successful military commanders.</h3>
+            <h2>
+                <span class="lang-en">The King of Macedon</span>
+                <span class="lang-si">මැසිඩෝනියාවේ රජු</span>
+            </h2>
+            <h3 class="lang-en"><strong>Alexander III of Macedon</strong> was a king of the ancient Greek kingdom of Macedon. Born in 356 BC, he was tutored by the famous philosopher <strong>Aristotle</strong> and became one of history's most successful military commanders.</h3>
+            <h3 class="lang-si"><strong>මැසිඩෝනියාවේ III වන ඇලෙක්සැන්ඩර්</strong> යනු පුරාණ ග්‍රීක රාජධානියක් වූ මැසිඩෝනියාවේ රජුය. ක්‍රි.පූ. 356 දී උපත ලැබූ ඔහුට සුප්‍රකට දාර්ශනිකයෙකු වූ <strong>ඇරිස්ටෝටල්</strong> විසින් අධ්‍යාපනය ලබා දුන් අතර, ඔහු ඉතිහාසයේ වඩාත්ම සාර්ථක යුද හමුදා අණදෙන නිලධාරියෙකු බවට පත් විය.</h3>
         </section>
 
+        <!-- Section 2 -->
         <section>
-            <h2>Legendary Achievements</h2>
-            <ul>
+            <h2>
+                <span class="lang-en">Legendary Achievements</span>
+                <span class="lang-si">පුරාවෘත්තීය ජයග්‍රහණ</span>
+            </h2>
+            
+            <!-- English List -->
+            <ul class="lang-en">
                 <li><strong>Undefeated in Battle:</strong> Alexander spent 12 years on campaign and never lost a single battle.</li>
                 <li><strong>Massive Empire:</strong> By the age of 30, he had created one of the largest empires in history, stretching from Greece to northwestern India.</li>
                 <li><strong>Cultural Fusion:</strong> He spread Greek culture (Hellenism) across the east, which influenced art and science for centuries.</li>
-            </en>
+            </ul>
+
+            <!-- Sinhala List -->
+            <ul class="lang-si">
+                <li><strong>යුද්ධයකදී පරාජය නොවීම:</strong> ඇලෙක්සැන්ඩර් වසර 12 ක් පුරා යුද ව්‍යාපාර මෙහෙයවූ අතර කිසිදු සටනකින් පරාජය වූයේ නැත.</li>
+                <li><strong>දැවැන්ත අධිරාජ්‍යය:</strong> වයස අවුරුදු 30 වන විට ඔහු ග්‍රීසියේ සිට වයඹදිග ඉන්දියාව දක්වා විහිදුණු ඉතිහාසයේ විශාලතම අධිරාජ්‍යයක් නිර්මාණය කළේය.</li>
+                <li><strong>සංස්කෘතික සංකලනය:</strong> ඔහු ග්‍රීක සංස්කෘතිය (හෙලනිස්ටික් සංස්කෘතිය) පෙරදිග පුරා ව්‍යාප්ත කළ අතර එය සියවස් ගණනාවක් පුරා කලාවට සහ විද්‍යාවට බලපෑම් කළේය.</li>
+            </ul>
         </section>
 
+        <!-- Section 3 -->
         <section>
-            <h2>The Mystery of His Death</h2>
-            <h3>At the young age of 32, Alexander died in Babylon. The cause remains a mystery—some say it was <strong>fever or malaria</strong>, while others believe he was <strong>poisoned</strong> by his rivals.</h3>
+            <h2>
+                <span class="lang-en">The Mystery of His Death</span>
+                <span class="lang-si">ඔහුගේ මරණයේ අභිරහස</span>
+            </h2>
+            <h3 class="lang-en">At the young age of 32, Alexander died in Babylon. The cause remains a mystery—some say it was <strong>fever or malaria</strong>, while others believe he was <strong>poisoned</strong> by his rivals.</h3>
+            <h3 class="lang-si">වයස අවුරුදු 32 වැනි තරුණ වියේදී ඇලෙක්සැන්ඩර් බැබිලෝනියාවේදී මිය ගියේය. මරණයට හේතුව තවමත් අභිරහසකි — සමහරු එය <strong>උණ හෝ මැලේරියාව</strong> යැයි පවසන අතර තවත් සමහරු විශ්වාස කරන්නේ ඔහුගේ ප්‍රතිවාදීන් විසින් ඔහුට <strong>වශීෂ (වස)</strong> දුන් බවයි.</h3>
         </section>
 
         <div class="dotted-hr"></div>
     </div>
 
+    <!-- Feedback Widget -->
     <div id="feedback-widget">
-        <span>Helpful?</span>
-        <button onclick="hideFeedback('Yes')">YES</button>
-        <button onclick="hideFeedback('No')">NO</button>
+        <span>
+            <span class="lang-en">Helpful?</span>
+            <span class="lang-si">ප්‍රයෝජනවත්ද?</span>
+        </span>
+        <button onclick="hideFeedback('Yes')">
+            <span class="lang-en">YES</span><span class="lang-si">ඔව්</span>
+        </button>
+        <button onclick="hideFeedback('No')">
+            <span class="lang-en">NO</span><span class="lang-si">නැත</span>
+        </button>
     </div>
 
     <style>
@@ -334,8 +431,39 @@
     </style>
 
     <script>
+        // 🌐 Language Toggle and Persistence Logic
+        function updateLanguageUI(lang) {
+            const btn = document.getElementById("langToggle");
+            if (lang === "si") {
+                document.body.classList.add("sinhala-mode");
+                btn.textContent = "English";
+            } else {
+                document.body.classList.remove("sinhala-mode");
+                btn.textContent = "Sinhala";
+            }
+        }
+
+        function toggleLanguage() {
+            let currentLang = localStorage.getItem("selectedLanguage") || "en";
+            let newLang = currentLang === "en" ? "si" : "en";
+            localStorage.setItem("selectedLanguage", newLang);
+            updateLanguageUI(newLang);
+        }
+
+        // Run as soon as page loads to sync language state
+        document.addEventListener("DOMContentLoaded", function() {
+            const savedLang = localStorage.getItem("selectedLanguage") || "en";
+            updateLanguageUI(savedLang);
+        });
+
+        // Feedback Logic
         function hideFeedback(type) {
-            alert("The history of the Great King has been recorded!");
+            const currentLang = localStorage.getItem("selectedLanguage") || "en";
+            if (currentLang === "si") {
+                alert("මහා රජුගේ ඉතිහාසය වාර්තාගත කර ඇත!");
+            } else {
+                alert("The history of the Great King has been recorded!");
+            }
             document.getElementById('feedback-widget').style.display = 'none';
         }
 
