@@ -266,7 +266,14 @@ nav .nav-home {
         <span id="music-icon">🔇</span>
     </div>
 </div>
-
+<script>// Sidebar Toggle Function
+function toggleSidebar() {
+    const sidebar = document.getElementById("sidebarMenu");
+    const overlay = document.getElementById("sidebarOverlay");
+    
+    sidebar.classList.toggle("open");
+    overlay.classList.toggle("show");
+}</script>
 <script src="music.js"></script>
     <div class="container">
         <h1>About Us</h1>
