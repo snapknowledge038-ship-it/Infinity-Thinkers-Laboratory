@@ -147,27 +147,28 @@
             font-size: 20px;
         }
 
-        /* Nav Action Container */
-        .nav-actions {
+        /* Right side menu layout */
+        .nav-right {
             display: flex;
             align-items: center;
             gap: 15px;
         }
 
-        /* Language Toggle Button */
+        /* Language Toggle Button Style */
         .lang-btn {
-            background: #00d4ff;
-            color: #000;
-            border: none;
+            background: #222;
+            color: #00d4ff;
+            border: 1px solid #00d4ff;
             padding: 5px 12px;
-            font-size: 14px;
-            font-weight: bold;
-            border-radius: 20px;
+            border-radius: 4px;
             cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
             transition: 0.2s;
         }
         .lang-btn:hover {
-            background: #00b2d6;
+            background: #00d4ff;
+            color: #000;
         }
 
         /* Hamburger Menu Button */
@@ -178,15 +179,13 @@
             font-size: 28px;
             cursor: pointer;
             user-select: none;
-            padding: 0;
-            line-height: 1;
         }
 
         /* Slide-out Sidebar Styles */
         .sidebar {
             position: fixed;
             top: 0;
-            right: -280px;
+            right: -280px; 
             width: 280px;
             height: 100%;
             background-color: #111;
@@ -199,7 +198,7 @@
         }
 
         .sidebar.open {
-            right: 0;
+            right: 0; 
         }
 
         /* Close Button inside Sidebar */
@@ -259,6 +258,7 @@
         .sidebar-overlay.show {
             display: block;
         }
+        
         /* Content Styles */
         h1 {
             font-size: clamp(30px, 8vw, 60px);
@@ -352,13 +352,13 @@
         
         h2 { color: #00d4ff; font-size: 28px; margin-top: 30px; }
 
-        /* Language visibility utility classes */
-        .lang-en { display: block; }
-        .lang-si { display: none; }
-
-        /* Adjust inline/flex elements display */
-        span.lang-en, a.lang-en, li.lang-en { display: inline-block; }
-        span.lang-si, a.lang-si, li.lang-si { display: none; }
+        /* Multi-language Visibility Controller */
+        .lang-si { display: none; } /* Default ඉංග්‍රීසි නිසා සිංහල මුලින් සඟවන්න */
+        
+        body.sinhala-mode .lang-en { display: none; } /* සිංහල Mode ක්‍රියාත්මක වූ විට ඉංග්‍රීසි සඟවන්න */
+        body.sinhala-mode .lang-si { display: inline-block; } /* සිංහල Mode ක්‍රියාත්මක වූ විට සිංහල පෙන්වන්න */
+        body.sinhala-mode blockquote.lang-si, 
+        body.sinhala-mode div.lang-si { display: block; }
     </style>
 </head>
 <body>
@@ -376,15 +376,15 @@
         </div>
     </div>
 
-    <!-- Top Navbar -->
+    <!-- New Top Navbar -->
     <nav>
         <a href="index.html" class="nav-home">
             <span class="lang-en">🏠 Home</span>
             <span class="lang-si">🏠 මුල් පිටුව</span>
         </a>
-        <div class="nav-actions">
+        <div class="nav-right">
             <!-- Language Switcher Button -->
-            <button class="lang-btn" id="langBtn" onclick="toggleLanguage()">සිංහල</button>
+            <button id="langToggle" class="lang-btn" onclick="toggleLanguage()">Sinhala</button>
             <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
         </div>
     </nav>
@@ -420,6 +420,7 @@
                 <span class="lang-en">🌌 Quantum Physics</span><span class="lang-si">🌌 ක්වොන්ටම් භෞතික විද්‍යාව</span>
             </a>
             
+            <!-- පළමු ඉරෙන් වෙන් කිරීම -->
             <hr class="sidebar-divider">
             
             <!-- Quiz & Facts Links -->
@@ -430,6 +431,7 @@
                 <span class="lang-en">⚡ Fun Amazing Facts ⚡</span><span class="lang-si">⚡ පුදුම සහගත කරුණු ⚡</span>
             </a>
             
+            <!-- දෙවැනි ඉරෙන් වෙන් කිරීම -->
             <hr class="sidebar-divider">
             
             <!-- Action Links -->
@@ -440,7 +442,7 @@
                 <span class="lang-en">❤️ Help</span><span class="lang-si">❤️ උදව්</span>
             </a>
             <a href="aaaextradatapage.html">
-                <span class="lang-en">About</span><span class="lang-si">අප ගැන</span>
+                <span class="lang-en">About</span><span class="lang-si">අපි ගැන</span>
             </a>
         </div>
     </div>
@@ -473,27 +475,27 @@
     <div class="container">
         <h2>
             <span class="lang-en">For Infinity Thinkers...</span>
-            <span class="lang-si">අනන්තය දක්වා සිතන්නන් වෙනුවෙන්...</span>
+            <span class="lang-si">නොනවතින සිතන්නන් වෙනුවෙන්...</span>
         </h2>
         <div class="description">
-            <!-- English Description -->
-            <div class="lang-en">
+            <!-- English Text -->
+            <span class="lang-en">
                 ITL is a platform created for curious minds who love exploring new knowledge every day. We bring fascinating facts about 🦖 dinosaurs, 🔮 mythology, 🔬 science discoveries, 🌍 nature, space, technology, and amazing things around the world.
                 <br><br>
                 Our content is presented in a simple, clear, and engaging way — making learning fun and easy for everyone. 🚀📚
-            </div>
-            <!-- Sinhala Description -->
-            <div class="lang-si">
-                ITL යනු දිනපතා අලුත් දැනුම ගවේෂණය කිරීමට කැමති කුතුහලයෙන් පිරි මොළයන් වෙනුවෙන් නිර්මාණය කරන ලද වේදිකාවකි. අපි 🦖 දිනසෝරයන්, 🔮 මිත්‍යා කථා, 🔬 විද්‍යාත්මක සොයාගැනීම්, 🌍 ස්වභාවධර්මය, අවකාශය, තාක්ෂණය සහ ලොව පුරා ඇති පුදුම සහගත දේවල් පිළිබඳ රසවත් තොරතුරු ඔබ වෙත ගෙන එන්නෙමු.
+            </span>
+            <!-- Sinhala Text -->
+            <span class="lang-si">
+                ITL යනු දිනපතා අලුත් දැනුම ගවේෂණය කිරීමට කැමති කුතුහලයෙන් පිරි මොළයන් වෙනුවෙන් නිර්මාණය කර ඇති ප්ලැට්ෆෝම් එකකි. අපි 🦖 ඩයිනසෝරයන්, 🔮 මිථ්‍යා කථා, 🔬 විද්‍යාත්මක සොයාගැනීම්, 🌍 ස්වභාවධර්මය, අභ්‍යවකාශය, තාක්‍ෂණය සහ ලොව පුරා ඇති පුදුම සහගත දේවල් පිළිබඳ රසවත් තොරතුරු ඔබ වෙත ගෙන එන්නෙමු.
                 <br><br>
-                අපගේ අන්තර්ගතය සරල, පැහැදිලි සහ ආකර්ශනීය ලෙස ඉදිරිපත් කර ඇත — එමඟින් ඉගෙනීම සැමට විනෝදජනක සහ පහසු කරයි. 🚀📚
-            </div>
+                අපගේ අන්තර්ගතයන් සරල, පැහැදිලි සහ සිත් ඇදගන්නා සුළු ආකාරයකින් ඉදිරිපත් කර ඇත — එමඟින් ඉගෙනීම සැමට විනෝදජනක සහ පහසු කරයි. 🚀📚
+            </span>
         </div>
 
         <div class="mcq-container">
             <a href="mcq.html" class="mcq-btn">
                 <span class="lang-en">📝 Start MCQ Quiz</span>
-                <span class="lang-si">📝 MCQ ප්‍රශ්නාවලිය</span>
+                <span class="lang-si">📝 ප්‍රශ්නාවලිය අරඹන්න</span>
             </a>
             <a href="facts.html" class="facts-btn-special">
                 <span class="lang-en">⚡ Fun Amazing Facts ⚡</span>
@@ -506,62 +508,40 @@
             <span class="lang-si">තවත් සොයා බලන්න</span>
         </h2>
         <ul class="discover-list"> 
-            <a href="earth.html">
-                <li><span class="lang-en">Earth</span><span class="lang-si">පෘථිවිය</span></li>
-            </a>
-            <a href="animals.html">
-                <li><span class="lang-en">Animals</span><span class="lang-si">සතුන්</span></li>
-            </a>
-            <a href="space.html">
-                <li><span class="lang-en">Space</span><span class="lang-si">අවකාශය</span></li>
-            </a>
-            <a href="mysteries.html">
-                <li><span class="lang-en">Mysteries</span><span class="lang-si">අභිරහස්</span></li>
-            </a>
-            <a href="history.html">
-                <li><span class="lang-en">History</span><span class="lang-si">ඉතිහාසය</span></li>
-            </a>
-            <a href="quantum.html">
-                <li><span class="lang-en">🌌 Quantum Physics</span><span class="lang-si">🌌 ක්වොන්ටම් භෞතික විද්‍යාව</span></li>
-            </a>
+            <a href="earth.html"><li><span class="lang-en">Earth</span><span class="lang-si">පෘථිවිය</span></li></a>
+            <a href="animals.html"><li><span class="lang-en">Animals</span><span class="lang-si">සතුන්</span></li></a>
+            <a href="space.html"><li><span class="lang-en">Space</span><span class="lang-si">අවකාශය</span></li></a>
+            <a href="mysteries.html"><li><span class="lang-en">Mysteries</span><span class="lang-si">අභිරහස්</span></li></a>
+            <a href="history.html"><li><span class="lang-en">History</span><span class="lang-si">ඉතිහාසය</span></li></a>
+            <a href="quantum.html"><li>🌌 <span class="lang-en">Quantum Physics</span><span class="lang-si">ක්වොන්ටම් භෞතික විද්‍යාව</span></li></a>
         </ul>
     </div>
 
     <script>
-        // Language Toggle Function
-        let currentLang = 'en'; // Default language is English
-
-        function toggleLanguage() {
-            const langBtn = document.getElementById("langBtn");
-            const enElements = document.querySelectorAll(".lang-en");
-            const siElements = document.querySelectorAll(".lang-si");
-
-            if (currentLang === 'en') {
-                // Change to Sinhala
-                enElements.forEach(el => el.style.display = 'none');
-                siElements.forEach(el => {
-                    if(el.tagName === 'SPAN' || el.tagName === 'A' || el.tagName === 'LI') {
-                        el.style.display = 'inline-block';
-                    } else {
-                        el.style.display = 'block';
-                    }
-                });
-                langBtn.innerText = "English";
-                currentLang = 'si';
+        // Language Toggle and Persistence Logic
+        function updateLanguageUI(lang) {
+            const btn = document.getElementById("langToggle");
+            if (lang === "si") {
+                document.body.classList.add("sinhala-mode");
+                btn.textContent = "English";
             } else {
-                // Change to English
-                siElements.forEach(el => el.style.display = 'none');
-                enElements.forEach(el => {
-                    if(el.tagName === 'SPAN' || el.tagName === 'A' || el.tagName === 'LI') {
-                        el.style.display = 'inline-block';
-                    } else {
-                        el.style.display = 'block';
-                    }
-                });
-                langBtn.innerText = "සිංහල";
-                currentLang = 'en';
+                document.body.classList.remove("sinhala-mode");
+                btn.textContent = "Sinhala";
             }
         }
+
+        function toggleLanguage() {
+            let currentLang = localStorage.getItem("selectedLanguage") || "en";
+            let newLang = currentLang === "en" ? "si" : "en";
+            localStorage.setItem("selectedLanguage", newLang);
+            updateLanguageUI(newLang);
+        }
+
+        // Run as soon as page loads to set saved language
+        document.addEventListener("DOMContentLoaded", function() {
+            const savedLang = localStorage.getItem("selectedLanguage") || "en";
+            updateLanguageUI(savedLang);
+        });
 
         // Sidebar Toggle Function
         function toggleSidebar() {
@@ -572,7 +552,7 @@
             overlay.classList.toggle("show");
         }
 
-        // Splash Screen - Fade out and Display block hidden completely
+        // Splash Screen
         window.addEventListener("load", function() {
             setTimeout(() => {
                 const splash = document.getElementById("it-splash");
