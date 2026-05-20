@@ -17,114 +17,142 @@
         }
 
         /* New Navigation Bar Header */
-nav {
-    background-color: #1a1a1a;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #333;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    width: 100%;
-    box-sizing: border-box;
-}
+        nav {
+            background-color: #1a1a1a;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            box-sizing: border-box;
+        }
 
-nav .nav-home {
-    color: #00d4ff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
-}
+        nav .nav-home {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+        }
 
-/* Hamburger Menu Button */
-.menu-toggle {
-    background: none;
-    border: none;
-    color: #00d4ff;
-    font-size: 28px;
-    cursor: pointer;
-    user-select: none;
-}
+        /* Nav controls container */
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
-/* Slide-out Sidebar Styles */
-.sidebar {
-    position: fixed;
-    top: 0;
-    right: -280px; /* දකුණු පැත්තේ සැඟවී පවතී */
-    width: 280px;
-    height: 100%;
-    background-color: #111;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
-    z-index: 10001;
-    transition: right 0.3s ease-in-out;
-    padding: 20px;
-    box-sizing: border-box;
-    overflow-y: auto;
-}
+        /* Language Toggle Button Style */
+        .lang-btn {
+            background: linear-gradient(45deg, #111, #222);
+            border: 1px solid #00d4ff;
+            color: #00d4ff;
+            padding: 6px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+            font-family: 'Segoe UI', sans-serif;
+        }
 
-.sidebar.open {
-    right: 0; /* ක්ලික් කළ විට මතු වේ */
-}
+        .lang-btn:hover {
+            background: #00d4ff;
+            color: #000;
+            box-shadow: 0 0 15px #00d4ff;
+        }
 
-/* Close Button inside Sidebar */
-.close-btn {
-    text-align: right;
-    font-size: 30px;
-    color: #ff4a4a;
-    cursor: pointer;
-    margin-bottom: 20px;
-}
+        /* Hamburger Menu Button */
+        .menu-toggle {
+            background: none;
+            border: none;
+            color: #00d4ff;
+            font-size: 28px;
+            cursor: pointer;
+            user-select: none;
+        }
 
-/* Sidebar Links Grouping */
-.sidebar-section {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
+        /* Slide-out Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -280px; /* දකුණු පැත්තේ සැඟවී පවතී */
+            width: 280px;
+            height: 100%;
+            background-color: #111;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+            z-index: 10001;
+            transition: right 0.3s ease-in-out;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
 
-.sidebar-divider {
-    border: none;
-    border-top: 1px solid #333;
-    margin: 15px 0;
-}
+        .sidebar.open {
+            right: 0; /* ක්ලික් කළ විට මතු වේ */
+        }
 
-.sidebar a {
-    color: #e0e0e0;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: 0.2s;
-}
+        /* Close Button inside Sidebar */
+        .close-btn {
+            text-align: right;
+            font-size: 30px;
+            color: #ff4a4a;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
 
-.sidebar a:hover {
-    background-color: #1a1a1a;
-    color: #00d4ff;
-}
+        /* Sidebar Links Grouping */
+        .sidebar-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
-/* Special Styling for buttons inside menu */
-.sb-mcq { color: #ffd700 !important; font-weight: bold !important; }
-.sb-facts { color: #00ff88 !important; font-weight: bold !important; }
-.sb-share { color: #00d4ff !important; }
-.sb-help { color: #ffa500 !important; }
+        .sidebar-divider {
+            border: none;
+            border-top: 1px solid #333;
+            margin: 15px 0;
+        }
 
-/* Overlay Background */
-.sidebar-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6);
-    z-index: 10000;
-    display: none;
-}
-.sidebar-overlay.show {
-    display: block;
-}
+        .sidebar a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: 0.2s;
+        }
+
+        .sidebar a:hover {
+            background-color: #1a1a1a;
+            color: #00d4ff;
+        }
+
+        /* Special Styling for buttons inside menu */
+        .sb-mcq { color: #ffd700 !important; font-weight: bold !important; }
+        .sb-facts { color: #00ff88 !important; font-weight: bold !important; }
+        .sb-share { color: #00d4ff !important; }
+        .sb-help { color: #ffa500 !important; }
+
+        /* Overlay Background */
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 10000;
+            display: none;
+        }
+        .sidebar-overlay.show {
+            display: block;
+        }
 
         /* Main Title */
         h1 {
@@ -206,96 +234,92 @@ nav .nav-home {
 
         /* Mobile Responsive */
         @media (max-width: 768px) {
-            nav { flex-direction: column; padding: 10px; }
-            .nav-links { position: static; transform: none; margin: 10px 0; flex-wrap: wrap; justify-content: center; }
-            .about-btn { margin: 5px auto; }
+            nav { flex-direction: row; padding: 15px 20px; }
+            .nav-controls { gap: 10px; }
         }
     </style>
 </head>
 <body>
 
     <!-- New Top Navbar -->
-<nav>
-    <a href="index.html" class="nav-home">🏠 Home</a>
-    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
-</nav>
+    <nav>
+        <a href="index.html" class="nav-home" data-en="🏠 Home" data-si="🏠 මුල් පිටුව">🏠 Home</a>
+        <div class="nav-controls">
+            <!-- Language Toggle Button -->
+            <button id="langToggle" class="lang-btn" onclick="toggleLanguage()">සිංහල</button>
+            <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+        </div>
+    </nav>
 
-<!-- Sidebar Overlay -->
-<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
 
-<!-- Slide-out Sidebar Menu -->
-<div class="sidebar" id="sidebarMenu">
-    <div class="close-btn" onclick="toggleSidebar()">×</div>
-    
-    <div class="sidebar-section">
-        <!-- Main Pages Links -->
-        <a href="index.html">Home</a>
-        <a href="earth.html">Earth</a>
-        <a href="animals.html">Animals</a>
-        <a href="space.html">Space</a>
-        <a href="mysteries.html">Mysteries</a>
-        <a href="history.html">History</a>
-        <a href="quantum.html">🌌 Quantum Physics</a>
-    </div>
+    <!-- Slide-out Sidebar Menu -->
+    <div class="sidebar" id="sidebarMenu">
+        <div class="close-btn" onclick="toggleSidebar()">×</div>
         
+        <div class="sidebar-section">
+            <!-- Main Pages Links -->
+            <a href="index.html" data-en="Home" data-si="මුල් පිටුව">Home</a>
+            <a href="earth.html" data-en="Earth" data-si="පෘථිවිය">Earth</a>
+            <a href="animals.html" data-en="Animals" data-si="සතුන්">Animals</a>
+            <a href="space.html" data-en="Space" data-si="අභ්‍යවකාශය">Space</a>
+            <a href="mysteries.html" data-en="Mysteries" data-si="අභිරහස්">Mysteries</a>
+            <a href="history.html" data-en="History" data-si="ඉතිහාසය">History</a>
+            <a href="quantum.html" data-en="🌌 Quantum Physics" data-si="🌌 ක්වොන්ටම් භෞතික විද්‍යාව">🌌 Quantum Physics</a>
+        </div>
+            
         <!-- පළමු ඉරෙන් වෙන් කිරීම -->
         <hr class="sidebar-divider">
-        
+            
         <!-- Quiz & Facts Links -->
-        <a href="mcq.html" class="sb-mcq">📝 Start MCQ Quiz</a>
-        <a href="facts.html" class="sb-facts">⚡ Fun Amazing Facts ⚡</a>
-        
+        <a href="mcq.html" class="sb-mcq" data-en="📝 Start MCQ Quiz" data-si="📝 MCQ ප්‍රශ්නාවලිය අරඹන්න">📝 Start MCQ Quiz</a>
+        <a href="facts.html" class="sb-facts" data-en="⚡ Fun Amazing Facts ⚡" data-si="⚡ පුදුම හිතෙන කරුණු ⚡">⚡ Fun Amazing Facts ⚡</a>
+            
         <!-- දෙවැනි ඉරෙන් වෙන් කිරීම -->
         <hr class="sidebar-divider">
-        
+            
         <!-- Action Links -->
-        <a onclick="shareToFriends(); toggleSidebar();" style="cursor:pointer;" class="sb-share">🔗 SHARE</a>
-        <a href="ad.html" class="sb-help">❤️ Help</a>
-        <a href="aaaextradatapage.html">About</a>
+        <a onclick="shareToFriends(); toggleSidebar();" style="cursor:pointer;" class="sb-share" data-en="🔗 SHARE" data-si="🔗 බෙදාගන්න (SHARE)">🔗 SHARE</a>
+        <a href="ad.html" class="sb-help" data-en="❤️ Help" data-si="❤️ උදව්">❤️ Help</a>
+        <a href="aaaextradatapage.html" data-en="About" data-si="අපි ගැන">About</a>
     </div>
-</div>
 
+    <!-- Audio File එක -->
+    <audio id="myAudio" loop>
+        <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
+    </audio>
 
-<!-- Audio File එක -->
-<audio id="myAudio" loop>
-    <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
-</audio>
-
-<div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
-    <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
-        <span id="music-icon">🔇</span>
+    <div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
+        <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
+            <span id="music-icon">🔇</span>
+        </div>
     </div>
-</div>
-<script>// Sidebar Toggle Function
-function toggleSidebar() {
-    const sidebar = document.getElementById("sidebarMenu");
-    const overlay = document.getElementById("sidebarOverlay");
-    
-    sidebar.classList.toggle("open");
-    overlay.classList.toggle("show");
-}</script>
-<script src="music.js"></script>
+
     <div class="container">
-        <h1>About Us</h1>
+        <h1 data-en="About Us" data-si="අපි ගැන">About Us</h1>
 
         <section>
             <img src="images/ITL.jpeg" alt="I T L Logo" class="profile-img">
-            <h2>Welcome to I T L</h2>
-            <p>
+            <h2 data-en="Welcome to I T L" data-si="I T L වෙත සාදරයෙන් පිළිගනිමු">Welcome to I T L</h2>
+            <p data-en="Welcome to I T L, your ultimate digital encyclopedia for exploring the wonders of our world and beyond. Our mission is to provide accurate, engaging, and visually stunning information about everything from the deep mysteries of History to the vast reaches of Space."
+               data-si="අපගේ ලෝකය සහ ඉන් ඔබ්බට ඇති විස්මයන් ගවේෂණය කිරීම සඳහා වන ඔබගේ උපරිම ඩිජිටල් විශ්වකෝෂය වන I T L වෙත සාදරයෙන් පිළිගනිමු. අපගේ මෙහෙවර වන්නේ ඉතිහාසයේ ගැඹුරු අභිරහස්වල සිට අභ්‍යවකාශයේ විශාල වපසරිය දක්වා සෑම දෙයක්ම පිළිබඳව නිවැරදි, ආකර්ශනීය සහ දෘශ්‍යමය වශයෙන් විශ්මිත තොරතුරු සැපයීමයි.">
                 Welcome to <span class="highlight">I T L</span>, your ultimate digital encyclopedia for exploring the wonders of our world and beyond. Our mission is to provide accurate, engaging, and visually stunning information about everything from the deep mysteries of History to the vast reaches of Space.
             </p>
         </section>
 
         <section>
-            <h2>Our Vision</h2>
-            <p>
+            <h2 data-en="Our Vision" data-si="අපගේ දැක්ම">Our Vision</h2>
+            <p data-en="We believe that knowledge should be accessible and captivating. Whether you are interested in legendary myths like Excalibur, the resilient nature of the Phoenix, or the scientific wonders of the Moon, we strive to bring these stories to life through modern web technology."
+               data-si="දැනුම යනු ඕනෑම කෙනෙකුට පහසුවෙන් ලබාගත හැකි සහ සිත් ඇදගන්නා සුළු දෙයක් විය යුතු බව අපි විශ්වාස කරමු. ඔබ එක්ස්කැලිබර් (Excalibur) වැනි පුරාවෘත්තමය මිථ්‍යාවන්, ෆීනික්ස් (Phoenix) පක්ෂියාගේ ඔරොත්තු දීමේ ස්වභාවය හෝ චන්ද්‍රයාගේ විද්‍යාත්මක ආශ්චර්යයන් ගැන උනන්දුවක් දැක්වුවද, නවීන වෙබ් තාක්ෂණය ඔස්සේ මෙම කථාන්දර ජීවමාන කිරීමට අපි උත්සාහ කරමු.">
                 We believe that knowledge should be accessible and captivating. Whether you are interested in legendary myths like <span class="highlight">Excalibur</span>, the resilient nature of the <span class="highlight">Phoenix</span>, or the scientific wonders of the <span class="highlight">Moon</span>, we strive to bring these stories to life through modern web technology.
             </p>
         </section>
 
         <section class="share-box">
-            <h2>Support Our Community 🚀</h2>
-            <p>
+            <h2 data-en="Support Our Community 🚀" data-si="අපගේ ප්‍රජාවට සහය වන්න 🚀">Support Our Community 🚀</h2>
+            <p data-en="As we continue to build this journey of knowledge, your support means the world to us. Helping us reach more curious minds is the greatest gift you can give. Please share this platform with your friends and family. Together, let's keep the flame of curiosity alive!"
+               data-si="අපි මෙම දැනුමේ ගමන දිගටම ගොඩනඟන විට, ඔබගේ සහයෝගය අපට බෙහෙවින් වටිනවා. තවත් කුතුහලයෙන් පිරි මනස් වෙත ළඟා වීමට අපට උපකාර කිරීම ඔබට දිය හැකි උතුම්ම තෑග්ගයි. කරුණාකර මෙම වේදිකාව ඔබේ මිතුරන් සහ පවුලේ අය සමඟ බෙදා ගන්න. අපි සැවොම එකතු වී කුතුහලයේ දැල්ල සදා ජීවමානව තබා ගනිමු!">
                 As we continue to build this journey of knowledge, your support means the world to us. Helping us reach more curious minds is the greatest gift you can give.
                 <br><br>
                 <span class="highlight">Please share this platform with your friends and family.</span> Together, let's keep the flame of curiosity alive!
@@ -305,5 +329,58 @@ function toggleSidebar() {
         <div class="footer-hr"></div>
     </div>
 
+    <script>
+        // Sidebar Toggle Function
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebarMenu");
+            const overlay = document.getElementById("sidebarOverlay");
+            
+            sidebar.classList.toggle("open");
+            overlay.classList.toggle("show");
+        }
+
+        // --- භාෂා මාරු කිරීමේ පද්ධතිය (Language Switcher Logic) ---
+        function toggleLanguage() {
+            let currentLang = localStorage.getItem("preferredLanguage") || "en";
+            let newLang = (currentLang === "en") ? "si" : "en";
+            
+            localStorage.setItem("preferredLanguage", newLang);
+            applyLanguage(newLang);
+        }
+
+        function applyLanguage(lang) {
+            const btn = document.getElementById("langToggle");
+            
+            if (lang === "si") {
+                btn.textContent = "English";
+            } else {
+                btn.textContent = "සිංහල";
+            }
+
+            const elements = document.querySelectorAll('[data-en], [data-si]');
+            elements.forEach(el => {
+                if (lang === "si") {
+                    if (el.getAttribute('data-si')) {
+                        if(["A", "P", "H1", "H2", "H3", "SPAN", "DIV", "STRONG"].includes(el.tagName)) {
+                            el.textContent = el.getAttribute('data-si');
+                        }
+                    }
+                } else {
+                    if (el.getAttribute('data-en')) {
+                        if(["A", "P", "H1", "H2", "H3", "SPAN", "DIV", "STRONG"].includes(el.tagName)) {
+                            el.textContent = el.getAttribute('data-en');
+                        }
+                    }
+                }
+            });
+        }
+
+        // පිටුව මුලින්ම ලෝඩ් වන විට ක්‍රියාත්මක වන කොටස
+        document.addEventListener("DOMContentLoaded", () => {
+            let savedLang = localStorage.getItem("preferredLanguage") || "en";
+            applyLanguage(savedLang);
+        });
+    </script>
+    <script src="music.js"></script>
 </body>
 </html>
