@@ -417,6 +417,14 @@ nav .nav-home {
             alert("The WWII records have been filed in the Infinity Thinkers Laboratory.");
             document.getElementById('feedback-widget').style.display = 'none';
         }
+        // Sidebar Toggle Function
+function toggleSidebar() {
+    const sidebar = document.getElementById("sidebarMenu");
+    const overlay = document.getElementById("sidebarOverlay");
+    
+    sidebar.classList.toggle("open");
+    overlay.classList.toggle("show");
+}
     </script>
     <audio id="myAudio" loop>
     <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
