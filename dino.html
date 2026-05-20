@@ -366,7 +366,16 @@ nav .nav-home {
 <audio id="myAudio" loop>
     <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
 </audio>
-
+<script>
+    // Sidebar Toggle Function
+function toggleSidebar() {
+    const sidebar = document.getElementById("sidebarMenu");
+    const overlay = document.getElementById("sidebarOverlay");
+    
+    sidebar.classList.toggle("open");
+    overlay.classList.toggle("show");
+}
+</script>
 <div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
     <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
         <span id="music-icon">🔇</span>
