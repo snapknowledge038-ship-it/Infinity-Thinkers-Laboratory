@@ -4,6 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asteroids - I T L</title>
+
+    <!-- Meta Tags for Link Preview (WhatsApp, Facebook, etc.) -->
+    <meta name="description" content="Explore the mysteries of Asteroids, the Asteroid Belt, and different cosmic rock types in our Solar System.">
+    
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/asteroids.html">
+    <meta property="og:title" content="Asteroids – Minor Planets of the Solar System | ITL">
+    <meta property="og:description" content="What are asteroids? Discover the Asteroid Belt, C-type, S-type, and M-type space rocks with interactive English/Sinhala translation! ☄️🌌">
+    <meta property="og:image" content="images/Asteroids_Main.jpg">
+
+    <!-- Twitter Card Data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Asteroids – Minor Planets of the Solar System | ITL">
+    <meta name="twitter:description" content="Explore the various types of asteroids and the vast Asteroid Belt between Mars and Jupiter.">
+    <meta name="twitter:image" content="images/Asteroids_Main.jpg">
+
     <style>
         /* Base Settings */
         body {
@@ -17,114 +34,142 @@
         }
 
         /* New Navigation Bar Header */
-nav {
-    background-color: #1a1a1a;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #333;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    width: 100%;
-    box-sizing: border-box;
-}
+        nav {
+            background-color: #1a1a1a;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            box-sizing: border-box;
+        }
 
-nav .nav-home {
-    color: #00d4ff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
-}
+        nav .nav-home {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+        }
 
-/* Hamburger Menu Button */
-.menu-toggle {
-    background: none;
-    border: none;
-    color: #00d4ff;
-    font-size: 28px;
-    cursor: pointer;
-    user-select: none;
-}
+        /* Nav Controls wrapper */
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
-/* Slide-out Sidebar Styles */
-.sidebar {
-    position: fixed;
-    top: 0;
-    right: -280px; /* දකුණු පැත්තේ සැඟවී පවතී */
-    width: 280px;
-    height: 100%;
-    background-color: #111;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
-    z-index: 10001;
-    transition: right 0.3s ease-in-out;
-    padding: 20px;
-    box-sizing: border-box;
-    overflow-y: auto;
-}
+        /* Language Toggle Button Style */
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid #ffb703;
+            color: #ffb703;
+            padding: 6px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(255, 183, 3, 0.2);
+            font-family: 'Segoe UI', sans-serif;
+        }
 
-.sidebar.open {
-    right: 0; /* ක්ලික් කළ විට මතු වේ */
-}
+        .lang-btn:hover {
+            background: #ffb703;
+            color: #05050a;
+            box-shadow: 0 0 15px #ffb703;
+        }
 
-/* Close Button inside Sidebar */
-.close-btn {
-    text-align: right;
-    font-size: 30px;
-    color: #ff4a4a;
-    cursor: pointer;
-    margin-bottom: 20px;
-}
+        /* Hamburger Menu Button */
+        .menu-toggle {
+            background: none;
+            border: none;
+            color: #00d4ff;
+            font-size: 28px;
+            cursor: pointer;
+            user-select: none;
+        }
 
-/* Sidebar Links Grouping */
-.sidebar-section {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
+        /* Slide-out Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -280px; /* දකුණු පැත්තේ සැඟවී පවතී */
+            width: 280px;
+            height: 100%;
+            background-color: #111;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+            z-index: 10001;
+            transition: right 0.3s ease-in-out;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
 
-.sidebar-divider {
-    border: none;
-    border-top: 1px solid #333;
-    margin: 15px 0;
-}
+        .sidebar.open {
+            right: 0; /* ක්ලික් කළ විට මතු වේ */
+        }
 
-.sidebar a {
-    color: #e0e0e0;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: 0.2s;
-}
+        /* Close Button inside Sidebar */
+        .close-btn {
+            text-align: right;
+            font-size: 30px;
+            color: #ff4a4a;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
 
-.sidebar a:hover {
-    background-color: #1a1a1a;
-    color: #00d4ff;
-}
+        /* Sidebar Links Grouping */
+        .sidebar-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
-/* Special Styling for buttons inside menu */
-.sb-mcq { color: #ffd700 !important; font-weight: bold !important; }
-.sb-facts { color: #00ff88 !important; font-weight: bold !important; }
-.sb-share { color: #00d4ff !important; }
-.sb-help { color: #ffa500 !important; }
+        .sidebar-divider {
+            border: none;
+            border-top: 1px solid #333;
+            margin: 15px 0;
+        }
 
-/* Overlay Background */
-.sidebar-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6);
-    z-index: 10000;
-    display: none;
-}
-.sidebar-overlay.show {
-    display: block;
-}
+        .sidebar a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: 0.2s;
+        }
+
+        .sidebar a:hover {
+            background-color: #1a1a1a;
+            color: #00d4ff;
+        }
+
+        /* Special Styling for buttons inside menu */
+        .sb-mcq { color: #ffd700 !important; font-weight: bold !important; }
+        .sb-facts { color: #00ff88 !important; font-weight: bold !important; }
+        .sb-share { color: #00d4ff !important; }
+        .sb-help { color: #ffa500 !important; }
+
+        /* Overlay Background */
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 10000;
+            display: none;
+        }
+        .sidebar-overlay.show {
+            display: block;
+        }
 
         /* Title Styling */
         h1 {
@@ -187,6 +232,7 @@ nav .nav-home {
             font-weight: normal;
             color: #cbd5e1;
             margin: 0;
+            text-align: justify;
         }
 
         .planet-grid {
@@ -198,14 +244,16 @@ nav .nav-home {
 
         .planet-card {
             background: rgba(255, 255, 255, 0.05);
-            padding: 20px;
+            padding: 25px;
             border-radius: 20px;
-            text-align: center;
+            text-align: left;
             border: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 17px;
+            color: #cbd5e1;
         }
 
-        strong {
-            color: #ffffff;
+        .planet-card strong {
+            color: #fbbf24;
             display: block;
             font-size: 22px;
             margin-bottom: 10px;
@@ -225,12 +273,15 @@ nav .nav-home {
             padding: 15px;
             text-align: left;
             border: 1px solid #1e40af;
+            font-size: 18px;
         }
 
         th {
             background-color: #1e40af;
             color: #ffffff;
             text-transform: uppercase;
+            font-size: 16px;
+            letter-spacing: 1px;
         }
 
         .footer-hr {
@@ -240,158 +291,235 @@ nav .nav-home {
             margin: 80px 0;
         }
 
+        #feedback-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #000000;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 1000;
+            color: #e2e8f0;
+            font-weight: bold;
+        }
+        #feedback-widget button {
+            border: none;
+            background: #000000;
+            padding: 5px 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            color: #fbbf24;
+            font-size: 16px;
+            transition: background 0.2s;
+        }
+        #feedback-widget button:hover { background: #222; }
+
+        @media (max-width: 768px) {
+            section { padding: 25px; }
+            th, td { padding: 10px; font-size: 16px; }
+        }
     </style>
 </head>
 <body>
 
     <!-- New Top Navbar -->
-<nav>
-    <a href="index.html" class="nav-home">🏠 Home</a>
-    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
-</nav>
+    <nav>
+        <a href="index.html" class="nav-home" data-en="🏠 Home" data-si="🏠 මුල් පිටුව">🏠 Home</a>
+        <div class="nav-controls">
+            <!-- Language Toggle Button -->
+            <button id="langToggle" class="lang-btn" onclick="toggleLanguage()">සිංහල</button>
+            <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+        </div>
+    </nav>
 
-<!-- Sidebar Overlay -->
-<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
 
-<!-- Slide-out Sidebar Menu -->
-<div class="sidebar" id="sidebarMenu">
-    <div class="close-btn" onclick="toggleSidebar()">×</div>
-    
-    <div class="sidebar-section">
-        <!-- Main Pages Links -->
-        <a href="index.html">Home</a>
-        <a href="earth.html">Earth</a>
-        <a href="animals.html">Animals</a>
-        <a href="space.html">Space</a>
-        <a href="mysteries.html">Mysteries</a>
-        <a href="history.html">History</a>
-        <a href="quantum.html">🌌 Quantum Physics</a>
-    </div>
+    <!-- Slide-out Sidebar Menu -->
+    <div class="sidebar" id="sidebarMenu">
+        <div class="close-btn" onclick="toggleSidebar()">×</div>
         
+        <div class="sidebar-section">
+            <!-- Main Pages Links -->
+            <a href="index.html" data-en="Home" data-si="මුල් පිටුව">Home</a>
+            <a href="earth.html" data-en="Earth" data-si="පෘථिවිය">Earth</a>
+            <a href="animals.html" data-en="Animals" data-si="සතුන්">Animals</a>
+            <a href="space.html" data-en="Space" data-si="අභ්‍යවකාශය">Space</a>
+            <a href="mysteries.html" data-en="Mysteries" data-si="අභිරහස්">Mysteries</a>
+            <a href="history.html" data-en="History" data-si="ඉතිහාසය">History</a>
+            <a href="quantum.html" data-en="🌌 Quantum Physics" data-si="🌌 ක්වොන්ටම් භෞතික විද්‍යාව">🌌 Quantum Physics</a>
+        </div>
+            
         <!-- පළමු ඉරෙන් වෙන් කිරීම -->
         <hr class="sidebar-divider">
-        
+            
         <!-- Quiz & Facts Links -->
-        <a href="mcq.html" class="sb-mcq">📝 Start MCQ Quiz</a>
-        <a href="facts.html" class="sb-facts">⚡ Fun Amazing Facts ⚡</a>
-        
+        <a href="mcq.html" class="sb-mcq" data-en="📝 Start MCQ Quiz" data-si="📝 MCQ ප්‍රශ්නාවලිය අරඹන්න">📝 Start MCQ Quiz</a>
+        <a href="facts.html" class="sb-facts" data-en="⚡ Fun Amazing Facts ⚡" data-si="⚡ පුදුම හිතෙන කරුණු ⚡">⚡ Fun Amazing Facts ⚡</a>
+            
         <!-- දෙවැනි ඉරෙන් වෙන් කිරීම -->
         <hr class="sidebar-divider">
-        
+            
         <!-- Action Links -->
-        <a onclick="shareToFriends(); toggleSidebar();" style="cursor:pointer;" class="sb-share">🔗 SHARE</a>
-        <a href="ad.html" class="sb-help">❤️ Help</a>
-        <a href="aaaextradatapage.html">About</a>
+        <a onclick="shareToFriends(); toggleSidebar();" style="cursor:pointer;" class="sb-share" data-en="🔗 SHARE" data-si="🔗 බෙදාගන්න (SHARE)">🔗 SHARE</a>
+        <a href="ad.html" class="sb-help" data-en="❤️ Help" data-si="❤️ උදව්">❤️ Help</a>
+        <a href="aaaextradatapage.html" data-en="About" data-si="අපි ගැන">About</a>
     </div>
-</div>
-
 
     <div class="container">
-        <h1>Asteroids</h1>
+        <h1 data-en="Asteroids" data-si="ග්‍රහක (Asteroids)">Asteroids</h1>
 
         <div class="img-container">
             <img class="planet-img" src="images/Asteroids_Main.jpg" alt="Asteroid in Space">
         </div>
 
         <section>
-            <h2>What are Asteroids?</h2>
-            <h3>Asteroids are rocky, airless remnants left over from the early formation of our solar system about 4.6 billion years ago. Often called minor planets, they are smaller than traditional planets but orbit the Sun just like them.</h3>
+            <h2 data-en="What are Asteroids?" data-si="ග්‍රහක යනු මොනවාද?">What are Asteroids?</h2>
+            <h3 data-en="Asteroids are rocky, airless remnants left over from the early formation of our solar system about 4.6 billion years ago. Often called minor planets, they are smaller than traditional planets but orbit the Sun just like them."
+                data-si="ග්‍රහක යනු මීට වසර බිලියන 4.6කට පමණ පෙර අපගේ සූර්යග්‍රහණ පද්ධතියේ මුල් ආරම්භක අවධියේදී ඉතිරි වූ වායගෝලයක් නොමැති, පාෂාණමය කොටස් වේ. මේවා බොහෝ විට 'කුඩා ග්‍රහලෝක' (Minor Planets) ලෙස හඳුන්වන අතර, සාමාන්‍ය ග්‍රහලෝකවලට වඩා ප්‍රමාණයෙන් කුඩා වුවද ඒවාද සූර්යයා වටා කක්ෂගතව ගමන් කරයි.">
+                Asteroids are rocky, airless remnants left over from the early formation of our solar system about 4.6 billion years ago. Often called minor planets, they are smaller than traditional planets but orbit the Sun just like them.
+            </h3>
         </section>
 
         <section>
-            <h2>The Asteroid Belt</h2>
+            <h2 data-en="The Asteroid Belt" data-si="ග්‍රහක පටිය (Asteroid Belt)">The Asteroid Belt</h2>
             <div class="img-container">
                 <img class="planet-img" src="images/Asteroid_Belt.jpg" alt="The Asteroid Belt Location">
             </div>
-            <h3>The vast majority of known asteroids orbit the Sun within the cosmic region known as the Asteroid Belt, which is located between the orbits of Mars and Jupiter. This belt contains millions of rocky bodies of all shapes and sizes.</h3>
+            <h3 data-en="The vast majority of known asteroids orbit the Sun within the cosmic region known as the Asteroid Belt, which is located between the orbits of Mars and Jupiter. This belt contains millions of rocky bodies of all shapes and sizes."
+                data-si="අප දන්නා ග්‍රහකවලින් අතිමහත් බහුතරයක් සූර්යයා වටා ගමන් කරන්නේ අඟහරු (Mars) සහ බ්‍රහස්පති (Jupiter) ග්‍රහලෝකවල කක්ෂ අතර පිහිටි 'ග්‍රහක පටිය' (Asteroid Belt) නමින් හැඳින්වෙන කලාපය තුළයි. මෙම කලාපය තුළ විවිධ හැඩයන්ගෙන් සහ ප්‍රමාණයන්ගෙන් යුත් මිලියන ගණනක පාෂාණමය වස්තූන් අඩංගු වේ.">
+                The vast majority of known asteroids orbit the Sun within the cosmic region known as the Asteroid Belt, which is located between the orbits of Mars and Jupiter. This belt contains millions of rocky bodies of all shapes and sizes.
+            </h3>
         </section>
 
         <section>
-            <h2>Types of Asteroids</h2>
+            <h2 data-en="Types of Asteroids" data-si="ග්‍රහක වර්ග">Types of Asteroids</h2>
             <div class="planet-grid">
                 <div class="planet-card">
-                    <strong>C-type (Carbonaceous)</strong>
-                    These are the most common, making up about 75% of known asteroids. They are extremely dark and consist mostly of ancient carbon-rich rocks.
+                    <strong data-en="C-type (Carbonaceous)" data-si="C-වර්ගය (කාබනේෂස්)">C-type (Carbonaceous)</strong>
+                    <span data-en="These are the most common, making up about 75% of known asteroids. They are extremely dark and consist mostly of ancient carbon-rich rocks."
+                          data-si="මේවා බහුලවම දක්නට ලැබෙන ග්‍රහක වර්ගය වන අතර, හඳුනාගෙන ඇති ග්‍රහකවලින් 75%ක් පමණ මේවා වේ. මේවා අධික ලෙස අඳුරු පැහැති වන අතර ප්‍රධාන වශයෙන්ම පුරාණ කාබන් බහුල පාෂාණවලින් සමන්විත වේ.">
+                        These are the most common, making up about 75% of known asteroids. They are extremely dark and consist mostly of ancient carbon-rich rocks.
+                    </span>
                 </div>
                 <div class="planet-card">
-                    <strong>S-type (Stony)</strong>
-                    Making up about 17% of asteroids, these are composed mainly of silicate materials and nickel-iron, making them relatively bright.
+                    <strong data-en="S-type (Stony)" data-si="S-වර්ගය (ස්ටෝනි / පාෂාණමය)">S-type (Stony)</strong>
+                    <span data-en="Making up about 17% of asteroids, these are composed mainly of silicate materials and nickel-iron, making them relatively bright."
+                          data-si="සමස්ත ග්‍රහකවලින් 17%ක් පමණ නියෝජනය කරන මෙම වර්ගය, ප්‍රධාන වශයෙන් සිලිකේට් ද්‍රව්‍ය සහ නිකල්-යකඩ මිශ්‍රණයකින් සමන්විත වේ. එම නිසා මේවා සාපේක්ෂව දීප්තිමත් ස්වභාවයක් ගනී.">
+                        Making up about 17% of asteroids, these are composed mainly of silicate materials and nickel-iron, making them relatively bright.
+                    </span>
                 </div>
                 <div class="planet-card">
-                    <strong>M-type (Metallic)</strong>
-                    These are rare and consist almost entirely of pure nickel-iron. They are thought to be the shattered cores of ancient proto-planets.
+                    <strong data-en="M-type (Metallic)" data-si="M-වර්ගය (මෙටැලික / ලෝහමය)">M-type (Metallic)</strong>
+                    <span data-en="These are rare and consist almost entirely of pure nickel-iron. They are thought to be the shattered cores of ancient proto-planets."
+                          data-si="මේවා ඉතා දුර්ලභ ග්‍රහක වර්ගයක් වන අතර සම්පූර්ණයෙන්ම පාහේ පිරිසිදු නිකල් සහ යකඩ ලෝහවලින් සෑදී ඇත. මේවා අතීතයේ විනාශ වී ගිය ප්‍රාථමික ග්‍රහලෝකවල (Proto-planets) බිඳී ගිය අභ්‍යන්තර හරය (Cores) විය හැකි යැයි විශ්වාස කෙරේ.">
+                        These are rare and consist almost entirely of pure nickel-iron. They are thought to be the shattered cores of ancient proto-planets.
+                    </span>
                 </div>
             </div>
         </section>
 
         <section>
-            <h2>Quick Comparison Table</h2>
+            <h2 data-en="Quick Comparison Table" data-si="කෙටි සංසන්දනාත්මක වගුව">Quick Comparison Table</h2>
             <table>
-                <tr>
-                    <th>Asteroid / Group</th>
-                    <th>Key Characteristic</th>
-                </tr>
-                <tr>
-                    <td>Ceres</td>
-                    <td>The largest object in the asteroid belt, now classified as a dwarf planet.</td>
-                </tr>
-                <tr>
-                    <td>Vesta</td>
-                    <td>The second-largest asteroid, known for its bright surface and massive craters.</td>
-                </tr>
-                <tr>
-                    <td>Near-Earth Asteroids</td>
-                    <td>Asteroids whose orbits bring them dangerously close to Earth's pathway.</td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th data-en="Asteroid / Group" data-si="ග්‍රහකය / කාණ්ඩය">Asteroid / Group</th>
+                        <th data-en="Key Characteristic" data-si="ප්‍රධාන ලක්ෂණය">Key Characteristic</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-en="Ceres" data-si="සෙරෙස් (Ceres)">Ceres</td>
+                        <td data-en="The largest object in the asteroid belt, now classified as a dwarf planet." 
+                            data-si="ග්‍රහක පටිය තුළ ඇති විශාලතම වස්තුව වන අතර, වර්තමානයේ මෙය වාමන ග්‍රහලෝකයක් (Dwarf Planet) ලෙස වර්ගීකරණය කර ඇත.">The largest object in the asteroid belt, now classified as a dwarf planet.</td>
+                    </tr>
+                    <tr>
+                        <td data-en="Vesta" data-si="වෙස්ටා (Vesta)">Vesta</td>
+                        <td data-en="The second-largest asteroid, known for its bright surface and massive craters." 
+                            data-si="දෙවනුවට විශාලතම ග්‍රහකය වන මෙය, එහි ඇති ඉතා දීප්තිමත් මතුපිට සහ දැවැන්ත ආවාට (Craters) නිසා ප්‍රසිද්ධ වී ඇත.">The second-largest asteroid, known for its bright surface and massive craters.</td>
+                    </tr>
+                    <tr>
+                        <td data-en="Near-Earth Asteroids" data-si="පෘථිවියට ආසන්න ග්‍රහක">Near-Earth Asteroids</td>
+                        <td data-en="Asteroids whose orbits bring them dangerously close to Earth's pathway." 
+                            data-si="තම කක්ෂීය ගමන් මග හේතුවෙන් පෘථිවියේ ගමන් පථයට අනතුරුදායක ලෙස ආසන්නයට පැමිණෙන ග්‍රහක කාණ්ඩයයි.">Asteroids whose orbits bring them dangerously close to Earth's pathway.</td>
+                    </tr>
+                </tbody>
             </table>
         </section>
 
         <div class="footer-hr"></div>
     </div>
 
+    <!-- Feedback Widget -->
     <div id="feedback-widget">
-        <span>Was this helpful?</span>
+        <span data-en="Was this helpful?" data-si="මෙය ප්‍රයෝජනවත් වූවාද?">Was this helpful?</span>
         <button onclick="hideFeedback('Yes')"> 👍</button>
         <button onclick="hideFeedback('No')"> 👎</button>
     </div>
 
-    <style>
-    #feedback-widget {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: #000000;
-        box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
-        padding: 15px;
-        border-radius: 30px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        z-index: 1000;
-    }
-    #feedback-widget button {
-        border: none;
-        background: #000000;
-        padding: 5px 10px;
-        border-radius: 50%;
-        cursor: pointer;
-    }
-    #feedback-widget button:hover { background: #ddd; }
-    </style>
-
     <script>
-    function hideFeedback(type) {
-        alert("Thank you for your feedback!");
-        document.getElementById('feedback-widget').style.display = 'none';
-    }
         // Sidebar Toggle Function
-function toggleSidebar() {
-    const sidebar = document.getElementById("sidebarMenu");
-    const overlay = document.getElementById("sidebarOverlay");
-    
-    sidebar.classList.toggle("open");
-    overlay.classList.toggle("show");
-}
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebarMenu");
+            const overlay = document.getElementById("sidebarOverlay");
+            
+            sidebar.classList.toggle("open");
+            overlay.classList.toggle("show");
+        }
+
+        // Multi-language Feedback Alert
+        function hideFeedback(type) {
+            let currentLang = localStorage.getItem("preferredLanguage") || "en";
+            if (currentLang === "si") {
+                alert("ඔබගේ ප්‍රතිචාරයට ස්තුතියි! ☄️");
+            } else {
+                alert("Thank you for your feedback! ☄️");
+            }
+            document.getElementById('feedback-widget').style.display = 'none';
+        }
+
+        // --- භාෂා මාරු කිරීමේ පද්ධතිය (Language Switcher Logic) ---
+        function toggleLanguage() {
+            let currentLang = localStorage.getItem("preferredLanguage") || "en";
+            let newLang = (currentLang === "en") ? "si" : "en";
+            
+            localStorage.setItem("preferredLanguage", newLang);
+            applyLanguage(newLang);
+        }
+
+        function applyLanguage(lang) {
+            const btn = document.getElementById("langToggle");
+            
+            if (lang === "si") {
+                btn.textContent = "English";
+            } else {
+                btn.textContent = "සිංහල";
+            }
+
+            const elements = document.querySelectorAll('[data-en], [data-si]');
+            elements.forEach(el => {
+                if (lang === "si") {
+                    if (el.getAttribute('data-si')) {
+                        el.innerHTML = el.getAttribute('data-si');
+                    }
+                } else {
+                    if (el.getAttribute('data-en')) {
+                        el.innerHTML = el.getAttribute('data-en');
+                    }
+                }
+            });
+        }
+
+        // පිටුව මුලින්ම ලෝඩ් වන විට ක්‍රියාත්මක වන කොටස
+        document.addEventListener("DOMContentLoaded", () => {
+            let savedLang = localStorage.getItem("preferredLanguage") || "en";
+            applyLanguage(savedLang);
+        });
     </script>
 
     <audio id="myAudio" loop>
@@ -399,7 +527,7 @@ function toggleSidebar() {
     </audio>
 
     <div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
-        <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
+        <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px; user-select: none;">
             <span id="music-icon">🔇</span>
         </div>
     </div>
