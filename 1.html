@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Quantum Physics - I T L</title>
+
+    <style>
+        /* ===== Global Styles ===== */
+        body{
+            margin:0;
+            padding:0;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #020412, #050816, #0a1028);
+            color:#e8ecff;
+            line-height:1.8;
+            overflow-x:hidden;
+        }
+
+        /* ===== Scrollbar ===== */
+        ::-webkit-scrollbar{
+            width:10px;
+        }
+
+        ::-webkit-scrollbar-track{
+            background:#050816;
+        }
+
+        ::-webkit-scrollbar-thumb{
+            background:#4b6cff;
+            border-radius:20px;
+        }
+
+        /* ===== Navbar ===== */
+        nav{
+            background: rgba(4,10,30,0.95);
+            backdrop-filter: blur(10px);
+            padding:15px 20px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            border-bottom:1px solid rgba(120,150,255,0.2);
+            position:sticky;
+            top:0;
+            z-index:1000;
+        }
+
+        .nav-home{
+            text-decoration:none;
+            color:#8fd3ff;
+            font-size:22px;
+            font-weight:bold;
+            letter-spacing:1px;
+        }
+
+        .nav-right{
+            display:flex;
+            align-items:center;
+            gap:15px;
+        }
+
+        .lang-btn{
+            background:#111a3b;
+            border:1px solid #5ec8ff;
+            color:#5ec8ff;
+            padding:7px 14px;
+            border-radius:8px;
+            cursor:pointer;
+            font-weight:bold;
+            transition:0.3s;
+        }
+
+        .lang-btn:hover{
+            background:#5ec8ff;
+            color:#000;
+        }
+
+        .menu-toggle{
+            background:none;
+            border:none;
+            color:#8fd3ff;
+            font-size:30px;
+            cursor:pointer;
+        }
+
+        /* ===== Sidebar ===== */
+        .sidebar{
+            position:fixed;
+            top:0;
+            right:-290px;
+            width:280px;
+            height:100%;
+            background:#060d24;
+            box-shadow:-5px 0 25px rgba(0,0,0,0.7);
+            z-index:10001;
+            transition:0.3s;
+            padding:20px;
+            box-sizing:border-box;
+            overflow-y:auto;
+        }
+
+        .sidebar.open{
+            right:0;
+        }
+
+        .sidebar-overlay{
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background:rgba(0,0,0,0.6);
+            display:none;
+            z-index:10000;
+        }
+
+        .sidebar-overlay.show{
+            display:block;
+        }
+
+        .close-btn{
+            text-align:right;
+            color:#ff5f7a;
+            font-size:30px;
+            cursor:pointer;
+            margin-bottom:20px;
+        }
+
+        .sidebar-section{
+            display:flex;
+            flex-direction:column;
+            gap:12px;
+        }
+
+        .sidebar a{
+            text-decoration:none;
+            color:#dce8ff;
+            padding:10px 14px;
+            border-radius:10px;
+            transition:0.3s;
+            font-weight:500;
+        }
+
+        .sidebar a:hover{
+            background:#101c47;
+            color:#5ec8ff;
+        }
+
+        .sidebar-divider{
+            border:none;
+            border-top:1px solid rgba(255,255,255,0.15);
+            margin:20px 0;
+        }
+
+        /* ===== Hero Section ===== */
+        .hero{
+            text-align:center;
+            padding:80px 20px 50px;
+            position:relative;
+        }
+
+        .hero::before{
+            content:'';
+            position:absolute;
+            width:400px;
+            height:400px;
+            background:radial-gradient(circle, rgba(91,140,255,0.25), transparent);
+            top:-100px;
+            left:50%;
+            transform:translateX(-50%);
+            filter:blur(30px);
+        }
+
+        h1{
+            font-size: clamp(45px, 8vw, 85px);
+            margin:0;
+            color:#ffffff;
+            letter-spacing:5px;
+            text-transform:uppercase;
+            text-shadow:0 0 25px rgba(100,180,255,0.5);
+        }
+
+        .subtitle{
+            color:#a8bbff;
+            margin-top:15px;
+            font-size:20px;
+        }
+
+        /* ===== Image ===== */
+        .img-container{
+            text-align:center;
+            margin:30px 0 50px;
+        }
+
+        .quantum-img{
+            width:85%;
+            max-width:950px;
+            border-radius:20px;
+            box-shadow:0 0 40px rgba(81,145,255,0.25);
+            border:1px solid rgba(255,255,255,0.1);
+        }
+
+        /* ===== Content ===== */
+        .container{
+            max-width:1000px;
+            margin:auto;
+            padding:20px;
+        }
+
+        section{
+            background:rgba(255,255,255,0.03);
+            border:1px solid rgba(255,255,255,0.08);
+            border-left:4px solid #5ec8ff;
+            padding:35px;
+            border-radius:22px;
+            margin-bottom:35px;
+            backdrop-filter:blur(12px);
+            box-shadow:0 0 25px rgba(0,0,0,0.25);
+            transition:0.3s;
+        }
+
+        section:hover{
+            transform:translateY(-4px);
+            box-shadow:0 0 35px rgba(94,200,255,0.15);
+        }
+
+        h2{
+            font-size:32px;
+            color:#ffffff;
+            margin-bottom:15px;
+        }
+
+        h3{
+            color:#c8d7ff;
+            font-weight:normal;
+            font-size:19px;
+        }
+
+        ul{
+            padding-left:20px;
+        }
+
+        li{
+            margin-bottom:14px;
+        }
+
+        strong{
+            color:#ffffff;
+        }
+
+        .quote-box{
+            background:linear-gradient(to right, rgba(74,108,255,0.2), rgba(0,0,0,0));
+            padding:20px;
+            border-left:4px solid #5ec8ff;
+            border-radius:12px;
+            margin-top:20px;
+            color:#dbe8ff;
+            font-style:italic;
+        }
+
+        /* ===== Feedback ===== */
+        #feedback-widget{
+            position:fixed;
+            bottom:20px;
+            right:20px;
+            background:#091128;
+            border:1px solid rgba(255,255,255,0.1);
+            padding:15px;
+            border-radius:30px;
+            display:flex;
+            gap:10px;
+            align-items:center;
+            box-shadow:0 0 20px rgba(0,0,0,0.5);
+            z-index:1000;
+        }
+
+        #feedback-widget button{
+            background:#0d1838;
+            color:#fff;
+            border:none;
+            padding:8px 10px;
+            border-radius:50%;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        #feedback-widget button:hover{
+            background:#5ec8ff;
+            color:#000;
+        }
+
+        /* ===== Music Button ===== */
+        #music-control{
+            position:fixed;
+            bottom:95px;
+            right:28px;
+            background:#081228;
+            width:50px;
+            height:50px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            border-radius:50%;
+            cursor:pointer;
+            box-shadow:0 0 20px rgba(0,0,0,0.5);
+            font-size:22px;
+            z-index:1000;
+        }
+
+        /* ===== Language System ===== */
+        .lang-si{
+            display:none;
+        }
+
+        body.sinhala-mode .lang-en{
+            display:none;
+        }
+
+        body.sinhala-mode .lang-si{
+            display:block;
+        }
+
+        body.sinhala-mode span.lang-si{
+            display:inline;
+        }
+
+        /* ===== Responsive ===== */
+        @media(max-width:700px){
+
+            section{
+                padding:25px;
+            }
+
+            h2{
+                font-size:26px;
+            }
+
+            h3{
+                font-size:17px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav>
+        <a href="index.html" class="nav-home">
+            <span class="lang-en">⚛ Quantum Physics</span>
+            <span class="lang-si">⚛ ක්වොන්ටම් භෞතික විද්‍යාව</span>
+        </a>
+
+        <div class="nav-right">
+
+            <button id="langToggle" class="lang-btn" onclick="toggleLanguage()">
+                Sinhala
+            </button>
+
+            <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+
+        </div>
+    </nav>
+
+    <!-- ===== Sidebar Overlay ===== -->
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+    <!-- ===== Sidebar ===== -->
+    <div class="sidebar" id="sidebarMenu">
+
+        <div class="close-btn" onclick="toggleSidebar()">×</div>
+
+        <div class="sidebar-section">
+
+            <a href="index.html">
+                <span class="lang-en">🏠 Home</span>
+                <span class="lang-si">🏠 මුල් පිටුව</span>
+            </a>
+
+            <a href="space.html">
+                <span class="lang-en">🌌 Space</span>
+                <span class="lang-si">🌌 අවකාශය</span>
+            </a>
+
+            <a href="quantum.html">
+                <span class="lang-en">⚛ Quantum Physics</span>
+                <span class="lang-si">⚛ ක්වොන්ටම් භෞතික විද්‍යාව</span>
+            </a>
+
+            <a href="mysteries.html">
+                <span class="lang-en">👁 Mysteries</span>
+                <span class="lang-si">👁 අභිරහස්</span>
+            </a>
+
+        </div>
+
+        <hr class="sidebar-divider">
+
+        <a href="mcq.html">
+            <span class="lang-en">📝 Start Quiz</span>
+            <span class="lang-si">📝 ප්‍රශ්නාවලිය</span>
+        </a>
+
+        <a href="facts.html">
+            <span class="lang-en">⚡ Amazing Facts</span>
+            <span class="lang-si">⚡ පුදුම කරුණු</span>
+        </a>
+
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <div class="hero">
+
+        <h1 class="lang-en">What is Quantum Physics?</h1>
+
+        <h1 class="lang-si">ක්වොන්ටම් භෞතික විද්‍යාව යනු කුමක්ද?</h1>
+
+        <p class="subtitle lang-en">
+            The science that explains the strange behavior of the universe.
+        </p>
+
+        <p class="subtitle lang-si">
+            විශ්වයේ අසාමාන්‍ය හැසිරීම් පැහැදිලි කරන විද්‍යාව.
+        </p>
+
+    </div>
+
+    <!-- ===== IMAGE ===== -->
+    <div class="img-container">
+
+        <img src="images/quantum.jpg"
+             alt="Quantum Physics"
+             class="quantum-img">
+
+    </div>
+
+    <!-- ===== CONTENT ===== -->
+    <div class="container">
+
+        <!-- SECTION 1 -->
+        <section>
+
+            <h2 class="lang-en">Introduction</h2>
+            <h2 class="lang-si">හැඳින්වීම</h2>
+
+            <h3 class="lang-en">
+                Quantum Physics is the branch of physics that studies the behavior
+                of matter and energy at extremely tiny scales such as atoms,
+                electrons, and photons.
+            </h3>
+
+            <h3 class="lang-si">
+                ක්වොන්ටම් භෞතික විද්‍යාව යනු පරමාණු, ඉලෙක්ට්‍රෝන,
+                ෆෝටෝන වැනි ඉතා කුඩා මට්ටම්වල ද්‍රව්‍ය හා ශක්තියේ
+                හැසිරීම අධ්‍යයනය කරන භෞතික විද්‍යාවේ ශාඛාවකි.
+            </h3>
+
+        </section>
+
+        <!-- SECTION 2 -->
+        <section>
+
+            <h2 class="lang-en">Why Is It Important?</h2>
+            <h2 class="lang-si">මෙය වැදගත් වන්නේ ඇයි?</h2>
+
+            <ul class="lang-en">
+                <li>It explains how atoms behave.</li>
+                <li>Modern computers and smartphones depend on quantum science.</li>
+                <li>Lasers, MRI scanners, and solar panels use quantum principles.</li>
+                <li>It may help create powerful quantum computers in the future.</li>
+            </ul>
+
+            <ul class="lang-si">
+                <li>මෙය පරමාණු හැසිරෙන ආකාරය පැහැදිලි කරයි.</li>
+                <li>අද කාලයේ පරිගණක හා ස්මාර්ට්ෆෝන් ක්වොන්ටම් විද්‍යාව මත රඳා පවතී.</li>
+                <li>ලේසර්, MRI යන්ත්‍ර සහ සූර්ය පැනල මෙය භාවිතා කරයි.</li>
+                <li>අනාගතයේ අතිශය බලවත් ක්වොන්ටම් පරිගණක සෑදීමට උපකාරී විය හැක.</li>
+            </ul>
+
+        </section>
+
+        <!-- SECTION 3 -->
+        <section>
+
+            <h2 class="lang-en">Strange Quantum Concepts</h2>
+            <h2 class="lang-si">අසාමාන්‍ය ක්වොන්ටම් සංකල්ප</h2>
+
+            <ul class="lang-en">
+
+                <li>
+                    <strong>Wave-Particle Duality:</strong>
+                    Tiny particles can behave like waves.
+                </li>
+
+                <li>
+                    <strong>Superposition:</strong>
+                    A particle can exist in multiple states at the same time.
+                </li>
+
+                <li>
+                    <strong>Quantum Entanglement:</strong>
+                    Two particles can stay connected even across huge distances.
+                </li>
+
+            </ul>
+
+            <ul class="lang-si">
+
+                <li>
+                    <strong>තරංග-අංශු ද්විත්වතාව:</strong>
+                    කුඩා අංශු තරංග ලෙසද හැසිරිය හැක.
+                </li>
+
+                <li>
+                    <strong>සුපර්පොසිෂන්:</strong>
+                    අංශුවක් එකවර තත්ව කිහිපයක පවතින්න පුළුවන්.
+                </li>
+
+                <li>
+                    <strong>ක්වොන්ටම් එන්ටැන්ගල්මන්ට්:</strong>
+                    අංශු දෙකක් දුරින් සිටියත් සම්බන්ධව පවතී.
+                </li>
+
+            </ul>
+
+        </section>
+
+        <!-- SECTION 4 -->
+        <section>
+
+            <h2 class="lang-en">Famous Scientists</h2>
+            <h2 class="lang-si">ප්‍රසිද්ධ විද්‍යාඥයන්</h2>
+
+            <ul class="lang-en">
+
+                <li><strong>Albert Einstein</strong> – Worked on quantum theory and light.</li>
+
+                <li><strong>Niels Bohr</strong> – Developed atomic models.</li>
+
+                <li><strong>Erwin Schrödinger</strong> – Created wave equations.</li>
+
+                <li><strong>Max Planck</strong> – Founder of quantum theory.</li>
+
+            </ul>
+
+            <ul class="lang-si">
+
+                <li><strong>ඇල්බට් අයින්ස්ටයින්</strong> – ආලෝකය හා ක්වොන්ටම් න්‍යාය පිළිබඳ වැඩ කළා.</li>
+
+                <li><strong>නීල්ස් බෝර්</strong> – පරමාණු ආකෘති සංවර්ධනය කළා.</li>
+
+                <li><strong>එර්වින් ශ්‍රොඩින්ගර්</strong> – තරංග සමීකරණ නිර්මාණය කළා.</li>
+
+                <li><strong>මැක්ස් ප්ලෑන්ක්</strong> – ක්වොන්ටම් න්‍යායේ ආරම්භකයා.</li>
+
+            </ul>
+
+        </section>
+
+        <!-- SECTION 5 -->
+        <section>
+
+            <h2 class="lang-en">Did You Know?</h2>
+            <h2 class="lang-si">ඔබ දැන සිටියාද?</h2>
+
+            <div class="quote-box lang-en">
+
+                "If quantum physics hasn't profoundly shocked you,
+                you haven't understood it yet."
+
+                — Niels Bohr
+
+            </div>
+
+            <div class="quote-box lang-si">
+
+                "ක්වොන්ටම් භෞතික විද්‍යාව ඔබව ගැඹුරින් පුදුමයට පත් නොකළේ නම්,
+                ඔබ තවමත් එය හරි ලෙස තේරුම් ගෙන නැහැ."
+
+                — නීල්ස් බෝර්
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- ===== FEEDBACK ===== -->
+    <div id="feedback-widget">
+
+        <span class="lang-en">Was this helpful?</span>
+        <span class="lang-si">ප්‍රයෝජනවත්ද?</span>
+
+        <button onclick="hideFeedback()">👍</button>
+
+        <button onclick="hideFeedback()">👎</button>
+
+    </div>
+
+    <!-- ===== MUSIC ===== -->
+    <div id="music-control" onclick="toggleMusic()">
+
+        <span id="music-icon">🔇</span>
+
+    </div>
+
+    <audio id="myAudio" loop>
+
+        <source src="mp3/space-music.mp3" type="audio/mpeg">
+
+    </audio>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+
+        /* ===== Language System ===== */
+
+        function updateLanguageUI(lang){
+
+            const btn = document.getElementById("langToggle");
+
+            if(lang === "si"){
+
+                document.body.classList.add("sinhala-mode");
+
+                btn.textContent = "English";
+
+            }else{
+
+                document.body.classList.remove("sinhala-mode");
+
+                btn.textContent = "Sinhala";
+
+            }
+
+        }
+
+        function toggleLanguage(){
+
+            let currentLang = localStorage.getItem("selectedLanguage") || "en";
+
+            let newLang = currentLang === "en" ? "si" : "en";
+
+            localStorage.setItem("selectedLanguage", newLang);
+
+            updateLanguageUI(newLang);
+
+        }
+
+        document.addEventListener("DOMContentLoaded", function(){
+
+            const savedLang = localStorage.getItem("selectedLanguage") || "en";
+
+            updateLanguageUI(savedLang);
+
+        });
+
+        /* ===== Sidebar ===== */
+
+        function toggleSidebar(){
+
+            const sidebar = document.getElementById("sidebarMenu");
+
+            const overlay = document.getElementById("sidebarOverlay");
+
+            sidebar.classList.toggle("open");
+
+            overlay.classList.toggle("show");
+
+        }
+
+        /* ===== Feedback ===== */
+
+        function hideFeedback(){
+
+            const currentLang = localStorage.getItem("selectedLanguage") || "en";
+
+            if(currentLang === "si"){
+
+                alert("ඔබේ ප්‍රතිචාරයට ස්තූතියි!");
+
+            }else{
+
+                alert("Thank you for your feedback!");
+
+            }
+
+            document.getElementById("feedback-widget").style.display = "none";
+
+        }
+
+        /* ===== Music ===== */
+
+        const audio = document.getElementById("myAudio");
+
+        const icon = document.getElementById("music-icon");
+
+        let isPlaying = false;
+
+        function toggleMusic(){
+
+            if(isPlaying){
+
+                audio.pause();
+
+                icon.textContent = "🔇";
+
+            }else{
+
+                audio.play();
+
+                icon.textContent = "🎵";
+
+            }
+
+            isPlaying = !isPlaying;
+
+        }
+
+    </script>
+
+</body>
+</html>
