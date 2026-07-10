@@ -1,732 +1,221 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Cerberus - I T L</title>
-
     <style>
-
         /* Cerberus Hellfire Neon Theme */
-
         :root {
-
             --neon-red: #ff003c;
-
             --neon-orange: #ff8a00;
-
             --bg-dark: #050101;
-
             --text-gray: #cccccc;
-
         }
-
-
 
         body {
-
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-
             background-color: var(--bg-dark);
-
             color: var(--text-gray);
-
             margin: 0;
-
             padding: 0;
-
             line-height: 1.8;
-
         }
 
-
-
-        /* New Navigation Bar Header */
-
-nav {
-
-    background-color: #1a1a1a;
-
-    padding: 15px 20px;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    border-bottom: 2px solid #333;
-
-    position: sticky;
-
-    top: 0;
-
-    z-index: 1000;
-
-    width: 100%;
-
-    box-sizing: border-box;
-
-}
-
-
-
-nav .nav-home {
-
-    color: #00d4ff;
-
-    text-decoration: none;
-
-    font-weight: bold;
-
-    font-size: 20px;
-
-}
-
-
-
-/* Hamburger Menu Button */
-
-.menu-toggle {
-
-    background: none;
-
-    border: none;
-
-    color: #00d4ff;
-
-    font-size: 28px;
-
-    cursor: pointer;
-
-    user-select: none;
-
-}
-
-
-
-/* Slide-out Sidebar Styles */
-
-.sidebar {
-
-    position: fixed;
-
-    top: 0;
-
-    right: -280px; /* දකුණු පැත්තේ සැඟවී පවතී */
-
-    width: 280px;
-
-    height: 100%;
-
-    background-color: #111;
-
-    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
-
-    z-index: 10001;
-
-    transition: right 0.3s ease-in-out;
-
-    padding: 20px;
-
-    box-sizing: border-box;
-
-    overflow-y: auto;
-
-}
-
-
-
-.sidebar.open {
-
-    right: 0; /* ක්ලික් කළ විට මතු වේ */
-
-}
-
-
-
-/* Close Button inside Sidebar */
-
-.close-btn {
-
-    text-align: right;
-
-    font-size: 30px;
-
-    color: #ff4a4a;
-
-    cursor: pointer;
-
-    margin-bottom: 20px;
-
-}
-
-
-
-/* Sidebar Links Grouping */
-
-.sidebar-section {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 12px;
-
-}
-
-
-
-.sidebar-divider {
-
-    border: none;
-
-    border-top: 1px solid #333;
-
-    margin: 15px 0;
-
-}
-
-
-
-.sidebar a {
-
-    color: #e0e0e0;
-
-    text-decoration: none;
-
-    font-size: 16px;
-
-    font-weight: 500;
-
-    padding: 8px 12px;
-
-    border-radius: 5px;
-
-    transition: 0.2s;
-
-}
-
-
-
-.sidebar a:hover {
-
-    background-color: #1a1a1a;
-
-    color: #00d4ff;
-
-}
-
-
-
-/* Special Styling for buttons inside menu */
-
-.sb-mcq { color: #ffd700 !important; font-weight: bold !important; }
-
-.sb-facts { color: #00ff88 !important; font-weight: bold !important; }
-
-.sb-share { color: #00d4ff !important; }
-
-.sb-help { color: #ffa500 !important; }
-
-
-
-/* Overlay Background */
-
-.sidebar-overlay {
-
-    position: fixed;
-
-    top: 0;
-
-    left: 0;
-
-    width: 100%;
-
-    height: 100%;
-
-    background: rgba(0,0,0,0.6);
-
-    z-index: 10000;
-
-    display: none;
-
-}
-
-.sidebar-overlay.show {
-
-    display: block;
-
-}
-
-
-
-        /* Title */
-
-        h1 {
-
-            font-size: clamp(40px, 10vw, 75px);
-
-            text-align: center;
-
-            color: #fff;
-
-            margin-top: 50px;
-
-            letter-spacing: 15px;
-
-            text-transform: uppercase;
-
-            text-shadow: 0 0 15px var(--neon-red), 0 0 30px var(--neon-red);
-
+        /* Navigation Bar */
+        nav {
+            background-color: #1a1a1a;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            box-sizing: border-box;
         }
 
-
-
-        /* Image Container */
-
-        .img-container {
-
-            text-align: center;
-
-            margin: 40px 0;
-
+        nav .nav-home {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
         }
 
+        .nav-right { display: flex; align-items: center; gap: 15px; }
 
-
-        .cerberus-img {
-
-            max-width: 85%;
-
-            height: auto;
-
-            border-radius: 20px;
-
-            border: 2px solid var(--neon-orange);
-
-            box-shadow: 0 0 25px rgba(255, 138, 0, 0.3);
-
-            transition: 0.5s;
-
+        .lang-btn {
+            background: #222;
+            color: #00d4ff;
+            border: 1px solid #00d4ff;
+            padding: 5px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.2s;
         }
+        .lang-btn:hover { background: #00d4ff; color: #000; }
 
-
-
-        .cerberus-img:hover {
-
-            box-shadow: 0 0 50px rgba(255, 0, 60, 0.5);
-
-            transform: scale(1.03) rotate(1deg);
-
-        }
-
-
-
-        /* Content Container */
-
-        .container {
-
-            max-width: 900px;
-
-            margin: 0 auto;
-
-            padding: 20px;
-
-        }
-
-
-
-        section {
-
-            background: rgba(255, 0, 60, 0.03);
-
-            padding: 30px;
-
-            border-radius: 20px;
-
-            margin-bottom: 35px;
-
-            border-right: 3px solid var(--neon-red);
-
-            border-left: 1px solid rgba(255, 255, 255, 0.05);
-
-            position: relative;
-
-        }
-
-
-
-        h2 {
-
-            color: var(--neon-orange);
-
+        .menu-toggle {
+            background: none;
+            border: none;
+            color: #00d4ff;
             font-size: 28px;
-
-            margin-bottom: 20px;
-
-            text-transform: uppercase;
-
-            letter-spacing: 2px;
-
-            text-shadow: 0 0 5px rgba(255, 138, 0, 0.4);
-
+            cursor: pointer;
+            user-select: none;
         }
 
-
-
-        h3 {
-
-            font-size: 19px;
-
-            font-weight: normal;
-
-            color: #eee;
-
+        /* Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -280px;
+            width: 280px;
+            height: 100%;
+            background-color: #111;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+            z-index: 10001;
+            transition: right 0.3s ease-in-out;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
         }
+        .sidebar.open { right: 0; }
+        .close-btn { text-align: right; font-size: 30px; color: #ff4a4a; cursor: pointer; margin-bottom: 20px; }
+        .sidebar-section { display: flex; flex-direction: column; gap: 12px; }
+        .sidebar-divider { border: none; border-top: 1px solid #333; margin: 15px 0; }
+        .sidebar a { color: #e0e0e0; text-decoration: none; font-size: 16px; font-weight: 500; padding: 8px 12px; border-radius: 5px; transition: 0.2s; }
+        .sidebar a:hover { background-color: #1a1a1a; color: #00d4ff; }
 
+        /* Multilang Helpers */
+        .lang-si { display: none; }
+        body.sinhala-mode .lang-en { display: none; }
+        body.sinhala-mode .lang-si { display: inline-block; }
+        body.sinhala-mode h3.lang-si, body.sinhala-mode h1.lang-si { display: block; }
 
-
-        ul {
-
-            list-style: none;
-
-            padding: 0;
-
-            margin-top: 20px;
-
-        }
-
-
-
-        li {
-
-            margin-bottom: 18px;
-
-            padding-left: 25px;
-
-            position: relative;
-
-        }
-
-
-
-        li::before {
-
-            content: "🔥";
-
-            position: absolute;
-
-            left: 0;
-
-            font-size: 16px;
-
-        }
-
-
-
-        strong {
-
-            color: var(--neon-red);
-
-        }
-
-
-
-        .dotted-hr {
-
-            border-top: 2px dashed var(--neon-red);
-
-            margin: 60px 0;
-
-            opacity: 0.2;
-
-        }
-
-
-
+        /* Content Styles */
+        h1 { font-size: clamp(40px, 10vw, 75px); text-align: center; color: #fff; margin-top: 50px; letter-spacing: 15px; text-transform: uppercase; text-shadow: 0 0 15px var(--neon-red), 0 0 30px var(--neon-red); }
+        .img-container { text-align: center; margin: 40px 0; }
+        .cerberus-img { max-width: 85%; height: auto; border-radius: 20px; border: 2px solid var(--neon-orange); box-shadow: 0 0 25px rgba(255, 138, 0, 0.3); transition: 0.5s; }
+        .cerberus-img:hover { box-shadow: 0 0 50px rgba(255, 0, 60, 0.5); transform: scale(1.03) rotate(1deg); }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        section { background: rgba(255, 0, 60, 0.03); padding: 30px; border-radius: 20px; margin-bottom: 35px; border-right: 3px solid var(--neon-red); border-left: 1px solid rgba(255, 255, 255, 0.05); }
+        h2 { color: var(--neon-orange); font-size: 28px; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
+        ul { list-style: none; padding: 0; margin-top: 20px; }
+        li { margin-bottom: 18px; padding-left: 25px; position: relative; }
+        li::before { content: "🔥"; position: absolute; left: 0; font-size: 16px; }
+        strong { color: var(--neon-red); }
+        .dotted-hr { border-top: 2px dashed var(--neon-red); margin: 60px 0; opacity: 0.2; }
     </style>
-
 </head>
-
 <body>
 
+    <nav>
+        <a href="index.html" class="nav-home">
+            <span class="lang-en">🏠 Home</span>
+            <span class="lang-si">🏠 මුල් පිටුව</span>
+        </a>
+        <div class="nav-right">
+            <button id="langToggle" class="lang-btn" onclick="toggleLanguage()">Sinhala</button>
+            <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+        </div>
+    </nav>
 
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
 
-    <!-- New Top Navbar -->
-
-<nav>
-
-    <a href="index.html" class="nav-home">🏠 Home</a>
-
-    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
-
-</nav>
-
-
-
-<!-- Sidebar Overlay -->
-
-<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
-
-
-
-<!-- Slide-out Sidebar Menu -->
-
-<div class="sidebar" id="sidebarMenu">
-
-    <div class="close-btn" onclick="toggleSidebar()">×</div>
-
-    
-
-    <div class="sidebar-section">
-
-        <!-- Main Pages Links -->
-
-        <a href="index.html">Home</a>
-
-        <a href="earth.html">Earth</a>
-
-        <a href="animals.html">Animals</a>
-
-        <a href="space.html">Space</a>
-
-        <a href="mysteries.html">Mysteries</a>
-
-        <a href="history.html">History</a>
-
-        <a href="quantum.html">🌌 Quantum Physics</a>
-
+    <div class="sidebar" id="sidebarMenu">
+        <div class="close-btn" onclick="toggleSidebar()">×</div>
+        <div class="sidebar-section">
+            <a href="index.html"><span class="lang-en">Home</span><span class="lang-si">මුල් පිටුව</span></a>
+            <a href="earth.html"><span class="lang-en">Earth</span><span class="lang-si">පෘථිවිය</span></a>
+            <a href="animals.html"><span class="lang-en">Animals</span><span class="lang-si">සතුන්</span></a>
+            <a href="space.html"><span class="lang-en">Space</span><span class="lang-si">අවකාශය</span></a>
+            <a href="mysteries.html"><span class="lang-en">Mysteries</span><span class="lang-si">අභිරහස්</span></a>
+            <a href="history.html"><span class="lang-en">History</span><span class="lang-si">ඉතිහාසය</span></a>
+            <hr class="sidebar-divider">
+            <a href="mcq.html"><span class="lang-en">📝 Start MCQ</span><span class="lang-si">📝 MCQ ප්‍රශ්න</span></a>
+            <a href="facts.html"><span class="lang-en">⚡ Facts</span><span class="lang-si">⚡ කරුණු</span></a>
+            <hr class="sidebar-divider">
+            <a onclick="shareToFriends();" style="cursor:pointer;"><span class="lang-en">🔗 SHARE</span><span class="lang-si">🔗 බෙදාගන්න</span></a>
+        </div>
     </div>
-
-        
-
-        <!-- පළමු ඉරෙන් වෙන් කිරීම -->
-
-        <hr class="sidebar-divider">
-
-        
-
-        <!-- Quiz & Facts Links -->
-
-        <a href="mcq.html" class="sb-mcq">📝 Start MCQ Quiz</a>
-
-        <a href="facts.html" class="sb-facts">⚡ Fun Amazing Facts ⚡</a>
-
-        
-
-        <!-- දෙවැනි ඉරෙන් වෙන් කිරීම -->
-
-        <hr class="sidebar-divider">
-
-        
-
-        <!-- Action Links -->
-
-        <a onclick="shareToFriends(); toggleSidebar();" style="cursor:pointer;" class="sb-share">🔗 SHARE</a>
-
-        <a href="ad.html" class="sb-help">❤️ Help</a>
-
-        <a href="aaaextradatapage.html">About</a>
-
-    </div>
-
-</div>
-
-
 
     <div class="container">
-
-        <h1>CERBERUS</h1>
-
-
+        <h1 class="lang-en">CERBERUS</h1>
+        <h1 class="lang-si">සර්බෙරස්</h1>
 
         <div class="img-container">
-
-            <img class="cerberus-img" src="images/cerberus.jpg" alt="Cerberus - Guardian of the Underworld">
-
+            <img class="cerberus-img" src="images/cerberus.jpg" alt="Cerberus">
         </div>
 
-
-
         <section>
-
-            <h2>The Hound of Hades</h2>
-
-            <h3><strong>Cerberus</strong> is the monstrous multi-headed dog that guards the gates of the Underworld, preventing the dead from leaving and the living from entering without permission.</h3>
-
+            <h2>
+                <span class="lang-en">The Hound of Hades</span>
+                <span class="lang-si">හේඩීස්ගේ සුනඛයා</span>
+            </h2>
+            <h3 class="lang-en"><strong>Cerberus</strong> is the monstrous multi-headed dog that guards the gates of the Underworld.</h3>
+            <h3 class="lang-si"><strong>සර්බෙරස්</strong> යනු පාතාල ලෝකයේ දොරටු ආරක්ෂා කරන බහු-හිස් සහිත රාක්ෂ සුනඛයාය.</h3>
         </section>
 
-
-
         <section>
-
-            <h2>Physical Description</h2>
-
-            <ul>
-
-                <li><strong>Three Heads:</strong> Most legends describe him with three heads, representing the past, present, and future.</li>
-
-                <li><strong>Serpent's Tail:</strong> Instead of a normal tail, Cerberus often had a snake for a tail or snakes sprouting from his body.</li>
-
-                <li><strong>Deadly Saliva:</strong> It is said that where his saliva fell to the ground, poisonous plants like aconite would grow.</li>
-
+            <h2>
+                <span class="lang-en">Physical Description</span>
+                <span class="lang-si">භෞතික විස්තරය</span>
+            </h2>
+            <ul class="lang-en">
+                <li><strong>Three Heads:</strong> Representing the past, present, and future.</li>
+                <li><strong>Serpent's Tail:</strong> Often had a snake for a tail.</li>
+                <li><strong>Deadly Saliva:</strong> Causes poisonous plants to grow.</li>
             </ul>
-
+            <ul class="lang-si">
+                <li><strong>හිස් තුනක්:</strong> අතීතය, වර්තමානය සහ අනාගතය නියෝජනය කරයි.</li>
+                <li><strong>සර්ප වලිගය:</strong> බොහෝ විට වලිගය වෙනුවට සර්පයෙකු සිටී.</li>
+                <li><strong>මාරාන්තික කෙළ:</strong> වැටෙන තැන විෂ පැලෑටි වැවේ.</li>
+            </ul>
         </section>
-
-
 
         <section>
-
-            <h2>The Final Labor</h2>
-
-            <h3>Slaying or capturing Cerberus was the <strong>12th and final labor</strong> of Hercules. Hercules had to wrestle the beast using only his bare hands to prove his strength to King Eurystheus.</h3>
-
+            <h2>
+                <span class="lang-en">The Final Labor</span>
+                <span class="lang-si">අවසාන කාර්යය</span>
+            </h2>
+            <h3 class="lang-en">Capturing Cerberus was the <strong>12th and final labor</strong> of Hercules.</h3>
+            <h3 class="lang-si">සර්බෙරස් අල්ලා ගැනීම හර්කියුලිස්ගේ <strong>12 වැනි සහ අවසාන කාර්යය</strong> විය.</h3>
         </section>
-
-
-
         <div class="dotted-hr"></div>
-
     </div>
-
-
-
-    <div id="feedback-widget">
-
-        <span>Helpful?</span>
-
-        <button onclick="hideFeedback('Yes')">YES</button>
-
-        <button onclick="hideFeedback('No')">NO</button>
-
-    </div>
-
-
-
-    <style>
-
-        #feedback-widget {
-
-            position: fixed;
-
-            bottom: 25px;
-
-            right: 25px;
-
-            background: #110505;
-
-            border: 1px solid var(--neon-red);
-
-            box-shadow: 0 0 15px rgba(255, 0, 60, 0.4);
-
-            padding: 12px 18px;
-
-            border-radius: 10px;
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 12px;
-
-            z-index: 1000;
-
-            color: #fff;
-
-        }
-
-        #feedback-widget button {
-
-            border: 1px solid var(--neon-orange);
-
-            background: transparent;
-
-            color: var(--neon-orange);
-
-            padding: 4px 12px;
-
-            border-radius: 4px;
-
-            cursor: pointer;
-
-            transition: 0.3s;
-
-        }
-
-        #feedback-widget button:hover { 
-
-            background: var(--neon-red);
-
-            color: #fff;
-
-            border-color: var(--neon-red);
-
-            box-shadow: 0 0 10px var(--neon-red);
-
-        }
-
-    </style>
-
-
 
     <script>
-
-        // Sidebar Toggle Function
-
-function toggleSidebar() {
-
-    const sidebar = document.getElementById("sidebarMenu");
-
-    const overlay = document.getElementById("sidebarOverlay");
-
-    
-
-    sidebar.classList.toggle("open");
-
-    overlay.classList.toggle("show");
-
-}
-
-        function hideFeedback(type) {
-
-            alert("The Guardian of Hades has been added to your collection!");
-
-            document.getElementById('feedback-widget').style.display = 'none';
-
+        function updateLanguageUI(lang) {
+            const btn = document.getElementById("langToggle");
+            if (lang === "si") {
+                document.body.classList.add("sinhala-mode");
+                btn.textContent = "English";
+            } else {
+                document.body.classList.remove("sinhala-mode");
+                btn.textContent = "Sinhala";
+            }
         }
-
+        function toggleLanguage() {
+            let currentLang = localStorage.getItem("selectedLanguage") || "en";
+            let newLang = currentLang === "en" ? "si" : "en";
+            localStorage.setItem("selectedLanguage", newLang);
+            updateLanguageUI(newLang);
+        }
+        document.addEventListener("DOMContentLoaded", () => {
+            updateLanguageUI(localStorage.getItem("selectedLanguage") || "en");
+        });
+        function toggleSidebar() {
+            document.getElementById("sidebarMenu").classList.toggle("open");
+            document.getElementById("sidebarOverlay").classList.toggle("show");
+        }
+        function shareToFriends() {
+            if (navigator.share) navigator.share({title: 'ITL', url: window.location.href});
+            else alert("Link: " + window.location.href);
+        }
     </script>
-
-    <audio id="myAudio" loop>
-
-    <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
-
-</audio>
-
-
-
-<div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
-
-    <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
-
-        <span id="music-icon">🔇</span>
-
-    </div>
-
-</div>
-
-
-
-<script src="music.js"></script>
-
 </body>
-
-</html> 
-
+</html>
