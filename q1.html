@@ -1,25 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="description" content="Dive into the strange and fascinating world of Quantum Physics with ITL. From wave-particle duality to quantum entanglement, explore the rules that govern the universe at the smallest scale.">
-    <meta name="keywords" content="Quantum Physics, Quantum Mechanics, Theoretical Physics, Schrodingers Cat, Quantum Entanglement, Particle Physics, ITL Science">
-
-    <meta property="og:title" content="Quantum Physics – The Subatomic World | ITL">
-    <meta property="og:description" content="Explore the mind-bending principles and mysteries of quantum mechanics.">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quantum Physics - I T L</title>
+    <title>Aokigahara - I T L</title>
+
+    <!-- Meta Tags for Link Preview (WhatsApp, Facebook, etc.) -->
+    <meta name="description" content="Explore Aokigahara, Japan's famous Sea of Trees at the base of Mount Fuji. Discover its unique geological features, silence, and haunting folklore.">
+    
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/aokigahara.html">
+    <meta property="og:title" content="Aokigahara Forest – The Sea of Trees | ITL">
+    <meta property="og:description" content="Discover the mysteries of Aokigahara! A dense forest of absolute silence, volcanic caves, and dark legends at the base of Mt. Fuji. 🌲🧭">
+    <meta property="og:image" content="images/aokigahara.jpg">
+
+    <!-- Twitter Card Data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aokigahara Forest – The Sea of Trees | ITL">
+    <meta name="twitter:description" content="Explore the unique geology and haunting history of Japan's Aokigahara Forest.">
+    <meta name="twitter:image" content="images/aokigahara.jpg">
+
     <style>
-        /* Modern Cosmic Dark Theme Setup */
+        /* මූලික සැකසුම් */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0b0b0b;
-            color: #e0e0e0;
+            background-color: #040804; /* ඉතා තද වනාන්තර කොළ පැහැයක් */
+            color: #d1e0d1;
             margin: 0;
             padding: 0;
             line-height: 1.8;
-            background-image: radial-gradient(circle at top, #0a192f 0%, #0b0b0b 70%);
-            background-attachment: fixed;
+            background-image: linear-gradient(180deg, #040804 0%, #0a140a 100%);
         }
 
         /* New Navigation Bar Header */
@@ -44,7 +55,12 @@
             font-size: 20px;
         }
 
-
+        /* Nav Controls wrapper */
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
         /* Language Toggle Button Style */
         .lang-btn {
@@ -67,17 +83,6 @@
             box-shadow: 0 0 15px #4ade80;
         }
 
-
-
-        
-    
-
-        .nav-right-group {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
         /* Hamburger Menu Button */
         .menu-toggle {
             background: none;
@@ -92,7 +97,7 @@
         .sidebar {
             position: fixed;
             top: 0;
-            right: -280px; 
+            right: -280px; /* දකුණු පැත්තේ සැඟවී පවතී */
             width: 280px;
             height: 100%;
             background-color: #111;
@@ -105,7 +110,7 @@
         }
 
         .sidebar.open {
-            right: 0; 
+            right: 0; /* ක්ලික් කළ විට මතු වේ */
         }
 
         /* Close Button inside Sidebar */
@@ -145,6 +150,7 @@
             color: #00d4ff;
         }
 
+        /* Special Styling for buttons inside menu */
         .sb-mcq { color: #ffd700 !important; font-weight: bold !important; }
         .sb-facts { color: #00ff88 !important; font-weight: bold !important; }
         .sb-share { color: #00d4ff !important; }
@@ -165,31 +171,17 @@
             display: block;
         }
 
-        /* Title Glow & Shimmer Animation */
+        /* ප්‍රධාන මාතෘකාව */
         h1 {
-            font-size: clamp(30px, 6vw, 55px);
+            font-size: clamp(35px, 7vw, 60px);
             text-align: center;
-            margin-top: 50px;
+            color: #fff;
+            margin-top: 40px;
+            letter-spacing: 3px;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 800;
-            background: linear-gradient(to right, #ffea80, #ffcc00, #00f2fe, #ffea80);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: goldShine 4s linear infinite, headingGlow 3s ease-in-out infinite alternate;
-            display: inline-block;
-            width: 100%;
+            text-shadow: 0 0 20px rgba(74, 222, 128, 0.2);
         }
 
-        @keyframes goldShine {
-            to { background-position: 200% center; }
-        }
-
-        @keyframes headingGlow {
-            from { filter: drop-shadow(0 0 4px rgba(255, 204, 0, 0.2)); }
-            to { filter: drop-shadow(0 0 15px rgba(0, 242, 254, 0.4)); }
-        }
         /* පින්තූර සැකසුම */
         .img-grid {
             display: flex;
@@ -228,111 +220,97 @@
             border-left: 5px solid #2d5a27;
         }
 
-        /* Main Content Container */
-        .container {
-            max-width: 950px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .main-text {
-            font-size: 19px;
-            color: #cccccc;
-            text-align: justify;
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(5px);
-            padding: 35px;
-            border-radius: 16px;
-            border-left: 4px solid #ffcc00;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
         h2 {
-            color: #ffffff;
+            color: #4ade80;
             font-size: 28px;
-            margin-top: 60px;
-            text-align: center;
-            font-weight: 700;
-            letter-spacing: 0.5px;
+            margin-bottom: 15px;
         }
 
         h3 {
-            color: #ffe680;
-            font-size: 21px;
-            margin-top: 45px;
-            margin-bottom: 18px;
-            border-left: 4px solid #00f2fe; 
-            padding-left: 15px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
+            font-size: 20px;
+            font-weight: normal;
+            color: #c0ccc0;
+            margin: 0;
+            text-align: justify;
         }
 
-        /* Interactive Grid Layout */
-        .topic-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-            margin-top: 15px;
-            margin-bottom: 35px;
+        ul {
             list-style: none;
             padding: 0;
+            margin-top: 15px;
         }
 
-        .topic-grid a {
-            text-decoration: none;
-            display: block;
+        li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 18px;
         }
 
-        .topic-grid li {
-            background: rgba(26, 26, 26, 0.6);
-            backdrop-filter: blur(5px);
-            padding: 22px;
-            border-radius: 14px;
-            text-align: center;
-            border: 1px solid rgba(255, 204, 0, 0.1);
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            color: #f0f0f0;
-            font-weight: 600;
-            font-size: 17px;
+        li::before {
+            content: "🌲"; /* වනාන්තරයට ගැලපෙන අයිකනයක් */
+            position: absolute;
+            left: 0;
+            font-size: 14px;
         }
 
-        .topic-grid a:hover li {
-            background: rgba(0, 242, 254, 0.05);
-            border-color: #00f2fe;
-            transform: translateY(-6px);
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 242, 254, 0.2);
-            color: #00f2fe;
-            text-shadow: 0 0 8px rgba(0, 242, 254, 0.4);
+        strong {
+            color: #4ade80;
         }
 
-        /* Separators */
         hr {
             border: 0;
             height: 1px;
-            background-image: linear-gradient(to right, transparent, rgba(255, 204, 0, 0.25), transparent);
-            margin: 50px 0;
+            background: linear-gradient(to right, transparent, #2d5a27, transparent);
+            margin: 40px 0;
         }
 
         .dotted-hr {
-            border: 0;
-            height: 2px;
-            background-image: linear-gradient(to right, transparent, rgba(255, 204, 0, 0.1), transparent);
-            margin-bottom: 60px;
+            border-top: 3px dotted #1a331a;
+            margin: 60px 0;
         }
 
-        /* Language visibility defaults */
-        .lang-si {
-            display: none;
+        #feedback-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #000000;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 1000;
+            color: #d1e0d1;
+            font-weight: bold;
+        }
+        #feedback-widget button {
+            border: none;
+            background: #000000;
+            padding: 5px 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            color: #4ade80;
+            font-size: 16px;
+            transition: background 0.2s;
+        }
+        #feedback-widget button:hover { background: #333; }
+
+        @media (max-width: 768px) {
+            .img-grid img { max-width: 90%; }
+            section { padding: 20px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Top Navbar with Language Button and Hamburger Menu -->
+    <!-- New Top Navbar -->
     <nav>
-        <a href="index.html" class="nav-home">🏠 Home</a>
-        <div class="nav-right-group">
-            <button id="langBtn" class="lang-toggle-btn" onclick="toggleLanguage()">Sinhala</button>
+        <a href="index.html" class="nav-home" data-en="🏠 Home" data-si="🏠 මුල් පිටුව">🏠 Home</a>
+        <div class="nav-controls">
+            <!-- Language Toggle Button -->
+            <button id="langToggle" class="lang-btn" onclick="toggleLanguage()">සිංහල</button>
             <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
         </div>
     </nav>
@@ -345,49 +323,31 @@
         <div class="close-btn" onclick="toggleSidebar()">×</div>
         
         <div class="sidebar-section">
-            <a href="index.html">Home</a>
-            <a href="earth.html">Earth</a>
-            <a href="animals.html">Animals</a>
-            <a href="space.html">Space</a>
-            <a href="mysteries.html">Mysteries</a>
-            <a href="history.html">History</a>
-            <a href="quantum.html">🌌 Quantum Physics</a>
+            <!-- Main Pages Links -->
+            <a href="index.html" data-en="Home" data-si="මුල් පිටුව">Home</a>
+            <a href="earth.html" data-en="Earth" data-si="පෘථිවිය">Earth</a>
+            <a href="animals.html" data-en="Animals" data-si="සතුන්">Animals</a>
+            <a href="space.html" data-en="Space" data-si="අභ්‍යවකාශය">Space</a>
+            <a href="mysteries.html" data-en="Mysteries" data-si="අභිරහස්">Mysteries</a>
+            <a href="history.html" data-en="History" data-si="ඉතිහාසය">History</a>
+            <a href="quantum.html" data-en="🌌 Quantum Physics" data-si="🌌 ක්වොන්ටම් භෞතික විද්‍යාව">🌌 Quantum Physics</a>
         </div>
             
+        <!-- පළමු ඉරෙන් වෙන් කිරීම -->
         <hr class="sidebar-divider">
             
-        <a href="mcq.html" class="sb-mcq">📝 Start MCQ Quiz</a>
-        <a href="facts.html" class="sb-facts">⚡ Fun Amazing Facts ⚡</a>
+        <!-- Quiz & Facts Links -->
+        <a href="mcq.html" class="sb-mcq" data-en="📝 Start MCQ Quiz" data-si="📝 MCQ ප්‍රශ්නාවලිය අරඹන්න">📝 Start MCQ Quiz</a>
+        <a href="facts.html" class="sb-facts" data-en="⚡ Fun Amazing Facts ⚡" data-si="⚡ පුදුම හිතෙන කරුණු ⚡">⚡ Fun Amazing Facts ⚡</a>
             
+        <!-- දෙවැනි ඉරෙන් වෙන් කිරීම -->
         <hr class="sidebar-divider">
             
-        <a onclick="shareToFriends(); toggleSidebar();" style="cursor:pointer;" class="sb-share">🔗 SHARE</a>
-        <a href="ad.html" class="sb-help">❤️ Help</a>
-        <a href="aaaextradatapage.html">About</a>
+        <!-- Action Links -->
+        <a onclick="shareToFriends(); toggleSidebar();" style="cursor:pointer;" class="sb-share" data-en="🔗 SHARE" data-si="🔗 බෙදාගන්න (SHARE)">🔗 SHARE</a>
+        <a href="ad.html" class="sb-help" data-en="❤️ Help" data-si="❤️ උදව්">❤️ Help</a>
+        <a href="aaaextradatapage.html" data-en="About" data-si="අපි ගැන">About</a>
     </div>
-
-    <audio id="myAudio" loop>
-        <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
-    </audio>
-
-    <div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
-        <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px;">
-            <span id="music-icon">🔇</span>
-        </div>
-    </div>
-
-    <script src="music.js"></script>
-
-
-
-
-
-
-
-
-    
-
-
 
     <div class="container">
         <h1 data-en="Aokigahara Forest" data-si="ඕකිගහරා වනාන්තරය">Aokigahara Forest</h1>
@@ -422,76 +382,63 @@
             </ul>
         </section>
 
+        <section>
+            <h2 data-en="Biodiversity" data-si="ජෛව විවිධත්වය">Biodiversity</h2>
+            <ul>
+                <li data-en="<strong>Wildlife:</strong> Asian black bears, foxes, and various bird species inhabit the area."
+                    data-si="<strong>වනජීවීන්:</strong> ආසියානු කළු වලසුන්, හිවලුන් සහ විවිධ පක්ෂි විශේෂ මෙම ප්‍රදේශයේ ජීවත් වෙති.">
+                    <strong>Wildlife:</strong> Asian black bears, foxes, and various bird species inhabit the area.
+                </li>
+                <li data-en="<strong>Flora:</strong> Ancient coniferous trees and branches covered in thick moss give the forest its haunting appearance."
+                    data-si="<strong>ශාක ලෝකය:</strong> ශතවර්ෂ ගණනාවක් පැරණි කේතුධර ගස් සහ ඝන පාසිවලින් වැසුණු අතු රිකිලි වනාන්තරයට අද්භූත සහ බියකරු පෙනුමක් ලබා දෙයි.">
+                    <strong>Flora:</strong> Ancient coniferous trees and branches covered in thick moss give the forest its haunting appearance.
+                </li>
+            </ul>
+        </section>
 
+        <section>
+            <h2 data-en="A Dark Reputation" data-si="අඳුරු කීර්තිය සහ රහස්">A Dark Reputation</h2>
+            <ul>
+                <li data-en="<strong>Yurei (Ghosts):</strong> Folklore says the forest is haunted by restless spirits known as Yurei."
+                    data-si="<strong>යුරේ (ප්‍රේත ආත්ම):</strong> ජපන් ජනප්‍රවාදවලට අනුව, මෙම වනාන්තරය 'යුරේ' (Yurei) ලෙස හැඳින්වෙන නොසන්සුන් අවතාර හෝ ආත්මයන්ගෙන් පිරී පවතී.">
+                    <strong>Yurei (Ghosts):</strong> Folklore says the forest is haunted by restless spirits known as Yurei.
+                </li>
+                <li data-en="<strong>Public Attention:</strong> Known as a site for suicides, the government has placed signs urging visitors to seek help and think of their families."
+                    data-si="<strong>ප්‍රසිද්ධිය:</strong> මෙය සියදිවි නසාගැනීම් බහුලව සිදුවන ස්ථානයක් ලෙස ප්‍රසිද්ධ වී ඇති නිසා, පැමිණෙන අයට උපකාර ලබාගන්නා ලෙසත් තමන්ගේ පවුල ගැන සිතන ලෙසත් පවසන පුවරු රජය විසින් වනාන්තරය පුරා පිහිටුවා ඇත.">
+                    <strong>Public Attention:</strong> Known as a site for suicides, the government has placed signs urging visitors to seek help and think of their families.
+                </li>
+            </ul>
+        </section>
 
+        <section>
+            <h2 data-en="Tourism and Safety" data-si="සංචාරක කර්මාන්තය සහ ආරක්ෂාව">Tourism and Safety</h2>
+            <ul>
+                <li data-en="Many tourists visit the <strong>Narusawa Ice Cave</strong> while visiting Mount Fuji."
+                    data-si="ෆුජි කන්ද නැරඹීමට පැමිණෙන බොහෝ සංචාරකයින් මෙහි ඇති සුප්‍රසිද්ධ <strong>නරුසාවා අයිස් ගුහාව (Narusawa Ice Cave)</strong> නැරඹීමට අමතක නොකරති.">
+                    Many tourists visit the <strong>Narusawa Ice Cave</strong> while visiting Mount Fuji.
+                </li>
+                <li data-en="It is perfectly safe for hikers as long as they stay on officially marked designated trails."
+                    data-si="සංචාරකයින් හෝ පයින් ගමන් කරන්නන් නිල වශයෙන් වෙන් කර ඇති සංචාරක මාර්ගවල (Designated Trails) පමණක් රැඳී සිටින්නේ නම්, මෙම වනාන්තරය සම්පූර්ණයෙන්ම ආරක්ෂිත ස්ථානයකි.">
+                    It is perfectly safe for hikers as long as they stay on officially marked designated trails.
+                </li>
+            </ul>
+        </section>
 
+        <div class="img-grid">
+            <img src="images/aokigahara1.jpg" alt="Aokigahara Trail">
+        </div>
 
+        <div class="dotted-hr"></div>
+    </div>
 
+    <!-- Feedback Widget -->
+    <div id="feedback-widget">
+        <span data-en="Was this helpful?" data-si="මෙය ප්‍රයෝජනවත් වූවාද?">Was this helpful?</span>
+        <button onclick="hideFeedback('Yes')"> 👍</button>
+        <button onclick="hideFeedback('No')"> 👎</button>
+    </div>
 
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-    
     <script>
-        // LocalStorage මත පදනම්ව භාෂාව ලබා ගැනීම හෝ default ලෙස ඉංග්‍රීසි තෝරා ගැනීම
-        let currentLang = localStorage.getItem('selectedLang') || 'en'; 
-
-        // පිටුව මුලින්ම Load වන විට ක්‍රියාත්මක වන කොටස
-        document.addEventListener("DOMContentLoaded", function() {
-            setLanguage(currentLang);
-        });
-
-        // බටන් එක ක්ලික් කළ විට භාෂාව වෙනස් කරන ශ්‍රිතය
-        function toggleLanguage() {
-            currentLang = (currentLang === 'en') ? 'si' : 'en';
-            localStorage.setItem('selectedLang', currentLang); // බ්‍රව්සර් මතකයේ සුරැකීම
-            setLanguage(currentLang);
-        }
-
-        // භාෂාව පිටුවට අදාළ කරන ප්‍රධාන ශ්‍රිතය
-        function setLanguage(lang) {
-            const langBtn = document.getElementById("langBtn");
-            const enElements = document.querySelectorAll(".lang-en");
-            const siElements = document.querySelectorAll(".lang-si");
-
-            if (lang === 'si') {
-                enElements.forEach(el => el.style.display = 'none');
-                siElements.forEach(el => {
-                    // Span, A, Li වැනි ටැග් Inline-block ලෙස තැබීමෙන් පෙනුම ලස්සන වේ
-                    if(el.tagName === 'SPAN' || el.tagName === 'A' || el.tagName === 'LI') {
-                        el.style.display = 'inline-block';
-                    } else {
-                        el.style.display = 'block';
-                    }
-                });
-                if(langBtn) langBtn.innerText = "English";
-            } else {
-                siElements.forEach(el => el.style.display = 'none');
-                enElements.forEach(el => {
-                    if(el.tagName === 'SPAN' || el.tagName === 'A' || el.tagName === 'LI') {
-                        el.style.display = 'inline-block';
-                    } else {
-                        el.style.display = 'block';
-                    }
-                });
-                if(langBtn) langBtn.innerText = "සිංහල";
-            }
-        }
-
         // Sidebar Toggle Function
         function toggleSidebar() {
             const sidebar = document.getElementById("sidebarMenu");
@@ -501,18 +448,66 @@
             overlay.classList.toggle("show");
         }
 
-        // Music Player Logic
-        function toggleMusic() {
-            var audio = document.getElementById("myAudio");
-            var icon = document.getElementById("music-icon");
-            if (audio.paused) { 
-                audio.play(); 
-                icon.innerHTML = "🔊"; 
-            } else { 
-                audio.pause(); 
-                icon.innerHTML = "🔇"; 
+        // Multi-language Feedback Alert
+        function hideFeedback(type) {
+            let currentLang = localStorage.getItem("preferredLanguage") || "en";
+            if (currentLang === "si") {
+                alert("ඔබගේ ප්‍රතිචාරයට ස්තුතියි! 🌲");
+            } else {
+                alert("Thank you for your feedback! 🌲");
             }
+            document.getElementById('feedback-widget').style.display = 'none';
         }
+
+        // --- භාෂා මාරු කිරීමේ පද්ධතිය (Language Switcher Logic) ---
+        function toggleLanguage() {
+            let currentLang = localStorage.getItem("preferredLanguage") || "en";
+            let newLang = (currentLang === "en") ? "si" : "en";
+            
+            localStorage.setItem("preferredLanguage", newLang);
+            applyLanguage(newLang);
+        }
+
+        function applyLanguage(lang) {
+            const btn = document.getElementById("langToggle");
+            
+            if (lang === "si") {
+                btn.textContent = "English";
+            } else {
+                btn.textContent = "සිංහල";
+            }
+
+            const elements = document.querySelectorAll('[data-en], [data-si]');
+            elements.forEach(el => {
+                if (lang === "si") {
+                    if (el.getAttribute('data-si')) {
+                        el.innerHTML = el.getAttribute('data-si');
+                    }
+                } else {
+                    if (el.getAttribute('data-en')) {
+                        el.innerHTML = el.getAttribute('data-en');
+                    }
+                }
+            });
+        }
+
+        // පිටුව මුලින්ම ලෝඩ් වන විට ක්‍රියාත්මක වන කොටස
+        document.addEventListener("DOMContentLoaded", () => {
+            let savedLang = localStorage.getItem("preferredLanguage") || "en";
+            applyLanguage(savedLang);
+        });
     </script>
+
+    <audio id="myAudio" loop>
+        <source src="mp3/nastelbom-no-copyright-music-490159.mp3" type="audio/mpeg">
+    </audio>
+
+    <div style="display: flex; justify-content: flex-end; padding: 5px 15px;">
+        <div id="music-control" onclick="toggleMusic()" style="cursor: pointer; font-size: 22px; user-select: none;">
+            <span id="music-icon">🔇</span>
+        </div>
+    </div>
+
+    <script src="music.js"></script>
 </body>
 </html>
