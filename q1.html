@@ -181,24 +181,42 @@
             from { filter: drop-shadow(0 0 4px rgba(255, 204, 0, 0.2)); }
             to { filter: drop-shadow(0 0 15px rgba(0, 242, 254, 0.4)); }
         }
-
-        /* Image Styling */
-        .img-container {
-            text-align: center;
-            margin: 40px 0;
+        /* පින්තූර සැකසුම */
+        .img-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
         }
 
-        .quantum-img {
-            max-width: 90%;
+        .img-grid img {
+            max-width: 45%;
             height: auto;
-            border-radius: 16px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 242, 254, 0.1);
-            border: 1px solid rgba(255, 204, 0, 0.15);
-            transition: transform 0.4s ease;
+            border-radius: 10px;
+            border: 1px solid #1a331a;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            transition: 0.4s;
         }
 
-        .quantum-img:hover {
-            transform: scale(1.01);
+        .img-grid img:hover {
+            transform: scale(1.02);
+            border-color: #4ade80;
+        }
+
+        /* අන්තර්ගතය */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 35px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            border-left: 5px solid #2d5a27;
         }
 
         /* Main Content Container */
@@ -353,21 +371,27 @@
 
 
 
-<span class="lang-en">Understanding Quanta Simply</span>
-                    <span class="lang-si">ක්වොන්ටා පිළිබඳ සරලව වටහා ගැනීම</span>
 
 
-        <div class="container">
-        <h1 data-en="What is Quantum Physics?" data-si="ක්වොන්ටම් භෞතික විද්‍යාව යනු කුමක්ද?">What is Quantum Physics?</h1>
+
+
+
+    
+
+
+
+    <div class="container">
+        <h1 data-en="Aokigahara Forest" data-si="ඕකිගහරා වනාන්තරය">Aokigahara Forest</h1>
 
         <div class="img-grid">
-         
+            <img src="images/fuji.jpeg" alt="Mount Fuji">
+            <img src="images/aokigahara.jpg" alt="Aokigahara Deep Forest">
         </div>
 
         <section>
-            <h3. data-en="Quantum physics is the branch of science that studies the behavior of matter and energy at the atomic and subatomic levels. While classical Newtonian physics can explain the motion of large objects, it fails to interpret the laws governing the microscopic world, leading to the birth of quantum physics. In this realm, energy is not a continuous flow, but is exchanged in small, discrete packets or units called 'quanta'."
-                data-si="ක්වොන්ටම් භෞතික විද්‍යාව (Quantum Physics) යනු පරමාණු සහ උප-පරමාණුක මට්ටමේදී පදාර්ථයේ සහ ශක්තියේ හැසිරීම අධ්‍යයනය කරන විද්‍යා ශාඛාවයි. සාම්ප්‍රදායික නිව්ටෝනියානු භෞතික විද්‍යාවට අනුව විශාල වස්තූන්ගේ චලිතය පැහැදිලි කළ හැකි වුවද, ක්ෂුද්‍ර ලෝකයේදී එම නීති අර්ථගන්වන්නට නොහැකි වීම නිසා ක්වොන්ටම් භෞතික විද්‍යාවේ බිහිවීම සිදුවිය. මෙහිදී ශක්තිය අඛණ්ඩ ප්‍රවාහයක් ලෙස නොව, 'ක්වන්ටා' (Quanta) නම් කුඩා වෙනම පැකට් හෝ ඒකක ලෙස හුවමාරු වන බව පැහැදිලි කෙරේ."
-                Quantum physics is the branch of science that studies the behavior of matter and energy at the atomic and subatomic levels. While classical Newtonian physics can explain the motion of large objects, it fails to interpret the laws governing the microscopic world, leading to the birth of quantum physics. In this realm, energy is not a continuous flow, but is exchanged in small, discrete packets or units called 'quanta'.
+            <h3 data-en="Located at the base of Mount Fuji in Japan, this forest is also known as the <strong>&quot;Sea of Trees&quot; (Jukai)</strong>. It covers an area of approximately 30 square kilometers, formed on hardened lava from a major eruption about 1,200 years ago."
+                data-si="ජපානයේ ෆුජි කන්ද (Mount Fuji) පාමුල පිහිටා ඇති මෙම වනාන්තරය <strong>'ගස් මුහුද' (Jukai)</strong> ලෙසද හැඳින්වේ. වසර 1,200කට පමණ පෙර සිදු වූ විශාල ගිනි කඳු පිපිරීමකින් ගලා ආ ලාවා තට්ටු ඝන වීමෙන් නිර්මාණය වූ මෙය වර්ග කිලෝමීටර් 30ක පමණ භූමි ප්‍රදේශයක් පුරා පැතිර පවතී.">
+                Located at the base of Mount Fuji in Japan, this forest is also known as the <strong>"Sea of Trees" (Jukai)</strong>. It covers an area of approximately 30 square kilometers, formed on hardened lava from a major eruption about 1,200 years ago.
             </h3>
         </section>
 
@@ -388,6 +412,23 @@
                 </li>
             </ul>
         </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
