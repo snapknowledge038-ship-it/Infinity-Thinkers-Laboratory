@@ -470,16 +470,16 @@
                     <span class="lang-en">Smart answers in a flash</span>
                     <span class="lang-si">ක්ෂණික බුද්ධිමත් පිළිතුරු</span>
                 </p>
-                <p class="oracle-sub lang-en">Powered by Gemini &amp; Groq — switch engines anytime and explore.</p>
-                <p class="oracle-sub lang-si">Gemini සහ Groq මගින් බලගැන්වේ — කැමති AI එක තෝරා විමසන්න.</p>
+                <p class="oracle-sub lang-en">Powered by Groq &amp; Gemini — switch engines anytime and explore.</p>
+                <p class="oracle-sub lang-si">Groq සහ Gemini මගින් බලගැන්වේ — කැමති AI එක තෝරා විමසන්න.</p>
             </div>
         </section>
 
-        <!-- 2 AI Engine Selector -->
+        <!-- 2 AI Engine Selector (Groq selected by default) -->
         <div class="model-switcher">
             <span class="model-label">AI Engine:</span>
-            <button type="button" class="model-btn active" data-provider="gemini" data-name="Gemini 2.5" onclick="selectProvider(this)">✨ Gemini</button>
-            <button type="button" class="model-btn" data-provider="groq" data-name="Llama 3.3 (Groq)" onclick="selectProvider(this)">⚡ Groq (Llama 3.3)</button>
+            <button type="button" class="model-btn active" data-provider="groq" data-name="Groq" onclick="selectProvider(this)">⚡ Groq</button>
+            <button type="button" class="model-btn" data-provider="gemini" data-name="Gemini" onclick="selectProvider(this)">✨ Gemini</button>
         </div>
 
         <!-- Quick Question Chips -->
@@ -503,7 +503,7 @@
             <div class="msg-row ai">
                 <img src="images/oai.jpg" alt="Oracle" class="msg-mini-avatar">
                 <div class="msg-bubble">
-                    <span class="msg-badge">Oracle • Gemini 2.5</span>
+                    <span class="msg-badge">Oracle • Groq</span>
                     Greetings! I am Oracle AI from Infinity Thinkers Laboratory. Smart answers in a flash — what would you like to explore today?
                 </div>
             </div>
@@ -685,16 +685,33 @@
         })();
 
         /* =========================================================
-           Oracle AI Dual-Engine Chat Logic (Gemini + Groq)
+           Oracle AI Dual-Engine Chat Logic (Groq Default + Gemini)
         ========================================================= */
         const ORACLE_WORKER_URL = "https://itl-oracle-ai.snapknowledge038.workers.dev";
         const ORACLE_SYSTEM_PROMPT = `You are Oracle AI, the intelligent knowledge guide for Infinity Thinkers Laboratory (ITL).
 Your motto is "Smart answers in a flash".
-Help curious minds explore space, quantum physics, earth, animals, history, science, and mysteries with clear, engaging, and accurate explanations.
-If the user writes in Sinhala, reply naturally in clear Sinhala. If they write in English, reply in clear English.`;
 
-        let selectedProvider = "gemini";
-        let selectedModelLabel = "Gemini 2.5";
+About Infinity Thinkers Laboratory (ITL):
+- Infinity Thinkers Laboratory (ITL) is an educational science and curiosity exploration website designed to make learning engaging, clear, and accessible in both English and Sinhala.
+- Core exploration sections on ITL include:
+  1. Earth — planet systems, natural wonders, and how our world works.
+  2. Animals — fascinating creatures, adaptations, and wildlife insights.
+  3. Space — stars, planets, galaxies, and the cosmos.
+  4. Mysteries — unexplained phenomena, puzzles, and intriguing questions.
+  5. History — civilizations, milestones, and stories from the past.
+  6. Quantum Physics — fundamental concepts of the quantum world explained simply.
+- Interactive & extra learning areas include:
+  - MCQ Quiz to test knowledge.
+  - Fun Amazing Facts for quick discoveries.
+  - About / Help / Share options in the navigation menu to explore more or share the platform with friends.
+
+How to respond:
+- Help curious minds explore space, quantum physics, earth, animals, history, science, and mysteries with clear, engaging, and accurate explanations.
+- When someone asks about this website or Infinity Thinkers Laboratory, share a helpful, well-structured overview of ITL and its sections based on the details above, without inventing unverified details.
+- If the user writes in Sinhala, reply naturally in clear Sinhala. If they write in English, reply in clear English.`;
+
+        let selectedProvider = "groq";
+        let selectedModelLabel = "Groq";
         const conversationHistory = [];
 
         function selectProvider(btnElement) {
