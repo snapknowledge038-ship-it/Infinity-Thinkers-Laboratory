@@ -26,7 +26,7 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #07080d;
+            background-color: #05060b;
             color: #e0e0e0;
             margin: 0;
             padding: 0;
@@ -52,13 +52,13 @@
 
         /* Top Navbar */
         nav {
-            background-color: rgba(20, 22, 30, 0.85);
+            background-color: rgba(15, 18, 28, 0.72);
             backdrop-filter: blur(8px);
             padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(0, 212, 255, 0.25);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.35);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -80,7 +80,7 @@
         }
 
         .lang-btn {
-            background: rgba(20, 24, 36, 0.9);
+            background: rgba(16, 20, 32, 0.85);
             color: #00d4ff;
             border: 1px solid #00d4ff;
             padding: 5px 12px;
@@ -196,16 +196,16 @@
         }
 
         .oracle-hero {
-            background: rgba(18, 21, 32, 0.78);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(0, 212, 255, 0.25);
+            background: rgba(12, 15, 25, 0.58);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(0, 212, 255, 0.35);
             border-left: 5px solid #00d4ff;
             border-radius: 12px;
             padding: 16px 20px;
             display: flex;
             align-items: center;
             gap: 16px;
-            box-shadow: 0 0 24px rgba(0, 212, 255, 0.14);
+            box-shadow: 0 0 28px rgba(0, 212, 255, 0.18);
         }
 
         .oracle-avatar {
@@ -214,7 +214,7 @@
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid #00d4ff;
-            box-shadow: 0 0 14px rgba(0, 212, 255, 0.45);
+            box-shadow: 0 0 16px rgba(0, 212, 255, 0.55);
             flex-shrink: 0;
         }
 
@@ -223,7 +223,7 @@
             font-size: 26px;
             color: #ffffff;
             letter-spacing: 1.5px;
-            text-shadow: 0 0 12px rgba(0, 212, 255, 0.4);
+            text-shadow: 0 0 14px rgba(0, 212, 255, 0.5);
         }
 
         .oracle-tagline {
@@ -236,7 +236,7 @@
         .oracle-sub {
             margin: 4px 0 0;
             font-size: 14px;
-            color: #bbbbbb;
+            color: #d4d4d4;
         }
 
         /* Quick Suggestions */
@@ -247,10 +247,10 @@
         }
 
         .quick-chip {
-            background: rgba(20, 24, 36, 0.82);
+            background: rgba(14, 18, 30, 0.65);
             backdrop-filter: blur(6px);
-            color: #e0e0e0;
-            border: 1px solid rgba(255, 255, 255, 0.16);
+            color: #ffffff;
+            border: 1px solid rgba(0, 212, 255, 0.32);
             border-radius: 50px;
             padding: 7px 14px;
             font-size: 13px;
@@ -261,7 +261,7 @@
         .quick-chip:hover {
             border-color: #00d4ff;
             color: #00d4ff;
-            background: rgba(0, 212, 255, 0.12);
+            background: rgba(0, 212, 255, 0.16);
         }
 
         /* Chat Box */
@@ -270,9 +270,9 @@
             min-height: 360px;
             max-height: 55vh;
             overflow-y: auto;
-            background: rgba(15, 18, 28, 0.76);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(0, 212, 255, 0.22);
+            background: rgba(10, 13, 22, 0.54);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(0, 212, 255, 0.32);
             border-radius: 12px;
             padding: 18px;
             display: flex;
@@ -311,15 +311,15 @@
         }
 
         .msg-row.ai .msg-bubble {
-            background: rgba(28, 32, 46, 0.9);
-            border: 1px solid rgba(0, 212, 255, 0.22);
+            background: rgba(20, 24, 38, 0.84);
+            border: 1px solid rgba(0, 212, 255, 0.3);
             border-left: 3px solid #00d4ff;
-            color: #f0f0f0;
+            color: #f5f5f5;
             border-top-left-radius: 3px;
         }
 
         .msg-row.user .msg-bubble {
-            background: linear-gradient(135deg, #007791, #004d61);
+            background: linear-gradient(135deg, rgba(0, 136, 175, 0.9), rgba(0, 77, 97, 0.92));
             color: #ffffff;
             border-top-right-radius: 3px;
         }
@@ -328,9 +328,9 @@
         .chat-input-form {
             display: flex;
             gap: 10px;
-            background: rgba(20, 23, 35, 0.85);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(0, 212, 255, 0.25);
+            background: rgba(14, 17, 28, 0.68);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(0, 212, 255, 0.35);
             border-radius: 12px;
             padding: 10px;
             box-sizing: border-box;
@@ -338,8 +338,8 @@
 
         .chat-input-form input {
             flex: 1;
-            background: rgba(11, 13, 20, 0.9);
-            border: 1px solid #2c2c2c;
+            background: rgba(8, 10, 16, 0.82);
+            border: 1px solid rgba(0, 212, 255, 0.25);
             border-radius: 8px;
             padding: 12px 14px;
             color: #ffffff;
@@ -473,7 +473,7 @@
 
     <script>
         /* =========================================================
-           Color-Shifting Neon Cosmic Web Animation
+           Highlighted Color-Shifting Neon Cosmic Web Animation
         ========================================================= */
         (function initCosmicWeb() {
             const canvas = document.getElementById("cosmic-web-canvas");
@@ -481,9 +481,10 @@
 
             let width = canvas.width = window.innerWidth;
             let height = canvas.height = window.innerHeight;
-            let hueShift = 190; // Starts around neon cyan, shifts smoothly across neon spectrum
+            let hueShift = 185;
+            let pulseTime = 0;
 
-            const pointer = { x: null, y: null, radius: 155 };
+            const pointer = { x: null, y: null, radius: 185 };
 
             window.addEventListener("resize", () => {
                 width = canvas.width = window.innerWidth;
@@ -517,7 +518,7 @@
 
             function getNodeCount() {
                 const area = width * height;
-                return Math.min(115, Math.max(38, Math.floor(area / 13500)));
+                return Math.min(130, Math.max(48, Math.floor(area / 11500)));
             }
 
             function createNodes() {
@@ -527,10 +528,11 @@
                     nodes.push({
                         x: Math.random() * width,
                         y: Math.random() * height,
-                        vx: (Math.random() - 0.5) * 0.65,
-                        vy: (Math.random() - 0.5) * 0.65,
-                        r: Math.random() * 2.1 + 1.2,
-                        hueOffset: (Math.random() - 0.5) * 75
+                        vx: (Math.random() - 0.5) * 0.75,
+                        vy: (Math.random() - 0.5) * 0.75,
+                        r: Math.random() * 2.5 + 1.8,
+                        hueOffset: (Math.random() - 0.5) * 90,
+                        phase: Math.random() * Math.PI * 2
                     });
                 }
             }
@@ -539,12 +541,14 @@
 
             function drawCosmicWeb() {
                 ctx.clearRect(0, 0, width, height);
+                ctx.save();
+                ctx.globalCompositeOperation = "lighter";
 
-                // Smoothly cycle neon hues (cyan -> blue -> purple -> magenta -> mint)
-                hueShift = (hueShift + 0.25) % 360;
-                const maxLinkDist = Math.min(165, Math.max(115, Math.hypot(width, height) * 0.11));
+                hueShift = (hueShift + 0.35) % 360;
+                pulseTime += 0.03;
+                const maxLinkDist = Math.min(185, Math.max(130, Math.hypot(width, height) * 0.125));
 
-                // Draw web connections
+                // Draw bright neon web connections
                 for (let i = 0; i < nodes.length; i++) {
                     const a = nodes[i];
 
@@ -555,41 +559,42 @@
                         const dist = Math.hypot(dx, dy);
 
                         if (dist < maxLinkDist) {
-                            const alpha = (1 - dist / maxLinkDist) * 0.42;
+                            const strength = 1 - dist / maxLinkDist;
+                            const alpha = strength * 0.68;
                             const lineHue = (hueShift + (a.hueOffset + b.hueOffset) * 0.5 + 360) % 360;
 
                             ctx.beginPath();
                             ctx.moveTo(a.x, a.y);
                             ctx.lineTo(b.x, b.y);
-                            ctx.strokeStyle = `hsla(${lineHue}, 100%, 62%, ${alpha})`;
-                            ctx.lineWidth = 1;
+                            ctx.strokeStyle = `hsla(${lineHue}, 100%, 66%, ${alpha})`;
+                            ctx.lineWidth = 1.15 + strength * 0.9;
                             ctx.stroke();
                         }
                     }
 
-                    // Pointer attraction & neon link
+                    // Pointer attraction & bright neon rays
                     if (pointer.x !== null && pointer.y !== null) {
                         const pdx = pointer.x - a.x;
                         const pdy = pointer.y - a.y;
                         const pDist = Math.hypot(pdx, pdy);
 
                         if (pDist < pointer.radius && pDist > 1) {
-                            a.x += (pdx / pDist) * 0.55;
-                            a.y += (pdy / pDist) * 0.55;
+                            a.x += (pdx / pDist) * 0.65;
+                            a.y += (pdy / pDist) * 0.65;
 
-                            const pAlpha = (1 - pDist / pointer.radius) * 0.68;
-                            const pHue = (hueShift + 55) % 360;
+                            const pStrength = 1 - pDist / pointer.radius;
+                            const pHue = (hueShift + 65) % 360;
                             ctx.beginPath();
                             ctx.moveTo(a.x, a.y);
                             ctx.lineTo(pointer.x, pointer.y);
-                            ctx.strokeStyle = `hsla(${pHue}, 100%, 65%, ${pAlpha})`;
-                            ctx.lineWidth = 1.25;
+                            ctx.strokeStyle = `hsla(${pHue}, 100%, 70%, ${pStrength * 0.88})`;
+                            ctx.lineWidth = 1.4 + pStrength * 1.1;
                             ctx.stroke();
                         }
                     }
                 }
 
-                // Draw glowing neon nodes
+                // Draw highlighted glowing neon nodes
                 for (let i = 0; i < nodes.length; i++) {
                     const n = nodes[i];
                     n.x += n.vx;
@@ -598,19 +603,39 @@
                     if (n.x < 0 || n.x > width) n.vx *= -1;
                     if (n.y < 0 || n.y > height) n.vy *= -1;
 
+                    const pulse = 0.85 + Math.sin(pulseTime + n.phase) * 0.25;
                     const nodeHue = (hueShift + n.hueOffset + 360) % 360;
-                    const glowColor = `hsla(${nodeHue}, 100%, 65%, 0.9)`;
+                    const radius = n.r * pulse;
 
-                    ctx.save();
+                    // Outer soft aura
                     ctx.beginPath();
-                    ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-                    ctx.fillStyle = glowColor;
-                    ctx.shadowColor = `hsl(${nodeHue}, 100%, 60%)`;
-                    ctx.shadowBlur = 10;
+                    ctx.arc(n.x, n.y, radius * 3.2, 0, Math.PI * 2);
+                    ctx.fillStyle = `hsla(${nodeHue}, 100%, 60%, 0.22)`;
                     ctx.fill();
-                    ctx.restore();
+
+                    // Bright core
+                    ctx.beginPath();
+                    ctx.arc(n.x, n.y, radius, 0, Math.PI * 2);
+                    ctx.fillStyle = `hsla(${nodeHue}, 100%, 74%, 0.96)`;
+                    ctx.shadowColor = `hsl(${nodeHue}, 100%, 62%)`;
+                    ctx.shadowBlur = 16;
+                    ctx.fill();
+                    ctx.shadowBlur = 0;
                 }
 
+                // Highlighted pointer hub glow
+                if (pointer.x !== null && pointer.y !== null) {
+                    const hubHue = (hueShift + 45) % 360;
+                    const grad = ctx.createRadialGradient(pointer.x, pointer.y, 2, pointer.x, pointer.y, 42);
+                    grad.addColorStop(0, `hsla(${hubHue}, 100%, 78%, 0.65)`);
+                    grad.addColorStop(1, `hsla(${hubHue}, 100%, 60%, 0)`);
+                    ctx.beginPath();
+                    ctx.arc(pointer.x, pointer.y, 42, 0, Math.PI * 2);
+                    ctx.fillStyle = grad;
+                    ctx.fill();
+                }
+
+                ctx.restore();
                 requestAnimationFrame(drawCosmicWeb);
             }
 
