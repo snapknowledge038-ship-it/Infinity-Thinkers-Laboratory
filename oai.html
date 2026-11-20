@@ -537,7 +537,9 @@
 
     <script>
         /* =========================================================
-           Cosmic Web + Spiral Galaxy Morph + Meteor Shower Canvas
+           Chaotic Multi-Mode Cosmic Canvas:
+           Big Spiral Galaxy + Fast Meteor Shower + Cosmic Web +
+           Supernova Shockwave + Aurora Starfield
         ========================================================= */
         (function initCosmicWeb() {
             const canvas = document.getElementById("cosmic-web-canvas");
@@ -547,9 +549,22 @@
             let height = canvas.height = window.innerHeight;
             let hueShift = 185;
             let pulseTime = 0;
-            let cycleTime = 0;
 
-            const pointer = { x: null, y: null, radius: 185 };
+            // Smoothly blended mode weights (0..1) that shift in chaotic/unpredictable rhythms
+            const weights = {
+                web: 0.75,
+                galaxy: 0.15,
+                meteors: 0.05,
+                pulseWave: 0.05,
+                aurora: 0.10
+            };
+
+            const targets = { ...weights };
+            let nextShuffleIn = 3.2; // seconds until next chaotic target shift
+            let shockwaveRadius = 0;
+            let shockwaveAlpha = 0;
+
+            const pointer = { x: null, y: null, radius: 190 };
 
             window.addEventListener("resize", () => {
                 width = canvas.width = window.innerWidth;
@@ -581,10 +596,11 @@
 
             let nodes = [];
             let meteors = [];
+            let bursts = [];
 
             function getNodeCount() {
                 const area = width * height;
-                return Math.min(135, Math.max(52, Math.floor(area / 11000)));
+                return Math.min(185, Math.max(75, Math.floor(area / 8200)));
             }
 
             function createNodes() {
@@ -592,66 +608,110 @@
                 nodes = [];
                 for (let i = 0; i < count; i++) {
                     const angle = Math.random() * Math.PI * 2;
-                    const normRadius = Math.pow(Math.random(), 0.72);
-                    const arm = i % 3;
+                    // Bias slightly toward outer & mid arms for a fuller, grander galaxy
+                    const normRadius = Math.pow(Math.random(), 0.62);
+                    const arm = i % 4;
                     nodes.push({
                         x: Math.random() * width,
                         y: Math.random() * height,
-                        vx: (Math.random() - 0.5) * 0.75,
-                        vy: (Math.random() - 0.5) * 0.75,
-                        r: Math.random() * 2.5 + 1.8,
-                        hueOffset: (Math.random() - 0.5) * 90,
+                        vx: (Math.random() - 0.5) * 1.05,
+                        vy: (Math.random() - 0.5) * 1.05,
+                        r: Math.random() * 2.6 + 1.5,
+                        hueOffset: (Math.random() - 0.5) * 110,
                         phase: Math.random() * Math.PI * 2,
                         orbitAngle: angle,
                         orbitRadius: normRadius,
                         spiralArm: arm,
-                        orbitSpeed: (0.008 + (1 - normRadius) * 0.014)
+                        orbitSpeed: (0.011 + (1 - normRadius) * 0.018) * (Math.random() < 0.12 ? -0.4 : 1),
+                        armScatter: (Math.random() - 0.5) * 0.42
                     });
                 }
             }
 
-            function spawnMeteor() {
-                const startOnTop = Math.random() < 0.65;
-                const x = startOnTop
-                    ? Math.random() * (width * 1.15)
-                    : width * (0.65 + Math.random() * 0.35);
-                const y = startOnTop
-                    ? -20
-                    : Math.random() * (height * 0.55);
-                const speed = 11 + Math.random() * 8;
-                const angle = Math.PI * 0.74 + (Math.random() - 0.5) * 0.08;
+            // Spawn fast shooting stars / meteors angled toward one side
+            function spawnMeteor(boosted = false) {
+                const fromTop = Math.random() < 0.72;
+                const x = fromTop
+                    ? Math.random() * (width * 1.25)
+                    : width * (0.55 + Math.random() * 0.45);
+                const y = fromTop
+                    ? -25 - Math.random() * 60
+                    : Math.random() * (height * 0.65);
+
+                const baseSpeed = boosted ? 18 : 14;
+                const speed = baseSpeed + Math.random() * 11;
+                // Angled briskly down-left toward one side
+                const angle = Math.PI * 0.76 + (Math.random() - 0.5) * 0.09;
 
                 meteors.push({
                     x,
                     y,
                     vx: Math.cos(angle) * speed,
                     vy: Math.sin(angle) * speed,
-                    len: 65 + Math.random() * 65,
-                    hueOffset: (Math.random() - 0.5) * 70,
-                    alpha: 0.75 + Math.random() * 0.25,
-                    width: 1.5 + Math.random() * 1.4
+                    len: 95 + Math.random() * 95,
+                    hueOffset: (Math.random() - 0.5) * 95,
+                    alpha: 0.8 + Math.random() * 0.2,
+                    width: 1.6 + Math.random() * 1.8
                 });
             }
 
-            // Smoothly blend weight between 0 (Cosmic Web) and 1 (Spiral Galaxy)
-            function getGalaxyBlend(t) {
-                const period = 36; // seconds per full cycle
-                const phase = t % period;
-                if (phase < 11) return 0; // Cosmic Web
-                if (phase < 14) return (phase - 11) / 3; // Morph into Galaxy
-                if (phase < 22) return 1; // Galaxy form
-                if (phase < 25) return 1 - (phase - 22) / 3; // Morph back to Cosmic Web
-                return 0; // Cosmic Web + Meteor Shower window
+            function spawnStarBurst(x, y, hue) {
+                for (let k = 0; k < 14; k++) {
+                    const a = (Math.PI * 2 * k) / 14 + (Math.random() - 0.5) * 0.3;
+                    const spd = 2.5 + Math.random() * 4.5;
+                    bursts.push({
+                        x,
+                        y,
+                        vx: Math.cos(a) * spd,
+                        vy: Math.sin(a) * spd,
+                        life: 1,
+                        hue: (hue + k * 14) % 360
+                    });
+                }
             }
 
-            // Meteor shower peaks between seconds 25 and 34 of each 36s cycle
-            function getMeteorIntensity(t) {
-                const period = 36;
-                const phase = t % period;
-                if (phase >= 25 && phase <= 34) {
-                    return Math.sin(((phase - 25) / 9) * Math.PI);
+            // Chaotic / non-linear mode switcher
+            function shuffleModesChaotically() {
+                const roll = Math.random();
+
+                // Reset all targets
+                targets.web = 0.08;
+                targets.galaxy = 0.05;
+                targets.meteors = 0.05;
+                targets.pulseWave = 0.05;
+                targets.aurora = 0.05;
+
+                if (roll < 0.26) {
+                    // Big dominant Spiral Galaxy + stray meteors
+                    targets.galaxy = 0.96;
+                    targets.web = 0.12;
+                    targets.meteors = Math.random() < 0.55 ? 0.55 : 0.08;
+                } else if (roll < 0.52) {
+                    // Heavy Fast Meteor Shower + dynamic web/aurora
+                    targets.meteors = 1.0;
+                    targets.web = 0.45;
+                    targets.aurora = 0.5;
+                } else if (roll < 0.74) {
+                    // Cosmic Web + Supernova Shockwave
+                    targets.web = 0.95;
+                    targets.pulseWave = 0.95;
+                    shockwaveRadius = 12;
+                    shockwaveAlpha = 0.85;
+                    spawnStarBurst(width * (0.25 + Math.random() * 0.5), height * (0.25 + Math.random() * 0.5), hueShift);
+                } else if (roll < 0.90) {
+                    // Hybrid chaos: half-galaxy swirling while meteors streak across
+                    targets.galaxy = 0.72;
+                    targets.meteors = 0.85;
+                    targets.aurora = 0.65;
+                } else {
+                    // Aurora Starfield + Web drift
+                    targets.aurora = 1.0;
+                    targets.web = 0.65;
+                    targets.galaxy = 0.25;
                 }
-                return 0;
+
+                // Unpredictable interval between shifts (1.8s to 5.2s)
+                nextShuffleIn = 1.8 + Math.random() * 3.4;
             }
 
             createNodes();
@@ -660,67 +720,141 @@
             function drawCosmicWeb(now) {
                 const dt = Math.min(0.05, (now - lastTime) / 1000);
                 lastTime = now;
-                cycleTime += dt;
 
-                const galaxyBlend = getGalaxyBlend(cycleTime);
-                const meteorIntensity = getMeteorIntensity(cycleTime);
+                nextShuffleIn -= dt;
+                if (nextShuffleIn <= 0) {
+                    shuffleModesChaotically();
+                }
 
-                if (meteorIntensity > 0.15 && meteors.length < 18 && Math.random() < meteorIntensity * 0.55) {
-                    spawnMeteor();
+                // Smooth organic blending toward chaotic targets
+                const blendRate = 1 - Math.exp(-dt * 1.65);
+                for (const key of Object.keys(weights)) {
+                    weights[key] += (targets[key] - weights[key]) * blendRate;
+                }
+
+                // Spawn lots of fast meteors when meteor weight is active
+                if (weights.meteors > 0.12) {
+                    const spawnChance = weights.meteors * 0.92;
+                    if (meteors.length < 42 && Math.random() < spawnChance) {
+                        spawnMeteor(weights.meteors > 0.65);
+                        if (weights.meteors > 0.75 && Math.random() < 0.55) {
+                            spawnMeteor(true);
+                        }
+                    }
                 }
 
                 ctx.clearRect(0, 0, width, height);
                 ctx.save();
                 ctx.globalCompositeOperation = "lighter";
 
-                hueShift = (hueShift + 0.35) % 360;
-                pulseTime += 0.03;
+                hueShift = (hueShift + 0.42) % 360;
+                pulseTime += 0.035;
 
                 const cx = width * 0.5;
-                const cy = height * 0.52;
-                const maxGalaxyR = Math.min(width, height) * 0.42;
+                const cy = height * 0.5;
+                // Much larger galaxy radius so it fills a wide, majestic area of the screen
+                const maxGalaxyR = Math.hypot(width, height) * 0.46;
 
-                // Soft glowing galaxy core when galaxyBlend > 0
-                if (galaxyBlend > 0.02) {
-                    const coreHue = (hueShift + 25) % 360;
-                    const coreGrad = ctx.createRadialGradient(cx, cy, 4, cx, cy, maxGalaxyR * 0.75);
-                    coreGrad.addColorStop(0, `hsla(${coreHue}, 100%, 75%, ${0.28 * galaxyBlend})`);
-                    coreGrad.addColorStop(0.45, `hsla(${(coreHue + 45) % 360}, 100%, 60%, ${0.11 * galaxyBlend})`);
-                    coreGrad.addColorStop(1, `hsla(${coreHue}, 100%, 50%, 0)`);
+                // 1. Aurora / Nebula soft glowing ribbons in background
+                if (weights.aurora > 0.04) {
+                    const aHue1 = (hueShift + 120) % 360;
+                    const aHue2 = (hueShift + 240) % 360;
+                    const waveY = cy + Math.sin(pulseTime * 0.7) * (height * 0.14);
+                    const aurGrad = ctx.createLinearGradient(0, waveY - 140, width, waveY + 140);
+                    aurGrad.addColorStop(0, `hsla(${aHue1}, 100%, 58%, ${0.09 * weights.aurora})`);
+                    aurGrad.addColorStop(0.5, `hsla(${aHue2}, 100%, 62%, ${0.14 * weights.aurora})`);
+                    aurGrad.addColorStop(1, `hsla(${hueShift}, 100%, 55%, ${0.09 * weights.aurora})`);
+
                     ctx.beginPath();
-                    ctx.arc(cx, cy, maxGalaxyR * 0.75, 0, Math.PI * 2);
-                    ctx.fillStyle = coreGrad;
+                    ctx.moveTo(0, height);
+                    for (let sx = 0; sx <= width; sx += 40) {
+                        const sy = waveY + Math.sin(sx * 0.006 + pulseTime * 1.4) * 55 + Math.cos(sx * 0.013 - pulseTime) * 25;
+                        ctx.lineTo(sx, sy);
+                    }
+                    ctx.lineTo(width, height);
+                    ctx.closePath();
+                    ctx.fillStyle = aurGrad;
                     ctx.fill();
                 }
 
-                // Update node positions (free cosmic drift blended with spiral galaxy orbit)
+                // 2. Large glowing Spiral Galaxy Core & Spiral Dust Glow
+                if (weights.galaxy > 0.03) {
+                    const coreHue = (hueShift + 30) % 360;
+                    const armHue = (hueShift + 210) % 360;
+
+                    const outerGlow = ctx.createRadialGradient(cx, cy, 8, cx, cy, maxGalaxyR * 0.92);
+                    outerGlow.addColorStop(0, `hsla(${coreHue}, 100%, 82%, ${0.36 * weights.galaxy})`);
+                    outerGlow.addColorStop(0.22, `hsla(${coreHue}, 100%, 65%, ${0.2 * weights.galaxy})`);
+                    outerGlow.addColorStop(0.58, `hsla(${armHue}, 100%, 58%, ${0.11 * weights.galaxy})`);
+                    outerGlow.addColorStop(1, `hsla(${armHue}, 100%, 50%, 0)`);
+
+                    ctx.beginPath();
+                    ctx.arc(cx, cy, maxGalaxyR * 0.92, 0, Math.PI * 2);
+                    ctx.fillStyle = outerGlow;
+                    ctx.fill();
+
+                    // Faint sweeping spiral arm guide trails for realistic galaxy look
+                    const rot = pulseTime * 0.24;
+                    for (let arm = 0; arm < 4; arm++) {
+                        const baseArmAngle = rot + (arm * Math.PI) / 2;
+                        ctx.beginPath();
+                        for (let step = 0; step <= 45; step++) {
+                            const frac = step / 45;
+                            const r = frac * maxGalaxyR * 0.88;
+                            const theta = baseArmAngle + frac * 3.8;
+                            const px = cx + Math.cos(theta) * r;
+                            const py = cy + Math.sin(theta) * r * 0.64;
+                            if (step === 0) ctx.moveTo(px, py);
+                            else ctx.lineTo(px, py);
+                        }
+                        ctx.strokeStyle = `hsla(${(coreHue + arm * 45) % 360}, 100%, 68%, ${0.18 * weights.galaxy})`;
+                        ctx.lineWidth = 2.2 * weights.galaxy;
+                        ctx.stroke();
+                    }
+                }
+
+                // 3. Supernova / Pulsar Shockwave Ring
+                if (shockwaveAlpha > 0.01) {
+                    shockwaveRadius += 7.5;
+                    shockwaveAlpha *= 0.965;
+                    const swHue = (hueShift + 85) % 360;
+                    ctx.beginPath();
+                    ctx.arc(cx, cy, shockwaveRadius, 0, Math.PI * 2);
+                    ctx.strokeStyle = `hsla(${swHue}, 100%, 72%, ${shockwaveAlpha * Math.max(0.25, weights.pulseWave)})`;
+                    ctx.lineWidth = 2.5;
+                    ctx.stroke();
+                }
+
+                // 4. Update stars/nodes (drifting web + big rotating 4-arm galaxy)
                 for (let i = 0; i < nodes.length; i++) {
                     const n = nodes[i];
 
-                    n.x += n.vx;
-                    n.y += n.vy;
-                    if (n.x < 0 || n.x > width) n.vx *= -1;
-                    if (n.y < 0 || n.y > height) n.vy *= -1;
+                    n.x += n.vx * (0.55 + weights.web * 0.9);
+                    n.y += n.vy * (0.55 + weights.web * 0.9);
+                    if (n.x < 0) n.x = width;
+                    if (n.x > width) n.x = 0;
+                    if (n.y < 0) n.y = height;
+                    if (n.y > height) n.y = 0;
 
-                    n.orbitAngle += n.orbitSpeed * (0.4 + galaxyBlend * 1.4);
-                    const armTwist = n.orbitRadius * 3.2;
-                    const armOffset = (n.spiralArm * Math.PI * 2) / 3;
-                    const spiralTheta = n.orbitAngle + armTwist + armOffset;
-                    const distFromCenter = n.orbitRadius * maxGalaxyR;
+                    n.orbitAngle += n.orbitSpeed * (0.35 + weights.galaxy * 1.65);
+                    const armTwist = n.orbitRadius * 3.8;
+                    const armOffset = (n.spiralArm * Math.PI) / 2;
+                    const spiralTheta = n.orbitAngle + armTwist + armOffset + n.armScatter;
+                    const distFromCenter = n.orbitRadius * maxGalaxyR * 0.88;
 
                     const gx = cx + Math.cos(spiralTheta) * distFromCenter;
-                    const gy = cy + Math.sin(spiralTheta) * distFromCenter * 0.62; // tilted galaxy plane
+                    const gy = cy + Math.sin(spiralTheta) * distFromCenter * 0.64;
 
-                    if (galaxyBlend > 0) {
-                        const pull = 0.06 * galaxyBlend;
+                    if (weights.galaxy > 0.02) {
+                        const pull = Math.min(0.22, 0.03 + weights.galaxy * 0.14);
                         n.x += (gx - n.x) * pull;
                         n.y += (gy - n.y) * pull;
                     }
                 }
 
-                // Draw web connections (fade slightly during full galaxy so spiral arms shine clearly)
-                const linkOpacityScale = 1 - galaxyBlend * 0.58;
-                const maxLinkDist = Math.min(185, Math.max(130, Math.hypot(width, height) * 0.125));
+                // 5. Draw web connections (stronger in web mode, subtle in galaxy mode)
+                const linkOpacityScale = Math.max(0.12, 1 - weights.galaxy * 0.72);
+                const maxLinkDist = Math.min(190, Math.max(130, Math.hypot(width, height) * 0.125));
 
                 for (let i = 0; i < nodes.length; i++) {
                     const a = nodes[i];
@@ -733,14 +867,14 @@
 
                         if (dist < maxLinkDist) {
                             const strength = 1 - dist / maxLinkDist;
-                            const alpha = strength * 0.68 * linkOpacityScale;
+                            const alpha = strength * 0.66 * linkOpacityScale;
                             const lineHue = (hueShift + (a.hueOffset + b.hueOffset) * 0.5 + 360) % 360;
 
                             ctx.beginPath();
                             ctx.moveTo(a.x, a.y);
                             ctx.lineTo(b.x, b.y);
                             ctx.strokeStyle = `hsla(${lineHue}, 100%, 66%, ${alpha})`;
-                            ctx.lineWidth = 1.15 + strength * 0.9;
+                            ctx.lineWidth = 1.1 + strength * 0.85;
                             ctx.stroke();
                         }
                     }
@@ -751,8 +885,8 @@
                         const pDist = Math.hypot(pdx, pdy);
 
                         if (pDist < pointer.radius && pDist > 1) {
-                            a.x += (pdx / pDist) * 0.65;
-                            a.y += (pdy / pDist) * 0.65;
+                            a.x += (pdx / pDist) * 0.75;
+                            a.y += (pdy / pDist) * 0.75;
 
                             const pStrength = 1 - pDist / pointer.radius;
                             const pHue = (hueShift + 65) % 360;
@@ -766,40 +900,56 @@
                     }
                 }
 
-                // Draw glowing stars / nodes
+                // 6. Draw glowing stars / nodes
                 for (let i = 0; i < nodes.length; i++) {
                     const n = nodes[i];
-                    const pulse = 0.85 + Math.sin(pulseTime + n.phase) * 0.25;
+                    const pulse = 0.82 + Math.sin(pulseTime + n.phase) * 0.28;
                     const nodeHue = (hueShift + n.hueOffset + 360) % 360;
-                    const radius = n.r * pulse * (1 + galaxyBlend * 0.25);
+                    const radius = n.r * pulse * (1 + weights.galaxy * 0.32);
 
                     ctx.beginPath();
-                    ctx.arc(n.x, n.y, radius * 3.2, 0, Math.PI * 2);
-                    ctx.fillStyle = `hsla(${nodeHue}, 100%, 60%, 0.24)`;
+                    ctx.arc(n.x, n.y, radius * 3.4, 0, Math.PI * 2);
+                    ctx.fillStyle = `hsla(${nodeHue}, 100%, 60%, 0.22)`;
                     ctx.fill();
 
                     ctx.beginPath();
                     ctx.arc(n.x, n.y, radius, 0, Math.PI * 2);
-                    ctx.fillStyle = `hsla(${nodeHue}, 100%, 74%, 0.96)`;
+                    ctx.fillStyle = `hsla(${nodeHue}, 100%, 76%, 0.96)`;
                     ctx.shadowColor = `hsl(${nodeHue}, 100%, 62%)`;
                     ctx.shadowBlur = 16;
                     ctx.fill();
                     ctx.shadowBlur = 0;
                 }
 
-                // Draw fast directional meteor shower streaks
+                // 7. Draw star burst particles
+                for (let i = bursts.length - 1; i >= 0; i--) {
+                    const b = bursts[i];
+                    b.x += b.vx;
+                    b.y += b.vy;
+                    b.life -= 0.022;
+                    if (b.life <= 0) {
+                        bursts.splice(i, 1);
+                        continue;
+                    }
+                    ctx.beginPath();
+                    ctx.arc(b.x, b.y, 2.5 * b.life, 0, Math.PI * 2);
+                    ctx.fillStyle = `hsla(${b.hue}, 100%, 75%, ${b.life})`;
+                    ctx.fill();
+                }
+
+                // 8. Draw fast directional meteor shower streaks
                 for (let i = meteors.length - 1; i >= 0; i--) {
                     const m = meteors[i];
                     m.x += m.vx;
                     m.y += m.vy;
 
-                    const tailX = m.x - m.vx * (m.len / 14);
-                    const tailY = m.y - m.vy * (m.len / 14);
+                    const tailX = m.x - m.vx * (m.len / 13);
+                    const tailY = m.y - m.vy * (m.len / 13);
                     const mHue = (hueShift + m.hueOffset + 360) % 360;
 
                     const grad = ctx.createLinearGradient(m.x, m.y, tailX, tailY);
-                    grad.addColorStop(0, `hsla(${mHue}, 100%, 85%, ${m.alpha})`);
-                    grad.addColorStop(0.35, `hsla(${mHue}, 100%, 65%, ${m.alpha * 0.55})`);
+                    grad.addColorStop(0, `hsla(${mHue}, 100%, 90%, ${m.alpha})`);
+                    grad.addColorStop(0.35, `hsla(${mHue}, 100%, 68%, ${m.alpha * 0.65})`);
                     grad.addColorStop(1, `hsla(${mHue}, 100%, 55%, 0)`);
 
                     ctx.beginPath();
@@ -811,22 +961,22 @@
                     ctx.stroke();
 
                     ctx.beginPath();
-                    ctx.arc(m.x, m.y, m.width * 1.3, 0, Math.PI * 2);
-                    ctx.fillStyle = `hsla(${mHue}, 100%, 92%, ${m.alpha})`;
+                    ctx.arc(m.x, m.y, m.width * 1.4, 0, Math.PI * 2);
+                    ctx.fillStyle = `hsla(${mHue}, 100%, 95%, ${m.alpha})`;
                     ctx.fill();
 
-                    if (m.x < -150 || m.y > height + 150) {
+                    if (m.x < -220 || m.y > height + 220) {
                         meteors.splice(i, 1);
                     }
                 }
 
                 if (pointer.x !== null && pointer.y !== null) {
                     const hubHue = (hueShift + 45) % 360;
-                    const grad = ctx.createRadialGradient(pointer.x, pointer.y, 2, pointer.x, pointer.y, 42);
+                    const grad = ctx.createRadialGradient(pointer.x, pointer.y, 2, pointer.x, pointer.y, 44);
                     grad.addColorStop(0, `hsla(${hubHue}, 100%, 78%, 0.65)`);
                     grad.addColorStop(1, `hsla(${hubHue}, 100%, 60%, 0)`);
                     ctx.beginPath();
-                    ctx.arc(pointer.x, pointer.y, 42, 0, Math.PI * 2);
+                    ctx.arc(pointer.x, pointer.y, 44, 0, Math.PI * 2);
                     ctx.fillStyle = grad;
                     ctx.fill();
                 }
