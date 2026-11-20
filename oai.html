@@ -235,6 +235,51 @@
             color: #d4d4d4;
         }
 
+        /* 2 AI Model Switcher Bar */
+        .model-switcher {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            background: rgba(12, 15, 25, 0.6);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(0, 212, 255, 0.25);
+            border-radius: 12px;
+            padding: 8px 12px;
+            align-items: center;
+        }
+
+        .model-label {
+            font-size: 12px;
+            font-weight: bold;
+            color: #00d4ff;
+            text-transform: uppercase;
+            margin-right: 4px;
+        }
+
+        .model-btn {
+            background: rgba(20, 25, 40, 0.85);
+            color: #d0d7e6;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 20px;
+            padding: 6px 14px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .model-btn:hover {
+            border-color: #00d4ff;
+            color: #ffffff;
+        }
+
+        .model-btn.active {
+            background: linear-gradient(45deg, #00d4ff, #0088cc);
+            color: #000000;
+            border-color: #00d4ff;
+            box-shadow: 0 0 12px rgba(0, 212, 255, 0.5);
+        }
+
         /* Quick Suggestions */
         .quick-prompts {
             display: flex;
@@ -263,8 +308,8 @@
         /* Chat Box */
         .chat-box {
             flex: 1;
-            min-height: 350px;
-            max-height: 55vh;
+            min-height: 330px;
+            max-height: 52vh;
             overflow-y: auto;
             background: rgba(10, 13, 22, 0.54);
             backdrop-filter: blur(6px);
@@ -425,10 +470,17 @@
                     <span class="lang-en">Smart answers in a flash</span>
                     <span class="lang-si">ක්ෂණික බුද්ධිමත් පිළිතුරු</span>
                 </p>
-                <p class="oracle-sub lang-en">Instant knowledge assistant for Infinity Thinkers Laboratory.</p>
-                <p class="oracle-sub lang-si">Infinity Thinkers Laboratory ක්ෂණික දැනුම් සහායකයා.</p>
+                <p class="oracle-sub lang-en">Powered by Gemini &amp; Groq — switch engines anytime and explore.</p>
+                <p class="oracle-sub lang-si">Gemini සහ Groq මගින් බලගැන්වේ — කැමති AI එක තෝරා විමසන්න.</p>
             </div>
         </section>
+
+        <!-- 2 AI Engine Selector -->
+        <div class="model-switcher">
+            <span class="model-label">AI Engine:</span>
+            <button type="button" class="model-btn active" data-provider="gemini" data-name="Gemini 2.5" onclick="selectProvider(this)">✨ Gemini</button>
+            <button type="button" class="model-btn" data-provider="groq" data-name="Llama 3.3 (Groq)" onclick="selectProvider(this)">⚡ Groq (Llama 3.3)</button>
+        </div>
 
         <!-- Quick Question Chips -->
         <div class="quick-prompts">
@@ -451,7 +503,7 @@
             <div class="msg-row ai">
                 <img src="images/oai.jpg" alt="Oracle" class="msg-mini-avatar">
                 <div class="msg-bubble">
-                    <span class="msg-badge">Oracle</span>
+                    <span class="msg-badge">Oracle • Gemini 2.5</span>
                     Greetings! I am Oracle AI from Infinity Thinkers Laboratory. Smart answers in a flash — what would you like to explore today?
                 </div>
             </div>
@@ -633,7 +685,7 @@
         })();
 
         /* =========================================================
-           Oracle AI Unified Chat Logic (Automatic Fallback)
+           Oracle AI Dual-Engine Chat Logic (Gemini + Groq)
         ========================================================= */
         const ORACLE_WORKER_URL = "https://itl-oracle-ai.snapknowledge038.workers.dev";
         const ORACLE_SYSTEM_PROMPT = `You are Oracle AI, the intelligent knowledge guide for Infinity Thinkers Laboratory (ITL).
@@ -641,7 +693,16 @@ Your motto is "Smart answers in a flash".
 Help curious minds explore space, quantum physics, earth, animals, history, science, and mysteries with clear, engaging, and accurate explanations.
 If the user writes in Sinhala, reply naturally in clear Sinhala. If they write in English, reply in clear English.`;
 
+        let selectedProvider = "gemini";
+        let selectedModelLabel = "Gemini 2.5";
         const conversationHistory = [];
+
+        function selectProvider(btnElement) {
+            document.querySelectorAll(".model-btn").forEach(btn => btn.classList.remove("active"));
+            btnElement.classList.add("active");
+            selectedProvider = btnElement.dataset.provider;
+            selectedModelLabel = btnElement.dataset.name;
+        }
 
         function updateLanguageUI(lang) {
             const btn = document.getElementById("langToggle");
@@ -682,7 +743,7 @@ If the user writes in Sinhala, reply naturally in clear Sinhala. If they write i
             }
         }
 
-        function appendMessage(sender, text, badgeLabel = "Oracle") {
+        function appendMessage(sender, text, modelName = "") {
             const chatBox = document.getElementById("chatBox");
             const row = document.createElement("div");
             row.className = `msg-row ${sender}`;
@@ -698,10 +759,10 @@ If the user writes in Sinhala, reply naturally in clear Sinhala. If they write i
             const bubble = document.createElement("div");
             bubble.className = "msg-bubble";
 
-            if (sender === "ai" && badgeLabel) {
+            if (sender === "ai" && modelName) {
                 const badge = document.createElement("span");
                 badge.className = "msg-badge";
-                badge.textContent = badgeLabel;
+                badge.textContent = `Oracle • ${modelName}`;
                 bubble.appendChild(badge);
             }
 
@@ -734,10 +795,11 @@ If the user writes in Sinhala, reply naturally in clear Sinhala. If they write i
             sendBtn.disabled = true;
 
             const isSinhala = document.body.classList.contains("sinhala-mode");
+            const activeLabel = selectedModelLabel;
             const thinkingTextNode = appendMessage(
                 "ai",
                 isSinhala ? "Oracle සිතමින් සිටී..." : "Oracle is thinking...",
-                "Oracle"
+                activeLabel
             );
 
             conversationHistory.push({
@@ -750,6 +812,7 @@ If the user writes in Sinhala, reply naturally in clear Sinhala. If they write i
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
+                        provider: selectedProvider,
                         systemPrompt: ORACLE_SYSTEM_PROMPT,
                         messages: conversationHistory
                     })
@@ -766,8 +829,8 @@ If the user writes in Sinhala, reply naturally in clear Sinhala. If they write i
                     });
                 } else {
                     thinkingTextNode.textContent = isSinhala
-                        ? "දැනට පිළිතුරක් ලබාගැනීමට නොහැකි විය. කරුණාකර මොහොතකින් නැවත උත්සාහ කරන්න."
-                        : "Unable to get an answer right now. Please try again in a moment.";
+                        ? "පිළිතුරක් ලබාගැනීමට නොහැකි විය. Cloudflare Worker URL හෝ API Key පරීක්ෂා කරන්න."
+                        : "Could not get a response. Please check your Worker URL or API key.";
                 }
             } catch (err) {
                 thinkingTextNode.textContent = isSinhala
