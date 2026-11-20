@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#000000">
+    <link rel="apple-touch-icon" href="images/ITL.jpeg">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Oracle AI | Infinity Thinkers Laboratory</title>
+
+    <meta property="og:title" content="Oracle AI - Infinity Thinkers Laboratory">
+    <meta property="og:description" content="Smart answers in a flash. Ask Oracle about science, space, history, animals, and mysteries.">
+    <meta property="og:image" content="https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/images/oai.jpg">
+    <meta property="og:url" content="https://snapknowledge038-ship-it.github.io/Infinity-Thinkers-Laboratory/oai.html">
+    <meta property="og:type" content="website">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V05GCCY7JN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-V05GCCY7JN');
+    </script>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #07080d;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            overflow-x: hidden;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        /* Animated Cosmic Web Canvas Background */
+        #cosmic-web-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Top Navbar */
+        nav {
+            background-color: rgba(20, 22, 30, 0.85);
+            backdrop-filter: blur(8px);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.25);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        nav .nav-home {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .lang-btn {
+            background: rgba(20, 24, 36, 0.9);
+            color: #00d4ff;
+            border: 1px solid #00d4ff;
+            padding: 5px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        .lang-btn:hover {
+            background: #00d4ff;
+            color: #000;
+        }
+
+        .menu-toggle {
+            background: none;
+            border: none;
+            color: #00d4ff;
+            font-size: 28px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        /* Slide-out Sidebar */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -280px;
+            width: 280px;
+            height: 100%;
+            background-color: #111;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+            z-index: 10001;
+            transition: right 0.3s ease-in-out;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+
+        .sidebar.open {
+            right: 0;
+        }
+
+        .close-btn {
+            text-align: right;
+            font-size: 30px;
+            color: #ff4a4a;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .sidebar-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .sidebar-divider {
+            border: none;
+            border-top: 1px solid #333;
+            margin: 15px 0;
+        }
+
+        .sidebar a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: 0.2s;
+        }
+
+        .sidebar a:hover {
+            background-color: #1a1a1a;
+            color: #00d4ff;
+        }
+
+        .sb-mcq { color: #ffd700 !important; font-weight: bold !important; }
+        .sb-facts { color: #00ff88 !important; font-weight: bold !important; }
+        .sb-share { color: #00d4ff !important; }
+        .sb-help { color: #ffa500 !important; }
+
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 10000;
+            display: none;
+        }
+
+        .sidebar-overlay.show {
+            display: block;
+        }
+
+        /* Oracle Main Workspace */
+        .oracle-page {
+            position: relative;
+            z-index: 1;
+            flex: 1;
+            width: 100%;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 20px 15px 25px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .oracle-hero {
+            background: rgba(18, 21, 32, 0.78);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(0, 212, 255, 0.25);
+            border-left: 5px solid #00d4ff;
+            border-radius: 12px;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            box-shadow: 0 0 24px rgba(0, 212, 255, 0.14);
+        }
+
+        .oracle-avatar {
+            width: 68px;
+            height: 68px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #00d4ff;
+            box-shadow: 0 0 14px rgba(0, 212, 255, 0.45);
+            flex-shrink: 0;
+        }
+
+        .oracle-title-wrap h1 {
+            margin: 0;
+            font-size: 26px;
+            color: #ffffff;
+            letter-spacing: 1.5px;
+            text-shadow: 0 0 12px rgba(0, 212, 255, 0.4);
+        }
+
+        .oracle-tagline {
+            margin: 3px 0 0;
+            font-size: 13px;
+            color: #00d4ff;
+            font-weight: 600;
+        }
+
+        .oracle-sub {
+            margin: 4px 0 0;
+            font-size: 14px;
+            color: #bbbbbb;
+        }
+
+        /* Quick Suggestions */
+        .quick-prompts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .quick-chip {
+            background: rgba(20, 24, 36, 0.82);
+            backdrop-filter: blur(6px);
+            color: #e0e0e0;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 50px;
+            padding: 7px 14px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .quick-chip:hover {
+            border-color: #00d4ff;
+            color: #00d4ff;
+            background: rgba(0, 212, 255, 0.12);
+        }
+
+        /* Chat Box */
+        .chat-box {
+            flex: 1;
+            min-height: 360px;
+            max-height: 55vh;
+            overflow-y: auto;
+            background: rgba(15, 18, 28, 0.76);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(0, 212, 255, 0.22);
+            border-radius: 12px;
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            box-sizing: border-box;
+        }
+
+        .msg-row {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+
+        .msg-row.user {
+            justify-content: flex-end;
+        }
+
+        .msg-mini-avatar {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid #00d4ff;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .msg-bubble {
+            max-width: 82%;
+            padding: 11px 15px;
+            border-radius: 12px;
+            font-size: 15px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .msg-row.ai .msg-bubble {
+            background: rgba(28, 32, 46, 0.9);
+            border: 1px solid rgba(0, 212, 255, 0.22);
+            border-left: 3px solid #00d4ff;
+            color: #f0f0f0;
+            border-top-left-radius: 3px;
+        }
+
+        .msg-row.user .msg-bubble {
+            background: linear-gradient(135deg, #007791, #004d61);
+            color: #ffffff;
+            border-top-right-radius: 3px;
+        }
+
+        /* Input Area */
+        .chat-input-form {
+            display: flex;
+            gap: 10px;
+            background: rgba(20, 23, 35, 0.85);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(0, 212, 255, 0.25);
+            border-radius: 12px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .chat-input-form input {
+            flex: 1;
+            background: rgba(11, 13, 20, 0.9);
+            border: 1px solid #2c2c2c;
+            border-radius: 8px;
+            padding: 12px 14px;
+            color: #ffffff;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .chat-input-form input:focus {
+            border-color: #00d4ff;
+        }
+
+        .send-btn {
+            background: linear-gradient(45deg, #00d4ff, #0088cc);
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            padding: 0 20px;
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .send-btn:hover:not(:disabled) {
+            filter: brightness(1.1);
+        }
+
+        .send-btn:disabled {
+            opacity: 0.55;
+            cursor: not-allowed;
+        }
+
+        /* Multi-language Visibility Controller */
+        .lang-si { display: none; }
+        body.sinhala-mode .lang-en { display: none; }
+        body.sinhala-mode .lang-si { display: inline-block; }
+        body.sinhala-mode div.lang-si,
+        body.sinhala-mode p.lang-si { display: block; }
+    </style>
+</head>
+<body>
+
+    <!-- Animated Neon Cosmic Web Background -->
+    <canvas id="cosmic-web-canvas"></canvas>
+
+    <!-- Top Navbar -->
+    <nav>
+        <a href="index.html" class="nav-home">
+            <span class="lang-en">🏠 Home</span>
+            <span class="lang-si">🏠 මුල් පිටුව</span>
+        </a>
+        <div class="nav-right">
+            <button id="langToggle" class="lang-btn" onclick="toggleLanguage()">Sinhala</button>
+            <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+        </div>
+    </nav>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+    <!-- Slide-out Sidebar Menu -->
+    <div class="sidebar" id="sidebarMenu">
+        <div class="close-btn" onclick="toggleSidebar()">×</div>
+        <div class="sidebar-section">
+            <a href="index.html"><span class="lang-en">Home</span><span class="lang-si">මුල් පිටුව</span></a>
+            <a href="earth.html"><span class="lang-en">Earth</span><span class="lang-si">පෘථිවිය</span></a>
+            <a href="animals.html"><span class="lang-en">Animals</span><span class="lang-si">සතුන්</span></a>
+            <a href="space.html"><span class="lang-en">Space</span><span class="lang-si">අවකාශය</span></a>
+            <a href="mysteries.html"><span class="lang-en">Mysteries</span><span class="lang-si">අභිරහස්</span></a>
+            <a href="history.html"><span class="lang-en">History</span><span class="lang-si">ඉතිහාසය</span></a>
+            <a href="quantum.html"><span class="lang-en">🌌 Quantum Physics</span><span class="lang-si">🌌 ක්වොන්ටම් භෞතික විද්‍යාව</span></a>
+            <hr class="sidebar-divider">
+            <a href="mcq.html" class="sb-mcq"><span class="lang-en">📝 Start MCQ Quiz</span><span class="lang-si">📝 MCQ ප්‍රශ්නාවලිය</span></a>
+            <a href="facts.html" class="sb-facts"><span class="lang-en">⚡ Fun Amazing Facts ⚡</span><span class="lang-si">⚡ පුදුම සහගත කරුණු ⚡</span></a>
+            <hr class="sidebar-divider">
+            <a onclick="shareToFriends(); toggleSidebar();" style="cursor:pointer;" class="sb-share"><span class="lang-en">🔗 SHARE</span><span class="lang-si">🔗 බෙදාගන්න</span></a>
+            <a href="ad.html" class="sb-help"><span class="lang-en">❤️ Help</span><span class="lang-si">❤️ උදව්</span></a>
+            <a href="aaaextradatapage.html"><span class="lang-en">About</span><span class="lang-si">අපි ගැන</span></a>
+        </div>
+    </div>
+
+    <main class="oracle-page">
+        <section class="oracle-hero">
+            <img src="images/oai.jpg" alt="Oracle AI" class="oracle-avatar">
+            <div class="oracle-title-wrap">
+                <h1>Oracle AI</h1>
+                <p class="oracle-tagline">
+                    <span class="lang-en">Smart answers in a flash</span>
+                    <span class="lang-si">ක්ෂණික බුද්ධිමත් පිළිතුරු</span>
+                </p>
+                <p class="oracle-sub lang-en">Ask anything about space, quantum physics, earth, animals, history, or mysteries.</p>
+                <p class="oracle-sub lang-si">අවකාශය, ක්වොන්ටම් විද්‍යාව, පෘථිවිය, සතුන්, ඉතිහාසය හෝ අභිරහස් ගැන විමසන්න.</p>
+            </div>
+        </section>
+
+        <!-- Quick Question Chips -->
+        <div class="quick-prompts">
+            <button type="button" class="quick-chip" onclick="sendQuickPrompt('Explain quantum entanglement simply')">
+                <span class="lang-en">🌌 Quantum entanglement</span>
+                <span class="lang-si">🌌 ක්වොන්ටම් පැටලීම</span>
+            </button>
+            <button type="button" class="quick-chip" onclick="sendQuickPrompt('Tell me a mind-blowing space fact')">
+                <span class="lang-en">🚀 Space fact</span>
+                <span class="lang-si">🚀 අවකාශ කරුණක්</span>
+            </button>
+            <button type="button" class="quick-chip" onclick="sendQuickPrompt('Share an ancient mystery briefly')">
+                <span class="lang-en">🔮 Ancient mystery</span>
+                <span class="lang-si">🔮 පුරාණ අභිරහසක්</span>
+            </button>
+        </div>
+
+        <!-- Chat Messages -->
+        <div id="chatBox" class="chat-box">
+            <div class="msg-row ai">
+                <img src="images/oai.jpg" alt="Oracle" class="msg-mini-avatar">
+                <div class="msg-bubble" id="welcomeMsg">
+                    Greetings! I am Oracle AI from Infinity Thinkers Laboratory. Smart answers in a flash — what would you like to explore today?
+                </div>
+            </div>
+        </div>
+
+        <!-- Input Form -->
+        <form id="chatForm" class="chat-input-form" onsubmit="handleChatSubmit(event)">
+            <input type="text" id="userInput" placeholder="Ask Oracle AI..." autocomplete="off" required>
+            <button type="submit" id="sendBtn" class="send-btn">
+                <span class="lang-en">Ask</span>
+                <span class="lang-si">අසන්න</span>
+            </button>
+        </form>
+    </main>
+
+    <script>
+        /* =========================================================
+           Color-Shifting Neon Cosmic Web Animation
+        ========================================================= */
+        (function initCosmicWeb() {
+            const canvas = document.getElementById("cosmic-web-canvas");
+            const ctx = canvas.getContext("2d");
+
+            let width = canvas.width = window.innerWidth;
+            let height = canvas.height = window.innerHeight;
+            let hueShift = 190; // Starts around neon cyan, shifts smoothly across neon spectrum
+
+            const pointer = { x: null, y: null, radius: 155 };
+
+            window.addEventListener("resize", () => {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+                createNodes();
+            });
+
+            window.addEventListener("mousemove", (e) => {
+                pointer.x = e.clientX;
+                pointer.y = e.clientY;
+            });
+
+            window.addEventListener("mouseleave", () => {
+                pointer.x = null;
+                pointer.y = null;
+            });
+
+            window.addEventListener("touchmove", (e) => {
+                if (e.touches.length > 0) {
+                    pointer.x = e.touches[0].clientX;
+                    pointer.y = e.touches[0].clientY;
+                }
+            }, { passive: true });
+
+            window.addEventListener("touchend", () => {
+                pointer.x = null;
+                pointer.y = null;
+            });
+
+            let nodes = [];
+
+            function getNodeCount() {
+                const area = width * height;
+                return Math.min(115, Math.max(38, Math.floor(area / 13500)));
+            }
+
+            function createNodes() {
+                const count = getNodeCount();
+                nodes = [];
+                for (let i = 0; i < count; i++) {
+                    nodes.push({
+                        x: Math.random() * width,
+                        y: Math.random() * height,
+                        vx: (Math.random() - 0.5) * 0.65,
+                        vy: (Math.random() - 0.5) * 0.65,
+                        r: Math.random() * 2.1 + 1.2,
+                        hueOffset: (Math.random() - 0.5) * 75
+                    });
+                }
+            }
+
+            createNodes();
+
+            function drawCosmicWeb() {
+                ctx.clearRect(0, 0, width, height);
+
+                // Smoothly cycle neon hues (cyan -> blue -> purple -> magenta -> mint)
+                hueShift = (hueShift + 0.25) % 360;
+                const maxLinkDist = Math.min(165, Math.max(115, Math.hypot(width, height) * 0.11));
+
+                // Draw web connections
+                for (let i = 0; i < nodes.length; i++) {
+                    const a = nodes[i];
+
+                    for (let j = i + 1; j < nodes.length; j++) {
+                        const b = nodes[j];
+                        const dx = a.x - b.x;
+                        const dy = a.y - b.y;
+                        const dist = Math.hypot(dx, dy);
+
+                        if (dist < maxLinkDist) {
+                            const alpha = (1 - dist / maxLinkDist) * 0.42;
+                            const lineHue = (hueShift + (a.hueOffset + b.hueOffset) * 0.5 + 360) % 360;
+
+                            ctx.beginPath();
+                            ctx.moveTo(a.x, a.y);
+                            ctx.lineTo(b.x, b.y);
+                            ctx.strokeStyle = `hsla(${lineHue}, 100%, 62%, ${alpha})`;
+                            ctx.lineWidth = 1;
+                            ctx.stroke();
+                        }
+                    }
+
+                    // Pointer attraction & neon link
+                    if (pointer.x !== null && pointer.y !== null) {
+                        const pdx = pointer.x - a.x;
+                        const pdy = pointer.y - a.y;
+                        const pDist = Math.hypot(pdx, pdy);
+
+                        if (pDist < pointer.radius && pDist > 1) {
+                            a.x += (pdx / pDist) * 0.55;
+                            a.y += (pdy / pDist) * 0.55;
+
+                            const pAlpha = (1 - pDist / pointer.radius) * 0.68;
+                            const pHue = (hueShift + 55) % 360;
+                            ctx.beginPath();
+                            ctx.moveTo(a.x, a.y);
+                            ctx.lineTo(pointer.x, pointer.y);
+                            ctx.strokeStyle = `hsla(${pHue}, 100%, 65%, ${pAlpha})`;
+                            ctx.lineWidth = 1.25;
+                            ctx.stroke();
+                        }
+                    }
+                }
+
+                // Draw glowing neon nodes
+                for (let i = 0; i < nodes.length; i++) {
+                    const n = nodes[i];
+                    n.x += n.vx;
+                    n.y += n.vy;
+
+                    if (n.x < 0 || n.x > width) n.vx *= -1;
+                    if (n.y < 0 || n.y > height) n.vy *= -1;
+
+                    const nodeHue = (hueShift + n.hueOffset + 360) % 360;
+                    const glowColor = `hsla(${nodeHue}, 100%, 65%, 0.9)`;
+
+                    ctx.save();
+                    ctx.beginPath();
+                    ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+                    ctx.fillStyle = glowColor;
+                    ctx.shadowColor = `hsl(${nodeHue}, 100%, 60%)`;
+                    ctx.shadowBlur = 10;
+                    ctx.fill();
+                    ctx.restore();
+                }
+
+                requestAnimationFrame(drawCosmicWeb);
+            }
+
+            drawCosmicWeb();
+        })();
+
+        /* =========================================================
+           Oracle AI Chat & Page Logic
+        ========================================================= */
+        const GEMINI_API_KEY = "YOUR_GEMINI_API_KEY"; // Replace with your Gemini API key
+        const ORACLE_SYSTEM_PROMPT = `You are Oracle AI, the intelligent knowledge guide for Infinity Thinkers Laboratory (ITL).
+Your motto is "Smart answers in a flash".
+Help curious minds explore space, quantum physics, earth, animals, history, science, and mysteries with clear, engaging, and accurate explanations.
+If the user writes in Sinhala, reply naturally in clear Sinhala. If they write in English, reply in clear English.`;
+
+        const conversationHistory = [];
+
+        function updateLanguageUI(lang) {
+            const btn = document.getElementById("langToggle");
+            const input = document.getElementById("userInput");
+            if (lang === "si") {
+                document.body.classList.add("sinhala-mode");
+                btn.textContent = "English";
+                input.placeholder = "Oracle AI වෙතින් අසන්න...";
+            } else {
+                document.body.classList.remove("sinhala-mode");
+                btn.textContent = "Sinhala";
+                input.placeholder = "Ask Oracle AI...";
+            }
+        }
+
+        function toggleLanguage() {
+            const currentLang = localStorage.getItem("selectedLanguage") || "en";
+            const newLang = currentLang === "en" ? "si" : "en";
+            localStorage.setItem("selectedLanguage", newLang);
+            updateLanguageUI(newLang);
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const savedLang = localStorage.getItem("selectedLanguage") || "en";
+            updateLanguageUI(savedLang);
+        });
+
+        function toggleSidebar() {
+            document.getElementById("sidebarMenu").classList.toggle("open");
+            document.getElementById("sidebarOverlay").classList.toggle("show");
+        }
+
+        function shareToFriends() {
+            if (navigator.share) {
+                navigator.share({ title: 'Oracle AI - ITL', text: 'Smart answers in a flash!', url: window.location.href });
+            } else {
+                alert("Link: " + window.location.href);
+            }
+        }
+
+        function appendMessage(sender, text) {
+            const chatBox = document.getElementById("chatBox");
+            const row = document.createElement("div");
+            row.className = `msg-row ${sender}`;
+
+            if (sender === "ai") {
+                const avatar = document.createElement("img");
+                avatar.src = "images/oai.jpg";
+                avatar.alt = "Oracle";
+                avatar.className = "msg-mini-avatar";
+                row.appendChild(avatar);
+            }
+
+            const bubble = document.createElement("div");
+            bubble.className = "msg-bubble";
+            bubble.textContent = text;
+            row.appendChild(bubble);
+
+            chatBox.appendChild(row);
+            chatBox.scrollTop = chatBox.scrollHeight;
+            return bubble;
+        }
+
+        function sendQuickPrompt(promptText) {
+            const input = document.getElementById("userInput");
+            input.value = promptText;
+            document.getElementById("chatForm").requestSubmit();
+        }
+
+        async function handleChatSubmit(event) {
+            event.preventDefault();
+            const input = document.getElementById("userInput");
+            const sendBtn = document.getElementById("sendBtn");
+            const message = input.value.trim();
+
+            if (!message) return;
+
+            appendMessage("user", message);
+            input.value = "";
+            sendBtn.disabled = true;
+
+            const isSinhala = document.body.classList.contains("sinhala-mode");
+            const thinkingBubble = appendMessage("ai", isSinhala ? "Oracle සිතමින් සිටී..." : "Oracle is thinking...");
+
+            conversationHistory.push({
+                role: "user",
+                parts: [{ text: message }]
+            });
+
+            try {
+                const response = await fetch(
+                    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`,
+                    {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            system_instruction: {
+                                parts: [{ text: ORACLE_SYSTEM_PROMPT }]
+                            },
+                            contents: conversationHistory
+                        })
+                    }
+                );
+
+                const data = await response.json();
+                const reply = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+
+                if (reply) {
+                    thinkingBubble.textContent = reply;
+                    conversationHistory.push({
+                        role: "model",
+                        parts: [{ text: reply }]
+                    });
+                } else {
+                    thinkingBubble.textContent = isSinhala
+                        ? "පිළිතුරක් ලබාගැනීමට නොහැකි විය. API Key එක පරීක්ෂා කරන්න."
+                        : "Could not get a response. Please check your API key.";
+                }
+            } catch (err) {
+                thinkingBubble.textContent = isSinhala
+                    ? "සම්බන්ධතා දෝෂයකි. කරුණාකර නැවත උත්සාහ කරන්න."
+                    : "Network error while reaching Oracle. Please try again.";
+            } finally {
+                sendBtn.disabled = false;
+                document.getElementById("chatBox").scrollTop = document.getElementById("chatBox").scrollHeight;
+            }
+        }
+    </script>
+</body>
+</html>
