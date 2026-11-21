@@ -30,9 +30,7 @@
         /* Basic Settings - Responsive Fix */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(-45deg, #040814, #081c36, #0a1226, #041d24);
-            background-size: 320% 320%;
-            animation: gradientFlow 16s ease infinite;
+            background: var(--bg-base, radial-gradient(ellipse at 20% 10%, #0b2442 0%, #061024 45%, #02050d 100%));
             background-attachment: fixed;
             color: #e0e0e0;
             margin: 0;
@@ -43,28 +41,17 @@
             position: relative;
         }
 
-        @keyframes gradientFlow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* Subtle Dot Grid + Line Pattern Layer */
-        body::before {
-            content: '';
+        /* Cosmic Interactive Canvas (Constellation Stars / Particles / Shooting Stars) */
+        #cosmic-bg-canvas {
             position: fixed;
             inset: 0;
-            background-image:
-                radial-gradient(rgba(0, 212, 255, 0.24) 1.25px, transparent 1.25px),
-                linear-gradient(to right, rgba(0, 212, 255, 0.04) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(0, 212, 255, 0.04) 1px, transparent 1px);
-            background-size: 28px 28px, 112px 112px, 112px 112px;
-            opacity: 0.75;
+            width: 100%;
+            height: 100%;
             pointer-events: none;
             z-index: -2;
         }
 
-        /* Slow-Moving Ambient Glowing Blobs, Top Stars, Bottom Waves & Parallax Layer */
+        /* Ambient Nebula, Pattern, Waves & Parallax Layer */
         .bg-ambient-layer {
             position: fixed;
             inset: 0;
@@ -75,53 +62,91 @@
             will-change: transform;
         }
 
-        /* Upper Sky Stars Layer */
-        .bg-stars {
+        /* Optional Pattern / Grid Overlay per Theme */
+        .bg-pattern-layer {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 62%;
+            inset: 0;
+            background-image: var(--bg-pattern, none);
+            background-size: var(--bg-pattern-size, auto);
+            opacity: var(--bg-pattern-opacity, 0.35);
             pointer-events: none;
         }
 
-        .bg-star {
+        /* Aurora / Light Band Layer */
+        .bg-aurora {
+            position: absolute;
+            top: -120px;
+            left: -15%;
+            width: 130%;
+            height: 360px;
+            background: var(--bg-aurora, none);
+            filter: blur(55px);
+            opacity: var(--bg-aurora-opacity, 0.75);
+            transform-origin: center;
+            animation: auroraWave 14s ease-in-out infinite alternate;
+        }
+
+        @keyframes auroraWave {
+            0% { transform: translateX(-4%) rotate(-3deg) scaleY(0.95); }
+            50% { transform: translateX(3%) rotate(1deg) scaleY(1.12); }
+            100% { transform: translateX(-2%) rotate(3deg) scaleY(1); }
+        }
+
+        /* Soft Glowing Nebula Orbs */
+        .bg-blob {
             position: absolute;
             border-radius: 50%;
-            background: #ffffff;
-            will-change: transform, opacity;
+            filter: blur(85px);
+            will-change: transform;
         }
 
-        .bg-star.cyan {
-            background: #8ceeff;
-            box-shadow: 0 0 8px rgba(0, 212, 255, 0.9);
+        .bg-blob-1 {
+            width: 430px;
+            height: 430px;
+            top: 6%;
+            left: -95px;
+            background: var(--bg-blob-1, radial-gradient(circle, rgba(0, 212, 255, 0.34) 0%, transparent 70%));
+            animation: floatBlobA 15s ease-in-out infinite alternate;
         }
 
-        .bg-star.emerald {
-            background: #9effd2;
-            box-shadow: 0 0 8px rgba(0, 255, 136, 0.8);
+        .bg-blob-2 {
+            width: 390px;
+            height: 390px;
+            bottom: 12%;
+            right: -85px;
+            background: var(--bg-blob-2, radial-gradient(circle, rgba(0, 255, 136, 0.26) 0%, transparent 70%));
+            animation: floatBlobB 17s ease-in-out infinite alternate;
         }
 
-        .bg-star.white {
-            background: #ffffff;
-            box-shadow: 0 0 7px rgba(255, 255, 255, 0.85);
+        .bg-blob-3 {
+            width: 370px;
+            height: 370px;
+            top: 40%;
+            left: 46%;
+            background: var(--bg-blob-3, radial-gradient(circle, rgba(99, 102, 241, 0.24) 0%, transparent 70%));
+            animation: floatBlobC 19s ease-in-out infinite alternate;
         }
 
-        @keyframes starTwinkleSoft {
-            0%, 100% { opacity: 0.22; transform: translateY(0px) scale(0.85); }
-            50% { opacity: 0.95; transform: translateY(-6px) scale(1.25); }
+        @keyframes floatBlobA {
+            0% { transform: translate(0px, 0px) scale(0.95); }
+            100% { transform: translate(105px, 70px) scale(1.15); }
         }
 
-        @keyframes starDriftSlow {
-            0% { transform: translate(0px, 0px) scale(0.9); opacity: 0.3; }
-            50% { opacity: 0.9; }
-            100% { transform: translate(18px, -14px) scale(1.15); opacity: 0.35; }
+        @keyframes floatBlobB {
+            0% { transform: translate(0px, 0px) scale(1); }
+            100% { transform: translate(-95px, -65px) scale(1.15); }
         }
 
-        /* Prominent Soft Animated Bottom Waves */
+        @keyframes floatBlobC {
+            0% { transform: translate(0px, 0px) scale(0.92); }
+            100% { transform: translate(-75px, 60px) scale(1.18); }
+        }
+
+        /* Prominent Soft Animated Bottom Waves (Shown on Wave Theme) */
         .bg-waves-wrap {
+            display: var(--bg-waves-display, none);
             position: absolute;
-            bottom: -10px;
+            bottom: -12px;
             left: 0;
             width: 100%;
             height: 290px;
@@ -139,17 +164,17 @@
         }
 
         .wave-back {
-            opacity: 0.42;
-            animation: waveSlideBack 15s linear infinite;
+            opacity: 0.45;
+            animation: waveSlideBack 16s linear infinite;
         }
 
         .wave-mid {
-            opacity: 0.58;
-            animation: waveSlideMid 11s linear infinite reverse;
+            opacity: 0.62;
+            animation: waveSlideMid 11.5s linear infinite reverse;
         }
 
         .wave-front {
-            opacity: 0.72;
+            opacity: 0.78;
             animation: waveSlideFront 8.5s linear infinite;
         }
 
@@ -169,57 +194,6 @@
             0% { transform: translateX(0%) translateY(0px); }
             50% { transform: translateX(-25%) translateY(-9px); }
             100% { transform: translateX(-50%) translateY(0px); }
-        }
-
-        .bg-blob {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(75px);
-            opacity: 0.44;
-            will-change: transform;
-        }
-
-        .bg-blob-cyan {
-            width: 420px;
-            height: 420px;
-            top: -70px;
-            left: -80px;
-            background: radial-gradient(circle, rgba(0, 212, 255, 0.85) 0%, rgba(0, 212, 255, 0) 70%);
-            animation: floatBlobA 13s ease-in-out infinite alternate;
-        }
-
-        .bg-blob-emerald {
-            width: 390px;
-            height: 390px;
-            bottom: 8%;
-            right: -70px;
-            background: radial-gradient(circle, rgba(0, 255, 136, 0.72) 0%, rgba(0, 255, 136, 0) 70%);
-            animation: floatBlobB 15s ease-in-out infinite alternate;
-        }
-
-        .bg-blob-indigo {
-            width: 360px;
-            height: 360px;
-            top: 38%;
-            left: 48%;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.78) 0%, rgba(59, 130, 246, 0) 70%);
-            opacity: 0.36;
-            animation: floatBlobC 17s ease-in-out infinite alternate;
-        }
-
-        @keyframes floatBlobA {
-            0% { transform: translate(0px, 0px) scale(0.95); }
-            100% { transform: translate(115px, 85px) scale(1.18); }
-        }
-
-        @keyframes floatBlobB {
-            0% { transform: translate(0px, 0px) scale(1); }
-            100% { transform: translate(-110px, -80px) scale(1.16); }
-        }
-
-        @keyframes floatBlobC {
-            0% { transform: translate(0px, 0px) scale(0.92); }
-            100% { transform: translate(-90px, 75px) scale(1.2); }
         }
 
         /* Enhanced Cosmic Splash Screen Styles */
@@ -469,14 +443,14 @@
         
         /* New Navigation Bar Header */
         nav {
-            background-color: rgba(15, 23, 42, 0.72);
+            background-color: rgba(8, 13, 24, 0.72);
             backdrop-filter: blur(14px);
             -webkit-backdrop-filter: blur(14px);
             padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(0, 212, 255, 0.28);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -611,7 +585,7 @@
             text-transform: uppercase;
             letter-spacing: 3px;
             margin: 30px 10px;
-            text-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+            text-shadow: 0 0 18px rgba(0, 212, 255, 0.55);
         }
 
         #installBtn {
@@ -630,7 +604,7 @@
         }
 
         .hero-img-container { text-align: center; margin: 20px 0; }
-        .all-img { max-width: 95%; height: auto; border-radius: 10px; border: 1px solid #333; }
+        .all-img { max-width: 95%; height: auto; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.16); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); }
 
         .container {
             width: 100%;
@@ -644,16 +618,16 @@
         /* Glassmorphism Card over Background */
         .description {
             font-size: 18px;
-            color: #e2f1ff;
+            color: #e6f1ff;
             text-align: left;
-            background: rgba(12, 24, 42, 0.48);
+            background: rgba(10, 16, 30, 0.52);
             backdrop-filter: blur(14px);
             -webkit-backdrop-filter: blur(14px);
             padding: 20px;
             border-radius: 14px;
-            border: 1px solid rgba(0, 212, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.14);
             border-left: 5px solid #00d4ff;
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.42);
+            box-shadow: 0 12px 34px rgba(0, 0, 0, 0.48);
         }
 
         .mcq-container {
@@ -684,7 +658,7 @@
             padding: 15px 40px;
             border-radius: 12px;
             text-transform: uppercase;
-            background: rgba(10, 24, 44, 0.42);
+            background: rgba(10, 18, 34, 0.48);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
         }
@@ -700,21 +674,21 @@
 
         .discover-list a { text-decoration: none; display: block; }
         .discover-list li {
-            background: rgba(14, 28, 48, 0.52);
+            background: rgba(12, 20, 36, 0.55);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             padding: 8px 20px;
             border-radius: 50px;
-            border: 1px solid rgba(0, 212, 255, 0.32);
+            border: 1px solid rgba(255, 255, 255, 0.18);
             color: white;
             font-weight: bold;
             font-size: 14px;
             transition: 0.3s;
         }
         .discover-list a:hover li {
-            background: rgba(0, 212, 255, 0.2);
+            background: rgba(0, 212, 255, 0.18);
             border-color: #00d4ff;
-            box-shadow: 0 0 16px rgba(0, 212, 255, 0.32);
+            box-shadow: 0 0 16px rgba(0, 212, 255, 0.28);
         }
         
         h2 { color: #00d4ff; font-size: 28px; margin-top: 30px; }
@@ -803,50 +777,53 @@
 </head>
 <body>
 
+    <!-- Dynamic Canvas Background Layer -->
+    <canvas id="cosmic-bg-canvas" aria-hidden="true"></canvas>
+
+    <!-- Dynamic Pattern, Aurora, Nebula Orbs & Optional Bottom Waves -->
     <div class="bg-ambient-layer" aria-hidden="true">
-        <div class="bg-blob bg-blob-cyan"></div>
-        <div class="bg-blob bg-blob-emerald"></div>
-        <div class="bg-blob bg-blob-indigo"></div>
+        <div class="bg-pattern-layer"></div>
+        <div class="bg-aurora"></div>
+        <div class="bg-blob bg-blob-1"></div>
+        <div class="bg-blob bg-blob-2"></div>
+        <div class="bg-blob bg-blob-3"></div>
 
-        <!-- Upper Sky Animated Stars -->
-        <div class="bg-stars" id="bgStars"></div>
-
-        <!-- Prominent Soft Animated Bottom Waves -->
+        <!-- Animated Bottom Waves (Active on Wave Theme) -->
         <div class="bg-waves-wrap">
             <svg class="bg-waves-svg wave-back" viewBox="0 0 2880 320" preserveAspectRatio="none">
                 <defs>
                     <linearGradient id="waveGradBack" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stop-color="rgba(0, 212, 255, 0.24)" />
-                        <stop offset="50%" stop-color="rgba(37, 99, 235, 0.30)" />
-                        <stop offset="100%" stop-color="rgba(0, 212, 255, 0.24)" />
+                        <stop offset="0%" stop-color="rgba(0, 212, 255, 0.25)" />
+                        <stop offset="50%" stop-color="rgba(99, 102, 241, 0.34)" />
+                        <stop offset="100%" stop-color="rgba(0, 212, 255, 0.25)" />
                     </linearGradient>
                 </defs>
                 <path fill="url(#waveGradBack)" d="M0,192 C240,110 480,260 720,185 C960,110 1200,245 1440,192 C1680,110 1920,260 2160,185 C2400,110 2640,245 2880,192 L2880,320 L0,320 Z"></path>
-                <path fill="none" stroke="rgba(0, 212, 255, 0.55)" stroke-width="2" d="M0,192 C240,110 480,260 720,185 C960,110 1200,245 1440,192 C1680,110 1920,260 2160,185 C2400,110 2640,245 2880,192"></path>
+                <path fill="none" stroke="rgba(0, 212, 255, 0.58)" stroke-width="2" d="M0,192 C240,110 480,260 720,185 C960,110 1200,245 1440,192 C1680,110 1920,260 2160,185 C2400,110 2640,245 2880,192"></path>
             </svg>
 
             <svg class="bg-waves-svg wave-mid" viewBox="0 0 2880 320" preserveAspectRatio="none">
                 <defs>
                     <linearGradient id="waveGradMid" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stop-color="rgba(0, 255, 136, 0.16)" />
-                        <stop offset="50%" stop-color="rgba(0, 212, 255, 0.34)" />
-                        <stop offset="100%" stop-color="rgba(0, 255, 136, 0.16)" />
+                        <stop offset="0%" stop-color="rgba(0, 255, 136, 0.18)" />
+                        <stop offset="50%" stop-color="rgba(0, 212, 255, 0.36)" />
+                        <stop offset="100%" stop-color="rgba(0, 255, 136, 0.18)" />
                     </linearGradient>
                 </defs>
                 <path fill="url(#waveGradMid)" d="M0,224 C300,150 540,290 720,220 C960,130 1200,275 1440,224 C1740,150 1980,290 2160,220 C2400,130 2640,275 2880,224 L2880,320 L0,320 Z"></path>
-                <path fill="none" stroke="rgba(0, 255, 136, 0.48)" stroke-width="2" d="M0,224 C300,150 540,290 720,220 C960,130 1200,275 1440,224 C1740,150 1980,290 2160,220 C2400,130 2640,275 2880,224"></path>
+                <path fill="none" stroke="rgba(0, 255, 136, 0.5)" stroke-width="2" d="M0,224 C300,150 540,290 720,220 C960,130 1200,275 1440,224 C1740,150 1980,290 2160,220 C2400,130 2640,275 2880,224"></path>
             </svg>
 
             <svg class="bg-waves-svg wave-front" viewBox="0 0 2880 320" preserveAspectRatio="none">
                 <defs>
                     <linearGradient id="waveGradFront" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stop-color="rgba(0, 212, 255, 0.25)" />
-                        <stop offset="50%" stop-color="rgba(0, 255, 136, 0.24)" />
-                        <stop offset="100%" stop-color="rgba(0, 212, 255, 0.25)" />
+                        <stop offset="0%" stop-color="rgba(0, 212, 255, 0.28)" />
+                        <stop offset="50%" stop-color="rgba(0, 255, 136, 0.26)" />
+                        <stop offset="100%" stop-color="rgba(0, 212, 255, 0.28)" />
                     </linearGradient>
                 </defs>
                 <path fill="url(#waveGradFront)" d="M0,256 C240,205 480,305 720,248 C960,190 1200,295 1440,256 C1680,205 1920,305 2160,248 C2400,190 2640,295 2880,256 L2880,320 L0,320 Z"></path>
-                <path fill="none" stroke="rgba(140, 238, 255, 0.72)" stroke-width="2.2" d="M0,256 C240,205 480,305 720,248 C960,190 1200,295 1440,256 C1680,205 1920,305 2160,248 C2400,190 2640,295 2880,256"></path>
+                <path fill="none" stroke="rgba(140, 238, 255, 0.78)" stroke-width="2.2" d="M0,256 C240,205 480,305 720,248 C960,190 1200,295 1440,256 C1680,205 1920,305 2160,248 C2400,190 2640,295 2880,256"></path>
             </svg>
         </div>
     </div>
@@ -1025,37 +1002,478 @@
     </div>
 
     <script>
-        // Generate Upper Sky Animated Stars
-        (function createUpperStars() {
-            const starsContainer = document.getElementById("bgStars");
-            if (!starsContainer) return;
+        // 14 Distinct Dark Backgrounds (Rotates Every Time You Visit / Return to Page)
+        (function initRotatingDarkBackgrounds() {
+            const DARK_THEMES = [
+                {
+                    name: "Cosmic Waves & Aurora",
+                    base: "radial-gradient(ellipse at 20% 10%, #0b2442 0%, #061024 45%, #02050d 100%)",
+                    blob1: "radial-gradient(circle, rgba(0, 212, 255, 0.34) 0%, transparent 70%)",
+                    blob2: "radial-gradient(circle, rgba(0, 255, 136, 0.25) 0%, transparent 70%)",
+                    blob3: "radial-gradient(circle, rgba(99, 102, 241, 0.25) 0%, transparent 70%)",
+                    aurora: "linear-gradient(115deg, transparent 10%, rgba(0, 212, 255, 0.2) 35%, rgba(0, 255, 136, 0.18) 55%, rgba(99, 102, 241, 0.22) 75%, transparent 92%)",
+                    auroraOpacity: "0.75",
+                    pattern: "none",
+                    patternSize: "auto",
+                    patternOpacity: "0",
+                    wavesDisplay: "block",
+                    mode: "constellation",
+                    particles: ["#00d4ff", "#00ff88", "#ffffff", "#93c5fd"],
+                    links: "0, 212, 255",
+                    hoverLink: "0, 255, 136",
+                    shootingStars: true,
+                    driftUp: false
+                },
+                {
+                    name: "Abyssal Void & Neon Cyan",
+                    base: "radial-gradient(circle at 75% 15%, #071e2b 0%, #030b12 55%, #000000 100%)",
+                    blob1: "radial-gradient(circle, rgba(0, 212, 255, 0.28) 0%, transparent 70%)",
+                    blob2: "radial-gradient(circle, rgba(6, 182, 212, 0.22) 0%, transparent 70%)",
+                    blob3: "radial-gradient(circle, rgba(14, 116, 144, 0.2) 0%, transparent 70%)",
+                    aurora: "none",
+                    auroraOpacity: "0",
+                    pattern: "radial-gradient(rgba(0, 212, 255, 0.22) 1px, transparent 1px)",
+                    patternSize: "26px 26px",
+                    patternOpacity: "0.45",
+                    wavesDisplay: "none",
+                    mode: "constellation",
+                    particles: ["#00d4ff", "#67e8f9", "#ffffff"],
+                    links: "0, 212, 255",
+                    hoverLink: "103, 232, 249",
+                    shootingStars: true,
+                    driftUp: false
+                },
+                {
+                    name: "Shadow Quantum Matrix",
+                    base: "linear-gradient(160deg, #020408 0%, #05111a 50%, #02070c 100%)",
+                    blob1: "radial-gradient(circle, rgba(0, 255, 136, 0.22) 0%, transparent 70%)",
+                    blob2: "radial-gradient(circle, rgba(0, 212, 255, 0.2) 0%, transparent 70%)",
+                    blob3: "radial-gradient(circle, rgba(16, 185, 129, 0.16) 0%, transparent 70%)",
+                    aurora: "none",
+                    auroraOpacity: "0",
+                    pattern: "linear-gradient(to right, rgba(0, 255, 136, 0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 255, 136, 0.06) 1px, transparent 1px)",
+                    patternSize: "48px 48px",
+                    patternOpacity: "0.65",
+                    wavesDisplay: "none",
+                    mode: "constellation",
+                    particles: ["#00ff88", "#34d399", "#00d4ff", "#ffffff"],
+                    links: "0, 255, 136",
+                    hoverLink: "0, 212, 255",
+                    shootingStars: false,
+                    driftUp: false
+                },
+                {
+                    name: "Deep Obsidian & Violet Nebula",
+                    base: "radial-gradient(ellipse at 50% 0%, #1a0b2e 0%, #090512 52%, #020105 100%)",
+                    blob1: "radial-gradient(circle, rgba(168, 85, 247, 0.3) 0%, transparent 70%)",
+                    blob2: "radial-gradient(circle, rgba(99, 102, 241, 0.24) 0%, transparent 70%)",
+                    blob3: "radial-gradient(circle, rgba(217, 70, 239, 0.18) 0%, transparent 70%)",
+                    aurora: "linear-gradient(120deg, transparent 15%, rgba(168, 85, 247, 0.22) 45%, rgba(59, 130, 246, 0.18) 75%, transparent 95%)",
+                    auroraOpacity: "0.7",
+                    pattern: "none",
+                    patternSize: "auto",
+                    patternOpacity: "0",
+                    wavesDisplay: "none",
+                    mode: "stars",
+                    particles: ["#c084fc", "#818cf8", "#f0abfc", "#ffffff"],
+                    links: "168, 85, 247",
+                    hoverLink: "192, 132, 252",
+                    shootingStars: true,
+                    driftUp: false
+                },
+                {
+                    name: "Midnight Ember & Crimson Core",
+                    base: "radial-gradient(circle at 25% 15%, #24070d 0%, #0d0306 55%, #020001 100%)",
+                    blob1: "radial-gradient(circle, rgba(244, 63, 94, 0.24) 0%, transparent 70%)",
+                    blob2: "radial-gradient(circle, rgba(251, 146, 60, 0.18) 0%, transparent 70%)",
+                    blob3: "radial-gradient(circle, rgba(159, 18, 57, 0.22) 0%, transparent 70%)",
+                    aurora: "none",
+                    auroraOpacity: "0",
+                    pattern: "radial-gradient(rgba(251, 146, 60, 0.16) 1px, transparent 1px)",
+                    patternSize: "34px 34px",
+                    patternOpacity: "0.35",
+                    wavesDisplay: "none",
+                    mode: "embers",
+                    particles: ["#fb7185", "#fdba74", "#fca5a5", "#ffffff"],
+                    links: "244, 63, 94",
+                    hoverLink: "251, 146, 60",
+                    shootingStars: false,
+                    driftUp: true
+                },
+                {
+                    name: "Eclipse Gold & Dark Slate",
+                    base: "radial-gradient(circle at 80% 10%, #1e1807 0%, #0b0904 55%, #020201 100%)",
+                    blob1: "radial-gradient(circle, rgba(250, 204, 21, 0.22) 0%, transparent 70%)",
+                    blob2: "radial-gradient(circle, rgba(245, 158, 11, 0.18) 0%, transparent 70%)",
+                    blob3: "radial-gradient(circle, rgba(120, 53, 15, 0.2) 0%, transparent 70%)",
+                    aurora: "none",
+                    auroraOpacity: "0",
+                    pattern: "none",
+                    patternSize: "auto",
+                    patternOpacity: "0",
+                    wavesDisplay: "none",
+                    mode: "stars",
+                    particles: ["#fde047", "#fbbf24", "#fef08a", "#ffffff"],
+                    links: "250, 204, 21",
+                    hoverLink: "253, 224, 71",
+                    shootingStars: true,
+                    driftUp: false
+                },
+                {
+                    name: "Deep Ocean Trench & Biolume",
+                    base: "linear-gradient(180deg, #020b14 0%, #041926 52%, #020912 100%)",
+                    blob1: "radial-gradient(circle, rgba(34, 211, 238, 0.25) 0%, transparent 70%)",
+                    blob2: "radial-gradient(circle, rgba(45, 212, 191, 0.22) 0%, transparent 70%)",
+                    blob3: "radial-gradient(circle, rgba(3, 105, 161, 0.26) 0%, transparent 70%)",
+                    aurora: "none",
+                    auroraOpacity: "0",
+                    pattern: "none",
+                    patternSize: "auto",
+                    patternOpacity: "0",
+                    wavesDisplay: "none",
+                    mode: "constellation",
+                    particles: ["#22d3ee", "#2dd4bf", "#7dd3fc", "#ffffff"],
+                    links: "34, 211, 238",
+                    hoverLink: "45, 212, 191",
+                    shootingStars: false,
+                    driftUp: true
+                },
+                {
+                    name: "Dark Sapphire & Starlight",
+                    base: "radial-gradient(ellipse at 30% 20%, #091b3d 0%, #040b1c 55%, #010308 100%)",
+                    blob1: "radial-gradient(circle, rgba(59, 130, 246, 0.28) 0%, transparent 70%)",
+                    blob2: "radial-gradient(circle, rgba(96, 165, 250, 0.2) 0%, transparent 70%)",
+                    blob3: "radial-gradient(circle, rgba(30, 64, 175, 0.24) 0%, transparent 70%)",
+                    aurora: "none",
+                    auroraOpacity: "0",
+                    pattern: "radial-gradient(rgba(147, 197, 253, 0.18) 1px, transparent 1px)",
+                    patternSize: "30px 30px",
+                    patternOpacity: "0.4",
+                    wavesDisplay: "none",
+                    mode: "stars",
+                    particles: ["#93c5fd", "#60a5fa", "#dbeafe", "#ffffff"],
+                    links: "59, 130, 246",
+                    hoverLink: "147, 197, 253",
+                    shootingStars: true,
+                    driftUp: false
+                },
+                {
+                    name: "Carbon Stealth & Subtle Grid",
+                    base: "linear-gradient(135deg, #050608 0%, #0c0f14 50%, #040507 100%)",
+                    blob1: "radial-gradient(circle, rgba(148, 163, 184, 0.14) 0%, transparent 70%)",
+                    blob2: "radial-gradient(circle, rgba(0, 212, 255, 0.14) 0%, transparent 70%)",
+                    blob3: "radial-gradient(circle, rgba(71, 85, 105, 0.16) 0%, transparent 70%)",
+                    aurora: "none",
+                    auroraOpacity: "0",
+                    pattern: "linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px)",
+                    patternSize: "40px 40px",
+                    patternOpacity: "0.7",
+                    wavesDisplay: "none",
+                    mode: "constellation",
+                    particles: ["#e2e8f0", "#94a3b8", "#00d4ff", "#ffffff"],
+                    links: "148, 163, 184",
+                    hoverLink: "0, 212, 255",
+                    shootingStars: false,
+                    driftUp: false
+                },
+                {
+                    name: "Dark Emerald Pine & Mist",
+                    base: "radial-gradient(circle at 20% 15%, #052117 0%, #020d09 58%, #010403 100%)",
+                    blob1: "radial-gradient(circle, rgba(16, 185, 129, 0.24) 0%, transparent 70%)",
+                    blob2: "radial-gradient(circle, rgba(52, 211, 153, 0.18) 0%, transparent 70%)",
+                    blob3: "radial-gradient(circle, rgba(6, 95, 70, 0.24) 0%, transparent 70%)",
+                    aurora: "linear-gradient(110deg, transparent 15%, rgba(16, 185, 129, 0.18) 45%, rgba(0, 212, 255, 0.14) 75%, transparent 92%)",
+                    auroraOpacity: "0.65",
+                    pattern: "none",
+                    patternSize: "auto",
+                    patternOpacity: "0",
+                    wavesDisplay: "none",
+                    mode: "stars",
+                    particles: ["#6ee7b7", "#34d399", "#a7f3d0", "#ffffff"],
+                    links: "16, 185, 129",
+                    hoverLink: "110, 231, 183",
+                    shootingStars: true,
+                    driftUp: true
+                },
+                {
+                    name: "Nocturne Magenta & Black Hole",
+                    base: "radial-gradient(circle at 65% 20%, #24071d 0%, #0b0209 55%, #010001 100%)",
+                    blob1: "radial-gradient(circle, rgba(236, 72, 153, 0.25) 0%, transparent 70%)",
+                    blob2: "radial-gradient(circle, rgba(139, 92, 246, 0.22) 0%, transparent 70%)",
+                    blob3: "radial-gradient(circle, rgba(157, 23, 77, 0.22) 0%, transparent 70%)",
+                    aurora: "none",
+                    auroraOpacity: "0",
+                    pattern: "none",
+                    patternSize: "auto",
+                    patternOpacity: "0",
+                    wavesDisplay: "none",
+                    mode: "constellation",
+                    particles: ["#f472b6", "#c084fc", "#f9a8d4", "#ffffff"],
+                    links: "236, 72, 153",
+                    hoverLink: "192, 132, 252",
+                    shootingStars: true,
+                    driftUp: false
+                },
+                {
+                    name: "Deep Cobalt & Circuit Nodes",
+                    base: "linear-gradient(150deg, #030712 0%, #07132b 50%, #02050d 100%)",
+                    blob1: "radial-gradient(circle, rgba(37, 99, 235, 0.28) 0%, transparent 70%)",
+                    blob2: "radial-gradient(circle, rgba(0, 212, 255, 0.2) 0%, transparent 70%)",
+                    blob3: "radial-gradient(circle, rgba(29, 78, 216, 0.22) 0%, transparent 70%)",
+                    aurora: "none",
+                    auroraOpacity: "0",
+                    pattern: "radial-gradient(rgba(96, 165, 250, 0.22) 1.2px, transparent 1.2px)",
+                    patternSize: "32px 32px",
+                    patternOpacity: "0.45",
+                    wavesDisplay: "none",
+                    mode: "constellation",
+                    particles: ["#60a5fa", "#00d4ff", "#bfdbfe", "#ffffff"],
+                    links: "37, 99, 235",
+                    hoverLink: "0, 212, 255",
+                    shootingStars: false,
+                    driftUp: false
+                },
+                {
+                    name: "Dark Bronze & Ancient Relic",
+                    base: "radial-gradient(circle at 30% 10%, #1c1108 0%, #090503 58%, #020101 100%)",
+                    blob1: "radial-gradient(circle, rgba(217, 119, 6, 0.22) 0%, transparent 70%)",
+                    blob2: "radial-gradient(circle, rgba(180, 83, 9, 0.18) 0%, transparent 70%)",
+                    blob3: "radial-gradient(circle, rgba(120, 53, 15, 0.2) 0%, transparent 70%)",
+                    aurora: "none",
+                    auroraOpacity: "0",
+                    pattern: "radial-gradient(rgba(251, 191, 36, 0.14) 1px, transparent 1px)",
+                    patternSize: "38px 38px",
+                    patternOpacity: "0.35",
+                    wavesDisplay: "none",
+                    mode: "stars",
+                    particles: ["#fbbf24", "#f59e0b", "#fde68a", "#ffffff"],
+                    links: "217, 119, 6",
+                    hoverLink: "251, 191, 36",
+                    shootingStars: false,
+                    driftUp: false
+                },
+                {
+                    name: "Void Indigo & Deep Horizon",
+                    base: "radial-gradient(ellipse at 50% 15%, #111336 0%, #060717 55%, #010206 100%)",
+                    blob1: "radial-gradient(circle, rgba(129, 140, 248, 0.24) 0%, transparent 70%)",
+                    blob2: "radial-gradient(circle, rgba(56, 189, 248, 0.2) 0%, transparent 70%)",
+                    blob3: "radial-gradient(circle, rgba(79, 70, 229, 0.22) 0%, transparent 70%)",
+                    aurora: "linear-gradient(125deg, transparent 15%, rgba(129, 140, 248, 0.2) 50%, rgba(56, 189, 248, 0.18) 80%, transparent 95%)",
+                    auroraOpacity: "0.68",
+                    pattern: "none",
+                    patternSize: "auto",
+                    patternOpacity: "0",
+                    wavesDisplay: "none",
+                    mode: "stars",
+                    particles: ["#a5b4fc", "#38bdf8", "#e0e7ff", "#ffffff"],
+                    links: "129, 140, 248",
+                    hoverLink: "56, 189, 248",
+                    shootingStars: true,
+                    driftUp: false
+                }
+            ];
 
-            const starCount = 34;
-            const tones = ["cyan", "white", "emerald", "cyan", "white"];
+            // Pick a theme different from the immediately previous visit/return
+            let lastIndex = -1;
+            try {
+                const saved = sessionStorage.getItem("itlLastDarkThemeIndex");
+                if (saved !== null) lastIndex = parseInt(saved, 10);
+            } catch (e) {}
+
+            let nextIndex = Math.floor(Math.random() * DARK_THEMES.length);
+            if (DARK_THEMES.length > 1 && nextIndex === lastIndex) {
+                nextIndex = (nextIndex + 1 + Math.floor(Math.random() * (DARK_THEMES.length - 1))) % DARK_THEMES.length;
+            }
+
+            try {
+                sessionStorage.setItem("itlLastDarkThemeIndex", String(nextIndex));
+            } catch (e) {}
+
+            const theme = DARK_THEMES[nextIndex];
+            const root = document.documentElement;
+            root.style.setProperty("--bg-base", theme.base);
+            root.style.setProperty("--bg-blob-1", theme.blob1);
+            root.style.setProperty("--bg-blob-2", theme.blob2);
+            root.style.setProperty("--bg-blob-3", theme.blob3);
+            root.style.setProperty("--bg-aurora", theme.aurora);
+            root.style.setProperty("--bg-aurora-opacity", theme.auroraOpacity);
+            root.style.setProperty("--bg-pattern", theme.pattern);
+            root.style.setProperty("--bg-pattern-size", theme.patternSize);
+            root.style.setProperty("--bg-pattern-opacity", theme.patternOpacity);
+            root.style.setProperty("--bg-waves-display", theme.wavesDisplay);
+
+            // Render Canvas Particles / Constellation / Shooting Stars for Selected Dark Theme
+            const canvas = document.getElementById("cosmic-bg-canvas");
+            if (!canvas) return;
+            const ctx = canvas.getContext("2d");
+
+            let width = canvas.width = window.innerWidth;
+            let height = canvas.height = window.innerHeight;
+
+            const mouse = { x: null, y: null, radius: 135 };
+
+            window.addEventListener("mousemove", (e) => {
+                mouse.x = e.clientX;
+                mouse.y = e.clientY;
+            }, { passive: true });
+
+            window.addEventListener("touchmove", (e) => {
+                if (e.touches.length > 0) {
+                    mouse.x = e.touches[0].clientX;
+                    mouse.y = e.touches[0].clientY;
+                }
+            }, { passive: true });
+
+            window.addEventListener("mouseleave", () => {
+                mouse.x = null;
+                mouse.y = null;
+            });
+
+            window.addEventListener("resize", () => {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+            });
+
+            function hexToRgb(hex) {
+                const clean = hex.replace("#", "");
+                const num = parseInt(clean, 16);
+                return {
+                    r: (num >> 16) & 255,
+                    g: (num >> 8) & 255,
+                    b: num & 255
+                };
+            }
+
+            const rgbPalette = theme.particles.map(hexToRgb);
+            const starCount = width < 600 ? 44 : 74;
+            const stars = [];
 
             for (let i = 0; i < starCount; i++) {
-                const star = document.createElement("span");
-                const size = (Math.random() * 2.6 + 1.5).toFixed(1);
-                const top = (Math.random() * 88).toFixed(1);
-                const left = (Math.random() * 98).toFixed(1);
-                const duration = (Math.random() * 4 + 3.2).toFixed(1);
-                const delay = (Math.random() * 4).toFixed(1);
-                const animName = i % 3 === 0 ? "starDriftSlow" : "starTwinkleSoft";
-
-                star.className = "bg-star " + tones[i % tones.length];
-                star.style.width = size + "px";
-                star.style.height = size + "px";
-                star.style.top = top + "%";
-                star.style.left = left + "%";
-                star.style.animation = `${animName} ${duration}s ease-in-out ${delay}s infinite`;
-
-                starsContainer.appendChild(star);
+                const color = rgbPalette[i % rgbPalette.length];
+                stars.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height * 0.88,
+                    vx: (Math.random() - 0.5) * 0.36,
+                    vy: theme.driftUp
+                        ? -(Math.random() * 0.32 + 0.12)
+                        : (Math.random() - 0.5) * 0.32,
+                    radius: Math.random() * 1.9 + 0.85,
+                    alpha: Math.random() * 0.58 + 0.25,
+                    pulseSpeed: Math.random() * 0.02 + 0.008,
+                    pulsePhase: Math.random() * Math.PI * 2,
+                    color
+                });
             }
+
+            const shootingStars = [];
+            function spawnShootingStar() {
+                if (theme.shootingStars && shootingStars.length < 2 && Math.random() < 0.014) {
+                    shootingStars.push({
+                        x: Math.random() * width * 0.85,
+                        y: Math.random() * height * 0.35,
+                        len: Math.random() * 90 + 60,
+                        speed: Math.random() * 6.5 + 5.5,
+                        angle: Math.PI / 5 + (Math.random() * 0.16),
+                        life: 1
+                    });
+                }
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+
+                for (let i = 0; i < stars.length; i++) {
+                    const s = stars[i];
+                    s.x += s.vx;
+                    s.y += s.vy;
+                    s.pulsePhase += s.pulseSpeed;
+
+                    if (s.x < 0) s.x = width;
+                    if (s.x > width) s.x = 0;
+                    if (s.y < 0) s.y = height * 0.88;
+                    if (s.y > height * 0.88) s.y = 0;
+
+                    const twinkleAlpha = s.alpha * (0.65 + 0.35 * Math.sin(s.pulsePhase));
+
+                    ctx.beginPath();
+                    ctx.arc(s.x, s.y, s.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(${s.color.r}, ${s.color.g}, ${s.color.b}, ${twinkleAlpha})`;
+                    ctx.shadowBlur = 7;
+                    ctx.shadowColor = `rgba(${s.color.r}, ${s.color.g}, ${s.color.b}, 0.8)`;
+                    ctx.fill();
+                    ctx.shadowBlur = 0;
+
+                    if (theme.mode === "constellation") {
+                        for (let j = i + 1; j < stars.length; j++) {
+                            const s2 = stars[j];
+                            const dx = s.x - s2.x;
+                            const dy = s.y - s2.y;
+                            const dist = Math.hypot(dx, dy);
+
+                            if (dist < 112) {
+                                const lineAlpha = (1 - dist / 112) * 0.2;
+                                ctx.beginPath();
+                                ctx.moveTo(s.x, s.y);
+                                ctx.lineTo(s2.x, s2.y);
+                                ctx.strokeStyle = `rgba(${theme.links}, ${lineAlpha})`;
+                                ctx.lineWidth = 0.8;
+                                ctx.stroke();
+                            }
+                        }
+                    }
+
+                    if (mouse.x !== null && mouse.y !== null) {
+                        const mdx = s.x - mouse.x;
+                        const mdy = s.y - mouse.y;
+                        const mDist = Math.hypot(mdx, mdy);
+                        if (mDist < mouse.radius) {
+                            const mAlpha = (1 - mDist / mouse.radius) * 0.5;
+                            ctx.beginPath();
+                            ctx.moveTo(s.x, s.y);
+                            ctx.lineTo(mouse.x, mouse.y);
+                            ctx.strokeStyle = `rgba(${theme.hoverLink}, ${mAlpha})`;
+                            ctx.lineWidth = 1.05;
+                            ctx.stroke();
+                        }
+                    }
+                }
+
+                spawnShootingStar();
+                for (let k = shootingStars.length - 1; k >= 0; k--) {
+                    const ss = shootingStars[k];
+                    const endX = ss.x - Math.cos(ss.angle) * ss.len;
+                    const endY = ss.y - Math.sin(ss.angle) * ss.len;
+
+                    const grad = ctx.createLinearGradient(ss.x, ss.y, endX, endY);
+                    grad.addColorStop(0, `rgba(255, 255, 255, ${ss.life})`);
+                    grad.addColorStop(0.35, `rgba(${theme.links}, ${ss.life * 0.72})`);
+                    grad.addColorStop(1, `rgba(${theme.links}, 0)`);
+
+                    ctx.beginPath();
+                    ctx.moveTo(ss.x, ss.y);
+                    ctx.lineTo(endX, endY);
+                    ctx.strokeStyle = grad;
+                    ctx.lineWidth = 2;
+                    ctx.stroke();
+
+                    ss.x += Math.cos(ss.angle) * ss.speed;
+                    ss.y += Math.sin(ss.angle) * ss.speed;
+                    ss.life -= 0.016;
+
+                    if (ss.life <= 0 || ss.x > width + 100 || ss.y > height) {
+                        shootingStars.splice(k, 1);
+                    }
+                }
+
+                requestAnimationFrame(animate);
+            }
+
+            animate();
         })();
 
         // Subtle Background Parallax on Scroll
         window.addEventListener("scroll", function() {
-            const parallaxOffset = -(window.scrollY * 0.24);
+            const parallaxOffset = -(window.scrollY * 0.22);
             document.documentElement.style.setProperty("--bg-parallax", parallaxOffset + "px");
         }, { passive: true });
 
