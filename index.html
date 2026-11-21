@@ -39,77 +39,236 @@
             width: 100%;
         }
 
-        /* Splash Screen Styles */
+        /* Enhanced Cosmic Splash Screen Styles */
         #it-splash {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: #0b0b0b;
+            background: radial-gradient(circle at center, #0e2238 0%, #060911 65%, #000000 100%);
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 10000;
-            transition: opacity 0.6s ease-in-out;
+            overflow: hidden;
+            transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
         }
 
-        .splash-content { text-align: center; padding: 20px; }
+        /* Subtle Ambient Star Dots */
+        #it-splash::before {
+            content: '';
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.16) 0%, transparent 70%);
+            filter: blur(18px);
+            animation: ambientBreath 3s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .splash-stars {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .splash-stars span {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: #ffffff;
+            box-shadow: 0 0 8px #00d4ff;
+            opacity: 0.2;
+            animation: twinkle 2.4s infinite ease-in-out;
+        }
+
+        .splash-stars span:nth-child(1) { top: 18%; left: 22%; animation-delay: 0s; }
+        .splash-stars span:nth-child(2) { top: 26%; right: 24%; width: 4px; height: 4px; background: #00ff88; animation-delay: 0.4s; }
+        .splash-stars span:nth-child(3) { bottom: 24%; left: 18%; background: #00d4ff; animation-delay: 0.8s; }
+        .splash-stars span:nth-child(4) { bottom: 20%; right: 20%; animation-delay: 1.2s; }
+        .splash-stars span:nth-child(5) { top: 42%; left: 12%; width: 2px; height: 2px; animation-delay: 1.6s; }
+        .splash-stars span:nth-child(6) { top: 55%; right: 14%; width: 2px; height: 2px; background: #00ff88; animation-delay: 2s; }
+
+        .splash-content {
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Orbiting Rings Container */
+        .logo-wrapper {
+            position: relative;
+            width: 152px;
+            height: 152px;
+            margin: 0 auto 22px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .orbit-ring {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .ring-outer {
+            width: 146px;
+            height: 146px;
+            border: 2px solid transparent;
+            border-top: 2px solid #00d4ff;
+            border-bottom: 2px solid rgba(0, 212, 255, 0.25);
+            box-shadow: 0 0 16px rgba(0, 212, 255, 0.25);
+            animation: spinClockwise 2.6s linear infinite;
+        }
+
+        /* Glowing Node on Outer Ring */
+        .ring-outer::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ffffff;
+            box-shadow: 0 0 12px #00d4ff, 0 0 20px #00d4ff;
+        }
+
+        .ring-inner {
+            width: 124px;
+            height: 124px;
+            border: 2px solid transparent;
+            border-left: 2px solid #00ff88;
+            border-right: 2px solid rgba(0, 255, 136, 0.22);
+            animation: spinCounterClockwise 1.9s linear infinite;
+        }
 
         .logo-circle {
             width: 100px;
             height: 100px;
-            margin: 0 auto 20px;
             border-radius: 50%;
             overflow: hidden;
             border: 2px solid #00d4ff;
-            animation: pulse 2s infinite;
+            box-shadow: 0 0 25px rgba(0, 212, 255, 0.55);
+            animation: logoReveal 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards, pulseGlow 2.2s infinite ease-in-out;
+            z-index: 2;
         }
 
-        .logo-circle img { width: 100%; height: 100%; object-fit: cover; }
+        .logo-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
         .splash-title {
-            color: #fff;
-            font-size: 32px;
-            letter-spacing: 4px;
+            color: #ffffff;
+            font-size: 38px;
+            font-weight: 800;
+            letter-spacing: 9px;
             margin: 0;
-            text-shadow: 0 0 15px #00d4ff;
+            padding-left: 9px;
+            text-shadow: 0 0 12px rgba(0, 212, 255, 0.85), 0 0 30px rgba(0, 212, 255, 0.45);
+            opacity: 0;
+            transform: translateY(10px);
+            animation: textSlideUp 0.8s ease forwards 0.25s;
         }
 
         .splash-desc {
-            color: #00d4ff;
-            font-size: 13px;
-            margin: 10px 0 25px;
+            color: #8ceeff;
+            font-size: 12px;
+            margin: 10px 0 26px;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 2.6px;
             opacity: 0;
-            animation: fadeIn 1s forwards 0.5s;
+            transform: translateY(8px);
+            animation: textSlideUp 0.8s ease forwards 0.45s;
         }
 
         .loading-bar {
-            width: 140px;
-            height: 3px;
-            background: #1a1a1a;
+            width: 190px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.08);
             margin: 0 auto;
             border-radius: 10px;
             overflow: hidden;
+            position: relative;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.85);
         }
 
         .progress {
             width: 0%;
             height: 100%;
-            background: #00d4ff;
-            animation: loadProgress 1.8s ease-in-out forwards;
+            background: linear-gradient(90deg, #0077b6, #00d4ff, #00ff88);
+            border-radius: 10px;
+            box-shadow: 0 0 14px #00d4ff;
+            position: relative;
+            animation: loadProgress 1.9s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.4); }
-            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(0, 212, 255, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 212, 255, 0); }
+        .progress::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 24px;
+            height: 100%;
+            background: #ffffff;
+            filter: blur(3px);
+            opacity: 0.85;
         }
-        @keyframes fadeIn { to { opacity: 1; } }
-        @keyframes loadProgress { to { width: 100%; } }
-        .fade-out { opacity: 0 !important; pointer-events: none; }
+
+        @keyframes spinClockwise {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes spinCounterClockwise {
+            0% { transform: rotate(360deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        @keyframes logoReveal {
+            0% { opacity: 0; transform: scale(0.7); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 18px rgba(0, 212, 255, 0.45); }
+            50% { box-shadow: 0 0 34px rgba(0, 212, 255, 0.9); }
+        }
+
+        @keyframes textSlideUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes loadProgress {
+            0% { width: 0%; }
+            40% { width: 55%; }
+            80% { width: 85%; }
+            100% { width: 100%; }
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.15; transform: scale(0.9); }
+            50% { opacity: 0.95; transform: scale(1.35); }
+        }
+
+        @keyframes ambientBreath {
+            0%, 100% { transform: scale(0.95); opacity: 0.7; }
+            50% { transform: scale(1.15); opacity: 1; }
+        }
+
+        .fade-out {
+            opacity: 0 !important;
+            transform: scale(1.06);
+            pointer-events: none;
+        }
 
         /* Buttons responsive size */
         .share-thoughts-btn, .help-grow-btn, .about-btn {
@@ -437,9 +596,16 @@
 <body>
 
     <div id="it-splash">
+        <div class="splash-stars">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
         <div class="splash-content">
-            <div class="logo-circle">
-                <img src="images/ITL.jpeg" alt="ITL Logo">
+            <div class="logo-wrapper">
+                <div class="orbit-ring ring-outer"></div>
+                <div class="orbit-ring ring-inner"></div>
+                <div class="logo-circle">
+                    <img src="images/ITL.jpeg" alt="ITL Logo">
+                </div>
             </div>
             <h2 class="splash-title">ITL</h2>
             <p class="splash-desc">The Laboratory for Curious Minds</p>
@@ -644,7 +810,7 @@
                 splash.classList.add("fade-out");
                 setTimeout(() => {
                     splash.style.display = "none";
-                }, 600); 
+                }, 700); 
             }, 2200); 
         });
 
