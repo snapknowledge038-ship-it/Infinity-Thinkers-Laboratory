@@ -30,7 +30,9 @@
         /* Basic Settings - Responsive Fix */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #050914 0%, #091326 45%, #060b14 100%);
+            background: linear-gradient(-45deg, #040814, #081c36, #0a1226, #041d24);
+            background-size: 320% 320%;
+            animation: gradientFlow 16s ease infinite;
             background-attachment: fixed;
             color: #e0e0e0;
             margin: 0;
@@ -41,14 +43,23 @@
             position: relative;
         }
 
-        /* Subtle Dot Grid Pattern Layer */
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Subtle Dot Grid + Line Pattern Layer */
         body::before {
             content: '';
             position: fixed;
             inset: 0;
-            background-image: radial-gradient(rgba(0, 212, 255, 0.14) 1px, transparent 1px);
-            background-size: 26px 26px;
-            opacity: 0.55;
+            background-image:
+                radial-gradient(rgba(0, 212, 255, 0.24) 1.25px, transparent 1.25px),
+                linear-gradient(to right, rgba(0, 212, 255, 0.04) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 212, 255, 0.04) 1px, transparent 1px);
+            background-size: 28px 28px, 112px 112px, 112px 112px;
+            opacity: 0.75;
             pointer-events: none;
             z-index: -2;
         }
@@ -64,55 +75,70 @@
             will-change: transform;
         }
 
+        .bg-waves-svg {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 120%;
+            height: 240px;
+            opacity: 0.22;
+            animation: waveDrift 14s ease-in-out infinite alternate;
+        }
+
+        @keyframes waveDrift {
+            0% { transform: translateX(0px) translateY(0px); }
+            100% { transform: translateX(-6%) translateY(-10px); }
+        }
+
         .bg-blob {
             position: absolute;
             border-radius: 50%;
-            filter: blur(85px);
-            opacity: 0.28;
+            filter: blur(75px);
+            opacity: 0.44;
             will-change: transform;
         }
 
         .bg-blob-cyan {
-            width: 360px;
-            height: 360px;
-            top: -80px;
-            left: -90px;
-            background: radial-gradient(circle, #00d4ff 0%, transparent 70%);
-            animation: floatBlobA 18s ease-in-out infinite alternate;
+            width: 420px;
+            height: 420px;
+            top: -70px;
+            left: -80px;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.85) 0%, rgba(0, 212, 255, 0) 70%);
+            animation: floatBlobA 13s ease-in-out infinite alternate;
         }
 
         .bg-blob-emerald {
-            width: 320px;
-            height: 320px;
-            bottom: 6%;
-            right: -80px;
-            background: radial-gradient(circle, #00ff88 0%, transparent 70%);
-            animation: floatBlobB 22s ease-in-out infinite alternate;
+            width: 390px;
+            height: 390px;
+            bottom: 8%;
+            right: -70px;
+            background: radial-gradient(circle, rgba(0, 255, 136, 0.72) 0%, rgba(0, 255, 136, 0) 70%);
+            animation: floatBlobB 15s ease-in-out infinite alternate;
         }
 
         .bg-blob-indigo {
-            width: 300px;
-            height: 300px;
-            top: 42%;
-            left: 55%;
-            background: radial-gradient(circle, #2563eb 0%, transparent 70%);
-            opacity: 0.2;
-            animation: floatBlobC 26s ease-in-out infinite alternate;
+            width: 360px;
+            height: 360px;
+            top: 38%;
+            left: 48%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.78) 0%, rgba(59, 130, 246, 0) 70%);
+            opacity: 0.36;
+            animation: floatBlobC 17s ease-in-out infinite alternate;
         }
 
         @keyframes floatBlobA {
-            0% { transform: translate(0px, 0px) scale(1); }
-            100% { transform: translate(75px, 60px) scale(1.12); }
+            0% { transform: translate(0px, 0px) scale(0.95); }
+            100% { transform: translate(115px, 85px) scale(1.18); }
         }
 
         @keyframes floatBlobB {
             0% { transform: translate(0px, 0px) scale(1); }
-            100% { transform: translate(-70px, -55px) scale(1.1); }
+            100% { transform: translate(-110px, -80px) scale(1.16); }
         }
 
         @keyframes floatBlobC {
-            0% { transform: translate(0px, 0px) scale(0.95); }
-            100% { transform: translate(-50px, 45px) scale(1.15); }
+            0% { transform: translate(0px, 0px) scale(0.92); }
+            100% { transform: translate(-90px, 75px) scale(1.2); }
         }
 
         /* Enhanced Cosmic Splash Screen Styles */
@@ -362,14 +388,14 @@
         
         /* New Navigation Bar Header */
         nav {
-            background-color: rgba(20, 24, 34, 0.78);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            background-color: rgba(15, 23, 42, 0.72);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
             padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(0, 212, 255, 0.22);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.28);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -537,16 +563,16 @@
         /* Glassmorphism Card over Background */
         .description {
             font-size: 18px;
-            color: #d6e4f0;
+            color: #e2f1ff;
             text-align: left;
-            background: rgba(18, 28, 45, 0.58);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            background: rgba(12, 24, 42, 0.48);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
             padding: 20px;
-            border-radius: 12px;
-            border: 1px solid rgba(0, 212, 255, 0.22);
+            border-radius: 14px;
+            border: 1px solid rgba(0, 212, 255, 0.3);
             border-left: 5px solid #00d4ff;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.42);
         }
 
         .mcq-container {
@@ -577,9 +603,9 @@
             padding: 15px 40px;
             border-radius: 12px;
             text-transform: uppercase;
-            background: rgba(10, 22, 38, 0.45);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
+            background: rgba(10, 24, 44, 0.42);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
         .discover-list {
@@ -593,21 +619,21 @@
 
         .discover-list a { text-decoration: none; display: block; }
         .discover-list li {
-            background: rgba(20, 32, 52, 0.58);
+            background: rgba(14, 28, 48, 0.52);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             padding: 8px 20px;
             border-radius: 50px;
-            border: 1px solid rgba(0, 212, 255, 0.25);
+            border: 1px solid rgba(0, 212, 255, 0.32);
             color: white;
             font-weight: bold;
             font-size: 14px;
             transition: 0.3s;
         }
         .discover-list a:hover li {
-            background: rgba(0, 212, 255, 0.16);
+            background: rgba(0, 212, 255, 0.2);
             border-color: #00d4ff;
-            box-shadow: 0 0 14px rgba(0, 212, 255, 0.25);
+            box-shadow: 0 0 16px rgba(0, 212, 255, 0.32);
         }
         
         h2 { color: #00d4ff; font-size: 28px; margin-top: 30px; }
@@ -700,6 +726,10 @@
         <div class="bg-blob bg-blob-cyan"></div>
         <div class="bg-blob bg-blob-emerald"></div>
         <div class="bg-blob bg-blob-indigo"></div>
+        <svg class="bg-waves-svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+            <path fill="none" stroke="rgba(0, 212, 255, 0.55)" stroke-width="2" d="M0,192L80,181.3C160,171,320,149,480,165.3C640,181,800,235,960,234.7C1120,235,1280,181,1360,154.7L1440,128"></path>
+            <path fill="none" stroke="rgba(0, 255, 136, 0.35)" stroke-width="1.5" d="M0,240L120,224C240,208,480,176,720,186.7C960,197,1200,251,1320,277.3L1440,304"></path>
+        </svg>
     </div>
 
     <div id="it-splash">
@@ -878,7 +908,7 @@
     <script>
         // Subtle Background Parallax on Scroll
         window.addEventListener("scroll", function() {
-            const parallaxOffset = -(window.scrollY * 0.14);
+            const parallaxOffset = -(window.scrollY * 0.24);
             document.documentElement.style.setProperty("--bg-parallax", parallaxOffset + "px");
         }, { passive: true });
 
