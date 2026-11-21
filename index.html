@@ -142,16 +142,17 @@
             100% { transform: translate(-75px, 60px) scale(1.18); }
         }
 
-        /* Prominent Soft Animated Bottom Waves (Shown on Wave Theme) */
+        /* Prominent Soft Animated Bottom Waves */
         .bg-waves-wrap {
             display: var(--bg-waves-display, none);
-            position: absolute;
-            bottom: -12px;
+            position: fixed;
+            bottom: -10px;
             left: 0;
             width: 100%;
             height: 290px;
             overflow: hidden;
             pointer-events: none;
+            z-index: 0;
         }
 
         .bg-waves-svg {
@@ -613,6 +614,8 @@
             padding: 15px;
             box-sizing: border-box;
             text-align: center;
+            position: relative;
+            z-index: 1;
         }
 
         /* Glassmorphism Card over Background */
@@ -787,45 +790,45 @@
         <div class="bg-blob bg-blob-1"></div>
         <div class="bg-blob bg-blob-2"></div>
         <div class="bg-blob bg-blob-3"></div>
+    </div>
 
-        <!-- Animated Bottom Waves (Active on Wave Theme) -->
-        <div class="bg-waves-wrap">
-            <svg class="bg-waves-svg wave-back" viewBox="0 0 2880 320" preserveAspectRatio="none">
-                <defs>
-                    <linearGradient id="waveGradBack" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stop-color="rgba(0, 212, 255, 0.25)" />
-                        <stop offset="50%" stop-color="rgba(99, 102, 241, 0.34)" />
-                        <stop offset="100%" stop-color="rgba(0, 212, 255, 0.25)" />
-                    </linearGradient>
-                </defs>
-                <path fill="url(#waveGradBack)" d="M0,192 C240,110 480,260 720,185 C960,110 1200,245 1440,192 C1680,110 1920,260 2160,185 C2400,110 2640,245 2880,192 L2880,320 L0,320 Z"></path>
-                <path fill="none" stroke="rgba(0, 212, 255, 0.58)" stroke-width="2" d="M0,192 C240,110 480,260 720,185 C960,110 1200,245 1440,192 C1680,110 1920,260 2160,185 C2400,110 2640,245 2880,192"></path>
-            </svg>
+    <!-- Animated Bottom Waves (Active on Wave Themes) -->
+    <div class="bg-waves-wrap" aria-hidden="true">
+        <svg class="bg-waves-svg wave-back" viewBox="0 0 2880 320" preserveAspectRatio="none">
+            <defs>
+                <linearGradient id="waveGradBack" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="rgba(0, 212, 255, 0.25)" />
+                    <stop offset="50%" stop-color="rgba(99, 102, 241, 0.34)" />
+                    <stop offset="100%" stop-color="rgba(0, 212, 255, 0.25)" />
+                </linearGradient>
+            </defs>
+            <path fill="url(#waveGradBack)" d="M0,192 C240,110 480,260 720,185 C960,110 1200,245 1440,192 C1680,110 1920,260 2160,185 C2400,110 2640,245 2880,192 L2880,320 L0,320 Z"></path>
+            <path fill="none" stroke="rgba(0, 212, 255, 0.58)" stroke-width="2" d="M0,192 C240,110 480,260 720,185 C960,110 1200,245 1440,192 C1680,110 1920,260 2160,185 C2400,110 2640,245 2880,192"></path>
+        </svg>
 
-            <svg class="bg-waves-svg wave-mid" viewBox="0 0 2880 320" preserveAspectRatio="none">
-                <defs>
-                    <linearGradient id="waveGradMid" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stop-color="rgba(0, 255, 136, 0.18)" />
-                        <stop offset="50%" stop-color="rgba(0, 212, 255, 0.36)" />
-                        <stop offset="100%" stop-color="rgba(0, 255, 136, 0.18)" />
-                    </linearGradient>
-                </defs>
-                <path fill="url(#waveGradMid)" d="M0,224 C300,150 540,290 720,220 C960,130 1200,275 1440,224 C1740,150 1980,290 2160,220 C2400,130 2640,275 2880,224 L2880,320 L0,320 Z"></path>
-                <path fill="none" stroke="rgba(0, 255, 136, 0.5)" stroke-width="2" d="M0,224 C300,150 540,290 720,220 C960,130 1200,275 1440,224 C1740,150 1980,290 2160,220 C2400,130 2640,275 2880,224"></path>
-            </svg>
+        <svg class="bg-waves-svg wave-mid" viewBox="0 0 2880 320" preserveAspectRatio="none">
+            <defs>
+                <linearGradient id="waveGradMid" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="rgba(0, 255, 136, 0.18)" />
+                    <stop offset="50%" stop-color="rgba(0, 212, 255, 0.36)" />
+                    <stop offset="100%" stop-color="rgba(0, 255, 136, 0.18)" />
+                </linearGradient>
+            </defs>
+            <path fill="url(#waveGradMid)" d="M0,224 C300,150 540,290 720,220 C960,130 1200,275 1440,224 C1740,150 1980,290 2160,220 C2400,130 2640,275 2880,224 L2880,320 L0,320 Z"></path>
+            <path fill="none" stroke="rgba(0, 255, 136, 0.5)" stroke-width="2" d="M0,224 C300,150 540,290 720,220 C960,130 1200,275 1440,224 C1740,150 1980,290 2160,220 C2400,130 2640,275 2880,224"></path>
+        </svg>
 
-            <svg class="bg-waves-svg wave-front" viewBox="0 0 2880 320" preserveAspectRatio="none">
-                <defs>
-                    <linearGradient id="waveGradFront" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stop-color="rgba(0, 212, 255, 0.28)" />
-                        <stop offset="50%" stop-color="rgba(0, 255, 136, 0.26)" />
-                        <stop offset="100%" stop-color="rgba(0, 212, 255, 0.28)" />
-                    </linearGradient>
-                </defs>
-                <path fill="url(#waveGradFront)" d="M0,256 C240,205 480,305 720,248 C960,190 1200,295 1440,256 C1680,205 1920,305 2160,248 C2400,190 2640,295 2880,256 L2880,320 L0,320 Z"></path>
-                <path fill="none" stroke="rgba(140, 238, 255, 0.78)" stroke-width="2.2" d="M0,256 C240,205 480,305 720,248 C960,190 1200,295 1440,256 C1680,205 1920,305 2160,248 C2400,190 2640,295 2880,256"></path>
-            </svg>
-        </div>
+        <svg class="bg-waves-svg wave-front" viewBox="0 0 2880 320" preserveAspectRatio="none">
+            <defs>
+                <linearGradient id="waveGradFront" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="rgba(0, 212, 255, 0.28)" />
+                    <stop offset="50%" stop-color="rgba(0, 255, 136, 0.26)" />
+                    <stop offset="100%" stop-color="rgba(0, 212, 255, 0.28)" />
+                </linearGradient>
+            </defs>
+            <path fill="url(#waveGradFront)" d="M0,256 C240,205 480,305 720,248 C960,190 1200,295 1440,256 C1680,205 1920,305 2160,248 C2400,190 2640,295 2880,256 L2880,320 L0,320 Z"></path>
+            <path fill="none" stroke="rgba(140, 238, 255, 0.78)" stroke-width="2.2" d="M0,256 C240,205 480,305 720,248 C960,190 1200,295 1440,256 C1680,205 1920,305 2160,248 C2400,190 2640,295 2880,256"></path>
+        </svg>
     </div>
 
     <div id="it-splash">
@@ -1002,7 +1005,7 @@
     </div>
 
     <script>
-        // 14 Distinct Dark Backgrounds (Rotates Every Time You Visit / Return to Page)
+        // 16 Dark Backgrounds (Rotates Every Time You Visit / Return to Page, Including Wave Themes)
         (function initRotatingDarkBackgrounds() {
             const DARK_THEMES = [
                 {
@@ -1044,6 +1047,25 @@
                     driftUp: false
                 },
                 {
+                    name: "Abyssal Wave Trench",
+                    base: "radial-gradient(circle at 65% 12%, #072238 0%, #030e1c 55%, #010409 100%)",
+                    blob1: "radial-gradient(circle, rgba(0, 212, 255, 0.3) 0%, transparent 70%)",
+                    blob2: "radial-gradient(circle, rgba(59, 130, 246, 0.24) 0%, transparent 70%)",
+                    blob3: "radial-gradient(circle, rgba(6, 182, 212, 0.2) 0%, transparent 70%)",
+                    aurora: "none",
+                    auroraOpacity: "0",
+                    pattern: "none",
+                    patternSize: "auto",
+                    patternOpacity: "0",
+                    wavesDisplay: "block",
+                    mode: "stars",
+                    particles: ["#00d4ff", "#7dd3fc", "#ffffff"],
+                    links: "0, 212, 255",
+                    hoverLink: "125, 211, 252",
+                    shootingStars: true,
+                    driftUp: false
+                },
+                {
                     name: "Shadow Quantum Matrix",
                     base: "linear-gradient(160deg, #020408 0%, #05111a 50%, #02070c 100%)",
                     blob1: "radial-gradient(circle, rgba(0, 255, 136, 0.22) 0%, transparent 70%)",
@@ -1080,6 +1102,25 @@
                     hoverLink: "192, 132, 252",
                     shootingStars: true,
                     driftUp: false
+                },
+                {
+                    name: "Emerald Wave Mist",
+                    base: "radial-gradient(ellipse at 25% 15%, #062426 0%, #031117 55%, #010508 100%)",
+                    blob1: "radial-gradient(circle, rgba(0, 255, 136, 0.26) 0%, transparent 70%)",
+                    blob2: "radial-gradient(circle, rgba(0, 212, 255, 0.24) 0%, transparent 70%)",
+                    blob3: "radial-gradient(circle, rgba(16, 185, 129, 0.2) 0%, transparent 70%)",
+                    aurora: "linear-gradient(115deg, transparent 12%, rgba(0, 255, 136, 0.18) 40%, rgba(0, 212, 255, 0.2) 70%, transparent 92%)",
+                    auroraOpacity: "0.68",
+                    pattern: "none",
+                    patternSize: "auto",
+                    patternOpacity: "0",
+                    wavesDisplay: "block",
+                    mode: "constellation",
+                    particles: ["#00ff88", "#00d4ff", "#a7f3d0", "#ffffff"],
+                    links: "0, 212, 255",
+                    hoverLink: "0, 255, 136",
+                    shootingStars: false,
+                    driftUp: true
                 },
                 {
                     name: "Midnight Ember & Crimson Core",
