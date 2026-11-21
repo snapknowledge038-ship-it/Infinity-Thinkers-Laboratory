@@ -30,13 +30,89 @@
         /* Basic Settings - Responsive Fix */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0b0b0b;
+            background: linear-gradient(135deg, #050914 0%, #091326 45%, #060b14 100%);
+            background-attachment: fixed;
             color: #e0e0e0;
             margin: 0;
             padding: 0;
             line-height: 1.6;
             overflow-x: hidden; 
             width: 100%;
+            position: relative;
+        }
+
+        /* Subtle Dot Grid Pattern Layer */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: radial-gradient(rgba(0, 212, 255, 0.14) 1px, transparent 1px);
+            background-size: 26px 26px;
+            opacity: 0.55;
+            pointer-events: none;
+            z-index: -2;
+        }
+
+        /* Slow-Moving Ambient Glowing Blobs & Parallax Layer */
+        .bg-ambient-layer {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: -1;
+            transform: translate3d(0, var(--bg-parallax, 0px), 0);
+            will-change: transform;
+        }
+
+        .bg-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(85px);
+            opacity: 0.28;
+            will-change: transform;
+        }
+
+        .bg-blob-cyan {
+            width: 360px;
+            height: 360px;
+            top: -80px;
+            left: -90px;
+            background: radial-gradient(circle, #00d4ff 0%, transparent 70%);
+            animation: floatBlobA 18s ease-in-out infinite alternate;
+        }
+
+        .bg-blob-emerald {
+            width: 320px;
+            height: 320px;
+            bottom: 6%;
+            right: -80px;
+            background: radial-gradient(circle, #00ff88 0%, transparent 70%);
+            animation: floatBlobB 22s ease-in-out infinite alternate;
+        }
+
+        .bg-blob-indigo {
+            width: 300px;
+            height: 300px;
+            top: 42%;
+            left: 55%;
+            background: radial-gradient(circle, #2563eb 0%, transparent 70%);
+            opacity: 0.2;
+            animation: floatBlobC 26s ease-in-out infinite alternate;
+        }
+
+        @keyframes floatBlobA {
+            0% { transform: translate(0px, 0px) scale(1); }
+            100% { transform: translate(75px, 60px) scale(1.12); }
+        }
+
+        @keyframes floatBlobB {
+            0% { transform: translate(0px, 0px) scale(1); }
+            100% { transform: translate(-70px, -55px) scale(1.1); }
+        }
+
+        @keyframes floatBlobC {
+            0% { transform: translate(0px, 0px) scale(0.95); }
+            100% { transform: translate(-50px, 45px) scale(1.15); }
         }
 
         /* Enhanced Cosmic Splash Screen Styles */
@@ -286,12 +362,14 @@
         
         /* New Navigation Bar Header */
         nav {
-            background-color: #1a1a1a;
+            background-color: rgba(20, 24, 34, 0.78);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 2px solid #333;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.22);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -456,14 +534,19 @@
             text-align: center;
         }
 
+        /* Glassmorphism Card over Background */
         .description {
             font-size: 18px;
-            color: #bbb;
+            color: #d6e4f0;
             text-align: left;
-            background: #161616;
+            background: rgba(18, 28, 45, 0.58);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 212, 255, 0.22);
             border-left: 5px solid #00d4ff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
         }
 
         .mcq-container {
@@ -494,6 +577,9 @@
             padding: 15px 40px;
             border-radius: 12px;
             text-transform: uppercase;
+            background: rgba(10, 22, 38, 0.45);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
         }
 
         .discover-list {
@@ -506,8 +592,23 @@
         }
 
         .discover-list a { text-decoration: none; display: block; }
-        .discover-list li { background: #222; padding: 8px 20px; border-radius: 50px; border: 1px solid #444; color: white; font-weight: bold; font-size: 14px; transition: 0.3s; }
-        .discover-list a:hover li { background: #333; border-color: #00d4ff; }
+        .discover-list li {
+            background: rgba(20, 32, 52, 0.58);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 8px 20px;
+            border-radius: 50px;
+            border: 1px solid rgba(0, 212, 255, 0.25);
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+        .discover-list a:hover li {
+            background: rgba(0, 212, 255, 0.16);
+            border-color: #00d4ff;
+            box-shadow: 0 0 14px rgba(0, 212, 255, 0.25);
+        }
         
         h2 { color: #00d4ff; font-size: 28px; margin-top: 30px; }
 
@@ -594,6 +695,12 @@
     </style>
 </head>
 <body>
+
+    <div class="bg-ambient-layer" aria-hidden="true">
+        <div class="bg-blob bg-blob-cyan"></div>
+        <div class="bg-blob bg-blob-emerald"></div>
+        <div class="bg-blob bg-blob-indigo"></div>
+    </div>
 
     <div id="it-splash">
         <div class="splash-stars">
@@ -769,6 +876,12 @@
     </div>
 
     <script>
+        // Subtle Background Parallax on Scroll
+        window.addEventListener("scroll", function() {
+            const parallaxOffset = -(window.scrollY * 0.14);
+            document.documentElement.style.setProperty("--bg-parallax", parallaxOffset + "px");
+        }, { passive: true });
+
         // Language Toggle and Persistence Logic
         function updateLanguageUI(lang) {
             const btn = document.getElementById("langToggle");
